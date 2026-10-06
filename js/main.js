@@ -1,8 +1,10 @@
-import { godrejData } from '../data/godrej.js';
+import { godrejData, godrejFaqs } from '../data/godrej.js';
 
-        const builderData = { godrej: godrejData };
+        const builderData = { godrej: { properties: godrejData, faqs: godrejFaqs } };
         const builder = document.body.dataset.builder;
-        const propertiesData = builderData[builder];
+        const activeBuilderData = builderData[builder];
+        const propertiesData = activeBuilderData?.properties;
+        const faqsData = activeBuilderData?.faqs || [];
         if (!Array.isArray(propertiesData)) {
             throw new Error(`No property data found for builder: ${builder}`);
         }
@@ -415,17 +417,50 @@ import { godrejData } from '../data/godrej.js';
             document.getElementById('lightbox-modal').classList.add('hidden');
         }
 
+        // BUILDER-SPECIFIC FAQ CONTENT
+        function renderFaqs(faqs) {
+            const list = document.getElementById('faq-list');
+            list.replaceChildren();
+
+            faqs.forEach((faq, index) => {
+                const id = index + 1;
+                const item = document.createElement('div');
+                item.className = 'bg-white border border-godrej-sage rounded-2xl overflow-hidden shadow-sm';
+
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none font-semibold text-slate-800 text-sm sm:text-base';
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-controls', `faq-answer-${id}`);
+                button.addEventListener('click', () => toggleFaq(id));
+
+                const question = document.createElement('span');
+                question.textContent = faq.question;
+                const icon = document.createElement('i');
+                icon.id = `faq-icon-${id}`;
+                icon.className = 'fa-solid fa-chevron-down text-godrej-emerald transition-transform';
+                icon.setAttribute('aria-hidden', 'true');
+                button.append(question, icon);
+
+                const answer = document.createElement('div');
+                answer.id = `faq-answer-${id}`;
+                answer.className = 'hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3';
+                answer.textContent = faq.answer;
+
+                item.append(button, answer);
+                list.appendChild(item);
+            });
+        }
+
         // FAQ ACCORDION
         function toggleFaq(id) {
             const ans = document.getElementById(`faq-answer-${id}`);
             const icon = document.getElementById(`faq-icon-${id}`);
-            if (ans.classList.contains('hidden')) {
-                ans.classList.remove('hidden');
-                icon.classList.add('rotate-180');
-            } else {
-                ans.classList.add('hidden');
-                icon.classList.remove('rotate-180');
-            }
+            const button = document.querySelector(`[aria-controls="faq-answer-${id}"]`);
+            const willOpen = ans.classList.contains('hidden');
+            ans.classList.toggle('hidden', !willOpen);
+            icon.classList.toggle('rotate-180', willOpen);
+            button.setAttribute('aria-expanded', String(willOpen));
         }
 
         // FORMS SUBMISSION
@@ -595,6 +630,7 @@ import { godrejData } from '../data/godrej.js';
         // INITIAL ONLOAD
         window.onload = function() {
             renderPropertyGrid(propertiesData);
+            renderFaqs(faqsData);
             let popupAlreadyShown = false;
             try { popupAlreadyShown = localStorage.getItem('godrej-whatsapp-popup-shown') === 'true'; } catch (error) { /* Storage may be disabled. */ }
             if (!popupAlreadyShown) {

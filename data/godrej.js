@@ -278,3 +278,22 @@ export const godrejData = [
     }
 
 ];
+
+export const godrejFaqs = [
+    {
+        question: 'What amenities are available at Godrej residences?',
+        answer: 'Amenities vary by project and may include a clubhouse, fitness center, swimming pool, landscaped spaces, children’s play areas, and dedicated parking. Contact our team for project-specific details.'
+    },
+    {
+        question: 'Can I request custom floor plan alterations prior to possession?',
+        answer: 'Yes, under the Godrej Custom Homes initiative, early-stage buyers can work with our interior architecture team to combine bedrooms or customize modular kitchen layouts.'
+    },
+    {
+        question: 'How do I schedule a site visit?',
+        answer: 'Fill out the site visit form or call our team. A property advisor will contact you to confirm a convenient date and time.'
+    },
+    {
+        question: 'Are home loans pre-approved for these Godrej developments?',
+        answer: 'Yes, featured properties may have title approvals and home loan options from major financial institutions. Contact our team to confirm the current options for a specific project.'
+    }
+];
