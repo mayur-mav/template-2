@@ -36,34 +36,56 @@ import { godrejData } from '../data/godrej.js';
             track.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
         }
 
+        function populateCustomSelectMenu(wrapper) {
+            const select = wrapper.querySelector('select');
+            const trigger = wrapper.querySelector('.custom-select-trigger');
+            const menu = wrapper.querySelector('.custom-select-menu');
+            const label = trigger.querySelector('span');
+            menu.replaceChildren();
+
+            Array.from(select.options).forEach(option => {
+                const item = document.createElement('button');
+                item.type = 'button';
+                item.setAttribute('role', 'option');
+                item.dataset.value = option.value;
+                item.textContent = option.textContent;
+                item.setAttribute('aria-selected', String(option.selected));
+                item.addEventListener('click', () => {
+                    select.value = option.value;
+                    label.textContent = option.textContent;
+                    menu.querySelectorAll('[role="option"]').forEach(optionButton => {
+                        optionButton.setAttribute('aria-selected', String(optionButton === item));
+                    });
+                    select.dispatchEvent(new Event('change', { bubbles: true }));
+                    menu.hidden = true;
+                    trigger.setAttribute('aria-expanded', 'false');
+                    trigger.focus();
+                });
+                menu.appendChild(item);
+            });
+
+            const selectedOption = select.options[select.selectedIndex];
+            if (selectedOption) label.textContent = selectedOption.textContent;
+        }
+
+        function initializeBuilderProjectSelect() {
+            const select = document.getElementById('main-project-select');
+            select.replaceChildren();
+            propertiesData.forEach(property => {
+                const option = document.createElement('option');
+                option.value = String(property.id);
+                option.textContent = property.title;
+                select.appendChild(option);
+            });
+            if (propertiesData.length) select.value = String(propertiesData[0].id);
+            select.closest('[data-custom-select]').querySelector('.custom-select-trigger').disabled = !propertiesData.length;
+        }
+
         function initializeCustomSelects() {
             document.querySelectorAll('[data-custom-select]').forEach(wrapper => {
-                const select = wrapper.querySelector('select');
                 const trigger = wrapper.querySelector('.custom-select-trigger');
                 const menu = wrapper.querySelector('.custom-select-menu');
-                const label = trigger.querySelector('span');
-                menu.replaceChildren();
-
-                Array.from(select.options).forEach(option => {
-                    const item = document.createElement('button');
-                    item.type = 'button';
-                    item.setAttribute('role', 'option');
-                    item.dataset.value = option.value;
-                    item.textContent = option.textContent;
-                    item.setAttribute('aria-selected', String(option.selected));
-                    item.addEventListener('click', () => {
-                        select.value = option.value;
-                        label.textContent = option.textContent;
-                        menu.querySelectorAll('[role="option"]').forEach(optionButton => {
-                            optionButton.setAttribute('aria-selected', String(optionButton === item));
-                        });
-                        select.dispatchEvent(new Event('change', { bubbles: true }));
-                        menu.hidden = true;
-                        trigger.setAttribute('aria-expanded', 'false');
-                        trigger.focus();
-                    });
-                    menu.appendChild(item);
-                });
+                populateCustomSelectMenu(wrapper);
 
                 trigger.addEventListener('click', () => {
                     const shouldOpen = menu.hidden;
@@ -117,7 +139,19 @@ import { godrejData } from '../data/godrej.js';
 
             items.forEach(prop => {
                 const card = document.createElement('div');
-                card.className = "property-card bg-white rounded-2xl overflow-hidden border border-godrej-sage shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group";
+                card.className = "property-card cursor-pointer bg-white rounded-2xl overflow-hidden border border-godrej-sage shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group";
+                card.tabIndex = 0;
+                card.setAttribute('role', 'group');
+                card.setAttribute('aria-label', `${prop.title} property card. Activate to view details.`);
+                card.addEventListener('click', event => {
+                    if (event.target.closest('button, a')) return;
+                    openDetailPage(prop.id);
+                });
+                card.addEventListener('keydown', event => {
+                    if (event.target !== card || !['Enter', ' '].includes(event.key)) return;
+                    event.preventDefault();
+                    openDetailPage(prop.id);
+                });
                 card.innerHTML = `
                     <div class="relative h-64 overflow-hidden">
                         <img src="${prop.images[0]}" alt="${prop.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
@@ -126,9 +160,11 @@ import { godrejData } from '../data/godrej.js';
                                 ${prop.category === 'new-launch' ? 'New Launch' : prop.category === 'ongoing' ? 'Ongoing Project' : prop.category === 'ready' ? 'Ready to Move' : 'Project'}
                             </span>
                         </div>
-                        <div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-lg text-xs font-bold text-godrej-emerald flex items-center gap-1">
-                            <i class="fa-solid fa-star text-godrej-gold"></i> ${prop.highlight}
-                        </div>
+                        ${prop.reraId?.trim() ? `
+                            <div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-lg text-xs font-bold text-godrej-emerald flex items-center gap-1">
+                                <i class="fa-solid fa-circle-check text-emerald-600" aria-hidden="true"></i> RERA Verified
+                            </div>
+                        ` : ''}
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
@@ -241,10 +277,17 @@ import { godrejData } from '../data/godrej.js';
             document.getElementById('detail-price').innerText = prop.price;
             document.getElementById('detail-possession').innerText = prop.possession;
             document.getElementById('detail-units').innerText = prop.units;
-            document.getElementById('detail-highlight').innerText = prop.highlight;
-            document.getElementById('detail-tag').innerText = prop.category === 'new-launch' ? 'New Launch' : prop.category === 'ongoing' ? 'Ongoing Project' : prop.category === 'ready' ? 'Ready to Move' : 'Project';
+            const projectStatus = prop.category === 'new-launch' ? 'New Launch' : prop.category === 'ongoing' ? 'Ongoing' : prop.category === 'ready' ? 'Ready to Move' : 'Project';
+            document.getElementById('detail-status').innerText = projectStatus;
+            document.getElementById('detail-tag').innerText = projectStatus;
             document.getElementById('detail-description').innerText = prop.description;
-            document.getElementById('detail-rera-top').innerText = "RERA ID: " + prop.reraId;
+            const reraToggle = document.getElementById('detail-rera-toggle');
+            const reraValue = document.getElementById('detail-rera-value');
+            const hasReraId = Boolean(prop.reraId?.trim());
+            reraToggle.hidden = !hasReraId;
+            reraToggle.setAttribute('aria-expanded', 'false');
+            reraValue.hidden = true;
+            reraValue.textContent = hasReraId ? `RERA ID: ${prop.reraId}` : '';
             renderPropertyFeatures(prop);
             renderPropertyFloorPlans(prop);
 
@@ -267,12 +310,36 @@ import { godrejData } from '../data/godrej.js';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        function renderSidebarConfigurations(property) {
+            const select = document.getElementById('sidebar-bhk-select');
+            const plans = Array.isArray(property.floorPlans) ? property.floorPlans : [];
+            select.replaceChildren();
+            plans.forEach(plan => {
+                const option = document.createElement('option');
+                option.value = plan.id;
+                option.textContent = `${plan.bhk} — ${plan.area}`;
+                select.appendChild(option);
+            });
+            if (!plans.length) {
+                const option = document.createElement('option');
+                option.value = '';
+                option.textContent = 'Contact us for available configurations';
+                select.appendChild(option);
+            }
+            select.disabled = !plans.length;
+            const wrapper = select.closest('[data-custom-select]');
+            wrapper.querySelector('.custom-select-trigger').disabled = !plans.length;
+            populateCustomSelectMenu(wrapper);
+        }
+
         function renderPropertyFloorPlans(property) {
             const tabs = document.getElementById('floor-plan-tabs');
             const plans = Array.isArray(property.floorPlans) ? property.floorPlans : [];
             tabs.replaceChildren();
             tabs.hidden = plans.length === 0;
             tabs.dataset.layout = 'scroll';
+
+            renderSidebarConfigurations(property);
 
             if (!plans.length) {
                 document.getElementById('plan-area').innerText = 'Contact us for available configurations';
@@ -313,6 +380,13 @@ import { godrejData } from '../data/godrej.js';
 
             document.getElementById('plan-area').innerText = plan.area;
             document.getElementById('plan-price').innerText = plan.price;
+            const configurationSelect = document.getElementById('sidebar-bhk-select');
+            configurationSelect.value = plan.id;
+            const configurationWrapper = configurationSelect.closest('[data-custom-select]');
+            configurationWrapper.querySelector('.custom-select-trigger span').textContent = configurationSelect.options[configurationSelect.selectedIndex].textContent;
+            configurationWrapper.querySelectorAll('.custom-select-menu [role="option"]').forEach(option => {
+                option.setAttribute('aria-selected', String(option.dataset.value === plan.id));
+            });
             const image = document.getElementById('floor-plan-img');
             if (plan.image) image.src = plan.image;
             else image.removeAttribute('src');
@@ -408,6 +482,7 @@ import { godrejData } from '../data/godrej.js';
             if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) closeMobileMenu();
         });
 
+        initializeBuilderProjectSelect();
         initializeCustomSelects();
         document.addEventListener('click', event => {
             if (event.target.closest('[data-custom-select]')) return;
@@ -475,6 +550,18 @@ import { godrejData } from '../data/godrej.js';
         } else {
             window.addEventListener('resize', updatePropertyCarousel);
         }
+
+        const detailReraToggle = document.getElementById('detail-rera-toggle');
+        const detailReraValue = document.getElementById('detail-rera-value');
+        detailReraToggle.addEventListener('click', () => {
+            const shouldShow = detailReraValue.hidden;
+            detailReraValue.hidden = !shouldShow;
+            detailReraToggle.setAttribute('aria-expanded', String(shouldShow));
+        });
+
+        document.getElementById('sidebar-bhk-select').addEventListener('change', event => {
+            selectFloorPlan(event.currentTarget.value);
+        });
 
         // Keep inline HTML handlers available when this file runs as an ES module.
         Object.assign(window, {

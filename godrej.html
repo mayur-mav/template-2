@@ -299,12 +299,13 @@
                                         </div>
                                         <div>
                                             <label class="block text-xs font-semibold text-slate-600 mb-1">Preferred Project</label>
-                                            <select class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
-                                                <option>Godrej Green Cove, Bangalore</option>
-                                                <option>Godrej Tropical Isle, Noida</option>
-                                                <option>Godrej Reserve, Mumbai</option>
-                                                <option>Godrej Ananda, Yelahanka</option>
-                                            </select>
+                                            <div class="custom-select" data-custom-select>
+                                                <select id="main-project-select" name="preferredProject" class="custom-select-native" aria-hidden="true" tabindex="-1"></select>
+                                                <button class="custom-select-trigger" type="button" aria-label="Preferred project" aria-haspopup="listbox" aria-expanded="false">
+                                                    <span>Select a project</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="custom-select-menu" role="listbox" aria-label="Preferred project" hidden></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div>
@@ -396,16 +397,16 @@
                 <button onclick="showCatalogPage()" class="inline-flex items-center gap-2 text-sm font-semibold text-godrej-emerald hover:text-godrej-gold transition-colors">
                     <i class="fa-solid fa-arrow-left"></i> Back to All Residences
                 </button>
-                <div id="detail-rera-top" class="text-xs text-slate-500 font-mono">RERA ID: PRM/KA/RERA/1251/310/PR/210302</div>
             </div>
 
             <!-- Property Title & Badges Header -->
             <div class="mb-8">
                 <div class="flex flex-wrap items-center gap-3 mb-3">
                     <span id="detail-tag" class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full uppercase">Featured Project</span>
-                    <span id="detail-highlight-badge" class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full flex items-center gap-1">
-                        <i class="fa-solid fa-star"></i> Featured Residence
-                    </span>
+                    <button id="detail-rera-toggle" type="button" hidden aria-expanded="false" aria-controls="detail-rera-value" class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full inline-flex items-center gap-1 hover:bg-emerald-200 transition-colors">
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i> RERA Verified
+                    </button>
+                    <span id="detail-rera-value" hidden class="text-xs text-slate-500 font-mono break-all"></span>
                 </div>
                 <h1 id="detail-title" class="font-serif text-3xl sm:text-5xl font-bold text-godrej-emerald">Godrej Green Cove</h1>
                 <p id="detail-location" class="text-slate-500 text-sm sm:text-base mt-2 flex items-center gap-2">
@@ -437,7 +438,7 @@
             </div>
 
             <!-- SPECIFICATION BADGES / PILLS BAR -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-godrej-offwhite rounded-2xl border border-godrej-sage mb-12">
+            <div id="detail-specifications" class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-godrej-offwhite rounded-2xl border border-godrej-sage mb-12">
                 <div class="border-r border-slate-200 last:border-0 pr-4">
                     <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Possession Date</div>
                     <div id="detail-possession" class="text-base font-bold text-godrej-emerald mt-1">December 2026</div>
@@ -447,8 +448,8 @@
                     <div id="detail-units" class="text-base font-bold text-godrej-emerald mt-1">18 Acres / 420 Units</div>
                 </div>
                 <div class="border-r border-slate-200 last:border-0 pr-4">
-                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Project Highlight</div>
-                    <div id="detail-highlight" class="text-base font-bold text-godrej-emerald mt-1">Clubhouse Access</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Possession Status</div>
+                    <div id="detail-status" class="text-base font-bold text-godrej-emerald mt-1">New Launch</div>
                 </div>
                 <div>
                     <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Pricing Starting</div>
@@ -536,19 +537,27 @@
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-600 mb-1">Preferred BHK Configuration</label>
-                                    <select class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
-                                        <option>2 BHK Luxury Apartment</option>
-                                        <option>3 BHK Premium Residence</option>
-                                        <option>4 BHK Sky Penthouse</option>
-                                    </select>
+                                    <div class="custom-select" data-custom-select>
+                                        <select id="sidebar-bhk-select" class="custom-select-native" aria-hidden="true" tabindex="-1"></select>
+                                        <button class="custom-select-trigger" type="button" aria-label="Preferred project configuration" aria-haspopup="listbox" aria-expanded="false">
+                                            <span>Select a configuration</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="custom-select-menu" role="listbox" aria-label="Preferred project configuration" hidden></div>
+                                    </div>
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-600 mb-1">Target Purchase Timeline</label>
-                                    <select class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
-                                        <option>Ready to Buy (Immediate)</option>
-                                        <option>Within 3 Months</option>
-                                        <option>Exploring / Investment</option>
-                                    </select>
+                                    <div class="custom-select" data-custom-select>
+                                        <select id="sidebar-timeline-select" class="custom-select-native" aria-hidden="true" tabindex="-1">
+                                            <option value="immediate">Ready to Buy (Immediate)</option>
+                                            <option value="3-months">Within 3 Months</option>
+                                            <option value="exploring">Exploring / Investment</option>
+                                        </select>
+                                        <button class="custom-select-trigger" type="button" aria-label="Target purchase timeline" aria-haspopup="listbox" aria-expanded="false">
+                                            <span>Ready to Buy (Immediate)</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="custom-select-menu" role="listbox" aria-label="Target purchase timeline" hidden></div>
+                                    </div>
                                 </div>
                                 <button type="submit" class="w-full bg-godrej-emerald hover:bg-godrej-darkEmerald text-white font-semibold py-3 rounded-xl transition-all shadow-md text-sm flex items-center justify-center gap-2">
                                     <span>Schedule Visit & Price Sheet</span>
