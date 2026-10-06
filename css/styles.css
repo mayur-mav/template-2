@@ -50,6 +50,40 @@ button {
     font: inherit;
 }
 
+button { -webkit-tap-highlight-color: transparent; }
+button:focus:not(:focus-visible) { outline: none; }
+button:focus-visible,
+a:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
+.chip-btn,
+.tab-btn,
+.plan-tab-btn,
+.custom-select-trigger,
+.custom-select-menu [role="option"] {
+    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+.chip-btn {
+    appearance: none;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    color: #475569;
+    box-shadow: 0 1px 2px rgb(15 23 42 / 5%);
+}
+.chip-btn:hover:not(.active) { border-color: #0F382C; background: #F4F8F5; color: #0F382C; }
+.chip-btn.active,
+.chip-btn.active:hover,
+.chip-btn:active {
+    border-color: #0F382C;
+    background: #0F382C;
+    color: #fff;
+}
+.chip-btn.active { box-shadow: 0 3px 8px rgb(15 56 44 / 20%); }
+.chip-btn:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
+.category-filter-label { display: flex; align-items: center; justify-content: center; }
+
+@media (min-width: 1024px) {
+    .category-filter-label { justify-content: flex-start; padding-left: 0.5rem; }
+}
+
 .whatsapp-float {
     position: fixed;
     z-index: 60;
@@ -175,6 +209,69 @@ button {
 .whatsapp-dialog form > button:hover { background: #18b95b; }
 .whatsapp-feedback { min-height: 0; margin: 0; color: #b91c1c; font-size: 0.8rem; }
 .whatsapp-feedback:empty { display: none; }
+
+.custom-select { position: relative; width: 100%; min-width: 0; }
+.custom-select-native {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+.custom-select-trigger {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    min-height: 2.625rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.75rem;
+    background: #F9FAF9;
+    color: #1e293b;
+    text-align: left;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+.custom-select-trigger:focus-visible { outline: 2px solid #0F382C; outline-offset: 2px; }
+.custom-select-trigger > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.custom-select-trigger > i { flex: none; font-size: 0.75rem; color: #64748b; }
+.custom-select-menu {
+    position: fixed;
+    z-index: 30;
+    max-width: calc(100vw - 1.5rem);
+    max-height: min(14rem, 40vh);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0.25rem;
+    border: 1px solid #dbe3ed;
+    border-radius: 0.75rem;
+    background: #fff;
+    box-shadow: 0 12px 28px rgb(15 23 42 / 16%);
+}
+.custom-select-menu[hidden] { display: none; }
+.custom-select-menu [role="option"] {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 0.625rem 0.75rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: #334155;
+    text-align: left;
+    font-size: 0.875rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+.custom-select-menu [role="option"]:hover,
+.custom-select-menu [role="option"]:focus-visible { outline: none; background: #E8F0EC; color: #0F382C; }
+.custom-select-menu [role="option"][aria-selected="true"] { color: #0F382C; font-weight: 700; }
 
 #lightbox-modal {
     padding: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
@@ -304,8 +401,9 @@ button {
 .hero-banner-content,
 .hero-banner-content > .bg-white {
     width: 100%;
-    max-width: 100%;
 }
+
+.hero-banner-content > .bg-white { max-width: 72rem; }
 
 .hero-banner input,
 .hero-banner select {
@@ -316,17 +414,20 @@ button {
 
 .hero-banner-overlay {
     background:
-        linear-gradient(90deg, rgba(5, 24, 19, 0.91) 0%, rgba(5, 24, 19, 0.72) 52%, rgba(5, 24, 19, 0.46) 100%),
-        linear-gradient(0deg, rgba(5, 24, 19, 0.56) 0%, transparent 54%, rgba(5, 24, 19, 0.2) 100%);
+        linear-gradient(90deg, rgba(5, 24, 19, 0.52) 0%, rgba(5, 24, 19, 0.39) 52%, rgba(5, 24, 19, 0.28) 100%),
+        linear-gradient(0deg, rgba(5, 24, 19, 0.3) 0%, transparent 58%, rgba(5, 24, 19, 0.12) 100%);
 }
+
+.hero-banner-image { filter: brightness(1.12) saturate(1.04); }
 
 @media (max-width: 640px) {
     .hero-banner-overlay {
-        background: linear-gradient(180deg, rgba(5, 24, 19, 0.86) 0%, rgba(5, 24, 19, 0.82) 34%, rgba(5, 24, 19, 0.94) 100%);
+        background: linear-gradient(180deg, rgba(5, 24, 19, 0.64) 0%, rgba(5, 24, 19, 0.58) 38%, rgba(5, 24, 19, 0.72) 100%);
     }
 
     .hero-banner .grid {
         grid-template-columns: minmax(0, 1fr);
+        row-gap: 1.25rem;
     }
 
     .hero-banner .grid > *,

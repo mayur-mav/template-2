@@ -36,6 +36,74 @@ import { godrejData } from '../data/godrej.js';
             track.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
         }
 
+        function initializeCustomSelects() {
+            document.querySelectorAll('[data-custom-select]').forEach(wrapper => {
+                const select = wrapper.querySelector('select');
+                const trigger = wrapper.querySelector('.custom-select-trigger');
+                const menu = wrapper.querySelector('.custom-select-menu');
+                const label = trigger.querySelector('span');
+                menu.replaceChildren();
+
+                Array.from(select.options).forEach(option => {
+                    const item = document.createElement('button');
+                    item.type = 'button';
+                    item.setAttribute('role', 'option');
+                    item.dataset.value = option.value;
+                    item.textContent = option.textContent;
+                    item.setAttribute('aria-selected', String(option.selected));
+                    item.addEventListener('click', () => {
+                        select.value = option.value;
+                        label.textContent = option.textContent;
+                        menu.querySelectorAll('[role="option"]').forEach(optionButton => {
+                            optionButton.setAttribute('aria-selected', String(optionButton === item));
+                        });
+                        select.dispatchEvent(new Event('change', { bubbles: true }));
+                        menu.hidden = true;
+                        trigger.setAttribute('aria-expanded', 'false');
+                        trigger.focus();
+                    });
+                    menu.appendChild(item);
+                });
+
+                trigger.addEventListener('click', () => {
+                    const shouldOpen = menu.hidden;
+                    document.querySelectorAll('[data-custom-select] .custom-select-menu').forEach(otherMenu => {
+                        otherMenu.hidden = true;
+                        otherMenu.style.width = '';
+                        otherMenu.style.left = '';
+                        otherMenu.style.top = '';
+                        otherMenu.parentElement.querySelector('.custom-select-trigger').setAttribute('aria-expanded', 'false');
+                    });
+                    menu.hidden = !shouldOpen;
+                    trigger.setAttribute('aria-expanded', String(shouldOpen));
+                    if (shouldOpen) {
+                        const triggerBounds = trigger.getBoundingClientRect();
+                        const menuHeight = menu.getBoundingClientRect().height;
+                        const edgePadding = 12;
+                        const menuWidth = Math.min(triggerBounds.width, window.innerWidth - edgePadding * 2);
+                        const menuLeft = Math.max(edgePadding, Math.min(triggerBounds.left, window.innerWidth - menuWidth - edgePadding));
+                        const spaceBelow = window.innerHeight - triggerBounds.bottom - edgePadding;
+                        const spaceAbove = triggerBounds.top - edgePadding;
+                        const openAbove = spaceBelow < menuHeight + 8 && spaceAbove > spaceBelow;
+                        const desiredTop = openAbove ? triggerBounds.top - menuHeight - 6 : triggerBounds.bottom + 6;
+                        const menuTop = Math.max(edgePadding, Math.min(desiredTop, window.innerHeight - menuHeight - edgePadding));
+                        menu.style.width = `${menuWidth}px`;
+                        menu.style.left = `${menuLeft}px`;
+                        menu.style.top = `${menuTop}px`;
+                        menu.querySelector('[aria-selected="true"]')?.focus();
+                    }
+                });
+
+                wrapper.addEventListener('keydown', event => {
+                    if (event.key === 'Escape') {
+                        menu.hidden = true;
+                        trigger.setAttribute('aria-expanded', 'false');
+                        trigger.focus();
+                    }
+                });
+            });
+        }
+
         // RENDER CATALOG CARDS
         function renderPropertyGrid(items) {
             const grid = document.getElementById('property-grid');
@@ -55,7 +123,7 @@ import { godrejData } from '../data/godrej.js';
                         <img src="${prop.images[0]}" alt="${prop.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                         <div class="absolute top-4 left-4 flex flex-col gap-1">
                             <span class="bg-godrej-emerald text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
-                                ${prop.category === 'new-launch' ? 'New Launch' : prop.category === 'featured' ? 'Featured Project' : 'Ready to Move'}
+                                ${prop.category === 'new-launch' ? 'New Launch' : prop.category === 'ongoing' ? 'Ongoing Project' : prop.category === 'ready' ? 'Ready to Move' : 'Project'}
                             </span>
                         </div>
                         <div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-lg text-xs font-bold text-godrej-emerald flex items-center gap-1">
@@ -107,13 +175,58 @@ import { godrejData } from '../data/godrej.js';
         function filterByChip(chipType) {
             currentActiveChip = chipType;
             document.querySelectorAll('.chip-btn').forEach(btn => {
-                btn.classList.remove('bg-godrej-emerald', 'text-white', 'border-godrej-emerald');
-                btn.classList.add('border-slate-300', 'text-slate-600');
+                const isActive = btn.dataset.chip === chipType;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-pressed', String(isActive));
             });
-            event.target.classList.add('bg-godrej-emerald', 'text-white', 'border-godrej-emerald');
-            event.target.classList.remove('border-slate-300', 'text-slate-600');
 
             applyFilters();
+        }
+
+        function renderPropertyFeatures(property) {
+            const amenitiesContainer = document.getElementById('detail-amenities');
+            const connectivityContainer = document.getElementById('detail-connectivity');
+            amenitiesContainer.replaceChildren();
+            connectivityContainer.replaceChildren();
+
+            (property.amenities || []).forEach(amenity => {
+                const card = document.createElement('div');
+                card.className = 'p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-center gap-3';
+
+                const iconBox = document.createElement('div');
+                iconBox.className = 'w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0';
+                const icon = document.createElement('i');
+                icon.className = `fa-solid ${amenity.icon || 'fa-star'}`;
+                icon.setAttribute('aria-hidden', 'true');
+                iconBox.appendChild(icon);
+
+                const name = document.createElement('h4');
+                name.className = 'text-xs font-bold text-slate-800';
+                name.textContent = amenity.name;
+                card.append(iconBox, name);
+                amenitiesContainer.appendChild(card);
+            });
+
+            (property.connectivity || []).forEach(place => {
+                const card = document.createElement('div');
+                card.className = 'p-4 border border-slate-200 rounded-xl flex items-center justify-between gap-3';
+
+                const placeInfo = document.createElement('div');
+                placeInfo.className = 'flex min-w-0 items-center gap-3';
+                const icon = document.createElement('i');
+                icon.className = `fa-solid ${place.icon || 'fa-location-dot'} text-godrej-gold text-lg shrink-0`;
+                icon.setAttribute('aria-hidden', 'true');
+                const name = document.createElement('span');
+                name.className = 'text-xs font-semibold text-slate-700';
+                name.textContent = place.name;
+                placeInfo.append(icon, name);
+
+                const distance = document.createElement('span');
+                distance.className = 'text-xs font-bold text-godrej-emerald whitespace-nowrap';
+                distance.textContent = place.distance || '';
+                card.append(placeInfo, distance);
+                connectivityContainer.appendChild(card);
+            });
         }
 
         // NAVIGATION SPA SPA SWITCHING
@@ -129,9 +242,10 @@ import { godrejData } from '../data/godrej.js';
             document.getElementById('detail-possession').innerText = prop.possession;
             document.getElementById('detail-units').innerText = prop.units;
             document.getElementById('detail-highlight').innerText = prop.highlight;
-            document.getElementById('detail-tag').innerText = prop.category === 'new-launch' ? 'New Launch' : prop.category === 'featured' ? 'Featured Project' : 'Ready to Move';
+            document.getElementById('detail-tag').innerText = prop.category === 'new-launch' ? 'New Launch' : prop.category === 'ongoing' ? 'Ongoing Project' : prop.category === 'ready' ? 'Ready to Move' : 'Project';
             document.getElementById('detail-description').innerText = prop.description;
             document.getElementById('detail-rera-top').innerText = "RERA ID: " + prop.reraId;
+            renderPropertyFeatures(prop);
 
             // Load 3 Gallery Images
             document.getElementById('detail-img-0').src = prop.images[0];
@@ -141,12 +255,14 @@ import { godrejData } from '../data/godrej.js';
             // Show SPA View
             document.getElementById('catalog-page').classList.add('hidden');
             document.getElementById('details-page').classList.remove('hidden');
+            document.getElementById('site-footer').classList.add('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function showCatalogPage() {
             document.getElementById('details-page').classList.add('hidden');
             document.getElementById('catalog-page').classList.remove('hidden');
+            document.getElementById('site-footer').classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -246,6 +362,18 @@ import { godrejData } from '../data/godrej.js';
         // MOBILE MENU
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+
+        initializeCustomSelects();
+        document.addEventListener('click', event => {
+            if (event.target.closest('[data-custom-select]')) return;
+            document.querySelectorAll('[data-custom-select] .custom-select-menu').forEach(menu => {
+                menu.hidden = true;
+                menu.style.width = '';
+                menu.style.left = '';
+                menu.style.top = '';
+                menu.parentElement.querySelector('.custom-select-trigger').setAttribute('aria-expanded', 'false');
+            });
+        });
 
         const whatsappPopup = document.getElementById('whatsapp-popup');
         const whatsappFloat = document.getElementById('whatsapp-float');

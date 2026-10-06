@@ -101,22 +101,22 @@
         <section class="hero-banner relative isolate bg-godrej-emerald text-white overflow-hidden py-12 sm:py-16 lg:py-20">
             <img class="hero-banner-image absolute inset-0 z-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=85" alt="" aria-hidden="true" fetchpriority="high">
             <div class="hero-banner-overlay absolute inset-0 z-0" aria-hidden="true"></div>
-            <div class="hero-banner-content w-full px-4 sm:px-6 lg:px-8 xl:px-10 relative z-10">
-                <div class="max-w-3xl">
+            <div class="hero-banner-content w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-godrej-gold text-xs font-medium uppercase tracking-widest mb-6">
                         <i class="fa-solid fa-building"></i> Crafting Exceptional Residences
                     </div>
                     <h1 class="font-serif text-3xl min-[380px]:text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-balance">
                         Find a Home That <span class="text-gradient-gold">Feels Like Yours</span>
                     </h1>
-                    <p class="text-white/90 text-sm sm:text-lg mb-6 sm:mb-8 font-light max-w-2xl leading-relaxed">
+                    <p class="text-white/90 text-sm sm:text-lg mb-6 sm:mb-8 font-light max-w-3xl mx-auto leading-relaxed">
                         Explore thoughtfully designed homes with contemporary architecture, premium amenities, and convenient locations.
                     </p>
                 </div>
 
                 <!-- SEARCH & FILTER BAR -->
-                <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-2xl text-slate-800 border border-godrej-sage">
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-5">
+                <div class="w-full max-w-6xl mx-auto bg-white p-4 sm:p-6 lg:p-7 rounded-2xl shadow-2xl text-slate-800 border border-godrej-sage">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
                         <div class="relative">
                             <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Search Location</label>
                             <div class="flex items-center bg-godrej-offwhite rounded-xl px-3 py-2.5 border border-slate-200 focus-within:border-godrej-emerald">
@@ -127,22 +127,34 @@
 
                         <div>
                             <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Property Type</label>
-                            <select id="type-select" class="w-full bg-godrej-offwhite rounded-xl px-3 py-2.5 border border-slate-200 text-sm text-slate-800 focus:outline-none focus:border-godrej-emerald">
-                                <option value="all">All Types</option>
-                                <option value="apartment">Apartments</option>
-                                <option value="villa">Villas</option>
-                                <option value="penthouse">Sky Penthouses</option>
-                            </select>
+                            <div class="custom-select" data-custom-select>
+                                <select id="type-select" class="custom-select-native" aria-hidden="true" tabindex="-1">
+                                    <option value="all">All Types</option>
+                                    <option value="apartment">Apartments</option>
+                                    <option value="villa">Villas</option>
+                                    <option value="penthouse">Sky Penthouses</option>
+                                </select>
+                                <button class="custom-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                                    <span>All Types</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="custom-select-menu" role="listbox" aria-label="Property Type" hidden></div>
+                            </div>
                         </div>
 
                         <div>
                             <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Price Range</label>
-                            <select id="price-select" class="w-full bg-godrej-offwhite rounded-xl px-3 py-2.5 border border-slate-200 text-sm text-slate-800 focus:outline-none focus:border-godrej-emerald">
-                                <option value="all">Any Price</option>
-                                <option value="1.5-2.5">₹1.5 Cr - ₹2.5 Cr</option>
-                                <option value="2.5-4.0">₹2.5 Cr - ₹4.0 Cr</option>
-                                <option value="4.0+">₹4.0 Cr+</option>
-                            </select>
+                            <div class="custom-select" data-custom-select>
+                                <select id="price-select" class="custom-select-native" aria-hidden="true" tabindex="-1">
+                                    <option value="all">Any Price</option>
+                                    <option value="1.5-2.5">₹1.5 Cr - ₹2.5 Cr</option>
+                                    <option value="2.5-4.0">₹2.5 Cr - ₹4.0 Cr</option>
+                                    <option value="4.0+">₹4.0 Cr+</option>
+                                </select>
+                                <button class="custom-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                                    <span>Any Price</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="custom-select-menu" role="listbox" aria-label="Price Range" hidden></div>
+                            </div>
                         </div>
 
                         <div class="flex items-end">
@@ -153,12 +165,12 @@
                     </div>
 
                     <!-- Status Filter Chips -->
-                    <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-2">
-                        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-2">Category:</span>
-                        <button onclick="filterByChip('all')" class="chip-btn active text-xs font-semibold px-4 py-1.5 rounded-full border border-godrej-emerald bg-godrej-emerald text-white transition-all">All</button>
-                        <button onclick="filterByChip('new-launch')" class="chip-btn text-xs font-semibold px-4 py-1.5 rounded-full border border-slate-300 text-slate-600 hover:border-godrej-emerald hover:text-godrej-emerald transition-all">New Launch</button>
-                        <button onclick="filterByChip('featured')" class="chip-btn text-xs font-semibold px-4 py-1.5 rounded-full border border-slate-300 text-slate-600 hover:border-godrej-emerald hover:text-godrej-emerald transition-all">Featured Projects</button>
-                        <button onclick="filterByChip('ready')" class="chip-btn text-xs font-semibold px-4 py-1.5 rounded-full border border-slate-300 text-slate-600 hover:border-godrej-emerald hover:text-godrej-emerald transition-all">Ready to Move</button>
+                    <div class="category-filter-row pt-4 border-t border-slate-100 grid grid-cols-2 lg:flex lg:flex-wrap lg:items-center lg:justify-center gap-2 sm:gap-3">
+                        <span class="category-filter-label col-span-2 text-center lg:col-span-1 text-xs font-bold text-slate-500 uppercase tracking-wider">Category:</span>
+                        <button type="button" data-chip="all" aria-pressed="true" onclick="filterByChip('all')" class="chip-btn active w-full lg:w-auto text-center text-xs font-semibold px-3 lg:px-4 py-2 rounded-full">All</button>
+                        <button type="button" data-chip="new-launch" aria-pressed="false" onclick="filterByChip('new-launch')" class="chip-btn w-full lg:w-auto text-center text-xs font-semibold px-3 lg:px-4 py-2 rounded-full">New Launch</button>
+                        <button type="button" data-chip="featured" aria-pressed="false" onclick="filterByChip('featured')" class="chip-btn w-full lg:w-auto text-center text-xs font-semibold px-3 lg:px-4 py-2 rounded-full">Ongoing Projects</button>
+                        <button type="button" data-chip="ready" aria-pressed="false" onclick="filterByChip('ready')" class="chip-btn w-full lg:w-auto text-center text-xs font-semibold px-3 lg:px-4 py-2 rounded-full">Ready to Move</button>
                     </div>
                 </div>
             </div>
@@ -189,7 +201,7 @@
 
         <!-- GODREJ BRAND SHOWCASE -->
         <section id="legacy-section" class="bg-white py-20 border-y border-godrej-sage">
-            <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-12">
                     <span class="text-xs font-bold uppercase tracking-widest text-godrej-gold block mb-2">127 Years of Trust & Innovation</span>
                     <h2 class="font-serif text-3xl sm:text-4xl font-bold text-godrej-emerald">The Godrej Legacy & Design</h2>
@@ -246,7 +258,7 @@
 
         <!-- CONSULTATION / BOOKING ENQUIRY SECTION -->
         <section id="consultation-section" class="py-20 bg-godrej-emerald text-white relative overflow-hidden">
-            <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-10 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <div class="lg:col-span-5">
                         <span class="text-xs font-bold uppercase tracking-widest text-godrej-gold block mb-2">Exclusive Advisory</span>
@@ -505,106 +517,17 @@
                         </div>
                     </div>
 
-                    <!-- Project Amenities Grid -->
-                    <div>
+                    <!-- Dynamic Project Amenities -->
+                    <section>
                         <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-6">Project Amenities</h3>
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                            <div class="p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-start gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0">
-                                    <i class="fa-solid fa-building"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-slate-800">Clubhouse & Community Spaces</h4>
-                                    <p class="text-[11px] text-slate-500 mt-1">Spaces to relax, celebrate, and connect with neighbors.</p>
-                                </div>
-                            </div>
+                        <div id="detail-amenities" class="grid grid-cols-2 sm:grid-cols-3 gap-4"></div>
+                    </section>
 
-                            <div class="p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-start gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0">
-                                    <i class="fa-solid fa-cloud-showers-water"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-slate-800">Landscaped Gardens</h4>
-                                    <p class="text-[11px] text-slate-500 mt-1">Landscaped courtyards and seating areas.</p>
-                                </div>
-                            </div>
-
-                            <div class="p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-start gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0">
-                                    <i class="fa-solid fa-charging-station"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-slate-800">EV Charging Hub</h4>
-                                    <p class="text-[11px] text-slate-500 mt-1">Fast charging sockets for every apartment bay.</p>
-                                </div>
-                            </div>
-
-                            <div class="p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-start gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0">
-                                    <i class="fa-solid fa-water-ladder"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-slate-800">Swimming Pool</h4>
-                                    <p class="text-[11px] text-slate-500 mt-1">A dedicated pool for leisure and recreation.</p>
-                                </div>
-                            </div>
-
-                            <div class="p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-start gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0">
-                                    <i class="fa-solid fa-cloud-sun"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-slate-800">Sky Observatory</h4>
-                                    <p class="text-[11px] text-slate-500 mt-1">Telescope Lounge on 32nd floor roof terrace.</p>
-                                </div>
-                            </div>
-
-                            <div class="p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-start gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0">
-                                    <i class="fa-solid fa-dumbbell"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-bold text-slate-800">Fitness Center</h4>
-                                    <p class="text-[11px] text-slate-500 mt-1">A well-equipped space for daily workouts.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Connectivity & Location Matrix -->
-                    <div>
-                        <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-6">Connectivity & Location Matrix</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="p-4 border border-slate-200 rounded-xl flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-laptop-code text-godrej-gold text-lg"></i>
-                                    <span class="text-xs font-semibold text-slate-700">Major IT Hubs & Tech Parks</span>
-                                </div>
-                                <span class="text-xs font-bold text-godrej-emerald">10 Mins</span>
-                            </div>
-                            <div class="p-4 border border-slate-200 rounded-xl flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-road text-godrej-gold text-lg"></i>
-                                    <span class="text-xs font-semibold text-slate-700">NICE Ring Expressway</span>
-                                </div>
-                                <span class="text-xs font-bold text-godrej-emerald">05 Mins</span>
-                            </div>
-                            <div class="p-4 border border-slate-200 rounded-xl flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-plane-departure text-godrej-gold text-lg"></i>
-                                    <span class="text-xs font-semibold text-slate-700">International Airport</span>
-                                </div>
-                                <span class="text-xs font-bold text-godrej-emerald">45 Mins</span>
-                            </div>
-                            <div class="p-4 border border-slate-200 rounded-xl flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-graduation-cap text-godrej-gold text-lg"></i>
-                                    <span class="text-xs font-semibold text-slate-700">Top International Schools</span>
-                                </div>
-                                <span class="text-xs font-bold text-godrej-emerald">12 Mins</span>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Dynamic Connectivity -->
+                    <section>
+                        <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-6">Connectivity & Location</h3>
+                        <div id="detail-connectivity" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+                    </section>
                 </div>
 
                 <!-- Right Sticky Sidebar Form -->
@@ -695,8 +618,8 @@
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-godrej-darkEmerald text-white py-12 border-t border-godrej-emerald">
-        <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
+    <footer id="site-footer" class="bg-godrej-darkEmerald text-white py-12 border-t border-godrej-emerald">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
