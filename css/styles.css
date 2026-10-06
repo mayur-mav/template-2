@@ -35,6 +35,8 @@ body {
     overflow-x: clip;
 }
 
+body.whatsapp-popup-open { overflow: hidden; }
+
 img,
 video,
 svg {
@@ -48,16 +50,131 @@ button {
     font: inherit;
 }
 
-#quick-view-modal {
-    overflow-y: auto;
-    overscroll-behavior: contain;
+.whatsapp-float {
+    position: fixed;
+    z-index: 60;
+    right: max(1.5rem, env(safe-area-inset-right));
+    bottom: max(1.5rem, env(safe-area-inset-bottom));
+    display: grid;
+    width: 4.125rem;
+    height: 4.125rem;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    color: #fff;
+    background: #20ce68;
+    box-shadow: 0 10px 28px rgb(32 206 104 / 35%);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 160ms ease, background-color 160ms ease;
 }
 
-#quick-view-modal > div {
-    max-height: calc(100dvh - 2rem);
-    overflow-y: auto;
-    overscroll-behavior: contain;
+.whatsapp-float:hover { background: #18b95b; transform: translateY(-2px); }
+
+.whatsapp-popup {
+    position: fixed;
+    z-index: 70;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 1.25rem;
+    background: rgb(15 23 42 / 58%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 180ms ease, visibility 180ms ease;
 }
+
+.whatsapp-popup.is-open { opacity: 1; visibility: visible; }
+
+.whatsapp-dialog {
+    position: relative;
+    width: min(100%, 41.25rem);
+    padding: 2.25rem;
+    border: 1px solid #eadbb8;
+    border-radius: 0.875rem;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 24px 80px rgb(15 23 42 / 24%);
+    transform: translateY(0.75rem) scale(0.985);
+    transition: transform 180ms ease;
+}
+
+.whatsapp-popup.is-open .whatsapp-dialog { transform: translateY(0) scale(1); }
+
+.whatsapp-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border: 0;
+    background: transparent;
+    color: #94a3b8;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.whatsapp-modal-icon {
+    display: grid;
+    width: 4.5rem;
+    height: 4.5rem;
+    place-items: center;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    background: #20ce68;
+    box-shadow: 0 10px 25px rgb(32 206 104 / 28%);
+    color: #fff;
+    font-size: 2.25rem;
+}
+
+.whatsapp-dialog h2 {
+    margin: 0 0 0.5rem;
+    color: #111827;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 4vw, 1.875rem);
+    font-weight: 700;
+}
+
+.whatsapp-dialog > p {
+    max-width: 38rem;
+    margin: 0 auto 1.5rem;
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.whatsapp-dialog form { display: grid; gap: 1rem; }
+
+.whatsapp-dialog input {
+    width: 100%;
+    min-height: 3.375rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #dbe3ed;
+    border-radius: 0.5rem;
+    color: #1e293b;
+    outline: none;
+}
+
+.whatsapp-dialog input:focus { border-color: #20ce68; box-shadow: 0 0 0 3px rgb(32 206 104 / 14%); }
+
+.whatsapp-dialog form > button {
+    width: 100%;
+    min-height: 3.375rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background: #20ce68;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.whatsapp-dialog form > button:hover { background: #18b95b; }
+.whatsapp-feedback { min-height: 0; margin: 0; color: #b91c1c; font-size: 0.8rem; }
+.whatsapp-feedback:empty { display: none; }
 
 #lightbox-modal {
     padding: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
@@ -68,10 +185,77 @@ button {
     max-height: 80dvh;
 }
 
-@media (max-width: 640px) {
-    #property-grid {
-        gap: 1.25rem;
-    }
+.property-carousel {
+    position: relative;
+}
+
+.property-carousel-track {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.25rem 0.125rem 1rem;
+}
+
+.property-carousel-track::-webkit-scrollbar { display: none; }
+
+.property-card {
+    flex: 0 0 100%;
+    min-width: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.property-carousel-arrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    transform: translateY(-50%);
+    border: 0;
+    border-radius: 9999px;
+    color: #fff;
+    background: #555b63;
+    box-shadow: 0 8px 20px rgb(15 23 42 / 18%);
+    cursor: pointer;
+    transition: background-color 160ms ease, opacity 160ms ease, transform 160ms ease;
+}
+
+.property-carousel-arrow:hover:not(:disabled) { background: #0F382C; }
+.property-carousel-arrow:active:not(:disabled) { transform: translateY(-50%) scale(0.96); }
+.property-carousel-arrow:disabled { opacity: 0.42; cursor: default; }
+.property-carousel-arrow[hidden] { display: none; }
+.property-carousel-prev { left: calc((100vw - 100%) / -2 + 1rem); }
+.property-carousel-next { right: calc((100vw - 100%) / -2 + 1rem); }
+
+@media (min-width: 640px) {
+    .property-card { flex-basis: calc((100% - 2rem) / 2); }
+    .property-carousel-arrow { width: 2.75rem; height: 2.75rem; }
+    .property-carousel-prev { left: calc((100vw - 100%) / -2 + 1rem); }
+    .property-carousel-next { right: calc((100vw - 100%) / -2 + 1rem); }
+}
+
+@media (min-width: 1024px) {
+    .property-card { flex-basis: calc((100% - 4rem) / 3); }
+    .property-carousel.has-overflow .property-carousel-track { padding-inline: 0.125rem; }
+}
+
+@media (max-width: 639px) {
+    .property-carousel-track { gap: 1.25rem; }
+    .property-carousel-arrow { width: 2.25rem; height: 2.25rem; }
+    .property-carousel-prev { left: calc((100vw - 100%) / -2 + 0.5rem); }
+    .property-carousel-next { right: calc((100vw - 100%) / -2 + 0.5rem); }
+
+    .whatsapp-float { right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); width: 3.625rem; height: 3.625rem; font-size: 1.75rem; }
+    .whatsapp-dialog { padding: 2.5rem 1.25rem 1.5rem; }
+    .whatsapp-modal-icon { width: 3.75rem; height: 3.75rem; font-size: 1.9rem; }
 
     #properties-section,
     #legacy-section,
@@ -81,28 +265,6 @@ button {
         scroll-margin-top: 1rem;
     }
 
-    #quick-view-modal > div {
-        border-radius: 1rem;
-    }
-
-    #quick-view-modal > div > div:last-child {
-        padding: 1rem;
-    }
-
-    #modal-title {
-        font-size: 1.25rem;
-        line-height: 1.4;
-        overflow-wrap: anywhere;
-    }
-
-    #modal-price {
-        font-size: 1rem;
-        white-space: nowrap;
-    }
-
-    #modal-rera,
-    #modal-area,
-    #modal-rating,
     #detail-rera-top {
         overflow-wrap: anywhere;
         word-break: break-word;
@@ -120,10 +282,6 @@ button {
 }
 
 @media (max-width: 380px) {
-    #quick-view-modal .grid.grid-cols-3 {
-        grid-template-columns: 1fr;
-    }
-
     #details-page .grid.grid-cols-2[class~="md:grid-cols-4"] {
         gap: 0.75rem;
         padding: 1rem;

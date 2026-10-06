@@ -10,6 +10,31 @@ import { godrejData } from '../data/godrej.js';
         // CURRENT STATE
         let activeProperty = propertiesData[0];
         let currentActiveChip = 'all';
+        let carouselResizeObserver;
+
+        function updatePropertyCarousel() {
+            const track = document.getElementById('property-grid');
+            const carousel = track.closest('[data-property-carousel]');
+            const prev = carousel.querySelector('[data-carousel-prev]');
+            const next = carousel.querySelector('[data-carousel-next]');
+            const hasOverflow = track.scrollWidth > track.clientWidth + 1;
+            const atStart = track.scrollLeft <= 1;
+            const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+
+            carousel.classList.toggle('has-overflow', hasOverflow);
+            prev.hidden = !hasOverflow;
+            next.hidden = !hasOverflow;
+            prev.disabled = !hasOverflow || atStart;
+            next.disabled = !hasOverflow || atEnd;
+        }
+
+        function movePropertyCarousel(direction) {
+            const track = document.getElementById('property-grid');
+            const card = track.querySelector('.property-card');
+            if (!card) return;
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            track.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: 'smooth' });
+        }
 
         // RENDER CATALOG CARDS
         function renderPropertyGrid(items) {
@@ -17,13 +42,14 @@ import { godrejData } from '../data/godrej.js';
             grid.innerHTML = '';
 
             if (items.length === 0) {
-                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 font-medium">No residences found matching your criteria.</div>`;
+                grid.innerHTML = `<div class="property-empty-state text-center py-12 text-slate-500 font-medium">No residences found matching your criteria.</div>`;
+                updatePropertyCarousel();
                 return;
             }
 
             items.forEach(prop => {
                 const card = document.createElement('div');
-                card.className = "bg-white rounded-2xl overflow-hidden border border-godrej-sage shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group";
+                card.className = "property-card bg-white rounded-2xl overflow-hidden border border-godrej-sage shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group";
                 card.innerHTML = `
                     <div class="relative h-64 overflow-hidden">
                         <img src="${prop.images[0]}" alt="${prop.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
@@ -43,10 +69,7 @@ import { godrejData } from '../data/godrej.js';
                             <p class="text-xs text-slate-500 mb-4 flex items-center"><i class="fa-solid fa-location-dot mr-1.5 text-godrej-gold"></i> ${prop.location}</p>
                             <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-6">${prop.summary}</p>
                         </div>
-                        <div class="pt-4 border-t border-slate-100 grid grid-cols-2 gap-3">
-                            <button onclick="openQuickViewModal(${prop.id})" class="w-full bg-godrej-sage hover:bg-godrej-mint text-godrej-emerald text-xs font-bold py-2.5 rounded-xl transition-all flex items-center justify-center gap-1">
-                                <i class="fa-solid fa-eye"></i> Quick View
-                            </button>
+                        <div class="pt-4 border-t border-slate-100">
                             <button onclick="openDetailPage(${prop.id})" class="w-full bg-godrej-emerald hover:bg-godrej-darkEmerald text-white text-xs font-bold py-2.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-1">
                                 <span>Full Details</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
                             </button>
@@ -55,6 +78,7 @@ import { godrejData } from '../data/godrej.js';
                 `;
                 grid.appendChild(card);
             });
+            requestAnimationFrame(updatePropertyCarousel);
         }
 
         // FILTER FUNCTIONS
@@ -90,32 +114,6 @@ import { godrejData } from '../data/godrej.js';
             event.target.classList.remove('border-slate-300', 'text-slate-600');
 
             applyFilters();
-        }
-
-        // QUICK VIEW MODAL
-        function openQuickViewModal(id) {
-            const prop = propertiesData.find(p => p.id === id);
-            if (!prop) return;
-
-            document.getElementById('modal-img').src = prop.images[0];
-            document.getElementById('modal-title').innerText = prop.title;
-            document.getElementById('modal-location').innerHTML = `<i class="fa-solid fa-location-dot text-godrej-gold mr-1"></i> ${prop.location}`;
-            document.getElementById('modal-price').innerText = prop.price;
-            document.getElementById('modal-area').innerText = prop.area;
-            document.getElementById('modal-rera').innerText = prop.reraId.substring(0, 12) + "...";
-            document.getElementById('modal-highlight').innerText = prop.highlight;
-            document.getElementById('modal-summary').innerText = prop.summary;
-
-            document.getElementById('modal-explore-btn').onclick = function() {
-                closeQuickViewModal();
-                openDetailPage(id);
-            };
-
-            document.getElementById('quick-view-modal').classList.remove('hidden');
-        }
-
-        function closeQuickViewModal() {
-            document.getElementById('quick-view-modal').classList.add('hidden');
         }
 
         // NAVIGATION SPA SPA SWITCHING
@@ -249,6 +247,62 @@ import { godrejData } from '../data/godrej.js';
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
+        const whatsappPopup = document.getElementById('whatsapp-popup');
+        const whatsappFloat = document.getElementById('whatsapp-float');
+        const whatsappClose = document.getElementById('whatsapp-close');
+        const whatsappForm = document.getElementById('whatsapp-form');
+        const whatsappFeedback = document.getElementById('whatsapp-feedback');
+        const whatsappBusinessNumber = document.body.dataset.whatsappNumber || '';
+
+        function openWhatsAppPopup() {
+            whatsappPopup.classList.add('is-open');
+            whatsappPopup.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('whatsapp-popup-open');
+            whatsappFeedback.textContent = '';
+        }
+
+        function closeWhatsAppPopup() {
+            whatsappPopup.classList.remove('is-open');
+            whatsappPopup.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('whatsapp-popup-open');
+        }
+
+        whatsappFloat.addEventListener('click', openWhatsAppPopup);
+        whatsappClose.addEventListener('click', closeWhatsAppPopup);
+        whatsappPopup.addEventListener('click', event => {
+            if (event.target === whatsappPopup) closeWhatsAppPopup();
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && whatsappPopup.classList.contains('is-open')) closeWhatsAppPopup();
+        });
+        whatsappForm.addEventListener('submit', event => {
+            event.preventDefault();
+            const customerPhone = document.getElementById('whatsapp-phone').value.replace(/\D/g, '');
+            if (customerPhone.length < 10) {
+                whatsappFeedback.textContent = 'Enter a valid WhatsApp number to continue.';
+                return;
+            }
+            if (!whatsappBusinessNumber) {
+                whatsappFeedback.textContent = 'WhatsApp contact is not configured yet. Please contact us by phone.';
+                return;
+            }
+            const message = `Please send me the Godrej e-brochure on WhatsApp. My number is ${customerPhone}.`;
+            window.open(`https://wa.me/${whatsappBusinessNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+            closeWhatsAppPopup();
+        });
+
+        const propertyCarousel = document.querySelector('[data-property-carousel]');
+        const propertyTrack = document.getElementById('property-grid');
+        propertyCarousel.querySelector('[data-carousel-prev]').addEventListener('click', () => movePropertyCarousel(-1));
+        propertyCarousel.querySelector('[data-carousel-next]').addEventListener('click', () => movePropertyCarousel(1));
+        propertyTrack.addEventListener('scroll', updatePropertyCarousel, { passive: true });
+        if ('ResizeObserver' in window) {
+            carouselResizeObserver = new ResizeObserver(updatePropertyCarousel);
+            carouselResizeObserver.observe(propertyTrack);
+        } else {
+            window.addEventListener('resize', updatePropertyCarousel);
+        }
+
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
@@ -262,13 +316,11 @@ import { godrejData } from '../data/godrej.js';
             applyFilters,
             closeLightbox,
             closeMobileMenu,
-            closeQuickViewModal,
             filterByChip,
             handleMainFormSubmit,
             handleSidebarSubmit,
             openDetailPage,
             openLightbox,
-            openQuickViewModal,
             resetMainForm,
             scrollToConsultation,
             selectFloorPlan,
@@ -279,4 +331,10 @@ import { godrejData } from '../data/godrej.js';
         // INITIAL ONLOAD
         window.onload = function() {
             renderPropertyGrid(propertiesData);
+            let popupAlreadyShown = false;
+            try { popupAlreadyShown = localStorage.getItem('godrej-whatsapp-popup-shown') === 'true'; } catch (error) { /* Storage may be disabled. */ }
+            if (!popupAlreadyShown) {
+                try { localStorage.setItem('godrej-whatsapp-popup-shown', 'true'); } catch (error) { /* Storage may be disabled. */ }
+                window.setTimeout(openWhatsAppPopup, 900);
+            }
         };
