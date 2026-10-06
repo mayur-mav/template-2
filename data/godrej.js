@@ -8,6 +8,11 @@ export const godrejData = [
                 priceValue: 2.15,
                 price: "₹ 2.15 Cr*",
                 area: "1,450 - 2,800 Sq.Ft",
+                floorPlans: [
+                    { id: "2bhk", bhk: "2 BHK", area: "1,450 Sq. Ft.", price: "₹ 2.15 Cr Onwards", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80" },
+                    { id: "3bhk", bhk: "3 BHK", area: "2,150 Sq. Ft.", price: "₹ 2.95 Cr Onwards", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" },
+                    { id: "4bhk", bhk: "4 BHK Penthouse", area: "2,800 Sq. Ft.", price: "₹ 4.25 Cr Onwards", image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" }
+                ],
                 possession: "December 2026",
                 units: "18 Acres / 420 Units",
                 highlight: "Clubhouse Access",
@@ -43,6 +48,11 @@ export const godrejData = [
                 priceValue: 3.80,
                 price: "₹ 3.80 Cr*",
                 area: "2,200 - 3,500 Sq.Ft",
+                floorPlans: [
+                    { id: "3bhk", bhk: "3 BHK", area: "2,200 Sq. Ft.", price: "₹ 3.80 Cr Onwards", image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80" },
+                    { id: "4bhk", bhk: "4 BHK", area: "2,850 Sq. Ft.", price: "₹ 4.65 Cr Onwards", image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" },
+                    { id: "penthouse", bhk: "Sky Penthouse", area: "3,500 Sq. Ft.", price: "₹ 6.20 Cr Onwards", image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" }
+                ],
                 possession: "March 2027",
                 units: "12 Acres / 280 Units",
                 highlight: "Resort-Style Amenities",
@@ -78,6 +88,11 @@ export const godrejData = [
                 priceValue: 2.95,
                 price: "₹ 2.95 Cr*",
                 area: "1,100 - 1,950 Sq.Ft",
+                floorPlans: [
+                    { id: "2bhk", bhk: "2 BHK", area: "1,100 Sq. Ft.", price: "₹ 2.95 Cr Onwards", image: "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1200&q=80" },
+                    { id: "3bhk", bhk: "3 BHK", area: "1,550 Sq. Ft.", price: "₹ 3.75 Cr Onwards", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" },
+                    { id: "4bhk", bhk: "4 BHK", area: "1,950 Sq. Ft.", price: "₹ 4.80 Cr Onwards", image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" }
+                ],
                 possession: "Ready to Move",
                 units: "25 Acres / 600 Units",
                 highlight: "Clubhouse Access",
@@ -113,6 +128,11 @@ export const godrejData = [
                 priceValue: 4.50,
                 price: "₹ 4.50 Cr*",
                 area: "3,200 - 4,800 Sq.Ft",
+                floorPlans: [
+                    { id: "3bhk", bhk: "3 BHK Villa", area: "3,200 Sq. Ft.", price: "₹ 4.50 Cr Onwards", image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80" },
+                    { id: "4bhk", bhk: "4 BHK Villa", area: "4,000 Sq. Ft.", price: "₹ 5.60 Cr Onwards", image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" },
+                    { id: "5bhk", bhk: "5 BHK Villa", area: "4,800 Sq. Ft.", price: "₹ 6.75 Cr Onwards", image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" }
+                ],
                 possession: "June 2027",
                 units: "40 Acres / 95 Villas",
                 highlight: "Private Garden",

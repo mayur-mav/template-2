@@ -246,6 +246,7 @@ import { godrejData } from '../data/godrej.js';
             document.getElementById('detail-description').innerText = prop.description;
             document.getElementById('detail-rera-top').innerText = "RERA ID: " + prop.reraId;
             renderPropertyFeatures(prop);
+            renderPropertyFloorPlans(prop);
 
             // Load 3 Gallery Images
             document.getElementById('detail-img-0').src = prop.images[0];
@@ -266,30 +267,56 @@ import { godrejData } from '../data/godrej.js';
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // FLOOR PLAN SWITCHER
-        function selectFloorPlan(planType) {
-            document.querySelectorAll('.plan-tab-btn').forEach(btn => {
-                btn.classList.remove('bg-godrej-emerald', 'text-white');
-                btn.classList.add('text-slate-600');
+        function renderPropertyFloorPlans(property) {
+            const tabs = document.getElementById('floor-plan-tabs');
+            const plans = Array.isArray(property.floorPlans) ? property.floorPlans : [];
+            tabs.replaceChildren();
+            tabs.hidden = plans.length === 0;
+            tabs.dataset.layout = 'scroll';
+
+            if (!plans.length) {
+                document.getElementById('plan-area').innerText = 'Contact us for available configurations';
+                document.getElementById('plan-price').innerText = property.price || 'Contact us for pricing';
+                document.getElementById('floor-plan-img').removeAttribute('src');
+                return;
+            }
+
+            plans.forEach((plan, index) => {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.id = `plan-btn-${plan.id}`;
+                button.className = 'plan-tab-btn shrink-0 px-3 sm:px-4 py-2 rounded-lg transition-all';
+                button.setAttribute('role', 'tab');
+                button.setAttribute('aria-selected', String(index === 0));
+                button.textContent = plan.bhk;
+                button.addEventListener('click', () => selectFloorPlan(plan.id));
+                tabs.appendChild(button);
             });
 
-            const activeBtn = document.getElementById(`plan-btn-${planType}`);
-            activeBtn.classList.add('bg-godrej-emerald', 'text-white');
-            activeBtn.classList.remove('text-slate-600');
+            selectFloorPlan(plans[0].id);
+        }
 
-            const areaElem = document.getElementById('plan-area');
-            const priceElem = document.getElementById('plan-price');
+        function selectFloorPlan(planId) {
+            const plan = activeProperty?.floorPlans?.find(item => item.id === planId);
+            if (!plan) return;
 
-            if (planType === '2bhk') {
-                areaElem.innerText = "1,450 Sq. Ft.";
-                priceElem.innerText = activeProperty.price;
-            } else if (planType === '3bhk') {
-                areaElem.innerText = "2,150 Sq. Ft.";
-                priceElem.innerText = "₹ 2.95 Cr Onwards";
-            } else if (planType === '4bhk') {
-                areaElem.innerText = "3,400 Sq. Ft.";
-                priceElem.innerText = "₹ 4.25 Cr Onwards";
-            }
+            document.querySelectorAll('#floor-plan-tabs .plan-tab-btn').forEach(button => {
+                const isActive = button.id === `plan-btn-${planId}`;
+                button.classList.toggle('bg-godrej-emerald', isActive);
+                button.classList.toggle('text-white', isActive);
+                button.classList.toggle('text-slate-600', !isActive);
+                button.setAttribute('aria-selected', String(isActive));
+                if (isActive && document.getElementById('floor-plan-tabs').dataset.layout === 'scroll') {
+                    button.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+                }
+            });
+
+            document.getElementById('plan-area').innerText = plan.area;
+            document.getElementById('plan-price').innerText = plan.price;
+            const image = document.getElementById('floor-plan-img');
+            if (plan.image) image.src = plan.image;
+            else image.removeAttribute('src');
+            image.alt = `${activeProperty.title} ${plan.bhk} configuration`;
         }
 
         // LIGHTBOX MODAL

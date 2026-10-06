@@ -476,17 +476,13 @@
                                 <p class="text-xs text-slate-500">Compare available home configurations and floor areas</p>
                             </div>
                             <!-- Plan Tabs -->
-                            <div class="flex bg-godrej-offwhite p-1 rounded-xl border border-slate-200 text-xs font-semibold">
-                                <button onclick="selectFloorPlan('2bhk')" id="plan-btn-2bhk" class="plan-tab-btn px-4 py-2 rounded-lg bg-godrej-emerald text-white transition-all">2 BHK</button>
-                                <button onclick="selectFloorPlan('3bhk')" id="plan-btn-3bhk" class="plan-tab-btn px-4 py-2 rounded-lg text-slate-600 hover:text-godrej-emerald transition-all">3 BHK</button>
-                                <button onclick="selectFloorPlan('4bhk')" id="plan-btn-4bhk" class="plan-tab-btn px-4 py-2 rounded-lg text-slate-600 hover:text-godrej-emerald transition-all">4 BHK Penthouse</button>
-                            </div>
+                            <div id="floor-plan-tabs" class="flex flex-nowrap bg-godrej-offwhite p-1 rounded-xl border border-slate-200 text-xs font-semibold" role="tablist" aria-label="Floor plan configurations"></div>
                         </div>
 
                         <!-- Floor Plan Content -->
                         <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                            <div class="md:col-span-6 bg-godrej-offwhite p-4 rounded-xl border border-slate-200 flex items-center justify-center">
-                                <img id="floor-plan-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Floor Plan Blueprint" class="max-h-64 object-contain rounded-lg">
+                            <div class="md:col-span-6 min-w-0 bg-godrej-offwhite p-4 rounded-xl border border-slate-200 flex items-center justify-center">
+                                <img id="floor-plan-img" src="" alt="Selected project configuration" class="w-full max-w-full max-h-64 object-contain rounded-lg">
                             </div>
                             <div class="md:col-span-6 space-y-4">
                                 <div class="bg-godrej-sage/50 p-4 rounded-xl">
