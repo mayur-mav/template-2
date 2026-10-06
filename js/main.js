@@ -171,7 +171,7 @@ import { godrejData } from '../data/godrej.js';
                             <div class="text-xs font-bold text-godrej-gold uppercase tracking-wider mb-1">${prop.price}</div>
                             <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-2 group-hover:text-godrej-gold transition-colors">${prop.title}</h3>
                             <p class="text-xs text-slate-500 mb-4 flex items-center"><i class="fa-solid fa-location-dot mr-1.5 text-godrej-gold"></i> ${prop.location}</p>
-                            <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-6">${prop.summary}</p>
+                            <p class="text-sm text-slate-600 leading-6 mb-6">${prop.summary}</p>
                         </div>
                         <div class="pt-4 border-t border-slate-100">
                             <button onclick="openDetailPage(${prop.id})" class="w-full bg-godrej-emerald hover:bg-godrej-darkEmerald text-white text-xs font-bold py-2.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-1">
@@ -345,6 +345,7 @@ import { godrejData } from '../data/godrej.js';
                 document.getElementById('plan-area').innerText = 'Contact us for available configurations';
                 document.getElementById('plan-price').innerText = property.price || 'Contact us for pricing';
                 document.getElementById('floor-plan-img').removeAttribute('src');
+                document.getElementById('floor-plan-image-panel').hidden = true;
                 return;
             }
 
@@ -369,8 +370,8 @@ import { godrejData } from '../data/godrej.js';
 
             document.querySelectorAll('#floor-plan-tabs .plan-tab-btn').forEach(button => {
                 const isActive = button.id === `plan-btn-${planId}`;
-                button.classList.toggle('bg-godrej-emerald', isActive);
-                button.classList.toggle('text-white', isActive);
+                button.classList.toggle('bg-godrej-gold', isActive);
+                button.classList.toggle('text-godrej-emerald', isActive);
                 button.classList.toggle('text-slate-600', !isActive);
                 button.setAttribute('aria-selected', String(isActive));
                 if (isActive && document.getElementById('floor-plan-tabs').dataset.layout === 'scroll') {
@@ -380,6 +381,8 @@ import { godrejData } from '../data/godrej.js';
 
             document.getElementById('plan-area').innerText = plan.area;
             document.getElementById('plan-price').innerText = plan.price;
+            document.getElementById('floor-plan-area-card').hidden = !plan.area;
+            document.getElementById('floor-plan-price-card').hidden = !plan.price;
             const configurationSelect = document.getElementById('sidebar-bhk-select');
             configurationSelect.value = plan.id;
             const configurationWrapper = configurationSelect.closest('[data-custom-select]');
@@ -388,8 +391,16 @@ import { godrejData } from '../data/godrej.js';
                 option.setAttribute('aria-selected', String(option.dataset.value === plan.id));
             });
             const image = document.getElementById('floor-plan-img');
-            if (plan.image) image.src = plan.image;
-            else image.removeAttribute('src');
+            const imagePanel = document.getElementById('floor-plan-image-panel');
+            if (plan.image) {
+                image.src = plan.image;
+                imagePanel.hidden = false;
+                image.onerror = () => { imagePanel.hidden = true; };
+            } else {
+                image.removeAttribute('src');
+                imagePanel.hidden = true;
+                image.onerror = null;
+            }
             image.alt = `${activeProperty.title} ${plan.bhk} configuration`;
         }
 
@@ -402,21 +413,6 @@ import { godrejData } from '../data/godrej.js';
 
         function closeLightbox() {
             document.getElementById('lightbox-modal').classList.add('hidden');
-        }
-
-        // BRAND LEGACY TAB SWITCHING
-        function switchTab(tabKey) {
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('border-godrej-emerald', 'text-godrej-emerald', 'font-bold');
-                btn.classList.add('border-transparent', 'text-slate-500');
-            });
-            document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.add('hidden'));
-
-            const selectedBtn = document.getElementById(`tab-btn-${tabKey}`);
-            selectedBtn.classList.add('border-godrej-emerald', 'text-godrej-emerald', 'font-bold');
-            selectedBtn.classList.remove('border-transparent', 'text-slate-500');
-
-            document.getElementById(`tab-content-${tabKey}`).classList.remove('hidden');
         }
 
         // FAQ ACCORDION
@@ -477,6 +473,23 @@ import { godrejData } from '../data/godrej.js';
             mobileMenuButton.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
             mobileMenuButton.innerHTML = '<i class="fa-solid fa-bars text-xl" aria-hidden="true"></i>';
         });
+
+        const navigationItems = document.querySelectorAll('.site-nav a, .mobile-menu-link');
+        function setActiveNavigation(href) {
+            let hasMatch = false;
+            navigationItems.forEach(item => {
+                const isActive = item.getAttribute('href') === href;
+                if (isActive) item.setAttribute('aria-current', 'page');
+                else item.removeAttribute('aria-current');
+                if (isActive) hasMatch = true;
+            });
+            if (!hasMatch && href !== '#catalog-page') setActiveNavigation('#catalog-page');
+        }
+
+        navigationItems.forEach(item => {
+            item.addEventListener('click', () => setActiveNavigation(item.getAttribute('href')));
+        });
+        setActiveNavigation(window.location.hash || '#catalog-page');
 
         document.addEventListener('keydown', event => {
             if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) closeMobileMenu();
@@ -577,7 +590,6 @@ import { godrejData } from '../data/godrej.js';
             scrollToConsultation,
             selectFloorPlan,
             showCatalogPage,
-            switchTab,
             toggleFaq
         });
         // INITIAL ONLOAD

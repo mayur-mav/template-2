@@ -1,162 +1,280 @@
 export const godrejData = [
+    {
+        "id": 1,
+        "title": "Godrej Aravya Estate",
+        "location": "Chokkanahalli Village, Thubagere Hobli, Doddaballapura, Bangalore, Karnataka 561203",
+        "category": "new-launch",
+        "type": "plot",
+        "priceValue": 0.58,
+        "price": "₹ 58 Lakhs*",
+        "area": "1,200 - 2,400 Sq.Ft",
+        "floorPlans": [
             {
-                id: 1,
-                title: "Godrej Horizon Residences",
-                location: "Bannerghatta Main Road, Bangalore",
-                category: "new-launch",
-                type: "apartment",
-                priceValue: 2.15,
-                price: "₹ 2.15 Cr*",
-                area: "1,450 - 2,800 Sq.Ft",
-                floorPlans: [
-                    { id: "2bhk", bhk: "2 BHK", area: "1,450 Sq. Ft.", price: "₹ 2.15 Cr Onwards", image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80" },
-                    { id: "3bhk", bhk: "3 BHK", area: "2,150 Sq. Ft.", price: "₹ 2.95 Cr Onwards", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" },
-                    { id: "4bhk", bhk: "4 BHK Penthouse", area: "2,800 Sq. Ft.", price: "₹ 4.25 Cr Onwards", image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" }
-                ],
-                possession: "December 2026",
-                units: "18 Acres / 420 Units",
-                highlight: "Clubhouse Access",
-                reraId: "PRM/KA/RERA/1251/310/PR/210302",
-                summary: "A contemporary residence featuring spacious homes, landscaped courtyards, and a range of community amenities.",
-                description: "Godrej Horizon Residences offers contemporary homes in South Bangalore, with considered layouts, premium finishes, and convenient access to key destinations.",
-                amenities: [
-                    { name: "Clubhouse & Community Spaces", icon: "fa-building" },
-                    { name: "Landscaped Gardens", icon: "fa-leaf" },
-                    { name: "EV Charging Hub", icon: "fa-charging-station" },
-                    { name: "Swimming Pool", icon: "fa-water-ladder" },
-                    { name: "Sky Observatory", icon: "fa-cloud-sun" },
-                    { name: "Fitness Center", icon: "fa-dumbbell" }
-                ],
-                connectivity: [
-                    { name: "Major IT Hubs & Tech Parks", distance: "10 Mins", icon: "fa-laptop-code" },
-                    { name: "NICE Ring Expressway", distance: "05 Mins", icon: "fa-road" },
-                    { name: "International Airport", distance: "45 Mins", icon: "fa-plane-departure" },
-                    { name: "Top International Schools", distance: "12 Mins", icon: "fa-graduation-cap" }
-                ],
-                images: [
-                    "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
-                ]
+                "id": "30x40",
+                "bhk": "30x40 Plot",
+                "area": "1,200 Sq. Ft.",
+                "price": "₹ 58 Lakhs Onwards",
+                "image": ""
             },
             {
-                id: 2,
-                title: "Godrej Tropical Isle",
-                location: "Sector 146, Noida Expressway",
-                category: "ongoing",
-                type: "penthouse",
-                priceValue: 3.80,
-                price: "₹ 3.80 Cr*",
-                area: "2,200 - 3,500 Sq.Ft",
-                floorPlans: [
-                    { id: "3bhk", bhk: "3 BHK", area: "2,200 Sq. Ft.", price: "₹ 3.80 Cr Onwards", image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80" },
-                    { id: "4bhk", bhk: "4 BHK", area: "2,850 Sq. Ft.", price: "₹ 4.65 Cr Onwards", image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" },
-                    { id: "penthouse", bhk: "Sky Penthouse", area: "3,500 Sq. Ft.", price: "₹ 6.20 Cr Onwards", image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" }
-                ],
-                possession: "March 2027",
-                units: "12 Acres / 280 Units",
-                highlight: "Resort-Style Amenities",
-                reraId: "UPRERAPRJ304519",
-                summary: "Island-themed ultra-luxury residences with bio-filtered natural swimming pools and private island sky lounges.",
-                description: "Godrej Tropical Isle offers spacious residences along the Noida Expressway, with resort-style amenities, landscaped grounds, and elegant sky penthouses.",
-                amenities: [
-                    { name: "Island-Themed Landscapes", icon: "fa-tree" },
-                    { name: "Natural Swimming Pools", icon: "fa-water-ladder" },
-                    { name: "Sky Lounge", icon: "fa-cloud-sun" },
-                    { name: "Fitness Center", icon: "fa-dumbbell" },
-                    { name: "Clubhouse", icon: "fa-building" },
-                    { name: "Children's Play Area", icon: "fa-child-reaching" }
-                ],
-                connectivity: [
-                    { name: "Noida-Greater Noida Expressway", distance: "Nearby", icon: "fa-road" },
-                    { name: "Sector 146 Metro Station", distance: "Nearby", icon: "fa-train-subway" },
-                    { name: "Sector 18, Noida", distance: "Nearby", icon: "fa-city" },
-                    { name: "Noida International Airport", distance: "Upcoming", icon: "fa-plane-departure" }
-                ],
-                images: [
-                    "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
-                ]
+                "id": "30x50",
+                "bhk": "30x50 Plot",
+                "area": "1,500 Sq. Ft.",
+                "price": "₹ 72 Lakhs Onwards",
+                "image": ""
             },
             {
-                id: 3,
-                title: "Godrej Reserve Sanctuary",
-                location: "Kandivali East, Mumbai",
-                category: "ready",
-                type: "apartment",
-                priceValue: 2.95,
-                price: "₹ 2.95 Cr*",
-                area: "1,100 - 1,950 Sq.Ft",
-                floorPlans: [
-                    { id: "2bhk", bhk: "2 BHK", area: "1,100 Sq. Ft.", price: "₹ 2.95 Cr Onwards", image: "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1200&q=80" },
-                    { id: "3bhk", bhk: "3 BHK", area: "1,550 Sq. Ft.", price: "₹ 3.75 Cr Onwards", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" },
-                    { id: "4bhk", bhk: "4 BHK", area: "1,950 Sq. Ft.", price: "₹ 4.80 Cr Onwards", image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" }
-                ],
-                possession: "Ready to Move",
-                units: "25 Acres / 600 Units",
-                highlight: "Clubhouse Access",
-                reraId: "P51800022104",
-                summary: "Ready-to-move homes with spacious layouts and convenient access to everyday essentials.",
-                description: "Godrej Reserve Residences offers ready-to-move apartments with modern amenities and convenient access to key destinations in Mumbai.",
-                amenities: [
-                    { name: "Clubhouse", icon: "fa-building" },
-                    { name: "Landscaped Gardens", icon: "fa-leaf" },
-                    { name: "Swimming Pool", icon: "fa-water-ladder" },
-                    { name: "Fitness Center", icon: "fa-dumbbell" },
-                    { name: "Children's Play Area", icon: "fa-child-reaching" },
-                    { name: "Indoor Games Room", icon: "fa-table-tennis-paddle-ball" }
-                ],
-                connectivity: [
-                    { name: "Kandivali Railway Station", distance: "Nearby", icon: "fa-train-subway" },
-                    { name: "Western Express Highway", distance: "Nearby", icon: "fa-road" },
-                    { name: "International Airport", distance: "Nearby", icon: "fa-plane-departure" },
-                    { name: "Schools & Hospitals", distance: "Nearby", icon: "fa-school" }
-                ],
-                images: [
-                    "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80"
-                ]
-            },
-            {
-                id: 4,
-                title: "Godrej Woodsville Villa Estate",
-                location: "Hinjewadi, Pune",
-                category: "new-launch",
-                type: "villa",
-                priceValue: 4.50,
-                price: "₹ 4.50 Cr*",
-                area: "3,200 - 4,800 Sq.Ft",
-                floorPlans: [
-                    { id: "3bhk", bhk: "3 BHK Villa", area: "3,200 Sq. Ft.", price: "₹ 4.50 Cr Onwards", image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80" },
-                    { id: "4bhk", bhk: "4 BHK Villa", area: "4,000 Sq. Ft.", price: "₹ 5.60 Cr Onwards", image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" },
-                    { id: "5bhk", bhk: "5 BHK Villa", area: "4,800 Sq. Ft.", price: "₹ 6.75 Cr Onwards", image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" }
-                ],
-                possession: "June 2027",
-                units: "40 Acres / 95 Villas",
-                highlight: "Private Garden",
-                reraId: "P52100034821",
-                summary: "Exclusive villas featuring spacious layouts, private outdoor areas, and premium community amenities.",
-                description: "An exclusive villa community featuring considered architecture, private outdoor spaces, and convenient access to Pune?s business and lifestyle destinations.",
-                amenities: [
-                    { name: "Private Gardens", icon: "fa-leaf" },
-                    { name: "Clubhouse", icon: "fa-building" },
-                    { name: "Swimming Pool", icon: "fa-water-ladder" },
-                    { name: "Fitness Center", icon: "fa-dumbbell" },
-                    { name: "Children's Play Area", icon: "fa-child-reaching" },
-                    { name: "Walking Trails", icon: "fa-person-walking" }
-                ],
-                connectivity: [
-                    { name: "Hinjewadi IT Park", distance: "Nearby", icon: "fa-laptop-code" },
-                    { name: "Mumbai-Pune Highway", distance: "Nearby", icon: "fa-road" },
-                    { name: "Pune Railway Station", distance: "Nearby", icon: "fa-train-subway" },
-                    { name: "Pune International Airport", distance: "Nearby", icon: "fa-plane-departure" }
-                ],
-                images: [
-                    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
-                ]
+                "id": "60x40",
+                "bhk": "60x40 Plot",
+                "area": "2,400 Sq. Ft.",
+                "price": "₹ 1.15 Cr Onwards",
+                "image": ""
             }
-        ];
+        ],
+        "possession": "31 Oct 2030",
+        "units": "48 Acres / 669 Units",
+        "highlight": "80% Open Space",
+        "reraId": "PRM/KA/RERA/1250/301/PR/171025/008180",
+        "summary": "A premium plotted development spread across 48 acres featuring 80% open space, modern amenities, and convenient connectivity in North Bengaluru.",
+        "description": " Godrej Aravya Estate by Godrej Properties is a premium plotted development spread across 48 acres in Chokkahanalli, Doddaballapura, North Bengaluru, offering 669 plots with approximately 80% open space. The project features 30×40, 30×50, and 60×40 plot configurations, with prices starting from ₹58 lakhs. It is RERA registered (PRM/KA/RERA/1250/301/PR/171025/008180), with possession scheduled for 31 October 2030. The development offers 45+ amenities and benefits from connectivity to Oddarahalli Railway Station, Kempegowda International Airport, nearby schools, and essential facilities, making it a promising plotted development for residential investment in North Bengaluru",
+        "amenities": [
+            { "name": "Swimming Pool", "icon": "fa-water-ladder" },
+            { "name": "Gymnasium", "icon": "fa-dumbbell" },
+            { "name": "Tennis Court", "icon": "fa-table-tennis-paddle-ball" },
+            { "name": "Jogging Track", "icon": "fa-person-running" },
+            { "name": "Kids Activity Zone", "icon": "fa-child" },
+            { "name": "Indoor Games Room & Mini Theater", "icon": "fa-gamepad" }
+        ],
+        "connectivity": [
+            { "name": "Ant International Academy", "distance": "800 m", "icon": "fa-graduation-cap" },
+            { "name": "Green Valley Resort & Dodda Halla View Point", "distance": "1.4 km", "icon": "fa-tree" },
+            { "name": "Makali Farms", "distance": "2.2 km", "icon": "fa-seedling" },
+            { "name": "Governament Higher Primary School (Hosahalli Thanda)", "distance": "4.2 km", "icon": "fa-school" },
+            { "name": "IndianOil Fuel Station (Gundamgere Cross)", "distance": "4.7 km", "icon": "fa-gas-pump" },
+            { "name": "Morarji Desai Residential School and PU College", "distance": "5.0 km", "icon": "fa-building-columns" },
+            { "name": "Gundamagere Lake", "distance": "5.3 km", "icon": "fa-water" },
+            { "name": "Sri Maruthi Fruits and Vegetable Shop", "distance": "7.5 km", "icon": "fa-store" }
+        ],
+        "images": []
+    },
+    {
+        "id": 2,
+        "title": "Godrej Athena",
+        "location": "Near Indiranagar - HAL, Bengaluru, Karnataka 560075",
+        "category": "new-launch",
+        "type": "apartment",
+        "priceValue": 2.79,
+        "price": "₹ 2.79 Cr*",
+        "area": "",
+        "floorPlans": [
+            {
+                "id": "3bhk",
+                "bhk": "3 BHK",
+                "area": "",
+                "price": "₹ 2.79 Cr Onwards",
+                "image": ""
+            }
+        ],
+        "possession": "January 2028",
+        "units": "",
+        "highlight": "Greco-Roman Architecture",
+        "reraId": "PRM/KA/RERA/1251/446/PR/090123/005605",
+        "summary": "A premium residential project featuring Greco-Roman-inspired architecture, spacious 3 BHK residences, and 34 luxury lifestyle amenities near Indiranagar.",
+        "description": "Godrej Athena by Godrej Properties offers luxury 3 BHK apartments near Indiranagar-HAL, Bengaluru. Inspired by classical Greco-Roman architecture with grand facades, it features 34 lifestyle amenities including a temperature-controlled pool, clubhouse, and multi-sport courts, providing seamless connectivity to East Bengaluru's business and commercial hubs.",
+        "amenities": [
+            { "name": "Temperature-Controlled Swimming Pool", "icon": "fa-water-ladder" },
+            { "name": "Clubhouse", "icon": "fa-building" },
+            { "name": "Jogging Track", "icon": "fa-person-running" },
+            { "name": "Multipurpose Court & Tennis Court", "icon": "fa-table-tennis-paddle-ball" },
+            { "name": "Yoga Deck & Callisthenics Court", "icon": "fa-spa" },
+            { "name": "Kids Play Area & Skateboard Park", "icon": "fa-child" },
+            { "name": "Pet Park", "icon": "fa-dog" },
+            { "name": "Amphitheatre & Private Party Deck", "icon": "fa-masks-theater" },
+            { "name": "Community Garden & Pergolas", "icon": "fa-leaf" }
+        ],
+        "connectivity": [
+            { "name": "Orchids The International School", "distance": "190 m", "icon": "fa-school" },
+            { "name": "BEML Hospital", "distance": "550 m", "icon": "fa-hospital" },
+            { "name": "Shishya BEML Public School", "distance": "1.0 km", "icon": "fa-graduation-cap" },
+            { "name": "HAL Public School", "distance": "2.0 km", "icon": "fa-school" }
+        ],
+        "images": []
+    },
+    {
+        "id": 3,
+        "title": "Godrej Lakeside Orchard",
+        "location": "Chikkakannalli, Off Sarjapur Road, Bengaluru, Karnataka 560035",
+        "category": "new-launch",
+        "type": "apartment",
+        "priceValue": 2.37,
+        "price": "₹ 2.37 Cr*",
+        "area": "",
+        "floorPlans": [
+            {
+                "id": "3bhk",
+                "bhk": "3 BHK",
+                "area": "",
+                "price": "₹ 2.37 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "3.5bhk",
+                "bhk": "3.5 BHK",
+                "area": "",
+                "price": "₹ 2.55 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "4bhk",
+                "bhk": "4+ BHK",
+                "area": "",
+                "price": "₹ 3.10 Cr Onwards",
+                "image": ""
+            }
+        ],
+        "possession": "September 2030",
+        "units": "",
+        "highlight": "Lakeside Setting & Butterfly Garden",
+        "reraId": "PRM/KA/RERA/1251/446/PR/300924/007105",
+        "summary": "A nature-focused residential project on Sarjapur Road featuring 3, 3.5, and 4+ BHK apartments with over 30 lifestyle amenities.",
+        "description": "Godrej Lakeside Orchard by Godrej Properties offers luxury 3, 3.5, and 4+ BHK residences off Sarjapur Road, Chikkakannalli, Bengaluru. Designed around a nature-focused retreat concept, the project features landscaped greens, a club pool, an amphitheatre, and a butterfly garden, providing seamless connectivity to major Sarjapur-ORR tech hubs.",
+        "amenities": [
+            { "name": "Club Pool", "icon": "fa-water-ladder" },
+            { "name": "Fully Equipped Gym", "icon": "fa-dumbbell" },
+            { "name": "Skating Rink", "icon": "fa-person-skating" },
+            { "name": "Kids Play Area", "icon": "fa-child" },
+            { "name": "Butterfly Garden", "icon": "fa-leaf" },
+            { "name": "Amphitheatre", "icon": "fa-masks-theater" },
+            { "name": "Mini Movie Theater", "icon": "fa-film" }
+        ],
+        "connectivity": [
+            { "name": "Carmelaram Railway Station", "distance": "800 m", "icon": "fa-train" },
+            { "name": "CMR Gandhi Public School", "distance": "1.5 km", "icon": "fa-school" },
+            { "name": "Halanayakanahalli Lake", "distance": "1.7 km", "icon": "fa-water" },
+            { "name": "Radhareddy Layout Bus Stop", "distance": "2.5 km", "icon": "fa-bus" },
+            { "name": "Delhi Public School, Panathur", "distance": "2.4 km", "icon": "fa-school" },
+            { "name": "Trends Carmelaram", "distance": "1.4 km", "icon": "fa-store" }
+        ],
+        "images": []
+    },
+    {
+        "id": 4,
+        "title": "Godrej Regent Park",
+        "location": "Kada Agrahara, Sarjapur, Bengaluru, Karnataka 562125",
+        "category": "new-launch",
+        "type": "apartment",
+        "priceValue": 1.57,
+        "price": "₹ 1.57 Cr*",
+        "area": "759.51 - 1,867.79 Sq.Ft",
+        "floorPlans": [
+            {
+                "id": "2bhk-luke-759",
+                "bhk": "2 BHK Luke",
+                "area": "759.51 Sq. Ft.",
+                "price": "₹ 1.57 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "2bhk-luke-777",
+                "bhk": "2 BHK Luke",
+                "area": "777.59 Sq. Ft.",
+                "price": "₹ 1.57 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "3bhk-premium",
+                "bhk": "3 BHK Premium",
+                "area": "1002.13 Sq. Ft.",
+                "price": "₹ 1.57 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "3bhk-luke",
+                "bhk": "3 BHK Luke",
+                "area": "1119.35 Sq. Ft.",
+                "price": "₹ 1.57 Cr Onwards",
+                "image": ""
+            }
+        ],
+        "possession": "July 2031",
+        "units": "",
+        "highlight": "35+ Amenities & Gated Security",
+        "reraId": "PRM/KA/RERA/1251/308/PR/150726/008810",
+        "summary": "A premium residential project offering modern 2 and 3 BHK apartments along the thriving Sarjapur Road corridor in East Bengaluru.",
+        "description": "Godrej Regent Park by Godrej Properties is located at Kada Agrahara, Sarjapur Road, Bengaluru. Featuring thoughtful architecture, over 35+ lifestyle and wellness amenities, and close proximity to major tech hubs like Wipro SEZ and RGA Tech Park, it offers contemporary urban living in a secure gated community.",
+        "amenities": [
+            { "name": "Swimming Pool", "icon": "fa-water-ladder" },
+            { "name": "Fully Equipped Gymnasium", "icon": "fa-dumbbell" },
+            { "name": "Skating Rink", "icon": "fa-person-skating" },
+            { "name": "Golf Putting & Box Cricket", "icon": "fa-golf-ball-tee" },
+            { "name": "Kids Play Area", "icon": "fa-child" },
+            { "name": "Steam & Sauna", "icon": "fa-spa" },
+            { "name": "Yoga Deck", "icon": "fa-person-dots-from-line" },
+            { "name": "Indoor Games Room & Residents Lounge", "icon": "fa-gamepad" },
+            { "name": "BBQ Area", "icon": "fa-fire" }
+        ],
+        "connectivity": [
+            { "name": "Health care Pharma", "distance": "700 m", "icon": "fa-hospital" },
+            { "name": "Little Elly Preschool", "distance": "1.1 km", "icon": "fa-school" },
+            { "name": "Amruth Park Land", "distance": "2.3 km", "icon": "fa-tree" },
+            { "name": "Dommasandra Market", "distance": "2.4 km", "icon": "fa-store" },
+            { "name": "Head Start Educational Academy", "distance": "2.3 km", "icon": "fa-graduation-cap" }
+        ],
+        "images": []
+    },
+    {
+        "id": 5,
+        "title": "Godrej Woodscapes Phase 2",
+        "location": "Nimbekaipura, Konadasapura Village, Budigere Cross, Bengaluru, Karnataka 560049",
+        "category": "new-launch",
+        "type": "apartment",
+        "priceValue": 4.1,
+        "price": "₹ 4.1 Cr*",
+        "area": "",
+        "floorPlans": [
+            {
+                "id": "4bhk",
+                "bhk": "4 BHK",
+                "area": "",
+                "price": "₹ 4.1 Cr Onwards",
+                "image": ""
+            }
+        ],
+        "possession": "June 2030",
+        "units": "",
+        "highlight": "Emerald Skywalk & 36+ Nature-Inspired Amenities",
+        "reraId": "PRM/KA/RERA/1251/446/PR/170524/006882",
+        "summary": "A high-rise residential project featuring spacious 4 BHK apartments with nature-inspired lifestyle amenities at Budigere Cross, East Bengaluru.",
+        "description": "Godrej Woodscapes Phase 2 by Godrej Properties Limited offers premium 4 BHK apartments located at Konadasapura Village, near Budigere Cross, Bengaluru. The high-rise township combines contemporary architectural design with over 36 nature-focused lifestyle amenities including an Emerald Skywalk, health trail, temperature-controlled pool, and lavish clubhouse, offering seamless connectivity to Whitefield, ITPL, and Old Madras Road.",
+        "amenities": [
+            { "name": "Temperature Controlled Pool", "icon": "fa-water-ladder" },
+            { "name": "Gym", "icon": "fa-dumbbell" },
+            { "name": "Tennis Court", "icon": "fa-table-tennis-paddle-ball" },
+            { "name": "Futsal Court", "icon": "fa-futbol" },
+            { "name": "Health Trail & Outdoor Gym", "icon": "fa-person-running" },
+            { "name": "Emerald Skywalk", "icon": "fa-person-walking" },
+            { "name": "Lavish Clubhouse & Health Café", "icon": "fa-building" },
+            { "name": "Water Play Court & Skate Park", "icon": "fa-child" },
+            { "name": "Party Lawn & Barbeque Deck", "icon": "fa-fire" }
+        ],
+        "connectivity": [
+            { "name": "Dr1 Gene Clinic", "distance": "140 m", "icon": "fa-hospital" },
+            { "name": "SLNS GARUDA COMPLEX", "distance": "140 m", "icon": "fa-bag-shopping" },
+            { "name": "OM CITY", "distance": "230 m", "icon": "fa-store" },
+            { "name": "Prerana International School", "distance": "550 m", "icon": "fa-school" },
+            { "name": "The Royal Orchid International Pre School", "distance": "550 m", "icon": "fa-school" },
+            { "name": "Kidzee - Budigere Cross", "distance": "550 m", "icon": "fa-school" },
+            { "name": "Innovex Barcode Solutions", "distance": "550 m", "icon": "fa-laptop-code" },
+            { "name": "STEMx India", "distance": "600 m", "icon": "fa-laptop-code" },
+            { "name": "Rainbow Innovative Academy & PU College", "distance": "600 m", "icon": "fa-graduation-cap" },
+            { "name": "Little Elly Preschool (Katamnallur)", "distance": "700 m", "icon": "fa-school" },
+            { "name": "Snowman Logistics Limited", "distance": "800 m", "icon": "fa-building-ngo" },
+            { "name": "Budigere Cross Bus Stop", "distance": "1.1 km", "icon": "fa-bus" },
+            { "name": "Nimbekaipura Lake", "distance": "1.3 km", "icon": "fa-water" },
+            { "name": "Xnomous Systems Pvt Ltd", "distance": "1.3 km", "icon": "fa-laptop-code" },
+            { "name": "Shell Petrol Station", "distance": "1.4 km", "icon": "fa-gas-pump" }
+        ],
+        "images": []
+    }
+
+];

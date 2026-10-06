@@ -120,8 +120,8 @@
                                 <select id="type-select" class="custom-select-native" aria-hidden="true" tabindex="-1">
                                     <option value="all">All Types</option>
                                     <option value="apartment">Apartments</option>
+                                    <option value="plot">Plots</option>
                                     <option value="villa">Villas</option>
-                                    <option value="penthouse">Sky Penthouses</option>
                                 </select>
                                 <button class="custom-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
                                     <span>All Types</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
@@ -191,56 +191,27 @@
         <!-- GODREJ BRAND SHOWCASE -->
         <section id="legacy-section" class="bg-white py-20 border-y border-godrej-sage">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-xs font-bold uppercase tracking-widest text-godrej-gold block mb-2">127 Years of Trust & Innovation</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-godrej-emerald">The Godrej Legacy & Design</h2>
-                    <p class="text-slate-600 mt-4 text-sm sm:text-base">Discover a legacy of thoughtful design, quality craftsmanship, and homes made for modern living.</p>
-                </div>
-                <div class="flex justify-center border-b border-slate-200 mb-10 overflow-x-auto">
-                    <div class="flex space-x-8 px-2">
-                        <button onclick="switchTab('design')" id="tab-btn-design" class="tab-btn border-b-2 border-godrej-emerald text-godrej-emerald font-bold pb-4 text-sm whitespace-nowrap">Architectural Design</button>
-                        <button onclick="switchTab('amenities')" id="tab-btn-amenities" class="tab-btn border-b-2 border-transparent text-slate-500 hover:text-godrej-emerald font-medium pb-4 text-sm whitespace-nowrap">Lifestyle Amenities</button>
-                        <button onclick="switchTab('locations')" id="tab-btn-locations" class="tab-btn border-b-2 border-transparent text-slate-500 hover:text-godrej-emerald font-medium pb-4 text-sm whitespace-nowrap">Connected Locations</button>
+                <div class="mx-auto mb-12 sm:mb-14 text-center">
+                    <span class="text-xs font-bold uppercase tracking-[0.18em] text-godrej-gold block mb-3">A 129-Year Godrej Group Legacy</span>
+                    <h2 class="mx-auto max-w-4xl font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-godrej-emerald">A legacy of trust. A future shaped by thoughtful living.</h2>
+                    <div class="mx-auto mt-6 max-w-6xl space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                        <p>Driven by "Crafting Joy," Godrej Properties carries forward the 129-year Godrej Group legacy founded in 1897. Since our establishment in 1990, we have grown into India's leading residential developer, delivering homes to over 100,000 families.</p>
+                        <p>Anchored in thoughtful design, sustainability, and quality, we have won over 500 accolades—including India’s Most Trusted Real Estate Brand—and ranked No. 1 globally on both the Dow Jones Sustainability Index and GRESB as of December 2025.</p>
                     </div>
-                </div>
-                <div id="tab-content-design" class="tab-panel grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-godrej-sage text-godrej-emerald rounded-full text-xs font-semibold"><i class="fa-solid fa-building"></i> Thoughtful Architecture</div>
-                        <h3 class="font-serif text-2xl font-bold text-slate-900">Homes Designed Around You</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Explore considered layouts, quality finishes, and architectural details that bring comfort and character to everyday living.</p>
-                        <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Well-planned rooms and practical layouts</li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Quality materials and contemporary finishes</li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Options across apartments, villas, and penthouses</li>
-                        </ul>
+                    <div class="mx-auto mt-8 grid max-w-6xl grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+                        <div class="rounded-xl border border-godrej-sage bg-godrej-offwhite px-5 py-6 sm:py-7 text-center">
+                            <div class="font-serif text-3xl sm:text-4xl font-bold text-godrej-gold">100,000+</div>
+                            <div class="mt-2 text-sm font-medium text-slate-600">Families who found a home</div>
+                        </div>
+                        <div class="rounded-xl border border-godrej-sage bg-godrej-offwhite px-5 py-6 sm:py-7 text-center">
+                            <div class="font-serif text-3xl sm:text-4xl font-bold text-godrej-gold">180+</div>
+                            <div class="mt-2 text-sm font-medium text-slate-600">Completed Projects</div>
+                        </div>
+                        <div class="rounded-xl border border-godrej-sage bg-godrej-offwhite px-5 py-6 sm:py-7 text-center">
+                            <div class="font-serif text-3xl sm:text-4xl font-bold text-godrej-gold">65+</div>
+                            <div class="mt-2 text-sm font-medium text-slate-600">Ongoing Projects</div>
+                        </div>
                     </div>
-                    <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80" alt="Contemporary residential architecture" class="w-full h-80 object-cover"></div>
-                </div>
-                <div id="tab-content-amenities" class="tab-panel hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-godrej-sage text-godrej-emerald rounded-full text-xs font-semibold"><i class="fa-solid fa-star"></i> Everyday Comfort</div>
-                        <h3 class="font-serif text-2xl font-bold text-slate-900">Amenities for Every Day</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">From fitness and recreation to welcoming shared spaces, each community offers amenities that make it easier to relax, connect, and enjoy your home.</p>
-                        <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Clubhouse and community spaces</li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Fitness and recreation facilities</li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Landscaped gardens and family areas</li>
-                        </ul>
-                    </div>
-                    <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white"><img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=80" alt="Residential community amenities" class="w-full h-80 object-cover"></div>
-                </div>
-                <div id="tab-content-locations" class="tab-panel hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-godrej-sage text-godrej-emerald rounded-full text-xs font-semibold"><i class="fa-solid fa-location-dot"></i> Well-Connected Addresses</div>
-                        <h3 class="font-serif text-2xl font-bold text-slate-900">Close to What Matters</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">Find residences near key business districts, schools, healthcare, shopping, and transport links in some of India's most sought-after neighborhoods.</p>
-                        <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Convenient access to business and technology hubs</li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Schools, healthcare, and retail close by</li>
-                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Well-connected roads and public transport</li>
-                        </ul>
-                    </div>
-                    <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80" alt="Modern home in a connected neighborhood" class="w-full h-80 object-cover"></div>
                 </div>
             </div>
         </section>
@@ -481,16 +452,16 @@
                         </div>
 
                         <!-- Floor Plan Content -->
-                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                            <div class="md:col-span-6 min-w-0 bg-godrej-offwhite p-4 rounded-xl border border-slate-200 flex items-center justify-center">
+                        <div id="floor-plan-layout" class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                            <div id="floor-plan-image-panel" class="md:col-span-6 min-w-0 bg-godrej-offwhite p-4 rounded-xl border border-slate-200 flex items-center justify-center">
                                 <img id="floor-plan-img" src="" alt="Selected project configuration" class="w-full max-w-full max-h-64 object-contain rounded-lg">
                             </div>
-                            <div class="md:col-span-6 space-y-4">
-                                <div class="bg-godrej-sage/50 p-4 rounded-xl">
+                            <div id="floor-plan-details" class="md:col-span-6 space-y-4">
+                                <div id="floor-plan-area-card" class="bg-godrej-sage/50 p-4 rounded-xl">
                                     <div class="text-xs text-slate-500 font-semibold uppercase">Super Built-up Area</div>
                                     <div id="plan-area" class="text-lg font-bold text-godrej-emerald">1,450 Sq. Ft.</div>
                                 </div>
-                                <div class="bg-godrej-sage/50 p-4 rounded-xl">
+                                <div id="floor-plan-price-card" class="bg-godrej-sage/50 p-4 rounded-xl">
                                     <div class="text-xs text-slate-500 font-semibold uppercase">Estimated Investment</div>
                                     <div id="plan-price" class="text-lg font-bold text-godrej-gold">₹ 1.85 Cr Onwards</div>
                                 </div>

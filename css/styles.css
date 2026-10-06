@@ -22,6 +22,21 @@
     border-radius: 4px;
 }
 
+/* Keep project descriptions easy to read across wide and narrow layouts. */
+#detail-description {
+    max-width: 76ch;
+    color: #475569;
+    font-size: clamp(1rem, 1.05vw, 1.125rem);
+    line-height: 1.8;
+    letter-spacing: 0.005em;
+}
+
+@media (max-width: 640px) {
+    #detail-description {
+        line-height: 1.75;
+    }
+}
+
 /* Responsive safeguards for phones, tablets, and compact laptop viewports. */
 *,
 *::before,
@@ -71,17 +86,21 @@ a:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
 }
 .chip-btn:hover:not(.active) { border-color: #0F382C; background: #F4F8F5; color: #0F382C; }
 .chip-btn.active,
-.chip-btn.active:hover,
-.chip-btn:active {
-    border-color: #0F382C;
-    background: #0F382C;
-    color: #fff;
+.chip-btn.active:hover {
+    border-color: #D4AF37;
+    background: #D4AF37;
+    color: #0F382C;
 }
-.chip-btn.active { box-shadow: 0 3px 8px rgb(15 56 44 / 20%); }
+.chip-btn.active { box-shadow: 0 3px 8px rgb(212 175 55 / 24%); }
+#floor-plan-tabs .plan-tab-btn[aria-selected="true"] {
+    background: #D4AF37;
+    color: #0F382C;
+}
 .chip-btn:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
 .category-filter-label { display: flex; align-items: center; justify-content: center; }
 
 .site-nav a { display: inline-flex; align-items: center; min-height: 2.25rem; white-space: nowrap; }
+.site-nav a[aria-current="page"] { color: #D4AF37; }
 .site-header-actions { white-space: nowrap; }
 .site-visit-button { min-width: 2.25rem; }
 .mobile-menu-toggle { flex: none; -webkit-tap-highlight-color: transparent; }
@@ -112,6 +131,7 @@ a:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
 }
 .mobile-menu-nav { min-width: 0; }
 .mobile-menu-link:hover { color: #0F382C; }
+.mobile-menu-link[aria-current="page"] { color: #D4AF37; }
 .mobile-menu-action {
     display: flex;
     min-height: 3rem;
@@ -149,8 +169,7 @@ a:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
 @media (min-width: 900px) {
     .site-nav-desktop { display: flex; gap: 1rem; font-size: 0.875rem; }
     .site-header-actions { display: flex; gap: 0.5rem; }
-    .mobile-menu-toggle,
-    #mobile-menu { display: none; }
+    .mobile-menu-toggle { display: none; }
     .site-phone { padding-inline: 0.625rem; font-size: 0.75rem; }
     .site-visit-button { height: 2.5rem; padding-inline: 0.75rem; font-size: 0.75rem; }
 }
@@ -388,6 +407,17 @@ a:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
 }
 
 .property-carousel-track::-webkit-scrollbar { display: none; }
+
+.property-empty-state {
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: clamp(13rem, 24vw, 19rem);
+    display: grid;
+    place-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #64748b;
+}
 
 .property-card {
     flex: 0 0 100%;
@@ -653,7 +683,15 @@ a:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
 #detail-rera-value[hidden] { display: none; }
 
 @media (max-width: 640px) {
-    #floor-plan-tabs { width: 100%; max-width: 100%; }
-    #floor-plan-tabs { gap: 0.25rem; }
+    #floor-plan-tabs { width: max-content; max-width: 100%; gap: 0.25rem; }
     #floor-plan-tabs .plan-tab-btn { padding-inline: 0.75rem; font-size: 0.75rem; }
+    #floor-plan-layout { gap: 0.875rem; }
+    #floor-plan-image-panel { padding: 0.75rem; }
+    #floor-plan-img { max-height: 13rem; }
+    #floor-plan-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+    #floor-plan-details > div { min-width: 0; padding: 0.875rem; }
+    #floor-plan-details > div:last-child { grid-column: 1 / -1; }
+    #floor-plan-area-card[hidden],
+    #floor-plan-price-card[hidden],
+    #floor-plan-image-panel[hidden] { display: none; }
 }
