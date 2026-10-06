@@ -1,10 +1,22 @@
-import { godrejData, godrejFaqs } from '../data/godrej.js';
+        const builderSlug = document.body.dataset.builder?.trim().toLowerCase();
+        if (!builderSlug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(builderSlug)) {
+            throw new Error('Set body data-builder to a valid builder slug, such as "godrej".');
+        }
 
-        const builderData = { godrej: { properties: godrejData, faqs: godrejFaqs } };
-        const builder = document.body.dataset.builder;
-        const activeBuilderData = builderData[builder];
-        const propertiesData = activeBuilderData?.properties;
-        const faqsData = activeBuilderData?.faqs || [];
+        let builderModule;
+        try {
+            builderModule = await import(`../data/${builderSlug}.js`);
+        } catch (error) {
+            throw new Error(`Could not load data/${builderSlug}.js. Add a builder data module for this page.`, { cause: error });
+        }
+
+        const activeBuilderData = builderModule.builderConfig;
+        if (!activeBuilderData || !Array.isArray(activeBuilderData.properties)) {
+            throw new Error(`data/${builderSlug}.js must export builderConfig with a properties array.`);
+        }
+
+        const propertiesData = activeBuilderData.properties;
+        const faqsData = Array.isArray(activeBuilderData.faqs) ? activeBuilderData.faqs : [];
         if (!Array.isArray(propertiesData)) {
             throw new Error(`No property data found for builder: ${builder}`);
         }
@@ -548,7 +560,7 @@ import { godrejData, godrejFaqs } from '../data/godrej.js';
         const whatsappClose = document.getElementById('whatsapp-close');
         const whatsappForm = document.getElementById('whatsapp-form');
         const whatsappFeedback = document.getElementById('whatsapp-feedback');
-        const whatsappBusinessNumber = document.body.dataset.whatsappNumber || '';
+        const whatsappBusinessNumber = activeBuilderData.whatsappNumber || document.body.dataset.whatsappNumber || '';
 
         function openWhatsAppPopup() {
             whatsappPopup.classList.add('is-open');
@@ -582,7 +594,7 @@ import { godrejData, godrejFaqs } from '../data/godrej.js';
                 whatsappFeedback.textContent = 'WhatsApp contact is not configured yet. Please contact us by phone.';
                 return;
             }
-            const message = `Please send me the Godrej e-brochure on WhatsApp. My number is ${customerPhone}.`;
+            const message = `Please send me the ${activeBuilderData.name} e-brochure on WhatsApp. My number is ${customerPhone}.`;
             window.open(`https://wa.me/${whatsappBusinessNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
             closeWhatsAppPopup();
         });
@@ -631,10 +643,17 @@ import { godrejData, godrejFaqs } from '../data/godrej.js';
         window.onload = function() {
             renderPropertyGrid(propertiesData);
             renderFaqs(faqsData);
+            const footerPropertyCount = document.getElementById('footer-property-count');
+            if (footerPropertyCount) footerPropertyCount.textContent = String(propertiesData.length);
+            document.querySelectorAll('[data-footer-builder-name]').forEach(element => {
+                element.textContent = activeBuilderData.name;
+            });
+            document.getElementById('footer-builder-name').textContent = activeBuilderData.name;
             let popupAlreadyShown = false;
-            try { popupAlreadyShown = localStorage.getItem('godrej-whatsapp-popup-shown') === 'true'; } catch (error) { /* Storage may be disabled. */ }
+            const popupStorageKey = `${builderSlug}-whatsapp-popup-shown`;
+            try { popupAlreadyShown = localStorage.getItem(popupStorageKey) === 'true'; } catch (error) { /* Storage may be disabled. */ }
             if (!popupAlreadyShown) {
-                try { localStorage.setItem('godrej-whatsapp-popup-shown', 'true'); } catch (error) { /* Storage may be disabled. */ }
+                try { localStorage.setItem(popupStorageKey, 'true'); } catch (error) { /* Storage may be disabled. */ }
                 window.setTimeout(openWhatsAppPopup, 900);
             }
         };

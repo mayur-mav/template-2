@@ -297,3 +297,12 @@ export const godrejFaqs = [
         answer: 'Yes, featured properties may have title approvals and home loan options from major financial institutions. Contact our team to confirm the current options for a specific project.'
     }
 ];
+
+// Shared data contract consumed by js/main.js for any builder landing page.
+export const builderConfig = {
+    slug: 'godrej',
+    name: 'Godrej Properties',
+    properties: godrejData,
+    faqs: godrejFaqs,
+    whatsappNumber: ''
+};
