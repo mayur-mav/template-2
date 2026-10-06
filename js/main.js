@@ -11,16 +11,15 @@
         }
 
         const activeBuilderData = builderModule.builderConfig;
-        if (!activeBuilderData || !Array.isArray(activeBuilderData.properties)) {
-            throw new Error(`data/${builderSlug}.js must export builderConfig with a properties array.`);
+        if (!activeBuilderData || typeof activeBuilderData.name !== 'string' || !Array.isArray(activeBuilderData.properties)) {
+            throw new Error(`data/${builderSlug}.js must export builderConfig with a name and properties array.`);
+        }
+        if (activeBuilderData.slug && activeBuilderData.slug !== builderSlug) {
+            throw new Error(`builderConfig.slug in data/${builderSlug}.js must match the page data-builder value.`);
         }
 
         const propertiesData = activeBuilderData.properties;
         const faqsData = Array.isArray(activeBuilderData.faqs) ? activeBuilderData.faqs : [];
-        if (!Array.isArray(propertiesData)) {
-            throw new Error(`No property data found for builder: ${builder}`);
-        }
-
         // CURRENT STATE
         let activeProperty = propertiesData[0];
         let currentActiveChip = 'all';
