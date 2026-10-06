@@ -359,9 +359,27 @@ import { godrejData } from '../data/godrej.js';
             });
         }
 
-        // MOBILE MENU
-        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuButton = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            mobileMenuButton.setAttribute('aria-label', 'Open navigation menu');
+            mobileMenuButton.innerHTML = '<i class="fa-solid fa-bars text-xl" aria-hidden="true"></i>';
+        }
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden', isOpen);
+            mobileMenuButton.setAttribute('aria-expanded', String(!isOpen));
+            mobileMenuButton.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+            mobileMenuButton.innerHTML = '<i class="fa-solid fa-bars text-xl" aria-hidden="true"></i>';
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && !mobileMenu.classList.contains('hidden')) closeMobileMenu();
+        });
 
         initializeCustomSelects();
         document.addEventListener('click', event => {
@@ -429,14 +447,6 @@ import { godrejData } from '../data/godrej.js';
             carouselResizeObserver.observe(propertyTrack);
         } else {
             window.addEventListener('resize', updatePropertyCarousel);
-        }
-
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        function closeMobileMenu() {
-            mobileMenu.classList.add('hidden');
         }
 
         // Keep inline HTML handlers available when this file runs as an ES module.
