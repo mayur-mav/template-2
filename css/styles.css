@@ -8,6 +8,16 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.bg-builder-primary { background-color: var(--builder-primary, #0F382C); }
+.bg-builder-accent { background-color: var(--builder-accent, #D4AF37); }
+.bg-builder-surface { background-color: var(--builder-surface, #F9FAF9); }
+.bg-builder-soft { background-color: var(--builder-soft, #E8F0EC); }
+.text-builder-primary { color: var(--builder-primary, #0F382C); }
+.text-builder-accent { color: var(--builder-accent, #D4AF37); }
+.border-builder-border { border-color: var(--builder-border, #E8F0EC); }
+.builder-primary-button { background-color: var(--builder-primary, #0F382C); }
+.builder-primary-button:hover { background-color: var(--builder-primary-hover, #09241C); }
+.property-card:hover .property-card-title { color: var(--builder-accent, #D4AF37); }
 .bg-emerald-gradient {
     background: linear-gradient(135deg, #0F382C 0%, #175241 100%);
 }
@@ -93,8 +103,8 @@ a:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
 }
 .chip-btn.active { box-shadow: 0 3px 8px rgb(212 175 55 / 24%); }
 #floor-plan-tabs .plan-tab-btn[aria-selected="true"] {
-    background: #D4AF37;
-    color: #0F382C;
+    background: var(--builder-accent, #D4AF37);
+    color: var(--builder-primary, #0F382C);
 }
 .chip-btn:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
 .category-filter-label { display: flex; align-items: center; justify-content: center; }

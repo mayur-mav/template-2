@@ -10,16 +10,52 @@
             throw new Error(`Could not load data/${builderSlug}.js. Add a builder data module for this page.`, { cause: error });
         }
 
-        const activeBuilderData = builderModule.builderConfig;
-        if (!activeBuilderData || typeof activeBuilderData.name !== 'string' || !Array.isArray(activeBuilderData.properties)) {
-            throw new Error(`data/${builderSlug}.js must export builderConfig with a name and properties array.`);
+        const modulePrefix = builderSlug.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+        const configuredBuilder = builderModule.builderConfig || builderModule.default || {};
+        const propertiesData = configuredBuilder.properties
+            || (Array.isArray(configuredBuilder) ? configuredBuilder : null)
+            || builderModule[`${modulePrefix}Data`]
+            || builderModule[`${modulePrefix}Projects`]
+            || builderModule.properties;
+        const faqsData = configuredBuilder.faqs
+            || builderModule[`${modulePrefix}Faqs`]
+            || builderModule[`${modulePrefix}FAQs`]
+            || builderModule.faqs
+            || [];
+        const generatedName = builderSlug
+            .split('-')
+            .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+            .join(' ');
+        const activeBuilderData = {
+            ...configuredBuilder,
+            slug: configuredBuilder.slug || builderSlug,
+            name: configuredBuilder.name || builderModule.builderName || generatedName,
+            properties: propertiesData,
+            faqs: faqsData
+        };
+        if (!Array.isArray(activeBuilderData.properties)) {
+            throw new Error(`data/${builderSlug}.js must export builderConfig.properties or ${modulePrefix}Data as an array.`);
         }
-        if (activeBuilderData.slug && activeBuilderData.slug !== builderSlug) {
+        if (!Array.isArray(activeBuilderData.faqs)) {
+            throw new Error(`data/${builderSlug}.js must export FAQs as an array.`);
+        }
+        if (activeBuilderData.slug !== builderSlug) {
             throw new Error(`builderConfig.slug in data/${builderSlug}.js must match the page data-builder value.`);
         }
 
-        const propertiesData = activeBuilderData.properties;
-        const faqsData = Array.isArray(activeBuilderData.faqs) ? activeBuilderData.faqs : [];
+        if (!faqsData.length) console.warn(`No FAQ entries were found for builder "${builderSlug}".`);
+        const builderTheme = activeBuilderData.theme || {};
+        const themeVariables = {
+            '--builder-primary': builderTheme.primary || '#0F382C',
+            '--builder-primary-hover': builderTheme.primaryHover || '#09241C',
+            '--builder-accent': builderTheme.accent || '#D4AF37',
+            '--builder-surface': builderTheme.surface || '#F9FAF9',
+            '--builder-soft': builderTheme.soft || '#E8F0EC',
+            '--builder-border': builderTheme.border || '#E8F0EC'
+        };
+        Object.entries(themeVariables).forEach(([variable, value]) => {
+            document.documentElement.style.setProperty(variable, value);
+        });
         // CURRENT STATE
         let activeProperty = propertiesData[0];
         let currentActiveChip = 'all';
@@ -151,8 +187,9 @@
             }
 
             items.forEach(prop => {
+                const coverImage = prop.images?.[0] || prop.image || '';
                 const card = document.createElement('div');
-                card.className = "property-card cursor-pointer bg-white rounded-2xl overflow-hidden border border-godrej-sage shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group";
+                card.className = "property-card cursor-pointer bg-white rounded-2xl overflow-hidden border border-builder-border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group";
                 card.tabIndex = 0;
                 card.setAttribute('role', 'group');
                 card.setAttribute('aria-label', `${prop.title} property card. Activate to view details.`);
@@ -166,28 +203,30 @@
                     openDetailPage(prop.id);
                 });
                 card.innerHTML = `
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="${prop.images[0]}" alt="${prop.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="relative h-64 overflow-hidden bg-builder-soft">
+                        ${coverImage
+                            ? `<img src="${coverImage}" alt="${prop.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">`
+                            : '<div class="w-full h-full flex items-center justify-center text-builder-primary/50"><i class="fa-regular fa-image text-4xl" aria-hidden="true"></i></div>'}
                         <div class="absolute top-4 left-4 flex flex-col gap-1">
-                            <span class="bg-godrej-emerald text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                            <span class="bg-builder-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
                                 ${prop.category === 'new-launch' ? 'New Launch' : prop.category === 'ongoing' ? 'Ongoing Project' : prop.category === 'ready' ? 'Ready to Move' : 'Project'}
                             </span>
                         </div>
                         ${prop.reraId?.trim() ? `
-                            <div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-lg text-xs font-bold text-godrej-emerald flex items-center gap-1">
+                            <div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-lg text-xs font-bold text-builder-primary flex items-center gap-1">
                                 <i class="fa-solid fa-circle-check text-emerald-600" aria-hidden="true"></i> RERA Verified
                             </div>
                         ` : ''}
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <div class="text-xs font-bold text-godrej-gold uppercase tracking-wider mb-1">${prop.price}</div>
-                            <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-2 group-hover:text-godrej-gold transition-colors">${prop.title}</h3>
-                            <p class="text-xs text-slate-500 mb-4 flex items-center"><i class="fa-solid fa-location-dot mr-1.5 text-godrej-gold"></i> ${prop.location}</p>
+                            <div class="text-xs font-bold text-builder-accent uppercase tracking-wider mb-1">${prop.price}</div>
+                            <h3 class="property-card-title font-serif text-xl font-bold text-builder-primary mb-2 transition-colors">${prop.title}</h3>
+                            <p class="text-xs text-slate-500 mb-4 flex items-center"><i class="fa-solid fa-location-dot mr-1.5 text-builder-accent"></i> ${prop.location}</p>
                             <p class="text-sm text-slate-600 leading-6 mb-6">${prop.summary}</p>
                         </div>
                         <div class="pt-4 border-t border-slate-100">
-                            <button onclick="openDetailPage(${prop.id})" class="w-full bg-godrej-emerald hover:bg-godrej-darkEmerald text-white text-xs font-bold py-2.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-1">
+                            <button onclick="openDetailPage(${prop.id})" class="builder-primary-button w-full text-white text-xs font-bold py-2.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-1">
                                 <span>Full Details</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
                             </button>
                         </div>
@@ -240,10 +279,10 @@
 
             (property.amenities || []).forEach(amenity => {
                 const card = document.createElement('div');
-                card.className = 'p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-center gap-3';
+                card.className = 'p-4 bg-builder-surface border border-builder-border rounded-2xl flex items-center gap-3';
 
                 const iconBox = document.createElement('div');
-                iconBox.className = 'w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0';
+                iconBox.className = 'w-10 h-10 rounded-xl bg-builder-soft flex items-center justify-center text-builder-primary text-lg shrink-0';
                 const icon = document.createElement('i');
                 icon.className = `fa-solid ${amenity.icon || 'fa-star'}`;
                 icon.setAttribute('aria-hidden', 'true');
@@ -263,7 +302,7 @@
                 const placeInfo = document.createElement('div');
                 placeInfo.className = 'flex min-w-0 items-center gap-3';
                 const icon = document.createElement('i');
-                icon.className = `fa-solid ${place.icon || 'fa-location-dot'} text-godrej-gold text-lg shrink-0`;
+                icon.className = `fa-solid ${place.icon || 'fa-location-dot'} text-builder-accent text-lg shrink-0`;
                 icon.setAttribute('aria-hidden', 'true');
                 const name = document.createElement('span');
                 name.className = 'text-xs font-semibold text-slate-700';
@@ -271,7 +310,7 @@
                 placeInfo.append(icon, name);
 
                 const distance = document.createElement('span');
-                distance.className = 'text-xs font-bold text-godrej-emerald whitespace-nowrap';
+                distance.className = 'text-xs font-bold text-builder-primary whitespace-nowrap';
                 distance.textContent = place.distance || '';
                 card.append(placeInfo, distance);
                 connectivityContainer.appendChild(card);
@@ -286,7 +325,7 @@
 
             // Populate Page Fields
             document.getElementById('detail-title').innerText = prop.title;
-            document.getElementById('detail-location').innerHTML = `<i class="fa-solid fa-location-dot text-godrej-gold"></i> ${prop.location}`;
+            document.getElementById('detail-location').innerHTML = `<i class="fa-solid fa-location-dot text-builder-accent"></i> ${prop.location}`;
             document.getElementById('detail-price').innerText = prop.price;
             document.getElementById('detail-possession').innerText = prop.possession;
             document.getElementById('detail-units').innerText = prop.units;
@@ -305,9 +344,12 @@
             renderPropertyFloorPlans(prop);
 
             // Load 3 Gallery Images
-            document.getElementById('detail-img-0').src = prop.images[0];
-            document.getElementById('detail-img-1').src = prop.images[1];
-            document.getElementById('detail-img-2').src = prop.images[2];
+            const propertyImages = Array.isArray(prop.images) ? prop.images : prop.image ? [prop.image] : [];
+            [0, 1, 2].forEach(index => {
+                const image = document.getElementById(`detail-img-${index}`);
+                if (propertyImages[index]) image.src = propertyImages[index];
+                else image.removeAttribute('src');
+            });
 
             // Show SPA View
             document.getElementById('catalog-page').classList.add('hidden');
@@ -383,8 +425,8 @@
 
             document.querySelectorAll('#floor-plan-tabs .plan-tab-btn').forEach(button => {
                 const isActive = button.id === `plan-btn-${planId}`;
-                button.classList.toggle('bg-godrej-gold', isActive);
-                button.classList.toggle('text-godrej-emerald', isActive);
+                button.classList.toggle('bg-builder-accent', isActive);
+                button.classList.toggle('text-builder-primary', isActive);
                 button.classList.toggle('text-slate-600', !isActive);
                 button.setAttribute('aria-selected', String(isActive));
                 if (isActive && document.getElementById('floor-plan-tabs').dataset.layout === 'scroll') {
@@ -419,8 +461,9 @@
 
         // LIGHTBOX MODAL
         function openLightbox(imgIndex) {
-            if (!activeProperty || !activeProperty.images[imgIndex]) return;
-            document.getElementById('lightbox-img').src = activeProperty.images[imgIndex];
+            const propertyImages = Array.isArray(activeProperty?.images) ? activeProperty.images : activeProperty?.image ? [activeProperty.image] : [];
+            if (!propertyImages[imgIndex]) return;
+            document.getElementById('lightbox-img').src = propertyImages[imgIndex];
             document.getElementById('lightbox-modal').classList.remove('hidden');
         }
 
@@ -431,12 +474,21 @@
         // BUILDER-SPECIFIC FAQ CONTENT
         function renderFaqs(faqs) {
             const list = document.getElementById('faq-list');
+            if (!list) return;
             list.replaceChildren();
+
+            if (!faqs.length) {
+                const emptyMessage = document.createElement('p');
+                emptyMessage.className = 'py-8 text-center text-sm text-slate-500';
+                emptyMessage.textContent = 'FAQs for this builder will be added soon.';
+                list.appendChild(emptyMessage);
+                return;
+            }
 
             faqs.forEach((faq, index) => {
                 const id = index + 1;
                 const item = document.createElement('div');
-                item.className = 'bg-white border border-godrej-sage rounded-2xl overflow-hidden shadow-sm';
+                item.className = 'bg-white border border-builder-border rounded-2xl overflow-hidden shadow-sm';
 
                 const button = document.createElement('button');
                 button.type = 'button';
@@ -449,7 +501,7 @@
                 question.textContent = faq.question;
                 const icon = document.createElement('i');
                 icon.id = `faq-icon-${id}`;
-                icon.className = 'fa-solid fa-chevron-down text-godrej-emerald transition-transform';
+                icon.className = 'fa-solid fa-chevron-down text-builder-primary transition-transform';
                 icon.setAttribute('aria-hidden', 'true');
                 button.append(question, icon);
 
@@ -638,16 +690,19 @@
             showCatalogPage,
             toggleFaq
         });
-        // INITIAL ONLOAD
-        window.onload = function() {
-            renderPropertyGrid(propertiesData);
+        // INITIALIZE AFTER THE SHARED PAGE MARKUP IS AVAILABLE.
+        function initializeBuilderPage() {
             renderFaqs(faqsData);
+            renderPropertyGrid(propertiesData);
             const footerPropertyCount = document.getElementById('footer-property-count');
             if (footerPropertyCount) footerPropertyCount.textContent = String(propertiesData.length);
             document.querySelectorAll('[data-footer-builder-name]').forEach(element => {
                 element.textContent = activeBuilderData.name;
             });
-            document.getElementById('footer-builder-name').textContent = activeBuilderData.name;
+            const footerBuilderName = document.getElementById('footer-builder-name');
+            if (footerBuilderName) footerBuilderName.textContent = activeBuilderData.name;
+            const footerRegions = document.getElementById('footer-builder-regions');
+            if (footerRegions && activeBuilderData.regions) footerRegions.textContent = activeBuilderData.regions;
             let popupAlreadyShown = false;
             const popupStorageKey = `${builderSlug}-whatsapp-popup-shown`;
             try { popupAlreadyShown = localStorage.getItem(popupStorageKey) === 'true'; } catch (error) { /* Storage may be disabled. */ }
@@ -655,4 +710,10 @@
                 try { localStorage.setItem(popupStorageKey, 'true'); } catch (error) { /* Storage may be disabled. */ }
                 window.setTimeout(openWhatsAppPopup, 900);
             }
-        };
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeBuilderPage, { once: true });
+        } else {
+            initializeBuilderPage();
+        }

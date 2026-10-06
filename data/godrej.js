@@ -302,6 +302,15 @@ export const godrejFaqs = [
 export const builderConfig = {
     slug: 'godrej',
     name: 'Godrej Properties',
+    regions: 'Bengaluru',
+    theme: {
+        primary: '#0F382C',
+        primaryHover: '#09241C',
+        accent: '#D4AF37',
+        surface: '#F9FAF9',
+        soft: '#E8F0EC',
+        border: '#E8F0EC'
+    },
     properties: godrejData,
     faqs: godrejFaqs,
     whatsappNumber: ''
