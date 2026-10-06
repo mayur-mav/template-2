@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godrej Properties | Premium Residences</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        godrej: {
+                            emerald: '#0F382C',
+                            darkEmerald: '#09241C',
+                            gold: '#D4AF37',
+                            goldHover: '#B89628',
+                            sage: '#E8F0EC',
+                            mint: '#D1E4DB',
+                            offwhite: '#F9FAF9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/main.js"></script>
+</head>
+<body data-builder="godrej" class="bg-godrej-offwhite text-slate-800 font-sans antialiased custom-scrollbar">
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-custom border-b border-godrej-sage shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="showCatalogPage()">
+                    <div class="w-10 h-10 rounded-lg bg-godrej-emerald flex items-center justify-center text-godrej-gold font-serif font-bold text-xl shadow-md">
+                        G
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-godrej-emerald font-serif block">GODREJ</span>
+                        <span class="text-[10px] uppercase tracking-[0.25em] text-godrej-gold font-medium block">PROPERTIES</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav Navigation -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#properties-section" onclick="showCatalogPage()" class="text-godrej-emerald hover:text-godrej-gold transition-colors">Residences</a>
+                    <a href="#legacy-section" onclick="showCatalogPage()" class="text-slate-600 hover:text-godrej-emerald transition-colors">Our Story</a>
+                    <a href="#legacy-section" onclick="showCatalogPage()" class="text-slate-600 hover:text-godrej-emerald transition-colors">Design & Amenities</a>
+                    <a href="#faq-section" onclick="showCatalogPage()" class="text-slate-600 hover:text-godrej-emerald transition-colors">FAQs</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="tel:18001082020" class="flex items-center text-xs font-semibold text-godrej-emerald bg-godrej-sage px-3 py-2 rounded-full hover:bg-godrej-mint transition-all">
+                        <i class="fa-solid fa-phone text-godrej-gold mr-2"></i> 1800 108 2020
+                    </a>
+                    <button onclick="scrollToConsultation()" class="bg-godrej-emerald hover:bg-godrej-darkEmerald text-white px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all transform hover:-translate-y-0.5 shadow-md flex items-center gap-2">
+                        <span>Book Site Visit</span>
+                        <i class="fa-solid fa-building text-godrej-gold text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-godrej-emerald hover:text-godrej-gold focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-godrej-sage px-4 pt-2 pb-6 space-y-3">
+            <a href="#properties-section" onclick="showCatalogPage(); closeMobileMenu()" class="block py-2 text-godrej-emerald font-medium">Residences</a>
+            <a href="#legacy-section" onclick="showCatalogPage(); closeMobileMenu()" class="block py-2 text-slate-600 hover:text-godrej-emerald">Our Story</a>
+            <a href="#legacy-section" onclick="showCatalogPage(); closeMobileMenu()" class="block py-2 text-slate-600 hover:text-godrej-emerald">Design & Amenities</a>
+            <a href="#faq-section" onclick="showCatalogPage(); closeMobileMenu()" class="block py-2 text-slate-600 hover:text-godrej-emerald">FAQs</a>
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="tel:18001082020" class="text-center py-2 text-xs font-semibold text-godrej-emerald bg-godrej-sage rounded-full">
+                    <i class="fa-solid fa-phone text-godrej-gold mr-1"></i> Call 1800 108 2020
+                </a>
+                <button onclick="scrollToConsultation(); closeMobileMenu()" class="w-full bg-godrej-emerald text-white py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                    Book Site Visit
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CATALOG PAGE VIEW -->
+    <main id="catalog-page" class="transition-opacity duration-300">
+        <!-- HERO BANNER -->
+        <section class="hero-banner relative isolate bg-godrej-emerald text-white overflow-hidden py-12 sm:py-16 lg:py-20">
+            <img class="hero-banner-image absolute inset-0 z-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=85" alt="" aria-hidden="true" fetchpriority="high">
+            <div class="hero-banner-overlay absolute inset-0 z-0" aria-hidden="true"></div>
+            <div class="hero-banner-content w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-3xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-godrej-gold text-xs font-medium uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-building"></i> Crafting Exceptional Residences
+                    </div>
+                    <h1 class="font-serif text-3xl min-[380px]:text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-balance">
+                        Find a Home That <span class="text-gradient-gold">Feels Like Yours</span>
+                    </h1>
+                    <p class="text-white/90 text-sm sm:text-lg mb-6 sm:mb-8 font-light max-w-2xl leading-relaxed">
+                        Explore thoughtfully designed homes with contemporary architecture, premium amenities, and convenient locations.
+                    </p>
+                </div>
+
+                <!-- SEARCH & FILTER BAR -->
+                <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-2xl text-slate-800 border border-godrej-sage">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-5">
+                        <div class="relative">
+                            <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Search Location</label>
+                            <div class="flex items-center bg-godrej-offwhite rounded-xl px-3 py-2.5 border border-slate-200 focus-within:border-godrej-emerald">
+                                <i class="fa-solid fa-location-dot text-godrej-emerald mr-2"></i>
+                                <input type="text" id="search-input" placeholder="e.g. Bangalore, Mumbai, NCR" class="bg-transparent w-full focus:outline-none text-sm text-slate-800 placeholder-slate-400">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Property Type</label>
+                            <select id="type-select" class="w-full bg-godrej-offwhite rounded-xl px-3 py-2.5 border border-slate-200 text-sm text-slate-800 focus:outline-none focus:border-godrej-emerald">
+                                <option value="all">All Types</option>
+                                <option value="apartment">Apartments</option>
+                                <option value="villa">Villas</option>
+                                <option value="penthouse">Sky Penthouses</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Price Range</label>
+                            <select id="price-select" class="w-full bg-godrej-offwhite rounded-xl px-3 py-2.5 border border-slate-200 text-sm text-slate-800 focus:outline-none focus:border-godrej-emerald">
+                                <option value="all">Any Price</option>
+                                <option value="1.5-2.5">₹1.5 Cr - ₹2.5 Cr</option>
+                                <option value="2.5-4.0">₹2.5 Cr - ₹4.0 Cr</option>
+                                <option value="4.0+">₹4.0 Cr+</option>
+                            </select>
+                        </div>
+
+                        <div class="flex items-end">
+                            <button onclick="applyFilters()" class="w-full bg-godrej-emerald hover:bg-godrej-darkEmerald text-white font-semibold py-2.5 px-4 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 text-sm">
+                                <i class="fa-solid fa-magnifying-glass text-godrej-gold"></i> Find Residences
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Status Filter Chips -->
+                    <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-2">
+                        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider mr-2">Category:</span>
+                        <button onclick="filterByChip('all')" class="chip-btn active text-xs font-semibold px-4 py-1.5 rounded-full border border-godrej-emerald bg-godrej-emerald text-white transition-all">All</button>
+                        <button onclick="filterByChip('new-launch')" class="chip-btn text-xs font-semibold px-4 py-1.5 rounded-full border border-slate-300 text-slate-600 hover:border-godrej-emerald hover:text-godrej-emerald transition-all">New Launch</button>
+                        <button onclick="filterByChip('featured')" class="chip-btn text-xs font-semibold px-4 py-1.5 rounded-full border border-slate-300 text-slate-600 hover:border-godrej-emerald hover:text-godrej-emerald transition-all">Featured Projects</button>
+                        <button onclick="filterByChip('ready')" class="chip-btn text-xs font-semibold px-4 py-1.5 rounded-full border border-slate-300 text-slate-600 hover:border-godrej-emerald hover:text-godrej-emerald transition-all">Ready to Move</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROPERTIES CATALOG LISTING -->
+        <section id="properties-section" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <div class="text-xs font-bold uppercase tracking-widest text-godrej-gold mb-1">Exclusive Portfolio</div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-godrej-emerald">Featured Residences</h2>
+                </div>
+            </div>
+
+            <!-- Grid Container -->
+            <div id="property-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dynamic Content Population via JS -->
+            </div>
+        </section>
+
+        <!-- GODREJ BRAND SHOWCASE -->
+        <section id="legacy-section" class="bg-white py-20 border-y border-godrej-sage">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-bold uppercase tracking-widest text-godrej-gold block mb-2">127 Years of Trust & Innovation</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-godrej-emerald">The Godrej Legacy & Design</h2>
+                    <p class="text-slate-600 mt-4 text-sm sm:text-base">Discover a legacy of thoughtful design, quality craftsmanship, and homes made for modern living.</p>
+                </div>
+                <div class="flex justify-center border-b border-slate-200 mb-10 overflow-x-auto">
+                    <div class="flex space-x-8 px-2">
+                        <button onclick="switchTab('design')" id="tab-btn-design" class="tab-btn border-b-2 border-godrej-emerald text-godrej-emerald font-bold pb-4 text-sm whitespace-nowrap">Architectural Design</button>
+                        <button onclick="switchTab('amenities')" id="tab-btn-amenities" class="tab-btn border-b-2 border-transparent text-slate-500 hover:text-godrej-emerald font-medium pb-4 text-sm whitespace-nowrap">Lifestyle Amenities</button>
+                        <button onclick="switchTab('locations')" id="tab-btn-locations" class="tab-btn border-b-2 border-transparent text-slate-500 hover:text-godrej-emerald font-medium pb-4 text-sm whitespace-nowrap">Connected Locations</button>
+                    </div>
+                </div>
+                <div id="tab-content-design" class="tab-panel grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-godrej-sage text-godrej-emerald rounded-full text-xs font-semibold"><i class="fa-solid fa-building"></i> Thoughtful Architecture</div>
+                        <h3 class="font-serif text-2xl font-bold text-slate-900">Homes Designed Around You</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Explore considered layouts, quality finishes, and architectural details that bring comfort and character to everyday living.</p>
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Well-planned rooms and practical layouts</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Quality materials and contemporary finishes</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Options across apartments, villas, and penthouses</li>
+                        </ul>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80" alt="Contemporary residential architecture" class="w-full h-80 object-cover"></div>
+                </div>
+                <div id="tab-content-amenities" class="tab-panel hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-godrej-sage text-godrej-emerald rounded-full text-xs font-semibold"><i class="fa-solid fa-star"></i> Everyday Comfort</div>
+                        <h3 class="font-serif text-2xl font-bold text-slate-900">Amenities for Every Day</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">From fitness and recreation to welcoming shared spaces, each community offers amenities that make it easier to relax, connect, and enjoy your home.</p>
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Clubhouse and community spaces</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Fitness and recreation facilities</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Landscaped gardens and family areas</li>
+                        </ul>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white"><img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1000&q=80" alt="Residential community amenities" class="w-full h-80 object-cover"></div>
+                </div>
+                <div id="tab-content-locations" class="tab-panel hidden grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-godrej-sage text-godrej-emerald rounded-full text-xs font-semibold"><i class="fa-solid fa-location-dot"></i> Well-Connected Addresses</div>
+                        <h3 class="font-serif text-2xl font-bold text-slate-900">Close to What Matters</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Find residences near key business districts, schools, healthcare, shopping, and transport links in some of India's most sought-after neighborhoods.</p>
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Convenient access to business and technology hubs</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Schools, healthcare, and retail close by</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-godrej-emerald"></i> Well-connected roads and public transport</li>
+                        </ul>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80" alt="Modern home in a connected neighborhood" class="w-full h-80 object-cover"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONSULTATION / BOOKING ENQUIRY SECTION -->
+        <section id="consultation-section" class="py-20 bg-godrej-emerald text-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <span class="text-xs font-bold uppercase tracking-widest text-godrej-gold block mb-2">Exclusive Advisory</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold leading-tight mb-4">Schedule a Private Site Tour</h2>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                            Connect with our senior property advisors to explore floor plans, customization options, and exclusive pre-launch price incentives.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-godrej-gold">
+                                    <i class="fa-solid fa-car"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-white">Complimentary EV Pick & Drop</h4>
+                                    <p class="text-xs text-slate-300">Chauffeur-driven luxury EV transport to the sales gallery.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-godrej-gold">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-white">Zero Buyer Commission</h4>
+                                    <p class="text-xs text-slate-300">Direct booking with Godrej Properties official developer desk.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-2xl relative">
+                            <div id="booking-form-container">
+                                <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-4">Request Callback / Site Visit</h3>
+                                <form id="main-consultation-form" onsubmit="handleMainFormSubmit(event)" class="space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-xs font-semibold text-slate-600 mb-1">Full Name *</label>
+                                            <input type="text" required placeholder="e.g. Ananya Sharma" class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-semibold text-slate-600 mb-1">Phone Number *</label>
+                                            <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-xs font-semibold text-slate-600 mb-1">Email Address *</label>
+                                            <input type="email" required placeholder="ananya@example.com" class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-semibold text-slate-600 mb-1">Preferred Project</label>
+                                            <select class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                                <option>Godrej Green Cove, Bangalore</option>
+                                                <option>Godrej Tropical Isle, Noida</option>
+                                                <option>Godrej Reserve, Mumbai</option>
+                                                <option>Godrej Ananda, Yelahanka</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-600 mb-1">Message / Requirements</label>
+                                        <textarea rows="2" placeholder="Preferred BHK, budget or site visit date..." class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald"></textarea>
+                                    </div>
+                                    <button type="submit" class="w-full bg-godrej-emerald hover:bg-godrej-darkEmerald text-white font-semibold py-3 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 text-sm">
+                                        <span>Confirm Consultation Request</span>
+                                        <i class="fa-solid fa-arrow-right text-godrej-gold"></i>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- Success Feedback Box -->
+                            <div id="main-form-success" class="hidden text-center py-8">
+                                <div class="w-16 h-16 bg-godrej-sage text-godrej-emerald rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                                <h3 class="font-serif text-2xl font-bold text-godrej-emerald mb-2">Consultation Confirmed!</h3>
+                                <p class="text-slate-600 text-sm max-w-sm mx-auto mb-6">Thank you. Your dedicated Godrej Relationship Director will contact you within 2 hours with personalized property brochures.</p>
+                                <button onclick="resetMainForm()" class="bg-godrej-sage text-godrej-emerald hover:bg-godrej-mint px-6 py-2 rounded-full text-xs font-semibold">Submit Another Request</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-godrej-gold block mb-1">Help & Guidance</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-godrej-emerald">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white border border-godrej-sage rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(1)" class="w-full text-left p-5 flex items-center justify-between focus:outline-none font-semibold text-slate-800 text-sm sm:text-base">
+                        <span>What amenities are available at Godrej residences?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-godrej-emerald transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-1" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Amenities vary by project and may include a clubhouse, fitness center, swimming pool, landscaped spaces, children?s play areas, and dedicated parking. Contact our team for project-specific details.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white border border-godrej-sage rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(2)" class="w-full text-left p-5 flex items-center justify-between focus:outline-none font-semibold text-slate-800 text-sm sm:text-base">
+                        <span>Can I request custom floor plan alterations prior to possession?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-godrej-emerald transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-2" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Yes, under the Godrej Custom Homes initiative, early-stage buyers can work with our interior architecture team to combine bedrooms or customize modular kitchen layouts.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white border border-godrej-sage rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(3)" class="w-full text-left p-5 flex items-center justify-between focus:outline-none font-semibold text-slate-800 text-sm sm:text-base">
+                        <span>How do I schedule a site visit?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-godrej-emerald transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-3" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Fill out the site visit form or call our team. A property advisor will contact you to confirm a convenient date and time.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white border border-godrej-sage rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq(4)" class="w-full text-left p-5 flex items-center justify-between focus:outline-none font-semibold text-slate-800 text-sm sm:text-base">
+                        <span>Are home loans pre-approved for these Godrej developments?</span>
+                        <i id="faq-icon-4" class="fa-solid fa-chevron-down text-godrej-emerald transition-transform"></i>
+                    </button>
+                    <div id="faq-answer-4" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Yes, all our featured properties have complete title approvals and pre-sanctioned home loans available from major financial institutions including HDFC Bank, ICICI, SBI, and Axis Bank.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PROPERTY DETAILS PAGE (WHITE BACKGROUND #FFFFFF SPA VIEW) -->
+    <main id="details-page" class="hidden bg-white min-h-screen text-slate-800 pt-6 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back Button Navigation -->
+            <div class="mb-6 flex items-center justify-between border-b border-slate-100 pb-4">
+                <button onclick="showCatalogPage()" class="inline-flex items-center gap-2 text-sm font-semibold text-godrej-emerald hover:text-godrej-gold transition-colors">
+                    <i class="fa-solid fa-arrow-left"></i> Back to All Residences
+                </button>
+                <div id="detail-rera-top" class="text-xs text-slate-500 font-mono">RERA ID: PRM/KA/RERA/1251/310/PR/210302</div>
+            </div>
+
+            <!-- Property Title & Badges Header -->
+            <div class="mb-8">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <span id="detail-tag" class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full uppercase">Featured Project</span>
+                    <span id="detail-highlight-badge" class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full flex items-center gap-1">
+                        <i class="fa-solid fa-star"></i> Featured Residence
+                    </span>
+                </div>
+                <h1 id="detail-title" class="font-serif text-3xl sm:text-5xl font-bold text-godrej-emerald">Godrej Green Cove</h1>
+                <p id="detail-location" class="text-slate-500 text-sm sm:text-base mt-2 flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-godrej-gold"></i> Bannerghatta Main Road, South Bangalore
+                </p>
+            </div>
+
+            <!-- EXACTLY 3 PROPERTY SHOWCASE GALLERY (ASYMMETRICAL MODERN 3-GRID) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-12">
+                <!-- Large Main Image -->
+                <div class="lg:col-span-8 relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-[320px] sm:h-[450px]" onclick="openLightbox(0)">
+                    <img id="detail-img-0" src="" alt="Main Architecture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-lg flex items-center gap-2">
+                        <i class="fa-solid fa-expand"></i> Click for Fullscreen Gallery
+                    </div>
+                </div>
+
+                <!-- 2 Side Images Grid -->
+                <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 h-[320px] sm:h-[450px]">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-full" onclick="openLightbox(1)">
+                        <img id="detail-img-1" src="" alt="Interior Design" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-godrej-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-full" onclick="openLightbox(2)">
+                        <img id="detail-img-2" src="" alt="Project Amenities" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-godrej-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPECIFICATION BADGES / PILLS BAR -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-godrej-offwhite rounded-2xl border border-godrej-sage mb-12">
+                <div class="border-r border-slate-200 last:border-0 pr-4">
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Possession Date</div>
+                    <div id="detail-possession" class="text-base font-bold text-godrej-emerald mt-1">December 2026</div>
+                </div>
+                <div class="border-r border-slate-200 last:border-0 pr-4">
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Total Land / Units</div>
+                    <div id="detail-units" class="text-base font-bold text-godrej-emerald mt-1">18 Acres / 420 Units</div>
+                </div>
+                <div class="border-r border-slate-200 last:border-0 pr-4">
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Project Highlight</div>
+                    <div id="detail-highlight" class="text-base font-bold text-godrej-emerald mt-1">Clubhouse Access</div>
+                </div>
+                <div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Pricing Starting</div>
+                    <div id="detail-price" class="text-base font-bold text-godrej-gold mt-1">₹ 2.15 Cr*</div>
+                </div>
+            </div>
+
+            <!-- MAIN CONTENT & STICKY SIDEBAR -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Left Column Details -->
+                <div class="lg:col-span-8 space-y-12">
+                    <!-- Architectural Overview -->
+                    <div>
+                        <h2 class="font-serif text-2xl font-bold text-godrej-emerald mb-4">Property Overview</h2>
+                        <p id="detail-description" class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                            Explore the property design, available configurations, amenities, and nearby destinations. Contact our team for current availability and offers.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Floor Plan Selector -->
+                    <div class="bg-white border border-godrej-sage rounded-2xl p-6 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-godrej-emerald">Floor Plans & Configurations</h3>
+                                <p class="text-xs text-slate-500">Compare available home configurations and floor areas</p>
+                            </div>
+                            <!-- Plan Tabs -->
+                            <div class="flex bg-godrej-offwhite p-1 rounded-xl border border-slate-200 text-xs font-semibold">
+                                <button onclick="selectFloorPlan('2bhk')" id="plan-btn-2bhk" class="plan-tab-btn px-4 py-2 rounded-lg bg-godrej-emerald text-white transition-all">2 BHK</button>
+                                <button onclick="selectFloorPlan('3bhk')" id="plan-btn-3bhk" class="plan-tab-btn px-4 py-2 rounded-lg text-slate-600 hover:text-godrej-emerald transition-all">3 BHK</button>
+                                <button onclick="selectFloorPlan('4bhk')" id="plan-btn-4bhk" class="plan-tab-btn px-4 py-2 rounded-lg text-slate-600 hover:text-godrej-emerald transition-all">4 BHK Penthouse</button>
+                            </div>
+                        </div>
+
+                        <!-- Floor Plan Content -->
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-6 bg-godrej-offwhite p-4 rounded-xl border border-slate-200 flex items-center justify-center">
+                                <img id="floor-plan-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Floor Plan Blueprint" class="max-h-64 object-contain rounded-lg">
+                            </div>
+                            <div class="md:col-span-6 space-y-4">
+                                <div class="bg-godrej-sage/50 p-4 rounded-xl">
+                                    <div class="text-xs text-slate-500 font-semibold uppercase">Super Built-up Area</div>
+                                    <div id="plan-area" class="text-lg font-bold text-godrej-emerald">1,450 Sq. Ft.</div>
+                                </div>
+                                <div class="bg-godrej-sage/50 p-4 rounded-xl">
+                                    <div class="text-xs text-slate-500 font-semibold uppercase">Estimated Investment</div>
+                                    <div id="plan-price" class="text-lg font-bold text-godrej-gold">₹ 1.85 Cr Onwards</div>
+                                </div>
+                                <div class="space-y-2 text-xs text-slate-600">
+                                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-godrej-emerald"></i> Spacious balconies with open views</div>
+                                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-godrej-emerald"></i> Contemporary fittings and finishes</div>
+                                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-godrej-emerald"></i> Italian marble flooring in living areas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Amenities Grid -->
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-6">Project Amenities</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            <div class="p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-800">Clubhouse & Community Spaces</h4>
+                                    <p class="text-[11px] text-slate-500 mt-1">Spaces to relax, celebrate, and connect with neighbors.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0">
+                                    <i class="fa-solid fa-cloud-showers-water"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-800">Landscaped Gardens</h4>
+                                    <p class="text-[11px] text-slate-500 mt-1">Landscaped courtyards and seating areas.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0">
+                                    <i class="fa-solid fa-charging-station"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-800">EV Charging Hub</h4>
+                                    <p class="text-[11px] text-slate-500 mt-1">Fast charging sockets for every apartment bay.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0">
+                                    <i class="fa-solid fa-water-ladder"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-800">Swimming Pool</h4>
+                                    <p class="text-[11px] text-slate-500 mt-1">A dedicated pool for leisure and recreation.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0">
+                                    <i class="fa-solid fa-cloud-sun"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-800">Sky Observatory</h4>
+                                    <p class="text-[11px] text-slate-500 mt-1">Telescope Lounge on 32nd floor roof terrace.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bg-godrej-offwhite border border-godrej-sage rounded-2xl flex items-start gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-godrej-sage flex items-center justify-center text-godrej-emerald text-lg shrink-0">
+                                    <i class="fa-solid fa-dumbbell"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-800">Fitness Center</h4>
+                                    <p class="text-[11px] text-slate-500 mt-1">A well-equipped space for daily workouts.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Connectivity & Location Matrix -->
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-6">Connectivity & Location Matrix</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="p-4 border border-slate-200 rounded-xl flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-laptop-code text-godrej-gold text-lg"></i>
+                                    <span class="text-xs font-semibold text-slate-700">Major IT Hubs & Tech Parks</span>
+                                </div>
+                                <span class="text-xs font-bold text-godrej-emerald">10 Mins</span>
+                            </div>
+                            <div class="p-4 border border-slate-200 rounded-xl flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-road text-godrej-gold text-lg"></i>
+                                    <span class="text-xs font-semibold text-slate-700">NICE Ring Expressway</span>
+                                </div>
+                                <span class="text-xs font-bold text-godrej-emerald">05 Mins</span>
+                            </div>
+                            <div class="p-4 border border-slate-200 rounded-xl flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-plane-departure text-godrej-gold text-lg"></i>
+                                    <span class="text-xs font-semibold text-slate-700">International Airport</span>
+                                </div>
+                                <span class="text-xs font-bold text-godrej-emerald">45 Mins</span>
+                            </div>
+                            <div class="p-4 border border-slate-200 rounded-xl flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-graduation-cap text-godrej-gold text-lg"></i>
+                                    <span class="text-xs font-semibold text-slate-700">Top International Schools</span>
+                                </div>
+                                <span class="text-xs font-bold text-godrej-emerald">12 Mins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sticky Sidebar Form -->
+                <div class="lg:col-span-4">
+                    <div class="sticky top-28 bg-godrej-offwhite p-6 rounded-2xl border border-godrej-sage shadow-xl">
+                        <div id="sidebar-form-content">
+                            <div class="flex items-center gap-2 text-godrej-gold text-xs font-bold uppercase tracking-wider mb-2">
+                                <i class="fa-solid fa-bolt"></i> VIP Developer Priority Desk
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-1">Book Site Visit</h3>
+                            <p class="text-xs text-slate-500 mb-6">Schedule a private preview with our senior property relationship manager.</p>
+
+                            <form id="sidebar-booking-form" onsubmit="handleSidebarSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Your Name *</label>
+                                    <input type="text" required placeholder="Full Name" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Phone Number *</label>
+                                    <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Preferred BHK Configuration</label>
+                                    <select class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                        <option>2 BHK Luxury Apartment</option>
+                                        <option>3 BHK Premium Residence</option>
+                                        <option>4 BHK Sky Penthouse</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Target Purchase Timeline</label>
+                                    <select class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                        <option>Ready to Buy (Immediate)</option>
+                                        <option>Within 3 Months</option>
+                                        <option>Exploring / Investment</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="w-full bg-godrej-emerald hover:bg-godrej-darkEmerald text-white font-semibold py-3 rounded-xl transition-all shadow-md text-sm flex items-center justify-center gap-2">
+                                    <span>Schedule Visit & Price Sheet</span>
+                                    <i class="fa-solid fa-shield-halved text-godrej-gold"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Success View -->
+                        <div id="sidebar-form-success" class="hidden text-center py-6">
+                            <div class="w-12 h-12 bg-godrej-sage text-godrej-emerald rounded-full flex items-center justify-center text-xl mx-auto mb-3">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <h4 class="font-serif text-lg font-bold text-godrej-emerald">Appointment Requested</h4>
+                            <p class="text-xs text-slate-600 mt-2">Our team will call you shortly to confirm chauffeur pick-up details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- QUICK VIEW MODAL POPUP -->
+    <div id="quick-view-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl transition-all transform animate-in fade-in zoom-in-95">
+            <div class="relative h-60 sm:h-72">
+                <img id="modal-img" src="" alt="Quick View Property" class="w-full h-full object-cover">
+                <button onclick="closeQuickViewModal()" class="absolute top-4 right-4 bg-white/80 hover:bg-white text-slate-800 rounded-full w-9 h-9 flex items-center justify-center shadow-md transition-all">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+                <div class="absolute bottom-4 left-4 flex gap-2">
+                    <span id="modal-tag" class="bg-godrej-emerald text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">New Launch</span>
+                </div>
+            </div>
+
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <div>
+                        <h3 id="modal-title" class="font-serif text-2xl font-bold text-godrej-emerald">Godrej Project Name</h3>
+                        <p id="modal-location" class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot text-godrej-gold mr-1"></i> Location</p>
+                    </div>
+                    <div id="modal-price" class="text-xl font-bold text-godrej-gold">₹ 2.15 Cr</div>
+                </div>
+
+                <!-- Key Stats -->
+                <div class="grid grid-cols-3 gap-2 my-4 p-3 bg-godrej-offwhite rounded-xl border border-godrej-sage text-center">
+                    <div>
+                        <span class="block text-[10px] uppercase font-semibold text-slate-400">Area</span>
+                        <span id="modal-area" class="text-xs font-bold text-slate-700">1,450 - 2,800 Sq.Ft</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] uppercase font-semibold text-slate-400">RERA ID</span>
+                        <span id="modal-rera" class="text-xs font-bold text-slate-700">PRM/KA/1251</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] uppercase font-semibold text-slate-400">Rating</span>
+                        <span id="modal-highlight" class="text-xs font-bold text-godrej-emerald">Clubhouse Access</span>
+                    </div>
+                </div>
+
+                <p id="modal-summary" class="text-xs text-slate-600 leading-relaxed mb-6">
+                    Discover premium finishes, well-planned layouts, and amenities designed for everyday comfort.
+                </p>
+
+                <div class="flex gap-3">
+                    <button onclick="closeQuickViewModal()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 rounded-xl text-xs transition-all">Close</button>
+                    <button id="modal-explore-btn" onclick="" class="w-1/2 bg-godrej-emerald hover:bg-godrej-darkEmerald text-white font-semibold py-2.5 rounded-xl text-xs transition-all shadow-md flex items-center justify-center gap-1">
+                        <span>Explore Full Details Page</span>
+                        <i class="fa-solid fa-arrow-right text-godrej-gold"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FULLSCREEN LIGHTBOX MODAL -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/95 flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-godrej-gold z-50">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-5xl w-full text-center">
+            <img id="lightbox-img" src="" alt="Enlarged Showcase View" class="max-h-[80vh] mx-auto rounded-xl object-contain">
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-godrej-darkEmerald text-white py-12 border-t border-godrej-emerald">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-godrej-emerald border border-godrej-gold flex items-center justify-center text-godrej-gold font-serif font-bold text-lg">G</div>
+                        <span class="text-lg font-bold font-serif">GODREJ PROPERTIES</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Building quality homes and communities backed by over 120 years of legacy.</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-godrej-gold mb-4">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="#properties-section" onclick="showCatalogPage()" class="hover:text-godrej-gold">Residences Portfolio</a></li>
+                        <li><a href="#legacy-section" onclick="showCatalogPage()" class="hover:text-godrej-gold">Our Story</a></li>
+                        <li><a href="#legacy-section" onclick="showCatalogPage()" class="hover:text-godrej-gold">Design & Amenities</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-godrej-gold mb-4">Legal & RERA</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li>RERA Compliance Portal</li>
+                        <li>Privacy Policy</li>
+                        <li>Project Approvals</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-godrej-gold mb-4">Corporate Office</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">Godrej One, 5th Floor, Pirojshanagar, Vikhroli (East), Mumbai - 400079</p>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 text-center text-xs text-slate-400">
+                © 2026 Godrej Properties Limited. All rights reserved. Designed for Modern Living.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+
+</body>
+</html>

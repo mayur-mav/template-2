@@ -1,0 +1,194 @@
+.backdrop-blur-custom {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.text-gradient-gold {
+    background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #B89628 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.bg-emerald-gradient {
+    background: linear-gradient(135deg, #0F382C 0%, #175241 100%);
+}
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #F9FAF9;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #0F382C;
+    border-radius: 4px;
+}
+
+/* Responsive safeguards for phones, tablets, and compact laptop viewports. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+img,
+video,
+svg {
+    max-width: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+    font: inherit;
+}
+
+#quick-view-modal {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+#quick-view-modal > div {
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+#lightbox-modal {
+    padding: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+}
+
+#lightbox-img {
+    max-width: 100%;
+    max-height: 80dvh;
+}
+
+@media (max-width: 640px) {
+    #property-grid {
+        gap: 1.25rem;
+    }
+
+    #properties-section,
+    #legacy-section,
+    #sustainability,
+    #faq-section,
+    #consultation-section {
+        scroll-margin-top: 1rem;
+    }
+
+    #quick-view-modal > div {
+        border-radius: 1rem;
+    }
+
+    #quick-view-modal > div > div:last-child {
+        padding: 1rem;
+    }
+
+    #modal-title {
+        font-size: 1.25rem;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+
+    #modal-price {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    #modal-rera,
+    #modal-area,
+    #modal-rating,
+    #detail-rera-top {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    #details-page .grid.grid-cols-2[class~="md:grid-cols-4"] > div {
+        min-width: 0;
+        padding-right: 0.5rem;
+        overflow-wrap: anywhere;
+    }
+
+    #consultation-section .bg-white.text-slate-800.p-8 {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 380px) {
+    #quick-view-modal .grid.grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+
+    #details-page .grid.grid-cols-2[class~="md:grid-cols-4"] {
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    #details-page .text-3xl {
+        font-size: 1.75rem;
+    }
+
+    #lightbox-modal {
+        padding: 0.75rem;
+    }
+}
+
+.hero-banner,
+.hero-banner * {
+    min-width: 0;
+}
+
+.hero-banner-content,
+.hero-banner-content > .bg-white {
+    width: 100%;
+    max-width: 100%;
+}
+
+.hero-banner input,
+.hero-banner select {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.hero-banner-overlay {
+    background:
+        linear-gradient(90deg, rgba(5, 24, 19, 0.91) 0%, rgba(5, 24, 19, 0.72) 52%, rgba(5, 24, 19, 0.46) 100%),
+        linear-gradient(0deg, rgba(5, 24, 19, 0.56) 0%, transparent 54%, rgba(5, 24, 19, 0.2) 100%);
+}
+
+@media (max-width: 640px) {
+    .hero-banner-overlay {
+        background: linear-gradient(180deg, rgba(5, 24, 19, 0.86) 0%, rgba(5, 24, 19, 0.82) 34%, rgba(5, 24, 19, 0.94) 100%);
+    }
+
+    .hero-banner .grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .hero-banner .grid > *,
+    .hero-banner .flex > * {
+        min-width: 0;
+    }
+
+    .hero-banner .chip-btn {
+        white-space: normal;
+        text-align: center;
+        line-height: 1.25;
+    }
+}
+
+.hero-banner {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.hero-banner-content {
+    grid-column: 1 / -1;
+}

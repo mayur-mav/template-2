@@ -1,0 +1,86 @@
+export const godrejData = [
+            {
+                id: 1,
+                title: "Godrej Horizon Residences",
+                location: "Bannerghatta Main Road, Bangalore",
+                category: "new-launch",
+                type: "apartment",
+                priceValue: 2.15,
+                price: "₹ 2.15 Cr*",
+                area: "1,450 - 2,800 Sq.Ft",
+                possession: "December 2026",
+                units: "18 Acres / 420 Units",
+                highlight: "Clubhouse Access",
+                reraId: "PRM/KA/RERA/1251/310/PR/210302",
+                summary: "A contemporary residence featuring spacious homes, landscaped courtyards, and a range of community amenities.",
+                description: "Godrej Horizon Residences offers contemporary homes in South Bangalore, with considered layouts, premium finishes, and convenient access to key destinations.",
+                images: [
+                    "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80",
+                    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+                ]
+            },
+            {
+                id: 2,
+                title: "Godrej Tropical Isle",
+                location: "Sector 146, Noida Expressway",
+                category: "featured",
+                type: "penthouse",
+                priceValue: 3.80,
+                price: "₹ 3.80 Cr*",
+                area: "2,200 - 3,500 Sq.Ft",
+                possession: "March 2027",
+                units: "12 Acres / 280 Units",
+                highlight: "Resort-Style Amenities",
+                reraId: "UPRERAPRJ304519",
+                summary: "Island-themed ultra-luxury residences with bio-filtered natural swimming pools and private island sky lounges.",
+                description: "Godrej Tropical Isle offers spacious residences along the Noida Expressway, with resort-style amenities, landscaped grounds, and elegant sky penthouses.",
+                images: [
+                    "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+                    "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+                ]
+            },
+            {
+                id: 3,
+                title: "Godrej Reserve Sanctuary",
+                location: "Kandivali East, Mumbai",
+                category: "ready",
+                type: "apartment",
+                priceValue: 2.95,
+                price: "₹ 2.95 Cr*",
+                area: "1,100 - 1,950 Sq.Ft",
+                possession: "Ready to Move",
+                units: "25 Acres / 600 Units",
+                highlight: "Clubhouse Access",
+                reraId: "P51800022104",
+                summary: "Ready-to-move homes with spacious layouts and convenient access to everyday essentials.",
+                description: "Godrej Reserve Residences offers ready-to-move apartments with modern amenities and convenient access to key destinations in Mumbai.",
+                images: [
+                    "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&w=1200&q=80",
+                    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80"
+                ]
+            },
+            {
+                id: 4,
+                title: "Godrej Woodsville Villa Estate",
+                location: "Hinjewadi, Pune",
+                category: "new-launch",
+                type: "villa",
+                priceValue: 4.50,
+                price: "₹ 4.50 Cr*",
+                area: "3,200 - 4,800 Sq.Ft",
+                possession: "June 2027",
+                units: "40 Acres / 95 Villas",
+                highlight: "Private Garden",
+                reraId: "P52100034821",
+                summary: "Exclusive villas featuring spacious layouts, private outdoor areas, and premium community amenities.",
+                description: "An exclusive villa community featuring considered architecture, private outdoor spaces, and convenient access to Pune?s business and lifestyle destinations.",
+                images: [
+                    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+                    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+                ]
+            }
+        ];
