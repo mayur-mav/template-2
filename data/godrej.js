@@ -295,6 +295,18 @@ export const godrejFaqs = [
     {
         question: 'Are home loans pre-approved for these Godrej developments?',
         answer: 'Yes, featured properties may have title approvals and home loan options from major financial institutions. Contact our team to confirm the current options for a specific project.'
+    },
+        {
+        question: 'Are home loans pre-approved for these Godrej developments?',
+        answer: 'Yes, featured properties may have title approvals and home loan options from major financial institutions. Contact our team to confirm the current options for a specific project.'
+    },
+        {
+        question: 'Are home loans pre-approved for these Godrej developments?',
+        answer: 'Yes, featured properties may have title approvals and home loan options from major financial institutions. Contact our team to confirm the current options for a specific project.'
+    },
+        {
+        question: 'Are home loans pre-approved for these Godrej developments?',
+        answer: 'Yes, featured properties may have title approvals and home loan options from major financial institutions. Contact our team to confirm the current options for a specific project.'
     }
 ];
 

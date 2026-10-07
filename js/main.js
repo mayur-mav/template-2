@@ -476,6 +476,17 @@
             const list = document.getElementById('faq-list');
             if (!list) return;
             list.replaceChildren();
+            const useTwoColumns = faqs.length > 5;
+            list.className = `grid grid-cols-1 items-start gap-4${useTwoColumns ? ' lg:grid-cols-2' : ''}`;
+
+            const columns = useTwoColumns
+                ? [0, 1].map(() => {
+                    const column = document.createElement('div');
+                    column.className = 'contents lg:flex lg:flex-col lg:gap-4';
+                    list.appendChild(column);
+                    return column;
+                })
+                : null;
 
             if (!faqs.length) {
                 const emptyMessage = document.createElement('p');
@@ -511,7 +522,8 @@
                 answer.textContent = faq.answer;
 
                 item.append(button, answer);
-                list.appendChild(item);
+                if (columns) columns[index % 2].appendChild(item);
+                else list.appendChild(item);
             });
         }
 
@@ -520,7 +532,21 @@
             const ans = document.getElementById(`faq-answer-${id}`);
             const icon = document.getElementById(`faq-icon-${id}`);
             const button = document.querySelector(`[aria-controls="faq-answer-${id}"]`);
+            if (!ans || !icon || !button) return;
+
             const willOpen = ans.classList.contains('hidden');
+
+            if (willOpen) {
+                document.querySelectorAll('#faq-list [id^="faq-answer-"]').forEach((otherAnswer) => {
+                    if (otherAnswer === ans) return;
+
+                    otherAnswer.classList.add('hidden');
+                    const otherId = otherAnswer.id.replace('faq-answer-', '');
+                    document.getElementById(`faq-icon-${otherId}`)?.classList.remove('rotate-180');
+                    document.querySelector(`[aria-controls="${otherAnswer.id}"]`)?.setAttribute('aria-expanded', 'false');
+                });
+            }
+
             ans.classList.toggle('hidden', !willOpen);
             icon.classList.toggle('rotate-180', willOpen);
             button.setAttribute('aria-expanded', String(willOpen));

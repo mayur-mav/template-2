@@ -18,6 +18,11 @@
 .builder-primary-button { background-color: var(--builder-primary, #0F382C); }
 .builder-primary-button:hover { background-color: var(--builder-primary-hover, #09241C); }
 .property-card:hover .property-card-title { color: var(--builder-accent, #D4AF37); }
+
+@media (min-width: 1024px) {
+    #faq-list button[aria-controls^="faq-answer-"] { min-height: 6rem; }
+}
+
 .bg-emerald-gradient {
     background: linear-gradient(135deg, #0F382C 0%, #175241 100%);
 }
