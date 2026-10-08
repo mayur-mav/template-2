@@ -281,36 +281,47 @@ export const godrejData = [
 
 export const godrejFaqs = [
     {
-        question: 'What amenities are available at Godrej residences?',
-        answer: 'Amenities vary by project and may include a clubhouse, fitness center, swimming pool, landscaped spaces, children’s play areas, and dedicated parking. Contact our team for project-specific details.'
+        question: 'Who is the owner of Godrej Properties?',
+        answer: 'Godrej Properties Limited is a publicly traded company listed on the BSE and NSE. It belongs to the Godrej Industries Group and is led by the billionaire Godrej family, with Adi Burjorji Godrej being a principal figure.'
     },
     {
-        question: 'Can I request custom floor plan alterations prior to possession?',
-        answer: 'Yes, under the Godrej Custom Homes initiative, early-stage buyers can work with our interior architecture team to combine bedrooms or customize modular kitchen layouts.'
+        question: 'In which cities does Godrej Properties operate?',
+        answer: 'They have an active footprint across major Indian hubs, including Mumbai, Bengaluru (Bangalore), Pune, Gurugram (NCR), Hyderabad, and Chennai.'
     },
     {
-        question: 'How do I schedule a site visit?',
-        answer: 'Fill out the site visit form or call our team. A property advisor will contact you to confirm a convenient date and time.'
+        question: 'Are Godrej projects legally compliant?',
+        answer: "Yes, all new and ongoing Godrej Properties projects are registered under the respective state's Real Estate Regulatory Authority (RERA). You can find specific RERA registration numbers directly listed on each project's official brochure or state portal."
     },
     {
-        question: 'Are home loans pre-approved for these Godrej developments?',
-        answer: 'Yes, featured properties may have title approvals and home loan options from major financial institutions. Contact our team to confirm the current options for a specific project.'
+        question: "What was Godrej Properties' first project?",
+        answer: "Godrej Properties' first project was Godrej Edenwoods, a residential housing development launched in Thane, Mumbai, in 1991."
     },
-        {
-        question: 'Are home loans pre-approved for these Godrej developments?',
-        answer: 'Yes, featured properties may have title approvals and home loan options from major financial institutions. Contact our team to confirm the current options for a specific project.'
+    {
+        question: 'What is the history of Godrej Properties?',
+        answer: 'Godrej Properties was originally incorporated in 1985 as Sea Breeze Constructions and Investments before becoming the official real estate arm of the Godrej Group in 1990.'
     },
-        {
-        question: 'Are home loans pre-approved for these Godrej developments?',
-        answer: 'Yes, featured properties may have title approvals and home loan options from major financial institutions. Contact our team to confirm the current options for a specific project.'
+    {
+        question: "What is Godrej Properties' slogan?",
+        answer: 'Godrej Properties uses the parent Godrej Group tagline "Brighter living", alongside campaign-specific sign-offs like "Jahaan Khushiyaan Badi Hoti Hain" (where everyday joys are bigger) from their Everyday Joys brand initiatives.'
     },
-        {
-        question: 'Are home loans pre-approved for these Godrej developments?',
-        answer: 'Yes, featured properties may have title approvals and home loan options from major financial institutions. Contact our team to confirm the current options for a specific project.'
+    {
+        question: 'Is Godrej a listed company?',
+        answer: 'Yes, the Godrej Group includes several publicly listed companies trading on the National Stock Exchange (NSE) and Bombay Stock Exchange (BSE).'
+    },
+    {
+        question: 'Who is the legal head of Godrej Properties?',
+        answer: 'Saurabh Mohindru is the Chief Legal Officer and overall legal head at Godrej Properties Limited.'
+    },
+    {
+        question: 'What is the lot size of Godrej Properties?',
+        answer: 'The market lot size for Godrej Properties futures and options trading on the National Stock Exchange (NSE) is 325 shares per contract.'
+    },
+    {
+        question: 'What are the latest news on Godrej Properties?',
+        answer: 'Godrej Properties recently announced plans to develop a major luxury housing project in Marine Lines, Mumbai, with an estimated revenue potential of ₹6,000 crore.'
     }
 ];
 
-// Shared data contract consumed by js/main.js for any builder landing page.
 export const builderConfig = {
     slug: 'godrej',
     name: 'Godrej Properties',

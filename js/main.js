@@ -736,11 +736,12 @@
             const footerRegions = document.getElementById('footer-builder-regions');
             if (footerRegions && activeBuilderData.regions) footerRegions.textContent = activeBuilderData.regions;
             let popupAlreadyShown = false;
-            const popupStorageKey = `${builderSlug}-whatsapp-popup-shown`;
-            try { popupAlreadyShown = localStorage.getItem(popupStorageKey) === 'true'; } catch (error) { /* Storage may be disabled. */ }
+            try { popupAlreadyShown = sessionStorage.getItem('waPopupShown') === 'true'; } catch (error) { /* Storage may be disabled. */ }
             if (!popupAlreadyShown) {
-                try { localStorage.setItem(popupStorageKey, 'true'); } catch (error) { /* Storage may be disabled. */ }
-                window.setTimeout(openWhatsAppPopup, 900);
+                window.setTimeout(() => {
+                    openWhatsAppPopup();
+                    try { sessionStorage.setItem('waPopupShown', 'true'); } catch (error) { /* Storage may be disabled. */ }
+                }, 3500);
             }
         }
 

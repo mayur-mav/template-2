@@ -20,7 +20,7 @@
 .property-card:hover .property-card-title { color: var(--builder-accent, #D4AF37); }
 
 @media (min-width: 1024px) {
-    #faq-list button[aria-controls^="faq-answer-"] { min-height: 6rem; }
+    #faq-list button[aria-controls^="faq-answer-"] { min-height: 5.5rem; }
 }
 
 .bg-emerald-gradient {
