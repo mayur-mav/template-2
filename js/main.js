@@ -238,7 +238,7 @@
         }
 
         // FILTER FUNCTIONS
-        function applyFilters() {
+        function applyFilters(scrollToResults = false) {
             const searchVal = document.getElementById('search-input').value.toLowerCase();
             const typeVal = document.getElementById('type-select').value;
             const priceVal = document.getElementById('price-select').value;
@@ -258,6 +258,12 @@
             });
 
             renderPropertyGrid(filtered);
+
+            if (scrollToResults) {
+                requestAnimationFrame(() => {
+                    document.getElementById('properties-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            }
         }
 
         function filterByChip(chipType) {
@@ -268,7 +274,7 @@
                 btn.setAttribute('aria-pressed', String(isActive));
             });
 
-            applyFilters();
+            applyFilters(true);
         }
 
         function renderPropertyFeatures(property) {
