@@ -205,7 +205,7 @@
                 card.innerHTML = `
                     <div class="relative h-64 overflow-hidden bg-builder-soft">
                         ${coverImage
-                            ? `<img src="${coverImage}" alt="${prop.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">`
+                            ? `<img src="${coverImage}" alt="${prop.title}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">`
                             : '<div class="w-full h-full flex items-center justify-center text-builder-primary/50"><i class="fa-regular fa-image text-4xl" aria-hidden="true"></i></div>'}
                         <div class="absolute top-4 left-4 flex flex-col gap-1">
                             <span class="bg-builder-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
@@ -353,8 +353,10 @@
             const propertyImages = Array.isArray(prop.images) ? prop.images : prop.image ? [prop.image] : [];
             [0, 1, 2].forEach(index => {
                 const image = document.getElementById(`detail-img-${index}`);
-                if (propertyImages[index]) image.src = propertyImages[index];
-                else image.removeAttribute('src');
+                if (propertyImages[index]) {
+                    image.loading = 'lazy';
+                    image.src = propertyImages[index];
+                } else image.removeAttribute('src');
             });
 
             // Show SPA View
@@ -454,6 +456,7 @@
             const image = document.getElementById('floor-plan-img');
             const imagePanel = document.getElementById('floor-plan-image-panel');
             if (plan.image) {
+                image.loading = 'lazy';
                 image.src = plan.image;
                 imagePanel.hidden = false;
                 image.onerror = () => { imagePanel.hidden = true; };
@@ -469,7 +472,9 @@
         function openLightbox(imgIndex) {
             const propertyImages = Array.isArray(activeProperty?.images) ? activeProperty.images : activeProperty?.image ? [activeProperty.image] : [];
             if (!propertyImages[imgIndex]) return;
-            document.getElementById('lightbox-img').src = propertyImages[imgIndex];
+            const lightboxImage = document.getElementById('lightbox-img');
+            lightboxImage.loading = 'lazy';
+            lightboxImage.src = propertyImages[imgIndex];
             document.getElementById('lightbox-modal').classList.remove('hidden');
         }
 
