@@ -300,6 +300,7 @@
                 card.append(iconBox, name);
                 amenitiesContainer.appendChild(card);
             });
+            addFeatureExpansion(amenitiesContainer, 6, 'amenities');
 
             (property.connectivity || []).forEach(place => {
                 const card = document.createElement('div');
@@ -321,8 +322,29 @@
                 card.append(placeInfo, distance);
                 connectivityContainer.appendChild(card);
             });
+            addFeatureExpansion(connectivityContainer, 4, 'connectivity');
         }
 
+        function addFeatureExpansion(list, limit, label) {
+            list.classList.toggle('feature-list-collapsed', list.children.length > limit);
+            const oldLink = list.nextElementSibling;
+            if (oldLink?.classList.contains('feature-expansion-link')) oldLink.remove();
+            if (list.children.length <= limit) return;
+            const link = document.createElement('button');
+            link.type = 'button';
+            link.className = 'feature-expansion-link font-serif';
+            link.setAttribute('aria-expanded', 'false');
+            const expandedLabel = label === 'amenities' ? 'View all amenities \u2192' : 'Explore connectivity details \u2192';
+            const collapsedLabel = label === 'amenities' ? 'Show fewer amenities \u2192' : 'Show fewer connectivity details \u2192';
+            link.textContent = expandedLabel;
+            link.addEventListener('click', () => {
+                const expanded = link.getAttribute('aria-expanded') === 'true';
+                link.setAttribute('aria-expanded', String(!expanded));
+                list.classList.toggle('feature-list-collapsed', expanded);
+                link.textContent = expanded ? expandedLabel : collapsedLabel;
+            });
+            list.insertAdjacentElement('afterend', link);
+        }
         // NAVIGATION SPA SPA SWITCHING
         function openDetailPage(id) {
             const prop = propertiesData.find(p => p.id === id);

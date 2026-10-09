@@ -710,3 +710,13 @@ a:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
     #floor-plan-price-card[hidden],
     #floor-plan-image-panel[hidden] { display: none; }
 }
+
+/* Expandable amenities and connectivity lists */
+#detail-amenities.feature-list-collapsed > :nth-child(n+7),
+#detail-connectivity.feature-list-collapsed > :nth-child(n+5) { display: none; }
+.feature-expansion-link { display: inline-block; margin-top: .75rem; border: 0; background: transparent; padding: 0; color: #112236; font-size: .9rem; font-weight: 700; cursor: pointer; transition: color .2s; }
+.feature-expansion-link:hover { color: #C5A059; }
+
+/* Hide the browser scrollbar while keeping page scrolling enabled */
+html, body { -ms-overflow-style: none; scrollbar-width: none; }
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
