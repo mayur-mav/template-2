@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birla Estates | Life Designed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        godrej: {
+                            emerald: '#0F382C',
+                            darkEmerald: '#09241C',
+                            gold: '#D4AF37',
+                            goldHover: '#B89628',
+                            sage: '#E8F0EC',
+                            mint: '#D1E4DB',
+                            offwhite: '#F9FAF9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="js/main.js"></script>
+</head>
+<body data-builder="birla" class="bg-godrej-offwhite text-slate-800 font-sans antialiased custom-scrollbar">
+
+    <!-- MAIN NAVIGATION HEADER -->
+    <header class="site-header sticky top-0 z-40 bg-white/95 backdrop-blur-custom border-b border-godrej-sage shadow-sm">
+        <div class="w-full px-3 sm:px-6 lg:px-8 xl:px-10">
+            <div class="site-header-main flex min-h-[4.5rem] items-center justify-between gap-2 sm:gap-4 lg:min-h-[5rem]">
+                <a href="#catalog-page" onclick="showCatalogPage()" class="site-logo flex shrink-0 items-center gap-2 sm:gap-3" aria-label="Godrej Properties home">
+                    <span class="site-logo-mark flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-godrej-emerald text-godrej-gold font-serif font-bold text-lg sm:text-xl shadow-md">BE</span>
+                    <span class="min-w-0">
+                        <span class="block text-base sm:text-xl font-bold tracking-tight text-godrej-emerald font-serif">BIRLA</span>
+                        <span class="block text-[8px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-godrej-gold font-medium">ESTATES</span>
+                    </span>
+                </a>
+
+                <nav class="site-nav site-nav-desktop hidden lg:flex items-center gap-5 xl:gap-8 text-sm font-medium" aria-label="Main navigation">
+                    <a href="#catalog-page" onclick="showCatalogPage()" class="text-godrej-emerald hover:text-godrej-gold transition-colors">Overview</a>
+                    <a href="#properties-section" onclick="showCatalogPage()" class="text-slate-600 hover:text-godrej-emerald transition-colors">Residences</a>
+                    <a href="#legacy-section" onclick="showCatalogPage()" class="text-slate-600 hover:text-godrej-emerald transition-colors">About Us</a>
+                    <a href="#faq-section" onclick="showCatalogPage()" class="text-slate-600 hover:text-godrej-emerald transition-colors">FAQ</a>
+                </nav>
+
+                <div class="site-header-actions hidden shrink-0 items-center gap-2 sm:gap-3 lg:flex">
+                    <a href="tel:18001082020" class="site-phone flex items-center gap-1.5 rounded-full bg-godrej-sage px-2 sm:px-3 py-2 text-[10px] sm:text-xs font-semibold text-godrej-emerald hover:bg-godrej-mint transition-colors" aria-label="Call 1800 108 2020">
+                        <i class="fa-solid fa-phone text-godrej-gold" aria-hidden="true"></i><span>1800 108 2020</span>
+                    </a>
+                    <button onclick="scrollToConsultation()" class="site-visit-button flex h-9 sm:h-10 items-center justify-center gap-2 rounded-full bg-godrej-emerald px-3 sm:px-4 lg:px-5 text-white text-xs font-semibold uppercase tracking-wide shadow-md hover:bg-godrej-darkEmerald transition-colors" aria-label="Schedule a site visit">
+                        <i class="fa-solid fa-calendar-check text-godrej-gold" aria-hidden="true"></i>
+                        <span>Site Visit</span>
+                    </button>
+                </div>
+
+                <button id="mobile-menu-btn" class="mobile-menu-toggle flex h-11 w-11 items-center justify-center rounded-lg text-godrej-gold hover:bg-godrej-sage lg:hidden" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars text-xl" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="mobile-menu hidden border-t border-slate-100 py-3 lg:hidden">
+                <nav class="mobile-menu-nav grid grid-cols-1 gap-2 font-medium" aria-label="Main navigation">
+                    <a href="#catalog-page" onclick="showCatalogPage(); closeMobileMenu()" class="mobile-menu-link text-godrej-emerald">Overview</a>
+                    <a href="#properties-section" onclick="showCatalogPage(); closeMobileMenu()" class="mobile-menu-link">Residences</a>
+                    <a href="#legacy-section" onclick="showCatalogPage(); closeMobileMenu()" class="mobile-menu-link">About Us</a>
+                    <a href="#faq-section" onclick="showCatalogPage(); closeMobileMenu()" class="mobile-menu-link">FAQ</a>
+                </nav>
+                <div class="mobile-menu-actions mt-4 grid grid-cols-1 gap-2">
+                    <a href="tel:18001082020" class="mobile-menu-action phone-action"><i class="fa-solid fa-phone text-godrej-gold" aria-hidden="true"></i> 1800 108 2020</a>
+                    <button onclick="scrollToConsultation(); closeMobileMenu()" class="mobile-menu-action visit-action" type="button"><i class="fa-solid fa-calendar-check text-godrej-gold" aria-hidden="true"></i> Book Site Visit</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CATALOG PAGE VIEW -->
+    <main id="catalog-page" class="transition-opacity duration-300">
+        <!-- HERO BANNER -->
+        <section class="hero-banner relative isolate bg-godrej-emerald text-white overflow-hidden py-12 sm:py-16 lg:py-20">
+            <img class="hero-banner-image absolute inset-0 z-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1280&q=70" alt="" aria-hidden="true" loading="lazy" decoding="async">
+            <div class="hero-banner-overlay absolute inset-0 z-0" aria-hidden="true"></div>
+            <div class="hero-banner-content w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-godrej-gold text-xs font-medium uppercase tracking-widest mb-6">
+                        <i class="fa-solid fa-building"></i> LIFEDESIGNED® LIVING SINCE 2016
+                    </div>
+                    <h1 class="font-serif text-3xl min-[380px]:text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-balance">
+                        Crafted Around You <span class="text-gradient-gold"> Designed For Life</span>
+                    </h1>
+                    <p class="text-white/90 text-sm sm:text-lg mb-6 sm:mb-8 font-light max-w-3xl mx-auto leading-relaxed">
+                        Driven by the Birla legacy of trust and excellence, we create LifeDesigned® residences that meticulously understand, nurture, and enrich every stage of your life.
+                    </p>
+                </div>
+
+                <!-- SEARCH & FILTER BAR -->
+                <div class="w-full max-w-6xl mx-auto bg-white p-4 sm:p-6 lg:p-7 rounded-2xl shadow-2xl text-slate-800 border border-godrej-sage">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
+                        <div class="relative">
+                            <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Search Location</label>
+                            <div class="flex items-center bg-godrej-offwhite rounded-xl px-3 py-2.5 border border-slate-200 focus-within:border-godrej-emerald">
+                                <i class="fa-solid fa-location-dot text-godrej-emerald mr-2"></i>
+                                <input type="text" id="search-input" placeholder="e.g. Bangalore, Mumbai, NCR" class="bg-transparent w-full focus:outline-none text-sm text-slate-800 placeholder-slate-400">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Property Type</label>
+                            <div class="custom-select" data-custom-select>
+                                <select id="type-select" class="custom-select-native" aria-hidden="true" tabindex="-1">
+                                    <option value="all">All Types</option>
+                                    <option value="apartment">Apartments</option>
+                                    <option value="plot">Plots</option>
+                                    <option value="villa">Villas</option>
+                                </select>
+                                <button class="custom-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                                    <span>All Types</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="custom-select-menu" role="listbox" aria-label="Property Type" hidden></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Price Range</label>
+                            <div class="custom-select" data-custom-select>
+                                <select id="price-select" class="custom-select-native" aria-hidden="true" tabindex="-1">
+                                    <option value="all">Any Price</option>
+                                    <option value="1.5-2.5">₹1.5 Cr - ₹2.5 Cr</option>
+                                    <option value="2.5-4.0">₹2.5 Cr - ₹4.0 Cr</option>
+                                    <option value="4.0+">₹4.0 Cr+</option>
+                                </select>
+                                <button class="custom-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                                    <span>Any Price</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="custom-select-menu" role="listbox" aria-label="Price Range" hidden></div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-end">
+                            <button onclick="applyFilters(true)" class="w-full bg-godrej-emerald hover:bg-godrej-darkEmerald text-white font-semibold py-2.5 px-4 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 text-sm">
+                                <i class="fa-solid fa-magnifying-glass text-godrej-gold"></i> Find Residences
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Status Filter Chips -->
+                    <div class="category-filter-row pt-4 border-t border-slate-100 grid grid-cols-2 lg:flex lg:flex-wrap lg:items-center lg:justify-center gap-2 sm:gap-3">
+                        <span class="category-filter-label col-span-2 text-center lg:col-span-1 text-xs font-bold text-slate-500 uppercase tracking-wider">Category:</span>
+                        <button type="button" data-chip="all" aria-pressed="true" onclick="filterByChip('all')" class="chip-btn active w-full lg:w-auto text-center text-xs font-semibold px-3 lg:px-4 py-2 rounded-full">All</button>
+                        <button type="button" data-chip="new-launch" aria-pressed="false" onclick="filterByChip('new-launch')" class="chip-btn w-full lg:w-auto text-center text-xs font-semibold px-3 lg:px-4 py-2 rounded-full">New Launch</button>
+                        <button type="button" data-chip="ongoing" aria-pressed="false" onclick="filterByChip('ongoing')" class="chip-btn w-full lg:w-auto text-center text-xs font-semibold px-3 lg:px-4 py-2 rounded-full">Ongoing Projects</button>
+                        <button type="button" data-chip="ready" aria-pressed="false" onclick="filterByChip('ready')" class="chip-btn w-full lg:w-auto text-center text-xs font-semibold px-3 lg:px-4 py-2 rounded-full">Ready to Move</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROPERTIES CATALOG LISTING -->
+        <section id="properties-section" class="w-full py-12 sm:py-16 px-4 sm:px-6 lg:px-8 xl:px-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <div class="text-xs font-bold uppercase tracking-widest text-godrej-gold mb-1">Exclusive Portfolio</div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-godrej-emerald">Featured Residences</h2>
+                </div>
+            </div>
+
+            <!-- Responsive project carousel; controls are shown only when cards overflow. -->
+            <div class="property-carousel relative" data-property-carousel>
+                <button class="property-carousel-arrow property-carousel-prev" type="button" aria-label="Previous projects" data-carousel-prev hidden>
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                </button>
+                <div id="property-grid" class="property-carousel-track" aria-live="polite">
+                    <!-- Dynamic Content Population via JS -->
+                </div>
+                <button class="property-carousel-arrow property-carousel-next" type="button" aria-label="Next projects" data-carousel-next hidden>
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- GODREJ BRAND SHOWCASE -->
+        <section id="legacy-section" class="bg-white py-20 border-y border-godrej-sage">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto mb-12 sm:mb-14 text-center">
+                    <span class="text-xs font-bold uppercase tracking-[0.18em] text-godrej-gold block mb-3">LIFEDESIGNED® LIVING SINCE 2016</span>
+                    <h2 class="mx-auto max-w-4xl font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-godrej-emerald">LifeDesigned® Built on a Foundation of Trust.</h2>
+                    <div class="mx-auto mt-6 max-w-6xl space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                        <p>Birla Estates Private Limited, a 100% Wholly Owned Subsidiary of Century Textiles and Industries Limited, is the real estate venture of the Aditya Birla Group. Backed by a century-old legacy of trust, excellence, and leadership, the group brings its signature LifeDesigned® philosophy to modern residential development.</p>
+                        <p>Anchored in transparency, sustainable engineering, and human-centric design, Birla Estates crafts meticulously planned communities across key micro-markets in Bengaluru, Mumbai MMR, NCR, and Pune.</p>
+                    </div>
+                    <div class="mx-auto mt-8 grid max-w-6xl grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+                        <div class="rounded-xl border border-godrej-sage bg-godrej-offwhite px-5 py-6 sm:py-7 text-center">
+                            <div class="font-serif text-3xl sm:text-4xl font-bold text-godrej-gold">3K+</div>
+                            <div class="mt-2 text-sm font-medium text-slate-600">Happy Families</div>
+                        </div>
+                        <div class="rounded-xl border border-godrej-sage bg-godrej-offwhite px-5 py-6 sm:py-7 text-center">
+                            <div class="font-serif text-3xl sm:text-4xl font-bold text-godrej-gold">10M+</div>
+                            <div class="mt-2 text-sm font-medium text-slate-600">sq.ft.Delivered</div>
+                        </div>
+                        <div class="rounded-xl border border-godrej-sage bg-godrej-offwhite px-5 py-6 sm:py-7 text-center">
+                            <div class="font-serif text-3xl sm:text-4xl font-bold text-godrej-gold">20+</div>
+                            <div class="mt-2 text-sm font-medium text-slate-600">Landmark Projects</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONSULTATION / BOOKING ENQUIRY SECTION -->
+        <section id="consultation-section" class="py-20 bg-godrej-emerald text-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <span class="text-xs font-bold uppercase tracking-widest text-godrej-gold block mb-2">Exclusive Advisory</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold leading-tight mb-4">Schedule a Private Site Tour</h2>
+                        <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                            Connect with our senior property advisors to explore floor plans, customization options, and exclusive pre-launch price incentives.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-godrej-gold">
+                                    <i class="fa-solid fa-car"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-white">Complimentary EV Pick & Drop</h4>
+                                    <p class="text-xs text-slate-300">Chauffeur-driven luxury EV transport to the sales gallery.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-godrej-gold">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-white">Zero Buyer Commission</h4>
+                                    <p class="text-xs text-slate-300">Direct booking with Godrej Properties official developer desk.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-2xl relative">
+                            <div id="booking-form-container">
+                                <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-4">Request Callback / Site Visit</h3>
+                                <form id="main-consultation-form" onsubmit="handleMainFormSubmit(event)" class="space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-xs font-semibold text-slate-600 mb-1">Full Name *</label>
+                                            <input type="text" required placeholder="e.g. Ananya Sharma" class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-semibold text-slate-600 mb-1">Phone Number *</label>
+                                            <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-xs font-semibold text-slate-600 mb-1">Email Address *</label>
+                                            <input type="email" required placeholder="ananya@example.com" class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-semibold text-slate-600 mb-1">Preferred Project</label>
+                                            <div class="custom-select" data-custom-select>
+                                                <select id="main-project-select" name="preferredProject" class="custom-select-native" aria-hidden="true" tabindex="-1"></select>
+                                                <button class="custom-select-trigger" type="button" aria-label="Preferred project" aria-haspopup="listbox" aria-expanded="false">
+                                                    <span>Select a project</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                                </button>
+                                                <div class="custom-select-menu" role="listbox" aria-label="Preferred project" hidden></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-600 mb-1">Message / Requirements</label>
+                                        <textarea rows="2" placeholder="Preferred BHK, budget or site visit date..." class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald"></textarea>
+                                    </div>
+                                    <button type="submit" class="w-full bg-godrej-emerald hover:bg-godrej-darkEmerald text-white font-semibold py-3 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 text-sm">
+                                        <span>Confirm Consultation Request</span>
+                                        <i class="fa-solid fa-arrow-right text-godrej-gold"></i>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- Success Feedback Box -->
+                            <div id="main-form-success" class="hidden text-center py-8">
+                                <div class="w-16 h-16 bg-godrej-sage text-godrej-emerald rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                                <h3 class="font-serif text-2xl font-bold text-godrej-emerald mb-2">Consultation Confirmed!</h3>
+                                <p class="text-slate-600 text-sm max-w-sm mx-auto mb-6">Thank you. Your dedicated Godrej Relationship Director will contact you within 2 hours with personalized property brochures.</p>
+                                <button onclick="resetMainForm()" class="bg-godrej-sage text-godrej-emerald hover:bg-godrej-mint px-6 py-2 rounded-full text-xs font-semibold">Submit Another Request</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="py-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-godrej-gold block mb-1">Help & Guidance</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-godrej-emerald">Frequently Asked Questions</h2>
+            </div>
+
+            <div id="faq-list" class="grid grid-cols-1 gap-4" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <!-- PROPERTY DETAILS PAGE (WHITE BACKGROUND #FFFFFF SPA VIEW) -->
+    <main id="details-page" class="hidden bg-white min-h-screen text-slate-800 pt-6 pb-20">
+        <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
+            <!-- Back Button Navigation -->
+            <div class="mb-6 flex items-center justify-between border-b border-slate-100 pb-4">
+                <button onclick="showCatalogPage()" class="inline-flex items-center gap-2 text-sm font-semibold text-godrej-emerald hover:text-godrej-gold transition-colors">
+                    <i class="fa-solid fa-arrow-left"></i> Back to All Residences
+                </button>
+            </div>
+
+            <!-- Property Title & Badges Header -->
+            <div class="mb-8">
+                <div class="flex flex-wrap items-center gap-3 mb-3">
+                    <span id="detail-tag" class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full uppercase">Featured Project</span>
+                    <button id="detail-rera-toggle" type="button" hidden aria-expanded="false" aria-controls="detail-rera-value" class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full inline-flex items-center gap-1 hover:bg-emerald-200 transition-colors">
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i> RERA Verified
+                    </button>
+                    <span id="detail-rera-value" hidden class="text-xs text-slate-500 font-mono break-all"></span>
+                </div>
+                <h1 id="detail-title" class="font-serif text-3xl sm:text-5xl font-bold text-godrej-emerald">Godrej Green Cove</h1>
+                <p id="detail-location" class="text-slate-500 text-sm sm:text-base mt-2 flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-godrej-gold"></i> Bannerghatta Main Road, South Bangalore
+                </p>
+            </div>
+
+            <!-- EXACTLY 3 PROPERTY SHOWCASE GALLERY (ASYMMETRICAL MODERN 3-GRID) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-12">
+                <!-- Large Main Image -->
+                <div class="lg:col-span-8 relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-[320px] sm:h-[450px]" onclick="openLightbox(0)">
+                    <img id="detail-img-0" src="" alt="Main Architecture" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-lg flex items-center gap-2">
+                        <i class="fa-solid fa-expand"></i> Click for Fullscreen Gallery
+                    </div>
+                </div>
+
+                <!-- 2 Side Images Grid -->
+                <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 h-[320px] sm:h-[450px]">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-full" onclick="openLightbox(1)">
+                        <img id="detail-img-1" src="" alt="Interior Design" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-godrej-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-full" onclick="openLightbox(2)">
+                        <img id="detail-img-2" src="" alt="Project Amenities" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-godrej-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPECIFICATION BADGES / PILLS BAR -->
+            <div id="detail-specifications" class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-godrej-offwhite rounded-2xl border border-godrej-sage mb-12">
+                <div class="border-r border-slate-200 last:border-0 pr-4">
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Possession Date</div>
+                    <div id="detail-possession" class="text-base font-bold text-godrej-emerald mt-1">December 2026</div>
+                </div>
+                <div class="border-r border-slate-200 last:border-0 pr-4">
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Total Land / Units</div>
+                    <div id="detail-units" class="text-base font-bold text-godrej-emerald mt-1">18 Acres / 420 Units</div>
+                </div>
+                <div class="border-r border-slate-200 last:border-0 pr-4">
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Possession Status</div>
+                    <div id="detail-status" class="text-base font-bold text-godrej-emerald mt-1">New Launch</div>
+                </div>
+                <div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Pricing Starting</div>
+                    <div id="detail-price" class="text-base font-bold text-godrej-gold mt-1">₹ 2.15 Cr*</div>
+                </div>
+            </div>
+
+            <!-- MAIN CONTENT & STICKY SIDEBAR -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Left Column Details -->
+                <div class="lg:col-span-8 space-y-12">
+                    <!-- Architectural Overview -->
+                    <div>
+                        <h2 class="font-serif text-2xl font-bold text-godrej-emerald mb-4">Property Overview</h2>
+                        <p id="detail-description" class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                            Explore the property design, available configurations, amenities, and nearby destinations. Contact our team for current availability and offers.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Floor Plan Selector -->
+                    <div class="bg-white border border-godrej-sage rounded-2xl p-6 shadow-sm">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+                            <div>
+                                <h3 class="font-serif text-xl font-bold text-godrej-emerald">Floor Plans & Configurations</h3>
+                                <p class="text-xs text-slate-500">Compare available home configurations and floor areas</p>
+                            </div>
+                            <!-- Plan Tabs -->
+                            <div id="floor-plan-tabs" class="flex flex-nowrap bg-godrej-offwhite p-1 rounded-xl border border-slate-200 text-xs font-semibold" role="tablist" aria-label="Floor plan configurations"></div>
+                        </div>
+
+                        <!-- Floor Plan Content -->
+                        <div id="floor-plan-layout" class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                            <div id="floor-plan-image-panel" class="md:col-span-6 min-w-0 bg-godrej-offwhite p-4 rounded-xl border border-slate-200 flex items-center justify-center">
+                                <img id="floor-plan-img" src="" alt="Selected project configuration" loading="lazy" decoding="async" class="w-full max-w-full max-h-64 object-contain rounded-lg">
+                            </div>
+                            <div id="floor-plan-details" class="md:col-span-6 space-y-4">
+                                <div id="floor-plan-area-card" class="bg-godrej-sage/50 p-4 rounded-xl">
+                                    <div class="text-xs text-slate-500 font-semibold uppercase">Super Built-up Area</div>
+                                    <div id="plan-area" class="text-lg font-bold text-godrej-emerald">1,450 Sq. Ft.</div>
+                                </div>
+                                <div id="floor-plan-price-card" class="bg-godrej-sage/50 p-4 rounded-xl">
+                                    <div class="text-xs text-slate-500 font-semibold uppercase">Estimated Investment</div>
+                                    <div id="plan-price" class="text-lg font-bold text-godrej-gold">₹ 1.85 Cr Onwards</div>
+                                </div>
+                                <div class="space-y-2 text-xs text-slate-600">
+                                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-godrej-emerald"></i> Spacious balconies with open views</div>
+                                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-godrej-emerald"></i> Contemporary fittings and finishes</div>
+                                    <div class="flex items-center gap-2"><i class="fa-solid fa-check text-godrej-emerald"></i> Italian marble flooring in living areas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Project Amenities -->
+                    <section>
+                        <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-6">Project Amenities</h3>
+                        <div id="detail-amenities" class="grid grid-cols-2 sm:grid-cols-3 gap-4"></div>
+                    </section>
+
+                    <!-- Dynamic Connectivity -->
+                    <section>
+                        <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-6">Connectivity & Location</h3>
+                        <div id="detail-connectivity" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+                    </section>
+                </div>
+
+                <!-- Right Sticky Sidebar Form -->
+                <div class="lg:col-span-4">
+                    <div class="sticky top-28 bg-godrej-offwhite p-6 rounded-2xl border border-godrej-sage shadow-xl">
+                        <div id="sidebar-form-content">
+                            <div class="flex items-center gap-2 text-godrej-gold text-xs font-bold uppercase tracking-wider mb-2">
+                                <i class="fa-solid fa-bolt"></i> VIP Developer Priority Desk
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-1">Book Site Visit</h3>
+                            <p class="text-xs text-slate-500 mb-6">Schedule a private preview with our senior property relationship manager.</p>
+
+                            <form id="sidebar-booking-form" onsubmit="handleSidebarSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Your Name *</label>
+                                    <input type="text" required placeholder="Full Name" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Phone Number *</label>
+                                    <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Preferred BHK Configuration</label>
+                                    <div class="custom-select" data-custom-select>
+                                        <select id="sidebar-bhk-select" class="custom-select-native" aria-hidden="true" tabindex="-1"></select>
+                                        <button class="custom-select-trigger" type="button" aria-label="Preferred project configuration" aria-haspopup="listbox" aria-expanded="false">
+                                            <span>Select a configuration</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="custom-select-menu" role="listbox" aria-label="Preferred project configuration" hidden></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-600 mb-1">Target Purchase Timeline</label>
+                                    <div class="custom-select" data-custom-select>
+                                        <select id="sidebar-timeline-select" class="custom-select-native" aria-hidden="true" tabindex="-1">
+                                            <option value="immediate">Ready to Buy (Immediate)</option>
+                                            <option value="3-months">Within 3 Months</option>
+                                            <option value="exploring">Exploring / Investment</option>
+                                        </select>
+                                        <button class="custom-select-trigger" type="button" aria-label="Target purchase timeline" aria-haspopup="listbox" aria-expanded="false">
+                                            <span>Ready to Buy (Immediate)</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                        </button>
+                                        <div class="custom-select-menu" role="listbox" aria-label="Target purchase timeline" hidden></div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="w-full bg-godrej-emerald hover:bg-godrej-darkEmerald text-white font-semibold py-3 rounded-xl transition-all shadow-md text-sm flex items-center justify-center gap-2">
+                                    <span>Schedule Visit & Price Sheet</span>
+                                    <i class="fa-solid fa-shield-halved text-godrej-gold"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Success View -->
+                        <div id="sidebar-form-success" class="hidden text-center py-6">
+                            <div class="w-12 h-12 bg-godrej-sage text-godrej-emerald rounded-full flex items-center justify-center text-xl mx-auto mb-3">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <h4 class="font-serif text-lg font-bold text-godrej-emerald">Appointment Requested</h4>
+                            <p class="text-xs text-slate-600 mt-2">Our team will call you shortly to confirm chauffeur pick-up details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- WhatsApp contact shortcut and first-visit brochure popup -->
+    <button id="whatsapp-float" class="whatsapp-float" type="button" aria-label="Open WhatsApp brochure form">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </button>
+    <div id="whatsapp-popup" class="whatsapp-popup" aria-hidden="true">
+        <div class="whatsapp-dialog" role="dialog" aria-modal="true" aria-labelledby="whatsapp-title" aria-describedby="whatsapp-description">
+            <button id="whatsapp-close" class="whatsapp-close" type="button" aria-label="Close WhatsApp popup">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div class="whatsapp-modal-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+            <h2 id="whatsapp-title">Get Instant E-Brochure</h2>
+            <p id="whatsapp-description">Receive instant floor plans, pricing sheets, and payment schedules directly on your WhatsApp.</p>
+            <form id="whatsapp-form">
+                <label class="sr-only" for="whatsapp-phone">Your WhatsApp number</label>
+                <input id="whatsapp-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Enter Your WhatsApp Number" required>
+                <button type="submit"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Get Info on WhatsApp</button>
+                <p id="whatsapp-feedback" class="whatsapp-feedback" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- FULLSCREEN LIGHTBOX MODAL -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/95 flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-godrej-gold z-50">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-5xl w-full text-center">
+            <img id="lightbox-img" src="" alt="Enlarged Showcase View" loading="lazy" decoding="async" class="max-h-[80vh] mx-auto rounded-xl object-contain">
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="site-footer" class="bg-godrej-darkEmerald text-white py-12 sm:py-14 border-t border-godrej-emerald">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pb-8">
+                <div>
+                    <div class="flex items-center gap-3">
+                        <h2 id="footer-builder-name" class="font-serif text-xl sm:text-2xl font-bold">Godrej Properties</h2>
+                    </div>
+                    <p id="footer-builder-regions" class="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-godrej-gold">BENGALURU</p>
+                    <p class="mt-5 text-sm text-slate-300">Explore <span id="footer-property-count">1</span> properties by <span data-footer-builder-name>Godrej Properties</span> featured on this page.</p>
+                </div>
+                <p class="text-sm sm:text-base leading-relaxed text-slate-300 md:pt-8">This page is published and maintained by <strong class="text-white">M&amp;A Ventures</strong>, an <strong class="text-white">Authorised Channel Partner</strong>. It is not the developer’s official website.</p>
+            </div>
+            <div class="border-y border-white/10 py-6 sm:py-7">
+                <p class="text-xs sm:text-sm leading-6 text-slate-300">Disclaimer: this website is operated by an Authorised Channel Partner and is not the developer’s official website. All images are artistic impressions and representative imagery, indicative only. Floor plans, layouts, furniture, fixtures and fittings shown are for illustrative purposes only and do not form part of the offering. Plans, specifications, areas and amenities are subject to change basis receipt of approvals and NOCs; dimensions and areas may change. Drive times are approximate. Nothing on this page constitutes an offer or a contract. Project information on this page is taken from the developer’s brochure and applicable RERA records.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-6 text-xs sm:text-sm text-slate-400">
+                <p>© 2026 · M&amp;A Ventures · Authorised Channel Partner · <a href="#privacy-policy" class="underline hover:text-white">Privacy Policy</a></p>
+                <p>Residential properties by <span data-footer-builder-name>Godrej Properties</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+
+</body>
+</html>
