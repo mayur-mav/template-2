@@ -1,0 +1,40 @@
+* { box-sizing: border-box; }
+body.privacy-page { min-height: 100vh; margin: 0; background: #fff; color: #171d2b; font-family: Outfit, sans-serif; }
+.privacy-header { position: sticky; top: 0; z-index: 2; display: flex; width: 100%; min-height: 76px; margin: 0; padding: 14px 5%; align-items: center; justify-content: space-between; gap: 18px; border-bottom: 1px solid #e5e7eb; background: #fff; box-shadow: 0 2px 12px rgba(15,23,42,.06); }
+.privacy-brand { display: flex; min-width: 0; align-items: center; gap: 12px; color: #172033; text-decoration: none; }
+.privacy-logo-mark { display: grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; border: 2px solid #C5A059; border-radius: 8px; background: linear-gradient(135deg,#0B1320,#1E293B); color: #C5A059; font: 700 1.4rem 'Playfair Display',serif; }
+.privacy-logo-text { display: flex; min-width: 0; flex-direction: column; }
+.privacy-brand-name { color: #172033; font-size: 1.2rem; font-weight: 700; letter-spacing: .5px; line-height: 1.1; }
+.privacy-brand small { color: #9a793e; font-size: .65rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+.privacy-back { flex: 0 0 auto; padding: 10px 22px; border-radius: 30px; background: linear-gradient(135deg,#C5A059,#A9823E); color: white; font-size: .9rem; font-weight: 600; text-decoration: none; }
+.privacy-content { width: min(1104px,calc(100% - 48px)); margin: 24px auto 90px; }
+.privacy-content h1 { margin: 0 0 8px; color: #151b29; font: 500 clamp(2.5rem,4.5vw,3.4rem)/1.12 'Playfair Display',serif; letter-spacing: -.035em; }
+.privacy-eyebrow { margin: 0 0 42px; color: #57647b; font-size: .9rem; font-weight: 700; letter-spacing: .12em; line-height: 1.8; }
+.privacy-intro,.privacy-content section p,.privacy-content li,.privacy-contact { color: #58657b; font-size: 1.15rem; font-weight: 300; line-height: 1.8; }
+.privacy-intro { margin: 0 0 48px; }.privacy-content section { margin: 0 0 34px; }
+.privacy-content h2 { margin: 0 0 14px; color: #171d2b; font: 600 1.85rem 'Playfair Display',serif; }
+.privacy-content ul { margin: 0; padding-left: 29px; }.privacy-content li { padding-left: 1px; margin-bottom: 8px; }.privacy-content section p { margin: 0; }
+.privacy-contact { margin: 48px 0 0; padding-top: 26px; border-top: 1px solid #e2e6ec; }.privacy-footer { padding: 25px 24px; border-top: 1px solid #e2e6ec; color: #667085; text-align: center; font-size: .9rem; }
+@media(max-width:600px) { .privacy-header { min-height: 68px; padding: 12px 4%; }.privacy-brand-name { font-size: 1rem; }.privacy-brand small { font-size: .55rem; letter-spacing: 1px; }.privacy-logo-mark { width: 38px; height: 38px; font-size: 1.2rem; }.privacy-back { padding: 10px 12px; font-size: .75rem; }.privacy-content { width: calc(100% - 40px); margin: 20px auto 64px; }.privacy-content h1 { font-size: 2.4rem; }.privacy-eyebrow { margin-bottom: 32px; font-size: .73rem; }.privacy-intro,.privacy-content section p,.privacy-content li,.privacy-contact { font-size: 1.02rem; }.privacy-content h2 { font-size: 1.6rem; } }
+/* Template 2 header: emerald logo lockup and matching rounded call-to-action. */
+.template-two .privacy-header { min-height: 72px; padding: 0 12px; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-color: #E8F0EC; }
+.template-two .template-header-inner { display:flex; width:100%; max-width:1440px; min-height:72px; margin:auto; padding:0 clamp(8px,3vw,40px); align-items:center; justify-content:space-between; gap:16px; }
+.template-two .privacy-brand { gap:10px; color:#0F382C; }
+.template-two .privacy-logo-mark { width:40px; height:40px; border:0; border-radius:9px; background:#0F382C; color:#D4AF37; font-family:'Playfair Display',serif; font-size:1.25rem; }
+.template-two .privacy-brand-name { color:#0F382C; font-family:'Playfair Display',serif; font-size:1.1rem; letter-spacing:.01em; text-transform:uppercase; }
+.template-two .privacy-brand small { margin-top:2px; color:#D4AF37; font-size:.58rem; letter-spacing:.2em; }
+.template-two .privacy-back { padding:11px 18px; border-radius:999px; background:#0F382C; color:#fff; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; }
+.template-two .privacy-back:hover { background:#09241C; }
+@media(max-width:600px) { .template-two .template-header-inner { min-height:68px; padding:0 4%; }.template-two .privacy-brand-name { font-size:.94rem; }.template-two .privacy-logo-mark { width:36px; height:36px; }.template-two .privacy-back { padding:10px 12px; font-size:.65rem; } }
+/* Match template 2 page header dimensions and lockup. */
+.template-two .privacy-header { min-height:0; padding:0; }
+.template-two .template-header-inner { min-height:4.5rem; padding:0 12px; }
+.template-two .privacy-brand { gap:8px; }
+.template-two .privacy-logo-mark { width:2.25rem; height:2.25rem; font-size:1.125rem; }
+.template-two .privacy-brand-name { font-size:1rem; letter-spacing:-.025em; }
+.template-two .privacy-brand small { font-size:8px; letter-spacing:.2em; }
+.template-two .privacy-back { padding:.625rem 1rem; font-size:.75rem; text-transform:none; letter-spacing:0; }
+@media(min-width:640px) { .template-two .template-header-inner { min-height:4.5rem; padding:0 24px; }.template-two .privacy-brand { gap:12px; }.template-two .privacy-logo-mark { width:2.5rem; height:2.5rem; font-size:1.25rem; }.template-two .privacy-brand-name { font-size:1.25rem; }.template-two .privacy-brand small { font-size:10px; letter-spacing:.25em; } }
+@media(min-width:1024px) { .template-two .template-header-inner { min-height:5rem; padding:0 32px; } }
+@media(min-width:1280px) { .template-two .template-header-inner { padding:0 40px; } }
+.template-two .template-header-inner { max-width:none; margin:0; }
