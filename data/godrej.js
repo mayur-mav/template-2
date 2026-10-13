@@ -1,59 +1,71 @@
 export const godrejData = [
     {
-        "id": 1,
-        "title": "Godrej Aravya Estate",
-        "location": "Chokkanahalli Village, Thubagere Hobli, Doddaballapura, Bangalore, Karnataka 561203",
-        "category": "new-launch",
-        "type": "plot",
-        "priceValue": 0.58,
-        "price": "₹ 58 Lakhs*",
-        "area": "1,200 - 2,400 Sq.Ft",
+        "id": "1",
+        "title": "Godrej Vanantara",
+        "location": "Dinnepalya Road, Off Bannerghatta Main Road, Next to Greenwood High (IGCSE Campus), Bengaluru, Karnataka 560083",
+        "category": "ongoing",
+        "type": "apartment",
+        "priceValue": 1.49,
+        "price": "₹ 1.49 Cr*",
+        "area": "33 Acres",
         "floorPlans": [
             {
-                "id": "30x40",
-                "bhk": "30x40 Plot",
-                "area": "1,200 Sq. Ft.",
-                "price": "₹ 58 Lakhs Onwards",
+                "id": "2bhk",
+                "bhk": "2 BHK",
+                "area": "1,200 sq.ft.",
+                "price": "₹ 1.49 Cr Onwards",
                 "image": ""
             },
             {
-                "id": "30x50",
-                "bhk": "30x50 Plot",
-                "area": "1,500 Sq. Ft.",
-                "price": "₹ 72 Lakhs Onwards",
+                "id": "3bhk-2t",
+                "bhk": "3 BHK (2T)",
+                "area": "1,444 sq.ft.",
+                "price": "₹ 1.90 Cr Onwards",
                 "image": ""
             },
             {
-                "id": "60x40",
-                "bhk": "60x40 Plot",
-                "area": "2,400 Sq. Ft.",
-                "price": "₹ 1.15 Cr Onwards",
+                "id": "3bhk-3t",
+                "bhk": "3 BHK (3T)",
+                "area": "1,900 sq.ft.",
+                "price": "₹ 2.50 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "3.5bhk",
+                "bhk": "3.5 BHK",
+                "area": "2,100 sq.ft.",
+                "price": "₹ 2.77 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "4bhk",
+                "bhk": "4 BHK",
+                "area": "2,700 sq.ft.",
+                "price": "₹ 3.56 Cr Onwards",
                 "image": ""
             }
         ],
-        "possession": "31 Oct 2030",
-        "units": "48 Acres / 669 Units",
-        "highlight": "80% Open Space",
-        "reraId": "PRM/KA/RERA/1250/301/PR/171025/008180",
-        "summary": "A premium plotted development spread across 48 acres featuring 80% open space, modern amenities, and convenient connectivity in North Bengaluru.",
-        "description": " Godrej Aravya Estate by Godrej Properties is a premium plotted development spread across 48 acres in Chokkahanalli, Doddaballapura, North Bengaluru, offering 669 plots with approximately 80% open space. The project features 30×40, 30×50, and 60×40 plot configurations, with prices starting from ₹58 lakhs. It is RERA registered (PRM/KA/RERA/1250/301/PR/171025/008180), with possession scheduled for 31 October 2030. The development offers 45+ amenities and benefits from connectivity to Oddarahalli Railway Station, Kempegowda International Airport, nearby schools, and essential facilities, making it a promising plotted development for residential investment in North Bengaluru",
+        "possession": "May 2031",
+        "units": "2008",
+        "highlight": "Nature-Centric Urban Retreat with 4500+ Trees and Grand Clubhouse",
+        "reraId": "PRM/KA/RERA/1251/310/PR/130526/008653",
+        "summary": "A large-scale forest-inspired residential community featuring 2, 3, and 4.5 BHK apartments off Bannerghatta Main Road in South Bengaluru.",
+        "description": "Godrej Vanantara by Godrej Properties Limited brings nature-inspired luxury high-rise living to Bannerghatta Road, South Bengaluru. Spanning over acres of lush green landscaping with over 4,500 trees, the township offers an expansive 1 Lakh sq. ft. clubhouse, serene water features, and smooth connectivity to Royal Meenakshi Mall, metro stations, and Bannerghatta National Park.",
         "amenities": [
+            { "name": "Grand Clubhouse", "icon": "fa-building" },
             { "name": "Swimming Pool", "icon": "fa-water-ladder" },
             { "name": "Gymnasium", "icon": "fa-dumbbell" },
-            { "name": "Tennis Court", "icon": "fa-table-tennis-paddle-ball" },
-            { "name": "Jogging Track", "icon": "fa-person-running" },
-            { "name": "Kids Activity Zone", "icon": "fa-child" },
-            { "name": "Indoor Games Room & Mini Theater", "icon": "fa-gamepad" }
+            { "name": "Kids Play Area", "icon": "fa-child" },
+            { "name": "Nature Trail", "icon": "fa-person-running" },
+            { "name": "Multipurpose Hall", "icon": "fa-users" }
         ],
         "connectivity": [
-            { "name": "Ant International Academy", "distance": "800 m", "icon": "fa-graduation-cap" },
-            { "name": "Green Valley Resort & Dodda Halla View Point", "distance": "1.4 km", "icon": "fa-tree" },
-            { "name": "Makali Farms", "distance": "2.2 km", "icon": "fa-seedling" },
-            { "name": "Governament Higher Primary School (Hosahalli Thanda)", "distance": "4.2 km", "icon": "fa-school" },
-            { "name": "IndianOil Fuel Station (Gundamgere Cross)", "distance": "4.7 km", "icon": "fa-gas-pump" },
-            { "name": "Morarji Desai Residential School and PU College", "distance": "5.0 km", "icon": "fa-building-columns" },
-            { "name": "Gundamagere Lake", "distance": "5.3 km", "icon": "fa-water" },
-            { "name": "Sri Maruthi Fruits and Vegetable Shop", "distance": "7.5 km", "icon": "fa-store" }
+            { "name": "Greenwood High (IGCSE Campus)", "distance": "Adjacent", "icon": "fa-school" },
+            { "name": "Royal Meenakshi Mall", "distance": "5 Mins", "icon": "fa-bag-shopping" },
+            { "name": "Bannerghatta National Park", "distance": "10 Mins", "icon": "fa-tree" },
+            { "name": "Kalena Agrahara Metro Station", "distance": "14 Mins", "icon": "fa-train-subway" },
+            { "name": "Prime Spectrum Mall", "distance": "18 Mins", "icon": "fa-bag-shopping" },
+            { "name": "Kempegowda International Airport", "distance": "75 Mins", "icon": "fa-plane" }
         ],
         "images": []
     },
@@ -61,22 +73,22 @@ export const godrejData = [
         "id": 2,
         "title": "Godrej Athena",
         "location": "Near Indiranagar - HAL, Bengaluru, Karnataka 560075",
-        "category": "new-launch",
+        "category": "ongoing",
         "type": "apartment",
         "priceValue": 2.79,
         "price": "₹ 2.79 Cr*",
-        "area": "",
+        "area": "6.5 Acres",
         "floorPlans": [
             {
                 "id": "3bhk",
                 "bhk": "3 BHK",
-                "area": "",
+                "area": "2,025 sq.ft.",
                 "price": "₹ 2.79 Cr Onwards",
                 "image": ""
             }
         ],
         "possession": "January 2028",
-        "units": "",
+        "units": "330",
         "highlight": "Greco-Roman Architecture",
         "reraId": "PRM/KA/RERA/1251/446/PR/090123/005605",
         "summary": "A premium residential project featuring Greco-Roman-inspired architecture, spacious 3 BHK residences, and 34 luxury lifestyle amenities near Indiranagar.",
@@ -104,36 +116,36 @@ export const godrejData = [
         "id": 3,
         "title": "Godrej Lakeside Orchard",
         "location": "Chikkakannalli, Off Sarjapur Road, Bengaluru, Karnataka 560035",
-        "category": "new-launch",
+        "category": "ongoing",
         "type": "apartment",
         "priceValue": 2.37,
         "price": "₹ 2.37 Cr*",
-        "area": "",
+        "area": "6 Acres",
         "floorPlans": [
             {
                 "id": "3bhk",
                 "bhk": "3 BHK",
-                "area": "",
+                "area": "1,790 - 2,102 sq.ft.",
                 "price": "₹ 2.37 Cr Onwards",
                 "image": ""
             },
             {
                 "id": "3.5bhk",
                 "bhk": "3.5 BHK",
-                "area": "",
+                "area": "2,163-2,214 sq.ft.",
                 "price": "₹ 2.55 Cr Onwards",
                 "image": ""
             },
             {
                 "id": "4bhk",
                 "bhk": "4+ BHK",
-                "area": "",
+                "area": "2,656 sq.ft.",
                 "price": "₹ 3.10 Cr Onwards",
                 "image": ""
             }
         ],
         "possession": "September 2030",
-        "units": "",
+        "units": "698",
         "highlight": "Lakeside Setting & Butterfly Garden",
         "reraId": "PRM/KA/RERA/1251/446/PR/300924/007105",
         "summary": "A nature-focused residential project on Sarjapur Road featuring 3, 3.5, and 4+ BHK apartments with over 30 lifestyle amenities.",
@@ -163,41 +175,34 @@ export const godrejData = [
         "location": "Kada Agrahara, Sarjapur, Bengaluru, Karnataka 562125",
         "category": "new-launch",
         "type": "apartment",
-        "priceValue": 1.57,
-        "price": "₹ 1.57 Cr*",
-        "area": "759.51 - 1,867.79 Sq.Ft",
+        "priceValue": 1.44,
+        "price": "₹ 1.44 Cr*",
+        "area": "7.5 Acres",
         "floorPlans": [
             {
-                "id": "2bhk-luke-759",
+                "id": "2bhk-luke",
                 "bhk": "2 BHK Luke",
-                "area": "759.51 Sq. Ft.",
-                "price": "₹ 1.57 Cr Onwards",
-                "image": ""
-            },
-            {
-                "id": "2bhk-luke-777",
-                "bhk": "2 BHK Luke",
-                "area": "777.59 Sq. Ft.",
-                "price": "₹ 1.57 Cr Onwards",
+                "area": "1,240 Sq. Ft.",
+                "price": "₹ 1.44 Cr Onwards",
                 "image": ""
             },
             {
                 "id": "3bhk-premium",
                 "bhk": "3 BHK Premium",
-                "area": "1002.13 Sq. Ft.",
-                "price": "₹ 1.57 Cr Onwards",
+                "area": "1,500 Sq. Ft.",
+                "price": "₹ 1.80 Cr Onwards",
                 "image": ""
             },
             {
                 "id": "3bhk-luke",
                 "bhk": "3 BHK Luke",
-                "area": "1119.35 Sq. Ft.",
-                "price": "₹ 1.57 Cr Onwards",
+                "area": "1,800 Sq. Ft.",
+                "price": "₹ 2.16 Cr Onwards",
                 "image": ""
             }
         ],
         "possession": "July 2031",
-        "units": "",
+        "units": "518",
         "highlight": "35+ Amenities & Gated Security",
         "reraId": "PRM/KA/RERA/1251/308/PR/150726/008810",
         "summary": "A premium residential project offering modern 2 and 3 BHK apartments along the thriving Sarjapur Road corridor in East Bengaluru.",
@@ -226,22 +231,22 @@ export const godrejData = [
         "id": 5,
         "title": "Godrej Woodscapes Phase 2",
         "location": "Nimbekaipura, Konadasapura Village, Budigere Cross, Bengaluru, Karnataka 560049",
-        "category": "new-launch",
+        "category": "ongoing",
         "type": "apartment",
         "priceValue": 4.1,
         "price": "₹ 4.1 Cr*",
-        "area": "",
+        "area": "3 Acres",
         "floorPlans": [
             {
                 "id": "4bhk",
                 "bhk": "4 BHK",
-                "area": "",
+                "area": "2,846 sq.ft.",
                 "price": "₹ 4.1 Cr Onwards",
                 "image": ""
             }
         ],
         "possession": "June 2030",
-        "units": "",
+        "units": "232",
         "highlight": "Emerald Skywalk & 36+ Nature-Inspired Amenities",
         "reraId": "PRM/KA/RERA/1251/446/PR/170524/006882",
         "summary": "A high-rise residential project featuring spacious 4 BHK apartments with nature-inspired lifestyle amenities at Budigere Cross, East Bengaluru.",
@@ -273,6 +278,295 @@ export const godrejData = [
             { "name": "Nimbekaipura Lake", "distance": "1.3 km", "icon": "fa-water" },
             { "name": "Xnomous Systems Pvt Ltd", "distance": "1.3 km", "icon": "fa-laptop-code" },
             { "name": "Shell Petrol Station", "distance": "1.4 km", "icon": "fa-gas-pump" }
+        ],
+        "images": []
+    },
+    {
+        "id": 6,
+        "title": "Godrej Aveline",
+        "location": "Kogilu Cross, Airport Road (NH-44), Yelahanka, Bengaluru, Karnataka 560064",
+        "category": "ongoing",
+        "type": "apartment",
+        "priceValue": 2.9,
+        "price": "₹ 2.9 Cr*",
+        "area": "10.1 Acres",
+        "floorPlans": [
+            {
+                "id": "3bhk",
+                "bhk": "3 BHK",
+                "area": "1,601-1,907 sq.ft.",
+                "price": "₹ 2.90 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "3.5bhk",
+                "bhk": "3.5 BHK",
+                "area": "2,138 sq.ft.",
+                "price": "₹ 3.90 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "4.5bhk",
+                "bhk": "4.5 BHK",
+                "area": "2,514 sq.ft.",
+                "price": "₹ 4.60 Cr Onwards",
+                "image": ""
+            }
+        ],
+        "possession": "March 2031",
+        "units": "814",
+        "highlight": "Dutch Design-Inspired Architecture with Sunlit Spaces and Garden Living",
+        "reraId": "PRM/KA/RERA/1251/309/PR/020326/008501",
+        "summary": "A premium residential project offering 3, 3.5, and 4.5 BHK Dutch-design inspired apartments located on Airport Road in Yelahanka, North Bengaluru.",
+        "description": "Godrej Aveline by Godrej Properties Limited brings sun-drenched, Dutch design-inspired residential living to Yelahanka on Airport Road, Bengaluru. Featuring natural gardens, expansive lifestyle and landscape amenities, a modern clubhouse, and rapid connectivity to Bagalur Cross Metro, Yelahanka Metro, top international schools, and healthcare facilities.",
+        "amenities": [
+            { "name": "Swimming Pool", "icon": "fa-water-ladder" },
+            { "name": "Clubhouse", "icon": "fa-building" },
+            { "name": "Gaming Area", "icon": "fa-gamepad" },
+            { "name": "Kids Play Area", "icon": "fa-child" },
+            { "name": "Landscape Gardens", "icon": "fa-tree" }
+        ],
+        "connectivity": [
+            { "name": "Bagalur Cross Metro", "distance": "1 Min", "icon": "fa-train-subway" },
+            { "name": "Manipal Hospital, Yelahanka", "distance": "1 Min", "icon": "fa-hospital" },
+            { "name": "Cytecare Cancer Hospital", "distance": "3 Min", "icon": "fa-hospital" },
+            { "name": "Yelahanka Metro Station", "distance": "5 Min", "icon": "fa-train-subway" },
+            { "name": "Ryan International School", "distance": "6 Min", "icon": "fa-school" },
+            { "name": "Canadian International School", "distance": "6 Min", "icon": "fa-school" },
+            { "name": "RMZ Galleria Mall", "distance": "10 Min", "icon": "fa-bag-shopping" },
+            { "name": "Garuda Mall", "distance": "13 Min", "icon": "fa-bag-shopping" }
+        ],
+        "images": []
+    },
+    {
+        "id": "7",
+        "title": "Godrej Florenne",
+        "location": "XRC2+QJP, Off Soukya Road, Hemmandahalli, Whitefield, Bengaluru, Karnataka 560117",
+        "category": "new-launch",
+        "type": "villa",
+        "priceValue": 4.85,
+        "price": "₹ 4.85 Cr*",
+        "area": "20 Acres",
+        "floorPlans": [
+            {
+                "id": "4bhk-optima",
+                "bhk": "4 BHK Optima",
+                "area": "3700 sq.ft.",
+                "price": "₹ 4.85 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "4bhk-premia",
+                "bhk": "4 BHK Premia",
+                "area": "4000 sq.ft.",
+                "price": "₹ 5.10 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "4bhk-luxe",
+                "bhk": "4 BHK Luxe",
+                "area": "4500 sq.ft.",
+                "price": "₹ 5.69 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "5bhk-luxe",
+                "bhk": "5 BHK Luxe",
+                "area": "5500 sq.ft.",
+                "price": "₹ 6.77 Cr Onwards",
+                "image": ""
+            }
+        ],
+        "possession": "September 2031",
+        "units": "242 ultra-luxury row house villas",
+        "highlight": "French Renaissance-Inspired Architecture with Private Outdoor Spaces and Courtyards",
+        "reraId": "PRM/KA/RERA/1250/304/PR/150926/008942",
+        "summary": "An ultra-premium French-inspired villa community featuring spacious 4 and 5 BHK row villas off Soukya Road in Whitefield, East Bengaluru.",
+        "description": "Godrej Florenne by Godrej Properties Limited offers ultra-premium 4 and 5 BHK row villas located off Soukya Road, Whitefield, Bengaluru. Designed by architect Hafeez Contractor, the community blends French Renaissance architectural elegance with open courtyards, private balconies, terrace spaces, and lifestyle amenities surrounded by Whitefield's major tech and school corridors.",
+        "amenities": [
+            { "name": "Gymnasium", "icon": "fa-dumbbell" },
+            { "name": "Kids Play Area", "icon": "fa-child" },
+            { "name": "Landscape Padel", "icon": "fa-table-tennis-paddle-ball" },
+            { "name": "Landscape View Amphitheatre", "icon": "fa-masks-theater" },
+            { "name": "Gazebo", "icon": "fa-campground" },
+            { "name": "Natural Trail", "icon": "fa-person-running" },
+            { "name": "Open Courtyard", "icon": "fa-tree" },
+            { "name": "Private Balconies & Terrace", "icon": "fa-building" }
+        ],
+        "connectivity": [
+            { "name": "Soukya Road", "distance": "8 Mins", "icon": "fa-road" },
+            { "name": "RKB Sanjeevini Hospital", "distance": "8 Mins", "icon": "fa-hospital" },
+            { "name": "Shri Ram Global School", "distance": "12 Mins", "icon": "fa-school" },
+            { "name": "Myntra Whitefield Warehouse", "distance": "12 Mins", "icon": "fa-warehouse" },
+            { "name": "Whitefield Railway Station", "distance": "15 Mins", "icon": "fa-train" },
+            { "name": "Hope Farm Junction", "distance": "20 Mins", "icon": "fa-route" },
+            { "name": "Kadugodi Metro Station", "distance": "20 Mins", "icon": "fa-train-subway" },
+            { "name": "MVJ College of Engineering", "distance": "22 Mins", "icon": "fa-graduation-cap" },
+            { "name": "ITPL / Whitefield Main Road", "distance": "25 Mins", "icon": "fa-laptop-code" },
+            { "name": "Ascendas Park Square Mall", "distance": "35 Mins", "icon": "fa-bag-shopping" }
+        ],
+        "images": []
+    },
+    {
+        "id": "8",
+        "title": "Barca at Godrej MSR City",
+        "location": "Yerthiganahalli, Shettigere, Devanahalli, Bengaluru, Karnataka 562157",
+        "category": "ongoing",
+        "type": "apartment",
+        "priceValue": 1.79,
+        "price": "₹ 1.79 Cr*",
+        "area": "17 Acres",
+        "floorPlans": [
+            {
+                "id": "3bhk",
+                "bhk": "3 BHK",
+                "area": "1610 - 1860 sq.ft.",
+                "price": "₹ 1.79 Cr Onwards",
+                "image": ""
+            }
+        ],
+        "possession": "March 2030",
+        "units": "1,961",
+        "highlight": "Barcelona-Inspired Architecture with Mediterranean Charm and Sunlit Landscapes",
+        "reraId": "PRM/KA/RERA/1250/303/PR/010425/007644",
+        "summary": "A Barcelona-inspired residential enclave featuring premium 2 and 3 BHK apartments located in North Bengaluru's growth corridor near Devanahalli.",
+        "description": "Barca at Godrej MSR City by Godrej Properties Limited brings Mediterranean-inspired urban living to Yerthiganahalli, North Bengaluru. Set within expansive sunlit landscapes, the development features thoughtful architectural spaces, signature clubhouses, and extensive resort-style amenities with swift connectivity to Kempegowda International Airport and major business parks.",
+        "amenities": [
+            { "name": "Clubhouse", "icon": "fa-building" },
+            { "name": "Swimming Pool", "icon": "fa-water-ladder" },
+            { "name": "Gymnasium", "icon": "fa-dumbbell" },
+            { "name": "Football Court", "icon": "fa-futbol" },
+            { "name": "Pet Park", "icon": "fa-dog" },
+            { "name": "Walking & Cycling Trails", "icon": "fa-person-running" },
+            { "name": "Central Landscaped Garden", "icon": "fa-tree" }
+        ],
+        "connectivity": [
+            { "name": "Kempegowda International Airport", "distance": "10 Mins", "icon": "fa-plane" },
+            { "name": "Delhi Public School", "distance": "Nearby", "icon": "fa-school" },
+            { "name": "Reva University", "distance": "Nearby", "icon": "fa-graduation-cap" },
+            { "name": "Relive Hospital Bagalur", "distance": "Nearby", "icon": "fa-hospital" },
+            { "name": "IFCI Financial City", "distance": "Nearby", "icon": "fa-city" },
+            { "name": "Prestige 13 North Mall", "distance": "Nearby", "icon": "fa-bag-shopping" }
+        ],
+        "images": []
+    },
+    {
+        "id": "9",
+        "title": "Godrej Parkshire",
+        "location": "Sarakariguttahalli, Dodda Amanikere, Hoskote, Bengaluru, Karnataka 562114",
+        "category": "ongoing",
+        "type": "apartment",
+        "priceValue": 1.35,
+        "price": "₹ 1.35 Cr*",
+        "area": "13.5 Acres",
+        "floorPlans": [
+            {
+                "id": "2bhk-luxe",
+                "bhk": "2 BHK Luxe",
+                "area": "1200 sq.ft.",
+                "price": "₹ 1.35 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "3bhk",
+                "bhk": "3 BHK",
+                "area": "1600 sq.ft.",
+                "price": "₹ 1.78 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "4bhk",
+                "bhk": "4 BHK",
+                "area": "1750 sq.ft.",
+                "price": "₹ 1.94 Cr Onwards",
+                "image": ""
+            }
+        ],
+        "possession": "December 2030",
+        "units": "1132",
+        "highlight": "6.5+ Acres of Lush Central Greenery with Greenscape Skywalk & 32,500+ Sq. Ft. Clubhouse",
+        "reraId": "PRM/KA/RERA/1250/304/PR/090126/008393",
+        "summary": "A large-scale nature-focused high-rise residential community offering 2 and 3 BHK apartments in the Whitefield-Hoskote corridor, East Bengaluru.",
+        "description": "Godrej Parkshire by Godrej Properties Limited offers high-rise 2 and 3 BHK apartments spread over 13.5 acres in Hoskote, East Bengaluru. Featuring over 6.5 acres of expansive greens, a greenscape skywalk, an avian sanctuary, dedicated co-working nature pods, and a grand 32,500+ sq. ft. clubhouse, the project enjoys smooth connectivity to Old Madras Road, Whitefield Metro, and major industrial hubs.",
+        "amenities": [
+            { "name": "Greenscape Skywalk", "icon": "fa-person-walking" },
+            { "name": "Grand Clubhouse", "icon": "fa-building" },
+            { "name": "Swimming Pool", "icon": "fa-water-ladder" },
+            { "name": "Tennis & Futsal Court", "icon": "fa-table-tennis-paddle-ball" },
+            { "name": "Nature Work Pods", "icon": "fa-laptop-code" },
+            { "name": "Avian Sanctuary & Butterfly Park", "icon": "fa-tree" },
+            { "name": "Beach Volleyball Court", "icon": "fa-volleyball" },
+            { "name": "Gymnasium", "icon": "fa-dumbbell" }
+        ],
+        "connectivity": [
+            { "name": "Old Madras Road", "distance": "7 Mins", "icon": "fa-road" },
+            { "name": "Siliconcity Hospital", "distance": "7 Mins", "icon": "fa-hospital" },
+            { "name": "Delhi Public School", "distance": "8 Mins", "icon": "fa-school" },
+            { "name": "MVJ Medical College & Research Hospital", "distance": "10 Mins", "icon": "fa-hospital" },
+            { "name": "Orion Uptown Mall", "distance": "12 Mins", "icon": "fa-bag-shopping" },
+            { "name": "Hoskote Industrial Area", "distance": "16 Mins", "icon": "fa-building-ngo" },
+            { "name": "Decathlon OMR", "distance": "16 Mins", "icon": "fa-store" },
+            { "name": "Whitefield Metro Station", "distance": "22 Mins", "icon": "fa-train-subway" },
+            { "name": "ITPB / Whitefield Tech Corridor", "distance": "24 Mins", "icon": "fa-laptop-code" }
+        ],
+        "images": []
+    },
+    {
+        "id": "10",
+        "title": "Godrej Woods",
+        "location": "Srinivaspur, Mittaganahalli, Thanisandra Main Road, Bengaluru, Karnataka 560064",
+        "category": "ongoing",
+        "type": "apartment",
+        "priceValue": 1.70,
+        "price": "₹ 1.70 Cr*",
+        "area": "6.8 Acres",
+        "floorPlans": [
+            {
+                "id": "2bhk",
+                "bhk": "2 BHK",
+                "area": "1,190 sq.ft.",
+                "price": "₹ 1.70 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "3bhk",
+                "bhk": "3 BHK",
+                "area": "2,180 sq.ft.",
+                "price": "₹ 2.50 Cr Onwards",
+                "image": ""
+            },
+            {
+                "id": "3.5bhk",
+                "bhk": "3.5 BHK",
+                "area": "2,300",
+                "price": "₹ 2.90 Cr Onwards",
+                "image": ""
+            }
+        ],
+        "possession": "November 2030",
+        "units": "558",
+        "highlight": "Forest-Themed Living with Lush Greens, Water Features and Grand Clubhouse",
+        "reraId": "PRM/KA/RERA/1251/472/PR/121125/008248",
+        "summary": "A forest-themed high-rise residential community featuring 2, 3, and 3.5 BHK apartments off Thanisandra Main Road in North Bengaluru.",
+        "description": "Godrej Woods by Godrej Properties Limited brings a forest-inspired living experience to Thanisandra Main Road, North Bengaluru. Spread across 6.8 acres, the project offers lush green surroundings, a fully equipped clubhouse, swimming pool, yoga decks, and smooth connectivity to Manyata Tech Park, Hebbal, and Kempegowda International Airport.",
+        "amenities": [
+            { "name": "Fully Equipped Clubhouse", "icon": "fa-building" },
+            { "name": "Swimming Pool & Lap Pool", "icon": "fa-water-ladder" },
+            { "name": "Gymnasium", "icon": "fa-dumbbell" },
+            { "name": "Yoga Deck", "icon": "fa-spa" },
+            { "name": "Kids Play Area", "icon": "fa-child" },
+            { "name": "Multiple Sports Courts", "icon": "fa-table-tennis-paddle-ball" },
+            { "name": "Landscaped Gardens", "icon": "fa-tree" }
+        ],
+        "connectivity": [
+            { "name": "REVA University", "distance": "2 Mins", "icon": "fa-graduation-cap" },
+            { "name": "Upcoming Metro Station", "distance": "10 Mins", "icon": "fa-train-subway" },
+            { "name": "Manyata Tech Park", "distance": "15 Mins", "icon": "fa-laptop-code" },
+            { "name": "Hebbal Flyover", "distance": "15 Mins", "icon": "fa-road" },
+            { "name": "Yelahanka Railway Station", "distance": "15 Mins", "icon": "fa-train" },
+            { "name": "Elements Mall", "distance": "12 Mins", "icon": "fa-bag-shopping" },
+            { "name": "Phoenix Mall of Asia", "distance": "15 Mins", "icon": "fa-bag-shopping" },
+            { "name": "Kempegowda International Airport", "distance": "30 Mins", "icon": "fa-plane" }
         ],
         "images": []
     }
