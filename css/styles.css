@@ -462,6 +462,8 @@ a:focus-visible { outline: 2px solid #D4AF37; outline-offset: 2px; }
 .property-carousel-arrow:hover:not(:disabled) { background: #0F382C; }
 .property-carousel-arrow:active:not(:disabled) { transform: translateY(-50%) scale(0.96); }
 .property-carousel-arrow:disabled { opacity: 0.42; cursor: default; }
+.property-carousel.at-start .property-carousel-prev,
+.property-carousel.at-end .property-carousel-next { opacity: 0.42; cursor: default; }
 .property-carousel-arrow[hidden] { display: none; }
 .property-carousel-prev { left: calc((100vw - 100%) / -2 + 1rem); }
 .property-carousel-next { right: calc((100vw - 100%) / -2 + 1rem); }

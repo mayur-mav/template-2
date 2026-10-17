@@ -67,10 +67,15 @@
             const prev = carousel.querySelector('[data-carousel-prev]');
             const next = carousel.querySelector('[data-carousel-next]');
             const hasOverflow = track.scrollWidth > track.clientWidth + 1;
-            const atStart = track.scrollLeft <= 1;
-            const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+            const firstCard = track.querySelector('.property-card');
+            const lastCard = track.querySelector('.property-card:last-of-type');
+            const trackBounds = track.getBoundingClientRect();
+            const atStart = !firstCard || firstCard.getBoundingClientRect().left >= trackBounds.left - 1;
+            const atEnd = !lastCard || lastCard.getBoundingClientRect().right <= trackBounds.right + 1;
 
             carousel.classList.toggle('has-overflow', hasOverflow);
+            carousel.classList.toggle('at-start', atStart);
+            carousel.classList.toggle('at-end', atEnd);
             prev.hidden = !hasOverflow;
             next.hidden = !hasOverflow;
             prev.disabled = !hasOverflow || atStart;
