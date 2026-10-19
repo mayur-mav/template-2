@@ -1,3 +1,6 @@
+        // Add the public webhook endpoint after the receiving service is configured.
+        // Do not place private API keys or other secrets in this browser-side file.
+        const LEAD_WEBHOOK_URL = '';
         const builderSlug = document.body.dataset.builder?.trim().toLowerCase();
         if (!builderSlug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(builderSlug)) {
             throw new Error('Set body data-builder to a valid builder slug, such as "godrej".');
@@ -590,9 +593,59 @@
             button.setAttribute('aria-expanded', String(willOpen));
         }
 
+        // Send an enquiry only when the configured webhook confirms it accepted the payload.
+        async function submitLeadForm(form, formType, errorElementId) {
+            const errorElement = document.getElementById(errorElementId);
+            const failureMessage = formType === 'site_visit_request'
+                ? 'We could not send your site visit request right now. Please try again later or contact M&A Ventures.'
+                : 'We could not send your enquiry right now. Please try again later or contact M&A Ventures.';
+            errorElement.classList.add('hidden');
+            errorElement.textContent = '';
+
+            if (!LEAD_WEBHOOK_URL) {
+                errorElement.textContent = failureMessage;
+                errorElement.classList.remove('hidden');
+                return false;
+            }
+
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+
+            try {
+                const response = await fetch(LEAD_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        ...Object.fromEntries(new FormData(form).entries()),
+                        form_type: formType,
+                        builder_slug: builderSlug,
+                        builder_name: activeBuilderData.name,
+                        page_url: window.location.href,
+                        submitted_at: new Date().toISOString()
+                    })
+                });
+
+                if (!response.ok) throw new Error(`Webhook returned HTTP ${response.status}`);
+                return true;
+            } catch (error) {
+                console.error('Lead submission failed:', error);
+                errorElement.textContent = failureMessage;
+                errorElement.classList.remove('hidden');
+                return false;
+            } finally {
+                submitButton.disabled = false;
+            }
+        }
+
         // FORMS SUBMISSION
-        function handleMainFormSubmit(e) {
+        async function handleMainFormSubmit(e) {
             e.preventDefault();
+            const form = e.currentTarget;
+            const accepted = await submitLeadForm(form, 'consultation', 'main-form-error');
+            if (!accepted) return;
+
+            document.getElementById('main-success-name').textContent = form.elements.fullName.value.trim();
+            document.getElementById('main-success-builder').textContent = activeBuilderData.name;
             document.getElementById('booking-form-container').classList.add('hidden');
             document.getElementById('main-form-success').classList.remove('hidden');
         }
@@ -603,8 +656,11 @@
             document.getElementById('main-form-success').classList.add('hidden');
         }
 
-        function handleSidebarSubmit(e) {
+        async function handleSidebarSubmit(e) {
             e.preventDefault();
+            const accepted = await submitLeadForm(e.currentTarget, 'site_visit_request', 'sidebar-form-error');
+            if (!accepted) return;
+
             document.getElementById('sidebar-form-content').classList.add('hidden');
             document.getElementById('sidebar-form-success').classList.remove('hidden');
         }

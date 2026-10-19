@@ -259,20 +259,21 @@
                             <div id="booking-form-container">
                                 <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-4">Request Callback / Site Visit</h3>
                                 <form id="main-consultation-form" onsubmit="handleMainFormSubmit(event)" class="space-y-4">
+                                    <p id="main-form-error" class="hidden text-sm text-red-700" role="alert"></p>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div>
                                             <label class="block text-xs font-semibold text-slate-600 mb-1">Full Name *</label>
-                                            <input type="text" required placeholder="e.g. Ananya Sharma" class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                            <input type="text" name="fullName" required placeholder="e.g. Ananya Sharma" class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
                                         </div>
                                         <div>
                                             <label class="block text-xs font-semibold text-slate-600 mb-1">Phone Number *</label>
-                                            <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                            <input type="tel" name="phone" required placeholder="+91 98765 43210" class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
                                         </div>
                                     </div>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div>
                                             <label class="block text-xs font-semibold text-slate-600 mb-1">Email Address *</label>
-                                            <input type="email" required placeholder="ananya@example.com" class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                            <input type="email" name="email" required placeholder="ananya@example.com" class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
                                         </div>
                                         <div>
                                             <label class="block text-xs font-semibold text-slate-600 mb-1">Preferred Project</label>
@@ -287,7 +288,7 @@
                                     </div>
                                     <div>
                                         <label class="block text-xs font-semibold text-slate-600 mb-1">Message / Requirements</label>
-                                        <textarea rows="2" placeholder="Preferred BHK, budget or site visit date..." class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald"></textarea>
+                                        <textarea name="requirements" rows="2" placeholder="Preferred BHK, budget or site visit date..." class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald"></textarea>
                                     </div>
                                     <button type="submit" class="w-full bg-godrej-emerald hover:bg-godrej-darkEmerald text-white font-semibold py-3 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 text-sm">
                                         <span>Confirm Consultation Request</span>
@@ -301,8 +302,8 @@
                                 <div class="w-16 h-16 bg-godrej-sage text-godrej-emerald rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
                                     <i class="fa-solid fa-circle-check"></i>
                                 </div>
-                                <h3 class="font-serif text-2xl font-bold text-godrej-emerald mb-2">Consultation Confirmed!</h3>
-                                <p class="text-slate-600 text-sm max-w-sm mx-auto mb-6">Thank you. Your dedicated Godrej Relationship Director will contact you within 2 hours with personalized property brochures.</p>
+                                <h3 class="font-serif text-2xl font-bold text-godrej-emerald mb-2">Thank you, <span id="main-success-name"></span>. Your enquiry has been received.</h3>
+                                <p class="text-slate-600 text-sm max-w-sm mx-auto mb-6">An M&amp;A Ventures property advisor will contact you about <span id="main-success-builder"></span> soon.</p>
                                 <button onclick="resetMainForm()" class="bg-godrej-sage text-godrej-emerald hover:bg-godrej-mint px-6 py-2 rounded-full text-xs font-semibold">Submit Another Request</button>
                             </div>
                         </div>
@@ -460,18 +461,19 @@
                             <p class="text-xs text-slate-500 mb-6">Schedule a private preview with our senior property relationship manager.</p>
 
                             <form id="sidebar-booking-form" onsubmit="handleSidebarSubmit(event)" class="space-y-4">
+                                <p id="sidebar-form-error" class="hidden text-sm text-red-700" role="alert"></p>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-600 mb-1">Your Name *</label>
-                                    <input type="text" required placeholder="Full Name" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                    <input type="text" name="fullName" required placeholder="Full Name" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-600 mb-1">Phone Number *</label>
-                                    <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
+                                    <input type="tel" name="phone" required placeholder="+91 98765 43210" class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-600 mb-1">Preferred BHK Configuration</label>
                                     <div class="custom-select" data-custom-select>
-                                        <select id="sidebar-bhk-select" class="custom-select-native" aria-hidden="true" tabindex="-1"></select>
+                                        <select id="sidebar-bhk-select" name="preferredConfiguration" class="custom-select-native" aria-hidden="true" tabindex="-1"></select>
                                         <button class="custom-select-trigger" type="button" aria-label="Preferred project configuration" aria-haspopup="listbox" aria-expanded="false">
                                             <span>Select a configuration</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
                                         </button>
@@ -481,7 +483,7 @@
                                 <div>
                                     <label class="block text-xs font-semibold text-slate-600 mb-1">Target Purchase Timeline</label>
                                     <div class="custom-select" data-custom-select>
-                                        <select id="sidebar-timeline-select" class="custom-select-native" aria-hidden="true" tabindex="-1">
+                                        <select id="sidebar-timeline-select" name="purchaseTimeline" class="custom-select-native" aria-hidden="true" tabindex="-1">
                                             <option value="immediate">Ready to Buy (Immediate)</option>
                                             <option value="3-months">Within 3 Months</option>
                                             <option value="exploring">Exploring / Investment</option>
@@ -504,8 +506,8 @@
                             <div class="w-12 h-12 bg-godrej-sage text-godrej-emerald rounded-full flex items-center justify-center text-xl mx-auto mb-3">
                                 <i class="fa-solid fa-check"></i>
                             </div>
-                            <h4 class="font-serif text-lg font-bold text-godrej-emerald">Appointment Requested</h4>
-                            <p class="text-xs text-slate-600 mt-2">Our team will call you shortly to confirm chauffeur pick-up details.</p>
+                            <h4 class="font-serif text-lg font-bold text-godrej-emerald">Your site visit request has been received.</h4>
+                            <p class="text-xs text-slate-600 mt-2">An M&amp;A Ventures property advisor will contact you to discuss availability and arrange the visit. This is a request only, not a confirmed booking.</p>
                         </div>
                     </div>
                 </div>
