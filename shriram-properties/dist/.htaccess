@@ -1,0 +1,17 @@
+Options -MultiViews
+RewriteEngine On
+RewriteRule ^privacy-policy/?$ privacy-policy.html [L]
+RewriteRule ^residences/?$ residences/index.html [L]
+RewriteRule ^about/?$ about/index.html [L]
+RewriteRule ^faq/?$ faq/index.html [L]
+RewriteRule ^contact/?$ contact/index.html [L]
+RewriteRule ^1/?$ 1/index.html [L]
+RewriteRule ^2/?$ 2/index.html [L]
+RewriteRule ^3/?$ 3/index.html [L]
+RewriteRule ^4/?$ 4/index.html [L]
+RewriteRule ^5/?$ 5/index.html [L]
+RewriteRule ^6/?$ 6/index.html [L]
+RewriteRule ^7/?$ 7/index.html [L]
+RewriteRule ^8/?$ 8/index.html [L]
+RewriteRule ^9/?$ 9/index.html [L]
+RewriteRule ^10/?$ 10/index.html [L]
