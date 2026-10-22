@@ -324,3 +324,44 @@ body.privacy-page {
   max-width: none;
   margin: 0;
 }
+/* Builder-matched privacy header theme. */
+:root {
+  --privacy-header-bg: #0f382c;
+  --privacy-header-text: #ffffff;
+  --privacy-header-accent: #d4af37;
+  --privacy-header-accent-hover: #765b00;
+  --privacy-header-action-text: #0f382c;
+}
+
+.template-two .privacy-header {
+  background: var(--privacy-header-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.template-two .privacy-brand-name,
+.template-two .privacy-brand small {
+  color: var(--privacy-header-text);
+}
+
+.template-two .privacy-brand small {
+  opacity: 0.76;
+}
+
+.template-two .privacy-logo-mark {
+  border: 0;
+  background: var(--privacy-header-accent);
+  color: var(--privacy-header-action-text);
+}
+
+.template-two .privacy-back {
+  border: 1px solid var(--privacy-header-accent);
+  background: var(--privacy-header-accent);
+  color: var(--privacy-header-action-text);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+}
+
+.template-two .privacy-back:hover {
+  border-color: var(--privacy-header-accent-hover);
+  background: var(--privacy-header-accent-hover);
+}

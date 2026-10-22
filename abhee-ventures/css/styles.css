@@ -1,3 +1,24 @@
+:root {
+  /* --- BRAND COLOR TOKENS --- */
+  --theme-topbar-bg: #0f2027; /* Top Header Bar Background */
+  --theme-topbar-text: #ffffff; /* Top Header Text/Icons */
+
+  --theme-hero-title-color: #ffffff; /* Hero Main Heading Text */
+  --theme-hero-text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.72), 0 0 18px rgba(0, 0, 0, 0.45); /* Legibility shadow over images */
+  --theme-hero-badge-bg: #ccfbf1; /* Sub-tag / Badge Background */
+  --theme-hero-badge-text: #115e59; /* Sub-tag / Badge Text Color */
+
+  --theme-primary-accent: #0d9488; /* Buttons, Active Links, CTA */
+  --theme-primary-accent-hover: #0f766e; /* Button Hover state */
+  --theme-btn-text: #06181b; /* CTA Button Text */
+
+  --theme-page-bg: #f8fafc; /* Main Light Page Canvas Background */
+  --theme-card-bg: #ffffff; /* Property Card Background */
+  --theme-card-border: 1px solid #e2e8f0; /* Card Border */
+  --theme-card-shadow: 0 12px 30px rgba(15, 32, 39, 0.12); /* Card Shadow Elevation */
+  --theme-card-radius: 10px; /* Border Radius */
+}
 .backdrop-blur-custom {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -1080,4 +1101,387 @@ body {
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
+}
+
+/* Theme token mappings: update the :root block above to change this builder's palette. */
+body {
+  background-color: var(--theme-page-bg);
+}
+
+.bg-godrej-offwhite {
+  background-color: var(--theme-page-bg) !important;
+}
+
+.bg-godrej-emerald {
+  background-color: var(--theme-topbar-bg) !important;
+}
+
+.bg-godrej-emerald:hover {
+  background-color: var(--theme-topbar-bg) !important;
+}
+
+.bg-godrej-darkEmerald {
+  background-color: var(--theme-topbar-bg) !important;
+}
+
+.bg-godrej-sage {
+  background-color: var(--theme-hero-badge-bg) !important;
+}
+
+.bg-godrej-mint {
+  background-color: color-mix(
+    in srgb,
+    var(--theme-primary-accent) 14%,
+    white
+  ) !important;
+}
+
+.text-godrej-emerald {
+  color: var(--theme-topbar-bg) !important;
+}
+
+.text-godrej-gold {
+  color: var(--theme-primary-accent-hover) !important;
+}
+
+.border-godrej-sage {
+  border: var(--theme-card-border) !important;
+}
+
+.site-header {
+  color: var(--theme-topbar-text);
+  background-color: var(--theme-topbar-bg) !important;
+  border-color: color-mix(
+    in srgb,
+    var(--theme-topbar-text) 16%,
+    transparent
+  ) !important;
+}
+
+.site-header .site-logo-mark {
+  color: var(--theme-btn-text) !important;
+  background-color: var(--theme-primary-accent) !important;
+}
+
+.site-header .site-logo span span:first-child {
+  color: var(--theme-topbar-text) !important;
+}
+
+.site-header .site-logo span span:last-child {
+  color: color-mix(
+    in srgb,
+    var(--theme-topbar-text) 78%,
+    transparent
+  ) !important;
+}
+
+.site-header .site-nav a,
+.site-header .site-phone,
+.site-header .mobile-menu-toggle,
+.site-header .mobile-menu-link {
+  color: var(--theme-topbar-text) !important;
+}
+
+.site-header .site-nav a:hover,
+.site-header .mobile-menu-link:hover {
+  color: var(--theme-primary-accent) !important;
+}
+
+.site-header .site-nav a[aria-current="page"],
+.site-header .mobile-menu-link[aria-current="page"] {
+  color: var(--theme-topbar-text) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--theme-primary-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.5rem;
+}
+
+.site-header .site-phone {
+  background-color: color-mix(
+    in srgb,
+    var(--theme-topbar-text) 10%,
+    transparent
+  ) !important;
+}
+
+.site-header .site-visit-button,
+.site-header .mobile-menu-action.visit-action {
+  color: var(--theme-btn-text) !important;
+  background-color: var(--theme-primary-accent) !important;
+}
+
+.site-header .site-visit-button:hover,
+.site-header .mobile-menu-action.visit-action:hover {
+  background-color: var(--theme-primary-accent-hover) !important;
+}
+
+.mobile-menu {
+  background-color: var(--theme-topbar-bg) !important;
+  border-color: color-mix(
+    in srgb,
+    var(--theme-topbar-text) 18%,
+    transparent
+  ) !important;
+}
+
+.mobile-menu-link {
+  border-color: color-mix(
+    in srgb,
+    var(--theme-topbar-text) 14%,
+    transparent
+  ) !important;
+}
+
+.hero-banner h1 {
+  color: var(--theme-hero-title-color) !important;
+  text-shadow: var(--theme-hero-text-shadow);
+}
+
+.hero-banner h1 .text-gradient-gold {
+  background: linear-gradient(
+    135deg,
+    var(--theme-primary-accent),
+    var(--theme-primary-accent-hover)
+  ) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.hero-banner-content > .max-w-4xl > div:first-child {
+  color: var(--theme-hero-badge-text) !important;
+  background-color: var(--theme-hero-badge-bg) !important;
+  border: var(--theme-card-border) !important;
+  box-shadow: var(--theme-card-shadow);
+}
+
+.hero-banner-content > .max-w-6xl {
+  background-color: var(--theme-card-bg) !important;
+  border: var(--theme-card-border) !important;
+  border-radius: var(--theme-card-radius) !important;
+  box-shadow: var(--theme-card-shadow) !important;
+}
+
+.hero-banner button[type="submit"],
+.builder-primary-button {
+  color: var(--theme-btn-text) !important;
+  background-color: var(--theme-primary-accent) !important;
+}
+
+.hero-banner button[type="submit"]:hover,
+.builder-primary-button:hover {
+  background-color: var(--theme-primary-accent-hover) !important;
+}
+
+.text-gradient-gold {
+  background-image: linear-gradient(
+    135deg,
+    var(--theme-primary-accent),
+    var(--theme-primary-accent-hover)
+  );
+}
+
+.property-card {
+  color: var(--theme-topbar-bg);
+  background-color: var(--theme-card-bg) !important;
+  border: var(--theme-card-border) !important;
+  border-radius: var(--theme-card-radius) !important;
+  box-shadow: var(--theme-card-shadow) !important;
+}
+
+.property-card .property-card-title {
+  color: var(--theme-topbar-bg) !important;
+}
+
+.property-card:hover .property-card-title {
+  color: var(--theme-primary-accent-hover) !important;
+}
+
+#detail-tag,
+#detail-rera-toggle {
+  border: var(--theme-card-border) !important;
+  border-radius: var(--theme-card-radius) !important;
+}
+
+#detail-tag {
+  color: var(--theme-hero-badge-text) !important;
+  background-color: var(--theme-hero-badge-bg) !important;
+}
+
+#detail-rera-toggle {
+  color: var(--theme-btn-text) !important;
+  background-color: var(--theme-primary-accent) !important;
+}
+
+#detail-specifications {
+  background-color: var(--theme-card-bg) !important;
+  border: var(--theme-card-border) !important;
+  border-radius: var(--theme-card-radius) !important;
+  box-shadow: var(--theme-card-shadow);
+}
+
+/* Keep legacy component helpers connected to the current theme tokens. */
+.bg-builder-primary {
+  background-color: var(--theme-primary-accent) !important;
+}
+
+.bg-builder-accent {
+  background-color: var(--theme-primary-accent-hover) !important;
+}
+
+.bg-builder-surface {
+  background-color: var(--theme-card-bg) !important;
+}
+
+.bg-builder-soft {
+  background-color: color-mix(
+    in srgb,
+    var(--theme-primary-accent) 14%,
+    white
+  ) !important;
+}
+
+.text-builder-primary {
+  color: var(--theme-topbar-bg) !important;
+}
+
+.text-builder-accent {
+  color: var(--theme-primary-accent-hover) !important;
+}
+
+.border-builder-border {
+  border: var(--theme-card-border) !important;
+}
+
+/* Contrast tuning for headers, hero text, and interactive states. */
+.site-header .site-nav a:hover,
+.site-header .mobile-menu-link:hover {
+  color: var(--theme-topbar-text) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--theme-primary-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.5rem;
+}
+
+.hero-banner h1 {
+  color: var(--theme-hero-title-color) !important;
+  text-shadow: var(--theme-hero-text-shadow);
+}
+
+.hero-banner h1 .text-gradient-gold {
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    var(--theme-hero-badge-bg)
+  ) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.72));
+}
+
+.hero-banner-content > .max-w-4xl > div:first-child {
+  color: var(--theme-hero-badge-text) !important;
+  background-color: var(--theme-hero-badge-bg) !important;
+}
+
+.site-header .site-visit-button,
+.site-header .mobile-menu-action.visit-action,
+.hero-banner button[type="submit"],
+.builder-primary-button,
+#detail-rera-toggle {
+  color: var(--theme-btn-text) !important;
+  background-color: var(--theme-primary-accent) !important;
+}
+
+.site-header .site-visit-button:hover,
+.site-header .mobile-menu-action.visit-action:hover,
+.hero-banner button[type="submit"]:hover,
+.builder-primary-button:hover {
+  background-color: var(--theme-primary-accent-hover) !important;
+}
+
+/* Keep dark brand panels and give actual CTA controls a readable foreground. */
+.bg-emerald-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--theme-topbar-bg),
+    color-mix(in srgb, var(--theme-topbar-bg) 82%, white)
+  ) !important;
+}
+
+button.bg-godrej-emerald,
+a.bg-godrej-emerald,
+input.bg-godrej-emerald,
+.bg-builder-primary {
+  color: var(--theme-btn-text) !important;
+  background-color: var(--theme-primary-accent) !important;
+}
+
+button.bg-godrej-emerald:hover,
+a.bg-godrej-emerald:hover,
+input.bg-godrej-emerald:hover,
+.bg-builder-primary:hover {
+  background-color: var(--theme-primary-accent-hover) !important;
+}
+
+.chip-btn.active,
+.chip-btn.active:hover,
+#floor-plan-tabs .plan-tab-btn[aria-selected="true"] {
+  color: var(--theme-btn-text) !important;
+  background-color: var(--theme-primary-accent) !important;
+  border-color: var(--theme-primary-accent) !important;
+}
+
+.chip-btn:hover:not(.active) {
+  border-color: var(--theme-primary-accent-hover) !important;
+  color: var(--theme-primary-accent-hover) !important;
+}
+
+/* Hover colors use white text on the darker hover surface. */
+.site-header .site-visit-button:hover,
+.site-header .mobile-menu-action.visit-action:hover,
+.hero-banner button[type="submit"]:hover,
+.builder-primary-button:hover,
+button.bg-godrej-emerald:hover,
+a.bg-godrej-emerald:hover,
+input.bg-godrej-emerald:hover,
+.bg-builder-primary:hover {
+  color: #ffffff !important;
+}
+
+/* Maintain readable icons, labels, and links on dark brand panels. */
+.bg-godrej-emerald .text-godrej-gold,
+.bg-godrej-darkEmerald .text-godrej-gold,
+.bg-emerald-gradient .text-godrej-gold,
+.hero-banner .text-godrej-gold,
+footer .text-godrej-gold {
+  color: var(--theme-hero-badge-bg) !important;
+}
+
+.site-header .site-phone .text-godrej-gold {
+  color: var(--theme-hero-badge-bg) !important;
+}
+
+.site-header .site-visit-button .text-godrej-gold,
+.site-header .mobile-menu-action.visit-action .text-godrej-gold,
+button.bg-godrej-emerald .text-godrej-gold,
+a.bg-godrej-emerald .text-godrej-gold,
+input.bg-godrej-emerald .text-godrej-gold {
+  color: var(--theme-btn-text) !important;
+}
+
+footer a {
+  color: var(--theme-hero-badge-bg) !important;
+}
+
+footer a:hover {
+  color: #ffffff !important;
+}
+
+#properties-section,
+#legacy-section,
+#consultation-section,
+#faq-section {
+  scroll-margin-top: 7rem;
 }
