@@ -1,6 +1,6 @@
 export const shriramPropertiesData = [
   {
-    id: "1",
+    id: "shriram-songs-of-the-earth",
     title: "Shriram Songs of the Earth",
     location:
       "Sy No. 199 & 202, Kambalipur Road, Madiwala Village, Kasaba Hobli, Anekal Taluk, NH 844, Electronic City, Bengaluru, Karnataka 560099",
@@ -110,7 +110,7 @@ export const shriramPropertiesData = [
     images: [],
   },
   {
-    id: "2",
+    id: "shriram-serenity",
     title: "Shriram Serenity",
     location:
       "Survey Nos. 74/8, 74/10, 74/12, 74/13, 74/15, Addeviswanathapura Village, Rajanukunte, Hesaraghatta Hobli, Yelahanka, Bengaluru, Karnataka 560064",
@@ -176,7 +176,7 @@ export const shriramPropertiesData = [
     images: [],
   },
   {
-    id: "3",
+    id: "shriram-sapphire",
     title: "Shriram Sapphire",
     location:
       "Sy. No. 72, Bommasandra Village, Attibele Hobli, Anekal Taluk, Electronic City, Bengaluru, Karnataka 560099",
@@ -257,7 +257,7 @@ export const shriramPropertiesData = [
     images: [],
   },
   {
-    id: "4",
+    id: "shriram-pristine-estates",
     title: "Shriram Pristine Estates",
     location:
       "Doddaballapura Main Road, Doddaballapura, Bengaluru, Karnataka 561203",
@@ -339,7 +339,7 @@ export const shriramPropertiesData = [
     images: [],
   },
   {
-    id: "5",
+    id: "shriram-esquire",
     title: "Shriram Esquire",
     location:
       "Site No. 91-98, HBCS Ltd., Nirguna Mandir Layout, Cauvery Colony, Ejipura, 1st Block Koramangala, Bengaluru, Karnataka 560034",
@@ -424,7 +424,7 @@ export const shriramPropertiesData = [
     images: [],
   },
   {
-    id: "6",
+    id: "shriram-solitaire",
     title: "Shriram Solitaire",
     location:
       "Survey No. 4/4, Veerasagara Village, Attur Post, Yelahanka New Town, Bengaluru, Karnataka 560064",
@@ -515,7 +515,7 @@ export const shriramPropertiesData = [
     images: [],
   },
   {
-    id: "7",
+    id: "the-poem-by-shriram-properties",
     title: "The Poem by Shriram Properties",
     location:
       "Sy No. 60/3 of Shetti Halli, Sy No. 20, 21, 22 & 29 of Myadara Halli, Yeshwanthpur Hobli, Jalahalli West, Bengaluru, Karnataka 560090",
@@ -596,7 +596,7 @@ export const shriramPropertiesData = [
     images: [],
   },
   {
-    id: "8",
+    id: "shriram-107-southeast",
     title: "Shriram 107 SouthEast",
     location:
       "Manchanahalli Rd, Krishnasagara, Off Hosur Road, Attibele, Bengaluru, Karnataka 562107",
@@ -680,7 +680,7 @@ export const shriramPropertiesData = [
     images: [],
   },
   {
-    id: "9",
+    id: "shriram-wytfield",
     title: "Shriram WYTfield",
     location:
       "Sy No. 70 & 72, Bendiganahalli Village, Budigere Cross, Whitefield Extension, Bengaluru, Karnataka 562129",
@@ -762,7 +762,7 @@ export const shriramPropertiesData = [
     images: [],
   },
   {
-    id: "10",
+    id: "shriram-chirping-grove",
     title: "Shriram Chirping Grove",
     location:
       "Sy. No. 114, Thindlu Village, Sarjapur Main Road, Bengaluru, Karnataka 562125",

@@ -1,6 +1,6 @@
 export const purvankaraData = [
   {
-    id: "1",
+    id: "purva-heritage",
     title: "Purva Heritage",
     location:
       "Kudlu Gate Junction, Hosur Main Road, South Bengaluru, Karnataka 560068",
@@ -72,7 +72,7 @@ export const purvankaraData = [
     images: [],
   },
   {
-    id: "2",
+    id: "northern-lights-by-purvankara",
     title: "Northern Lights By Purvankara",
     location:
       "Hoovinayakanahalli, KIADB Aerospace Park, off Bagalur Road, Devanahalli, Bengaluru, Karnataka 562149",
@@ -189,7 +189,7 @@ export const purvankaraData = [
     images: [],
   },
   {
-    id: "3",
+    id: "purva-silversky",
     title: "Purva Silversky",
     location:
       "Huskur Road, Hebbagodi, Electronic City Phase 2, Bengaluru, Karnataka 560099",
@@ -275,7 +275,7 @@ export const purvankaraData = [
     images: [],
   },
   {
-    id: "4",
+    id: "purva-blubelle",
     title: "Purva Blubelle",
     location:
       "Magadi Main Road, Next to Magadi Road Metro Station, Kempapura Agrahara, Bengaluru, Karnataka 560023",
@@ -347,7 +347,7 @@ export const purvankaraData = [
     images: [],
   },
   {
-    id: "5",
+    id: "purva-orient-grand",
     title: "Purva Orient Grand",
     location:
       "Lalbagh Main Road, Sudhama Nagar, Central Bengaluru, Karnataka 560027",
@@ -447,7 +447,7 @@ export const purvankaraData = [
     images: [],
   },
   {
-    id: "6",
+    id: "purva-atmosphere",
     title: "Purva Atmosphere",
     location:
       "Survey No. 86 & 95, Thanisandra Main Road, Near Manyata Tech Park, North Bengaluru, Karnataka 560077",

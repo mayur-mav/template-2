@@ -1,6 +1,6 @@
 export const godrejData = [
   {
-    id: "1",
+    id: "godrej-vanantara",
     title: "Godrej Vanantara",
     location:
       "Dinnepalya Road, Off Bannerghatta Main Road, Next to Greenwood High (IGCSE Campus), Bengaluru, Karnataka 560083",
@@ -98,7 +98,7 @@ export const godrejData = [
     images: [],
   },
   {
-    id: 2,
+    id: "godrej-athena",
     title: "Godrej Athena",
     location: "Near Indiranagar - HAL, Bengaluru, Karnataka 560075",
     category: "ongoing",
@@ -154,7 +154,7 @@ export const godrejData = [
     images: [],
   },
   {
-    id: 3,
+    id: "godrej-lakeside-orchard",
     title: "Godrej Lakeside Orchard",
     location: "Chikkakannalli, Off Sarjapur Road, Bengaluru, Karnataka 560035",
     category: "ongoing",
@@ -229,7 +229,7 @@ export const godrejData = [
     images: [],
   },
   {
-    id: 4,
+    id: "godrej-regent-park",
     title: "Godrej Regent Park",
     location: "Kada Agrahara, Sarjapur, Bengaluru, Karnataka 562125",
     category: "new-launch",
@@ -293,7 +293,7 @@ export const godrejData = [
     images: [],
   },
   {
-    id: 5,
+    id: "godrej-woodscapes-phase-2",
     title: "Godrej Woodscapes Phase 2",
     location:
       "Nimbekaipura, Konadasapura Village, Budigere Cross, Bengaluru, Karnataka 560049",
@@ -382,7 +382,7 @@ export const godrejData = [
     images: [],
   },
   {
-    id: 6,
+    id: "godrej-aveline",
     title: "Godrej Aveline",
     location:
       "Kogilu Cross, Airport Road (NH-44), Yelahanka, Bengaluru, Karnataka 560064",
@@ -471,7 +471,7 @@ export const godrejData = [
     images: [],
   },
   {
-    id: "7",
+    id: "godrej-florenne",
     title: "Godrej Florenne",
     location:
       "XRC2+QJP, Off Soukya Road, Hemmandahalli, Whitefield, Bengaluru, Karnataka 560117",
@@ -576,7 +576,7 @@ export const godrejData = [
     images: [],
   },
   {
-    id: "8",
+    id: "barca-at-godrej-msr-city",
     title: "Barca at Godrej MSR City",
     location:
       "Yerthiganahalli, Shettigere, Devanahalli, Bengaluru, Karnataka 562157",
@@ -639,7 +639,7 @@ export const godrejData = [
     images: [],
   },
   {
-    id: "9",
+    id: "godrej-parkshire",
     title: "Godrej Parkshire",
     location:
       "Sarakariguttahalli, Dodda Amanikere, Hoskote, Bengaluru, Karnataka 562114",
@@ -724,7 +724,7 @@ export const godrejData = [
     images: [],
   },
   {
-    id: "10",
+    id: "godrej-woods",
     title: "Godrej Woods",
     location:
       "Srinivaspur, Mittaganahalli, Thanisandra Main Road, Bengaluru, Karnataka 560064",

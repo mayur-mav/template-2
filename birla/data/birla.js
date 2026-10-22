@@ -1,6 +1,6 @@
 export const birlaData = [
   {
-    id: "1",
+    id: "birla-evara",
     title: "Birla Evara",
     location:
       "Off Gadhalli Road, Muneshwara Layout, Sarjapur, Bengaluru, Karnataka 562125",
@@ -75,7 +75,7 @@ export const birlaData = [
     images: [],
   },
   {
-    id: "2",
+    id: "birla-ojasvi",
     title: "Birla Ojasvi",
     location:
       "Hemmigepura Ward 198, Rajarajeshwari Nagar (RR Nagar), Bengaluru, Karnataka 560098",
@@ -173,7 +173,7 @@ export const birlaData = [
     images: [],
   },
   {
-    id: "3",
+    id: "birla-trimaya-phase-4",
     title: "Birla Trimaya Phase 4",
     location:
       "BK Halli Main Road, Shettigere, off NH 44, Devanahalli, Bengaluru, Karnataka 562157",
@@ -275,7 +275,7 @@ export const birlaData = [
     images: [],
   },
   {
-    id: "4",
+    id: "birla-tisya",
     title: "Birla Tisya",
     location:
       "Magadi Main Road, Agrahara Dasarahalli, Rajajinagar, Bengaluru, Karnataka 560079",
@@ -356,7 +356,7 @@ export const birlaData = [
     images: [],
   },
   {
-    id: "5",
+    id: "birla-alokya",
     title: "Birla Alokya",
     location: "Soukya Road, Whitefield, Bengaluru, Karnataka 560067",
     category: "ready",
