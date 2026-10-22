@@ -1,6 +1,6 @@
 export const sattvaData = [
   {
-    id: 1,
+    id: "sattva-city",
     title: "Sattva City",
     location: "Doddajala, Off NH-44 International Airport Road, Bangalore",
     category: "new-launch",
@@ -93,7 +93,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 2,
+    id: "sattva-songbird-phase-II",
     title: "Sattva Songbird Phase II",
     location: "Budigere Main Road, Off Old Madras Road, Bangalore",
     category: "new-launch",
@@ -193,7 +193,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 3,
+    id: "sattva-aeropolis-phase-II",
     title: "Sattva Aeropolis Phase II",
     location: "Main International Airport Road, Devanahalli, Bangalore",
     category: "new-launch",
@@ -294,7 +294,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 4,
+    id: "sattva-vasanta-cove",
     title: "Sattva Vasanta Cove",
     location: "Kannamangala, Devanahalli, Off Bellary Road, North Bangalore",
     category: "new-launch",
@@ -380,7 +380,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 5,
+    id: "sattva aaranya",
     title: "Sattva Aaranya",
     location:
       "Mysore Road, Opp. Jnanabharathi Metro Station, RR Nagar, Bangalore",
@@ -480,7 +480,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 6,
+    id: "sattva-vasanta-skye",
     title: "Sattva Vasanta Skye",
     location:
       "Kannamangala Village, Devanahalli, Near KIAL Airport, North Bangalore",
@@ -591,7 +591,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 7,
+    id: "sattva-park-cubix-phase-II",
     title: "Sattva Park Cubix Phase II",
     location: "Devanahalli Town, Off NH-207, North Bangalore",
     category: "ongoing",
@@ -694,7 +694,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 8,
+    id: "sattva-forest-ridge",
     title: "Sattva Forest Ridge",
     location: "Anjanapura, JP Nagar 9th Phase, South Bangalore",
     category: "ongoing",
@@ -796,7 +796,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 9,
+    id: "sattva-bhumi",
     title: "Sattva Bhumi",
     location:
       "Vijayapura Hobli, Devanahalli, Near KIAL Airport, North Bangalore",
@@ -906,7 +906,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 10,
+    id: "sattva-simplicity",
     title: "Sattva Simplicity",
     location: "BHEL Layout, Rajarajeshwari Nagar, Off Mysore Road, Bangalore",
     category: "ready",
@@ -1010,7 +1010,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 11,
+    id: "sattva-songbird",
     title: "Sattva Songbird",
     location: "Budigere Main Road, Off Old Madras Road, Bangalore",
     category: "new-launch",
@@ -1118,7 +1118,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 12,
+    id: "sattva-lumina",
     title: "Sattva Lumina",
     location: "Doddaballapur Road, Yelahanka, Bangalore",
     category: "ongoing",
@@ -1211,7 +1211,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 13,
+    id: "sattva-green-groves",
     title: "Sattva Green Groves",
     location: "Basavanahalli, Nelamangala, Off Tumkur Road, West Bangalore",
     category: "ready",
@@ -1315,7 +1315,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 14,
+    id: "sattva-la-vita",
     title: "Sattva La Vita",
     location: "Byrathi, Off Hennur Main Road, North Bangalore",
     category: "ongoing",
@@ -1404,7 +1404,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 15,
+    id: "sattva-casa-crescent",
     title: "Sattva Casa Crescent",
     location: "Benson Cross Road, Benson Town, Central Bangalore",
     category: "ready",
@@ -1486,7 +1486,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 16,
+    id: "sattva-bliss",
     title: "Sattva Bliss",
     location: "Budigere Cross, Off Old Madras Road, East Bangalore",
     category: "ongoing",
@@ -1561,7 +1561,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 17,
+    id: "sattva-east-crest",
     title: "Sattva East Crest",
     location:
       "Konadasapura, Near Budigere Cross, Old Madras Road, East Bangalore",
@@ -1654,7 +1654,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 18,
+    id: "sattva-luxuria",
     title: "Sattva Luxuria",
     location: "Malleswaram, West Bangalore",
     category: "ready",
@@ -1752,7 +1752,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 19,
+    id: "sattva-serene-life",
     title: "Sattva Serene Life",
     location: "Shettigere, Off Airport Road (BK Halli Road), North Bangalore",
     category: "ready",
@@ -1853,7 +1853,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 20,
+    id: "sattva-divinity",
     title: "Sattva Divinity",
     location: "Pantrapalya, Off Mysore Road, West Bangalore",
     category: "ready",
@@ -1963,7 +1963,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 21,
+    id: "sattva-anugraha",
     title: "Sattva Anugraha",
     location:
       "Sumanahalli Crossing, Off Magadi Road, Vijayanagar, West Bangalore",
@@ -2056,7 +2056,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 22,
+    id: "sattva-kaveri-siri",
     title: "Sattva Kaveri Siri",
     location: "Guthalu, Off Bengaluru-Mysuru Expressway, Mandya Region",
     category: "ready",
@@ -2159,7 +2159,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 23,
+    id: "sattva-aeropolis",
     title: "Sattva Aeropolis",
     location: "Vidyanagar Cross, Off Airport Road (NH 44), North Bangalore",
     category: "ongoing",
@@ -2261,7 +2261,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 24,
+    id: "sattva-ashraya",
     title: "Sattva Ashraya",
     location:
       "Bidadi, Off Bengaluru-Mysuru Expressway (NH 275), West Bangalore Outskirts",
@@ -2350,7 +2350,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 25,
+    id: "sattva-aqua-vista",
     title: "Sattva Aqua Vista",
     location: "Bannerghatta Main Road, Opposite Decathlon, South Bangalore",
     category: "ready",
@@ -2439,7 +2439,7 @@ export const sattvaData = [
     images: [],
   },
   {
-    id: 26,
+    id: "sattva-park-cubix",
     title: "Sattva Park Cubix",
     location: "Southegowdanahalli, Devanahalli, North Bangalore",
     category: "ready",
