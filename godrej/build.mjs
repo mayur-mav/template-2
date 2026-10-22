@@ -44,7 +44,10 @@ function createRoutedHtml(route = "") {
     `<head>\n    <base href="${basePath}">`,
   );
   if (propertyIds.includes(route)) {
-    html = html.replace("<body ", '<body data-property-route-loading="true" ');
+    html = html.replace(
+      /<body(?=[\s>])/,
+      '<body data-property-route-loading="true"',
+    );
     html = html.replace(
       "</head>",
       '<style>body[data-property-route-loading="true"] #catalog-page,body[data-property-route-loading="true"] #site-footer{display:none!important}body[data-property-route-loading="true"] #details-page{display:block!important}</style>\n</head>',
