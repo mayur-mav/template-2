@@ -1,22 +1,22 @@
 :root {
   /* --- BRAND COLOR TOKENS --- */
-  --theme-topbar-bg: #0f2027; /* Top Header Bar Background */
+  --theme-topbar-bg: #163a52; /* Top Header Bar Background */
   --theme-topbar-text: #ffffff; /* Top Header Text/Icons */
 
   --theme-hero-title-color: #ffffff; /* Hero Main Heading Text */
   --theme-hero-text-shadow:
     0 2px 4px rgba(0, 0, 0, 0.72), 0 0 18px rgba(0, 0, 0, 0.45); /* Legibility shadow over images */
-  --theme-hero-badge-bg: #ccfbf1; /* Sub-tag / Badge Background */
-  --theme-hero-badge-text: #115e59; /* Sub-tag / Badge Text Color */
+  --theme-hero-badge-bg: #e7f6fc; /* Sub-tag / Badge Background */
+  --theme-hero-badge-text: #164660; /* Sub-tag / Badge Text Color */
 
-  --theme-primary-accent: #0d9488; /* Buttons, Active Links, CTA */
-  --theme-primary-accent-hover: #0f766e; /* Button Hover state */
-  --theme-btn-text: #06181b; /* CTA Button Text */
+  --theme-primary-accent: #087faf; /* Buttons, Active Links, CTA */
+  --theme-primary-accent-hover: #06658c; /* Button Hover state */
+  --theme-btn-text: #ffffff; /* CTA Button Text */
 
-  --theme-page-bg: #f8fafc; /* Main Light Page Canvas Background */
+  --theme-page-bg: #f5fafc; /* Main Light Page Canvas Background */
   --theme-card-bg: #ffffff; /* Property Card Background */
-  --theme-card-border: 1px solid #e2e8f0; /* Card Border */
-  --theme-card-shadow: 0 12px 30px rgba(15, 32, 39, 0.12); /* Card Shadow Elevation */
+  --theme-card-border: 1px solid #d9eaf2; /* Card Border */
+  --theme-card-shadow: 0 12px 30px rgba(22, 58, 82, 0.12); /* Card Shadow Elevation */
   --theme-card-radius: 10px; /* Border Radius */
 }
 .backdrop-blur-custom {
@@ -24,40 +24,40 @@
   -webkit-backdrop-filter: blur(12px);
 }
 .text-gradient-gold {
-  background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #b89628 100%);
+  background: linear-gradient(135deg, #087faf 0%, #bfeafa 50%, #06658c 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .bg-builder-primary {
-  background-color: var(--builder-primary, #0f382c);
+  background-color: var(--builder-primary, #163a52);
 }
 .bg-builder-accent {
-  background-color: var(--builder-accent, #d4af37);
+  background-color: var(--builder-accent, #087faf);
 }
 .bg-builder-surface {
-  background-color: var(--builder-surface, #f9faf9);
+  background-color: var(--builder-surface, #f5fafc);
 }
 .bg-builder-soft {
-  background-color: var(--builder-soft, #e8f0ec);
+  background-color: var(--builder-soft, #d9eaf2);
 }
 .text-builder-primary {
-  color: var(--builder-primary, #0f382c);
+  color: var(--builder-primary, #163a52);
 }
 .text-builder-accent {
-  color: #765b00;
+  color: #06658c;
 }
 .border-builder-border {
-  border-color: var(--builder-border, #e8f0ec);
+  border-color: var(--builder-border, #d9eaf2);
 }
 .builder-primary-button {
-  background-color: var(--builder-primary, #0f382c);
+  background-color: var(--builder-primary, #163a52);
 }
 .builder-primary-button:hover {
-  background-color: var(--builder-primary-hover, #09241c);
+  background-color: var(--builder-primary-hover, #102a3b);
 }
 .property-card:hover .property-card-title {
-  color: #765b00;
+  color: #06658c;
 }
 
 /* Use a darker gold for text on light surfaces; the brighter brand gold remains
@@ -69,12 +69,12 @@
 #details-page .text-godrej-gold,
 .site-nav a[aria-current="page"],
 .mobile-menu-link[aria-current="page"] {
-  color: #765b00;
+  color: #06658c;
 }
 
 /* Builder monograms sit on emerald, so retain bright gold for contrast there. */
 .site-header .site-logo-mark {
-  color: #d4af37;
+  color: #087faf;
 }
 
 @media (min-width: 1024px) {
@@ -84,16 +84,16 @@
 }
 
 .bg-emerald-gradient {
-  background: linear-gradient(135deg, #0f382c 0%, #175241 100%);
+  background: linear-gradient(135deg, #163a52 0%, #254f6d 100%);
 }
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f9faf9;
+  background: #f5fafc;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #0f382c;
+  background: #163a52;
   border-radius: 4px;
 }
 
@@ -151,7 +151,7 @@ button:focus:not(:focus-visible) {
 }
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #d4af37;
+  outline: 2px solid #087faf;
   outline-offset: 2px;
 }
 .chip-btn,
@@ -173,25 +173,25 @@ a:focus-visible {
   box-shadow: 0 1px 2px rgb(15 23 42 / 5%);
 }
 .chip-btn:hover:not(.active) {
-  border-color: #0f382c;
-  background: #f4f8f5;
-  color: #0f382c;
+  border-color: #163a52;
+  background: #e7f6fc;
+  color: #163a52;
 }
 .chip-btn.active,
 .chip-btn.active:hover {
-  border-color: #d4af37;
-  background: #d4af37;
-  color: #0f382c;
+  border-color: #087faf;
+  background: #087faf;
+  color: #163a52;
 }
 .chip-btn.active {
   box-shadow: 0 3px 8px rgb(212 175 55 / 24%);
 }
 #floor-plan-tabs .plan-tab-btn[aria-selected="true"] {
-  background: var(--builder-accent, #d4af37);
-  color: var(--builder-primary, #0f382c);
+  background: var(--builder-accent, #087faf);
+  color: var(--builder-primary, #163a52);
 }
 .chip-btn:focus-visible {
-  outline: 2px solid #d4af37;
+  outline: 2px solid #087faf;
   outline-offset: 2px;
 }
 .category-filter-label {
@@ -207,7 +207,7 @@ a:focus-visible {
   white-space: nowrap;
 }
 .site-nav a[aria-current="page"] {
-  color: #d4af37;
+  color: #087faf;
 }
 .site-header-actions {
   white-space: nowrap;
@@ -250,10 +250,10 @@ a:focus-visible {
   min-width: 0;
 }
 .mobile-menu-link:hover {
-  color: #0f382c;
+  color: #163a52;
 }
 .mobile-menu-link[aria-current="page"] {
-  color: #d4af37;
+  color: #087faf;
 }
 .mobile-menu-action {
   display: flex;
@@ -264,15 +264,15 @@ a:focus-visible {
   padding: 0.625rem 0.75rem;
   border: 0;
   border-radius: 9999px;
-  background: #e8f0ec;
-  color: #0f382c;
+  background: #d9eaf2;
+  color: #163a52;
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
 }
 .mobile-menu-action.visit-action {
   min-height: 3.25rem;
-  background: #0f382c;
+  background: #163a52;
   color: #fff;
   cursor: pointer;
   text-transform: uppercase;
@@ -571,14 +571,14 @@ a:focus-visible {
   padding: 0.625rem 0.75rem;
   border: 1px solid #cbd5e1;
   border-radius: 0.75rem;
-  background: #f9faf9;
+  background: #f5fafc;
   color: #1e293b;
   text-align: left;
   font-size: 0.875rem;
   cursor: pointer;
 }
 .custom-select-trigger:focus-visible {
-  outline: 2px solid #0f382c;
+  outline: 2px solid #163a52;
   outline-offset: 2px;
 }
 .custom-select-trigger > span {
@@ -626,11 +626,11 @@ a:focus-visible {
 .custom-select-menu [role="option"]:hover,
 .custom-select-menu [role="option"]:focus-visible {
   outline: none;
-  background: #e8f0ec;
-  color: #0f382c;
+  background: #d9eaf2;
+  color: #163a52;
 }
 .custom-select-menu [role="option"][aria-selected="true"] {
-  color: #0f382c;
+  color: #163a52;
   font-weight: 700;
 }
 
@@ -705,7 +705,7 @@ a:focus-visible {
 }
 
 .property-carousel-arrow:hover:not(:disabled) {
-  background: #0f382c;
+  background: #163a52;
 }
 .property-carousel-arrow:active:not(:disabled) {
   transform: translateY(-50%) scale(0.96);
@@ -840,9 +840,9 @@ a:focus-visible {
     align-items: center;
     justify-content: center;
     padding: 0.75rem;
-    border: 1px solid #e8f0ec;
+    border: 1px solid #d9eaf2;
     border-radius: 0.875rem;
-    background: #f9faf9;
+    background: #f5fafc;
     text-align: center;
   }
 
@@ -1007,7 +1007,7 @@ a:focus-visible {
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  scrollbar-color: #b7c9c1 transparent;
+  scrollbar-color: #afcbd8 transparent;
 }
 
 #floor-plan-tabs[hidden] {
@@ -1021,7 +1021,7 @@ a:focus-visible {
 }
 #floor-plan-tabs::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: #b7c9c1;
+  background: #afcbd8;
 }
 #floor-plan-tabs[data-layout="scroll"] .plan-tab-btn {
   flex: 0 0 auto;
@@ -1089,7 +1089,7 @@ a:focus-visible {
   transition: color 0.2s;
 }
 .feature-expansion-link:hover {
-  color: #c5a059;
+  color: #087faf;
 }
 
 /* Hide the browser scrollbar while keeping page scrolling enabled */

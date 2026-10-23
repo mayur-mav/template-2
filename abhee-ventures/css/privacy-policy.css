@@ -38,10 +38,10 @@ body.privacy-page {
   height: 42px;
   flex: 0 0 auto;
   place-items: center;
-  border: 2px solid #c5a059;
+  border: 2px solid #087faf;
   border-radius: 8px;
   background: linear-gradient(135deg, #0b1320, #1e293b);
-  color: #c5a059;
+  color: #087faf;
   font:
     700 1.4rem "Playfair Display",
     serif;
@@ -69,7 +69,7 @@ body.privacy-page {
   flex: 0 0 auto;
   padding: 10px 22px;
   border-radius: 30px;
-  background: linear-gradient(135deg, #c5a059, #a9823e);
+  background: linear-gradient(135deg, #087faf, #06658c);
   color: white;
   font-size: 0.9rem;
   font-weight: 600;
@@ -188,7 +188,7 @@ body.privacy-page {
   padding: 0 12px;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
-  border-color: #e8f0ec;
+  border-color: #d9eaf2;
 }
 .template-two .template-header-inner {
   display: flex;
@@ -203,20 +203,20 @@ body.privacy-page {
 }
 .template-two .privacy-brand {
   gap: 10px;
-  color: #0f382c;
+  color: #163a52;
 }
 .template-two .privacy-logo-mark {
   width: 40px;
   height: 40px;
   border: 0;
   border-radius: 9px;
-  background: #0f382c;
-  color: #d4af37;
+  background: #163a52;
+  color: #087faf;
   font-family: "Playfair Display", serif;
   font-size: 1.25rem;
 }
 .template-two .privacy-brand-name {
-  color: #0f382c;
+  color: #163a52;
   font-family: "Playfair Display", serif;
   font-size: 1.1rem;
   letter-spacing: 0.01em;
@@ -224,21 +224,21 @@ body.privacy-page {
 }
 .template-two .privacy-brand small {
   margin-top: 2px;
-  color: #765b00;
+  color: #06658c;
   font-size: 0.58rem;
   letter-spacing: 0.2em;
 }
 .template-two .privacy-back {
   padding: 11px 18px;
   border-radius: 999px;
-  background: #0f382c;
+  background: #163a52;
   color: #fff;
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .template-two .privacy-back:hover {
-  background: #09241c;
+  background: #102a3b;
 }
 @media (max-width: 600px) {
   .template-two .template-header-inner {
@@ -328,9 +328,9 @@ body.privacy-page {
 :root {
   --privacy-header-bg: #0f2027;
   --privacy-header-text: #ffffff;
-  --privacy-header-accent: #0d9488;
-  --privacy-header-accent-hover: #0f766e;
-  --privacy-header-action-text: #06181b;
+  --privacy-header-accent: #087faf;
+  --privacy-header-accent-hover: #06658c;
+  --privacy-header-action-text: #ffffff;
 }
 
 .template-two .privacy-header {
