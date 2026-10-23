@@ -1,6 +1,116 @@
 import { cpSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+async function loadBuilderSeo(dataFile) {
+  const source = readFileSync(dataFile, "utf8");
+  const moduleUrl = `data:text/javascript;base64,${Buffer.from(source).toString("base64")}`;
+  const dataModule = await import(moduleUrl);
+  const builder = dataModule.builderConfig || {};
+  const properties = Array.isArray(builder.properties)
+    ? builder.properties
+    : Object.values(dataModule).find(
+        (value) => Array.isArray(value) && value.some((item) => item?.id),
+      ) || [];
+
+  return { builder, properties };
+}
+
+function escapeHtml(value = "") {
+  return String(value).replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  })[character]);
+}
+
+function decodeHtml(value = "") {
+  return String(value)
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+}
+
+function cleanDescription(value, fallback) {
+  const normalized = String(value || fallback || "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (normalized.length <= 155) return normalized;
+  const shortened = normalized.slice(0, 152);
+  const lastSpace = shortened.lastIndexOf(" ");
+  return `${shortened.slice(0, lastSpace > 110 ? lastSpace : 152).replace(/[,. ]+$/, "")}...`;
+}
+
+function updateMeta(html, name, content) {
+  const escaped = escapeHtml(content);
+  const pattern = new RegExp(`(<meta\\s+name="${name}"[^>]*content=")[^"]*("[^>]*>)`, "i");
+  if (pattern.test(html)) return html.replace(pattern, `$1${escaped}$2`);
+  return html.replace("</head>", `    <meta name="${name}" content="${escaped}">\n</head>`);
+}
+
+function replaceElement(html, id, content) {
+  const pattern = new RegExp(`(<([a-z][a-z0-9]*)\\b[^>]*\\bid="${id}"[^>]*>)[\\s\\S]*?(<\\/\\2>)`, "i");
+  return html.replace(pattern, `$1${content}$3`);
+}
+
+function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOrigin) {
+  const builderName = builder.name || "Property Developer";
+  const property = properties.find((item) => String(item.id) === String(route));
+  const existingDescription = decodeHtml(html.match(/<meta\s+name="description"[^>]*content="([^"]*)"/i)?.[1] || "");
+  const existingTitle = decodeHtml(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || builderName);
+  let title = existingTitle;
+  let description = existingDescription;
+
+  if (property) {
+    title = `${property.title || property.name} | ${builderName} Bangalore`;
+    description = cleanDescription(
+      property.summary || property.description,
+      `Explore ${property.title || property.name} by ${builderName} in Bangalore. View location, prices, floor plans, amenities, and book a site visit.`,
+    );
+    html = replaceElement(html, "detail-title", escapeHtml(property.title || property.name));
+    html = replaceElement(html, "detail-location", escapeHtml(property.location || "Bengaluru"));
+    html = replaceElement(html, "detail-description", escapeHtml(property.summary || property.description || description));
+  }
+
+  if (!property) {
+    const builderHeading = `${builderName} Projects in Bangalore`;
+    html = html.replace(/(<h1\b[^>]*>)[\s\S]*?(<\/h1>)/i, `$1${escapeHtml(builderHeading)}$2`);
+    const heroDescription = escapeHtml(description);
+    html = html.replace(/(<h1\b[^>]*>[\s\S]*?<\/h1>[\s\S]*?<p\b[^>]*>)[\s\S]*?(<\/p>)/i, `$1${heroDescription}$2`);
+  }
+
+  html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(title)}</title>`);
+  html = updateMeta(html, "description", description);
+
+  const ogTitle = `<meta property="og:title" content="${escapeHtml(title)}">`;
+  const ogDescription = `<meta property="og:description" content="${escapeHtml(description)}">`;
+  if (/property="og:title"/.test(html)) {
+    html = html.replace(/<meta\s+property="og:title"[^>]*>/i, ogTitle);
+  } else {
+    html = html.replace("</head>", `    ${ogTitle}\n</head>`);
+  }
+  if (/property="og:description"/.test(html)) {
+    html = html.replace(/<meta\s+property="og:description"[^>]*>/i, ogDescription);
+  } else {
+    html = html.replace("</head>", `    ${ogDescription}\n</head>`);
+  }
+
+  const canonicalPattern = /\s*<link\s+rel="canonical"\s+href="https:\/\/yourdomain\.com\/[^\"]+"\s*\/?>/i;
+  html = html.replace(canonicalPattern, "");
+  if (siteOrigin) {
+    const canonicalRoute = property ? `${encodeURIComponent(route)}/` : "";
+    const canonical = `${siteOrigin}${basePath}${canonicalRoute}`;
+    html = html.replace(/<link\s+rel="canonical"[^>]*>/i, "");
+    html = html.replace("</head>", `    <link rel="canonical" href="${escapeHtml(canonical)}">\n</head>`);
+    html = html.replace(/<meta\s+property="og:url"[^>]*>/i, "");
+    html = html.replace("</head>", `    <meta property="og:url" content="${escapeHtml(canonical)}">\n</head>`);
+  }
+
+  return html;
+}
 
 const projectDir = dirname(fileURLToPath(import.meta.url));
 const outputDir = join(projectDir, "dist");
@@ -32,6 +142,7 @@ const propertyIds = idLines
 const sectionRoutes = ["residences", "about", "faq", "contact"];
 const allRoutes = [...sectionRoutes, ...propertyIds];
 const siteOrigin = process.env.SITE_ORIGIN?.replace(/\/$/, "");
+const seoData = await loadBuilderSeo(join(projectDir, "data", "shriram-properties.js"));
 const apacheRules = [
   "Options -MultiViews",
   "RewriteEngine On",
@@ -67,7 +178,7 @@ function createRoutedHtml(route = "") {
       `    <link rel="canonical" href="${canonicalUrl}">\n</head>`,
     );
   }
-  return html;
+  return applyBuilderSeo(html, seoData, route, basePath, siteOrigin);
 }
 
 mkdirSync(outputDir, { recursive: true });
@@ -93,6 +204,13 @@ for (const route of allRoutes) {
   writeFileSync(join(routeDir, "index.html"), createRoutedHtml(route));
 }
 
+if (siteOrigin) {
+  const urls = ["", ...propertyIds].map((route) => {
+    const path = route ? `${encodeURIComponent(route)}/` : "";
+    return `  <url><loc>${siteOrigin}${basePath}${path}</loc></url>`;
+  });
+  writeFileSync(join(outputDir, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`);
+}
 console.log(
   `Built shriram-properties home page, ${sectionRoutes.length} section routes, and ${propertyIds.length} property routes in ${resolve(outputDir)} (base: ${basePath}).`,
 );
