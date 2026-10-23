@@ -6,12 +6,12 @@
   --theme-hero-title-color: #ffffff; /* Hero Main Heading Text */
   --theme-hero-text-shadow:
     0 2px 4px rgba(0, 0, 0, 0.72), 0 0 18px rgba(0, 0, 0, 0.45); /* Legibility shadow over images */
-  --theme-hero-badge-bg: #fee2e2; /* Sub-tag / Badge Background */
-  --theme-hero-badge-text: #991b1b; /* Sub-tag / Badge Text Color */
+  --theme-hero-badge-bg: #ccfbf1; /* Sub-tag / Badge Background */
+  --theme-hero-badge-text: #134e4a; /* Sub-tag / Badge Text Color */
 
-  --theme-primary-accent: #b87333; /* Buttons, Active Links, CTA */
-  --theme-primary-accent-hover: #8a4e1d; /* Button Hover state */
-  --theme-btn-text: #26070b; /* CTA Button Text */
+  --theme-primary-accent: #0f766e; /* Buttons, Active Links, CTA */
+  --theme-primary-accent-hover: #115e59; /* Button Hover state */
+  --theme-btn-text: #ffffff; /* CTA Button Text */
 
   --theme-page-bg: #faf8f8; /* Main Light Page Canvas Background */
   --theme-card-bg: #ffffff; /* Property Card Background */
@@ -24,7 +24,7 @@
   -webkit-backdrop-filter: blur(12px);
 }
 .text-gradient-gold {
-  background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #b89628 100%);
+  background: linear-gradient(135deg, #0f766e 0%, #5eead4 50%, #115e59 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -33,7 +33,7 @@
   background-color: var(--builder-primary, #0f382c);
 }
 .bg-builder-accent {
-  background-color: var(--builder-accent, #d4af37);
+  background-color: var(--builder-accent, #0f766e);
 }
 .bg-builder-surface {
   background-color: var(--builder-surface, #f9faf9);
@@ -45,7 +45,7 @@
   color: var(--builder-primary, #0f382c);
 }
 .text-builder-accent {
-  color: #765b00;
+  color: #0f766e;
 }
 .border-builder-border {
   border-color: var(--builder-border, #e8f0ec);
@@ -57,7 +57,7 @@
   background-color: var(--builder-primary-hover, #09241c);
 }
 .property-card:hover .property-card-title {
-  color: #765b00;
+  color: #0f766e;
 }
 
 /* Use a darker gold for text on light surfaces; the brighter brand gold remains
@@ -1089,7 +1089,7 @@ a:focus-visible {
   transition: color 0.2s;
 }
 .feature-expansion-link:hover {
-  color: #c5a059;
+  color: #0f766e;
 }
 
 /* Hide the browser scrollbar while keeping page scrolling enabled */

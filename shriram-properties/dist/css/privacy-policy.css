@@ -38,10 +38,10 @@ body.privacy-page {
   height: 42px;
   flex: 0 0 auto;
   place-items: center;
-  border: 2px solid #c5a059;
+  border: 2px solid #0f766e;
   border-radius: 8px;
   background: linear-gradient(135deg, #0b1320, #1e293b);
-  color: #c5a059;
+  color: #0f766e;
   font:
     700 1.4rem "Playfair Display",
     serif;
@@ -69,7 +69,7 @@ body.privacy-page {
   flex: 0 0 auto;
   padding: 10px 22px;
   border-radius: 30px;
-  background: linear-gradient(135deg, #c5a059, #a9823e);
+  background: linear-gradient(135deg, #0f766e, #115e59);
   color: white;
   font-size: 0.9rem;
   font-weight: 600;
@@ -328,9 +328,9 @@ body.privacy-page {
 :root {
   --privacy-header-bg: #4a0e17;
   --privacy-header-text: #ffffff;
-  --privacy-header-accent: #b87333;
-  --privacy-header-accent-hover: #8a4e1d;
-  --privacy-header-action-text: #26070b;
+  --privacy-header-accent: #0f766e;
+  --privacy-header-accent-hover: #115e59;
+  --privacy-header-action-text: #ffffff;
 }
 
 .template-two .privacy-header {

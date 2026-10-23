@@ -877,7 +877,7 @@ export const builderConfig = {
   theme: {
     primary: "#0F382C",
     primaryHover: "#09241C",
-    accent: "#D4AF37",
+    accent: "#0F766E",
     surface: "#F9FAF9",
     soft: "#E8F0EC",
     border: "#E8F0EC",
