@@ -244,7 +244,7 @@ function renderPropertyGrid(items) {
   }
 
   items.forEach((prop) => {
-    const coverImage = prop.images?.[0] || prop.image || "";
+    const coverImage = prop.thumbnail || prop.image || prop.images?.[0] || "";
     const card = document.createElement("div");
     card.className =
       "property-card cursor-pointer bg-white rounded-2xl overflow-hidden border border-builder-border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group";

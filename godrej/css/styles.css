@@ -1033,6 +1033,23 @@ a:focus-visible {
   display: none;
 }
 
+#floor-plan-image-panel {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  padding: 0;
+  background-color: #fff !important;
+}
+
+#floor-plan-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
+
 @media (max-width: 640px) {
   #floor-plan-tabs {
     width: max-content;
@@ -1045,12 +1062,6 @@ a:focus-visible {
   }
   #floor-plan-layout {
     gap: 0.875rem;
-  }
-  #floor-plan-image-panel {
-    padding: 0.75rem;
-  }
-  #floor-plan-img {
-    max-height: 13rem;
   }
   #floor-plan-details {
     display: grid;
