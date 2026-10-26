@@ -1198,6 +1198,20 @@ body {
   color: var(--theme-topbar-text) !important;
 }
 
+.site-header .mobile-menu-toggle {
+  background-color: transparent !important;
+}
+
+.site-header .mobile-menu-toggle:hover,
+.site-header .mobile-menu-toggle:active,
+.site-header .mobile-menu-toggle[aria-expanded="true"] {
+  background-color: color-mix(
+    in srgb,
+    var(--theme-topbar-text) 14%,
+    transparent
+  ) !important;
+}
+
 .site-header .site-nav a:hover,
 .site-header .mobile-menu-link:hover {
   color: var(--theme-primary-accent) !important;
