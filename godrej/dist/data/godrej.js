@@ -196,7 +196,7 @@ export const godrejProjects = [
         bhk: "4+ BHK",
         area: "2,656 sq.ft.",
         price: "₹ 3.10 Cr Onwards",
-        image: godrejImage("godrej-properties/godrej-lakeside-orchard/floor-plans/4+bhk-floor-plan.webp"),
+        image: godrejImage("godrej-properties/godrej-lakeside-orchard/floor-plans/4-plus-bhk-floor-plan.webp"),
       },
     ],
     possession: "September 2030",

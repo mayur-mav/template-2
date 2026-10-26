@@ -127,7 +127,7 @@ export const abheeventuresData = [
         bhk: "2 BHK",
         area: "1,345 sq.ft.",
         price: "₹ 1.55 Cr Onwards",
-        image: abheeImage("abhee-ventures/abhee-celestial-city/floor-plans/2bhk-floor-plan.webp"),
+        image: abheeImage("abhee-ventures/abhee-celestial-city/floor-plans/2 BHK floors and plans.png"),
       },
       {
         id: "2.5bhk",
