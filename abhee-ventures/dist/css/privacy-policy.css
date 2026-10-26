@@ -1,6 +1,15 @@
 * {
   box-sizing: border-box;
 }
+html,
+body.privacy-page {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar,
+body.privacy-page::-webkit-scrollbar {
+  display: none;
+}
 body.privacy-page {
   min-height: 100vh;
   margin: 0;
