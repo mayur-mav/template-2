@@ -23,6 +23,11 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
 .text-gradient-gold {
   background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #b89628 100%);
   background-clip: text;

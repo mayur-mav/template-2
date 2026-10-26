@@ -1,7 +1,7 @@
 const imageCdnPrefix = "https://media.justflip.in/builder-brand-pages/";
 const godrejImage = (suffix) => `${imageCdnPrefix}${suffix.replace(/^\/+/, "")}`;
 
-const godrejProjects = [
+export const godrejProjects = [
   {
     id: "godrej-vanantara",
     thumbnail: godrejImage("godrej-properties/godrej-vanantara/thumbnail.webp"),
@@ -865,8 +865,6 @@ const godrejProjects = [
   },
 ];
 
-export const godrejData = godrejProjects;
-
 export const godrejFaqs = [
   {
     question: "Who is the owner of Godrej Properties?",
@@ -932,7 +930,7 @@ export const builderConfig = {
     soft: "#E8F0EC",
     border: "#E8F0EC",
   },
-  properties: godrejData,
+  properties: godrejProjects,
   faqs: godrejFaqs,
   whatsappNumber: "",
 };

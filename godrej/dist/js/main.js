@@ -1092,6 +1092,16 @@ Object.assign(window, {
 });
 // INITIALIZE AFTER THE SHARED PAGE MARKUP IS AVAILABLE.
 function initializeBuilderPage() {
+  document.addEventListener("contextmenu", (event) => {
+    if (event.target instanceof Element && event.target.closest("img")) {
+      event.preventDefault();
+    }
+  });
+  document.addEventListener("dragstart", (event) => {
+    if (event.target instanceof Element && event.target.closest("img")) {
+      event.preventDefault();
+    }
+  });
   renderFaqs(faqsData);
   renderPropertyGrid(propertiesData);
   const footerPropertyCount = document.getElementById("footer-property-count");
