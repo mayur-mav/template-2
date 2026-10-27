@@ -1,6 +1,11 @@
+const imageCdnPrefix = "https://media.justflip.in/builder-brand-pages/";
+const shriramImage = (suffix) =>
+  `${imageCdnPrefix}${suffix.replace(/^\/+/, "")}`;
+
 export const shriramPropertiesData = [
   {
     id: "shriram-songs-of-the-earth",
+    thumbnail: shriramImage("shriram-properties/shriram-songs-of-the-earth/thumbnail.webp"),
     title: "Shriram Songs of the Earth",
     location:
       "Sy No. 199 & 202, Kambalipur Road, Madiwala Village, Kasaba Hobli, Anekal Taluk, NH 844, Electronic City, Bengaluru, Karnataka 560099",
@@ -15,21 +20,21 @@ export const shriramPropertiesData = [
         bhk: "2 BHK",
         area: "1,210 sq.ft.",
         price: "₹ 1.02 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-songs-of-the-earth/floor-plans/2bhk-floor-plan.webp"),
       },
       {
         id: "3bhk-2t",
         bhk: "3 BHK (2T)",
         area: "1,440 - 1,550 sq.ft.",
         price: "₹ 1.25 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-songs-of-the-earth/floor-plans/3bhk(2t)-floor-plan.webp"),
       },
       {
         id: "3bhk-3t",
         bhk: "3 BHK (3T)",
         area: "1,710 - 1,715 sq.ft.",
         price: "₹ 1.50 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-songs-of-the-earth/floor-plans/3bhk(3t)-floor-plan.webp"),
       },
     ],
     possession: "April 2030",
@@ -107,10 +112,15 @@ export const shriramPropertiesData = [
       },
       { name: "Wipro", distance: "21-30 mins", icon: "fa-laptop-code" },
     ],
-    images: [],
+    images: [
+      shriramImage("shriram-properties/shriram-songs-of-the-earth/gallery/exterior-view.webp"),
+      shriramImage("shriram-properties/shriram-songs-of-the-earth/gallery/interior-view.webp"),
+      shriramImage("shriram-properties/shriram-songs-of-the-earth/gallery/amenities.webp"),
+    ],
   },
   {
     id: "shriram-serenity",
+    thumbnail: shriramImage("shriram-properties/shriram-serenity/thumbnail.webp"),
     title: "Shriram Serenity",
     location:
       "Survey Nos. 74/8, 74/10, 74/12, 74/13, 74/15, Addeviswanathapura Village, Rajanukunte, Hesaraghatta Hobli, Yelahanka, Bengaluru, Karnataka 560064",
@@ -125,14 +135,14 @@ export const shriramPropertiesData = [
         bhk: "2 BHK",
         area: "1,150 - 1,275 sq.ft.",
         price: "₹ 98.88 L Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-serenity/floor-plans/2bhk-floor-plan.webp"),
       },
       {
         id: "3bhk",
         bhk: "3 BHK",
         area: "1,325 - 1,725 sq.ft.",
         price: "₹ 1.12 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-serenity/floor-plans/3bhk-floor-plan.webp"),
       },
     ],
     possession: "July 2029",
@@ -173,10 +183,15 @@ export const shriramPropertiesData = [
         icon: "fa-plane",
       },
     ],
-    images: [],
+    images: [
+      shriramImage("shriram-properties/shriram-serenity/gallery/exterior-view.webp"),
+      shriramImage("shriram-properties/shriram-serenity/gallery/interior-view.webp"),
+      shriramImage("shriram-properties/shriram-serenity/gallery/amenities.webp"),
+    ],
   },
   {
     id: "shriram-sapphire",
+    thumbnail: shriramImage("shriram-properties/shriram-sapphire/thumbnail.webp"),
     title: "Shriram Sapphire",
     location:
       "Sy. No. 72, Bommasandra Village, Attibele Hobli, Anekal Taluk, Electronic City, Bengaluru, Karnataka 560099",
@@ -191,14 +206,14 @@ export const shriramPropertiesData = [
         bhk: "2 BHK",
         area: "975 sq.ft.",
         price: "₹ 1.01 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-sapphire/floor-plans/2bhk-floor-plan.webp"),
       },
       {
         id: "3bhk",
         bhk: "3 BHK",
         area: "1,265 sq.ft.",
         price: "₹ 1.24 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-sapphire/floor-plans/3bhk-floor-plan.webp"),
       },
     ],
     possession: "December 2028",
@@ -254,10 +269,15 @@ export const shriramPropertiesData = [
         icon: "fa-graduation-cap",
       },
     ],
-    images: [],
+    images: [
+      shriramImage("shriram-properties/shriram-sapphire/gallery/exterior-view.webp"),
+      shriramImage("shriram-properties/shriram-sapphire/gallery/interior-view.webp"),
+      shriramImage("shriram-properties/shriram-sapphire/gallery/amenities.webp"),
+    ],
   },
   {
     id: "shriram-pristine-estates",
+    thumbnail: shriramImage("shriram-properties/shriram-pristine-estates/thumbnail.webp"),
     title: "Shriram Pristine Estates",
     location:
       "Doddaballapura Main Road, Doddaballapura, Bengaluru, Karnataka 561203",
@@ -272,21 +292,21 @@ export const shriramPropertiesData = [
         bhk: "compact-plot",
         area: "1,500 - 2,000 sq.ft.",
         price: "₹ 75.5 L Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-pristine-estates/floor-plans/compact-plot-layout.webp"),
       },
       {
         id: "bungalow-plot",
         bhk: "bungalow-plot",
         area: "2,694 - 2,800 sq.ft.",
         price: "₹ 1.25 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-pristine-estates/floor-plans/bungalow-plot.webp"),
       },
       {
         id: "large-plot",
         bhk: "large-plot",
         area: "3,000 - 4,000 sq.ft.",
         price: "₹ 1.47 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-pristine-estates/floor-plans/large-plot-layout.webp"),
       },
     ],
     possession: "May 2025",
@@ -336,10 +356,15 @@ export const shriramPropertiesData = [
         icon: "fa-plane",
       },
     ],
-    images: [],
+    images: [
+      shriramImage("shriram-properties/shriram-pristine-estates/gallery/exterior-view.webp"),
+      shriramImage("shriram-properties/shriram-pristine-estates/gallery/interior-view.webp"),
+      shriramImage("shriram-properties/shriram-pristine-estates/gallery/amenities.webp"),
+    ],
   },
   {
     id: "shriram-esquire",
+    thumbnail: shriramImage("shriram-properties/shriram-esquire/thumbnail.webp"),
     title: "Shriram Esquire",
     location:
       "Site No. 91-98, HBCS Ltd., Nirguna Mandir Layout, Cauvery Colony, Ejipura, 1st Block Koramangala, Bengaluru, Karnataka 560034",
@@ -354,14 +379,14 @@ export const shriramPropertiesData = [
         bhk: "3 BHK",
         area: "1,940 - 1,950 sq.ft.",
         price: "₹ 3.8 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-esquire/floor-plans/3bhk-floor-plan.webp"),
       },
       {
         id: "4bhk",
         bhk: "4 BHK",
         area: "2,370 sq.ft.",
         price: "₹ 4.8 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-esquire/floor-plans/4bhk-floor-plan.webp"),
       },
     ],
     possession: "January 2027",
@@ -421,10 +446,15 @@ export const shriramPropertiesData = [
         icon: "fa-building-ngo",
       },
     ],
-    images: [],
+    images: [
+      shriramImage("shriram-properties/shriram-esquire/gallery/exterior-view.webp"),
+      shriramImage("shriram-properties/shriram-esquire/gallery/interior-view.webp"),
+      shriramImage("shriram-properties/shriram-esquire/gallery/amenities.webp"),
+    ],
   },
   {
     id: "shriram-solitaire",
+    thumbnail: shriramImage("shriram-properties/shriram-solitaire/thumbnail.webp"),
     title: "Shriram Solitaire",
     location:
       "Survey No. 4/4, Veerasagara Village, Attur Post, Yelahanka New Town, Bengaluru, Karnataka 560064",
@@ -439,14 +469,14 @@ export const shriramPropertiesData = [
         bhk: "2 BHK",
         area: "1,045 - 1,270 sq.ft.",
         price: "₹ 93 L Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-solitaire/floor-plans/2bhk-floor-plan.webp"),
       },
       {
         id: "2.5bhk",
         bhk: "2.5 BHK",
         area: "1,245 - 1,300 sq.ft.",
         price: "₹ 1.23 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-solitaire/floor-plans/2.5bhk-floor-plan.webp"),
       },
     ],
     possession: "May 2026",
@@ -512,10 +542,15 @@ export const shriramPropertiesData = [
         icon: "fa-plane",
       },
     ],
-    images: [],
+    images: [
+      shriramImage("shriram-properties/shriram-solitaire/gallery/exterior-view.webp"),
+      shriramImage("shriram-properties/shriram-solitaire/gallery/interior-view.webp"),
+      shriramImage("shriram-properties/shriram-solitaire/gallery/amenities.webp"),
+    ],
   },
   {
     id: "the-poem-by-shriram-properties",
+    thumbnail: shriramImage("shriram-properties/the-poem-by-shriram-properties/thumbnail.webp"),
     title: "The Poem by Shriram Properties",
     location:
       "Sy No. 60/3 of Shetti Halli, Sy No. 20, 21, 22 & 29 of Myadara Halli, Yeshwanthpur Hobli, Jalahalli West, Bengaluru, Karnataka 560090",
@@ -530,21 +565,21 @@ export const shriramPropertiesData = [
         bhk: "2 BHK",
         area: "949 sq.ft.",
         price: "₹ 86.32 L Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/the-poem-by-shriram-properties/floor-plans/2bhk-floor-plan.webp"),
       },
       {
         id: "2.5bhk",
         bhk: "2.5 BHK",
         area: "1034 sq.ft.",
         price: "₹ 94.09 L Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/the-poem-by-shriram-properties/floor-plans/2.5bhk-floor-plan.webp"),
       },
       {
         id: "3bhk",
         bhk: "3 BHK",
         area: "1255 sq.ft.",
         price: "₹ 1.14 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/the-poem-by-shriram-properties/floor-plans/3bhk-floor-plan.webp"),
       },
     ],
     possession: "March 2027",
@@ -593,10 +628,15 @@ export const shriramPropertiesData = [
         icon: "fa-plane",
       },
     ],
-    images: [],
+    images: [
+      shriramImage("shriram-properties/the-poem-by-shriram-properties/gallery/exterior-view.webp"),
+      shriramImage("shriram-properties/the-poem-by-shriram-properties/gallery/interior-view.webp"),
+      shriramImage("shriram-properties/the-poem-by-shriram-properties/gallery/amenities.webp"),
+    ],
   },
   {
     id: "shriram-107-southeast",
+    thumbnail: shriramImage("shriram-properties/shriram-107-south-east/thumbnail.webp"),
     title: "Shriram 107 SouthEast",
     location:
       "Manchanahalli Rd, Krishnasagara, Off Hosur Road, Attibele, Bengaluru, Karnataka 562107",
@@ -611,21 +651,21 @@ export const shriramPropertiesData = [
         bhk: "2 BHK Compact",
         area: "698 sq.ft.",
         price: "₹ 55.37 L Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-107-south-east/floor-plans/2bhk(cp)-floor-plan.webp"),
       },
       {
         id: "2bhk-classic",
         bhk: "2 BHK Classic",
         area: "752 sq.ft.",
         price: "₹ 58.48 L Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-107-south-east/floor-plans/2bhk(cc)-floor-plan.webp"),
       },
       {
         id: "3bhk-premium",
         bhk: "3 BHK Premium",
         area: "914 sq.ft.",
         price: "₹ 70.04 L Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-107-south-east/floor-plans/3bhk-floor-plan.webp"),
       },
     ],
     possession: "January 2027",
@@ -677,10 +717,15 @@ export const shriramPropertiesData = [
       { name: "Hosur Town", distance: "20 Mins", icon: "fa-city" },
       { name: "Sarjapur Road", distance: "25 Mins", icon: "fa-road" },
     ],
-    images: [],
+    images: [
+      shriramImage("shriram-properties/shriram-107-south-east/gallery/exterior-view.webp"),
+      shriramImage("shriram-properties/shriram-107-south-east/gallery/interior-view.webp"),
+      shriramImage("shriram-properties/shriram-107-south-east/gallery/amenities.webp"),
+    ],
   },
   {
     id: "shriram-wytfield",
+    thumbnail: shriramImage("shriram-properties/shriram-wytfield/thumbnail.webp"),
     title: "Shriram WYTfield",
     location:
       "Sy No. 70 & 72, Bendiganahalli Village, Budigere Cross, Whitefield Extension, Bengaluru, Karnataka 562129",
@@ -695,14 +740,14 @@ export const shriramPropertiesData = [
         bhk: "2 BHK",
         area: "735 sq.ft.",
         price: "₹ 56.2 L Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-wytfield/floor-plans/2bhk-floor-plan.webp"),
       },
       {
         id: "3bhk",
         bhk: "3 BHK",
         area: "1,055 sq.ft.",
         price: "₹ 1.03 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-wytfield/floor-plans/3bhk-floor-plan.webp"),
       },
     ],
     possession: "August 2026",
@@ -759,10 +804,15 @@ export const shriramPropertiesData = [
         icon: "fa-plane",
       },
     ],
-    images: [],
+    images: [
+      shriramImage("shriram-properties/shriram-wytfield/gallery/exterior-view.webp"),
+      shriramImage("shriram-properties/shriram-wytfield/gallery/interior-view.webp"),
+      shriramImage("shriram-properties/shriram-wytfield/gallery/amenities.webp"),
+    ],
   },
   {
     id: "shriram-chirping-grove",
+    thumbnail: shriramImage("shriram-properties/shriram-chirping-grove/thumbnail.webp"),
     title: "Shriram Chirping Grove",
     location:
       "Sy. No. 114, Thindlu Village, Sarjapur Main Road, Bengaluru, Karnataka 562125",
@@ -777,14 +827,14 @@ export const shriramPropertiesData = [
         bhk: "3 BHK",
         area: "2,523 sq.ft.",
         price: "₹ 1.66 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-chirping-grove/floor-plans/3bhk-floor-plan.webp"),
       },
       {
         id: "4bhk-row-villa",
         bhk: "4 BHK",
         area: "2,628 sq.ft.",
         price: "₹ 2.40 Cr Onwards",
-        image: "",
+        image: shriramImage("shriram-properties/shriram-chirping-grove/floor-plans/4bhk-floor-plan.webp"),
       },
     ],
     possession: "Ready To Move",
@@ -833,9 +883,15 @@ export const shriramPropertiesData = [
         icon: "fa-building",
       },
     ],
-    images: [],
+    images: [
+      shriramImage("shriram-properties/shriram-chirping-grove/gallery/exterior-view.webp"),
+      shriramImage("shriram-properties/shriram-chirping-grove/gallery/interior-view.webp"),
+      shriramImage("shriram-properties/shriram-chirping-grove/gallery/amenities.webp"),
+    ],
   },
 ];
+
+export const shriramData = shriramPropertiesData;
 
 export const shriramPropertiesFaqs = [
   {

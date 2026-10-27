@@ -23,6 +23,11 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
 .text-gradient-gold {
   background: linear-gradient(135deg, #0f766e 0%, #5eead4 50%, #115e59 100%);
   background-clip: text;
@@ -883,29 +888,29 @@ a:focus-visible {
   background:
     linear-gradient(
       90deg,
-      rgba(5, 24, 19, 0.52) 0%,
-      rgba(5, 24, 19, 0.39) 52%,
-      rgba(5, 24, 19, 0.28) 100%
+      rgba(5, 24, 19, 0.26) 0%,
+      rgba(5, 24, 19, 0.22) 52%,
+      rgba(5, 24, 19, 0.18) 100%
     ),
     linear-gradient(
       0deg,
-      rgba(5, 24, 19, 0.3) 0%,
+      rgba(5, 24, 19, 0.2) 0%,
       transparent 58%,
-      rgba(5, 24, 19, 0.12) 100%
+      rgba(5, 24, 19, 0.08) 100%
     );
 }
 
 .hero-banner-image {
-  filter: brightness(1.12) saturate(1.04);
+  filter: brightness(1.25) saturate(1.08);
 }
 
 @media (max-width: 640px) {
   .hero-banner-overlay {
     background: linear-gradient(
       180deg,
-      rgba(5, 24, 19, 0.64) 0%,
-      rgba(5, 24, 19, 0.58) 38%,
-      rgba(5, 24, 19, 0.72) 100%
+      rgba(5, 24, 19, 0.4) 0%,
+      rgba(5, 24, 19, 0.36) 38%,
+      rgba(5, 24, 19, 0.48) 100%
     );
   }
 
@@ -1033,6 +1038,23 @@ a:focus-visible {
   display: none;
 }
 
+#floor-plan-image-panel {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  padding: 0;
+  background-color: #fff !important;
+}
+
+#floor-plan-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
+
 @media (max-width: 640px) {
   #floor-plan-tabs {
     width: max-content;
@@ -1045,12 +1067,6 @@ a:focus-visible {
   }
   #floor-plan-layout {
     gap: 0.875rem;
-  }
-  #floor-plan-image-panel {
-    padding: 0.75rem;
-  }
-  #floor-plan-img {
-    max-height: 13rem;
   }
   #floor-plan-details {
     display: grid;

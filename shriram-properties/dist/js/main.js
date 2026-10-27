@@ -244,7 +244,7 @@ function renderPropertyGrid(items) {
   }
 
   items.forEach((prop) => {
-    const coverImage = prop.images?.[0] || prop.image || "";
+    const coverImage = prop.thumbnail || prop.image || prop.images?.[0] || "";
     const card = document.createElement("div");
     card.className =
       "property-card cursor-pointer bg-white rounded-2xl overflow-hidden border border-builder-border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group";
@@ -1092,6 +1092,16 @@ Object.assign(window, {
 });
 // INITIALIZE AFTER THE SHARED PAGE MARKUP IS AVAILABLE.
 function initializeBuilderPage() {
+  document.addEventListener("contextmenu", (event) => {
+    if (event.target instanceof Element && event.target.closest("img")) {
+      event.preventDefault();
+    }
+  });
+  document.addEventListener("dragstart", (event) => {
+    if (event.target instanceof Element && event.target.closest("img")) {
+      event.preventDefault();
+    }
+  });
   renderFaqs(faqsData);
   renderPropertyGrid(propertiesData);
   const footerPropertyCount = document.getElementById("footer-property-count");
