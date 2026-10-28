@@ -11,7 +11,14 @@
       name="description"
       content="Sattva Anugraha is a premium ready-to-move residential township by Sattva Group located near Sumanahalli Crossing, off Magadi Road in Vijayanagar, West..."
     />
-<link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="preconnect" href="https://media.justflip.in">
+    <link
+      rel="preload"
+      as="image"
+      href="https://media.justflip.in/builder-brand-pages/sattva-group/banner.webp"
+      fetchpriority="high"
+    />
+    <link rel="stylesheet" href="css/tailwind.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -195,10 +202,11 @@
       >
         <img
           class="hero-banner-image absolute inset-0 z-0 h-full w-full object-cover"
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1280&q=70"
+          src="https://media.justflip.in/builder-brand-pages/sattva-group/banner.webp"
           alt=""
           aria-hidden="true"
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
           decoding="async"
         />
         <div
