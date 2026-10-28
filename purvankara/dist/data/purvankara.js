@@ -1,6 +1,11 @@
+const imageCdnPrefix = "https://media.justflip.in/builder-brand-pages/";
+const purvaImage = (suffix) =>
+  `${imageCdnPrefix}${suffix.replace(/^\/+/, "")}`;
+
 export const purvankaraData = [
   {
     id: "purva-heritage",
+    thumbnail: purvaImage("puravankara-limited/purva-heritage/thumbnail.webp"),
     title: "Purva Heritage",
     location:
       "Kudlu Gate Junction, Hosur Main Road, South Bengaluru, Karnataka 560068",
@@ -15,7 +20,7 @@ export const purvankaraData = [
         bhk: "3 BHK",
         area: "1,900 sq.ft.",
         price: "₹ 3.10 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/purva-heritage/floor-plans/3bhk-floor-plan.webp"),
       },
     ],
     possession: "August 2030",
@@ -69,10 +74,15 @@ export const purvankaraData = [
         icon: "fa-hospital",
       },
     ],
-    images: [],
+    images: [
+      purvaImage("puravankara-limited/purva-heritage/gallery/exterior-view.webp"),
+      purvaImage("puravankara-limited/purva-heritage/gallery/interior-view.webp"),
+      purvaImage("puravankara-limited/purva-heritage/gallery/amenities.webp"),
+    ],
   },
   {
     id: "northern-lights-by-purvankara",
+    thumbnail: purvaImage("puravankara-limited/northern-lights-by-puravankara/thumbnail.webp"),
     title: "Northern Lights By Purvankara",
     location:
       "Hoovinayakanahalli, KIADB Aerospace Park, off Bagalur Road, Devanahalli, Bengaluru, Karnataka 562149",
@@ -87,42 +97,42 @@ export const purvankaraData = [
         bhk: "1 BHK",
         area: "408 sq.ft.",
         price: "₹ 77.00 Lakhs Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/northern-lights-by-puravankara/floor-plans/1bhk-floor-plan.webp"),
       },
       {
         id: "2bhk_comfort",
         bhk: "2 BHK Comfort",
         area: "1,097 sq.ft.",
         price: "₹ 1.18 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/northern-lights-by-puravankara/floor-plans/2bhk(cof)floor-plan.webp"),
       },
       {
         id: "2bhk_grand",
         bhk: "2 BHK Grand",
         area: "1,275 sq.ft.",
         price: "₹ 1.37 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/northern-lights-by-puravankara/floor-plans/2bhk(grd)-floor-plan.webp"),
       },
       {
         id: "3bhk_grand",
         bhk: "3 BHK Grand",
         area: "1,685 sq.ft.",
         price: "₹ 1.76 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/northern-lights-by-puravankara/floor-plans/3bhk(grd)floor-plan.webp"),
       },
       {
         id: "3bhk_uber",
         bhk: "3 BHK Uber + Maid's",
         area: "1,886 sq.ft.",
         price: "₹ 2.03 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/northern-lights-by-puravankara/floor-plans/3bhk(um)-floor-plan.webp"),
       },
       {
         id: "4bhk_duplex",
         bhk: "4 BHK Grand Duplex",
         area: "4,017 sq.ft.",
         price: "₹ 4.40 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/northern-lights-by-puravankara/floor-plans/4bhk(gd)-floor-plan.webp"),
       },
     ],
     possession: "December 2029",
@@ -186,10 +196,15 @@ export const purvankaraData = [
         icon: "fa-bag-shopping",
       },
     ],
-    images: [],
+    images: [
+      purvaImage("puravankara-limited/northern-lights-by-puravankara/gallery/exterior-view.webp"),
+      purvaImage("puravankara-limited/northern-lights-by-puravankara/gallery/interior-view.webp"),
+      purvaImage("puravankara-limited/northern-lights-by-puravankara/gallery/amenities.webp"),
+    ],
   },
   {
     id: "purva-silversky",
+    thumbnail: purvaImage("puravankara-limited/purva-silversky/thumbnail.webp"),
     title: "Purva Silversky",
     location:
       "Huskur Road, Hebbagodi, Electronic City Phase 2, Bengaluru, Karnataka 560099",
@@ -204,21 +219,21 @@ export const purvankaraData = [
         bhk: "3 BHK",
         area: "1,864 sq.ft.",
         price: "₹ 2.55 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/purva-silversky/floor-plans/3bhk-floor-plan.webp"),
       },
       {
         id: "4bhk",
         bhk: "4 BHK",
         area: "2,824 sq.ft.",
         price: "₹ 2.90 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/purva-silversky/floor-plans/4bhk-floor-plan.webp"),
       },
       {
         id: "5bhk_duplex",
         bhk: "5 BHK Duplex",
         area: "4,800 sq.ft.",
         price: "₹ 3.50 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/purva-silversky/floor-plans/5bhk-floor-plan.webp"),
       },
     ],
     possession: "July 2030",
@@ -272,10 +287,15 @@ export const purvankaraData = [
         icon: "fa-graduation-cap",
       },
     ],
-    images: [],
+    images: [
+      purvaImage("puravankara-limited/purva-silversky/gallery/exterior-view.webp"),
+      purvaImage("puravankara-limited/purva-silversky/gallery/interior-view.webp"),
+      purvaImage("puravankara-limited/purva-silversky/gallery/amenities.webp"),
+    ],
   },
   {
     id: "purva-blubelle",
+    thumbnail: purvaImage("puravankara-limited/purva-blubelle/thumbnail.webp"),
     title: "Purva Blubelle",
     location:
       "Magadi Main Road, Next to Magadi Road Metro Station, Kempapura Agrahara, Bengaluru, Karnataka 560023",
@@ -290,7 +310,7 @@ export const purvankaraData = [
         bhk: "3 BHK",
         area: "1,432 - 1,630 sq.ft.",
         price: "₹ 2.30 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/purva-blubelle/floor-plans/3bhk-floor-plan.webp"),
       },
     ],
     possession: "June 2029",
@@ -344,10 +364,15 @@ export const purvankaraData = [
         icon: "fa-plane",
       },
     ],
-    images: [],
+    images: [
+      purvaImage("puravankara-limited/purva-blubelle/gallery/exterior-view.webp"),
+      purvaImage("puravankara-limited/purva-blubelle/gallery/interior-view.webp"),
+      purvaImage("puravankara-limited/purva-blubelle/gallery/amenities.webp"),
+    ],
   },
   {
     id: "purva-orient-grand",
+    thumbnail: purvaImage("puravankara-limited/purva-orient-grand/thumbnail.webp"),
     title: "Purva Orient Grand",
     location:
       "Lalbagh Main Road, Sudhama Nagar, Central Bengaluru, Karnataka 560027",
@@ -362,28 +387,28 @@ export const purvankaraData = [
         bhk: "3 BHK Ultra Luxury",
         area: "1,992 sq.ft.",
         price: "₹ 5.50 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/purva-orient-grand/floor-plans/3bhk(ulx)-floor-plan.webp"),
       },
       {
         id: "4bhk_elegance",
         bhk: "4 BHK Elegance",
         area: "2,338 sq.ft.",
         price: "₹ 6.10 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/purva-orient-grand/floor-plans/4bhk(eg)-floor-plan.webp"),
       },
       {
         id: "4bhk_luxury",
         bhk: "4 BHK Luxury",
         area: "2,629 sq.ft.",
         price: "₹ 7.80 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/purva-orient-grand/floor-plans/4bhk(lx)-floor-plan.webp"),
       },
       {
         id: "4bhk_grandeur",
         bhk: "4 BHK Grandeur (with Servant)",
         area: "3,095 sq.ft.",
         price: "₹ 9.80 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/purva-orient-grand/floor-plans/4bhk(gws)-floor-plan.webp"),
       },
     ],
     possession: "June 2027",
@@ -444,10 +469,15 @@ export const purvankaraData = [
         icon: "fa-train",
       },
     ],
-    images: [],
+    images: [
+      purvaImage("puravankara-limited/purva-orient-grand/gallery/exterior-view.webp"),
+      purvaImage("puravankara-limited/purva-orient-grand/gallery/interior-view.webp"),
+      purvaImage("puravankara-limited/purva-orient-grand/gallery/amenities.webp"),
+    ],
   },
   {
     id: "purva-atmosphere",
+    thumbnail: purvaImage("puravankara-limited/purva-atmosphere/thumbnail.webp"),
     title: "Purva Atmosphere",
     location:
       "Survey No. 86 & 95, Thanisandra Main Road, Near Manyata Tech Park, North Bengaluru, Karnataka 560077",
@@ -462,14 +492,14 @@ export const purvankaraData = [
         bhk: "3 BHK Comfort",
         area: "1,330 sq.ft.",
         price: "₹ 2.85 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/purva-atmosphere/floor-plans/3bhk(cmf)-floor-plan.webp"),
       },
       {
         id: "3bhk_grand",
         bhk: "3 BHK Grand",
         area: "2,004 sq.ft.",
         price: "₹ 3.15 Cr Onwards",
-        image: "",
+        image: purvaImage("puravankara-limited/purva-atmosphere/floor-plans/3bhk(grd)-floor-plan.webp"),
       },
     ],
     possession: "March 2024",
@@ -535,9 +565,16 @@ export const purvankaraData = [
         icon: "fa-plane",
       },
     ],
-    images: [],
+    images: [
+      purvaImage("puravankara-limited/purva-atmosphere/gallery/exterior-view.webp"),
+      purvaImage("puravankara-limited/purva-atmosphere/gallery/interior-view.webp"),
+      purvaImage("puravankara-limited/purva-atmosphere/gallery/amenities.webp"),
+    ],
   },
 ];
+
+export const purvaProjects = purvankaraData;
+export const purvaData = purvankaraData;
 
 export const purvankaraFaqs = [
   {
@@ -574,7 +611,7 @@ export const purvankaraFaqs = [
 
 export const builderConfig = {
   slug: "purvankara",
-  name: "Purvankara Limited",
+  name: "Puravankara Limited",
   regions: "Bengaluru",
   theme: {
     primary: "#0F382C",
