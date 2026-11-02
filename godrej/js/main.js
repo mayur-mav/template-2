@@ -596,54 +596,69 @@ function closeProjectGallery() {
 
 function renderPropertyFeatures(property) {
   const amenitiesContainer = document.getElementById("detail-amenities");
-  const connectivityContainer = document.getElementById("detail-connectivity");
-  amenitiesContainer.replaceChildren();
-  connectivityContainer.replaceChildren();
+  const connectivityContainer =
+    document.getElementById("dt-connectivity") ||
+    document.getElementById("detail-connectivity");
+  if (amenitiesContainer) {
+    amenitiesContainer.replaceChildren();
+    (property.amenities || []).forEach((amenity) => {
+      const card = document.createElement("div");
+      card.className =
+        "p-4 bg-builder-surface border border-builder-border rounded-2xl flex items-center gap-3";
 
-  (property.amenities || []).forEach((amenity) => {
-    const card = document.createElement("div");
-    card.className =
-      "p-4 bg-builder-surface border border-builder-border rounded-2xl flex items-center gap-3";
+      const iconBox = document.createElement("div");
+      iconBox.className =
+        "w-10 h-10 rounded-xl bg-builder-soft flex items-center justify-center text-builder-primary text-lg shrink-0";
+      const icon = document.createElement("i");
+      icon.className = `fa-solid ${amenity.icon || "fa-star"}`;
+      icon.setAttribute("aria-hidden", "true");
+      iconBox.appendChild(icon);
 
-    const iconBox = document.createElement("div");
-    iconBox.className =
-      "w-10 h-10 rounded-xl bg-builder-soft flex items-center justify-center text-builder-primary text-lg shrink-0";
-    const icon = document.createElement("i");
-    icon.className = `fa-solid ${amenity.icon || "fa-star"}`;
-    icon.setAttribute("aria-hidden", "true");
-    iconBox.appendChild(icon);
+      const name = document.createElement("h4");
+      name.className = "text-xs font-bold text-slate-800";
+      name.textContent = amenity.name;
+      card.append(iconBox, name);
+      amenitiesContainer.appendChild(card);
+    });
+    addFeatureExpansion(amenitiesContainer, 6, "amenities");
+  }
 
-    const name = document.createElement("h4");
-    name.className = "text-xs font-bold text-slate-800";
-    name.textContent = amenity.name;
-    card.append(iconBox, name);
-    amenitiesContainer.appendChild(card);
-  });
-  addFeatureExpansion(amenitiesContainer, 6, "amenities");
+  if (connectivityContainer) {
+    connectivityContainer.replaceChildren();
+    const oldConnLink = connectivityContainer.nextElementSibling;
+    if (oldConnLink?.classList.contains("feature-expansion-link"))
+      oldConnLink.remove();
 
-  (property.connectivity || []).forEach((place) => {
-    const card = document.createElement("div");
-    card.className =
-      "p-4 border border-slate-200 rounded-xl flex items-center justify-between gap-3";
+    const nearbyPlaces = (property.connectivity || []).slice(0, 4);
+    nearbyPlaces.forEach((place) => {
+      const row = document.createElement("div");
+      row.className = "loc-item";
 
-    const placeInfo = document.createElement("div");
-    placeInfo.className = "flex min-w-0 items-center gap-3";
-    const icon = document.createElement("i");
-    icon.className = `fa-solid ${place.icon || "fa-location-dot"} text-builder-accent text-lg shrink-0`;
-    icon.setAttribute("aria-hidden", "true");
-    const name = document.createElement("span");
-    name.className = "text-xs font-semibold text-slate-700";
-    name.textContent = place.name;
-    placeInfo.append(icon, name);
+      const iconName =
+        place.icon?.startsWith("fa-") && !place.icon.includes(" ")
+          ? `fa-solid ${place.icon}`
+          : place.icon || "fa-solid fa-location-dot";
+      const icon = document.createElement("i");
+      icon.className = iconName;
+      icon.setAttribute("aria-hidden", "true");
+      row.appendChild(icon);
 
-    const distance = document.createElement("span");
-    distance.className =
-      "text-xs font-bold text-builder-primary whitespace-nowrap";
-    distance.textContent = place.distance || "";
-    card.append(placeInfo, distance);
-    connectivityContainer.appendChild(card);
-  });
-  addFeatureExpansion(connectivityContainer, 4, "connectivity");
+      const text = document.createElement("div");
+      const label = document.createElement("strong");
+      label.textContent = `${place.label || place.name}:`;
+      text.append(label, document.createTextNode(` ${place.distance || ""}`));
+      row.appendChild(text);
+
+      connectivityContainer.appendChild(row);
+    });
+  }
+
+  const connectivitySection = document.getElementById(
+    "dt-connectivity-section",
+  );
+  if (connectivitySection) {
+    connectivitySection.hidden = (property.connectivity || []).length === 0;
+  }
 }
 
 function addFeatureExpansion(list, limit, label) {
@@ -757,6 +772,8 @@ function openDetailPage(id, { updateUrl = true } = {}) {
   document.getElementById("details-page").classList.remove("hidden");
   document.getElementById("site-footer").classList.add("hidden");
   document.body.removeAttribute("data-property-route-loading");
+  if (connectivityPreviewMap) initializeConnectivityPreview(prop);
+  else if (!connectivityPreviewObserver) initializeConnectivityPreview(prop);
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
@@ -867,6 +884,10 @@ function restoreBuilderRoute() {
   if (property) {
     openDetailPage(property.id, { updateUrl: false });
     setActiveNavigation(route);
+    const requestedMap = new URL(window.location.href).searchParams.get("map");
+    if (requestedMap === "location") {
+      openConnectivityMap({ updateUrl: false });
+    }
     return;
   }
 
@@ -1705,14 +1726,436 @@ function initEmiCalculator() {
   updateEmiCalculator();
 }
 
+// ==================== STRATEGIC CONNECTIVITY & LEAFLET MAP ====================
+let connectivityMapPlaces = [];
+let connectivitySearchTimer = null;
+let connectivityLeafletMap = null;
+let connectivityMapPropertyId = null;
+let connectivityOriginMarker = null;
+let connectivityRouteLayer = null;
+let connectivityRouteController = null;
+let connectivityRouteRequestId = 0;
+let connectivityPreviewMap = null;
+let connectivityPreviewMarker = null;
+let connectivityPreviewObserver = null;
+const connectivityRouteCache = new Map();
+
+function getConnectivityDestination(place) {
+  return (
+    place.destination ||
+    `${place.label || place.name}, Bengaluru, Karnataka`
+  );
+}
+
+function initializeConnectivityMap(item) {
+  const status = document.getElementById("connectivity-map-route-status");
+  if (!window.L) {
+    if (status)
+      status.textContent =
+        "The interactive map could not be loaded. Use Google Maps directions instead.";
+    return false;
+  }
+
+  const mapElement = document.getElementById("connectivity-map-canvas");
+  const themeColor = "#0F382C";
+  const propertyPlaces = [
+    [item.coordinates.lat, item.coordinates.lon],
+    ...connectivityMapPlaces
+      .filter((place) => place.coordinates)
+      .map((place) => [place.coordinates.lat, place.coordinates.lon]),
+  ];
+  const projectBounds = window.L.latLngBounds(propertyPlaces);
+  if (!connectivityLeafletMap) {
+    connectivityLeafletMap = window.L.map(mapElement, {
+      scrollWheelZoom: false,
+    }).fitBounds(projectBounds, { padding: [30, 30], maxZoom: 12 });
+    window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> | Routing: <a href="https://project-osrm.org/" target="_blank" rel="noopener noreferrer">OSRM</a>',
+    }).addTo(connectivityLeafletMap);
+    connectivityRouteLayer = window.L.layerGroup().addTo(connectivityLeafletMap);
+  } else if (connectivityMapPropertyId !== item.id) {
+    connectivityRouteLayer.clearLayers();
+    connectivityOriginMarker?.remove();
+    connectivityLeafletMap.fitBounds(projectBounds, {
+      padding: [30, 30],
+      maxZoom: 12,
+    });
+  }
+
+  if (connectivityMapPropertyId !== item.id || !connectivityOriginMarker) {
+    connectivityOriginMarker = window.L.circleMarker(
+      [item.coordinates.lat, item.coordinates.lon],
+      {
+        radius: 8,
+        color: "#fff",
+        weight: 3,
+        fillColor: themeColor,
+        fillOpacity: 1,
+      },
+    ).addTo(connectivityLeafletMap);
+    connectivityOriginMarker.bindTooltip(
+      `${item.title || item.name} (Property)`,
+    );
+  }
+  connectivityMapPropertyId = item.id;
+  requestAnimationFrame(() => connectivityLeafletMap.invalidateSize());
+  return true;
+}
+
+function initializeConnectivityPreview(item) {
+  if (!window.L || !item?.coordinates) return;
+
+  const previewElement = document.getElementById(
+    "connectivity-map-preview-canvas",
+  );
+  if (!previewElement) return;
+  const themeColor = "#0F382C";
+  if (!connectivityPreviewMap) {
+    connectivityPreviewMap = window.L.map(previewElement, {
+      attributionControl: true,
+      boxZoom: false,
+      dragging: false,
+      doubleClickZoom: false,
+      keyboard: false,
+      scrollWheelZoom: false,
+      touchZoom: false,
+      zoomControl: false,
+    }).setView([item.coordinates.lat, item.coordinates.lon], 14);
+    window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>',
+    }).addTo(connectivityPreviewMap);
+  } else {
+    connectivityPreviewMap.setView(
+      [item.coordinates.lat, item.coordinates.lon],
+      14,
+    );
+    connectivityPreviewMarker?.remove();
+  }
+
+  connectivityPreviewMarker = window.L.circleMarker(
+    [item.coordinates.lat, item.coordinates.lon],
+    {
+      radius: 9,
+      color: "#fff",
+      weight: 3,
+      fillColor: themeColor,
+      fillOpacity: 1,
+    },
+  ).addTo(connectivityPreviewMap);
+  connectivityPreviewMarker.bindTooltip(item.title || item.name);
+  requestAnimationFrame(() => connectivityPreviewMap.invalidateSize());
+}
+
+function renderConnectivityDestinationMarker(place) {
+  const themeColor = "#0F382C";
+  const destinationMarker = window.L.circleMarker(
+    [place.coordinates.lat, place.coordinates.lon],
+    {
+      radius: 7,
+      color: "#fff",
+      weight: 3,
+      fillColor: themeColor,
+      fillOpacity: 1,
+    },
+  ).addTo(connectivityRouteLayer);
+  destinationMarker.bindTooltip(place.label || place.name);
+}
+
+function renderConnectivityRoute(item, place, route) {
+  connectivityRouteLayer.clearLayers();
+  const routeCoordinates = route.geometry.coordinates.slice();
+  const originCoordinate = [item.coordinates.lon, item.coordinates.lat];
+  const destinationCoordinate = [place.coordinates.lon, place.coordinates.lat];
+  const firstRouteCoordinate = routeCoordinates[0];
+  const lastRouteCoordinate = routeCoordinates[routeCoordinates.length - 1];
+
+  if (
+    firstRouteCoordinate[0] !== originCoordinate[0] ||
+    firstRouteCoordinate[1] !== originCoordinate[1]
+  ) {
+    routeCoordinates.unshift(originCoordinate);
+  }
+  if (
+    lastRouteCoordinate[0] !== destinationCoordinate[0] ||
+    lastRouteCoordinate[1] !== destinationCoordinate[1]
+  ) {
+    routeCoordinates.push(destinationCoordinate);
+  }
+
+  const routeLine = window.L.geoJSON(
+    {
+      ...route.geometry,
+      coordinates: routeCoordinates,
+    },
+    {
+      style: {
+        color: "#0F382C",
+        weight: 5,
+        opacity: 0.85,
+      },
+    },
+  ).addTo(connectivityRouteLayer);
+  renderConnectivityDestinationMarker(place);
+  const routeBounds = routeLine.getBounds();
+  if (routeBounds.isValid()) {
+    connectivityLeafletMap.fitBounds(routeBounds, {
+      padding: [48, 48],
+      maxZoom: 16,
+    });
+  }
+}
+
+async function updateConnectivityRoute(item, place) {
+  const status = document.getElementById("connectivity-map-route-status");
+  if (!place.coordinates || !initializeConnectivityMap(item)) {
+    if (!place.coordinates && status) {
+      status.textContent = `A map location is not available for ${place.label || place.name}. Open Google Maps for directions.`;
+    }
+    return;
+  }
+
+  connectivityRouteController?.abort();
+  connectivityRouteController = new AbortController();
+  const requestId = ++connectivityRouteRequestId;
+  connectivityRouteLayer.clearLayers();
+  renderConnectivityDestinationMarker(place);
+  const routeKey = `${item.id}:${place.id}`;
+  const cachedRoute = connectivityRouteCache.get(routeKey);
+  if (cachedRoute) {
+    renderConnectivityRoute(item, place, cachedRoute);
+    if (status) status.textContent = `Route to ${place.label || place.name}`;
+    return;
+  }
+
+  if (status)
+    status.textContent = `Loading route to ${place.label || place.name}…`;
+  const origin = item.coordinates;
+  const destination = place.coordinates;
+  const routeUrl = `https://router.project-osrm.org/route/v1/driving/${origin.lon},${origin.lat};${destination.lon},${destination.lat}?overview=full&geometries=geojson&steps=false`;
+
+  try {
+    const response = await fetch(routeUrl, {
+      signal: connectivityRouteController.signal,
+    });
+    if (!response.ok)
+      throw new Error(`Routing service returned HTTP ${response.status}.`);
+    const result = await response.json();
+    const route = result.routes?.[0];
+    if (result.code !== "Ok" || !route?.geometry?.coordinates?.length) {
+      throw new Error(
+        result.message || "No road route is available for this destination.",
+      );
+    }
+    connectivityRouteCache.set(routeKey, route);
+    if (requestId !== connectivityRouteRequestId) return;
+    renderConnectivityRoute(item, place, route);
+    if (status) status.textContent = `Route to ${place.label || place.name}`;
+  } catch (error) {
+    if (error.name === "AbortError" || requestId !== connectivityRouteRequestId)
+      return;
+    if (status)
+      status.textContent = `Could not load the route to ${place.label || place.name}. Open Google Maps for directions.`;
+  }
+}
+
+function getConnectivityDirectionsUrl(item, place) {
+  const url = new URL("https://www.google.com/maps/dir/");
+  url.searchParams.set("api", "1");
+  const origin =
+    item.mapsQuery || `${item.coordinates.lat},${item.coordinates.lon}`;
+  url.searchParams.set("origin", origin);
+  url.searchParams.set("destination", getConnectivityDestination(place));
+  url.searchParams.set("travelmode", "driving");
+  return url.href;
+}
+
+function updateConnectivityMapUrl(placeId) {
+  const url = new URL(window.location.href);
+  url.searchParams.set("map", "location");
+  if (placeId) url.searchParams.set("destination", placeId);
+  else url.searchParams.delete("destination");
+  window.history.replaceState(
+    { ...window.history.state, locationMap: true },
+    "",
+    `${url.pathname}${url.search}${url.hash}`,
+  );
+}
+
+function selectConnectivityMapPlace(placeId) {
+  const place = connectivityMapPlaces.find(
+    (candidate) => candidate.id === placeId,
+  );
+  if (!activeProperty?.coordinates || !place) return;
+
+  const directionsLink = document.getElementById(
+    "connectivity-map-directions-link",
+  );
+  if (directionsLink) {
+    directionsLink.href = getConnectivityDirectionsUrl(activeProperty, place);
+    if (directionsLink.firstChild) {
+      directionsLink.firstChild.textContent = `Directions to ${place.label || place.name} in Google Maps `;
+    }
+  }
+
+  document.querySelectorAll(".connectivity-map-place").forEach((button) => {
+    button.setAttribute(
+      "aria-pressed",
+      String(button.dataset.connectivityPlace === placeId),
+    );
+  });
+  updateConnectivityMapUrl(placeId);
+  updateConnectivityRoute(activeProperty, place);
+}
+
+function renderConnectivityMapPlaces(query = "") {
+  const list = document.getElementById("connectivity-map-list");
+  if (!list) return;
+  const normalizedQuery = query.trim().toLocaleLowerCase();
+  const places = connectivityMapPlaces.filter((place) =>
+    `${place.label || place.name} ${place.distance}`
+      .toLocaleLowerCase()
+      .includes(normalizedQuery),
+  );
+  list.replaceChildren();
+  const countEl = document.getElementById("connectivity-map-count");
+  if (countEl) countEl.textContent = `${places.length} places`;
+
+  if (!places.length) {
+    const empty = document.createElement("p");
+    empty.className = "connectivity-map-no-results";
+    empty.textContent = "No listed destinations match your search.";
+    list.appendChild(empty);
+    return;
+  }
+
+  places.forEach((place) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "connectivity-map-place";
+    button.dataset.connectivityPlace = place.id;
+    button.setAttribute(
+      "aria-pressed",
+      String(
+        place.id ===
+          new URL(window.location.href).searchParams.get("destination"),
+      ),
+    );
+
+    const icon = document.createElement("span");
+    icon.className = "connectivity-map-place-icon";
+    const iconElement = document.createElement("i");
+    const iconName =
+      place.icon?.startsWith("fa-") && !place.icon.includes(" ")
+        ? `fa-solid ${place.icon}`
+        : place.icon || "fa-solid fa-location-dot";
+    iconElement.className = iconName;
+    iconElement.setAttribute("aria-hidden", "true");
+    icon.appendChild(iconElement);
+
+    const details = document.createElement("span");
+    details.className = "connectivity-map-place-details";
+    const name = document.createElement("span");
+    name.textContent = place.label || place.name;
+    const distance = document.createElement("span");
+    distance.textContent = place.distance;
+    details.append(name, distance);
+    button.append(icon, details);
+    list.appendChild(button);
+  });
+}
+
+function openConnectivityMap({ updateUrl = true } = {}) {
+  if (!activeProperty?.coordinates) return;
+  const map = document.getElementById("connectivity-map");
+  if (!map) return;
+  const search = document.getElementById("connectivity-map-search-input");
+  const projectLabel = document.getElementById("connectivity-map-project");
+  if (projectLabel) {
+    projectLabel.textContent = `${activeProperty.title || activeProperty.name} · ${activeProperty.location}`;
+  }
+  connectivityMapPlaces = (activeProperty.connectivity || []).map(
+    (place, index) => ({
+      ...place,
+      id: `${activeProperty.id}-connectivity-${index + 1}`,
+    }),
+  );
+  if (search) search.value = "";
+  map.hidden = false;
+  document.body.classList.add("connectivity-map-open");
+  initializeConnectivityMap(activeProperty);
+  renderConnectivityMapPlaces(search?.value || "");
+  const directionsLink = document.getElementById(
+    "connectivity-map-directions-link",
+  );
+  if (directionsLink) {
+    const query =
+      activeProperty.mapsQuery ||
+      `${activeProperty.coordinates.lat},${activeProperty.coordinates.lon}`;
+    directionsLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+    if (directionsLink.firstChild) {
+      directionsLink.firstChild.textContent =
+        "Open property location in Google Maps ";
+    }
+  }
+
+  const url = new URL(window.location.href);
+  if (updateUrl) {
+    url.searchParams.set("map", "location");
+    url.searchParams.delete("destination");
+    window.history.replaceState(
+      { ...window.history.state, locationMap: true },
+      "",
+      `${url.pathname}${url.search}${url.hash}`,
+    );
+  }
+  const requestedDestination = new URL(
+    window.location.href,
+  ).searchParams.get("destination");
+  const selectedPlace =
+    connectivityMapPlaces.find(
+      (place) => place.id === requestedDestination,
+    ) || connectivityMapPlaces[0];
+  if (selectedPlace) selectConnectivityMapPlace(selectedPlace.id);
+  document.getElementById("connectivity-map-close")?.focus();
+}
+
+function closeConnectivityMap({ updateUrl = true, restoreFocus = true } = {}) {
+  const map = document.getElementById("connectivity-map");
+  if (!map || map.hidden) return;
+
+  map.hidden = true;
+  document.body.classList.remove("connectivity-map-open");
+  connectivityRouteRequestId++;
+  connectivityRouteController?.abort();
+  clearTimeout(connectivitySearchTimer);
+  if (updateUrl) {
+    const url = new URL(window.location.href);
+    url.searchParams.delete("map");
+    url.searchParams.delete("destination");
+    window.history.replaceState(
+      { ...window.history.state, locationMap: false },
+      "",
+      `${url.pathname}${url.search}${url.hash}`,
+    );
+  }
+  if (restoreFocus)
+    document.getElementById("connectivity-map-open")?.focus();
+}
+
 // Keep inline HTML handlers available when this file runs as an ES module.
 Object.assign(window, {
   applyFilters,
+  closeConnectivityMap,
   closeLightbox,
   closeMobileMenu,
   filterByChip,
   handleMainFormSubmit,
   handleSidebarSubmit,
+  openConnectivityMap,
   openDetailPage,
   openLightbox,
   resetMainForm,
@@ -1747,6 +2190,21 @@ function initializeBuilderPage() {
   if (footerRegions && activeBuilderData.regions)
     footerRegions.textContent = activeBuilderData.regions;
   initEmiCalculator();
+  const connectivityPreview = document.getElementById(
+    "connectivity-map-preview-canvas",
+  );
+  if (connectivityPreview && "IntersectionObserver" in window) {
+    connectivityPreviewObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting) && activeProperty) {
+          initializeConnectivityPreview(activeProperty);
+          connectivityPreviewObserver.disconnect();
+        }
+      },
+      { rootMargin: "160px" },
+    );
+    connectivityPreviewObserver.observe(connectivityPreview);
+  }
   restoreBuilderRoute();
   let popupAlreadyShown = false;
   try {
@@ -1814,3 +2272,48 @@ window.addEventListener("keydown", (event) => {
   if (event.key === "ArrowLeft") changeProjectGalleryImage(-1);
   else if (event.key === "ArrowRight") changeProjectGalleryImage(1);
 });
+
+// CONNECTIVITY MAP EVENT LISTENERS (CENTURY MATCH)
+window.addEventListener("popstate", () => {
+  const map = document.getElementById("connectivity-map");
+  if (
+    map &&
+    !map.hidden &&
+    new URL(window.location.href).searchParams.get("map") !== "location"
+  ) {
+    closeConnectivityMap({ updateUrl: false, restoreFocus: false });
+  }
+});
+document
+  .getElementById("connectivity-map-open")
+  ?.addEventListener("click", () => openConnectivityMap());
+document
+  .getElementById("connectivity-map-close")
+  ?.addEventListener("click", () => closeConnectivityMap());
+document
+  .getElementById("connectivity-map-search-input")
+  ?.addEventListener("input", (event) => {
+    clearTimeout(connectivitySearchTimer);
+    connectivitySearchTimer = setTimeout(
+      () => renderConnectivityMapPlaces(event.target.value),
+      250,
+    );
+  });
+document
+  .getElementById("connectivity-map-list")
+  ?.addEventListener("click", (event) => {
+    const placeButton = event.target.closest("[data-connectivity-place]");
+    if (!placeButton) return;
+    event.preventDefault();
+    event.stopPropagation();
+    selectConnectivityMapPlace(placeButton.dataset.connectivityPlace);
+  });
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    !document.getElementById("connectivity-map")?.hidden
+  ) {
+    closeConnectivityMap();
+  }
+});
+

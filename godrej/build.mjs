@@ -256,6 +256,33 @@ function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOri
     html = replaceElement(html, "emi-legend-interest-val", formatINR(emiRes.totalInterest));
     html = replaceElement(html, "emi-legend-interest-pct", `(${Math.round(emiRes.interestPct)}%)`);
     html = html.replace(/id="emi-prop-slider"[^>]*>/i, `id="emi-prop-slider" min="${limits.min}" max="${limits.max}" step="${limits.step}" value="${parsedPrice}" aria-label="Property Value">`);
+
+    if (property.connectivity && property.connectivity.length > 0) {
+      html = html.replace(
+        /(<section\b[^>]*\bid="dt-connectivity-section"[^>]*?)\bhidden\b/i,
+        "$1",
+      );
+      const nearbyPlaces = property.connectivity.slice(0, 4);
+      const connectivityHtml = nearbyPlaces
+        .map((place) => {
+          const iconName =
+            place.icon?.startsWith("fa-") && !place.icon.includes(" ")
+              ? `fa-solid ${place.icon}`
+              : place.icon || "fa-solid fa-location-dot";
+          return `<div class="loc-item"><i class="${escapeHtml(iconName)}" aria-hidden="true"></i><div><strong>${escapeHtml(place.label || place.name)}:</strong> ${escapeHtml(place.distance || "")}</div></div>`;
+        })
+        .join("\n                                ");
+      html = replaceElement(
+        html,
+        "dt-connectivity",
+        `\n                                ${connectivityHtml}\n                            `,
+      );
+    } else {
+      html = html.replace(
+        /(<section\b[^>]*\bid="dt-connectivity-section"[^>]*?)(>)/i,
+        "$1 hidden$2",
+      );
+    }
   }
 
   if (!property) {
