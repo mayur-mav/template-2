@@ -105,6 +105,79 @@ function replaceElement(html, id, content) {
   return html.replace(pattern, `$1${content}$3`);
 }
 
+function parseIndianPrice(priceStr) {
+  if (!priceStr || typeof priceStr !== "string") return null;
+  const clean = priceStr.replace(/,/g, "").trim();
+  const crMatch = clean.match(/([\d.]+)\s*(?:cr|crore)/i);
+  if (crMatch) {
+    const val = parseFloat(crMatch[1]);
+    if (!isNaN(val) && val > 0) return Math.round(val * 10000000);
+  }
+  const lMatch = clean.match(/([\d.]+)\s*(?:l|lac|lakh)/i);
+  if (lMatch) {
+    const val = parseFloat(lMatch[1]);
+    if (!isNaN(val) && val > 0) return Math.round(val * 100000);
+  }
+  const numMatch = clean.match(/(\d+)/);
+  if (numMatch) {
+    const val = parseInt(numMatch[1], 10);
+    if (!isNaN(val) && val > 0) return val;
+  }
+  return null;
+}
+
+function formatINR(val) {
+  if (isNaN(val) || val === null || val === undefined) return "₹0";
+  return "₹" + Math.round(val).toLocaleString("en-IN");
+}
+
+function formatINRShort(val) {
+  if (isNaN(val) || val <= 0) return "₹0";
+  if (val >= 10000000) {
+    const cr = (val / 10000000).toFixed(2).replace(/\.00$/, "").replace(/(\.[1-9])0$/, "$1");
+    return `₹${cr} Cr`;
+  }
+  if (val >= 100000) {
+    const l = (val / 100000).toFixed(2).replace(/\.00$/, "").replace(/(\.[1-9])0$/, "$1");
+    return `₹${l} Lakh`;
+  }
+  return "₹" + Math.round(val).toLocaleString("en-IN");
+}
+
+function calculateEmi(principal, annualRate = 8.5, tenureYears = 20) {
+  if (principal <= 0 || tenureYears <= 0) {
+    return { emi: 0, totalPayment: 0, totalInterest: 0, principalPct: 50, interestPct: 50 };
+  }
+  const r = (annualRate / 12) / 100;
+  const n = tenureYears * 12;
+  const factor = Math.pow(1 + r, n);
+  const emi = Math.round(principal * r * (factor / (factor - 1)));
+  const totalPayment = emi * n;
+  const totalInterest = Math.max(0, totalPayment - principal);
+  const principalPct = totalPayment > 0 ? (principal / totalPayment) * 100 : 50;
+  const interestPct = totalPayment > 0 ? (totalInterest / totalPayment) * 100 : 50;
+  return { emi, totalPayment, totalInterest, principalPct, interestPct };
+}
+
+function getPropertySliderLimits(price) {
+  if (!price || price <= 0) return { min: 2500000, max: 250000000, step: 100000 };
+  let min, max, step;
+  if (price < 15000000) {
+    min = Math.max(2500000, Math.floor((price * 0.4) / 500000) * 500000);
+    max = Math.ceil((price * 2.5) / 2500000) * 2500000;
+    step = 100000;
+  } else if (price < 50000000) {
+    min = Math.floor((price * 0.4) / 1000000) * 1000000;
+    max = Math.ceil((price * 2.2) / 5000000) * 5000000;
+    step = 100000;
+  } else {
+    min = Math.floor((price * 0.4) / 2500000) * 2500000;
+    max = Math.ceil((price * 2.0) / 10000000) * 10000000;
+    step = 500000;
+  }
+  return { min, max, step };
+}
+
 function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOrigin) {
   const builderName = builder.name || "Property Developer";
   const property = properties.find((item) => String(item.id) === String(route));
@@ -140,6 +213,49 @@ function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOri
     } else {
       html = replaceElement(html, "dt-highlights", "");
     }
+
+    const galleryPhotos = (property.images || []).map((src, index) => ({
+      src,
+      alt: `${property.title || property.name} photo ${index + 1}`,
+    }));
+    const galleryFloorPlans = (property.floorPlans || []).map((fp) => ({
+      src: fp.image || property.images[0],
+      alt: `${property.title || property.name} ${fp.bhk} floor plan`,
+    }));
+    const allGalleryImages = [...galleryPhotos, ...galleryFloorPlans];
+    if (allGalleryImages.length > 0) {
+      html = html.replace(/(<section\b[^>]*\bid="dt-project-gallery"[^>]*?)\bhidden\b/i, "$1");
+      const previewImg = property.images[0] || property.thumbnail || "";
+      const previewAlt = `${property.title || property.name} gallery preview in Bengaluru`;
+      html = html.replace(/id="projectGalleryPreviewImage"\s+src=""\s+alt=""/i, `id="projectGalleryPreviewImage" src="${escapeHtml(previewImg)}" alt="${escapeHtml(previewAlt)}"`);
+      const countText = `${allGalleryImages.length} ${allGalleryImages.length === 1 ? "image" : "images"} · Project photos and floor plans`;
+      html = replaceElement(html, "projectGalleryImageCount", escapeHtml(countText));
+    }
+
+    const parsedPrice = parseIndianPrice(property.price) || 14900000;
+    const loanAmt = Math.round(parsedPrice * 0.8);
+    const emiRes = calculateEmi(loanAmt, 8.5, 20);
+    const limits = getPropertySliderLimits(parsedPrice);
+    html = replaceElement(html, "emi-sync-property", escapeHtml(property.title || property.name));
+    html = replaceElement(html, "emi-prop-display", formatINR(parsedPrice));
+    html = replaceElement(html, "emi-prop-sub", `(${formatINRShort(parsedPrice)})`);
+    html = replaceElement(html, "emi-prop-min-lbl", formatINRShort(limits.min));
+    html = replaceElement(html, "emi-prop-max-lbl", formatINRShort(limits.max));
+    html = replaceElement(html, "emi-down-amount-display", formatINR(Math.round(parsedPrice * 0.2)));
+    html = replaceElement(html, "emi-loan-amount", formatINR(loanAmt));
+    html = replaceElement(html, "emi-monthly-output", formatINR(emiRes.emi));
+    html = replaceElement(html, "emi-hero-footnote", `*For ${formatINRShort(loanAmt)} loan at 8.50% for 20 yrs`);
+    html = replaceElement(html, "emi-table-down", formatINR(Math.round(parsedPrice * 0.2)));
+    html = replaceElement(html, "emi-table-down-pct", "(20%)");
+    html = replaceElement(html, "emi-table-principal", formatINR(loanAmt));
+    html = replaceElement(html, "emi-table-interest", formatINR(emiRes.totalInterest));
+    html = replaceElement(html, "emi-table-total", formatINR(emiRes.totalPayment));
+    html = replaceElement(html, "emi-donut-center-val", formatINRShort(emiRes.totalPayment));
+    html = replaceElement(html, "emi-legend-principal-val", formatINR(loanAmt));
+    html = replaceElement(html, "emi-legend-principal-pct", `(${Math.round(emiRes.principalPct)}%)`);
+    html = replaceElement(html, "emi-legend-interest-val", formatINR(emiRes.totalInterest));
+    html = replaceElement(html, "emi-legend-interest-pct", `(${Math.round(emiRes.interestPct)}%)`);
+    html = html.replace(/id="emi-prop-slider"[^>]*>/i, `id="emi-prop-slider" min="${limits.min}" max="${limits.max}" step="${limits.step}" value="${parsedPrice}" aria-label="Property Value">`);
   }
 
   if (!property) {

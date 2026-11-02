@@ -78,6 +78,10 @@ Object.entries(themeVariables).forEach(([variable, value]) => {
 });
 // CURRENT STATE
 let activeProperty = propertiesData[0];
+let projectGalleryImages = [];
+let currentGalleryCategory = "photo";
+let currentGalleryIndex = 0;
+let projectGalleryTrigger = null;
 let currentActiveChip = "all";
 let carouselResizeObserver;
 
@@ -432,6 +436,164 @@ function renderProjectHighlights(highlights = []) {
   container.replaceChildren(fragment);
 }
 
+
+function getProjectGalleryImages(item) {
+  const galleryImages = (item.images || [])
+    .filter((image) => typeof image === "string" && image.trim())
+    .map((src, index) => ({
+      src,
+      alt: `${item.title || item.name} project image ${index + 1}`,
+      type: "photo",
+    }));
+  const thumbnail =
+    item.thumbnail && !galleryImages.some((image) => image.src === item.thumbnail)
+      ? [{ src: item.thumbnail, alt: `${item.title || item.name} project thumbnail`, type: "photo" }]
+      : [];
+  const floorPlanImages = (item.floorPlans || [])
+    .filter((plan) => typeof plan.image === "string" && plan.image.trim())
+    .map((plan) => ({
+      src: plan.image,
+      alt: `${item.title || item.name} ${plan.bhk} floor plan`,
+      type: "floor-plan",
+    }));
+  return [...thumbnail, ...galleryImages, ...floorPlanImages];
+}
+
+function renderProjectGallery(item) {
+  const section = document.getElementById("dt-project-gallery");
+  if (!section) return;
+  projectGalleryImages = getProjectGalleryImages(item);
+  const preview =
+    projectGalleryImages.find((image) => image.type === "photo") ||
+    projectGalleryImages[0];
+  const previewImage = document.getElementById("projectGalleryPreviewImage");
+  if (previewImage) {
+    previewImage.src = preview?.src || "";
+    previewImage.alt = preview?.alt || "";
+  }
+  const countElement = document.getElementById("projectGalleryImageCount");
+  if (countElement) {
+    countElement.textContent = `${projectGalleryImages.length} ${projectGalleryImages.length === 1 ? "image" : "images"} · Project photos and floor plans`;
+  }
+  section.hidden = projectGalleryImages.length === 0;
+}
+
+function getGalleryCategoryImages(category = currentGalleryCategory) {
+  return projectGalleryImages.filter((image) => image.type === category);
+}
+
+function openProjectGallery(trigger) {
+  const dialog = document.getElementById("projectGalleryDialog");
+  if (!dialog || dialog.open || !projectGalleryImages.length) return;
+  projectGalleryTrigger = trigger;
+  const titleEl = document.getElementById("projectGalleryTitle");
+  if (titleEl) {
+    titleEl.textContent = activeProperty?.title || activeProperty?.name || "Project Gallery";
+  }
+  dialog.showModal();
+  const initialCategory = projectGalleryImages.some((image) => image.type === "photo")
+    ? "photo"
+    : "floor-plan";
+  setProjectGalleryCategory(initialCategory);
+  document.getElementById("projectGalleryClose")?.focus();
+}
+
+function setProjectGalleryCategory(category) {
+  const selectedCategory = category === "floor-plan" ? "floor-plan" : "photo";
+  const images = getGalleryCategoryImages(selectedCategory);
+  if (!images.length) return;
+  currentGalleryCategory = selectedCategory;
+  currentGalleryIndex = 0;
+  document
+    .getElementById("projectGalleryDialog")
+    ?.classList.toggle("is-floor-plan", selectedCategory === "floor-plan");
+
+  const projectTab = document.getElementById("projectGalleryProjectTab");
+  const floorPlanTab = document.getElementById("projectGalleryFloorPlanTab");
+  if (projectTab) projectTab.hidden = !getGalleryCategoryImages("photo").length;
+  if (floorPlanTab) floorPlanTab.hidden = !getGalleryCategoryImages("floor-plan").length;
+
+  [projectTab, floorPlanTab].forEach((tab) => {
+    if (!tab) return;
+    const selected = tab.dataset.galleryCategory === selectedCategory;
+    tab.setAttribute("aria-selected", String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+  });
+
+  const viewer = document.getElementById("projectGalleryViewer");
+  if (viewer && projectTab && floorPlanTab) {
+    viewer.setAttribute(
+      "aria-labelledby",
+      selectedCategory === "photo" ? projectTab.id : floorPlanTab.id,
+    );
+  }
+
+  const thumbnails = document.getElementById("projectGalleryThumbnails");
+  if (thumbnails) {
+    thumbnails.replaceChildren();
+    images.forEach((image, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `project-gallery-thumbnail${selectedCategory === "floor-plan" ? " is-floor-plan" : ""}`;
+      button.dataset.galleryIndex = String(index);
+      button.setAttribute("aria-label", `Show ${image.alt}`);
+      button.setAttribute("aria-pressed", String(index === 0));
+      const thumbnailImage = document.createElement("img");
+      thumbnailImage.src = image.src;
+      thumbnailImage.alt = "";
+      thumbnailImage.loading = "lazy";
+      thumbnailImage.decoding = "async";
+      thumbnailImage.draggable = false;
+      button.appendChild(thumbnailImage);
+      thumbnails.appendChild(button);
+    });
+  }
+  updateProjectGalleryImage();
+}
+
+function selectProjectGalleryImage(index) {
+  const images = getGalleryCategoryImages();
+  if (!images[index]) return;
+  currentGalleryIndex = index;
+  updateProjectGalleryImage();
+}
+
+function updateProjectGalleryImage() {
+  const images = getGalleryCategoryImages();
+  const image = images[currentGalleryIndex];
+  if (!image) return;
+  const currentImage = document.getElementById("projectGalleryCurrentImage");
+  if (currentImage) {
+    currentImage.src = image.src;
+    currentImage.alt = image.alt;
+    currentImage.loading = "eager";
+    currentImage.decoding = "async";
+    currentImage.classList.toggle("is-floor-plan", currentGalleryCategory === "floor-plan");
+  }
+  const counter = document.getElementById("projectGalleryCounter");
+  if (counter) {
+    counter.textContent = `${currentGalleryIndex + 1} / ${images.length}`;
+  }
+  document.querySelectorAll(".project-gallery-thumbnail").forEach((thumbnail, index) => {
+    thumbnail.setAttribute("aria-pressed", String(index === currentGalleryIndex));
+    if (index === currentGalleryIndex) {
+      thumbnail.scrollIntoView({ block: "nearest", inline: "nearest" });
+    }
+  });
+}
+
+function changeProjectGalleryImage(direction) {
+  const images = getGalleryCategoryImages();
+  if (!images.length) return;
+  currentGalleryIndex = (currentGalleryIndex + direction + images.length) % images.length;
+  updateProjectGalleryImage();
+}
+
+function closeProjectGallery() {
+  const dialog = document.getElementById("projectGalleryDialog");
+  if (dialog?.open) dialog.close();
+}
+
 function renderPropertyFeatures(property) {
   const amenitiesContainer = document.getElementById("detail-amenities");
   const connectivityContainer = document.getElementById("detail-connectivity");
@@ -573,8 +735,10 @@ function openDetailPage(id, { updateUrl = true } = {}) {
   reraValue.hidden = true;
   reraValue.textContent = hasReraId ? `RERA ID: ${prop.reraId}` : "";
   renderProjectHighlights(prop.highlights || []);
+  renderProjectGallery(prop);
   renderPropertyFeatures(prop);
   renderPropertyFloorPlans(prop);
+  syncEmiCalculatorWithProperty(prop);
 
   const propertyImages = Array.isArray(prop.images)
     ? prop.images
@@ -855,6 +1019,7 @@ function selectFloorPlan(planId) {
     image.onerror = null;
   }
   image.alt = `${activeProperty.title} ${plan.bhk} configuration`;
+  syncEmiCalculatorWithFloorPlan(plan);
 }
 
 // LIGHTBOX MODAL
@@ -1186,6 +1351,360 @@ document
     selectFloorPlan(event.currentTarget.value);
   });
 
+// ==================== HOME LOAN EMI CALCULATOR ====================
+let emiBasePrice = 14900000;
+let emiCurrentPropertyName = "Godrej Vanantara";
+let emiUserModifiedPrice = false;
+
+function parseIndianPrice(priceStr) {
+  if (!priceStr || typeof priceStr !== "string") return null;
+  const clean = priceStr.replace(/,/g, "").trim();
+  const crMatch = clean.match(/([\d.]+)\s*(?:cr|crore)/i);
+  if (crMatch) {
+    const val = parseFloat(crMatch[1]);
+    if (!isNaN(val) && val > 0) return Math.round(val * 10000000);
+  }
+  const lMatch = clean.match(/([\d.]+)\s*(?:l|lac|lakh)/i);
+  if (lMatch) {
+    const val = parseFloat(lMatch[1]);
+    if (!isNaN(val) && val > 0) return Math.round(val * 100000);
+  }
+  const numMatch = clean.match(/(\d+)/);
+  if (numMatch) {
+    const val = parseInt(numMatch[1], 10);
+    if (!isNaN(val) && val > 0) return val;
+  }
+  return null;
+}
+
+function formatINR(val) {
+  if (isNaN(val) || val === null || val === undefined) return "₹0";
+  return "₹" + Math.round(val).toLocaleString("en-IN");
+}
+
+function formatINRShort(val) {
+  if (isNaN(val) || val <= 0) return "₹0";
+  if (val >= 10000000) {
+    const cr = (val / 10000000)
+      .toFixed(2)
+      .replace(/\.00$/, "")
+      .replace(/(\.[1-9])0$/, "$1");
+    return `₹${cr} Cr`;
+  }
+  if (val >= 100000) {
+    const l = (val / 100000)
+      .toFixed(2)
+      .replace(/\.00$/, "")
+      .replace(/(\.[1-9])0$/, "$1");
+    return `₹${l} Lakh`;
+  }
+  return "₹" + Math.round(val).toLocaleString("en-IN");
+}
+
+function calculateEmi(principal, annualRate, tenureYears) {
+  if (principal <= 0 || tenureYears <= 0) {
+    return {
+      emi: 0,
+      totalPayment: 0,
+      totalInterest: 0,
+      principalPct: 50,
+      interestPct: 50,
+    };
+  }
+  const r = annualRate / 12 / 100;
+  const n = tenureYears * 12;
+  if (r === 0) {
+    const emi = Math.round(principal / n);
+    return {
+      emi,
+      totalPayment: principal,
+      totalInterest: 0,
+      principalPct: 100,
+      interestPct: 0,
+    };
+  }
+  const factor = Math.pow(1 + r, n);
+  const emi = Math.round(principal * r * (factor / (factor - 1)));
+  const totalPayment = emi * n;
+  const totalInterest = Math.max(0, totalPayment - principal);
+  const principalPct =
+    totalPayment > 0 ? (principal / totalPayment) * 100 : 50;
+  const interestPct =
+    totalPayment > 0 ? (totalInterest / totalPayment) * 100 : 50;
+  return { emi, totalPayment, totalInterest, principalPct, interestPct };
+}
+
+function getPropertySliderLimits(price) {
+  if (!price || price <= 0)
+    return { min: 2500000, max: 250000000, step: 100000 };
+  let min, max, step;
+  if (price < 15000000) {
+    min = Math.max(2500000, Math.floor((price * 0.4) / 500000) * 500000);
+    max = Math.ceil((price * 2.5) / 2500000) * 2500000;
+    step = 100000;
+  } else if (price < 50000000) {
+    min = Math.floor((price * 0.4) / 1000000) * 1000000;
+    max = Math.ceil((price * 2.2) / 5000000) * 5000000;
+    step = 100000;
+  } else {
+    min = Math.floor((price * 0.4) / 2500000) * 2500000;
+    max = Math.ceil((price * 2.0) / 10000000) * 10000000;
+    step = 500000;
+  }
+  return { min, max, step };
+}
+
+function updateSliderTrack(slider) {
+  if (!slider) return;
+  const min = parseFloat(slider.min) || 0;
+  const max = parseFloat(slider.max) || 100;
+  const val = parseFloat(slider.value) || 0;
+  const percentage = Math.max(
+    0,
+    Math.min(100, ((val - min) / (max - min)) * 100),
+  );
+  slider.style.background = `linear-gradient(to right, #d4af37 0%, #d4af37 ${percentage}%, #e8f0ec ${percentage}%, #e8f0ec 100%)`;
+}
+
+function updateEmiCalculator() {
+  const propSlider = document.getElementById("emi-prop-slider");
+  const downSlider = document.getElementById("emi-down-slider");
+  const tenureSlider = document.getElementById("emi-tenure-slider");
+  const rateSlider = document.getElementById("emi-rate-slider");
+  if (!propSlider || !downSlider || !tenureSlider || !rateSlider) return;
+
+  const propVal = parseFloat(propSlider.value) || 0;
+  const downPct = parseFloat(downSlider.value) || 20;
+  const tenureYears = parseInt(tenureSlider.value, 10) || 20;
+  const rate = parseFloat(rateSlider.value) || 8.5;
+
+  const downPaymentAmt = Math.round(propVal * (downPct / 100));
+  const loanAmount = Math.max(0, propVal - downPaymentAmt);
+  const result = calculateEmi(loanAmount, rate, tenureYears);
+
+  const propDisplay = document.getElementById("emi-prop-display");
+  const propSub = document.getElementById("emi-prop-sub");
+  if (propDisplay) propDisplay.textContent = formatINR(propVal);
+  if (propSub) propSub.textContent = `(${formatINRShort(propVal)})`;
+
+  const downPctDisplay = document.getElementById("emi-down-pct-display");
+  const downAmtDisplay = document.getElementById("emi-down-amount-display");
+  if (downPctDisplay) downPctDisplay.textContent = `${Math.round(downPct)}%`;
+  if (downAmtDisplay) downAmtDisplay.textContent = formatINR(downPaymentAmt);
+
+  const loanAmountDisplay = document.getElementById("emi-loan-amount");
+  if (loanAmountDisplay) loanAmountDisplay.textContent = formatINR(loanAmount);
+
+  const tenureDisplay = document.getElementById("emi-tenure-display");
+  const tenureMonths = document.getElementById("emi-tenure-months");
+  if (tenureDisplay) tenureDisplay.textContent = `${tenureYears} Years`;
+  if (tenureMonths) tenureMonths.textContent = `(${tenureYears * 12} Months)`;
+
+  const rateDisplay = document.getElementById("emi-rate-display");
+  if (rateDisplay) rateDisplay.textContent = `${rate.toFixed(2)}%`;
+
+  const monthlyOutput = document.getElementById("emi-monthly-output");
+  if (monthlyOutput) monthlyOutput.textContent = formatINR(result.emi);
+
+  const heroFootnote = document.getElementById("emi-hero-footnote");
+  if (heroFootnote) {
+    heroFootnote.textContent = `*For ${formatINRShort(loanAmount)} loan at ${rate.toFixed(2)}% for ${tenureYears} yrs`;
+  }
+
+  const tableDown = document.getElementById("emi-table-down");
+  const tableDownPct = document.getElementById("emi-table-down-pct");
+  if (tableDown) tableDown.textContent = formatINR(downPaymentAmt);
+  if (tableDownPct) tableDownPct.textContent = `(${Math.round(downPct)}%)`;
+
+  const tablePrincipal = document.getElementById("emi-table-principal");
+  const tableInterest = document.getElementById("emi-table-interest");
+  const tableTotal = document.getElementById("emi-table-total");
+  if (tablePrincipal) tablePrincipal.textContent = formatINR(loanAmount);
+  if (tableInterest) tableInterest.textContent = formatINR(result.totalInterest);
+  if (tableTotal) tableTotal.textContent = formatINR(result.totalPayment);
+
+  const donutCenterVal = document.getElementById("emi-donut-center-val");
+  if (donutCenterVal)
+    donutCenterVal.textContent = formatINRShort(result.totalPayment);
+
+  const legendPrincipalVal = document.getElementById(
+    "emi-legend-principal-val",
+  );
+  const legendPrincipalPct = document.getElementById(
+    "emi-legend-principal-pct",
+  );
+  const legendInterestVal = document.getElementById("emi-legend-interest-val");
+  const legendInterestPct = document.getElementById("emi-legend-interest-pct");
+  if (legendPrincipalVal) legendPrincipalVal.textContent = formatINR(loanAmount);
+  if (legendPrincipalPct)
+    legendPrincipalPct.textContent = `(${Math.round(result.principalPct)}%)`;
+  if (legendInterestVal)
+    legendInterestVal.textContent = formatINR(result.totalInterest);
+  if (legendInterestPct)
+    legendInterestPct.textContent = `(${Math.round(result.interestPct)}%)`;
+
+  const C = 238.761;
+  const principalDash = (result.principalPct / 100) * C;
+  const interestDash = (result.interestPct / 100) * C;
+
+  const donutPrincipal = document.getElementById("emi-donut-principal");
+  const donutInterest = document.getElementById("emi-donut-interest");
+  if (donutPrincipal) {
+    donutPrincipal.style.strokeDasharray = `${principalDash.toFixed(2)} ${C}`;
+    donutPrincipal.style.strokeDashoffset = "0";
+  }
+  if (donutInterest) {
+    donutInterest.style.strokeDasharray = `${interestDash.toFixed(2)} ${C}`;
+    donutInterest.style.strokeDashoffset = `-${principalDash.toFixed(2)}`;
+  }
+
+  updateSliderTrack(propSlider);
+  updateSliderTrack(downSlider);
+  updateSliderTrack(tenureSlider);
+  updateSliderTrack(rateSlider);
+}
+
+function syncEmiCalculatorWithProperty(property) {
+  if (!property) return;
+  const propTitle = property.title || property.name || "Godrej Properties";
+  emiCurrentPropertyName = propTitle;
+  const parsed = parseIndianPrice(property.price);
+  if (parsed) {
+    emiBasePrice = parsed;
+  }
+  emiUserModifiedPrice = false;
+
+  const propSlider = document.getElementById("emi-prop-slider");
+  if (propSlider && parsed) {
+    const limits = getPropertySliderLimits(parsed);
+    propSlider.min = String(limits.min);
+    propSlider.max = String(limits.max);
+    propSlider.step = String(limits.step);
+    propSlider.value = String(parsed);
+
+    const minLbl = document.getElementById("emi-prop-min-lbl");
+    const maxLbl = document.getElementById("emi-prop-max-lbl");
+    if (minLbl) minLbl.textContent = formatINRShort(limits.min);
+    if (maxLbl) maxLbl.textContent = formatINRShort(limits.max);
+  }
+
+  const syncLabel = document.getElementById("emi-sync-property");
+  if (syncLabel) {
+    syncLabel.textContent = propTitle;
+  }
+
+  updateEmiCalculator();
+}
+
+function syncEmiCalculatorWithFloorPlan(fp) {
+  if (!fp || emiUserModifiedPrice) return;
+  const parsed = parseIndianPrice(fp.price);
+  if (parsed) {
+    emiBasePrice = parsed;
+    const propSlider = document.getElementById("emi-prop-slider");
+    if (propSlider) {
+      const limits = getPropertySliderLimits(parsed);
+      propSlider.min = String(limits.min);
+      propSlider.max = String(limits.max);
+      propSlider.step = String(limits.step);
+      propSlider.value = String(parsed);
+
+      const minLbl = document.getElementById("emi-prop-min-lbl");
+      const maxLbl = document.getElementById("emi-prop-max-lbl");
+      if (minLbl) minLbl.textContent = formatINRShort(limits.min);
+      if (maxLbl) maxLbl.textContent = formatINRShort(limits.max);
+    }
+    const syncLabel = document.getElementById("emi-sync-property");
+    if (syncLabel && activeProperty) {
+      const propTitle = activeProperty.title || activeProperty.name || "Godrej Properties";
+      syncLabel.textContent = `${propTitle} (${fp.bhk})`;
+    }
+    updateEmiCalculator();
+  }
+}
+
+function initEmiCalculator() {
+  const calcSection = document.getElementById("dt-emi-calculator");
+  if (!calcSection) return;
+
+  const propSlider = document.getElementById("emi-prop-slider");
+  const downSlider = document.getElementById("emi-down-slider");
+  const tenureSlider = document.getElementById("emi-tenure-slider");
+  const rateSlider = document.getElementById("emi-rate-slider");
+  const resetBtn = document.getElementById("emi-reset-price-btn");
+
+  if (propSlider) {
+    propSlider.addEventListener("input", () => {
+      emiUserModifiedPrice = true;
+      const syncLabel = document.getElementById("emi-sync-property");
+      if (syncLabel) {
+        syncLabel.textContent = `${emiCurrentPropertyName} (Custom Value)`;
+      }
+      updateEmiCalculator();
+    });
+  }
+
+  if (downSlider) {
+    downSlider.addEventListener("input", updateEmiCalculator);
+  }
+
+  if (tenureSlider) {
+    tenureSlider.addEventListener("input", () => {
+      const years = parseInt(tenureSlider.value, 10);
+      document.querySelectorAll(".emi-chip").forEach((chip) => {
+        chip.classList.toggle(
+          "active",
+          parseInt(chip.dataset.years, 10) === years,
+        );
+      });
+      updateEmiCalculator();
+    });
+  }
+
+  if (rateSlider) {
+    rateSlider.addEventListener("input", updateEmiCalculator);
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      emiUserModifiedPrice = false;
+      if (propSlider) {
+        const limits = getPropertySliderLimits(emiBasePrice);
+        propSlider.min = String(limits.min);
+        propSlider.max = String(limits.max);
+        propSlider.step = String(limits.step);
+        propSlider.value = String(emiBasePrice);
+
+        const minLbl = document.getElementById("emi-prop-min-lbl");
+        const maxLbl = document.getElementById("emi-prop-max-lbl");
+        if (minLbl) minLbl.textContent = formatINRShort(limits.min);
+        if (maxLbl) maxLbl.textContent = formatINRShort(limits.max);
+      }
+      const syncLabel = document.getElementById("emi-sync-property");
+      if (syncLabel) {
+        syncLabel.textContent = emiCurrentPropertyName;
+      }
+      updateEmiCalculator();
+    });
+  }
+
+  document.querySelectorAll(".emi-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      document
+        .querySelectorAll(".emi-chip")
+        .forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      const years = parseInt(chip.dataset.years, 10);
+      if (tenureSlider) {
+        tenureSlider.value = String(years);
+      }
+      updateEmiCalculator();
+    });
+  });
+
+  updateEmiCalculator();
+}
+
 // Keep inline HTML handlers available when this file runs as an ES module.
 Object.assign(window, {
   applyFilters,
@@ -1227,6 +1746,7 @@ function initializeBuilderPage() {
   const footerRegions = document.getElementById("footer-builder-regions");
   if (footerRegions && activeBuilderData.regions)
     footerRegions.textContent = activeBuilderData.regions;
+  initEmiCalculator();
   restoreBuilderRoute();
   let popupAlreadyShown = false;
   try {
@@ -1253,3 +1773,44 @@ if (document.readyState === "loading") {
 } else {
   initializeBuilderPage();
 }
+
+
+// PROJECT GALLERY EVENT LISTENERS (CENTURY MATCH)
+document.getElementById("projectGalleryPreview")?.addEventListener("click", (event) => openProjectGallery(event.currentTarget));
+document.getElementById("projectGalleryClose")?.addEventListener("click", closeProjectGallery);
+document.getElementById("projectGalleryDialog")?.addEventListener("click", (event) => {
+  if (event.target === event.currentTarget) closeProjectGallery();
+});
+document.querySelector(".project-gallery-tabs")?.addEventListener("click", (event) => {
+  const tab = event.target.closest("[data-gallery-category]");
+  if (tab) setProjectGalleryCategory(tab.dataset.galleryCategory);
+});
+document.querySelector(".project-gallery-tabs")?.addEventListener("keydown", (event) => {
+  if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+  const tabs = [...document.querySelectorAll(".project-gallery-tab:not([hidden])")];
+  const index = tabs.indexOf(event.target);
+  if (index < 0 || tabs.length < 2) return;
+  event.preventDefault();
+  event.stopPropagation();
+  const nextTab = tabs[(index + (event.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length];
+  setProjectGalleryCategory(nextTab.dataset.galleryCategory);
+  nextTab.focus();
+});
+document.getElementById("projectGalleryThumbnails")?.addEventListener("click", (event) => {
+  const thumbnail = event.target.closest("[data-gallery-index]");
+  if (thumbnail) selectProjectGalleryImage(Number(thumbnail.dataset.galleryIndex));
+});
+document.getElementById("projectGalleryPrevious")?.addEventListener("click", () => changeProjectGalleryImage(-1));
+document.getElementById("projectGalleryNext")?.addEventListener("click", () => changeProjectGalleryImage(1));
+document.getElementById("projectGalleryDialog")?.addEventListener("close", () => {
+  document.getElementById("projectGalleryCurrentImage")?.removeAttribute("src");
+  document.getElementById("projectGalleryThumbnails")?.replaceChildren();
+  if (projectGalleryTrigger?.isConnected) projectGalleryTrigger.focus();
+  projectGalleryTrigger = null;
+});
+window.addEventListener("keydown", (event) => {
+  const dialog = document.getElementById("projectGalleryDialog");
+  if (!dialog?.open) return;
+  if (event.key === "ArrowLeft") changeProjectGalleryImage(-1);
+  else if (event.key === "ArrowRight") changeProjectGalleryImage(1);
+});
