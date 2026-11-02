@@ -776,19 +776,19 @@
             <button
               id="detail-rera-toggle"
               type="button"
-              hidden
+              
               aria-expanded="false"
               aria-controls="detail-rera-value"
-              class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full inline-flex items-center gap-1 hover:bg-emerald-200 transition-colors"
+              class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full inline-flex items-center gap-1.5 border border-godrej-mint hover:bg-godrej-mint transition-colors cursor-pointer"
             >
-              <i class="fa-solid fa-circle-check" aria-hidden="true"></i> RERA
+              <i class="fa-solid fa-circle-check text-godrej-emerald" aria-hidden="true"></i> RERA
               Verified
             </button>
             <span
               id="detail-rera-value"
               hidden
-              class="text-xs text-slate-500 font-mono break-all"
-            ></span>
+              class="px-3 py-1 bg-white text-godrej-emerald font-semibold text-xs rounded-full border border-godrej-sage shadow-sm break-all font-sans"
+            >RERA ID: PRM/KA/RERA/1250/304/PR/150926/008942</span>
           </div>
           <h1
             id="detail-title"
@@ -925,17 +925,62 @@
           <!-- Left Column Details -->
           <div class="lg:col-span-8 space-y-12">
             <!-- Architectural Overview -->
-            <div>
+<div>
               <h2
                 class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
               >
                 Property Overview
               </h2>
-              <p
+              <div
                 id="detail-description"
-                class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6"
-              >An ultra-premium French-inspired villa community featuring spacious 4 and 5 BHK row villas off Soukya Road in Whitefield, East Bengaluru.</p>
+                class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 space-y-4"
+              ><p class="overview-text">Godrej Florenne by Godrej Properties Limited offers ultra-premium 4 and 5 BHK row villas located off Soukya Road, Whitefield, Bengaluru. Designed by architect Hafeez Contractor, the community blends French Renaissance architectural elegance with open courtyards, private balconies, terrace spaces, and lifestyle amenities surrounded by Whitefield&#39;s major tech and school corridors. Buyers researching Godrej apartments Bangalore can explore Godrej Properties homes in XRC2+QJP, Off Soukya Road, with project status, location, and configuration details available to compare.</p>
+                <p class="overview-text">Godrej Florenne is listed with 4 BHK Optima, 4 BHK Premia, 4 BHK Luxe and 5 BHK Luxe across 20 Acres, with new launch status and possession shown as September 2031. Listed floor plan options include 4 BHK Optima, 4 BHK Premia and 4 BHK Luxe. Residents can explore amenities such as Gymnasium, Kids Play Area, Landscape Padel and Landscape View Amphitheatre, with nearby destinations including Soukya Road (8 Mins), RKB Sanjeevini Hospital (8 Mins) and Shri Ram Global School (12 Mins). Review this Godrej Properties project&#39;s floor plans, amenities, and connectivity when comparing homes in Bengaluru. <span class="overview-rera"><strong>RERA Registration No.</strong> <span>PRM/KA/RERA/1250/304/PR/150926/008942</span></span></p></div>
             </div>
+
+            <!-- Project Highlights -->
+            <section
+              class="project-highlights-section detail-section-block"
+              id="dt-project-highlights"
+              aria-labelledby="dt-highlights-title"
+            >
+              <h2
+                class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
+                id="dt-highlights-title"
+              >
+                Project Highlights
+              </h2>
+              <div class="highlights-grid" id="dt-highlights">
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">French Renaissance-Inspired Architecture with Private Outdoor Spaces and Courtyards</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Expansive 20 Acres development with landscaped open spaces</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Thoughtfully planned 4 BHK Optima, 4 BHK Premia, 4 BHK Luxe, 5 BHK Luxe layouts designed for optimal ventilation &amp; natural lighting</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-key" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Project possession timeline: September 2031</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Premium lifestyle amenities including Gymnasium, Kids Play Area, Landscape Padel</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Prime connectivity with proximity to Soukya Road (8 Mins)</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">RERA Approved Project: PRM/KA/RERA/1250/304/PR/150926/008942</span></div>
+                </div>
+              </div>
+            </section>
 
             <!-- Interactive Floor Plan Selector -->
             <div

@@ -55,6 +55,15 @@ export const godrejProjects = [
     highlight:
       "Nature-Centric Urban Retreat with 4500+ Trees and Grand Clubhouse",
     reraId: "PRM/KA/RERA/1251/310/PR/130526/008653",
+    highlights: [
+      "ture-Centric Urban Retreat with 4500+ Trees and Grand Clubhouse",
+      "Expansive 33 Acres development with landscaped open spaces",
+      "Thoughtfully planned 2 BHK, 3 BHK (2T), 3 BHK (3T), 3.5 BHK, 4 BHK layouts designed for optimal ventilation & natural lighting",
+      "Project possession timeline: May 2031",
+      "Premium lifestyle amenities including Grand Clubhouse, Swimming Pool, Gymnasium",
+      "Prime connectivity with proximity to Greenwood High (IGCSE Campus) (Adjacent)",
+      "RERA Approved Project: PRM/KA/RERA/1251/310/PR/130526/008653",
+    ],
     summary:
       "A large-scale forest-inspired residential community featuring 2, 3, and 4.5 BHK apartments off Bannerghatta Main Road in South Bengaluru.",
     description:
@@ -128,6 +137,15 @@ export const godrejProjects = [
     units: "330",
     highlight: "Greco-Roman Architecture",
     reraId: "PRM/KA/RERA/1251/446/PR/090123/005605",
+        highlights: [
+      "Greco-Roman Architecture",
+      "Expansive 6.5 Acres development with landscaped open spaces",
+      "Thoughtfully planned 3 BHK layouts designed for optimal ventilation & natural lighting",
+      "Project possession timeline: January 2028",
+      "Premium lifestyle amenities including Temperature-Controlled Swimming Pool, Clubhouse, Jogging Track",
+      "Prime connectivity with proximity to Orchids The International School (190 m)",
+      "RERA Approved Project: PRM/KA/RERA/1251/446/PR/090123/005605",
+    ],
     summary:
       "A premium residential project featuring Greco-Roman-inspired architecture, spacious 3 BHK residences, and 34 luxury lifestyle amenities near Indiranagar.",
     description:
@@ -203,6 +221,15 @@ export const godrejProjects = [
     units: "698",
     highlight: "Lakeside Setting & Butterfly Garden",
     reraId: "PRM/KA/RERA/1251/446/PR/300924/007105",
+        highlights: [
+      "Lakeside Setting & Butterfly Garden",
+      "Expansive 6 Acres development with landscaped open spaces",
+      "Thoughtfully planned 3 BHK, 3.5 BHK, 4+ BHK layouts designed for optimal ventilation & natural lighting",
+      "Project possession timeline: September 2030",
+      "Premium lifestyle amenities including Club Pool, Fully Equipped Gym, Skating Rink",
+      "Prime connectivity with proximity to Carmelaram Railway Station (800 m)",
+      "RERA Approved Project: PRM/KA/RERA/1251/446/PR/300924/007105",
+    ],
     summary:
       "A nature-focused residential project on Sarjapur Road featuring 3, 3.5, and 4+ BHK apartments with over 30 lifestyle amenities.",
     description:
@@ -283,6 +310,15 @@ export const godrejProjects = [
     units: "518",
     highlight: "35+ Amenities & Gated Security",
     reraId: "PRM/KA/RERA/1251/308/PR/150726/008810",
+        highlights: [
+      "35+ Amenities & Gated Security",
+      "Expansive 7.5 Acres development with landscaped open spaces",
+      "Thoughtfully planned 2 BHK Luke, 3 BHK Premium, 3 BHK Luke layouts designed for optimal ventilation & natural lighting",
+      "Project possession timeline: July 2031",
+      "Premium lifestyle amenities including Swimming Pool, Fully Equipped Gymnasium, Skating Rink",
+      "Prime connectivity with proximity to Health care Pharma (700 m)",
+      "RERA Approved Project: PRM/KA/RERA/1251/308/PR/150726/008810",
+    ],
     summary:
       "A premium residential project offering modern 2 and 3 BHK apartments along the thriving Sarjapur Road corridor in East Bengaluru.",
     description:
@@ -339,6 +375,15 @@ export const godrejProjects = [
     units: "232",
     highlight: "Emerald Skywalk & 36+ Nature-Inspired Amenities",
     reraId: "PRM/KA/RERA/1251/446/PR/170524/006882",
+        highlights: [
+      "Emerald Skywalk & 36+ Nature-Inspired Amenities",
+      "Expansive 3 Acres development with landscaped open spaces",
+      "Thoughtfully planned 4 BHK layouts designed for optimal ventilation & natural lighting",
+      "Project possession timeline: June 2030",
+      "Premium lifestyle amenities including Temperature Controlled Pool, Gym, Tennis Court",
+      "Prime connectivity with proximity to Dr1 Gene Clinic (140 m)",
+      "RERA Approved Project: PRM/KA/RERA/1251/446/PR/170524/006882",
+    ],
     summary:
       "A high-rise residential project featuring spacious 4 BHK apartments with nature-inspired lifestyle amenities at Budigere Cross, East Bengaluru.",
     description:
@@ -448,6 +493,15 @@ export const godrejProjects = [
     highlight:
       "Dutch Design-Inspired Architecture with Sunlit Spaces and Garden Living",
     reraId: "PRM/KA/RERA/1251/309/PR/020326/008501",
+        highlights: [
+      "Dutch Design-Inspired Architecture with Sunlit Spaces and Garden Living",
+      "Expansive 10.1 Acres development with landscaped open spaces",
+      "Thoughtfully planned 3 BHK, 3.5 BHK, 4.5 BHK layouts designed for optimal ventilation & natural lighting",
+      "Project possession timeline: March 2031",
+      "Premium lifestyle amenities including Swimming Pool, Clubhouse, Gaming Area",
+      "Prime connectivity with proximity to Bagalur Cross Metro (1 Min)",
+      "RERA Approved Project: PRM/KA/RERA/1251/309/PR/020326/008501",
+    ],
     summary:
       "A premium residential project offering 3, 3.5, and 4.5 BHK Dutch-design inspired apartments located on Airport Road in Yelahanka, North Bengaluru.",
     description:
@@ -549,6 +603,15 @@ export const godrejProjects = [
     highlight:
       "French Renaissance-Inspired Architecture with Private Outdoor Spaces and Courtyards",
     reraId: "PRM/KA/RERA/1250/304/PR/150926/008942",
+        highlights: [
+      "French Renaissance-Inspired Architecture with Private Outdoor Spaces and Courtyards",
+      "Expansive 20 Acres development with landscaped open spaces",
+      "Thoughtfully planned 4 BHK Optima, 4 BHK Premia, 4 BHK Luxe, 5 BHK Luxe layouts designed for optimal ventilation & natural lighting",
+      "Project possession timeline: September 2031",
+      "Premium lifestyle amenities including Gymnasium, Kids Play Area, Landscape Padel",
+      "Prime connectivity with proximity to Soukya Road (8 Mins)",
+      "RERA Approved Project: PRM/KA/RERA/1250/304/PR/150926/008942",
+    ],
     summary:
       "An ultra-premium French-inspired villa community featuring spacious 4 and 5 BHK row villas off Soukya Road in Whitefield, East Bengaluru.",
     description:
@@ -638,6 +701,15 @@ export const godrejProjects = [
     highlight:
       "Barcelona-Inspired Architecture with Mediterranean Charm and Sunlit Landscapes",
     reraId: "PRM/KA/RERA/1250/303/PR/010425/007644",
+        highlights: [
+      "Barcelona-Inspired Architecture with Mediterranean Charm and Sunlit Landscapes",
+      "Expansive 17 Acres development with landscaped open spaces",
+      "Thoughtfully planned 3 BHK layouts designed for optimal ventilation & natural lighting",
+      "Project possession timeline: March 2030",
+      "Premium lifestyle amenities including Clubhouse, Swimming Pool, Gymnasium",
+      "Prime connectivity with proximity to Kempegowda International Airport (10 Mins)",
+      "RERA Approved Project: PRM/KA/RERA/1250/303/PR/010425/007644",
+    ],
     summary:
       "A Barcelona-inspired residential enclave featuring premium 2 and 3 BHK apartments located in North Bengaluru's growth corridor near Devanahalli.",
     description:
@@ -720,6 +792,15 @@ export const godrejProjects = [
     highlight:
       "6.5+ Acres of Lush Central Greenery with Greenscape Skywalk & 32,500+ Sq. Ft. Clubhouse",
     reraId: "PRM/KA/RERA/1250/304/PR/090126/008393",
+        highlights: [
+      "6.5+ Acres of Lush Central Greenery with Greenscape Skywalk & 32,500+ Sq. Ft. Clubhouse",
+      "Expansive 13.5 Acres development with landscaped open spaces",
+      "Thoughtfully planned 2 BHK Luxe, 3 BHK, 4 BHK layouts designed for optimal ventilation & natural lighting",
+      "Project possession timeline: December 2030",
+      "Premium lifestyle amenities including Greenscape Skywalk, Grand Clubhouse, Swimming Pool",
+      "Prime connectivity with proximity to Old Madras Road (7 Mins)",
+      "RERA Approved Project: PRM/KA/RERA/1250/304/PR/090126/008393",
+    ],
     summary:
       "A large-scale nature-focused high-rise residential community offering 2 and 3 BHK apartments in the Whitefield-Hoskote corridor, East Bengaluru.",
     description:
@@ -810,6 +891,15 @@ export const godrejProjects = [
     highlight:
       "Forest-Themed Living with Lush Greens, Water Features and Grand Clubhouse",
     reraId: "PRM/KA/RERA/1251/472/PR/121125/008248",
+        highlights: [
+      "Forest-Themed Living with Lush Greens, Water Features and Grand Clubhouse",
+      "Expansive 6.8 Acres development with landscaped open spaces",
+      "Thoughtfully planned 2 BHK, 3 BHK, 3.5 BHK layouts designed for optimal ventilation & natural lighting",
+      "Project possession timeline: November 2030",
+      "Premium lifestyle amenities including Fully Equipped Clubhouse, Swimming Pool & Lap Pool, Gymnasium",
+      "Prime connectivity with proximity to REVA University (2 Mins)",
+      "RERA Approved Project: PRM/KA/RERA/1251/472/PR/121125/008248",
+    ],
     summary:
       "A forest-themed high-rise residential community featuring 2, 3, and 3.5 BHK apartments off Thanisandra Main Road in North Bengaluru.",
     description:
@@ -864,6 +954,101 @@ export const godrejProjects = [
     ],
   },
 ];
+
+const overviewSearchTerms = [
+  "Godrej Properties in Bangalore",
+  "Godrej projects in Bangalore",
+  "Godrej apartments in Bangalore",
+  "Godrej Group in Bangalore",
+  "Godrej North Bangalore",
+  "Godrej Properties Bangalore",
+  "Godrej apartments Bangalore",
+];
+
+function formatOverviewList(values) {
+  if (values.length < 2) return values[0] || "";
+  return `${values.slice(0, -1).join(", ")} and ${values[values.length - 1]}`;
+}
+
+export function createPropertyOverview(property) {
+  const projectIndex = godrejProjects.findIndex(({ id }) => id === property.id);
+  const searchTerm =
+    overviewSearchTerms[
+      (projectIndex >= 0 ? projectIndex : 0) % overviewSearchTerms.length
+    ];
+  const floorPlans = formatOverviewList(
+    (property.floorPlans || []).slice(0, 3).map(({ bhk }) => bhk),
+  );
+  const allBhks = formatOverviewList(
+    [...new Set((property.floorPlans || []).map(({ bhk }) => bhk))],
+  );
+  const amenities = formatOverviewList(
+    (property.amenities || []).slice(0, 4).map(({ name }) => name),
+  );
+  const nearbyPlaces = formatOverviewList(
+    (property.connectivity || [])
+      .slice(0, 3)
+      .map(({ name, distance }) => `${name} (${distance})`),
+  );
+  const shortAddress =
+    property.shortAddress ||
+    (property.location
+      ? property.location.split(",").slice(0, 2).join(",").trim()
+      : "Bengaluru");
+  const statusText =
+    property.category === "new-launch"
+      ? "New Launch"
+      : property.category === "ready"
+        ? "Ready to Move"
+        : "Ongoing";
+  const bhkSummary = allBhks || property.bhk || "luxury residences";
+
+  return [
+    `${property.description} Buyers researching ${searchTerm} can explore Godrej Properties homes in ${shortAddress}, with project status, location, and configuration details available to compare.`,
+    `${property.title} is listed with ${bhkSummary} across ${property.area}, with ${statusText.toLowerCase()} status and possession shown as ${property.possession}. Listed floor plan options include ${floorPlans || bhkSummary}. Residents can explore amenities such as ${amenities || "the community's listed lifestyle facilities"}, with nearby destinations including ${nearbyPlaces || shortAddress}. Review this Godrej Properties project's floor plans, amenities, and connectivity when comparing homes in Bengaluru.${property.reraId ? ` RERA registration number: ${property.reraId.replace(/\.$/, "")}.` : ""}`,
+  ];
+}
+
+export function createPropertyHighlights(property) {
+  const list = [];
+  if (property.highlight) {
+    list.push(property.highlight);
+  }
+  if (property.area) {
+    list.push(`Expansive ${property.area} development with landscaped open spaces`);
+  }
+  const bhkList = Array.isArray(property.floorPlans) && property.floorPlans.length > 0
+    ? [...new Set(property.floorPlans.map((fp) => fp.bhk))].join(", ")
+    : property.type ? `${property.type} residences` : "";
+  if (bhkList) {
+    list.push(`Thoughtfully planned ${bhkList} layouts designed for optimal ventilation & natural lighting`);
+  }
+  if (property.possession) {
+    list.push(`Project possession timeline: ${property.possession}`);
+  }
+  if (Array.isArray(property.amenities) && property.amenities.length > 0) {
+    const topAmenities = property.amenities.slice(0, 3).map((a) => a.name).join(", ");
+    list.push(`Premium lifestyle amenities including ${topAmenities}`);
+  }
+  if (Array.isArray(property.connectivity) && property.connectivity.length > 0) {
+    const topPlace = property.connectivity[0];
+    const placeName = topPlace.name || topPlace.label;
+    if (placeName) {
+      list.push(`Prime connectivity with proximity to ${placeName} (${topPlace.distance})`);
+    }
+  }
+  if (property.reraId) {
+    list.push(`RERA Approved Project: ${property.reraId.replace(/\.$/, "")}`);
+  }
+  return list;
+}
+
+godrejProjects.forEach((property) => {
+  property.overview = property.overview || createPropertyOverview(property);
+  property.highlights = property.highlights || createPropertyHighlights(property);
+});
+
+export const godrejData = godrejProjects;
 
 export const godrejFaqs = [
   {

@@ -776,19 +776,19 @@
             <button
               id="detail-rera-toggle"
               type="button"
-              hidden
+              
               aria-expanded="false"
               aria-controls="detail-rera-value"
-              class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full inline-flex items-center gap-1 hover:bg-emerald-200 transition-colors"
+              class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full inline-flex items-center gap-1.5 border border-godrej-mint hover:bg-godrej-mint transition-colors cursor-pointer"
             >
-              <i class="fa-solid fa-circle-check" aria-hidden="true"></i> RERA
+              <i class="fa-solid fa-circle-check text-godrej-emerald" aria-hidden="true"></i> RERA
               Verified
             </button>
             <span
               id="detail-rera-value"
               hidden
-              class="text-xs text-slate-500 font-mono break-all"
-            ></span>
+              class="px-3 py-1 bg-white text-godrej-emerald font-semibold text-xs rounded-full border border-godrej-sage shadow-sm break-all font-sans"
+            >RERA ID: PRM/KA/RERA/1251/446/PR/170524/006882</span>
           </div>
           <h1
             id="detail-title"
@@ -925,17 +925,62 @@
           <!-- Left Column Details -->
           <div class="lg:col-span-8 space-y-12">
             <!-- Architectural Overview -->
-            <div>
+<div>
               <h2
                 class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
               >
                 Property Overview
               </h2>
-              <p
+              <div
                 id="detail-description"
-                class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6"
-              >A high-rise residential project featuring spacious 4 BHK apartments with nature-inspired lifestyle amenities at Budigere Cross, East Bengaluru.</p>
+                class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 space-y-4"
+              ><p class="overview-text">Godrej Woodscapes Phase 2 by Godrej Properties Limited offers premium 4 BHK apartments located at Konadasapura Village, near Budigere Cross, Bengaluru. The high-rise township combines contemporary architectural design with over 36 nature-focused lifestyle amenities including an Emerald Skywalk, health trail, temperature-controlled pool, and lavish clubhouse, offering seamless connectivity to Whitefield, ITPL, and Old Madras Road. Buyers researching Godrej North Bangalore can explore Godrej Properties homes in Nimbekaipura, Konadasapura Village, with project status, location, and configuration details available to compare.</p>
+                <p class="overview-text">Godrej Woodscapes Phase 2 is listed with 4 BHK across 3 Acres, with ongoing status and possession shown as June 2030. Listed floor plan options include 4 BHK. Residents can explore amenities such as Temperature Controlled Pool, Gym, Tennis Court and Futsal Court, with nearby destinations including Dr1 Gene Clinic (140 m), SLNS GARUDA COMPLEX (140 m) and OM CITY (230 m). Review this Godrej Properties project&#39;s floor plans, amenities, and connectivity when comparing homes in Bengaluru. <span class="overview-rera"><strong>RERA Registration No.</strong> <span>PRM/KA/RERA/1251/446/PR/170524/006882</span></span></p></div>
             </div>
+
+            <!-- Project Highlights -->
+            <section
+              class="project-highlights-section detail-section-block"
+              id="dt-project-highlights"
+              aria-labelledby="dt-highlights-title"
+            >
+              <h2
+                class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
+                id="dt-highlights-title"
+              >
+                Project Highlights
+              </h2>
+              <div class="highlights-grid" id="dt-highlights">
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-hotel" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Emerald Skywalk &amp; 36+ Nature-Inspired Amenities</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Expansive 3 Acres development with landscaped open spaces</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Thoughtfully planned 4 BHK layouts designed for optimal ventilation &amp; natural lighting</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-key" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Project possession timeline: June 2030</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-person-swimming" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Premium lifestyle amenities including Temperature Controlled Pool, Gym, Tennis Court</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Prime connectivity with proximity to Dr1 Gene Clinic (140 m)</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">RERA Approved Project: PRM/KA/RERA/1251/446/PR/170524/006882</span></div>
+                </div>
+              </div>
+            </section>
 
             <!-- Interactive Floor Plan Selector -->
             <div

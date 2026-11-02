@@ -51,6 +51,55 @@ function updateMeta(html, name, content) {
   return html.replace("</head>", `    <meta name="${name}" content="${escaped}">\n</head>`);
 }
 
+
+function renderOverviewParagraph(paragraph) {
+  const registration = paragraph.match(/^(.*) RERA registration number: (.+)\.$/i);
+  if (!registration) return `<p class="overview-text">${escapeHtml(paragraph)}</p>`;
+  return `<p class="overview-text">${escapeHtml(registration[1])} <span class="overview-rera"><strong>RERA Registration No.</strong> <span>${escapeHtml(registration[2])}</span></span></p>`;
+}
+
+
+function getHighlightIcon(text, defaultIcon = "fa-solid fa-circle-check") {
+  if (!text || typeof text !== "string") return defaultIcon;
+  const lower = text.toLowerCase();
+  if (lower.includes("rera") || lower.includes("approv") || lower.includes("certif") || lower.includes("legal") || lower.includes("bda") || lower.includes("bmrda")) return "fa-solid fa-certificate";
+  if (lower.includes("wall") || lower.includes("privacy")) return "fa-solid fa-shield-halved";
+  if (lower.includes("road") || lower.includes("location") || lower.includes("connect") || lower.includes("metro") || lower.includes("highway") || lower.includes("expressway") || lower.includes("station") || lower.includes("airport") || lower.includes("tech park")) return "fa-solid fa-location-dot";
+  if (lower.includes("acre") || lower.includes("land") || lower.includes("garden") || lower.includes("open space") || lower.includes("landscape") || /\bpark\b/.test(lower) || lower.includes("green") || lower.includes("tree")) return "fa-solid fa-tree";
+  if (lower.includes("pool") || lower.includes("swim")) return "fa-solid fa-person-swimming";
+  if (lower.includes("gym") || lower.includes("fit") || lower.includes("sport") || lower.includes("court") || lower.includes("jog")) return "fa-solid fa-dumbbell";
+  if (lower.includes("club") || lower.includes("amenit") || lower.includes("lifestyle") || lower.includes("resort") || lower.includes("luxury")) return "fa-solid fa-hotel";
+  if (lower.includes("tower") || lower.includes("floor") || lower.includes("high-rise") || lower.includes("architecture") || /\bunits?\b/.test(lower) || lower.includes("structure") || lower.includes("bhk") || lower.includes("layout")) return "fa-solid fa-building";
+  if (lower.includes("ready") || lower.includes("possession") || lower.includes("move-in") || lower.includes("keys") || lower.includes("oc ") || lower.includes("timeline")) return "fa-solid fa-key";
+  if (lower.includes("vastu") || lower.includes("vaastu") || lower.includes("facing")) return "fa-solid fa-compass";
+  if (lower.includes("lake") || lower.includes("water") || lower.includes("view") || lower.includes("scenic")) return "fa-solid fa-water";
+  if (lower.includes("price") || lower.includes("offer") || lower.includes("crore") || lower.includes("lakh") || lower.includes("payment") || lower.includes("emi")) return "fa-solid fa-indian-rupee-sign";
+  return defaultIcon;
+}
+
+function renderHighlightCardHtml(highlight) {
+  let iconClass = "fa-solid fa-circle-check";
+  let titleText = "";
+  let bodyText = "";
+
+  if (typeof highlight === "string") {
+    bodyText = highlight;
+    iconClass = getHighlightIcon(highlight);
+  } else if (typeof highlight === "object" && highlight !== null) {
+    bodyText = highlight.text || highlight.description || highlight.value || "";
+    titleText = highlight.title || highlight.heading || highlight.label || "";
+    iconClass = highlight.icon || getHighlightIcon(`${titleText} ${bodyText}`);
+  }
+
+  const titleHtml = titleText ? `<strong class="highlight-title">${escapeHtml(titleText)}</strong>` : "";
+  const bodyHtml = bodyText ? `<span class="highlight-text">${escapeHtml(bodyText)}</span>` : "";
+
+  return `<div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="${escapeHtml(iconClass)}" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap">${titleHtml}${bodyHtml}</div>
+                </div>`;
+}
+
 function replaceElement(html, id, content) {
   const pattern = new RegExp(`(<([a-z][a-z0-9]*)\\b[^>]*\\bid="${id}"[^>]*>)[\\s\\S]*?(<\\/\\2>)`, "i");
   return html.replace(pattern, `$1${content}$3`);
@@ -72,7 +121,25 @@ function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOri
     );
     html = replaceElement(html, "detail-title", escapeHtml(property.title || property.name));
     html = replaceElement(html, "detail-location", escapeHtml(property.location || "Bengaluru"));
-    html = replaceElement(html, "detail-description", escapeHtml(property.summary || property.description || description));
+    const overviewParagraphs = Array.isArray(property.overview)
+      ? property.overview
+      : [property.summary || property.description || description];
+    const overviewHtml = overviewParagraphs.map(renderOverviewParagraph).join("\n                ");
+    html = replaceElement(html, "detail-description", overviewHtml);
+
+    if (property.reraId?.trim()) {
+      html = html.replace(/(<button\b[^>]*\bid="detail-rera-toggle"[^>]*?)\bhidden\b/i, "$1");
+      html = replaceElement(html, "detail-rera-value", escapeHtml(`RERA ID: ${property.reraId.trim()}`));
+    }
+
+    const highlights = property.highlights || [];
+    if (highlights.length > 0) {
+      const highlightsHtml = highlights.map(renderHighlightCardHtml).join("\n                ");
+      html = replaceElement(html, "dt-highlights", `\n                ${highlightsHtml}\n              `);
+      html = html.replace(/(<section\b[^>]*\bid="dt-project-highlights"[^>]*?)\bhidden\b/i, "$1");
+    } else {
+      html = replaceElement(html, "dt-highlights", "");
+    }
   }
 
   if (!property) {

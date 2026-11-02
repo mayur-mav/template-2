@@ -1515,3 +1515,242 @@ footer a:hover {
 #faq-section {
   scroll-margin-top: 7rem;
 }
+
+/* PROPERTY OVERVIEW & RERA BADGES - GODREJ LUXURY THEME */
+#detail-rera-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #e8f0ec !important;
+  color: #0f382c !important;
+  border: 1px solid #c8ded3 !important;
+  border-radius: 9999px !important;
+  padding: 4px 12px !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer;
+}
+
+#detail-rera-toggle:hover {
+  background-color: #d8e8de !important;
+  border-color: #d4af37 !important;
+}
+
+#detail-rera-toggle i {
+  color: #0f382c !important;
+}
+
+#detail-rera-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  color: #0f382c;
+  border: 1px solid #c8ded3;
+  border-radius: 9999px;
+  padding: 3px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  box-shadow: 0 1px 3px rgba(15, 56, 44, 0.06);
+}
+
+#detail-rera-value[hidden] {
+  display: none !important;
+}
+
+.overview-text {
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+#detail-description .overview-text:not(:last-child) {
+  margin-bottom: 1.15rem;
+}
+
+.overview-rera {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin: 4px 0 4px 4px;
+  padding: 4px 12px;
+  border: 1px solid #c8ded3;
+  border-radius: 8px;
+  background-color: #e8f0ec;
+  color: #0f382c;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  vertical-align: middle;
+  box-shadow: 0 1px 2px rgba(15, 56, 44, 0.06);
+  transition: all 0.2s ease;
+}
+
+.overview-rera:hover {
+  background-color: #dfede6;
+  border-color: #d4af37;
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.16);
+}
+
+.overview-rera strong {
+  display: inline-flex;
+  align-items: center;
+  color: #0f382c;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding-right: 8px;
+  border-right: 1px solid rgba(15, 56, 44, 0.2);
+}
+
+.overview-rera span {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: #0f382c;
+  letter-spacing: 0.015em;
+  word-break: break-all;
+}
+
+@media (max-width: 640px) {
+  .overview-text {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+  .overview-rera {
+    display: inline-flex;
+    margin: 8px 0 4px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 10px;
+    gap: 4px 8px;
+  }
+  .overview-rera strong {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+
+
+/* ==========================================================================
+   PROJECT HIGHLIGHTS SECTION - GODREJ LUXURY THEME (CENTURY MATCH)
+   ========================================================================== */
+.project-highlights-section {
+  margin: 0 0 40px;
+}
+
+.project-highlights-section[hidden] {
+  display: none !important;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 16px;
+}
+
+.highlight-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid #e8f0ec;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(15, 56, 44, 0.05);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  min-width: 0;
+  position: relative;
+}
+
+.highlight-card:hover {
+  transform: translateY(-2px);
+  border-color: #d4af37;
+  box-shadow: 0 10px 24px rgba(15, 56, 44, 0.12);
+  background: #ffffff;
+}
+
+.highlight-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e8f0ec;
+  color: #0f382c;
+  border: 1px solid #d1e4db;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.highlight-card:hover .highlight-icon-wrap {
+  background: #d4af37;
+  color: #0f382c;
+  border-color: #b89628;
+  transform: scale(1.08);
+}
+
+.highlight-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  justify-content: center;
+  padding-top: 1px;
+}
+
+.highlight-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f382c;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+.highlight-text {
+  font-size: 0.90rem;
+  color: #334155;
+  line-height: 1.5;
+  font-weight: 500;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+@media (max-width: 640px) {
+  .project-highlights-section {
+    margin: 0 0 32px;
+  }
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .highlight-card {
+    padding: 13px 14px;
+    gap: 12px;
+    border-radius: 10px;
+  }
+  .highlight-icon-wrap {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+  .highlight-title {
+    font-size: 0.88rem;
+  }
+  .highlight-text {
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+}

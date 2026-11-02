@@ -778,15 +778,15 @@
               hidden
               aria-expanded="false"
               aria-controls="detail-rera-value"
-              class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full inline-flex items-center gap-1 hover:bg-emerald-200 transition-colors"
+              class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full inline-flex items-center gap-1.5 border border-godrej-mint hover:bg-godrej-mint transition-colors cursor-pointer"
             >
-              <i class="fa-solid fa-circle-check" aria-hidden="true"></i> RERA
+              <i class="fa-solid fa-circle-check text-godrej-emerald" aria-hidden="true"></i> RERA
               Verified
             </button>
             <span
               id="detail-rera-value"
               hidden
-              class="text-xs text-slate-500 font-mono break-all"
+              class="px-3 py-1 bg-white text-godrej-emerald font-semibold text-xs rounded-full border border-godrej-sage shadow-sm break-all font-sans"
             ></span>
           </div>
           <h1
@@ -929,21 +929,40 @@
           <!-- Left Column Details -->
           <div class="lg:col-span-8 space-y-12">
             <!-- Architectural Overview -->
-            <div>
+<div>
               <h2
                 class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
               >
                 Property Overview
               </h2>
-              <p
+              <div
                 id="detail-description"
-                class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6"
+                class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 space-y-4"
               >
-                Explore the property design, available configurations,
-                amenities, and nearby destinations. Contact our team for current
-                availability and offers.
-              </p>
+                <p class="overview-text">
+                  Explore the property design, available configurations,
+                  amenities, and nearby destinations. Contact our team for current
+                  availability and offers.
+                </p>
+              </div>
             </div>
+
+            <!-- Project Highlights -->
+            <section
+              class="project-highlights-section detail-section-block"
+              id="dt-project-highlights"
+              aria-labelledby="dt-highlights-title"
+            >
+              <h2
+                class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
+                id="dt-highlights-title"
+              >
+                Project Highlights
+              </h2>
+              <div class="highlights-grid" id="dt-highlights">
+                <!-- Dynamic Highlights -->
+              </div>
+            </section>
 
             <!-- Interactive Floor Plan Selector -->
             <div

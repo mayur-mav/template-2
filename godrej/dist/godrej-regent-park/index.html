@@ -776,19 +776,19 @@
             <button
               id="detail-rera-toggle"
               type="button"
-              hidden
+              
               aria-expanded="false"
               aria-controls="detail-rera-value"
-              class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full inline-flex items-center gap-1 hover:bg-emerald-200 transition-colors"
+              class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full inline-flex items-center gap-1.5 border border-godrej-mint hover:bg-godrej-mint transition-colors cursor-pointer"
             >
-              <i class="fa-solid fa-circle-check" aria-hidden="true"></i> RERA
+              <i class="fa-solid fa-circle-check text-godrej-emerald" aria-hidden="true"></i> RERA
               Verified
             </button>
             <span
               id="detail-rera-value"
               hidden
-              class="text-xs text-slate-500 font-mono break-all"
-            ></span>
+              class="px-3 py-1 bg-white text-godrej-emerald font-semibold text-xs rounded-full border border-godrej-sage shadow-sm break-all font-sans"
+            >RERA ID: PRM/KA/RERA/1251/308/PR/150726/008810</span>
           </div>
           <h1
             id="detail-title"
@@ -925,17 +925,62 @@
           <!-- Left Column Details -->
           <div class="lg:col-span-8 space-y-12">
             <!-- Architectural Overview -->
-            <div>
+<div>
               <h2
                 class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
               >
                 Property Overview
               </h2>
-              <p
+              <div
                 id="detail-description"
-                class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6"
-              >A premium residential project offering modern 2 and 3 BHK apartments along the thriving Sarjapur Road corridor in East Bengaluru.</p>
+                class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 space-y-4"
+              ><p class="overview-text">Godrej Regent Park by Godrej Properties is located at Kada Agrahara, Sarjapur Road, Bengaluru. Featuring thoughtful architecture, over 35+ lifestyle and wellness amenities, and close proximity to major tech hubs like Wipro SEZ and RGA Tech Park, it offers contemporary urban living in a secure gated community. Buyers researching Godrej Group in Bangalore can explore Godrej Properties homes in Kada Agrahara, Sarjapur, with project status, location, and configuration details available to compare.</p>
+                <p class="overview-text">Godrej Regent Park is listed with 2 BHK Luke, 3 BHK Premium and 3 BHK Luke across 7.5 Acres, with new launch status and possession shown as July 2031. Listed floor plan options include 2 BHK Luke, 3 BHK Premium and 3 BHK Luke. Residents can explore amenities such as Swimming Pool, Fully Equipped Gymnasium, Skating Rink and Golf Putting &amp; Box Cricket, with nearby destinations including Health care Pharma (700 m), Little Elly Preschool (1.1 km) and Amruth Park Land (2.3 km). Review this Godrej Properties project&#39;s floor plans, amenities, and connectivity when comparing homes in Bengaluru. <span class="overview-rera"><strong>RERA Registration No.</strong> <span>PRM/KA/RERA/1251/308/PR/150726/008810</span></span></p></div>
             </div>
+
+            <!-- Project Highlights -->
+            <section
+              class="project-highlights-section detail-section-block"
+              id="dt-project-highlights"
+              aria-labelledby="dt-highlights-title"
+            >
+              <h2
+                class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
+                id="dt-highlights-title"
+              >
+                Project Highlights
+              </h2>
+              <div class="highlights-grid" id="dt-highlights">
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-hotel" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">35+ Amenities &amp; Gated Security</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Expansive 7.5 Acres development with landscaped open spaces</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Thoughtfully planned 2 BHK Luke, 3 BHK Premium, 3 BHK Luke layouts designed for optimal ventilation &amp; natural lighting</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-key" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Project possession timeline: July 2031</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-person-swimming" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Premium lifestyle amenities including Swimming Pool, Fully Equipped Gymnasium, Skating Rink</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Prime connectivity with proximity to Health care Pharma (700 m)</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">RERA Approved Project: PRM/KA/RERA/1251/308/PR/150726/008810</span></div>
+                </div>
+              </div>
+            </section>
 
             <!-- Interactive Floor Plan Selector -->
             <div

@@ -351,6 +351,87 @@ function filterByChip(chipType) {
   applyFilters(true);
 }
 
+
+function getHighlightIcon(text, defaultIcon = "fa-solid fa-circle-check") {
+  if (!text || typeof text !== "string") return defaultIcon;
+  const lower = text.toLowerCase();
+  if (lower.includes("rera") || lower.includes("approv") || lower.includes("certif") || lower.includes("legal") || lower.includes("bda") || lower.includes("bmrda")) return "fa-solid fa-certificate";
+  if (lower.includes("wall") || lower.includes("privacy")) return "fa-solid fa-shield-halved";
+  if (lower.includes("road") || lower.includes("location") || lower.includes("connect") || lower.includes("metro") || lower.includes("highway") || lower.includes("expressway") || lower.includes("station") || lower.includes("airport") || lower.includes("tech park")) return "fa-solid fa-location-dot";
+  if (lower.includes("acre") || lower.includes("land") || lower.includes("garden") || lower.includes("open space") || lower.includes("landscape") || /\bpark\b/.test(lower) || lower.includes("green") || lower.includes("tree")) return "fa-solid fa-tree";
+  if (lower.includes("pool") || lower.includes("swim")) return "fa-solid fa-person-swimming";
+  if (lower.includes("gym") || lower.includes("fit") || lower.includes("sport") || lower.includes("court") || lower.includes("jog")) return "fa-solid fa-dumbbell";
+  if (lower.includes("club") || lower.includes("amenit") || lower.includes("lifestyle") || lower.includes("resort") || lower.includes("luxury")) return "fa-solid fa-hotel";
+  if (lower.includes("tower") || lower.includes("floor") || lower.includes("high-rise") || lower.includes("architecture") || /\bunits?\b/.test(lower) || lower.includes("structure") || lower.includes("bhk") || lower.includes("layout")) return "fa-solid fa-building";
+  if (lower.includes("ready") || lower.includes("possession") || lower.includes("move-in") || lower.includes("keys") || lower.includes("oc ") || lower.includes("timeline")) return "fa-solid fa-key";
+  if (lower.includes("vastu") || lower.includes("vaastu") || lower.includes("facing")) return "fa-solid fa-compass";
+  if (lower.includes("lake") || lower.includes("water") || lower.includes("view") || lower.includes("scenic")) return "fa-solid fa-water";
+  if (lower.includes("price") || lower.includes("offer") || lower.includes("crore") || lower.includes("lakh") || lower.includes("payment") || lower.includes("emi")) return "fa-solid fa-indian-rupee-sign";
+  return defaultIcon;
+}
+
+function renderProjectHighlights(highlights = []) {
+  const section = document.getElementById("dt-project-highlights");
+  const container = document.getElementById("dt-highlights");
+  if (!section || !container) return;
+
+  if (!Array.isArray(highlights) || highlights.length === 0) {
+    section.hidden = true;
+    container.replaceChildren();
+    return;
+  }
+
+  section.hidden = false;
+  const fragment = document.createDocumentFragment();
+
+  highlights.forEach((highlight) => {
+    const card = document.createElement("div");
+    card.className = "highlight-card";
+
+    let iconClass = "fa-solid fa-circle-check";
+    let titleText = "";
+    let bodyText = "";
+
+    if (typeof highlight === "string") {
+      bodyText = highlight;
+      iconClass = getHighlightIcon(highlight);
+    } else if (typeof highlight === "object" && highlight !== null) {
+      bodyText = highlight.text || highlight.description || highlight.value || "";
+      titleText = highlight.title || highlight.heading || highlight.label || "";
+      iconClass = highlight.icon || getHighlightIcon(`${titleText} ${bodyText}`);
+    }
+
+    const iconWrap = document.createElement("div");
+    iconWrap.className = "highlight-icon-wrap";
+    const iconEl = document.createElement("i");
+    iconEl.className = iconClass;
+    iconEl.setAttribute("aria-hidden", "true");
+    iconWrap.appendChild(iconEl);
+
+    const textWrap = document.createElement("div");
+    textWrap.className = "highlight-text-wrap";
+
+    if (titleText) {
+      const titleEl = document.createElement("strong");
+      titleEl.className = "highlight-title";
+      titleEl.textContent = titleText;
+      textWrap.appendChild(titleEl);
+    }
+
+    if (bodyText) {
+      const bodyEl = document.createElement("span");
+      bodyEl.className = "highlight-text";
+      bodyEl.textContent = bodyText;
+      textWrap.appendChild(bodyEl);
+    }
+
+    card.append(iconWrap, textWrap);
+    fragment.appendChild(card);
+  });
+
+  container.replaceChildren(fragment);
+}
+
 function renderPropertyFeatures(property) {
   const amenitiesContainer = document.getElementById("detail-amenities");
   const connectivityContainer = document.getElementById("detail-connectivity");
@@ -453,7 +534,37 @@ function openDetailPage(id, { updateUrl = true } = {}) {
           : "Project";
   document.getElementById("detail-status").innerText = projectStatus;
   document.getElementById("detail-tag").innerText = projectStatus;
-  document.getElementById("detail-description").innerText = prop.description;
+  const overview = document.getElementById("detail-description");
+  const overviewParagraphs = Array.isArray(prop.overview)
+    ? prop.overview
+    : typeof prop.overview === "string"
+      ? [prop.overview]
+      : [prop.description];
+
+  overview.replaceChildren(
+    ...overviewParagraphs.map((paragraph) => {
+      const element = document.createElement("p");
+      element.className = "overview-text";
+      const registration = paragraph.match(
+        /^(.*) RERA registration number: (.+)\.$/i,
+      );
+      if (!registration) {
+        element.textContent = paragraph;
+        return element;
+      }
+
+      element.append(document.createTextNode(`${registration[1]} `));
+      const badge = document.createElement("span");
+      badge.className = "overview-rera";
+      const label = document.createElement("strong");
+      label.textContent = "RERA Registration No.";
+      const number = document.createElement("span");
+      number.textContent = registration[2];
+      badge.append(label, number);
+      element.append(badge);
+      return element;
+    }),
+  );
   const reraToggle = document.getElementById("detail-rera-toggle");
   const reraValue = document.getElementById("detail-rera-value");
   const hasReraId = Boolean(prop.reraId?.trim());
@@ -461,6 +572,7 @@ function openDetailPage(id, { updateUrl = true } = {}) {
   reraToggle.setAttribute("aria-expanded", "false");
   reraValue.hidden = true;
   reraValue.textContent = hasReraId ? `RERA ID: ${prop.reraId}` : "";
+  renderProjectHighlights(prop.highlights || []);
   renderPropertyFeatures(prop);
   renderPropertyFloorPlans(prop);
 

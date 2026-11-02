@@ -776,19 +776,19 @@
             <button
               id="detail-rera-toggle"
               type="button"
-              hidden
+              
               aria-expanded="false"
               aria-controls="detail-rera-value"
-              class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full inline-flex items-center gap-1 hover:bg-emerald-200 transition-colors"
+              class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full inline-flex items-center gap-1.5 border border-godrej-mint hover:bg-godrej-mint transition-colors cursor-pointer"
             >
-              <i class="fa-solid fa-circle-check" aria-hidden="true"></i> RERA
+              <i class="fa-solid fa-circle-check text-godrej-emerald" aria-hidden="true"></i> RERA
               Verified
             </button>
             <span
               id="detail-rera-value"
               hidden
-              class="text-xs text-slate-500 font-mono break-all"
-            ></span>
+              class="px-3 py-1 bg-white text-godrej-emerald font-semibold text-xs rounded-full border border-godrej-sage shadow-sm break-all font-sans"
+            >RERA ID: PRM/KA/RERA/1251/310/PR/130526/008653</span>
           </div>
           <h1
             id="detail-title"
@@ -925,17 +925,62 @@
           <!-- Left Column Details -->
           <div class="lg:col-span-8 space-y-12">
             <!-- Architectural Overview -->
-            <div>
+<div>
               <h2
                 class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
               >
                 Property Overview
               </h2>
-              <p
+              <div
                 id="detail-description"
-                class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6"
-              >A large-scale forest-inspired residential community featuring 2, 3, and 4.5 BHK apartments off Bannerghatta Main Road in South Bengaluru.</p>
+                class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 space-y-4"
+              ><p class="overview-text">Godrej Vanantara by Godrej Properties Limited brings nature-inspired luxury high-rise living to Bannerghatta Road, South Bengaluru. Spanning over acres of lush green landscaping with over 4,500 trees, the township offers an expansive 1 Lakh sq. ft. clubhouse, serene water features, and smooth connectivity to Royal Meenakshi Mall, metro stations, and Bannerghatta National Park. Buyers researching Godrej Properties in Bangalore can explore Godrej Properties homes in Dinnepalya Road, Off Bannerghatta Main Road, with project status, location, and configuration details available to compare.</p>
+                <p class="overview-text">Godrej Vanantara is listed with 2 BHK, 3 BHK (2T), 3 BHK (3T), 3.5 BHK and 4 BHK across 33 Acres, with ongoing status and possession shown as May 2031. Listed floor plan options include 2 BHK, 3 BHK (2T) and 3 BHK (3T). Residents can explore amenities such as Grand Clubhouse, Swimming Pool, Gymnasium and Kids Play Area, with nearby destinations including Greenwood High (IGCSE Campus) (Adjacent), Royal Meenakshi Mall (5 Mins) and Bannerghatta National Park (10 Mins). Review this Godrej Properties project&#39;s floor plans, amenities, and connectivity when comparing homes in Bengaluru. <span class="overview-rera"><strong>RERA Registration No.</strong> <span>PRM/KA/RERA/1251/310/PR/130526/008653</span></span></p></div>
             </div>
+
+            <!-- Project Highlights -->
+            <section
+              class="project-highlights-section detail-section-block"
+              id="dt-project-highlights"
+              aria-labelledby="dt-highlights-title"
+            >
+              <h2
+                class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
+                id="dt-highlights-title"
+              >
+                Project Highlights
+              </h2>
+              <div class="highlights-grid" id="dt-highlights">
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">ture-Centric Urban Retreat with 4500+ Trees and Grand Clubhouse</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Expansive 33 Acres development with landscaped open spaces</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Thoughtfully planned 2 BHK, 3 BHK (2T), 3 BHK (3T), 3.5 BHK, 4 BHK layouts designed for optimal ventilation &amp; natural lighting</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-key" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Project possession timeline: May 2031</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-person-swimming" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Premium lifestyle amenities including Grand Clubhouse, Swimming Pool, Gymnasium</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Prime connectivity with proximity to Greenwood High (IGCSE Campus) (Adjacent)</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">RERA Approved Project: PRM/KA/RERA/1251/310/PR/130526/008653</span></div>
+                </div>
+              </div>
+            </section>
 
             <!-- Interactive Floor Plan Selector -->
             <div
