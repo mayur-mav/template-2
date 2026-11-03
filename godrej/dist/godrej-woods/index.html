@@ -38,6 +38,7 @@
 </head>
   <body data-property-route-loading="true"
     data-builder="godrej"
+    data-whatsapp-number="+919876543210"
     class="bg-godrej-offwhite text-slate-800 font-sans antialiased custom-scrollbar"
   >
     <!-- MAIN NAVIGATION HEADER -->
@@ -104,15 +105,14 @@
             class="site-header-actions hidden shrink-0 items-center gap-2 sm:gap-3 lg:flex"
           >
             <a
-              href="tel:18001082020"
-              class="site-phone flex items-center gap-1.5 rounded-full bg-godrej-sage px-2 sm:px-3 py-2 text-[10px] sm:text-xs font-semibold text-godrej-emerald hover:bg-godrej-mint transition-colors"
-              aria-label="Call 1800 108 2020"
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-header-wa"
+              aria-label="Chat on WhatsApp"
             >
-              <i
-                class="fa-solid fa-phone text-godrej-gold"
-                aria-hidden="true"
-              ></i
-              ><span>1800 108 2020</span>
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span>Chat on WhatsApp</span>
             </a>
             <button
               onclick="scrollToConsultation()"
@@ -173,13 +173,16 @@
             >
           </nav>
           <div class="mobile-menu-actions mt-4 grid grid-cols-1 gap-2">
-            <a href="tel:18001082020" class="mobile-menu-action phone-action"
-              ><i
-                class="fa-solid fa-phone text-godrej-gold"
-                aria-hidden="true"
-              ></i>
-              1800 108 2020</a
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mobile-menu-action btn-header-wa"
+              aria-label="Chat on WhatsApp"
             >
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
             <button
               onclick="scrollToConsultation(); closeMobileMenu()"
               class="mobile-menu-action visit-action"
@@ -797,22 +800,14 @@
               class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full uppercase"
               >Featured Project</span
             >
-            <button
-              id="detail-rera-toggle"
-              type="button"
+            <span
+              id="detail-rera-badge"
               
-              aria-expanded="false"
-              aria-controls="detail-rera-value"
-              class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full inline-flex items-center gap-1.5 border border-godrej-mint hover:bg-godrej-mint transition-colors cursor-pointer"
+              class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full inline-flex items-center gap-1.5 border border-godrej-mint select-none"
             >
               <i class="fa-solid fa-circle-check text-godrej-emerald" aria-hidden="true"></i> RERA
               Verified
-            </button>
-            <span
-              id="detail-rera-value"
-              hidden
-              class="px-3 py-1 bg-white text-godrej-emerald font-semibold text-xs rounded-full border border-godrej-sage shadow-sm break-all font-sans"
-            >RERA ID: PRM/KA/RERA/1251/472/PR/121125/008248</span>
+            </span>
           </div>
           <h1
             id="detail-title"
@@ -828,22 +823,16 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-12">
           <!-- Large Main Image -->
           <div
-            class="lg:col-span-8 relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-[320px] sm:h-[450px]"
-            onclick="openLightbox(0)"
+            class="lg:col-span-8 relative overflow-hidden rounded-2xl shadow-lg h-[320px] sm:h-[450px]"
           >
             <img
               id="detail-img-0"
-              src=""
-              alt="Main Architecture"
+              src="https://media.justflip.in/builder-brand-pages/godrej-properties/godrej-woods/gallery/exterior-view.webp"
+              alt="Godrej Woods architecture in Bengaluru"
               loading="lazy"
               decoding="async"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
             />
-            <div
-              class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-lg flex items-center gap-2"
-            >
-              <i class="fa-solid fa-expand"></i> Click for Fullscreen Gallery
-            </div>
           </div>
 
           <!-- 2 Side Images Grid -->
@@ -851,36 +840,28 @@
             class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 h-[320px] sm:h-[450px]"
           >
             <div
-              class="relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-full"
-              onclick="openLightbox(1)"
+              class="relative overflow-hidden rounded-2xl shadow-lg h-full"
             >
               <img
                 id="detail-img-1"
-                src=""
-                alt="Interior Design"
+                src="https://media.justflip.in/builder-brand-pages/godrej-properties/godrej-woods/gallery/interior-view.webp"
+                alt="Godrej Woods interior in Bengaluru"
                 loading="lazy"
                 decoding="async"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
               />
-              <div
-                class="absolute inset-0 bg-godrej-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity"
-              ></div>
             </div>
             <div
-              class="relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-full"
-              onclick="openLightbox(2)"
+              class="relative overflow-hidden rounded-2xl shadow-lg h-full"
             >
               <img
                 id="detail-img-2"
-                src=""
-                alt="Project Amenities"
+                src="https://media.justflip.in/builder-brand-pages/godrej-properties/godrej-woods/gallery/amenities.webp"
+                alt="Godrej Woods amenities in Bengaluru"
                 loading="lazy"
                 decoding="async"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
               />
-              <div
-                class="absolute inset-0 bg-godrej-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity"
-              ></div>
             </div>
           </div>
         </div>
@@ -962,7 +943,7 @@
                 id="detail-description"
                 class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 space-y-4"
               ><p class="overview-text">Godrej Woods by Godrej Properties Limited brings a forest-inspired living experience to Thanisandra Main Road, North Bengaluru. Spread across 6.8 acres, the project offers lush green surroundings, a fully equipped clubhouse, swimming pool, yoga decks, and smooth connectivity to Manyata Tech Park, Hebbal, and Kempegowda International Airport. Buyers researching Godrej apartments in Bangalore can explore Godrej Properties homes in Thanisandra Main Road, Bengaluru, with project status, location, and configuration details available to compare.</p>
-                <p class="overview-text">Godrej Woods is listed with 2 BHK, 3 BHK and 3.5 BHK across 6.8 Acres, with ongoing status and possession shown as November 2030. Listed floor plan options include 2 BHK, 3 BHK and 3.5 BHK. Residents can explore amenities such as Fully Equipped Clubhouse, Swimming Pool &amp; Lap Pool, Gymnasium and Yoga Deck, with nearby destinations including REVA University (2 Mins), Upcoming Metro Station (10 Mins) and Manyata Tech Park (15 Mins). Review this Godrej Properties project&#39;s floor plans, amenities, and connectivity when comparing homes in Bengaluru. <span class="overview-rera"><strong>RERA Registration No.</strong> <span>PRM/KA/RERA/1251/472/PR/121125/008248</span></span></p></div>
+                <p class="overview-text">Godrej Woods is listed with 2 BHK, 3 BHK and 3.5 BHK across 6.8 Acres, with ongoing status and possession shown as November 2030. Listed floor plan options include 2 BHK, 3 BHK and 3.5 BHK. Residents can explore amenities such as Fully Equipped Clubhouse, Swimming Pool &amp; Lap Pool, Gymnasium and Yoga Deck, with nearby destinations including REVA University (1.4 km), Upcoming Metro Station (8.2 km) and Manyata Tech Park (9.5 km). Review this Godrej Properties project&#39;s floor plans, amenities, and connectivity when comparing homes in Bengaluru. <span class="overview-rera"><strong>RERA Registration No.</strong> <span>PRM/KA/RERA/1251/472/PR/121125/008248</span></span></p></div>
             </section>
 
             <!-- Project Highlights -->
@@ -979,32 +960,24 @@
               </h2>
               <div class="highlights-grid" id="dt-highlights">
                 <div class="highlight-card">
-                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">Forest-Themed Living with Lush Greens, Water Features and Grand Clubhouse</span></div>
-                </div>
-                <div class="highlight-card">
-                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">Expansive 6.8 Acres development with landscaped open spaces</span></div>
-                </div>
-                <div class="highlight-card">
-                  <div class="highlight-icon-wrap"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">Thoughtfully planned 2 BHK, 3 BHK, 3.5 BHK layouts designed for optimal ventilation &amp; natural lighting</span></div>
-                </div>
-                <div class="highlight-card">
-                  <div class="highlight-icon-wrap"><i class="fa-solid fa-key" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">Project possession timeline: November 2030</span></div>
-                </div>
-                <div class="highlight-card">
                   <div class="highlight-icon-wrap"><i class="fa-solid fa-person-swimming" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">Premium lifestyle amenities including Fully Equipped Clubhouse, Swimming Pool &amp; Lap Pool, Gymnasium</span></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Resort-style living with pool, cabanas &amp; BBQ pavilion</span></div>
                 </div>
                 <div class="highlight-card">
-                  <div class="highlight-icon-wrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">Prime connectivity with proximity to REVA University (2 Mins)</span></div>
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Wellness-focused spaces — yoga deck, jogging &amp; outdoor gym</span></div>
                 </div>
                 <div class="highlight-card">
-                  <div class="highlight-icon-wrap"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">RERA Approved Project: PRM/KA/RERA/1251/472/PR/121125/008248</span></div>
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Lush green escapes with hammock seating &amp; wooded walkways</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Community fun with pickleball, party deck &amp; pet park</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Thoughtfully designed play zones for kids of all ages</span></div>
                 </div>
               </div>
             </section>
@@ -1347,10 +1320,10 @@
                 <div class="connectivity-destinations">
                   <h3 class="font-serif font-bold text-base text-godrej-emerald mb-3">Nearby Destinations</h3>
                   <div class="location-matrix" id="dt-connectivity">
-                                <div class="loc-item"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><div><strong>REVA University:</strong> 2 Mins</div></div>
-                                <div class="loc-item"><i class="fa-solid fa-train-subway" aria-hidden="true"></i><div><strong>Upcoming Metro Station:</strong> 10 Mins</div></div>
-                                <div class="loc-item"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i><div><strong>Manyata Tech Park:</strong> 15 Mins</div></div>
-                                <div class="loc-item"><i class="fa-solid fa-road" aria-hidden="true"></i><div><strong>Hebbal Flyover:</strong> 15 Mins</div></div>
+                                <div class="loc-item"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><div><strong>REVA University:</strong> 1.4 km</div></div>
+                                <div class="loc-item"><i class="fa-solid fa-train-subway" aria-hidden="true"></i><div><strong>Upcoming Metro Station:</strong> 8.2 km</div></div>
+                                <div class="loc-item"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i><div><strong>Manyata Tech Park:</strong> 9.5 km</div></div>
+                                <div class="loc-item"><i class="fa-solid fa-road" aria-hidden="true"></i><div><strong>Hebbal Flyover:</strong> 11.6 km</div></div>
                             </div>
                 </div>
               </div>

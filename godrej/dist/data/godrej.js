@@ -58,13 +58,13 @@ export const godrejProjects = [
       "Nature-Centric Urban Retreat with 4500+ Trees and Grand Clubhouse",
     reraId: "PRM/KA/RERA/1251/310/PR/130526/008653",
     highlights: [
-      "ture-Centric Urban Retreat with 4500+ Trees and Grand Clubhouse",
-      "Expansive 33 Acres development with landscaped open spaces",
-      "Thoughtfully planned 2 BHK, 3 BHK (2T), 3 BHK (3T), 3.5 BHK, 4 BHK layouts designed for optimal ventilation & natural lighting",
-      "Project possession timeline: May 2031",
-      "Premium lifestyle amenities including Grand Clubhouse, Swimming Pool, Gymnasium",
-      "Prime connectivity with proximity to Greenwood High (IGCSE Campus) (Adjacent)",
-      "RERA Approved Project: PRM/KA/RERA/1251/310/PR/130526/008653",
+      "IGBC pre-certified green building with eco-friendly design",
+      "Premium sports arena with futsal, squash & cricket pitch",
+      "Curated wellness spaces with nature trail & urban farming",
+      "Elite clubhouse experience with co-working & music room",
+      "Pet-friendly community with dedicated pet park & tot lots",
+      "Smart living with EV charging, video security & Wi-Fi zones",
+      "Grand lifestyle ecosystem with cafeteria, salon & grocery store"
     ],
     summary:
       "A large-scale forest-inspired residential community featuring 2, 3, and 4.5 BHK apartments off Bannerghatta Main Road in South Bengaluru.",
@@ -84,7 +84,7 @@ export const godrejProjects = [
         name: "Greenwood High (IGCSE Campus)",
         destination: "Greenwood High IGCSE Campus, Bannerghatta Road, Bengaluru, Karnataka 560083",
         coordinates: {"lat":12.826,"lon":77.5862},
-        distance: "Adjacent",
+        distance: "180 m",
         icon: "fa-solid fa-school",
       },
       {
@@ -92,7 +92,7 @@ export const godrejProjects = [
         name: "Royal Meenakshi Mall",
         destination: "Royal Meenakshi Mall, Hulimavu, Bannerghatta Main Rd, Bengaluru, Karnataka 560076",
         coordinates: {"lat":12.8752,"lon":77.5958},
-        distance: "5 Mins",
+        distance: "5.7 km",
         icon: "fa-solid fa-bag-shopping",
       },
       {
@@ -100,7 +100,7 @@ export const godrejProjects = [
         name: "Bannerghatta National Park",
         destination: "Bannerghatta Biological Park, Bannerghatta Road, Bengaluru, Karnataka 560083",
         coordinates: {"lat":12.8009,"lon":77.5777},
-        distance: "10 Mins",
+        distance: "6.3 km",
         icon: "fa-solid fa-tree",
       },
       {
@@ -108,7 +108,7 @@ export const godrejProjects = [
         name: "Kalena Agrahara Metro Station",
         destination: "Kalena Agrahara Metro Station, Bannerghatta Road, Bengaluru, Karnataka 560076",
         coordinates: {"lat":12.8685,"lon":77.5932},
-        distance: "14 Mins",
+        distance: "5.0 km",
         icon: "fa-solid fa-train-subway",
       },
       {
@@ -116,17 +116,9 @@ export const godrejProjects = [
         name: "Prime Spectrum Mall",
         destination: "Prime Spectrum Mall, Bannerghatta Road, Bengaluru, Karnataka 560076",
         coordinates: {"lat":12.8834,"lon":77.5975},
-        distance: "18 Mins",
+        distance: "6.9 km",
         icon: "fa-solid fa-bag-shopping",
       },
-      {
-        label: "Kempegowda International Airport",
-        name: "Kempegowda International Airport",
-        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
-        coordinates: {"lat":13.1986,"lon":77.7066},
-        distance: "75 Mins",
-        icon: "fa-solid fa-plane",
-      }
     ],
     images: [
       godrejImage("godrej-properties/godrej-vanantara/gallery/exterior-view.webp"),
@@ -159,14 +151,14 @@ export const godrejProjects = [
     units: "330",
     highlight: "Greco-Roman Architecture",
     reraId: "PRM/KA/RERA/1251/446/PR/090123/005605",
-        highlights: [
-      "Greco-Roman Architecture",
-      "Expansive 6.5 Acres development with landscaped open spaces",
-      "Thoughtfully planned 3 BHK layouts designed for optimal ventilation & natural lighting",
-      "Project possession timeline: January 2028",
-      "Premium lifestyle amenities including Temperature-Controlled Swimming Pool, Clubhouse, Jogging Track",
-      "Prime connectivity with proximity to Orchids The International School (190 m)",
-      "RERA Approved Project: PRM/KA/RERA/1251/446/PR/090123/005605",
+    highlights: [
+      "Unique Greco-Roman inspired architectural design",
+      "Temperature-controlled swimming pool with sauna and steam facilities",
+      "Specialized calisthenics court and skateboarding park",
+      "Premium residences featuring dedicated servant rooms and utility spaces",
+      "Strategic 20-minute access to Bagmane Tech Park and Embassy Golf Links",
+      "Quick proximity to Indiranagar and Swamy Vivekananda Metro Stations",
+      "Dedicated pet-friendly park and senior citizen relaxation zones"
     ],
     summary:
       "A premium residential project featuring Greco-Roman-inspired architecture, spacious 3 BHK residences, and 34 luxury lifestyle amenities near Indiranagar.",
@@ -192,7 +184,7 @@ export const godrejProjects = [
         name: "Orchids The International School",
         destination: "Orchids The International School, HAL, Bengaluru, Karnataka 560075",
         coordinates: {"lat":12.9615,"lon":77.6548},
-        distance: "190 m",
+        distance: "170 m",
         icon: "fa-solid fa-school",
       },
       {
@@ -208,7 +200,7 @@ export const godrejProjects = [
         name: "Shishya BEML Public School",
         destination: "Shishya BEML Public School, HAL, Bengaluru, Karnataka 560075",
         coordinates: {"lat":12.9648,"lon":77.6595},
-        distance: "1.0 km",
+        distance: "700 m",
         icon: "fa-solid fa-school",
       },
       {
@@ -216,7 +208,7 @@ export const godrejProjects = [
         name: "HAL Public School",
         destination: "HAL Public School, Suranjandas Road, Bengaluru, Karnataka 560017",
         coordinates: {"lat":12.9565,"lon":77.6685},
-        distance: "2.0 km",
+        distance: "1.6 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -224,7 +216,7 @@ export const godrejProjects = [
         name: "Indiranagar 100 Feet Road",
         destination: "100 Feet Road, Indiranagar, Bengaluru, Karnataka 560038",
         coordinates: {"lat":12.9715,"lon":77.641},
-        distance: "3.2 km",
+        distance: "6.7 km",
         icon: "fa-solid fa-road",
       },
       {
@@ -232,7 +224,7 @@ export const godrejProjects = [
         name: "Manipal Hospital, Old Airport Road",
         destination: "Manipal Hospital, HAL Old Airport Road, Bengaluru, Karnataka 560017",
         coordinates: {"lat":12.9585,"lon":77.648},
-        distance: "2.4 km",
+        distance: "4.0 km",
         icon: "fa-solid fa-hospital",
       }
     ],
@@ -281,14 +273,14 @@ export const godrejProjects = [
     units: "698",
     highlight: "Lakeside Setting & Butterfly Garden",
     reraId: "PRM/KA/RERA/1251/446/PR/300924/007105",
-        highlights: [
-      "Lakeside Setting & Butterfly Garden",
-      "Expansive 6 Acres development with landscaped open spaces",
-      "Thoughtfully planned 3 BHK, 3.5 BHK, 4+ BHK layouts designed for optimal ventilation & natural lighting",
-      "Project possession timeline: September 2030",
-      "Premium lifestyle amenities including Club Pool, Fully Equipped Gym, Skating Rink",
-      "Prime connectivity with proximity to Carmelaram Railway Station (800 m)",
-      "RERA Approved Project: PRM/KA/RERA/1251/446/PR/300924/007105",
+    highlights: [
+      "Sprawling over 15.9 acres with G+25 structure",
+      "47,000 sqft of luxurious clubhouse",
+      "600+ apartments with 75% open spaces (Phase 1)",
+      "Serene lakeside living",
+      "5 acres of greenery with 700+ trees",
+      "10.16% price appreciation in the last 1 year",
+      "Properties with 100% power backup available"
     ],
     summary:
       "A nature-focused residential project on Sarjapur Road featuring 3, 3.5, and 4+ BHK apartments with over 30 lifestyle amenities.",
@@ -309,7 +301,7 @@ export const godrejProjects = [
         name: "Carmelaram Railway Station",
         destination: "Carmelaram Railway Station, Carmelaram, Bengaluru, Karnataka 560035",
         coordinates: {"lat":12.9115,"lon":77.7095},
-        distance: "800 m",
+        distance: "2.7 km",
         icon: "fa-solid fa-train",
       },
       {
@@ -317,7 +309,7 @@ export const godrejProjects = [
         name: "CMR Gandhi Public School",
         destination: "CMR Gandhi Public School, Sarjapur Road, Bengaluru, Karnataka 560035",
         coordinates: {"lat":12.908,"lon":77.6985},
-        distance: "1.5 km",
+        distance: "1.4 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -325,7 +317,7 @@ export const godrejProjects = [
         name: "Halanayakanahalli Lake",
         destination: "Halanayakanahalli Lake, Sarjapur Road, Bengaluru, Karnataka 560035",
         coordinates: {"lat":12.9015,"lon":77.6955},
-        distance: "1.7 km",
+        distance: "4.3 km",
         icon: "fa-solid fa-water",
       },
       {
@@ -333,7 +325,7 @@ export const godrejProjects = [
         name: "Radhareddy Layout Bus Stop",
         destination: "Radhareddy Layout, Sarjapur Road, Bengaluru, Karnataka 560035",
         coordinates: {"lat":12.9145,"lon":77.7085},
-        distance: "2.5 km",
+        distance: "3.4 km",
         icon: "fa-solid fa-bus",
       },
       {
@@ -341,7 +333,7 @@ export const godrejProjects = [
         name: "Delhi Public School, Panathur",
         destination: "Delhi Public School, Panathur, Bengaluru, Karnataka 560087",
         coordinates: {"lat":12.9245,"lon":77.7125},
-        distance: "2.4 km",
+        distance: "3.5 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -349,7 +341,7 @@ export const godrejProjects = [
         name: "Trends Carmelaram",
         destination: "Trends, Sarjapur Road, Bengaluru, Karnataka 560035",
         coordinates: {"lat":12.9095,"lon":77.705},
-        distance: "1.4 km",
+        distance: "2.2 km",
         icon: "fa-solid fa-bag-shopping",
       }
     ],
@@ -398,14 +390,14 @@ export const godrejProjects = [
     units: "518",
     highlight: "35+ Amenities & Gated Security",
     reraId: "PRM/KA/RERA/1251/308/PR/150726/008810",
-        highlights: [
-      "35+ Amenities & Gated Security",
-      "Expansive 7.5 Acres development with landscaped open spaces",
-      "Thoughtfully planned 2 BHK Luke, 3 BHK Premium, 3 BHK Luke layouts designed for optimal ventilation & natural lighting",
-      "Project possession timeline: July 2031",
-      "Premium lifestyle amenities including Swimming Pool, Fully Equipped Gymnasium, Skating Rink",
-      "Prime connectivity with proximity to Health care Pharma (700 m)",
-      "RERA Approved Project: PRM/KA/RERA/1251/308/PR/150726/008810",
+    highlights: [
+      "Designed by DPA Singapore featuring Victorian-inspired twin towers",
+      "Thoughtfully planned east-west facing homes with optimal natural light",
+      "Grand 18,400 sq ft integrated clubhouse for lifestyle amenitie",
+      "Ceremonial flower garden and landscaped English gardens",
+      "On-site outdoor jogging track and reflexology pathway for wellness",
+      "Dedicated rock climbing wall and paddle court for active",
+      "Backed by Godrej Properties with 128-year legacy"
     ],
     summary:
       "A premium residential project offering modern 2 and 3 BHK apartments along the thriving Sarjapur Road corridor in East Bengaluru.",
@@ -436,7 +428,7 @@ export const godrejProjects = [
         name: "Little Elly Preschool",
         destination: "Little Elly Preschool, Sarjapur, Bengaluru, Karnataka 562125",
         coordinates: {"lat":12.885,"lon":77.761},
-        distance: "1.1 km",
+        distance: "14.6 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -444,7 +436,7 @@ export const godrejProjects = [
         name: "Amruth Park Land",
         destination: "Amruth Park Land, Sarjapur, Bengaluru, Karnataka 562125",
         coordinates: {"lat":12.882,"lon":77.768},
-        distance: "2.3 km",
+        distance: "3.4 km",
         icon: "fa-solid fa-tree",
       },
       {
@@ -452,7 +444,7 @@ export const godrejProjects = [
         name: "Dommasandra Market",
         destination: "Dommasandra Circle, Sarjapur Road, Bengaluru, Karnataka 562125",
         coordinates: {"lat":12.8795,"lon":77.749},
-        distance: "2.4 km",
+        distance: "3.2 km",
         icon: "fa-solid fa-cart-shopping",
       },
       {
@@ -460,7 +452,7 @@ export const godrejProjects = [
         name: "Head Start Educational Academy",
         destination: "Head Start Educational Academy, Sarjapur, Bengaluru, Karnataka 562125",
         coordinates: {"lat":12.8855,"lon":77.742},
-        distance: "2.3 km",
+        distance: "2.9 km",
         icon: "fa-solid fa-graduation-cap",
       }
     ],
@@ -496,14 +488,14 @@ export const godrejProjects = [
     units: "232",
     highlight: "Emerald Skywalk & 36+ Nature-Inspired Amenities",
     reraId: "PRM/KA/RERA/1251/446/PR/170524/006882",
-        highlights: [
-      "Emerald Skywalk & 36+ Nature-Inspired Amenities",
-      "Expansive 3 Acres development with landscaped open spaces",
-      "Thoughtfully planned 4 BHK layouts designed for optimal ventilation & natural lighting",
-      "Project possession timeline: June 2030",
-      "Premium lifestyle amenities including Temperature Controlled Pool, Gym, Tennis Court",
-      "Prime connectivity with proximity to Dr1 Gene Clinic (140 m)",
-      "RERA Approved Project: PRM/KA/RERA/1251/446/PR/170524/006882",
+    highlights: [
+      "15-acre green eco-friendly living in Bengaluru",
+      "68,000 sq. ft. clubhouse with world-class amenities",
+      "Emerald Skywalk offers views with modern elevated design",
+      "Temperature-controlled swimming pool for all-season luxury",
+      "Best Residential Developer - Euromoney Awards 2023",
+      "Near Bengaluru's top IT hubs and tech parks",
+      "Easy access to schools, malls, and healthcare facilities"
     ],
     summary:
       "A high-rise residential project featuring spacious 4 BHK apartments with nature-inspired lifestyle amenities at Budigere Cross, East Bengaluru.",
@@ -524,15 +516,15 @@ export const godrejProjects = [
       {
         label: "Dr1 Gene Clinic",
         name: "Dr1 Gene Clinic",
-        destination: "Budigere Cross, Old Madras Road, Bengaluru, Karnataka 560049",
+        destination: "Dr1 Gene Hospital, beside One World International School, Sannatammanahalli, Goravigere, Bengaluru, Karnataka 560115",
         coordinates: {"lat":13.0498,"lon":77.7485},
-        distance: "140 m",
+        distance: "2.7 km",
         icon: "fa-solid fa-hospital",
       },
       {
         label: "SLNS GARUDA COMPLEX",
         name: "SLNS GARUDA COMPLEX",
-        destination: "Old Madras Road, Budigere Cross, Bengaluru, Karnataka 560049",
+        destination: "SLNS GARUDA COMPLEX, 24/1, 2nd Floor, SLNS Garuda Complex, Cross, above Ramdeva Medical, Konadasapura, Budigere, Bengaluru, Karnataka 560049",
         coordinates: {"lat":13.048,"lon":77.749},
         distance: "140 m",
         icon: "fa-solid fa-building",
@@ -540,7 +532,7 @@ export const godrejProjects = [
       {
         label: "OM CITY",
         name: "OM CITY",
-        destination: "Konadasapura, Budigere Cross, Bengaluru, Karnataka 560049",
+        destination: "OM CITY, 2PWX+4WX, Budigere Cross, Konadasapura, Bandapura, Karnataka 560049",
         coordinates: {"lat":13.051,"lon":77.7465},
         distance: "230 m",
         icon: "fa-solid fa-city",
@@ -558,7 +550,7 @@ export const godrejProjects = [
         name: "The Royal Orchid International Pre School",
         destination: "Royal Orchid Pre School, Budigere Cross, Bengaluru, Karnataka 560049",
         coordinates: {"lat":13.0525,"lon":77.744},
-        distance: "550 m",
+        distance: "6.0 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -582,7 +574,7 @@ export const godrejProjects = [
         name: "Budigere Cross Bus Stop",
         destination: "Budigere Cross Bus Stop, Old Madras Road, Bengaluru, Karnataka 560049",
         coordinates: {"lat":13.045,"lon":77.7495},
-        distance: "1.1 km",
+        distance: "2.9 km",
         icon: "fa-solid fa-bus",
       },
       {
@@ -598,7 +590,7 @@ export const godrejProjects = [
         name: "Shell Petrol Station",
         destination: "Shell Petrol Bunk, Old Madras Road, Bengaluru, Karnataka 560049",
         coordinates: {"lat":13.041,"lon":77.756},
-        distance: "1.4 km",
+        distance: "11.4 km",
         icon: "fa-solid fa-gas-pump",
       }
     ],
@@ -649,14 +641,14 @@ export const godrejProjects = [
     highlight:
       "Dutch Design-Inspired Architecture with Sunlit Spaces and Garden Living",
     reraId: "PRM/KA/RERA/1251/309/PR/020326/008501",
-        highlights: [
-      "Dutch Design-Inspired Architecture with Sunlit Spaces and Garden Living",
-      "Expansive 10.1 Acres development with landscaped open spaces",
-      "Thoughtfully planned 3 BHK, 3.5 BHK, 4.5 BHK layouts designed for optimal ventilation & natural lighting",
-      "Project possession timeline: March 2031",
-      "Premium lifestyle amenities including Swimming Pool, Clubhouse, Gaming Area",
-      "Prime connectivity with proximity to Bagalur Cross Metro (1 Min)",
-      "RERA Approved Project: PRM/KA/RERA/1251/309/PR/020326/008501",
+    highlights: [
+      "Dutch-inspired architecture designed by global experts UHA London",
+      "33,000 sq ft of premium high street retail experience on-site",
+      "Three level clubhouse spread over 30,000 sq.ft.",
+      "Lifestyle-focused creche, kids learning centre & tot lot",
+      "Dedicated co-working lounge & private work pods",
+      "Features green corridors, fitness corner & reflexology path",
+      "Ranked 2nd in Asia & 3rd globally for sustainability by GRESB"
     ],
     summary:
       "A premium residential project offering 3, 3.5, and 4.5 BHK Dutch-design inspired apartments located on Airport Road in Yelahanka, North Bengaluru.",
@@ -675,7 +667,7 @@ export const godrejProjects = [
         name: "Bagalur Cross Metro",
         destination: "Bagalur Cross Metro Station, Airport Road, Bengaluru, Karnataka 560064",
         coordinates: {"lat":13.1235,"lon":77.611},
-        distance: "1 Min",
+        distance: "1.9 km",
         icon: "fa-solid fa-train-subway",
       },
       {
@@ -683,7 +675,7 @@ export const godrejProjects = [
         name: "Manipal Hospital, Yelahanka",
         destination: "Manipal Hospital, Kogilu Cross, Yelahanka, Bengaluru, Karnataka 560064",
         coordinates: {"lat":13.1165,"lon":77.606},
-        distance: "1 Min",
+        distance: "1.0 km",
         icon: "fa-solid fa-hospital",
       },
       {
@@ -691,7 +683,7 @@ export const godrejProjects = [
         name: "Cytecare Cancer Hospital",
         destination: "Cytecare Hospital, Bagalur Cross, Yelahanka, Bengaluru, Karnataka 560064",
         coordinates: {"lat":13.1255,"lon":77.6135},
-        distance: "3 Min",
+        distance: "1.5 km",
         icon: "fa-solid fa-hospital",
       },
       {
@@ -699,7 +691,7 @@ export const godrejProjects = [
         name: "Yelahanka Metro Station",
         destination: "Yelahanka Metro Station, Bengaluru, Karnataka 560064",
         coordinates: {"lat":13.1095,"lon":77.5985},
-        distance: "5 Min",
+        distance: "1.7 km",
         icon: "fa-solid fa-train-subway",
       },
       {
@@ -707,7 +699,7 @@ export const godrejProjects = [
         name: "Ryan International School",
         destination: "Ryan International School, Yelahanka, Bengaluru, Karnataka 560064",
         coordinates: {"lat":13.128,"lon":77.595},
-        distance: "6 Min",
+        distance: "2.6 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -715,7 +707,7 @@ export const godrejProjects = [
         name: "Canadian International School",
         destination: "Canadian International School, Kogilu Main Rd, Yelahanka, Bengaluru, Karnataka 560064",
         coordinates: {"lat":13.138,"lon":77.602},
-        distance: "6 Min",
+        distance: "2.6 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -723,7 +715,7 @@ export const godrejProjects = [
         name: "RMZ Galleria Mall",
         destination: "RMZ Galleria Mall, Yelahanka, Bengaluru, Karnataka 560064",
         coordinates: {"lat":13.1023,"lon":77.5894},
-        distance: "10 Min",
+        distance: "2.7 km",
         icon: "fa-solid fa-cart-shopping",
       },
       {
@@ -731,7 +723,7 @@ export const godrejProjects = [
         name: "Garuda Mall",
         destination: "Garuda Mall, Yelahanka, Bengaluru, Karnataka 560064",
         coordinates: {"lat":13.105,"lon":77.585},
-        distance: "13 Min",
+        distance: "4.2 km",
         icon: "fa-solid fa-cart-shopping",
       }
     ],
@@ -789,14 +781,14 @@ export const godrejProjects = [
     highlight:
       "French Renaissance-Inspired Architecture with Private Outdoor Spaces and Courtyards",
     reraId: "PRM/KA/RERA/1250/304/PR/150926/008942",
-        highlights: [
-      "French Renaissance-Inspired Architecture with Private Outdoor Spaces and Courtyards",
-      "Expansive 20 Acres development with landscaped open spaces",
-      "Thoughtfully planned 4 BHK Optima, 4 BHK Premia, 4 BHK Luxe, 5 BHK Luxe layouts designed for optimal ventilation & natural lighting",
-      "Project possession timeline: September 2031",
-      "Premium lifestyle amenities including Gymnasium, Kids Play Area, Landscape Padel",
-      "Prime connectivity with proximity to Soukya Road (8 Mins)",
-      "RERA Approved Project: PRM/KA/RERA/1250/304/PR/150926/008942",
+    highlights: [
+      "Located 1.2 km from national highway 948",
+      "Ksvk school is 4.1 km and icfai university is 6.8 km away",
+      "Nexus mall is 9.4 km and aster hospital is 10.5 km away",
+      "Features a gym, tennis court, basketball court, and cricket pitch",
+      "Includes a nature trail, pet park, and community garden",
+      "Lifestyle zones including a dedicated pet park and amphitheater",
+      "Master suites featuring walk-in wardrobes and premium layouts"
     ],
     summary:
       "An ultra-premium French-inspired villa community featuring spacious 4 and 5 BHK row villas off Soukya Road in Whitefield, East Bengaluru.",
@@ -814,19 +806,11 @@ export const godrejProjects = [
     ],
     connectivity: [
       {
-        label: "Soukya Road",
-        name: "Soukya Road",
-        destination: "Soukya Road, Whitefield, Bengaluru, Karnataka 560117",
-        coordinates: {"lat":12.989,"lon":77.781},
-        distance: "8 Mins",
-        icon: "fa-solid fa-road",
-      },
-      {
         label: "RKB Sanjeevini Hospital",
         name: "RKB Sanjeevini Hospital",
         destination: "RKB Sanjeevini Hospital, Whitefield, Bengaluru, Karnataka 560117",
         coordinates: {"lat":12.984,"lon":77.776},
-        distance: "8 Mins",
+        distance: "3.0 km",
         icon: "fa-solid fa-hospital",
       },
       {
@@ -834,23 +818,15 @@ export const godrejProjects = [
         name: "Shri Ram Global School",
         destination: "Shri Ram Global School, Whitefield, Bengaluru, Karnataka 560117",
         coordinates: {"lat":12.991,"lon":77.772},
-        distance: "12 Mins",
+        distance: "4.3 km",
         icon: "fa-solid fa-school",
-      },
-      {
-        label: "Myntra Whitefield Warehouse",
-        name: "Myntra Whitefield Warehouse",
-        destination: "Soukya Road, Whitefield, Bengaluru, Karnataka 560117",
-        coordinates: {"lat":12.995,"lon":77.788},
-        distance: "12 Mins",
-        icon: "fa-solid fa-warehouse",
       },
       {
         label: "Whitefield Railway Station",
         name: "Whitefield Railway Station",
         destination: "Whitefield Railway Station, Kadugodi, Bengaluru, Karnataka 560067",
         coordinates: {"lat":12.996,"lon":77.761},
-        distance: "15 Mins",
+        distance: "6.6 km",
         icon: "fa-solid fa-train",
       },
       {
@@ -858,7 +834,7 @@ export const godrejProjects = [
         name: "Hope Farm Junction",
         destination: "Hope Farm Junction, Whitefield, Bengaluru, Karnataka 560066",
         coordinates: {"lat":12.9835,"lon":77.7515},
-        distance: "20 Mins",
+        distance: "6.3 km",
         icon: "fa-solid fa-location-dot",
       },
       {
@@ -866,7 +842,7 @@ export const godrejProjects = [
         name: "Kadugodi Metro Station",
         destination: "Kadugodi Tree Park Metro Station, Whitefield, Bengaluru, Karnataka 560067",
         coordinates: {"lat":12.998,"lon":77.7595},
-        distance: "20 Mins",
+        distance: "7.0 km",
         icon: "fa-solid fa-train-subway",
       },
       {
@@ -874,7 +850,7 @@ export const godrejProjects = [
         name: "MVJ College of Engineering",
         destination: "MVJ College of Engineering, Whitefield, Bengaluru, Karnataka 560067",
         coordinates: {"lat":12.985,"lon":77.758},
-        distance: "22 Mins",
+        distance: "5.4 km",
         icon: "fa-solid fa-graduation-cap",
       },
       {
@@ -882,7 +858,7 @@ export const godrejProjects = [
         name: "ITPL / Whitefield Main Road",
         destination: "International Tech Park Bangalore (ITPB), Whitefield, Bengaluru, Karnataka 560066",
         coordinates: {"lat":12.9875,"lon":77.738},
-        distance: "25 Mins",
+        distance: "8.7 km",
         icon: "fa-solid fa-laptop-code",
       },
       {
@@ -890,7 +866,7 @@ export const godrejProjects = [
         name: "Ascendas Park Square Mall",
         destination: "Park Square Mall, ITPB, Whitefield, Bengaluru, Karnataka 560066",
         coordinates: {"lat":12.986,"lon":77.736},
-        distance: "35 Mins",
+        distance: "8.1 km",
         icon: "fa-solid fa-cart-shopping",
       }
     ],
@@ -927,14 +903,14 @@ export const godrejProjects = [
     highlight:
       "Barcelona-Inspired Architecture with Mediterranean Charm and Sunlit Landscapes",
     reraId: "PRM/KA/RERA/1250/303/PR/010425/007644",
-        highlights: [
-      "Barcelona-Inspired Architecture with Mediterranean Charm and Sunlit Landscapes",
-      "Expansive 17 Acres development with landscaped open spaces",
-      "Thoughtfully planned 3 BHK layouts designed for optimal ventilation & natural lighting",
-      "Project possession timeline: March 2030",
-      "Premium lifestyle amenities including Clubhouse, Swimming Pool, Gymnasium",
-      "Prime connectivity with proximity to Kempegowda International Airport (10 Mins)",
-      "RERA Approved Project: PRM/KA/RERA/1250/303/PR/010425/007644",
+    highlights: [
+      "Barcelona-inspired architectural design",
+      "Grand 1.5 Lakh Sq. Ft. Mediterranean-themed clubhouse",
+      "Clubhouse features India's largest gym & biggest WFH facility",
+      "Dedicated 10,000 Sq. Ft. co-working space and business centre",
+      "Unique cabanas & gazebos with charming grape wine walkway",
+      "Aqua park with tranquil lagoon and meandering pool",
+      "3,500 Sq. Ft. dedicated kids arena within clubhouse"
     ],
     summary:
       "A Barcelona-inspired residential enclave featuring premium 2 and 3 BHK apartments located in North Bengaluru's growth corridor near Devanahalli.",
@@ -955,7 +931,7 @@ export const godrejProjects = [
         name: "Kempegowda International Airport",
         destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
         coordinates: {"lat":13.1986,"lon":77.7066},
-        distance: "10 Mins",
+        distance: "7.5 km",
         icon: "fa-solid fa-plane",
       },
       {
@@ -963,7 +939,7 @@ export const godrejProjects = [
         name: "Delhi Public School",
         destination: "Delhi Public School Bangalore North, Bagalur, Bengaluru, Karnataka 562149",
         coordinates: {"lat":13.205,"lon":77.658},
-        distance: "Nearby",
+        distance: "10.5 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -971,7 +947,7 @@ export const godrejProjects = [
         name: "Reva University",
         destination: "REVA University, Kattigenahalli, Yelahanka, Bengaluru, Karnataka 560064",
         coordinates: {"lat":13.1155,"lon":77.636},
-        distance: "Nearby",
+        distance: "14.2 km",
         icon: "fa-solid fa-graduation-cap",
       },
       {
@@ -979,7 +955,7 @@ export const godrejProjects = [
         name: "Relive Hospital Bagalur",
         destination: "Relive Hospital, Bagalur, Bengaluru, Karnataka 562149",
         coordinates: {"lat":13.136,"lon":77.674},
-        distance: "Nearby",
+        distance: "21.0 km",
         icon: "fa-solid fa-hospital",
       },
       {
@@ -987,7 +963,7 @@ export const godrejProjects = [
         name: "IFCI Financial City",
         destination: "Hardware Park & Financial City, Bagalur, Bengaluru, Karnataka 562149",
         coordinates: {"lat":13.178,"lon":77.672},
-        distance: "Nearby",
+        distance: "9.6 km",
         icon: "fa-solid fa-building-columns",
       },
       {
@@ -995,7 +971,7 @@ export const godrejProjects = [
         name: "Prestige 13 North Mall",
         destination: "Prestige Mall, Bellary Road, Bengaluru, Karnataka 562157",
         coordinates: {"lat":13.155,"lon":77.64},
-        distance: "Nearby",
+        distance: "2.4 km",
         icon: "fa-solid fa-bag-shopping",
       }
     ],
@@ -1046,14 +1022,14 @@ export const godrejProjects = [
     highlight:
       "6.5+ Acres of Lush Central Greenery with Greenscape Skywalk & 32,500+ Sq. Ft. Clubhouse",
     reraId: "PRM/KA/RERA/1250/304/PR/090126/008393",
-        highlights: [
-      "6.5+ Acres of Lush Central Greenery with Greenscape Skywalk & 32,500+ Sq. Ft. Clubhouse",
-      "Expansive 13.5 Acres development with landscaped open spaces",
-      "Thoughtfully planned 2 BHK Luxe, 3 BHK, 4 BHK layouts designed for optimal ventilation & natural lighting",
-      "Project possession timeline: December 2030",
-      "Premium lifestyle amenities including Greenscape Skywalk, Grand Clubhouse, Swimming Pool",
-      "Prime connectivity with proximity to Old Madras Road (7 Mins)",
-      "RERA Approved Project: PRM/KA/RERA/1250/304/PR/090126/008393",
+    highlights: [
+      "Over 6.5 acres (26,305 sq. mt.) of expansive lush greenery",
+      "Unique greenscape skywalk for elevated nature views",
+      "Grand 32,500 sq. ft. clubhouse with premium luxury facilities",
+      "Largest dedicated co-working space in a residential project",
+      "On-site avian sanctuary and butterfly park for nature enthusiasts",
+      "Refreshing outdoor nature work pods for productivity",
+      "Modern paddle and pickleball courts for active residents"
     ],
     summary:
       "A large-scale nature-focused high-rise residential community offering 2 and 3 BHK apartments in the Whitefield-Hoskote corridor, East Bengaluru.",
@@ -1075,7 +1051,7 @@ export const godrejProjects = [
         name: "Old Madras Road",
         destination: "Old Madras Road (NH-75), Hoskote, Bengaluru, Karnataka 562114",
         coordinates: {"lat":13.058,"lon":77.785},
-        distance: "7 Mins",
+        distance: "7.8 km",
         icon: "fa-solid fa-road",
       },
       {
@@ -1083,7 +1059,7 @@ export const godrejProjects = [
         name: "Siliconcity Hospital",
         destination: "Siliconcity Hospital, Hoskote, Bengaluru, Karnataka 562114",
         coordinates: {"lat":13.068,"lon":77.792},
-        distance: "7 Mins",
+        distance: "3.2 km",
         icon: "fa-solid fa-hospital",
       },
       {
@@ -1091,7 +1067,7 @@ export const godrejProjects = [
         name: "Delhi Public School",
         destination: "Delhi Public School Whitefield, Hoskote Road, Bengaluru, Karnataka 562114",
         coordinates: {"lat":13.075,"lon":77.782},
-        distance: "8 Mins",
+        distance: "4.6 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -1099,7 +1075,7 @@ export const godrejProjects = [
         name: "MVJ Medical College & Research Hospital",
         destination: "MVJ Medical College and Research Hospital, Hoskote, Bengaluru, Karnataka 562114",
         coordinates: {"lat":13.072,"lon":77.804},
-        distance: "10 Mins",
+        distance: "6.7 km",
         icon: "fa-solid fa-hospital",
       },
       {
@@ -1107,7 +1083,7 @@ export const godrejProjects = [
         name: "Orion Uptown Mall",
         destination: "Orion Uptown Mall, Old Madras Road, Bengaluru, Karnataka 560049",
         coordinates: {"lat":13.046,"lon":77.751},
-        distance: "12 Mins",
+        distance: "4.5 km",
         icon: "fa-solid fa-cart-shopping",
       },
       {
@@ -1115,7 +1091,7 @@ export const godrejProjects = [
         name: "Hoskote Industrial Area",
         destination: "KIADB Hoskote Industrial Area, Bengaluru, Karnataka 562114",
         coordinates: {"lat":13.082,"lon":77.818},
-        distance: "16 Mins",
+        distance: "12.2 km",
         icon: "fa-solid fa-industry",
       },
       {
@@ -1123,7 +1099,7 @@ export const godrejProjects = [
         name: "Decathlon OMR",
         destination: "Decathlon Old Madras Road, Budigere Cross, Bengaluru, Karnataka 560049",
         coordinates: {"lat":13.042,"lon":77.748},
-        distance: "16 Mins",
+        distance: "6.6 km",
         icon: "fa-solid fa-bicycle",
       },
       {
@@ -1131,7 +1107,7 @@ export const godrejProjects = [
         name: "Whitefield Metro Station",
         destination: "Kadugodi Metro Station, Whitefield, Bengaluru, Karnataka 560067",
         coordinates: {"lat":12.998,"lon":77.7595},
-        distance: "22 Mins",
+        distance: "12.5 km",
         icon: "fa-solid fa-train-subway",
       },
       {
@@ -1139,7 +1115,7 @@ export const godrejProjects = [
         name: "ITPB / Whitefield Tech Corridor",
         destination: "International Tech Park Bangalore (ITPB), Whitefield, Bengaluru, Karnataka 560066",
         coordinates: {"lat":12.9875,"lon":77.738},
-        distance: "24 Mins",
+        distance: "13.0 km",
         icon: "fa-solid fa-laptop-code",
       }
     ],
@@ -1190,14 +1166,12 @@ export const godrejProjects = [
     highlight:
       "Forest-Themed Living with Lush Greens, Water Features and Grand Clubhouse",
     reraId: "PRM/KA/RERA/1251/472/PR/121125/008248",
-        highlights: [
-      "Forest-Themed Living with Lush Greens, Water Features and Grand Clubhouse",
-      "Expansive 6.8 Acres development with landscaped open spaces",
-      "Thoughtfully planned 2 BHK, 3 BHK, 3.5 BHK layouts designed for optimal ventilation & natural lighting",
-      "Project possession timeline: November 2030",
-      "Premium lifestyle amenities including Fully Equipped Clubhouse, Swimming Pool & Lap Pool, Gymnasium",
-      "Prime connectivity with proximity to REVA University (2 Mins)",
-      "RERA Approved Project: PRM/KA/RERA/1251/472/PR/121125/008248",
+    highlights: [
+      "Resort-style living with pool, cabanas & BBQ pavilion",
+      "Wellness-focused spaces — yoga deck, jogging & outdoor gym",
+      "Lush green escapes with hammock seating & wooded walkways",
+      "Community fun with pickleball, party deck & pet park",
+      "Thoughtfully designed play zones for kids of all ages"
     ],
     summary:
       "A forest-themed high-rise residential community featuring 2, 3, and 3.5 BHK apartments off Thanisandra Main Road in North Bengaluru.",
@@ -1218,7 +1192,7 @@ export const godrejProjects = [
         name: "REVA University",
         destination: "REVA University, Kattigenahalli, Yelahanka, Bengaluru, Karnataka 560064",
         coordinates: {"lat":13.1155,"lon":77.636},
-        distance: "2 Mins",
+        distance: "1.4 km",
         icon: "fa-solid fa-graduation-cap",
       },
       {
@@ -1226,7 +1200,7 @@ export const godrejProjects = [
         name: "Upcoming Metro Station",
         destination: "Thanisandra Metro Station, Bengaluru, Karnataka 560077",
         coordinates: {"lat":13.075,"lon":77.632},
-        distance: "10 Mins",
+        distance: "8.2 km",
         icon: "fa-solid fa-train-subway",
       },
       {
@@ -1234,7 +1208,7 @@ export const godrejProjects = [
         name: "Manyata Tech Park",
         destination: "Manyata Embassy Business Park, Outer Ring Road, Nagavara, Bengaluru, Karnataka 560045",
         coordinates: {"lat":13.0456,"lon":77.6212},
-        distance: "15 Mins",
+        distance: "9.5 km",
         icon: "fa-solid fa-laptop-code",
       },
       {
@@ -1242,7 +1216,7 @@ export const godrejProjects = [
         name: "Hebbal Flyover",
         destination: "Hebbal Flyover, Bellary Road, Bengaluru, Karnataka 560024",
         coordinates: {"lat":13.038,"lon":77.592},
-        distance: "15 Mins",
+        distance: "11.6 km",
         icon: "fa-solid fa-road",
       },
       {
@@ -1250,7 +1224,7 @@ export const godrejProjects = [
         name: "Yelahanka Railway Station",
         destination: "Yelahanka Junction Railway Station, Bengaluru, Karnataka 560064",
         coordinates: {"lat":13.101,"lon":77.596},
-        distance: "15 Mins",
+        distance: "5.9 km",
         icon: "fa-solid fa-train",
       },
       {
@@ -1258,7 +1232,7 @@ export const godrejProjects = [
         name: "Elements Mall",
         destination: "Elements Mall, Thanisandra Main Road, Nagavara, Bengaluru, Karnataka 560077",
         coordinates: {"lat":13.045,"lon":77.635},
-        distance: "12 Mins",
+        distance: "7.9 km",
         icon: "fa-solid fa-cart-shopping",
       },
       {
@@ -1266,7 +1240,7 @@ export const godrejProjects = [
         name: "Phoenix Mall of Asia",
         destination: "Phoenix Mall of Asia, Bellary Road, Byatarayanapura, Bengaluru, Karnataka 560092",
         coordinates: {"lat":13.0585,"lon":77.591},
-        distance: "15 Mins",
+        distance: "9.5 km",
         icon: "fa-solid fa-cart-shopping",
       },
       {
@@ -1274,7 +1248,7 @@ export const godrejProjects = [
         name: "Kempegowda International Airport",
         destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
         coordinates: {"lat":13.1986,"lon":77.7066},
-        distance: "30 Mins",
+        distance: "18.2 km",
         icon: "fa-solid fa-plane",
       }
     ],
@@ -1471,5 +1445,5 @@ export const builderConfig = {
   },
   properties: godrejProjects,
   faqs: godrejFaqs,
-  whatsappNumber: "",
+  whatsappNumber: "+919876543210",
 };

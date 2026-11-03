@@ -38,6 +38,7 @@
 </head>
   <body data-property-route-loading="true"
     data-builder="godrej"
+    data-whatsapp-number="+919876543210"
     class="bg-godrej-offwhite text-slate-800 font-sans antialiased custom-scrollbar"
   >
     <!-- MAIN NAVIGATION HEADER -->
@@ -104,15 +105,14 @@
             class="site-header-actions hidden shrink-0 items-center gap-2 sm:gap-3 lg:flex"
           >
             <a
-              href="tel:18001082020"
-              class="site-phone flex items-center gap-1.5 rounded-full bg-godrej-sage px-2 sm:px-3 py-2 text-[10px] sm:text-xs font-semibold text-godrej-emerald hover:bg-godrej-mint transition-colors"
-              aria-label="Call 1800 108 2020"
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-header-wa"
+              aria-label="Chat on WhatsApp"
             >
-              <i
-                class="fa-solid fa-phone text-godrej-gold"
-                aria-hidden="true"
-              ></i
-              ><span>1800 108 2020</span>
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span>Chat on WhatsApp</span>
             </a>
             <button
               onclick="scrollToConsultation()"
@@ -173,13 +173,16 @@
             >
           </nav>
           <div class="mobile-menu-actions mt-4 grid grid-cols-1 gap-2">
-            <a href="tel:18001082020" class="mobile-menu-action phone-action"
-              ><i
-                class="fa-solid fa-phone text-godrej-gold"
-                aria-hidden="true"
-              ></i>
-              1800 108 2020</a
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mobile-menu-action btn-header-wa"
+              aria-label="Chat on WhatsApp"
             >
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
             <button
               onclick="scrollToConsultation(); closeMobileMenu()"
               class="mobile-menu-action visit-action"
@@ -797,22 +800,14 @@
               class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full uppercase"
               >Featured Project</span
             >
-            <button
-              id="detail-rera-toggle"
-              type="button"
+            <span
+              id="detail-rera-badge"
               
-              aria-expanded="false"
-              aria-controls="detail-rera-value"
-              class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full inline-flex items-center gap-1.5 border border-godrej-mint hover:bg-godrej-mint transition-colors cursor-pointer"
+              class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full inline-flex items-center gap-1.5 border border-godrej-mint select-none"
             >
               <i class="fa-solid fa-circle-check text-godrej-emerald" aria-hidden="true"></i> RERA
               Verified
-            </button>
-            <span
-              id="detail-rera-value"
-              hidden
-              class="px-3 py-1 bg-white text-godrej-emerald font-semibold text-xs rounded-full border border-godrej-sage shadow-sm break-all font-sans"
-            >RERA ID: PRM/KA/RERA/1250/304/PR/150926/008942</span>
+            </span>
           </div>
           <h1
             id="detail-title"
@@ -828,22 +823,16 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-12">
           <!-- Large Main Image -->
           <div
-            class="lg:col-span-8 relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-[320px] sm:h-[450px]"
-            onclick="openLightbox(0)"
+            class="lg:col-span-8 relative overflow-hidden rounded-2xl shadow-lg h-[320px] sm:h-[450px]"
           >
             <img
               id="detail-img-0"
-              src=""
-              alt="Main Architecture"
+              src="https://media.justflip.in/builder-brand-pages/godrej-properties/godrej-florence/gallery/exterior-view.webp"
+              alt="Godrej Florenne architecture in Bengaluru"
               loading="lazy"
               decoding="async"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
             />
-            <div
-              class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-lg flex items-center gap-2"
-            >
-              <i class="fa-solid fa-expand"></i> Click for Fullscreen Gallery
-            </div>
           </div>
 
           <!-- 2 Side Images Grid -->
@@ -851,36 +840,28 @@
             class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 h-[320px] sm:h-[450px]"
           >
             <div
-              class="relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-full"
-              onclick="openLightbox(1)"
+              class="relative overflow-hidden rounded-2xl shadow-lg h-full"
             >
               <img
                 id="detail-img-1"
-                src=""
-                alt="Interior Design"
+                src="https://media.justflip.in/builder-brand-pages/godrej-properties/godrej-florence/gallery/interior-view.webp"
+                alt="Godrej Florenne interior in Bengaluru"
                 loading="lazy"
                 decoding="async"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
               />
-              <div
-                class="absolute inset-0 bg-godrej-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity"
-              ></div>
             </div>
             <div
-              class="relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-full"
-              onclick="openLightbox(2)"
+              class="relative overflow-hidden rounded-2xl shadow-lg h-full"
             >
               <img
                 id="detail-img-2"
-                src=""
-                alt="Project Amenities"
+                src="https://media.justflip.in/builder-brand-pages/godrej-properties/godrej-florence/gallery/amenites-view.webp"
+                alt="Godrej Florenne amenities in Bengaluru"
                 loading="lazy"
                 decoding="async"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
               />
-              <div
-                class="absolute inset-0 bg-godrej-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity"
-              ></div>
             </div>
           </div>
         </div>
@@ -962,7 +943,7 @@
                 id="detail-description"
                 class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 space-y-4"
               ><p class="overview-text">Godrej Florenne by Godrej Properties Limited offers ultra-premium 4 and 5 BHK row villas located off Soukya Road, Whitefield, Bengaluru. Designed by architect Hafeez Contractor, the community blends French Renaissance architectural elegance with open courtyards, private balconies, terrace spaces, and lifestyle amenities surrounded by Whitefield&#39;s major tech and school corridors. Buyers researching Godrej apartments Bangalore can explore Godrej Properties homes in Whitefield, Bengaluru, with project status, location, and configuration details available to compare.</p>
-                <p class="overview-text">Godrej Florenne is listed with 4 BHK Optima, 4 BHK Premia, 4 BHK Luxe and 5 BHK Luxe across 20 Acres, with new launch status and possession shown as September 2031. Listed floor plan options include 4 BHK Optima, 4 BHK Premia and 4 BHK Luxe. Residents can explore amenities such as Gymnasium, Kids Play Area, Landscape Padel and Landscape View Amphitheatre, with nearby destinations including Soukya Road (8 Mins), RKB Sanjeevini Hospital (8 Mins) and Shri Ram Global School (12 Mins). Review this Godrej Properties project&#39;s floor plans, amenities, and connectivity when comparing homes in Bengaluru. <span class="overview-rera"><strong>RERA Registration No.</strong> <span>PRM/KA/RERA/1250/304/PR/150926/008942</span></span></p></div>
+                <p class="overview-text">Godrej Florenne is listed with 4 BHK Optima, 4 BHK Premia, 4 BHK Luxe and 5 BHK Luxe across 20 Acres, with new launch status and possession shown as September 2031. Listed floor plan options include 4 BHK Optima, 4 BHK Premia and 4 BHK Luxe. Residents can explore amenities such as Gymnasium, Kids Play Area, Landscape Padel and Landscape View Amphitheatre, with nearby destinations including RKB Sanjeevini Hospital (3.0 km), Shri Ram Global School (4.3 km) and Whitefield Railway Station (6.6 km). Review this Godrej Properties project&#39;s floor plans, amenities, and connectivity when comparing homes in Bengaluru. <span class="overview-rera"><strong>RERA Registration No.</strong> <span>PRM/KA/RERA/1250/304/PR/150926/008942</span></span></p></div>
             </section>
 
             <!-- Project Highlights -->
@@ -979,32 +960,32 @@
               </h2>
               <div class="highlights-grid" id="dt-highlights">
                 <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Located 1.2 km from national highway 948</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Ksvk school is 4.1 km and icfai university is 6.8 km away</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Nexus mall is 9.4 km and aster hospital is 10.5 km away</span></div>
+                </div>
+                <div class="highlight-card">
                   <div class="highlight-icon-wrap"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">French Renaissance-Inspired Architecture with Private Outdoor Spaces and Courtyards</span></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Features a gym, tennis court, basketball court, and cricket pitch</span></div>
                 </div>
                 <div class="highlight-card">
                   <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">Expansive 20 Acres development with landscaped open spaces</span></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Includes a nature trail, pet park, and community garden</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Lifestyle zones including a dedicated pet park and amphitheater</span></div>
                 </div>
                 <div class="highlight-card">
                   <div class="highlight-icon-wrap"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">Thoughtfully planned 4 BHK Optima, 4 BHK Premia, 4 BHK Luxe, 5 BHK Luxe layouts designed for optimal ventilation &amp; natural lighting</span></div>
-                </div>
-                <div class="highlight-card">
-                  <div class="highlight-icon-wrap"><i class="fa-solid fa-key" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">Project possession timeline: September 2031</span></div>
-                </div>
-                <div class="highlight-card">
-                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">Premium lifestyle amenities including Gymnasium, Kids Play Area, Landscape Padel</span></div>
-                </div>
-                <div class="highlight-card">
-                  <div class="highlight-icon-wrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">Prime connectivity with proximity to Soukya Road (8 Mins)</span></div>
-                </div>
-                <div class="highlight-card">
-                  <div class="highlight-icon-wrap"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
-                  <div class="highlight-text-wrap"><span class="highlight-text">RERA Approved Project: PRM/KA/RERA/1250/304/PR/150926/008942</span></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Master suites featuring walk-in wardrobes and premium layouts</span></div>
                 </div>
               </div>
             </section>
@@ -1347,10 +1328,10 @@
                 <div class="connectivity-destinations">
                   <h3 class="font-serif font-bold text-base text-godrej-emerald mb-3">Nearby Destinations</h3>
                   <div class="location-matrix" id="dt-connectivity">
-                                <div class="loc-item"><i class="fa-solid fa-road" aria-hidden="true"></i><div><strong>Soukya Road:</strong> 8 Mins</div></div>
-                                <div class="loc-item"><i class="fa-solid fa-hospital" aria-hidden="true"></i><div><strong>RKB Sanjeevini Hospital:</strong> 8 Mins</div></div>
-                                <div class="loc-item"><i class="fa-solid fa-school" aria-hidden="true"></i><div><strong>Shri Ram Global School:</strong> 12 Mins</div></div>
-                                <div class="loc-item"><i class="fa-solid fa-warehouse" aria-hidden="true"></i><div><strong>Myntra Whitefield Warehouse:</strong> 12 Mins</div></div>
+                                <div class="loc-item"><i class="fa-solid fa-hospital" aria-hidden="true"></i><div><strong>RKB Sanjeevini Hospital:</strong> 3.0 km</div></div>
+                                <div class="loc-item"><i class="fa-solid fa-school" aria-hidden="true"></i><div><strong>Shri Ram Global School:</strong> 4.3 km</div></div>
+                                <div class="loc-item"><i class="fa-solid fa-train" aria-hidden="true"></i><div><strong>Whitefield Railway Station:</strong> 6.6 km</div></div>
+                                <div class="loc-item"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><div><strong>Hope Farm Junction:</strong> 6.3 km</div></div>
                             </div>
                 </div>
               </div>

@@ -220,6 +220,66 @@ a:focus-visible {
 .site-visit-button {
   min-width: 2.25rem;
 }
+
+/* Luxury WhatsApp Header Pill */
+.btn-header-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 30px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+  border: 1.5px solid #25D366;
+  background: #FFFFFF;
+  color: #0F5132 !important;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.12);
+}
+
+.btn-header-wa i {
+  font-size: 1.15rem;
+  color: #25D366;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.btn-header-wa:hover {
+  background: #25D366;
+  color: #FFFFFF !important;
+  border-color: #25D366;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+  transform: translateY(-1.5px);
+}
+
+.btn-header-wa:hover i {
+  color: #FFFFFF;
+  transform: scale(1.12);
+}
+
+.site-header .btn-header-wa {
+  border: 1.5px solid #25D366 !important;
+  background: #FFFFFF !important;
+  color: #0F5132 !important;
+}
+
+.site-header .btn-header-wa i {
+  color: #25D366 !important;
+}
+
+.site-header .btn-header-wa:hover {
+  background: #25D366 !important;
+  color: #FFFFFF !important;
+  border-color: #25D366 !important;
+}
+
+.site-header .btn-header-wa:hover i {
+  color: #FFFFFF !important;
+}
 .mobile-menu-toggle {
   flex: none;
   -webkit-tap-highlight-color: transparent;
@@ -282,6 +342,31 @@ a:focus-visible {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.mobile-menu-action.btn-header-wa {
+  min-height: 3.25rem;
+  background: #FFFFFF !important;
+  color: #0F5132 !important;
+  border: 1.5px solid #25D366 !important;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.12);
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.mobile-menu-action.btn-header-wa i {
+  font-size: 1.25rem;
+  color: #25D366 !important;
+}
+
+.mobile-menu-action.btn-header-wa:hover {
+  background: #25D366 !important;
+  color: #FFFFFF !important;
+}
+
+.mobile-menu-action.btn-header-wa:hover i {
+  color: #FFFFFF !important;
 }
 .mobile-menu-action:hover {
   filter: brightness(0.97);
@@ -374,6 +459,12 @@ a:focus-visible {
   }
   .site-phone {
     padding-inline: 0.75rem;
+  }
+  .btn-header-wa {
+    height: 36px;
+    padding: 0 14px;
+    font-size: 0.8rem;
+    gap: 6px;
   }
   .site-visit-button {
     padding-inline: 0.875rem;
@@ -1033,9 +1124,8 @@ a:focus-visible {
   min-height: 2.5rem;
   white-space: nowrap;
 }
-#detail-rera-toggle[hidden],
-#detail-rera-value[hidden] {
-  display: none;
+#detail-rera-badge[hidden] {
+  display: none !important;
 }
 
 #floor-plan-image-panel {
@@ -1327,20 +1417,11 @@ body {
   color: var(--theme-primary-accent-hover) !important;
 }
 
-#detail-tag,
-#detail-rera-toggle {
+#detail-tag {
   border: var(--theme-card-border) !important;
   border-radius: var(--theme-card-radius) !important;
-}
-
-#detail-tag {
   color: var(--theme-hero-badge-text) !important;
   background-color: var(--theme-hero-badge-bg) !important;
-}
-
-#detail-rera-toggle {
-  color: var(--theme-btn-text) !important;
-  background-color: var(--theme-primary-accent) !important;
 }
 
 #detail-specifications {
@@ -1418,8 +1499,7 @@ body {
 .site-header .site-visit-button,
 .site-header .mobile-menu-action.visit-action,
 .hero-banner button[type="submit"],
-.builder-primary-button,
-#detail-rera-toggle {
+.builder-primary-button {
   color: var(--theme-btn-text) !important;
   background-color: var(--theme-primary-accent) !important;
 }
@@ -1517,7 +1597,7 @@ footer a:hover {
 }
 
 /* PROPERTY OVERVIEW & RERA BADGES - GODREJ LUXURY THEME */
-#detail-rera-toggle {
+#detail-rera-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -1530,35 +1610,15 @@ footer a:hover {
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.03em !important;
-  transition: all 0.2s ease !important;
-  cursor: pointer;
+  user-select: none;
+  cursor: default;
 }
 
-#detail-rera-toggle:hover {
-  background-color: #d8e8de !important;
-  border-color: #d4af37 !important;
-}
-
-#detail-rera-toggle i {
+#detail-rera-badge i {
   color: #0f382c !important;
 }
 
-#detail-rera-value {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background-color: #ffffff;
-  color: #0f382c;
-  border: 1px solid #c8ded3;
-  border-radius: 9999px;
-  padding: 3px 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  box-shadow: 0 1px 3px rgba(15, 56, 44, 0.06);
-}
-
-#detail-rera-value[hidden] {
+#detail-rera-badge[hidden] {
   display: none !important;
 }
 

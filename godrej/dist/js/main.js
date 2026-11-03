@@ -977,13 +977,9 @@ function openDetailPage(id, { updateUrl = true } = {}) {
       return element;
     }),
   );
-  const reraToggle = document.getElementById("detail-rera-toggle");
-  const reraValue = document.getElementById("detail-rera-value");
+  const reraBadge = document.getElementById("detail-rera-badge");
   const hasReraId = Boolean(prop.reraId?.trim());
-  reraToggle.hidden = !hasReraId;
-  reraToggle.setAttribute("aria-expanded", "false");
-  reraValue.hidden = true;
-  reraValue.textContent = hasReraId ? `RERA ID: ${prop.reraId}` : "";
+  if (reraBadge) reraBadge.hidden = !hasReraId;
   renderProjectHighlights(prop.highlights || []);
   renderProjectGallery(prop);
   renderPropertyFeatures(prop);
@@ -1597,14 +1593,6 @@ if ("ResizeObserver" in window) {
 } else {
   window.addEventListener("resize", updatePropertyCarousel);
 }
-
-const detailReraToggle = document.getElementById("detail-rera-toggle");
-const detailReraValue = document.getElementById("detail-rera-value");
-detailReraToggle.addEventListener("click", () => {
-  const shouldShow = detailReraValue.hidden;
-  detailReraValue.hidden = !shouldShow;
-  detailReraToggle.setAttribute("aria-expanded", String(shouldShow));
-});
 
 document
   .getElementById("sidebar-bhk-select")

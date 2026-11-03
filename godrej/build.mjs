@@ -320,9 +320,27 @@ function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOri
     html = replaceElement(html, "detail-description", overviewHtml);
 
     if (property.reraId?.trim()) {
-      html = html.replace(/(<button\b[^>]*\bid="detail-rera-toggle"[^>]*?)\bhidden\b/i, "$1");
-      html = replaceElement(html, "detail-rera-value", escapeHtml(`RERA ID: ${property.reraId.trim()}`));
+      html = html.replace(/(<span\b[^>]*\bid="detail-rera-badge"[^>]*?)\bhidden\b/i, "$1");
     }
+
+    const propertyImages = Array.isArray(property.images)
+      ? property.images
+      : property.image
+        ? [property.image]
+        : [];
+    [0, 1, 2].forEach((index) => {
+      if (propertyImages[index]) {
+        const alt = `${property.title || property.name} ${["architecture", "interior", "amenities"][index]} in Bengaluru`;
+        html = html.replace(
+          new RegExp(`(<img\\s+id="detail-img-${index}"[^>]*src=")[^"]*("[^>]*>)`, "i"),
+          `$1${escapeHtml(propertyImages[index])}$2`,
+        );
+        html = html.replace(
+          new RegExp(`(<img\\s+id="detail-img-${index}"[^>]*alt=")[^"]*(")`, "i"),
+          `$1${escapeHtml(alt)}$2`,
+        );
+      }
+    });
 
     const highlights = property.highlights || [];
     if (highlights.length > 0) {
