@@ -9,6 +9,9 @@ export const abheeventuresData = [
     title: "Abhee Codename New Dimension",
     location:
       "Gunjur, Varthur - Sarjapur Road, Off Whitefield, Bengaluru, Karnataka 560087",
+    coordinates: { lat: 12.915, lon: 77.728 },
+    mapsQuery: "Abhee Codename New Dimension, Gunjur, Bengaluru",
+    shortAddress: "Varthur - Sarjapur Road, Bengaluru",
     category: "new-launch",
     type: "apartment",
     priceValue: 1.19,
@@ -116,6 +119,9 @@ export const abheeventuresData = [
     title: "Abhee Celestial City",
     location:
       "Gunjur, Varthur - Sarjapur Road, Off Whitefield, Bengaluru, Karnataka 560087",
+    coordinates: { lat: 12.918, lon: 77.731 },
+    mapsQuery: "Abhee Celestial City, Gunjur, Bengaluru",
+    shortAddress: "Gunjur, Off Whitefield, Bengaluru",
     category: "ongoing",
     type: "apartment",
     priceValue: 1.55,
@@ -207,6 +213,9 @@ export const abheeventuresData = [
     title: "Abhee Aaria",
     location:
       "Varthuru, Dommasandra Main Road, Mavinkere, Opposite Gunjur Lake, Gunjur, Bengaluru, Karnataka 560087",
+    coordinates: { lat: 12.912, lon: 77.725 },
+    mapsQuery: "Abhee Aaria, Gunjur Lake, Bengaluru",
+    shortAddress: "Opp. Gunjur Lake, Bengaluru",
     category: "ongoing",
     type: "apartment",
     priceValue: 1.9,
@@ -298,6 +307,9 @@ export const abheeventuresData = [
     title: "Abhee Serenity Springs",
     location:
       "Kachanayakanahalli, Near Narayana Health City, Bommasandra, Hosur Road, Bengaluru, Karnataka 560099",
+    coordinates: { lat: 12.818, lon: 77.689 },
+    mapsQuery: "Abhee Serenity Springs, Bommasandra, Bengaluru",
+    shortAddress: "Bommasandra, Hosur Road, Bengaluru",
     category: "ongoing",
     type: "apartment",
     priceValue: 1.12,
@@ -385,6 +397,9 @@ export const abheeventuresData = [
     title: "Abhee Silicon Shine",
     location:
       "Sy. No. 34, Mullur Village, Opposite Wipro SEZ, Sarjapur Main Road, Bengaluru, Karnataka 560087",
+    coordinates: { lat: 12.908, lon: 77.702 },
+    mapsQuery: "Abhee Silicon Shine, Sarjapur Main Road, Bengaluru",
+    shortAddress: "Opp. Wipro SEZ, Sarjapur Road, Bengaluru",
     category: "ongoing",
     type: "apartment",
     priceValue: 1.09,
@@ -489,6 +504,9 @@ export const abheeventuresData = [
     title: "Abhee Tranquila",
     location:
       "Bidraguppe, Sarjapur - Attibele Road, Bengaluru, Karnataka 562107",
+    coordinates: { lat: 12.842, lon: 77.778 },
+    mapsQuery: "Abhee Tranquila, Sarjapur - Attibele Road, Bengaluru",
+    shortAddress: "Sarjapur - Attibele Road, Bengaluru",
     category: "ongoing",
     type: "plot",
     priceValue: 0.91,
@@ -625,6 +643,108 @@ export const abheeventuresFaqs = [
   },
 ];
 
+function formatOverviewList(items = []) {
+  if (items.length === 0) return "";
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
+}
+
+export function createPropertyOverview(property) {
+  const floorPlans = formatOverviewList(
+    (property.floorPlans || []).map(({ bhk, area }) =>
+      area ? `${bhk} (${area})` : bhk,
+    ),
+  );
+  const allBhks = [
+    ...new Set((property.floorPlans || []).map(({ bhk }) => bhk)),
+  ].join(", ");
+  const searchTerm = `${property.title || property.name} Bengaluru`;
+  const amenities = formatOverviewList(
+    (property.amenities || []).slice(0, 4).map(({ name }) => name),
+  );
+  const nearbyPlaces = formatOverviewList(
+    (property.connectivity || [])
+      .slice(0, 3)
+      .map(({ name, distance }) => `${name} (${distance})`),
+  );
+  const shortAddress =
+    property.shortAddress ||
+    (property.location
+      ? property.location.split(",").slice(0, 2).join(",").trim()
+      : "Bengaluru");
+  const statusText =
+    property.category === "new-launch"
+      ? "New Launch"
+      : property.category === "ready"
+        ? "Ready to Move"
+        : "Ongoing";
+  const bhkSummary = allBhks || property.bhk || "luxury residences";
+
+  return [
+    `${property.description} Buyers researching ${searchTerm} can explore Abhee Ventures homes in ${shortAddress}, with project status, location, and configuration details available to compare.`,
+    `${property.title} is listed with ${bhkSummary} across ${property.area}, with ${statusText.toLowerCase()} status and possession shown as ${property.possession}. Listed floor plan options include ${floorPlans || bhkSummary}. Residents can explore amenities such as ${amenities || "the community's listed lifestyle facilities"}, with nearby destinations including ${nearbyPlaces || shortAddress}. Review this Abhee Ventures project's floor plans, amenities, and connectivity when comparing homes in Bengaluru.${property.reraId ? ` RERA registration number: ${property.reraId.replace(/\.$/, "")}.` : ""}`,
+  ];
+}
+
+export function createPropertyHighlights(property) {
+  const list = [];
+  if (property.highlight) {
+    list.push(property.highlight);
+  }
+  if (property.area) {
+    list.push(`Expansive ${property.area} development with landscaped open spaces`);
+  }
+  const bhkList = Array.isArray(property.floorPlans) && property.floorPlans.length > 0
+    ? [...new Set(property.floorPlans.map((fp) => fp.bhk))].join(", ")
+    : property.type ? `${property.type} residences` : "";
+  if (bhkList) {
+    list.push(`Thoughtfully planned ${bhkList} layouts designed for optimal ventilation & natural lighting`);
+  }
+  if (property.possession) {
+    list.push(`Project possession timeline: ${property.possession}`);
+  }
+  if (Array.isArray(property.amenities) && property.amenities.length > 0) {
+    const topAmenities = property.amenities.slice(0, 3).map((a) => a.name).join(", ");
+    list.push(`Premium lifestyle amenities including ${topAmenities}`);
+  }
+  if (Array.isArray(property.connectivity) && property.connectivity.length > 0) {
+    const topPlace = property.connectivity[0];
+    const placeName = topPlace.name || topPlace.label;
+    if (placeName) {
+      list.push(`Prime connectivity with proximity to ${placeName} (${topPlace.distance})`);
+    }
+  }
+  if (property.reraId) {
+    list.push(`RERA Approved Project: ${property.reraId.replace(/\.$/, "")}`);
+  }
+  return list;
+}
+
+const shortAddressMap = {
+  "abhee-codename-new-dimension": "Varthur - Sarjapur Road, Bengaluru",
+  "abhee-celestial-city": "Gunjur, Off Whitefield, Bengaluru",
+  "abhee-aaria": "Opp. Gunjur Lake, Bengaluru",
+  "abhee-serenity-springs": "Bommasandra, Hosur Road, Bengaluru",
+  "abhee-silicon-shine": "Opp. Wipro SEZ, Sarjapur Road, Bengaluru",
+  "abhee-tranquila": "Sarjapur - Attibele Road, Bengaluru",
+};
+
+abheeventuresData.forEach((property) => {
+  property.name = property.name || property.title;
+  property.shortAddress = property.shortAddress || shortAddressMap[property.id] || (
+    property.location ? property.location.split(",").slice(0, 2).join(", ").trim() : "Bengaluru"
+  );
+  const allBhks = [...new Set((property.floorPlans || []).map(({ bhk }) => bhk))].join(", ");
+  property.bhk = property.bhk || allBhks;
+  property.statusText = property.statusText || (
+    property.category === "new-launch" ? "New Launch" :
+    property.category === "ready" ? "Ready to Move" : "Under Construction"
+  );
+  property.overview = property.overview || createPropertyOverview(property);
+  property.highlights = property.highlights || createPropertyHighlights(property);
+});
+
 export const builderConfig = {
   slug: "abhee-ventures",
   name: "Abhee Ventures",
@@ -639,5 +759,8 @@ export const builderConfig = {
   },
   properties: abheeventuresData,
   faqs: abheeventuresFaqs,
-  whatsappNumber: "",
+  whatsappNumber: "+919876543210",
 };
+
+export const abheeVenturesData = abheeventuresData;
+export const abheeVenturesProjects = abheeventuresData;
