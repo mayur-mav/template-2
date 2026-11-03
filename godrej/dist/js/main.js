@@ -1008,6 +1008,7 @@ function openDetailPage(id, { updateUrl = true } = {}) {
   document.getElementById("details-page").classList.remove("hidden");
   document.getElementById("site-footer").classList.add("hidden");
   document.body.removeAttribute("data-property-route-loading");
+  syncDetailSubnavTabs();
   if (connectivityPreviewMap) initializeConnectivityPreview(prop);
   else if (!connectivityPreviewObserver) initializeConnectivityPreview(prop);
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1016,6 +1017,7 @@ function openDetailPage(id, { updateUrl = true } = {}) {
 function showCatalogPage({ updateUrl = true } = {}) {
   if (updateUrl && getBuilderRoute()) setBuilderRoute("", { replace: true });
   document.getElementById("details-page").classList.add("hidden");
+  document.getElementById("detailSubnavBar")?.classList.remove("is-visible");
   document.getElementById("catalog-page").classList.remove("hidden");
   document.getElementById("site-footer").classList.remove("hidden");
   document.body.removeAttribute("data-property-route-loading");
@@ -2384,6 +2386,300 @@ function closeConnectivityMap({ updateUrl = true, restoreFocus = true } = {}) {
     document.getElementById("connectivity-map-open")?.focus();
 }
 
+// DETAIL SUB-NAVIGATION TABS & SCROLLSPY
+let isProgrammaticScroll = false;
+let programmaticScrollTimer = null;
+let subnavRafId = null;
+
+function syncHeaderMetrics() {
+  const header =
+    document.querySelector(".site-header") || document.querySelector("header");
+  if (header) {
+    document.documentElement.style.setProperty(
+      "--header-height",
+      `${header.offsetHeight}px`,
+    );
+  }
+  const logoText =
+    document.querySelector(".site-logo .site-logo-text") ||
+    document.querySelector(".site-logo span.min-w-0") ||
+    document.querySelector(".site-logo span span:first-child");
+  const logoMark = document.querySelector(".site-logo-mark");
+  if (logoText) {
+    const textRect = logoText.getBoundingClientRect();
+    if (textRect.left > 0) {
+      document.documentElement.style.setProperty(
+        "--subnav-left-offset",
+        `${Math.round(textRect.left)}px`,
+      );
+    }
+  }
+  if (logoMark) {
+    const markRect = logoMark.getBoundingClientRect();
+    if (markRect.left >= 0) {
+      document.documentElement.style.setProperty(
+        "--subnav-logo-mark-left",
+        `${Math.round(markRect.left)}px`,
+      );
+    }
+  }
+}
+
+function initDetailSubnav() {
+  const subnavBar = document.getElementById("detailSubnavBar");
+  const subnavTrack = document.getElementById("subnavTrack");
+  const subnavArrowLeft = document.getElementById("subnavArrowLeft");
+  const subnavArrowRight = document.getElementById("subnavArrowRight");
+
+  if (!subnavBar || !subnavTrack) return;
+
+  syncHeaderMetrics();
+  window.addEventListener("resize", syncHeaderMetrics, { passive: true });
+
+  // Click handler for subnav tabs
+  subnavTrack.addEventListener("click", (event) => {
+    const tab = event.target.closest(".subnav-tab");
+    if (!tab) return;
+    const targetId = tab.dataset.target;
+    if (!targetId) return;
+    const targetSection = document.getElementById(targetId);
+    if (!targetSection || targetSection.hidden) return;
+
+    event.preventDefault();
+
+    // Lock scrollspy during programmatic smooth scroll
+    isProgrammaticScroll = true;
+    clearTimeout(programmaticScrollTimer);
+    programmaticScrollTimer = setTimeout(() => {
+      isProgrammaticScroll = false;
+    }, 850);
+
+    // Update active tab UI immediately
+    setActiveSubnavTab(tab);
+
+    // Smooth scroll to target section
+    targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // Keyboard navigation (ArrowLeft / ArrowRight) for tabs
+  subnavTrack.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+    const visibleTabs = [
+      ...subnavTrack.querySelectorAll(".subnav-tab:not([hidden])"),
+    ];
+    const currentIndex = visibleTabs.indexOf(document.activeElement);
+    if (currentIndex < 0) return;
+    event.preventDefault();
+    const nextIndex =
+      event.key === "ArrowRight"
+        ? (currentIndex + 1) % visibleTabs.length
+        : (currentIndex - 1 + visibleTabs.length) % visibleTabs.length;
+    visibleTabs[nextIndex].focus();
+    visibleTabs[nextIndex].click();
+  });
+
+  // Arrow navigation buttons
+  subnavArrowLeft?.addEventListener("click", () => {
+    subnavTrack.scrollBy({ left: -220, behavior: "smooth" });
+  });
+
+  subnavArrowRight?.addEventListener("click", () => {
+    subnavTrack.scrollBy({ left: 220, behavior: "smooth" });
+  });
+
+  // Update arrows on track scroll
+  subnavTrack.addEventListener("scroll", updateSubnavArrows, { passive: true });
+
+  // Window scroll handler for visibility & scrollspy
+  window.addEventListener("scroll", onWindowScrollForSubnav, { passive: true });
+  window.addEventListener("resize", onWindowResizeForSubnav, { passive: true });
+
+  // Initial arrow state
+  updateSubnavArrows();
+}
+
+function updateSubnavArrows() {
+  const track = document.getElementById("subnavTrack");
+  const leftBtn = document.getElementById("subnavArrowLeft");
+  const rightBtn = document.getElementById("subnavArrowRight");
+  if (!track || !leftBtn || !rightBtn) return;
+
+  const maxScroll = track.scrollWidth - track.clientWidth;
+  const hasOverflow = maxScroll > 8;
+
+  if (!hasOverflow) {
+    leftBtn.style.display = "none";
+    rightBtn.style.display = "none";
+    leftBtn.disabled = true;
+    rightBtn.disabled = true;
+    return;
+  }
+
+  const currentScroll = track.scrollLeft;
+  const canScrollLeft = currentScroll > 8;
+  const canScrollRight = currentScroll < maxScroll - 8;
+
+  leftBtn.style.display = canScrollLeft ? "inline-flex" : "none";
+  leftBtn.disabled = !canScrollLeft;
+
+  rightBtn.style.display = canScrollRight ? "inline-flex" : "none";
+  rightBtn.disabled = !canScrollRight;
+}
+
+function setActiveSubnavTab(targetTab) {
+  if (!targetTab) return;
+  const track = document.getElementById("subnavTrack");
+  if (!track) return;
+
+  const allTabs = track.querySelectorAll(".subnav-tab");
+  allTabs.forEach((tab) => {
+    const isActive = tab === targetTab;
+    tab.classList.toggle("active", isActive);
+    tab.setAttribute("aria-selected", isActive ? "true" : "false");
+    tab.setAttribute("tabindex", isActive ? "0" : "-1");
+  });
+
+  // Auto-scroll track to keep active tab centered
+  targetTab.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest",
+    inline: "center",
+  });
+  updateSubnavArrows();
+}
+
+function onWindowScrollForSubnav() {
+  if (subnavRafId) return;
+  subnavRafId = requestAnimationFrame(() => {
+    subnavRafId = null;
+    handleSubnavScrollspy();
+  });
+}
+
+function onWindowResizeForSubnav() {
+  updateSubnavArrows();
+  onWindowScrollForSubnav();
+}
+
+function handleSubnavScrollspy() {
+  const detailView = document.getElementById("details-page");
+  const subnavBar = document.getElementById("detailSubnavBar");
+  if (!detailView || !subnavBar) return;
+
+  // Check if property detail view is currently visible
+  if (
+    detailView.classList.contains("hidden") ||
+    detailView.style.display === "none" ||
+    detailView.offsetParent === null
+  ) {
+    subnavBar.classList.remove("is-visible");
+    return;
+  }
+
+  // Visibility toggle: reveal only when scrolled down past hero (threshold: 260px)
+  const revealThreshold = 260;
+  const isPastHero = window.scrollY > revealThreshold;
+  subnavBar.classList.toggle("is-visible", isPastHero);
+
+  if (!isPastHero) {
+    // Reset to first tab when at the top
+    const firstTab = document.querySelector(
+      '.subnav-tab[data-target="dt-overview-section"]',
+    );
+    if (firstTab && !firstTab.classList.contains("active")) {
+      setActiveSubnavTab(firstTab);
+    }
+    return;
+  }
+
+  if (isProgrammaticScroll) return;
+
+  // Scrollspy section detection
+  const sectionTargets = [
+    "dt-overview-section",
+    "dt-project-highlights",
+    "dt-project-gallery",
+    "dt-floorplans-section",
+    "dt-emi-calculator",
+    "dt-amenities-section",
+    "dt-connectivity-section",
+    "dt-project-comparison",
+  ];
+
+  const isNearBottom =
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 60;
+
+  const visibleSections = sectionTargets
+    .map((id) => document.getElementById(id))
+    .filter((el) => el && !el.hidden && el.offsetParent !== null);
+
+  if (!visibleSections.length) return;
+
+  let currentSection = null;
+
+  if (isNearBottom) {
+    currentSection = visibleSections[visibleSections.length - 1];
+  } else {
+    const triggerLine = (window.innerWidth <= 768 ? 120 : 140) + 40;
+    for (let i = 0; i < visibleSections.length; i++) {
+      const rect = visibleSections[i].getBoundingClientRect();
+      if (rect.top <= triggerLine) {
+        currentSection = visibleSections[i];
+      } else {
+        break;
+      }
+    }
+    if (!currentSection) currentSection = visibleSections[0];
+  }
+
+  if (currentSection) {
+    const matchingTab = document.querySelector(
+      `.subnav-tab[data-target="${currentSection.id}"]`,
+    );
+    if (matchingTab && !matchingTab.classList.contains("active")) {
+      setActiveSubnavTab(matchingTab);
+    }
+  }
+}
+
+function syncDetailSubnavTabs() {
+  syncHeaderMetrics();
+  const subnavBar = document.getElementById("detailSubnavBar");
+  const track = document.getElementById("subnavTrack");
+  if (!subnavBar || !track) return;
+
+  const hlSection = document.getElementById("dt-project-highlights");
+  const gallerySection = document.getElementById("dt-project-gallery");
+  const fpSection = document.getElementById("dt-floorplans-section");
+  const amenitiesSection = document.getElementById("dt-amenities-section");
+  const connSection = document.getElementById("dt-connectivity-section");
+  const compSection = document.getElementById("dt-project-comparison");
+
+  const hlTab = document.getElementById("subnav-tab-highlights");
+  const galleryTab = document.getElementById("subnav-tab-gallery");
+  const fpTab = document.getElementById("subnav-tab-floorplans");
+  const amenitiesTab = document.getElementById("subnav-tab-amenities");
+  const connTab = document.getElementById("subnav-tab-connectivity");
+  const compTab = document.getElementById("subnav-tab-comparison");
+
+  if (hlTab) hlTab.hidden = !hlSection || hlSection.hidden || hlSection.offsetParent === null;
+  if (galleryTab) galleryTab.hidden = !gallerySection || gallerySection.hidden || gallerySection.offsetParent === null;
+  if (fpTab) fpTab.hidden = !fpSection || fpSection.hidden || fpSection.offsetParent === null;
+  if (amenitiesTab) amenitiesTab.hidden = !amenitiesSection || amenitiesSection.hidden || amenitiesSection.offsetParent === null;
+  if (connTab) connTab.hidden = !connSection || connSection.hidden || connSection.offsetParent === null;
+  if (compTab) compTab.hidden = !compSection || compSection.hidden || compSection.offsetParent === null;
+
+  // Reset to first visible tab if no active tab or active tab is hidden
+  const currentActive = track.querySelector(".subnav-tab.active:not([hidden])");
+  if (!currentActive) {
+    const firstTab = track.querySelector(".subnav-tab:not([hidden])");
+    if (firstTab) setActiveSubnavTab(firstTab);
+  }
+
+  updateSubnavArrows();
+}
+
 // Keep inline HTML handlers available when this file runs as an ES module.
 Object.assign(window, {
   applyFilters,
@@ -2393,6 +2689,7 @@ Object.assign(window, {
   filterByChip,
   handleMainFormSubmit,
   handleSidebarSubmit,
+  initDetailSubnav,
   openConnectivityMap,
   openDetailPage,
   renderProjectComparison,
@@ -2403,6 +2700,7 @@ Object.assign(window, {
   scrollToConsultation,
   selectFloorPlan,
   showCatalogPage,
+  syncDetailSubnavTabs,
   toggleFaq,
 });
 // INITIALIZE AFTER THE SHARED PAGE MARKUP IS AVAILABLE.
@@ -2431,6 +2729,8 @@ function initializeBuilderPage() {
   if (footerRegions && activeBuilderData.regions)
     footerRegions.textContent = activeBuilderData.regions;
   initEmiCalculator();
+  initDetailSubnav();
+  syncDetailSubnavTabs();
   document.getElementById("dt-project-comparison")?.addEventListener("click", (event) => {
     const enquiryButton = event.target.closest("[data-enquiry-project]");
     if (enquiryButton) {

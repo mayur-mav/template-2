@@ -58,7 +58,7 @@
               class="site-logo-mark flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-godrej-emerald text-godrej-gold font-serif font-bold text-lg sm:text-xl shadow-md"
               >G</span
             >
-            <span class="min-w-0">
+            <span class="site-logo-text min-w-0">
               <span
                 class="block text-base sm:text-xl font-bold tracking-tight text-godrej-emerald font-serif"
                 >GODREJ</span
@@ -754,6 +754,28 @@
       id="details-page"
       class="hidden bg-white min-h-screen text-slate-800 pt-6 pb-20"
     >
+      <!-- Sticky Sub-Navigation Tabs Bar for Project Details -->
+      <nav class="detail-subnav-bar" id="detailSubnavBar" aria-label="Project sections navigation">
+        <div class="subnav-container">
+          <button type="button" class="subnav-arrow subnav-arrow-left" id="subnavArrowLeft" aria-label="Scroll tabs left">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="subnav-track" id="subnavTrack" role="tablist">
+            <button type="button" class="subnav-tab active" role="tab" id="subnav-tab-overview" data-target="dt-overview-section" aria-selected="true" tabindex="0">About the Project</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-highlights" data-target="dt-project-highlights" aria-selected="false" tabindex="-1">Highlights</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-gallery" data-target="dt-project-gallery" aria-selected="false" tabindex="-1">Project Gallery</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-floorplans" data-target="dt-floorplans-section" aria-selected="false" tabindex="-1">Floor Plans</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-emi" data-target="dt-emi-calculator" aria-selected="false" tabindex="-1">Financial Estimator</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-amenities" data-target="dt-amenities-section" aria-selected="false" tabindex="-1">Amenities &amp; Specifications</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-connectivity" data-target="dt-connectivity-section" aria-selected="false" tabindex="-1">Location &amp; Connectivity</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-comparison" data-target="dt-project-comparison" aria-selected="false" tabindex="-1">Compare Projects</button>
+          </div>
+          <button type="button" class="subnav-arrow subnav-arrow-right" id="subnavArrowRight" aria-label="Scroll tabs right">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </nav>
+
       <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
         <!-- Back Button Navigation -->
         <div
@@ -927,7 +949,10 @@
           <!-- Left Column Details -->
           <div class="lg:col-span-8 space-y-12">
             <!-- Architectural Overview -->
-<div>
+            <section
+              id="dt-overview-section"
+              class="detail-section-block"
+            >
               <h2
                 class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
               >
@@ -938,7 +963,7 @@
                 class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 space-y-4"
               ><p class="overview-text">Godrej Woods by Godrej Properties Limited brings a forest-inspired living experience to Thanisandra Main Road, North Bengaluru. Spread across 6.8 acres, the project offers lush green surroundings, a fully equipped clubhouse, swimming pool, yoga decks, and smooth connectivity to Manyata Tech Park, Hebbal, and Kempegowda International Airport. Buyers researching Godrej apartments in Bangalore can explore Godrej Properties homes in Thanisandra Main Road, Bengaluru, with project status, location, and configuration details available to compare.</p>
                 <p class="overview-text">Godrej Woods is listed with 2 BHK, 3 BHK and 3.5 BHK across 6.8 Acres, with ongoing status and possession shown as November 2030. Listed floor plan options include 2 BHK, 3 BHK and 3.5 BHK. Residents can explore amenities such as Fully Equipped Clubhouse, Swimming Pool &amp; Lap Pool, Gymnasium and Yoga Deck, with nearby destinations including REVA University (2 Mins), Upcoming Metro Station (10 Mins) and Manyata Tech Park (15 Mins). Review this Godrej Properties project&#39;s floor plans, amenities, and connectivity when comparing homes in Bengaluru. <span class="overview-rera"><strong>RERA Registration No.</strong> <span>PRM/KA/RERA/1251/472/PR/121125/008248</span></span></p></div>
-            </div>
+            </section>
 
             <!-- Project Highlights -->
             <section
@@ -1025,7 +1050,8 @@
 
             <!-- Interactive Floor Plan Selector -->
             <div
-              class="bg-white border border-godrej-sage rounded-2xl p-6 shadow-sm"
+              id="dt-floorplans-section"
+              class="floorplan-container detail-section-block bg-white border border-godrej-sage rounded-2xl p-6 shadow-sm"
             >
               <div
                 class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4"
@@ -1287,7 +1313,10 @@
             </section>
 
             <!-- Dynamic Project Amenities -->
-            <section>
+            <section
+              id="dt-amenities-section"
+              class="detail-section-block"
+            >
               <h2 class="font-serif text-2xl font-bold text-godrej-emerald mb-6">
                 Project Amenities
               </h2>

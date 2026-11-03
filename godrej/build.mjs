@@ -331,6 +331,7 @@ function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOri
       html = html.replace(/(<section\b[^>]*\bid="dt-project-highlights"[^>]*?)\bhidden\b/i, "$1");
     } else {
       html = replaceElement(html, "dt-highlights", "");
+      html = html.replace('id="subnav-tab-highlights"', 'id="subnav-tab-highlights" hidden');
     }
 
     const galleryPhotos = (property.images || []).map((src, index) => ({
@@ -349,6 +350,8 @@ function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOri
       html = html.replace(/id="projectGalleryPreviewImage"\s+src=""\s+alt=""/i, `id="projectGalleryPreviewImage" src="${escapeHtml(previewImg)}" alt="${escapeHtml(previewAlt)}"`);
       const countText = `${allGalleryImages.length} ${allGalleryImages.length === 1 ? "image" : "images"} · Project photos and floor plans`;
       html = replaceElement(html, "projectGalleryImageCount", escapeHtml(countText));
+    } else {
+      html = html.replace('id="subnav-tab-gallery"', 'id="subnav-tab-gallery" hidden');
     }
 
     const parsedPrice = parseIndianPrice(property.price) || 14900000;
@@ -401,6 +404,7 @@ function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOri
         /(<section\b[^>]*\bid="dt-connectivity-section"[^>]*?)(>)/i,
         "$1 hidden$2",
       );
+      html = html.replace('id="subnav-tab-connectivity"', 'id="subnav-tab-connectivity" hidden');
     }
 
     const similar = getSimilarProjects(property, properties);
@@ -413,6 +417,7 @@ function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOri
       html = replaceElement(html, "dt-project-comparison-grid", `\n    ${comparisonHtml}\n              `);
     } else {
       html = html.replace(/(<section\b[^>]*\bid="dt-project-comparison"[^>]*?)(>)/i, "$1 hidden$2");
+      html = html.replace('id="subnav-tab-comparison"', 'id="subnav-tab-comparison" hidden');
     }
   }
 
