@@ -162,13 +162,72 @@ function initializeBuilderProjectSelect() {
   propertiesData.forEach((property) => {
     const option = document.createElement("option");
     option.value = String(property.id);
-    option.textContent = property.title;
+    option.textContent = property.title || property.name;
     select.appendChild(option);
   });
   if (propertiesData.length) select.value = String(propertiesData[0].id);
   select
     .closest("[data-custom-select]")
     .querySelector(".custom-select-trigger").disabled = !propertiesData.length;
+}
+
+function selectEnquiryProject(projectId) {
+  const select = document.getElementById("main-project-select");
+  if (!select) return false;
+  const project = propertiesData.find(
+    (candidate) => String(candidate.id) === String(projectId),
+  );
+  if (!project) return false;
+
+  const targetOption = Array.from(select.options).find(
+    (opt) => String(opt.value) === String(projectId),
+  );
+  if (!targetOption) return false;
+
+  select.value = targetOption.value;
+  const wrapper = select.closest("[data-custom-select]");
+  if (wrapper) {
+    const trigger = wrapper.querySelector(".custom-select-trigger");
+    const label = trigger?.querySelector("span");
+    if (label) label.textContent = targetOption.textContent;
+    const menu = wrapper.querySelector(".custom-select-menu");
+    if (menu) {
+      menu.querySelectorAll('[role="option"]').forEach((btn) => {
+        btn.setAttribute(
+          "aria-selected",
+          String(btn.dataset.value === targetOption.value),
+        );
+      });
+    }
+  }
+  select.dispatchEvent(new Event("change", { bubbles: true }));
+  return true;
+}
+
+function restoreEnquiryProjectFromUrl() {
+  const projectId = new URL(window.location.href).searchParams.get("project");
+  if (projectId) selectEnquiryProject(projectId);
+}
+
+function goToProjectEnquiry(projectId) {
+  if (!selectEnquiryProject(projectId)) return;
+  navigateToBuilderSection("contact", "consultation-section");
+  const url = new URL(window.location.href);
+  url.searchParams.set("project", projectId);
+  window.history.replaceState(
+    { ...window.history.state, enquiryProjectId: projectId },
+    "",
+    `${url.pathname}${url.search}${url.hash}`,
+  );
+  requestAnimationFrame(() => {
+    const section = document.getElementById("consultation-section");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    const form = document.getElementById("main-consultation-form");
+    const nameInput = form?.querySelector('input[name="fullName"]');
+    if (nameInput) nameInput.focus();
+  });
 }
 
 function initializeCustomSelects() {
@@ -594,6 +653,182 @@ function closeProjectGallery() {
   if (dialog?.open) dialog.close();
 }
 
+function getProjectDistance(first, second) {
+  if (!first?.coordinates || !second?.coordinates) return Number.POSITIVE_INFINITY;
+  const { lat: lat1, lon: lon1 } = first.coordinates;
+  const { lat: lat2, lon: lon2 } = second.coordinates;
+  if (![lat1, lon1, lat2, lon2].every((val) => typeof val === "number" && !Number.isNaN(val))) {
+    return Number.POSITIVE_INFINITY;
+  }
+  const toRadians = (deg) => (deg * Math.PI) / 180;
+  const earthRadiusKm = 6371;
+  const dLat = toRadians(lat2 - lat1);
+  const dLon = toRadians(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  return earthRadiusKm * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function getProjectConfigurations(item) {
+  const configs = new Set();
+  (item.floorPlans || []).forEach((plan) => {
+    if (plan?.bhk) configs.add(plan.bhk);
+  });
+  if (item.bhk) {
+    item.bhk.split(",").map((s) => s.trim()).filter(Boolean).forEach((s) => configs.add(s));
+  }
+  return configs;
+}
+
+function getConfigurationTokens(item) {
+  return new Set(
+    [...getProjectConfigurations(item)].map((cfg) =>
+      cfg.replace(/\s+/g, " ").trim().toLowerCase()
+    )
+  );
+}
+
+function getSimilarProjects(item) {
+  if (!Array.isArray(propertiesData) || propertiesData.length < 2) return [];
+  const configurations = getConfigurationTokens(item);
+  return propertiesData
+    .filter((candidate) => candidate.id !== item.id)
+    .map((candidate) => ({
+      property: candidate,
+      sharedConfigurations: [...getConfigurationTokens(candidate)].filter((value) =>
+        configurations.has(value)
+      ).length,
+      distance: getProjectDistance(item, candidate),
+    }))
+    .sort(
+      (first, second) =>
+        second.sharedConfigurations - first.sharedConfigurations ||
+        first.distance - second.distance ||
+        (first.property.title || first.property.name || "").localeCompare(
+          second.property.title || second.property.name || ""
+        )
+    )
+    .slice(0, 2)
+    .map(({ property }) => property);
+}
+
+function renderProjectComparison(item) {
+  const section = document.getElementById("dt-project-comparison");
+  const grid = document.getElementById("dt-project-comparison-grid");
+  if (!section || !grid) return;
+
+  const similar = getSimilarProjects(item);
+  const projects = [item, ...similar];
+  grid.replaceChildren();
+
+  projects.forEach((project, index) => {
+    const projectCard = document.createElement("article");
+    projectCard.className = `project-comparison-card${index === 0 ? " is-current" : ""}`;
+
+    const card = document.createElement("div");
+    card.className = "comparison-project-card";
+
+    const imageWrap = document.createElement("div");
+    imageWrap.className = "comparison-project-image-wrap";
+
+    const image = document.createElement("img");
+    image.className = "comparison-project-image";
+    image.src = project.thumbnail || (project.images && project.images[0]) || "";
+    const projName = project.title || project.name || "Godrej Project";
+    image.alt = `${projName} project`;
+    image.loading = "lazy";
+    image.decoding = "async";
+    imageWrap.appendChild(image);
+
+    if (index === 0) {
+      const currentLabel = document.createElement("span");
+      currentLabel.className = "comparison-current-label";
+      currentLabel.textContent = "Current Project";
+      imageWrap.appendChild(currentLabel);
+    }
+    card.appendChild(imageWrap);
+
+    const nameContainer = document.createElement("div");
+    nameContainer.className = "comparison-project-name";
+
+    const projectName = document.createElement("span");
+    projectName.textContent = projName;
+
+    const location = document.createElement("span");
+    location.className = "comparison-project-location";
+    const shortLoc =
+      project.shortAddress ||
+      (project.location
+        ? project.location.split(",").slice(0, 2).join(", ").trim()
+        : "Bengaluru");
+    location.textContent = shortLoc;
+    location.title = project.location || shortLoc;
+
+    nameContainer.append(projectName, location);
+    card.appendChild(nameContainer);
+
+    const projectAction = document.createElement("button");
+    projectAction.type = "button";
+    projectAction.className = "comparison-project-link";
+    if (index === 0) {
+      projectAction.dataset.enquiryProject = project.id;
+      projectAction.innerHTML =
+        '<i class="fa-solid fa-phone" aria-hidden="true"></i> Enquire Now';
+      projectAction.setAttribute("aria-label", `Enquire about ${projName}`);
+    } else {
+      projectAction.dataset.detailsProject = project.id;
+      projectAction.innerHTML =
+        '<i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details';
+      projectAction.setAttribute("aria-label", `View ${projName} details`);
+    }
+    card.appendChild(projectAction);
+
+    const specs = document.createElement("div");
+    specs.className = "comparison-project-specs";
+
+    const allBhks = [
+      ...new Set((project.floorPlans || []).map((f) => f.bhk)),
+    ].join(", ");
+    const bhkText = project.bhk || allBhks || "Residences";
+    const statusText =
+      project.statusText ||
+      (project.category === "new-launch"
+        ? "New Launch"
+        : project.category === "ready"
+          ? "Ready to Move"
+          : "Under Construction");
+
+    const rows = [
+      ["Price", project.price || "Price on Request"],
+      ["Configuration", bhkText],
+      ["Project Area", project.area || "On Request"],
+      ["Status", statusText],
+      ["Possession", project.possession || "On Request"],
+    ];
+
+    rows.forEach(([label, value]) => {
+      const row = document.createElement("div");
+      row.className = "comparison-project-spec";
+      const specLabel = document.createElement("span");
+      specLabel.className = "comparison-project-spec-label";
+      specLabel.textContent = label;
+      const specValue = document.createElement("span");
+      specValue.className = "comparison-project-spec-value";
+      specValue.textContent = value || "Not listed";
+      row.append(specLabel, specValue);
+      specs.appendChild(row);
+    });
+
+    card.appendChild(specs);
+    projectCard.appendChild(card);
+    grid.appendChild(projectCard);
+  });
+
+  section.hidden = projects.length < 2;
+}
+
 function renderPropertyFeatures(property) {
   const amenitiesContainer = document.getElementById("detail-amenities");
   const connectivityContainer =
@@ -754,6 +989,7 @@ function openDetailPage(id, { updateUrl = true } = {}) {
   renderPropertyFeatures(prop);
   renderPropertyFloorPlans(prop);
   syncEmiCalculatorWithProperty(prop);
+  renderProjectComparison(prop);
 
   const propertyImages = Array.isArray(prop.images)
     ? prop.images
@@ -904,6 +1140,7 @@ function restoreBuilderRoute() {
     document.body.removeAttribute("data-property-route-loading");
     document.title = initialDocumentTitle;
     setActiveNavigation(route);
+    if (route === "contact") restoreEnquiryProjectFromUrl();
     requestAnimationFrame(() =>
       document
         .getElementById(sectionTargets[route])
@@ -1237,6 +1474,7 @@ async function handleSidebarSubmit(e) {
 }
 
 function scrollToConsultation() {
+  if (activeProperty) selectEnquiryProject(activeProperty.id);
   navigateToBuilderSection("contact", "consultation-section");
 }
 
@@ -2157,6 +2395,9 @@ Object.assign(window, {
   handleSidebarSubmit,
   openConnectivityMap,
   openDetailPage,
+  renderProjectComparison,
+  goToProjectEnquiry,
+  selectEnquiryProject,
   openLightbox,
   resetMainForm,
   scrollToConsultation,
@@ -2190,6 +2431,18 @@ function initializeBuilderPage() {
   if (footerRegions && activeBuilderData.regions)
     footerRegions.textContent = activeBuilderData.regions;
   initEmiCalculator();
+  document.getElementById("dt-project-comparison")?.addEventListener("click", (event) => {
+    const enquiryButton = event.target.closest("[data-enquiry-project]");
+    if (enquiryButton) {
+      goToProjectEnquiry(enquiryButton.dataset.enquiryProject);
+      return;
+    }
+    const detailsButton = event.target.closest("[data-details-project]");
+    if (detailsButton) {
+      openDetailPage(detailsButton.dataset.detailsProject);
+    }
+  });
+  restoreEnquiryProjectFromUrl();
   const connectivityPreview = document.getElementById(
     "connectivity-map-preview-canvas",
   );

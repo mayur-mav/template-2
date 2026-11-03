@@ -1374,7 +1374,30 @@ export function createPropertyHighlights(property) {
   return list;
 }
 
+const shortAddressMap = {
+  "godrej-vanantara": "Bannerghatta Road, Bengaluru",
+  "godrej-athena": "Indiranagar - HAL, Bengaluru",
+  "godrej-lakeside-orchard": "Sarjapur Road, Bengaluru",
+  "godrej-regent-park": "Sarjapur, Bengaluru",
+  "godrej-woodscapes-phase-2": "Budigere Cross, Bengaluru",
+  "godrej-aveline": "Airport Road, Yelahanka, Bengaluru",
+  "godrej-florenne": "Whitefield, Bengaluru",
+  "barca-at-godrej-msr-city": "Devanahalli, Bengaluru",
+  "godrej-parkshire": "Hoskote, Bengaluru",
+  "godrej-woods": "Thanisandra Main Road, Bengaluru"
+};
+
 godrejProjects.forEach((property) => {
+  property.name = property.name || property.title;
+  property.shortAddress = property.shortAddress || shortAddressMap[property.id] || (
+    property.location ? property.location.split(",").slice(0, 2).join(", ").trim() : "Bengaluru"
+  );
+  const allBhks = [...new Set((property.floorPlans || []).map(({ bhk }) => bhk))].join(", ");
+  property.bhk = property.bhk || allBhks;
+  property.statusText = property.statusText || (
+    property.category === "new-launch" ? "New Launch" :
+    property.category === "ready" ? "Ready to Move" : "Under Construction"
+  );
   property.overview = property.overview || createPropertyOverview(property);
   property.highlights = property.highlights || createPropertyHighlights(property);
 });

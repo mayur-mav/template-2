@@ -178,6 +178,125 @@ function getPropertySliderLimits(price) {
   return { min, max, step };
 }
 
+function getProjectDistance(first, second) {
+  if (!first?.coordinates || !second?.coordinates) return Number.POSITIVE_INFINITY;
+  const { lat: lat1, lon: lon1 } = first.coordinates;
+  const { lat: lat2, lon: lon2 } = second.coordinates;
+  if (![lat1, lon1, lat2, lon2].every((val) => typeof val === "number" && !Number.isNaN(val))) {
+    return Number.POSITIVE_INFINITY;
+  }
+  const toRadians = (deg) => (deg * Math.PI) / 180;
+  const earthRadiusKm = 6371;
+  const dLat = toRadians(lat2 - lat1);
+  const dLon = toRadians(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  return earthRadiusKm * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function getProjectConfigurations(item) {
+  const configs = new Set();
+  (item.floorPlans || []).forEach((plan) => {
+    if (plan?.bhk) configs.add(plan.bhk);
+  });
+  if (item.bhk) {
+    item.bhk.split(",").map((s) => s.trim()).filter(Boolean).forEach((s) => configs.add(s));
+  }
+  return configs;
+}
+
+function getConfigurationTokens(item) {
+  return new Set(
+    [...getProjectConfigurations(item)].map((cfg) =>
+      cfg.replace(/\s+/g, " ").trim().toLowerCase()
+    )
+  );
+}
+
+function getSimilarProjects(item, allProperties) {
+  if (!Array.isArray(allProperties) || allProperties.length < 2) return [];
+  const configurations = getConfigurationTokens(item);
+  return allProperties
+    .filter((candidate) => candidate.id !== item.id)
+    .map((candidate) => ({
+      property: candidate,
+      sharedConfigurations: [...getConfigurationTokens(candidate)].filter((value) =>
+        configurations.has(value)
+      ).length,
+      distance: getProjectDistance(item, candidate),
+    }))
+    .sort(
+      (first, second) =>
+        second.sharedConfigurations - first.sharedConfigurations ||
+        first.distance - second.distance ||
+        (first.property.title || first.property.name || "").localeCompare(
+          second.property.title || second.property.name || ""
+        )
+    )
+    .slice(0, 2)
+    .map(({ property }) => property);
+}
+
+function renderComparisonCardHtml(project, index) {
+  const isCurrent = index === 0;
+  const currentBadge = isCurrent
+    ? '<span class="comparison-current-label">Current Project</span>'
+    : "";
+  const projName = project.title || project.name || "Godrej Project";
+  const imageSrc = project.thumbnail || (project.images && project.images[0]) || "";
+  const shortLoc =
+    project.shortAddress ||
+    (project.location ? project.location.split(",").slice(0, 2).join(", ").trim() : "Bengaluru");
+
+  const actionButton = isCurrent
+    ? `<button type="button" class="comparison-project-link" data-enquiry-project="${escapeHtml(project.id)}" aria-label="Enquire about ${escapeHtml(projName)}"><i class="fa-solid fa-phone" aria-hidden="true"></i> Enquire Now</button>`
+    : `<button type="button" class="comparison-project-link" data-details-project="${escapeHtml(project.id)}" aria-label="View ${escapeHtml(projName)} details"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details</button>`;
+
+  const allBhks = [...new Set((project.floorPlans || []).map((f) => f.bhk))].join(", ");
+  const bhkText = project.bhk || allBhks || "Residences";
+  const statusText =
+    project.statusText ||
+    (project.category === "new-launch"
+      ? "New Launch"
+      : project.category === "ready"
+        ? "Ready to Move"
+        : "Under Construction");
+
+  const rows = [
+    ["Price", project.price || "Price on Request"],
+    ["Configuration", bhkText],
+    ["Project Area", project.area || "On Request"],
+    ["Status", statusText],
+    ["Possession", project.possession || "On Request"],
+  ];
+
+  const specsHtml = rows
+    .map(
+      ([label, val]) =>
+        `<div class="comparison-project-spec"><span class="comparison-project-spec-label">${escapeHtml(label)}</span><span class="comparison-project-spec-value">${escapeHtml(val || "Not listed")}</span></div>`
+    )
+    .join("\n          ");
+
+  return `<article class="project-comparison-card${isCurrent ? " is-current" : ""}">
+      <div class="comparison-project-card">
+        <div class="comparison-project-image-wrap">
+          <img class="comparison-project-image" src="${escapeHtml(imageSrc)}" alt="${escapeHtml(projName)} project" loading="lazy" decoding="async">
+          ${currentBadge}
+        </div>
+        <div class="comparison-project-name">
+          <span>${escapeHtml(projName)}</span>
+          <span class="comparison-project-location" title="${escapeHtml(project.location || shortLoc)}">${escapeHtml(shortLoc)}</span>
+        </div>
+        ${actionButton}
+        <div class="comparison-project-specs">
+          ${specsHtml}
+        </div>
+      </div>
+    </article>`;
+}
+
 function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOrigin) {
   const builderName = builder.name || "Property Developer";
   const property = properties.find((item) => String(item.id) === String(route));
@@ -282,6 +401,18 @@ function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOri
         /(<section\b[^>]*\bid="dt-connectivity-section"[^>]*?)(>)/i,
         "$1 hidden$2",
       );
+    }
+
+    const similar = getSimilarProjects(property, properties);
+    const comparisonProjects = [property, ...similar];
+    if (comparisonProjects.length >= 2) {
+      html = html.replace(/(<section\b[^>]*\bid="dt-project-comparison"[^>]*?)\bhidden\b/i, "$1");
+      const comparisonHtml = comparisonProjects
+        .map((p, idx) => renderComparisonCardHtml(p, idx))
+        .join("\n\n    ");
+      html = replaceElement(html, "dt-project-comparison-grid", `\n    ${comparisonHtml}\n              `);
+    } else {
+      html = html.replace(/(<section\b[^>]*\bid="dt-project-comparison"[^>]*?)(>)/i, "$1 hidden$2");
     }
   }
 
