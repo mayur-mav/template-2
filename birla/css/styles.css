@@ -30,7 +30,7 @@
   -webkit-text-fill-color: transparent;
 }
 .bg-builder-primary {
-  background-color: var(--builder-primary, #0f382c);
+  background-color: var(--builder-primary, #0B1E36);
 }
 .bg-builder-accent {
   background-color: var(--builder-accent, #d4af37);
@@ -39,22 +39,22 @@
   background-color: var(--builder-surface, #f9faf9);
 }
 .bg-builder-soft {
-  background-color: var(--builder-soft, #e8f0ec);
+  background-color: var(--builder-soft, #EEF4FA);
 }
 .text-builder-primary {
-  color: var(--builder-primary, #0f382c);
+  color: var(--builder-primary, #0B1E36);
 }
 .text-builder-accent {
   color: #765b00;
 }
 .border-builder-border {
-  border-color: var(--builder-border, #e8f0ec);
+  border-color: var(--builder-border, #EEF4FA);
 }
 .builder-primary-button {
-  background-color: var(--builder-primary, #0f382c);
+  background-color: var(--builder-primary, #0B1E36);
 }
 .builder-primary-button:hover {
-  background-color: var(--builder-primary-hover, #09241c);
+  background-color: var(--builder-primary-hover, #071526);
 }
 .property-card:hover .property-card-title {
   color: #765b00;
@@ -84,7 +84,7 @@
 }
 
 .bg-emerald-gradient {
-  background: linear-gradient(135deg, #0f382c 0%, #175241 100%);
+  background: linear-gradient(135deg, #0B1E36 0%, #153052 100%);
 }
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
@@ -93,7 +93,7 @@
   background: #f9faf9;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #0f382c;
+  background: #0B1E36;
   border-radius: 4px;
 }
 
@@ -173,22 +173,22 @@ a:focus-visible {
   box-shadow: 0 1px 2px rgb(15 23 42 / 5%);
 }
 .chip-btn:hover:not(.active) {
-  border-color: #0f382c;
-  background: #f4f8f5;
-  color: #0f382c;
+  border-color: #0B1E36;
+  background: #F5F8FC;
+  color: #0B1E36;
 }
 .chip-btn.active,
 .chip-btn.active:hover {
   border-color: #d4af37;
   background: #d4af37;
-  color: #0f382c;
+  color: #0B1E36;
 }
 .chip-btn.active {
   box-shadow: 0 3px 8px rgb(212 175 55 / 24%);
 }
 #floor-plan-tabs .plan-tab-btn[aria-selected="true"] {
   background: var(--builder-accent, #d4af37);
-  color: var(--builder-primary, #0f382c);
+  color: var(--builder-primary, #0B1E36);
 }
 .chip-btn:focus-visible {
   outline: 2px solid #d4af37;
@@ -250,7 +250,7 @@ a:focus-visible {
   min-width: 0;
 }
 .mobile-menu-link:hover {
-  color: #0f382c;
+  color: #0B1E36;
 }
 .mobile-menu-link[aria-current="page"] {
   color: #d4af37;
@@ -264,15 +264,15 @@ a:focus-visible {
   padding: 0.625rem 0.75rem;
   border: 0;
   border-radius: 9999px;
-  background: #e8f0ec;
-  color: #0f382c;
+  background: #EEF4FA;
+  color: #0B1E36;
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
 }
 .mobile-menu-action.visit-action {
   min-height: 3.25rem;
-  background: #0f382c;
+  background: #0B1E36;
   color: #fff;
   cursor: pointer;
   text-transform: uppercase;
@@ -578,7 +578,7 @@ a:focus-visible {
   cursor: pointer;
 }
 .custom-select-trigger:focus-visible {
-  outline: 2px solid #0f382c;
+  outline: 2px solid #0B1E36;
   outline-offset: 2px;
 }
 .custom-select-trigger > span {
@@ -626,11 +626,11 @@ a:focus-visible {
 .custom-select-menu [role="option"]:hover,
 .custom-select-menu [role="option"]:focus-visible {
   outline: none;
-  background: #e8f0ec;
-  color: #0f382c;
+  background: #EEF4FA;
+  color: #0B1E36;
 }
 .custom-select-menu [role="option"][aria-selected="true"] {
-  color: #0f382c;
+  color: #0B1E36;
   font-weight: 700;
 }
 
@@ -705,7 +705,7 @@ a:focus-visible {
 }
 
 .property-carousel-arrow:hover:not(:disabled) {
-  background: #0f382c;
+  background: #0B1E36;
 }
 .property-carousel-arrow:active:not(:disabled) {
   transform: translateY(-50%) scale(0.96);
@@ -840,7 +840,7 @@ a:focus-visible {
     align-items: center;
     justify-content: center;
     padding: 0.75rem;
-    border: 1px solid #e8f0ec;
+    border: 1px solid #EEF4FA;
     border-radius: 0.875rem;
     background: #f9faf9;
     text-align: center;
@@ -1517,7 +1517,7 @@ footer a:hover {
   transition: all 0.25s ease;
   border: 1.5px solid #25D366;
   background: #FFFFFF;
-  color: #0F5132 !important;
+  color: #0B1E36 !important;
   box-shadow: 0 2px 8px rgba(37, 211, 102, 0.12);
 }
 
@@ -1543,7 +1543,7 @@ footer a:hover {
 .site-header .btn-header-wa {
   border: 1.5px solid #25D366 !important;
   background: #FFFFFF !important;
-  color: #0F5132 !important;
+  color: #0B1E36 !important;
 }
 
 .site-header .btn-header-wa i {
@@ -1563,7 +1563,7 @@ footer a:hover {
 .mobile-menu-action.btn-header-wa {
   min-height: 3.25rem;
   background: #FFFFFF !important;
-  color: #0F5132 !important;
+  color: #0B1E36 !important;
   border: 1.5px solid #25D366 !important;
   box-shadow: 0 2px 8px rgba(37, 211, 102, 0.12);
   gap: 8px;
@@ -1599,9 +1599,9 @@ footer a:hover {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: #e8f0ec !important;
-  color: #0f382c !important;
-  border: 1px solid #c8ded3 !important;
+  background-color: #EEF4FA !important;
+  color: #0B1E36 !important;
+  border: 1px solid #DCE5EF !important;
   border-radius: 9999px !important;
   padding: 4px 12px !important;
   font-size: 0.75rem !important;
@@ -1613,7 +1613,7 @@ footer a:hover {
 }
 
 #detail-rera-badge i {
-  color: #0f382c !important;
+  color: #0B1E36 !important;
 }
 
 #detail-rera-badge[hidden] {
@@ -1638,10 +1638,10 @@ footer a:hover {
   gap: 6px 10px;
   margin: 4px 0 4px 4px;
   padding: 4px 12px;
-  border: 1px solid #c8ded3;
+  border: 1px solid #DCE5EF;
   border-radius: 8px;
-  background-color: #e8f0ec;
-  color: #0f382c;
+  background-color: #EEF4FA;
+  color: #0B1E36;
   font-size: 0.84rem;
   line-height: 1.5;
   vertical-align: middle;
@@ -1650,7 +1650,7 @@ footer a:hover {
 }
 
 .overview-rera:hover {
-  background-color: #dfede6;
+  background-color: #E2ECF7;
   border-color: #d4af37;
   box-shadow: 0 2px 6px rgba(212, 175, 55, 0.16);
 }
@@ -1658,7 +1658,7 @@ footer a:hover {
 .overview-rera strong {
   display: inline-flex;
   align-items: center;
-  color: #0f382c;
+  color: #0B1E36;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -1671,7 +1671,7 @@ footer a:hover {
   font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   font-weight: 600;
   font-size: 0.82rem;
-  color: #0f382c;
+  color: #0B1E36;
   letter-spacing: 0.015em;
   word-break: break-all;
 }
@@ -1719,7 +1719,7 @@ footer a:hover {
   gap: 14px;
   padding: 16px 18px;
   background: #ffffff;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(15, 56, 44, 0.05);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
@@ -1742,9 +1742,9 @@ footer a:hover {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #e8f0ec;
-  color: #0f382c;
-  border: 1px solid #d1e4db;
+  background: #EEF4FA;
+  color: #0B1E36;
+  border: 1px solid #DCE5EF;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1755,7 +1755,7 @@ footer a:hover {
 
 .highlight-card:hover .highlight-icon-wrap {
   background: #d4af37;
-  color: #0f382c;
+  color: #0B1E36;
   border-color: #b89628;
   transform: scale(1.08);
 }
@@ -1772,7 +1772,7 @@ footer a:hover {
 .highlight-title {
   font-size: 0.92rem;
   font-weight: 700;
-  color: #0f382c;
+  color: #0B1E36;
   line-height: 1.35;
   letter-spacing: -0.01em;
   font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
@@ -1840,9 +1840,9 @@ footer a:hover {
   max-height: 480px;
   overflow: hidden;
   padding: 0;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   border-radius: 14px;
-  background: #0f382c;
+  background: #0B1E36;
   cursor: pointer;
   text-align: left;
   box-shadow: 0 4px 16px rgba(15, 56, 44, 0.08);
@@ -1913,7 +1913,7 @@ footer a:hover {
 
 .project-gallery-preview:hover .project-gallery-preview-action {
   background: #d4af37;
-  color: #0f382c;
+  color: #0B1E36;
   border-color: #b89628;
   box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
 }
@@ -1984,7 +1984,7 @@ footer a:hover {
 
 .project-gallery-close:hover {
   background: #d4af37;
-  color: #0f382c;
+  color: #0B1E36;
   border-color: #d4af37;
   transform: rotate(90deg);
 }
@@ -2069,7 +2069,7 @@ footer a:hover {
 
 .project-gallery-nav:hover {
   background: #d4af37;
-  color: #0f382c;
+  color: #0B1E36;
   border-color: #d4af37;
   transform: translateY(-50%) scale(1.08);
 }
@@ -2108,7 +2108,7 @@ footer a:hover {
   border-top: 1px solid rgba(209, 228, 219, 0.15);
   background: #07130e;
   overscroll-behavior-x: contain;
-  scrollbar-color: #d4af37 #0f382c;
+  scrollbar-color: #d4af37 #0B1E36;
   scrollbar-width: thin;
 }
 
@@ -2218,9 +2218,9 @@ footer a:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #e8f0ec;
+  background: #EEF4FA;
   border: 1px solid #d4af37;
-  color: #0f382c;
+  color: #0B1E36;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.82rem;
@@ -2234,7 +2234,7 @@ footer a:hover {
 
 .emi-calculator-container {
   background: #ffffff;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   border-radius: 1rem;
   padding: 28px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
@@ -2252,7 +2252,7 @@ footer a:hover {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #d4af37 0%, #0f382c 100%);
+  background: linear-gradient(90deg, #d4af37 0%, #0B1E36 100%);
 }
 
 .emi-controls-col {
@@ -2264,7 +2264,7 @@ footer a:hover {
 
 .emi-control-group {
   background: #f9faf9;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   border-radius: 0.75rem;
   padding: 16px 18px;
   transition: all 0.2s ease;
@@ -2288,7 +2288,7 @@ footer a:hover {
 .emi-label {
   font-size: 0.88rem;
   font-weight: 600;
-  color: #0f382c;
+  color: #0B1E36;
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -2309,7 +2309,7 @@ footer a:hover {
 .emi-val-display {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #0f382c;
+  color: #0B1E36;
   font-variant-numeric: tabular-nums;
 }
 
@@ -2321,7 +2321,7 @@ footer a:hover {
 
 .emi-val-pill {
   background: #d4af37;
-  color: #0f382c;
+  color: #0B1E36;
   padding: 2px 8px;
   border-radius: 12px;
   font-size: 0.8rem;
@@ -2346,7 +2346,7 @@ footer a:hover {
   width: 100%;
   height: 6px;
   border-radius: 3px;
-  background: #e8f0ec;
+  background: #EEF4FA;
   outline: none;
   cursor: pointer;
   transition: background 0.1s ease;
@@ -2385,7 +2385,7 @@ footer a:hover {
 
 .emi-slider:active::-webkit-slider-thumb {
   transform: scale(1.22);
-  background: #0f382c;
+  background: #0B1E36;
   border-color: #d4af37;
 }
 
@@ -2448,7 +2448,7 @@ footer a:hover {
 }
 
 .emi-reset-link:hover {
-  color: #0f382c;
+  color: #0B1E36;
   text-decoration: underline;
 }
 
@@ -2458,7 +2458,7 @@ footer a:hover {
 }
 
 .emi-loan-caption strong {
-  color: #0f382c;
+  color: #0B1E36;
 }
 
 .emi-bank-note {
@@ -2484,7 +2484,7 @@ footer a:hover {
   padding: 4px 11px;
   border-radius: 14px;
   background: #ffffff;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   color: #475569;
   font-size: 0.8rem;
   font-weight: 600;
@@ -2497,12 +2497,12 @@ footer a:hover {
 
 .emi-chip:hover {
   border-color: #d4af37;
-  color: #0f382c;
+  color: #0B1E36;
 }
 
 .emi-chip.active {
-  background: #0f382c;
-  border-color: #0f382c;
+  background: #0B1E36;
+  border-color: #0B1E36;
   color: #ffffff;
 }
 
@@ -2515,7 +2515,7 @@ footer a:hover {
 }
 
 .emi-hero-card {
-  background: linear-gradient(135deg, #0f382c 0%, #175241 100%);
+  background: linear-gradient(135deg, #0B1E36 0%, #153052 100%);
   border-radius: 0.75rem;
   padding: 22px 20px;
   color: #ffffff;
@@ -2586,7 +2586,7 @@ footer a:hover {
 
 .emi-chart-box {
   background: #f9faf9;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   border-radius: 0.75rem;
   padding: 16px 20px;
   display: flex;
@@ -2618,7 +2618,7 @@ footer a:hover {
 
 .emi-donut-meter {
   fill: none;
-  stroke: #e8f0ec;
+  stroke: #EEF4FA;
   stroke-width: 10;
 }
 
@@ -2631,7 +2631,7 @@ footer a:hover {
 }
 
 .emi-segment-principal {
-  stroke: #0f382c;
+  stroke: #0B1E36;
 }
 
 .emi-segment-interest {
@@ -2660,7 +2660,7 @@ footer a:hover {
   display: block;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #0f382c;
+  color: #0B1E36;
   line-height: 1.2;
 }
 
@@ -2687,7 +2687,7 @@ footer a:hover {
 }
 
 .bullet-principal {
-  background: #0f382c;
+  background: #0B1E36;
 }
 
 .bullet-interest {
@@ -2708,7 +2708,7 @@ footer a:hover {
 }
 
 .emi-legend-value {
-  color: #0f382c;
+  color: #0B1E36;
   font-size: 0.95rem;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -2721,7 +2721,7 @@ footer a:hover {
 
 .emi-breakdown-table {
   background: #f9faf9;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   border-radius: 0.75rem;
   padding: 16px 20px;
   display: flex;
@@ -2747,7 +2747,7 @@ footer a:hover {
 }
 
 .emi-breakdown-row strong {
-  color: #0f382c;
+  color: #0B1E36;
   font-variant-numeric: tabular-nums;
   font-weight: 600;
 }
@@ -2760,7 +2760,7 @@ footer a:hover {
 }
 
 .emi-breakdown-row.emi-row-total .emi-row-title {
-  color: #0f382c;
+  color: #0B1E36;
 }
 
 .emi-breakdown-row.emi-row-total strong {
@@ -2879,7 +2879,7 @@ footer a:hover {
   isolation: isolate;
   min-height: 280px;
   overflow: hidden;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   border-radius: 1rem;
   background: #f9faf9;
 }
@@ -2914,7 +2914,7 @@ footer a:hover {
   padding: 10px 20px;
   border: 1px solid #d4af37;
   border-radius: 24px;
-  background: #0f382c;
+  background: #0B1E36;
   color: #ffffff;
   font-family: inherit;
   font-size: 0.9rem;
@@ -2925,7 +2925,7 @@ footer a:hover {
 }
 
 .connectivity-map-trigger:hover {
-  background: #175241;
+  background: #153052;
   transform: translate(-50%, -50%) scale(1.05);
   box-shadow: 0 6px 20px rgba(15, 56, 44, 0.45);
 }
@@ -2937,7 +2937,7 @@ footer a:hover {
 .connectivity-destinations {
   min-width: 0;
   padding: 18px 20px;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   border-radius: 1rem;
   background: #ffffff;
   display: flex;
@@ -2959,7 +2959,7 @@ footer a:hover {
   gap: 12px;
   padding: 12px 14px;
   background: #f9faf9;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   border-radius: 8px;
   font-size: 0.88rem;
   text-align: left;
@@ -2985,7 +2985,7 @@ footer a:hover {
 }
 
 .connectivity-destinations .loc-item strong {
-  color: #0f382c;
+  color: #0B1E36;
   font-weight: 600;
 }
 
@@ -3017,7 +3017,7 @@ footer a:hover {
 }
 
 .connectivity-destinations .feature-expansion-link:hover {
-  color: #0f382c;
+  color: #0B1E36;
   text-decoration: underline;
 }
 
@@ -3047,7 +3047,7 @@ footer a:hover {
   align-items: center;
   gap: 20px;
   padding: 16px 24px;
-  border-bottom: 1px solid #e8f0ec;
+  border-bottom: 1px solid #EEF4FA;
   background: #ffffff;
 }
 
@@ -3060,7 +3060,7 @@ footer a:hover {
 
 .connectivity-map-heading h2 {
   margin: 4px 0 2px 0;
-  color: #0f382c;
+  color: #0B1E36;
   font-size: 1.25rem;
   font-weight: 700;
 }
@@ -3077,7 +3077,7 @@ footer a:hover {
   gap: 9px;
   min-width: 0;
   padding: 0 14px;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   border-radius: 8px;
   color: #64748b;
   background: #f9faf9;
@@ -3109,10 +3109,10 @@ footer a:hover {
   gap: 8px;
   min-height: 42px;
   padding: 8px 16px;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   border-radius: 8px;
   background: #f9faf9;
-  color: #0f382c;
+  color: #0B1E36;
   font: inherit;
   font-size: 0.88rem;
   font-weight: 700;
@@ -3121,8 +3121,8 @@ footer a:hover {
 }
 
 .connectivity-map-close:hover {
-  background: #e8f0ec;
-  border-color: #0f382c;
+  background: #EEF4FA;
+  border-color: #0B1E36;
 }
 
 .connectivity-map-layout {
@@ -3135,7 +3135,7 @@ footer a:hover {
   display: flex;
   min-height: 0;
   flex-direction: column;
-  border-right: 1px solid #e8f0ec;
+  border-right: 1px solid #EEF4FA;
   background: #ffffff;
 }
 
@@ -3151,7 +3151,7 @@ footer a:hover {
   margin: 0;
   font-size: 0.95rem;
   font-weight: 700;
-  color: #0f382c;
+  color: #0B1E36;
 }
 
 .connectivity-map-sidebar-heading span {
@@ -3180,7 +3180,7 @@ footer a:hover {
   gap: 12px;
   padding: 12px;
   border: 0;
-  border-bottom: 1px solid #e8f0ec;
+  border-bottom: 1px solid #EEF4FA;
   background: transparent;
   color: #1e293b;
   text-align: left;
@@ -3191,11 +3191,11 @@ footer a:hover {
 
 .connectivity-map-place:hover,
 .connectivity-map-place[aria-pressed="true"] {
-  background: #e8f0ec;
+  background: #EEF4FA;
 }
 
 .connectivity-map-place[aria-pressed="true"] .connectivity-map-place-icon {
-  background: #0f382c;
+  background: #0B1E36;
   color: #d4af37;
 }
 
@@ -3206,7 +3206,7 @@ footer a:hover {
   flex: 0 0 38px;
   place-items: center;
   border-radius: 50%;
-  background: #0f382c;
+  background: #0B1E36;
   color: #ffffff;
   font-size: 0.9rem;
   transition: all 0.15s ease;
@@ -3221,7 +3221,7 @@ footer a:hover {
 .connectivity-map-place-details span:first-child {
   font-weight: 700;
   font-size: 0.85rem;
-  color: #0f382c;
+  color: #0B1E36;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3243,7 +3243,7 @@ footer a:hover {
   display: grid;
   gap: 8px;
   padding: 14px 18px;
-  border-top: 1px solid #e8f0ec;
+  border-top: 1px solid #EEF4FA;
   background: #f9faf9;
 }
 
@@ -3259,7 +3259,7 @@ footer a:hover {
 }
 
 .connectivity-map-directions a:hover {
-  color: #0f382c;
+  color: #0B1E36;
   text-decoration: underline;
 }
 
@@ -3292,8 +3292,8 @@ footer a:hover {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 2px 12px rgba(15, 56, 44, 0.18);
-  border: 1px solid #e8f0ec;
-  color: #0f382c;
+  border: 1px solid #EEF4FA;
+  color: #0B1E36;
   font-size: 0.82rem;
   font-weight: 600;
   line-height: 1.4;
@@ -3368,7 +3368,7 @@ footer a:hover {
 
   .connectivity-map-sidebar {
     grid-row: 2;
-    border-top: 1px solid #e8f0ec;
+    border-top: 1px solid #EEF4FA;
     border-right: 0;
   }
 
@@ -3423,7 +3423,7 @@ footer a:hover {
   width: 100%;
   min-width: 0;
   overflow: hidden;
-  border: 1px solid #e8f0ec;
+  border: 1px solid #EEF4FA;
   border-radius: 12px;
   background: #ffffff;
   box-shadow: 0 4px 16px rgba(15, 56, 44, 0.04);
@@ -3436,7 +3436,7 @@ footer a:hover {
   max-width: 100%;
   flex-direction: column;
   padding: 14px 14px 0;
-  border-right: 1px solid #e8f0ec;
+  border-right: 1px solid #EEF4FA;
   background: #ffffff;
   box-sizing: border-box;
   transition: background 0.2s ease;
@@ -3448,7 +3448,7 @@ footer a:hover {
 }
 
 .project-comparison-card.is-current {
-  background: #f4f8f5;
+  background: #F5F8FC;
 }
 
 .comparison-project-card {
@@ -3491,7 +3491,7 @@ footer a:hover {
   left: 8px;
   padding: 3px 8px;
   border-radius: 4px;
-  background: #0f382c;
+  background: #0B1E36;
   color: #ffffff;
   font-size: 0.65rem;
   font-weight: 800;
@@ -3501,7 +3501,7 @@ footer a:hover {
 }
 
 .comparison-project-name {
-  color: #0f382c;
+  color: #0B1E36;
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.35;
@@ -3518,7 +3518,7 @@ footer a:hover {
 .comparison-project-name > span:first-child {
   display: block;
   font-weight: 700;
-  color: #0f382c;
+  color: #0B1E36;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -3548,7 +3548,7 @@ footer a:hover {
   border: 1px solid #d4af37;
   border-radius: 8px;
   background: #ffffff;
-  color: #0f382c;
+  color: #0B1E36;
   font: inherit;
   font-size: 0.85rem;
   font-weight: 700;
@@ -3559,8 +3559,8 @@ footer a:hover {
 
 .comparison-project-link:hover,
 .comparison-project-link:focus-visible {
-  border-color: #0f382c;
-  background: #0f382c;
+  border-color: #0B1E36;
+  background: #0B1E36;
   color: #ffffff;
 }
 
@@ -3594,7 +3594,7 @@ footer a:hover {
   min-width: 0;
   width: 100%;
   max-width: 100%;
-  border-top: 1px solid #e8f0ec;
+  border-top: 1px solid #EEF4FA;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -3619,7 +3619,7 @@ footer a:hover {
 }
 
 .comparison-project-spec-value {
-  color: #0f382c;
+  color: #0B1E36;
   font-size: 0.86rem;
   font-weight: 700;
   line-height: 1.4;
@@ -3685,7 +3685,7 @@ footer a:hover {
   .project-comparison-card,
   .project-comparison-card:last-child {
     border-right: 0;
-    border-bottom: 1px solid #e8f0ec;
+    border-bottom: 1px solid #EEF4FA;
   }
 
   .project-comparison-card:last-child {
@@ -3851,11 +3851,11 @@ footer a:hover {
 }
 
 .subnav-tab:hover {
-  color: #0F382C;
+  color: #0B1E36;
 }
 
 .subnav-tab.active {
-  color: #0F382C;
+  color: #0B1E36;
   font-weight: 700;
 }
 
@@ -3867,7 +3867,7 @@ footer a:hover {
   left: 8px;
   right: 8px;
   height: 3px;
-  background: #0F382C;
+  background: #0B1E36;
   border-radius: 3px 3px 0 0;
   opacity: 0;
   transform: scaleX(0.5);
@@ -3912,8 +3912,8 @@ footer a:hover {
 
 .subnav-arrow:not(:disabled):hover {
   background: #F9FAF9;
-  color: #0F382C;
-  border-color: #0F382C;
+  color: #0B1E36;
+  border-color: #0B1E36;
   transform: scale(1.06);
 }
 

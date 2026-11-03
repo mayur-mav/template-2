@@ -66,12 +66,12 @@ const initialDocumentTitle = document.title;
 
 const builderTheme = activeBuilderData.theme || {};
 const themeVariables = {
-  "--builder-primary": builderTheme.primary || "#0F382C",
-  "--builder-primary-hover": builderTheme.primaryHover || "#09241C",
+  "--builder-primary": builderTheme.primary || "#0B1E36",
+  "--builder-primary-hover": builderTheme.primaryHover || "#071526",
   "--builder-accent": builderTheme.accent || "#D4AF37",
-  "--builder-surface": builderTheme.surface || "#F9FAF9",
-  "--builder-soft": builderTheme.soft || "#E8F0EC",
-  "--builder-border": builderTheme.border || "#E8F0EC",
+  "--builder-surface": builderTheme.surface || "#FAF9F5",
+  "--builder-soft": builderTheme.soft || "#EEF4FA",
+  "--builder-border": builderTheme.border || "#DCE5EF",
 };
 Object.entries(themeVariables).forEach(([variable, value]) => {
   document.documentElement.style.setProperty(variable, value);

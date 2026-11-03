@@ -5,13 +5,13 @@ module.exports = {
     extend: {
       colors: {
         godrej: {
-          emerald: "#0F382C",
-          darkEmerald: "#09241C",
+          emerald: "#0B1E36",
+          darkEmerald: "#071526",
           gold: "#D4AF37",
           goldHover: "#B89628",
-          sage: "#E8F0EC",
-          mint: "#D1E4DB",
-          offwhite: "#F9FAF9",
+          sage: "#DCE5EF",
+          mint: "#EEF4FA",
+          offwhite: "#FAF9F5",
         },
       },
       fontFamily: {
