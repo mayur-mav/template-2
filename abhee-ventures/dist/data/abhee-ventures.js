@@ -708,6 +708,7 @@ export const abheeventuresData = [
     shortAddress: "Sarjapur - Attibele Road, Bengaluru",
     category: "ongoing",
     type: "plot",
+    bhk: "Plots (30x40, 30x50, 40x40)",
     priceValue: 0.91,
     price: "₹ 91 Lakhs*",
     area: "20 Acres",

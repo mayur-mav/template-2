@@ -275,7 +275,7 @@ function renderComparisonCardHtml(project, index) {
   const specsHtml = rows
     .map(
       ([label, val]) =>
-        `<div class="comparison-project-spec"><span class="comparison-project-spec-label">${escapeHtml(label)}</span><span class="comparison-project-spec-value">${escapeHtml(val || "Not listed")}</span></div>`
+        `<div class="comparison-project-spec"><span class="comparison-project-spec-label">${escapeHtml(label)}</span><span class="comparison-project-spec-value" title="${escapeHtml(val || "Not listed")}">${escapeHtml(val || "Not listed")}</span></div>`
     )
     .join("\n          ");
 

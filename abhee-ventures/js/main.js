@@ -817,6 +817,7 @@ function renderProjectComparison(item) {
       const specValue = document.createElement("span");
       specValue.className = "comparison-project-spec-value";
       specValue.textContent = value || "Not listed";
+      specValue.title = value || "Not listed";
       row.append(specLabel, specValue);
       specs.appendChild(row);
     });

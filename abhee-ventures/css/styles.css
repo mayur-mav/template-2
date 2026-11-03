@@ -3454,6 +3454,7 @@ footer a:hover {
   background: #ffffff;
   box-sizing: border-box;
   transition: background 0.2s ease;
+  overflow: hidden;
 }
 
 .project-comparison-card:last-child {
@@ -3474,6 +3475,7 @@ footer a:hover {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .comparison-project-image-wrap {
@@ -3587,10 +3589,13 @@ footer a:hover {
 
 .comparison-project-specs {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0;
   margin: 10px -14px 0;
   min-width: 0;
   width: calc(100% + 28px);
+  max-width: calc(100% + 28px);
+  overflow: hidden;
 }
 
 .comparison-project-spec {
@@ -3600,8 +3605,12 @@ footer a:hover {
   gap: 3px;
   padding: 9px 14px;
   min-height: 56px;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
   border-top: 1px solid #D9EAF2;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .comparison-project-spec:last-child {
@@ -3615,6 +3624,12 @@ footer a:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .comparison-project-spec-value {
@@ -3625,6 +3640,9 @@ footer a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  display: block;
+  min-width: 0;
+  max-width: 100%;
 }
 
 @supports (grid-template-rows: subgrid) {
@@ -3637,6 +3655,7 @@ footer a:hover {
       grid-row: span 8;
       display: grid;
       grid-template-rows: subgrid;
+      overflow: hidden;
     }
 
     .comparison-project-card {
@@ -3644,17 +3663,26 @@ footer a:hover {
       display: grid;
       grid-template-rows: subgrid;
       gap: 8px;
+      overflow: hidden;
     }
 
     .comparison-project-specs {
       grid-row: span 5;
       display: grid;
       grid-template-rows: subgrid;
+      grid-template-columns: minmax(0, 1fr);
       margin: 10px -14px 0;
+      width: calc(100% + 28px);
+      max-width: calc(100% + 28px);
+      overflow: hidden;
     }
 
     .comparison-project-spec {
       min-height: 0;
+      min-width: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
     }
 
     .comparison-project-spec:last-child {
