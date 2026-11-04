@@ -897,6 +897,17 @@ function formatOverviewList(items = []) {
   return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
 }
 
+const overviewSearchTerms = [
+  "Abhee Ventures Bangalore",
+  "Abhee builders & developers",
+  "Abhee builders Bangalore",
+  "Abhee developers in Bangalore",
+  "Abhee Ventures private limited",
+  "Abhee Ventures pvt ltd",
+  "apartments for sale in Bangalore",
+  "flats for sale in Bangalore",
+];
+
 export function createPropertyOverview(property) {
   const floorPlans = formatOverviewList(
     (property.floorPlans || []).map(({ bhk, area }) =>
@@ -906,7 +917,11 @@ export function createPropertyOverview(property) {
   const allBhks = [
     ...new Set((property.floorPlans || []).map(({ bhk }) => bhk)),
   ].join(", ");
-  const searchTerm = `${property.title || property.name} Bengaluru`;
+  const projectIndex = (abheeventuresData || []).findIndex(({ id }) => id === property.id);
+  const searchTerm =
+    overviewSearchTerms[
+      (projectIndex >= 0 ? projectIndex : 0) % overviewSearchTerms.length
+    ];
   const amenities = formatOverviewList(
     (property.amenities || []).slice(0, 4).map(({ name }) => name),
   );
@@ -930,7 +945,7 @@ export function createPropertyOverview(property) {
 
   return [
     `${property.description} Buyers researching ${searchTerm} can explore Abhee Ventures homes in ${shortAddress}, with project status, location, and configuration details available to compare.`,
-    `${property.title} is listed with ${bhkSummary} across ${property.area}, with ${statusText.toLowerCase()} status and possession shown as ${property.possession}. Listed floor plan options include ${floorPlans || bhkSummary}. Residents can explore amenities such as ${amenities || "the community's listed lifestyle facilities"}, with nearby destinations including ${nearbyPlaces || shortAddress}. Review this Abhee Ventures project's floor plans, amenities, and connectivity when comparing homes in Bengaluru.${property.reraId ? ` RERA registration number: ${property.reraId.replace(/\.$/, "")}.` : ""}`,
+    `${property.title} is listed with ${bhkSummary} across ${property.area}, with ${statusText.toLowerCase()} status and possession shown as ${property.possession}. Listed floor plan options include ${floorPlans || bhkSummary}. Residents can explore amenities such as ${amenities || "the community's listed lifestyle facilities"}, with nearby destinations including ${nearbyPlaces || shortAddress}. Review this Abhee Ventures project's floor plans, amenities, and connectivity when comparing apartments for sale in Bangalore.${property.reraId ? ` RERA registration number: ${property.reraId.replace(/\.$/, "")}.` : ""}`,
   ];
 }
 
@@ -1004,6 +1019,19 @@ export const builderConfig = {
     soft: "#E7F6FC",
     border: "#D9EAF2",
   },
+  seoKeywords: [
+    "abhee ventures",
+    "abhee ventures pvt ltd",
+    "abhee ventures private limited",
+    "abhee builders",
+    "abhee developers",
+    "abhee ventures bangalore",
+    "abhee builders & developers",
+    "abhee builders and developers",
+    "apartments for sale in bangalore",
+    "flats for sale in bangalore",
+    "ready to move flats in bangalore",
+  ],
   properties: abheeventuresData,
   faqs: abheeventuresFaqs,
   whatsappNumber: "+919876543210",

@@ -1264,10 +1264,13 @@ const overviewSearchTerms = [
   "Godrej Properties in Bangalore",
   "Godrej projects in Bangalore",
   "Godrej apartments in Bangalore",
+  "Godrej Group Bangalore",
   "Godrej Group in Bangalore",
   "Godrej North Bangalore",
   "Godrej Properties Bangalore",
   "Godrej apartments Bangalore",
+  "ready to move flats in Bangalore",
+  "apartments for sale in Bangalore",
 ];
 
 function formatOverviewList(values) {
@@ -1443,6 +1446,17 @@ export const builderConfig = {
     soft: "#E8F0EC",
     border: "#E8F0EC",
   },
+  seoKeywords: [
+    "godrej group bangalore",
+    "godrej north bangalore",
+    "godrej group in bangalore",
+    "godrej projects in bangalore",
+    "godrej properties bangalore",
+    "godrej apartments bangalore",
+    "apartments for sale in bangalore",
+    "flats for sale in bangalore",
+    "ready to move flats in bangalore",
+  ],
   properties: godrejProjects,
   faqs: godrejFaqs,
   whatsappNumber: "+919876543210",

@@ -448,6 +448,30 @@ function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOri
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(title)}</title>`);
   html = updateMeta(html, "description", description);
 
+  const baseKeywords = Array.isArray(builder.seoKeywords) && builder.seoKeywords.length
+    ? builder.seoKeywords
+    : [
+        `${builderName} Bangalore`,
+        `${builderName} projects in Bangalore`,
+        `apartments for sale in Bangalore`,
+        `flats for sale in Bangalore`,
+      ];
+  const propertyKeywords = property
+    ? [
+        property.title || property.name,
+        `${property.title || property.name} Bangalore`,
+        `${property.title || property.name} ${property.location || "Bengaluru"}`,
+        ...(property.bhk ? [property.bhk] : []),
+        property.category === "new-launch"
+          ? "new launch projects in Bangalore"
+          : property.category === "ready"
+            ? "ready to move flats in Bangalore"
+            : "ongoing projects in Bangalore",
+      ]
+    : [];
+  const allKeywords = [...new Set([...propertyKeywords, ...baseKeywords])].join(", ");
+  html = updateMeta(html, "keywords", allKeywords);
+
   const ogTitle = `<meta property="og:title" content="${escapeHtml(title)}">`;
   const ogDescription = `<meta property="og:description" content="${escapeHtml(description)}">`;
   if (/property="og:title"/.test(html)) {
