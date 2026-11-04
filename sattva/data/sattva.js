@@ -4,2747 +4,4663 @@ const sattvaImage = (suffix) =>
 
 export const sattvaData = [
   {
-    id: "sattva-city",
-    thumbnail: sattvaImage("sattva-group/sattva-city/thumbnail.webp"),
-    title: "Sattva City",
-    location: "Doddajala, Off NH-44 International Airport Road, Bangalore",
-    category: "new-launch",
-    type: "apartment",
-    priceValue: 1.82,
-    price: "₹ 1.82 Crore Onwards",
-    area: "50 Acres",
-    floorPlans: [
+    "id": "sattva-city",
+    "thumbnail": sattvaImage("sattva-group/sattva-city/thumbnail.webp"),
+    "name": "Sattva City",
+    "coordinates": {
+      "lat": 13.1812,
+      "lon": 77.6325
+    },
+    "mapsQuery": "Sattva City, Doddajala, International Airport Road, Bengaluru",
+    "shortAddress": "Doddajala, North Bengaluru",
+    "title": "Sattva City",
+    "location": "Doddajala, Off NH-44 International Airport Road, Bangalore",
+    "category": "new-launch",
+    "type": "apartment",
+    "priceValue": 1.82,
+    "price": "₹ 1.82 Crore Onwards",
+    "area": "50 Acres",
+    "floorPlans": [
       {
-        id: "2bhk",
-        bhk: "2 BHK",
-        area: "1,316 Sq. Ft.",
-        price: "₹ 1.82 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-city/floor-plans/2bhk-floor-plan.webp"),
+        "id": "2bhk",
+        "bhk": "2 BHK",
+        "area": "1,316 Sq. Ft.",
+        "price": "₹ 1.82 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-city/floor-plans/2bhk-floor-plan.webp")
       },
       {
-        id: "3bhk",
-        bhk: "3 BHK",
-        area: "1,812 Sq. Ft.",
-        price: "₹ 2.55 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-city/floor-plans/3bhk-floor-plan.webp"),
+        "id": "3bhk",
+        "bhk": "3 BHK",
+        "area": "1,812 Sq. Ft.",
+        "price": "₹ 2.55 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-city/floor-plans/3bhk-floor-plan.webp")
       },
       {
-        id: "4bhk",
-        bhk: "4 BHK",
-        area: "2,623 Sq. Ft.",
-        price: "₹ 3.65 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-city/floor-plans/4bhk-floor-plan.webp"),
-      },
+        "id": "4bhk",
+        "bhk": "4 BHK",
+        "area": "2,623 Sq. Ft.",
+        "price": "₹ 3.65 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-city/floor-plans/4bhk-floor-plan.webp")
+      }
     ],
-    possession: "February 2032",
-    units: "3,460",
-    highlight: "84% Open Space & 4 Mega Clubhouses",
-    reraId: "PRM/KA/RERA/1251/472/PR/270226/008494",
-    summary:
-      "Sattva City is a landmark 50-acre integrated high-rise mega township by Sattva Group located in Doddajala off NH-44 (International Airport Road), North Bangalore, offering 2, 2.5, 3, 3.5, and 4 BHK luxury residences with 84% open space.",
-    description:
-      "Sattva City is a grand self-contained residential mega township by Sattva Group, strategically located at Doddajala near Sadahalli Toll Plaza along the NH-44 International Airport Road corridor in North Bangalore. Spanning 50 acres with over 84% open green spaces, the township features 13 high-rise towers (2B + G + 21 floors) comprising 3,460 premium apartments and exclusive penthouses. Designed around the 15-minute city concept, the development incorporates 4 distinct clubhouses, an in-campus retail spine, medical clinic, and over 200 lifestyle amenities. Homebuyers can choose from 2 BHK to 4 BHK unit configurations ranging from 1,316 sq. ft. to 2,623 sq. ft., with starting prices from Rs. 1.82 Crore onwards. Sattva City is registered under RERA PRM/KA/RERA/1251/472/PR/270226/008494.",
-    amenities: [
-      { name: "4 Resident Clubhouses", icon: "fa-building-user" },
-      { name: "Temperature-Controlled Indoor Pool", icon: "fa-water-ladder" },
-      { name: "Cricket Practice Nets", icon: "fa-baseball" },
+    "possession": "February 2032",
+    "units": "3,460",
+    "highlight": "84% Open Space & 4 Mega Clubhouses",
+    "reraId": "PRM/KA/RERA/1251/472/PR/270226/008494",
+    "summary": "Sattva City is a landmark 50-acre integrated high-rise mega township by Sattva Group located in Doddajala off NH-44 (International Airport Road), North Bangalore, offering 2, 2.5, 3, 3.5, and 4 BHK luxury residences with 84% open space.",
+    "description": "Sattva City is a grand self-contained residential mega township by Sattva Group, strategically located at Doddajala near Sadahalli Toll Plaza along the NH-44 International Airport Road corridor in North Bangalore. Spanning 50 acres with over 84% open green spaces, the township features 13 high-rise towers (2B + G + 21 floors) comprising 3,460 premium apartments and exclusive penthouses. Designed around the 15-minute city concept, the development incorporates 4 distinct clubhouses, an in-campus retail spine, medical clinic, and over 200 lifestyle amenities. Homebuyers can choose from 2 BHK to 4 BHK unit configurations ranging from 1,316 sq. ft. to 2,623 sq. ft., with starting prices from Rs. 1.82 Crore onwards. Sattva City is registered under RERA PRM/KA/RERA/1251/472/PR/270226/008494.",
+    "amenities": [
       {
-        name: "Pickleball & Squash Courts",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "4 Resident Clubhouses",
+        "icon": "fa-building-user"
       },
-      { name: "Kids Playground & Toddlers Zone", icon: "fa-child-reaching" },
-      { name: "Grand Gymnasium & Fitness Hub", icon: "fa-dumbbell" },
-      { name: "Miyawaki Forest & Japanese Garden", icon: "fa-tree" },
-      { name: "Pet Park & Pet Clinic", icon: "fa-dog" },
+      {
+        "name": "Temperature-Controlled Indoor Pool",
+        "icon": "fa-water-ladder"
+      },
+      {
+        "name": "Cricket Practice Nets",
+        "icon": "fa-baseball"
+      },
+      {
+        "name": "Pickleball & Squash Courts",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Kids Playground & Toddlers Zone",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Grand Gymnasium & Fitness Hub",
+        "icon": "fa-dumbbell"
+      },
+      {
+        "name": "Miyawaki Forest & Japanese Garden",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "Pet Park & Pet Clinic",
+        "icon": "fa-dog"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Doddajala Railway Station",
-        distance: "2.1 km",
-        icon: "fa-train",
-      },
-      { name: "NRV Hospital", distance: "3.0 km", icon: "fa-hospital" },
-      {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "4.6 km",
-        icon: "fa-plane",
-      },
-      {
-        name: "Prestige Tech Cloud",
-        distance: "5.2 km",
-        icon: "fa-laptop-code",
+        "label": "Doddajala Railway Station",
+        "name": "Doddajala Railway Station",
+        "distance": "2.1 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Doddajala Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1865,
+          "lon": 77.628
+        }
       },
       {
-        name: "Oxford English School",
-        distance: "6.0 km",
-        icon: "fa-graduation-cap",
+        "label": "NRV Hospital",
+        "name": "NRV Hospital",
+        "distance": "3.0 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "NRV Hospital, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1864,
+          "lon": 77.6597
+        }
       },
       {
-        name: "Doddajala Metro Station (Upcoming Blue Line)",
-        distance: "1.2 km",
-        icon: "fa-train-subway",
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "4.6 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
       },
       {
-        name: "KIADB Aerospace Park & SEZ",
-        distance: "10.0 km",
-        icon: "fa-building-columns",
+        "label": "Prestige Tech Cloud",
+        "name": "Prestige Tech Cloud",
+        "distance": "5.2 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "Prestige Tech Cloud, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.191,
+          "lon": 77.641
+        }
       },
       {
-        name: "Phoenix Mall of Asia",
-        distance: "18.5 km",
-        icon: "fa-bag-shopping",
+        "label": "Oxford English School",
+        "name": "Oxford English School",
+        "distance": "6.0 km",
+        "icon": "fa-solid fa-graduation-cap",
+        "destination": "Oxford English School, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.2226,
+          "lon": 77.6682
+        }
       },
+      {
+        "label": "Doddajala Metro Station (Upcoming Blue Line)",
+        "name": "Doddajala Metro Station (Upcoming Blue Line)",
+        "distance": "1.2 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Doddajala Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.183,
+          "lon": 77.634
+        }
+      },
+      {
+        "label": "KIADB Aerospace Park & SEZ",
+        "name": "KIADB Aerospace Park & SEZ",
+        "distance": "10.0 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "KIADB Aerospace Park & SEZ, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1989,
+          "lon": 77.7064
+        }
+      },
+      {
+        "label": "Phoenix Mall of Asia",
+        "name": "Phoenix Mall of Asia",
+        "distance": "18.5 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0694,
+          "lon": 77.5982
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-city/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-city/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-city/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-city/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-songbird-phase-II",
-    thumbnail: sattvaImage("sattva-group/sattva-songbird-phase-ii/thumbnail.webp"),
-    title: "Sattva Songbird Phase II",
-    location: "Budigere Main Road, Off Old Madras Road, Bangalore",
-    category: "new-launch",
-    type: "apartment",
-    priceValue: 1.56,
-    price: "₹ 1.56 Crore Onwards",
-    area: "4.33 Acres",
-    floorPlans: [
+    "id": "sattva-songbird-phase-II",
+    "thumbnail": sattvaImage("sattva-group/sattva-songbird-phase-ii/thumbnail.webp"),
+    "name": "Sattva Songbird Phase 2",
+    "coordinates": {
+      "lat": 13.0645,
+      "lon": 77.7478
+    },
+    "mapsQuery": "Sattva Songbird Phase 2, Budigere Main Road, Bengaluru",
+    "shortAddress": "Budigere Road, East Bengaluru",
+    "title": "Sattva Songbird Phase II",
+    "location": "Budigere Main Road, Off Old Madras Road, Bangalore",
+    "category": "new-launch",
+    "type": "apartment",
+    "priceValue": 1.56,
+    "price": "₹ 1.56 Crore Onwards",
+    "area": "4.33 Acres",
+    "floorPlans": [
       {
-        id: "2bhk-comfort",
-        bhk: "2 BHK Comfort",
-        area: "1,285 Sq. Ft.",
-        price: "₹ 1.56 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-songbird-phase-ii/floor-plans/2bhk-floor-plan.webp"),
+        "id": "2bhk-comfort",
+        "bhk": "2 BHK Comfort",
+        "area": "1,285 Sq. Ft.",
+        "price": "₹ 1.56 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-songbird-phase-ii/floor-plans/2bhk-floor-plan.webp")
       },
       {
-        id: "2bhk-grand",
-        bhk: "2 BHK Grand",
-        area: "1,340 Sq. Ft.",
-        price: "₹ 1.62 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-songbird-phase-ii/floor-plans/2bhk-floor-plan(1).webp"),
+        "id": "2bhk-grand",
+        "bhk": "2 BHK Grand",
+        "area": "1,340 Sq. Ft.",
+        "price": "₹ 1.62 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-songbird-phase-ii/floor-plans/2bhk-floor-plan(1).webp")
       },
       {
-        id: "3bhk-comfort",
-        bhk: "3 BHK Comfort",
-        area: "1,564 Sq. Ft.",
-        price: "₹ 1.88 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-songbird-phase-ii/floor-plans/3bhk-floor-plan.webp"),
+        "id": "3bhk-comfort",
+        "bhk": "3 BHK Comfort",
+        "area": "1,564 Sq. Ft.",
+        "price": "₹ 1.88 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-songbird-phase-ii/floor-plans/3bhk-floor-plan.webp")
       },
       {
-        id: "3bhk-grand",
-        bhk: "3 BHK Grand",
-        area: "1,660 Sq. Ft.",
-        price: "₹ 1.98 Crore Onwards",
-        image: sattvaImage("sattva/sattva-songbird-phase-II/floor-plans/3bhk-grand-floor-plan.webp"),
-      },
+        "id": "3bhk-grand",
+        "bhk": "3 BHK Grand",
+        "area": "1,660 Sq. Ft.",
+        "price": "₹ 1.98 Crore Onwards",
+        "image": sattvaImage("sattva/sattva-songbird-phase-II/floor-plans/3bhk-grand-floor-plan.webp")
+      }
     ],
-    possession: "June 2031",
-    units: "381 Units",
-    highlight: "2 Iconic Sky Towers (2B + G + 42 Floors) & 3 Clubhouses",
-    reraId: "PRM/KA/RERA/1251/310/PR/270326/008557",
-    summary:
-      "Sattva Songbird Phase II is an ultra-premium high-rise expansion by Sattva Group located on Budigere Main Road, Bangalore, featuring 2 BHK and 3 BHK luxury residences across 4.33 acres with 2 high-rise sky towers.",
-    description:
-      "Sattva Songbird Phase II is a high-rise luxury expansion within the master-planned Sattva Songbird township by Sattva Group, situated on Budigere Main Road (off Old Madras Road) in East Bangalore. Spanning 4.33 acres, Phase II features 2 iconic sky towers soaring 42 floors (2B + G + 42 Floors) comprising 381 premium 2 BHK and 3 BHK luxury apartments. The phase includes access to 3 clubhouses (1 main clubhouse and 2 satellite hubs) along with landscaped green zones, wellness decks, and lifestyle amenities. With unit sizes ranging from 1,285 sq. ft. to 1,660 sq. ft., prices start from Rs. 1.56 Crore onwards. Sattva Songbird Phase II is registered under RERA PRM/KA/RERA/1251/310/PR/270326/008557.",
-    amenities: [
-      { name: "3 Resident Clubhouses", icon: "fa-building-user" },
-      { name: "Infinity Edge Swimming Pool", icon: "fa-water-ladder" },
+    "possession": "June 2031",
+    "units": "381 Units",
+    "highlight": "2 Iconic Sky Towers (2B + G + 42 Floors) & 3 Clubhouses",
+    "reraId": "PRM/KA/RERA/1251/310/PR/270326/008557",
+    "summary": "Sattva Songbird Phase II is an ultra-premium high-rise expansion by Sattva Group located on Budigere Main Road, Bangalore, featuring 2 BHK and 3 BHK luxury residences across 4.33 acres with 2 high-rise sky towers.",
+    "description": "Sattva Songbird Phase II is a high-rise luxury expansion within the master-planned Sattva Songbird township by Sattva Group, situated on Budigere Main Road (off Old Madras Road) in East Bangalore. Spanning 4.33 acres, Phase II features 2 iconic sky towers soaring 42 floors (2B + G + 42 Floors) comprising 381 premium 2 BHK and 3 BHK luxury apartments. The phase includes access to 3 clubhouses (1 main clubhouse and 2 satellite hubs) along with landscaped green zones, wellness decks, and lifestyle amenities. With unit sizes ranging from 1,285 sq. ft. to 1,660 sq. ft., prices start from Rs. 1.56 Crore onwards. Sattva Songbird Phase II is registered under RERA PRM/KA/RERA/1251/310/PR/270326/008557.",
+    "amenities": [
       {
-        name: "Tennis Court & Badminton Courts",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "3 Resident Clubhouses",
+        "icon": "fa-building-user"
       },
-      { name: "Kids Playground & Splash Pad", icon: "fa-child-reaching" },
-      { name: "Rooftop Sky Lounge & Observatory", icon: "fa-cloud" },
-      { name: "Fully Equipped Gym & Yoga Deck", icon: "fa-dumbbell" },
-      { name: "Landscaped Garden & Reflexology Park", icon: "fa-tree" },
-      { name: "Jogging Track & Cricket Pitch", icon: "fa-person-running" },
+      {
+        "name": "Infinity Edge Swimming Pool",
+        "icon": "fa-water-ladder"
+      },
+      {
+        "name": "Tennis Court & Badminton Courts",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Kids Playground & Splash Pad",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Rooftop Sky Lounge & Observatory",
+        "icon": "fa-cloud"
+      },
+      {
+        "name": "Fully Equipped Gym & Yoga Deck",
+        "icon": "fa-dumbbell"
+      },
+      {
+        "name": "Landscaped Garden & Reflexology Park",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "Jogging Track & Cricket Pitch",
+        "icon": "fa-person-running"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Prerana International School",
-        distance: "1.1 km",
-        icon: "fa-graduation-cap",
-      },
-      { name: "Little Elly Preschool", distance: "1.3 km", icon: "fa-school" },
-      {
-        name: "Orion UPTOWN Mall",
-        distance: "2.4 km",
-        icon: "fa-bag-shopping",
-      },
-      {
-        name: "East Point Hospital & Medical College",
-        distance: "5.7 km",
-        icon: "fa-hospital",
+        "label": "Prerana International School",
+        "name": "Prerana International School",
+        "distance": "1.1 km",
+        "icon": "fa-solid fa-graduation-cap",
+        "destination": "Prerana International School, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0597,
+          "lon": 77.7389
+        }
       },
       {
-        name: "Whitefield Railway Station",
-        distance: "8.5 km",
-        icon: "fa-train",
+        "label": "Little Elly Preschool",
+        "name": "Little Elly Preschool",
+        "distance": "1.3 km",
+        "icon": "fa-solid fa-school",
+        "destination": "Little Elly Preschool, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0665,
+          "lon": 77.736
+        }
       },
       {
-        name: "Kadugodi Tree Park Metro Station",
-        distance: "9.2 km",
-        icon: "fa-train-subway",
+        "label": "Orion UPTOWN Mall",
+        "name": "Orion UPTOWN Mall",
+        "distance": "2.4 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Orion UPTOWN Mall, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.045,
+          "lon": 77.742
+        }
       },
       {
-        name: "ITPL International Tech Park",
-        distance: "12.0 km",
-        icon: "fa-laptop-code",
+        "label": "East Point Hospital & Medical College",
+        "name": "East Point Hospital & Medical College",
+        "distance": "5.7 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "East Point Hospital & Medical College, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0343,
+          "lon": 77.7052
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "25.0 km",
-        icon: "fa-plane",
+        "label": "Whitefield Railway Station",
+        "name": "Whitefield Railway Station",
+        "distance": "8.5 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Whitefield Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.998,
+          "lon": 77.758
+        }
       },
+      {
+        "label": "Kadugodi Tree Park Metro Station",
+        "name": "Kadugodi Tree Park Metro Station",
+        "distance": "9.2 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Kadugodi Tree Park Metro Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.992,
+          "lon": 77.749
+        }
+      },
+      {
+        "label": "ITPL International Tech Park",
+        "name": "ITPL International Tech Park",
+        "distance": "12.0 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "ITPL International Tech Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.987,
+          "lon": 77.737
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "25.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-songbird-phase-ii/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-songbird-phase-ii/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-songbird-phase-ii/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-songbird-phase-ii/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-aeropolis-phase-II",
-    thumbnail: sattvaImage("sattva-group/sattva-aeropolis-phase-ii/thumbnail.webp"),
-    title: "Sattva Aeropolis Phase II",
-    location: "Main International Airport Road, Devanahalli, Bangalore",
-    category: "new-launch",
-    type: "apartment",
-    priceValue: 0.4577,
-    price: "₹ 45.77 Lakhs Onwards",
-    area: "2.4 Acres",
-    floorPlans: [
+    "id": "sattva-aeropolis-phase-II",
+    "thumbnail": sattvaImage("sattva-group/sattva-aeropolis-phase-ii/thumbnail.webp"),
+    "name": "Sattva Aeropolis Phase 2",
+    "coordinates": {
+      "lat": 13.2385,
+      "lon": 77.712
+    },
+    "mapsQuery": "Sattva Aeropolis Phase 2, Devanahalli, Airport Road, Bengaluru",
+    "shortAddress": "Devanahalli, North Bengaluru",
+    "title": "Sattva Aeropolis Phase II",
+    "location": "Main International Airport Road, Devanahalli, Bangalore",
+    "category": "new-launch",
+    "type": "apartment",
+    "priceValue": 0.4577,
+    "price": "₹ 45.77 Lakhs Onwards",
+    "area": "2.4 Acres",
+    "floorPlans": [
       {
-        id: "studio",
-        bhk: "Studio",
-        area: "448 - 500 Sq. Ft.",
-        price: "₹ 45.77 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-aeropolis-phase-ii/floor-plans/studio-floor-plan.webp"),
+        "id": "studio",
+        "bhk": "Studio",
+        "area": "448 - 500 Sq. Ft.",
+        "price": "₹ 45.77 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-aeropolis-phase-ii/floor-plans/studio-floor-plan.webp")
       },
       {
-        id: "1bhk",
-        bhk: "1 BHK",
-        area: "550 - 658 Sq. Ft.",
-        price: "₹ 58.50 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-aeropolis-phase-ii/floor-plans/1bhk-floor-plan.webp"),
+        "id": "1bhk",
+        "bhk": "1 BHK",
+        "area": "550 - 658 Sq. Ft.",
+        "price": "₹ 58.50 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-aeropolis-phase-ii/floor-plans/1bhk-floor-plan.webp")
       },
       {
-        id: "3bhk",
-        bhk: "3 BHK",
-        area: "850 - 1,004 Sq. Ft.",
-        price: "₹ 1.09 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-aeropolis-phase-ii/floor-plans/3bhk-floor-plan.webp"),
-      },
+        "id": "3bhk",
+        "bhk": "3 BHK",
+        "area": "850 - 1,004 Sq. Ft.",
+        "price": "₹ 1.09 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-aeropolis-phase-ii/floor-plans/3bhk-floor-plan.webp")
+      }
     ],
-    possession: "October 2028",
-    units: "554 Units",
-    highlight: "Prime Airport Road Corridor & High-Efficiency Smart Apartments",
-    reraId: "PRM/KA/RERA/1250/303/PR/250925/008119",
-    summary:
-      "Sattva Aeropolis Phase II is an advanced smart residential extension by Sattva Group located on Main International Airport Road, Devanahalli, Bangalore, offering Studio, 1 BHK, and 3 BHK apartments across 2.4 acres.",
-    description:
-      "Sattva Aeropolis Phase II is a high-demand residential expansion by Sattva Group, strategically located along the Main International Airport Road corridor in Devanahalli, North Bangalore. Spanning 2.4 acres, the boutique development features 554 efficiently planned smart apartments ranging from Studio configurations to spacious 3 BHK homes. With unit sizes spanning 448 sq. ft. to 1,004 sq. ft. and starting prices from Rs. 45.77 Lakhs onwards, the project provides modern urban architecture, comprehensive wellness features, and exceptional proximity to Kempegowda International Airport and major tech parks. Sattva Aeropolis Phase II is registered under RERA PRM/KA/RERA/1250/303/PR/250925/008119.",
-    amenities: [
+    "possession": "October 2028",
+    "units": "554 Units",
+    "highlight": "Prime Airport Road Corridor & High-Efficiency Smart Apartments",
+    "reraId": "PRM/KA/RERA/1250/303/PR/250925/008119",
+    "summary": "Sattva Aeropolis Phase II is an advanced smart residential extension by Sattva Group located on Main International Airport Road, Devanahalli, Bangalore, offering Studio, 1 BHK, and 3 BHK apartments across 2.4 acres.",
+    "description": "Sattva Aeropolis Phase II is a high-demand residential expansion by Sattva Group, strategically located along the Main International Airport Road corridor in Devanahalli, North Bangalore. Spanning 2.4 acres, the boutique development features 554 efficiently planned smart apartments ranging from Studio configurations to spacious 3 BHK homes. With unit sizes spanning 448 sq. ft. to 1,004 sq. ft. and starting prices from Rs. 45.77 Lakhs onwards, the project provides modern urban architecture, comprehensive wellness features, and exceptional proximity to Kempegowda International Airport and major tech parks. Sattva Aeropolis Phase II is registered under RERA PRM/KA/RERA/1250/303/PR/250925/008119.",
+    "amenities": [
       {
-        name: "Resident Clubhouse & Multipurpose Hall",
-        icon: "fa-building-user",
+        "name": "Resident Clubhouse & Multipurpose Hall",
+        "icon": "fa-building-user"
       },
-      { name: "Swimming Pool & Kids Splash Deck", icon: "fa-water-ladder" },
       {
-        name: "Fully Equipped Gymnasium & Fitness Center",
-        icon: "fa-dumbbell",
+        "name": "Swimming Pool & Kids Splash Deck",
+        "icon": "fa-water-ladder"
       },
-      { name: "Meditation & Yoga Pavilion", icon: "fa-spa" },
       {
-        name: "Children's Play Area & Senior Citizens' Corner",
-        icon: "fa-child-reaching",
+        "name": "Fully Equipped Gymnasium & Fitness Center",
+        "icon": "fa-dumbbell"
       },
-      { name: "Landscaped Garden & Reflexology Walkways", icon: "fa-tree" },
-      { name: "Power Backup & High-Speed Elevators", icon: "fa-bolt" },
       {
-        name: "24/7 Gated Security with CCTV Surveillance",
-        icon: "fa-shield-halved",
+        "name": "Meditation & Yoga Pavilion",
+        "icon": "fa-spa"
       },
+      {
+        "name": "Children's Play Area & Senior Citizens' Corner",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Landscaped Garden & Reflexology Walkways",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "Power Backup & High-Speed Elevators",
+        "icon": "fa-bolt"
+      },
+      {
+        "name": "24/7 Gated Security with CCTV Surveillance",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Total Mall Airport Road",
-        distance: "2.0 km",
-        icon: "fa-bag-shopping",
+        "label": "Total Mall Airport Road",
+        "name": "Total Mall Airport Road",
+        "distance": "2.0 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Total Mall Airport Road, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.2539,
+          "lon": 77.7025
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "6.0 km",
-        icon: "fa-plane",
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "6.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
       },
       {
-        name: "KIADB Aerospace Park & SEZ",
-        distance: "8.0 km",
-        icon: "fa-laptop-code",
+        "label": "KIADB Aerospace Park & SEZ",
+        "name": "KIADB Aerospace Park & SEZ",
+        "distance": "8.0 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "KIADB Aerospace Park & SEZ, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1989,
+          "lon": 77.7064
+        }
       },
       {
-        name: "Akash Institute of Medical Sciences & Hospital",
-        distance: "9.5 km",
-        icon: "fa-hospital",
+        "label": "Akash Institute of Medical Sciences & Hospital",
+        "name": "Akash Institute of Medical Sciences & Hospital",
+        "distance": "9.5 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Akash Institute of Medical Sciences & Hospital, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.2924,
+          "lon": 77.7803
+        }
       },
       {
-        name: "Prestige Tech Cloud",
-        distance: "10.0 km",
-        icon: "fa-building-columns",
+        "label": "Prestige Tech Cloud",
+        "name": "Prestige Tech Cloud",
+        "distance": "10.0 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "Prestige Tech Cloud, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.191,
+          "lon": 77.641
+        }
       },
       {
-        name: "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        distance: "11.0 km",
-        icon: "fa-train-subway",
+        "label": "Bettahalsoor Metro Station (Upcoming Blue Line)",
+        "name": "Bettahalsoor Metro Station (Upcoming Blue Line)",
+        "distance": "11.0 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Bettahalsoor Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.159,
+          "lon": 77.631
+        }
       },
       {
-        name: "Phoenix Mall of Asia",
-        distance: "15.0 km",
-        icon: "fa-bag-shopping",
-      },
+        "label": "Phoenix Mall of Asia",
+        "name": "Phoenix Mall of Asia",
+        "distance": "15.0 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0694,
+          "lon": 77.5982
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-aeropolis-phase-ii/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-aeropolis-phase-ii/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-aeropolis-phase-ii/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-aeropolis-phase-ii/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-vasanta-cove",
-    thumbnail: sattvaImage("sattva-group/sattva-vasanta-cove/thumbnail.webp"),
-    title: "Sattva Vasanta Cove",
-    location: "Kannamangala, Devanahalli, Off Bellary Road, North Bangalore",
-    category: "new-launch",
-    type: "apartment",
-    priceValue: 0.59,
-    price: "₹ 59 lakhs Onwards",
-    area: "1.3 Acres",
-    floorPlans: [
+    "id": "sattva-vasanta-cove",
+    "thumbnail": sattvaImage("sattva-group/sattva-vasanta-cove/thumbnail.webp"),
+    "name": "Sattva Vasanta Cove",
+    "coordinates": {
+      "lat": 13.2215,
+      "lon": 77.689
+    },
+    "mapsQuery": "Sattva Vasanta Cove, Kannamangala, Devanahalli, Bengaluru",
+    "shortAddress": "Kannamangala, Devanahalli, North Bengaluru",
+    "title": "Sattva Vasanta Cove",
+    "location": "Kannamangala, Devanahalli, Off Bellary Road, North Bangalore",
+    "category": "new-launch",
+    "type": "apartment",
+    "priceValue": 0.59,
+    "price": "₹ 59 lakhs Onwards",
+    "area": "1.3 Acres",
+    "floorPlans": [
       {
-        id: "studio",
-        bhk: "Studio",
-        area: "533 - 625 Sq. Ft.",
-        price: "₹ 59 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-vasanta-cove/floor-plans/studio-floor-plan.webp"),
+        "id": "studio",
+        "bhk": "Studio",
+        "area": "533 - 625 Sq. Ft.",
+        "price": "₹ 59 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-vasanta-cove/floor-plans/studio-floor-plan.webp")
       },
       {
-        id: "1bhk",
-        bhk: "1 BHK",
-        area: "887 - 932 Sq. Ft.",
-        price: "₹ 1 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-vasanta-cove/floor-plans/1bhk-floor-plan.webp"),
-      },
+        "id": "1bhk",
+        "bhk": "1 BHK",
+        "area": "887 - 932 Sq. Ft.",
+        "price": "₹ 1 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-vasanta-cove/floor-plans/1bhk-floor-plan.webp")
+      }
     ],
-    possession: "December 2030",
-    units: "200",
-    highlight: "Compact Investment-Grade Enclave & 70% Open Space",
-    reraId: "PRM/KA/RERA/1250/303/PR/041225/008310",
-    summary:
-      "Sattva Vasanta Cove is a boutique residential development by Sattva Group located in Kannamangala, Devanahalli off Bellary Road, North Bangalore, offering compact Studio and 1 BHK luxury apartments across 1.3 acres with 70% open space.",
-    description:
-      "Sattva Vasanta Cove is an exclusive, investment-focused residential enclave by Sattva Group, strategically located in Kannamangala near Devanahalli along the expanding Bellary Road / International Airport corridor in North Bangalore. Spanning 1.3 acres with 70% open spaces, the property features 2 high-rise towers (2B + G + 12/13 Floors) housing around 200 meticulously planned Studio and 1 BHK smart apartments. Designed for modern professionals and investors, unit sizes range from 532 sq. ft. to 932 sq. ft., with prices starting from Rs. 54.7 Lakhs onwards. The project integrates comprehensive lifestyle amenities and offers exceptional proximity to Kempegowda International Airport and major North Bangalore tech and aerospace hubs. Sattva Vasanta Cove is registered under RERA PRM/KA/RERA/1250/303/PR/041225/008310.",
-    amenities: [
+    "possession": "December 2030",
+    "units": "200",
+    "highlight": "Compact Investment-Grade Enclave & 70% Open Space",
+    "reraId": "PRM/KA/RERA/1250/303/PR/041225/008310",
+    "summary": "Sattva Vasanta Cove is a boutique residential development by Sattva Group located in Kannamangala, Devanahalli off Bellary Road, North Bangalore, offering compact Studio and 1 BHK luxury apartments across 1.3 acres with 70% open space.",
+    "description": "Sattva Vasanta Cove is an exclusive, investment-focused residential enclave by Sattva Group, strategically located in Kannamangala near Devanahalli along the expanding Bellary Road / International Airport corridor in North Bangalore. Spanning 1.3 acres with 70% open spaces, the property features 2 high-rise towers (2B + G + 12/13 Floors) housing around 200 meticulously planned Studio and 1 BHK smart apartments. Designed for modern professionals and investors, unit sizes range from 532 sq. ft. to 932 sq. ft., with prices starting from Rs. 54.7 Lakhs onwards. The project integrates comprehensive lifestyle amenities and offers exceptional proximity to Kempegowda International Airport and major North Bangalore tech and aerospace hubs. Sattva Vasanta Cove is registered under RERA PRM/KA/RERA/1250/303/PR/041225/008310.",
+    "amenities": [
       {
-        name: "Resident Clubhouse & Multipurpose Hall",
-        icon: "fa-building-user",
+        "name": "Resident Clubhouse & Multipurpose Hall",
+        "icon": "fa-building-user"
       },
-      { name: "Swimming Pool & Kids Splash Pool", icon: "fa-water-ladder" },
       {
-        name: "Fully Equipped Gymnasium & Fitness Center",
-        icon: "fa-dumbbell",
+        "name": "Swimming Pool & Kids Splash Pool",
+        "icon": "fa-water-ladder"
       },
-      { name: "Meditation & Yoga Deck", icon: "fa-spa" },
-      { name: "Children's Play Area", icon: "fa-child-reaching" },
-      { name: "Landscaped Gardens & Walking Tracks", icon: "fa-tree" },
-      { name: "Indoor Games Zone & Sports Court", icon: "fa-gamepad" },
       {
-        name: "24/7 Gated Security & CCTV Surveillance",
-        icon: "fa-shield-halved",
+        "name": "Fully Equipped Gymnasium & Fitness Center",
+        "icon": "fa-dumbbell"
       },
+      {
+        "name": "Meditation & Yoga Deck",
+        "icon": "fa-spa"
+      },
+      {
+        "name": "Children's Play Area",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Landscaped Gardens & Walking Tracks",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "Indoor Games Zone & Sports Court",
+        "icon": "fa-gamepad"
+      },
+      {
+        "name": "24/7 Gated Security & CCTV Surveillance",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "12.0 km",
-        icon: "fa-plane",
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "12.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
       },
       {
-        name: "Devanahalli Business Park",
-        distance: "10.0 km",
-        icon: "fa-building-columns",
+        "label": "Devanahalli Business Park",
+        "name": "Devanahalli Business Park",
+        "distance": "10.0 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "Devanahalli Business Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.24,
+          "lon": 77.71
+        }
       },
       {
-        name: "KIADB Aerospace Park & SEZ",
-        distance: "12.5 km",
-        icon: "fa-laptop-code",
+        "label": "KIADB Aerospace Park & SEZ",
+        "name": "KIADB Aerospace Park & SEZ",
+        "distance": "12.5 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "KIADB Aerospace Park & SEZ, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1989,
+          "lon": 77.7064
+        }
       },
       {
-        name: "Akash Hospital Devanahalli",
-        distance: "11.0 km",
-        icon: "fa-hospital",
+        "label": "Akash Hospital Devanahalli",
+        "name": "Akash Hospital Devanahalli",
+        "distance": "11.0 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Akash Hospital Devanahalli, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1781,
+          "lon": 77.7805
+        }
       },
       {
-        name: "Stonehill International School",
-        distance: "14.0 km",
-        icon: "fa-school",
+        "label": "Stonehill International School",
+        "name": "Stonehill International School",
+        "distance": "14.0 km",
+        "icon": "fa-solid fa-school",
+        "destination": "Stonehill International School, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.2728,
+          "lon": 77.5706
+        }
       },
       {
-        name: "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        distance: "15.0 km",
-        icon: "fa-train-subway",
-      },
+        "label": "Bettahalsoor Metro Station (Upcoming Blue Line)",
+        "name": "Bettahalsoor Metro Station (Upcoming Blue Line)",
+        "distance": "15.0 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Bettahalsoor Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.159,
+          "lon": 77.631
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-vasanta-cove/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-vasanta-cove/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-vasanta-cove/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-vasanta-cove/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva aaranya",
-    thumbnail: sattvaImage("sattva-group/sattva-aaranya/thumbnail.webp"),
-    title: "Sattva Aaranya",
-    location:
-      "Mysore Road, Opp. Jnanabharathi Metro Station, RR Nagar, Bangalore",
-    category: "new-launch",
-    type: "apartment",
-    priceValue: 3.14,
-    price: "₹ 3.14 Crore Onwards",
-    area: "6.25 Acres",
-    floorPlans: [
+    "id": "sattva-aaranya",
+    "thumbnail": sattvaImage("sattva-group/sattva-aaranya/thumbnail.webp"),
+    "name": "Sattva Aaranya",
+    "coordinates": {
+      "lat": 12.936,
+      "lon": 77.5085
+    },
+    "mapsQuery": "Sattva Aaranya, Mysore Road, Opp Jnanabharathi Metro, Bengaluru",
+    "shortAddress": "Mysore Road, RR Nagar, West Bengaluru",
+    "title": "Sattva Aaranya",
+    "location": "Mysore Road, Opp. Jnanabharathi Metro Station, RR Nagar, Bangalore",
+    "category": "new-launch",
+    "type": "apartment",
+    "priceValue": 3.14,
+    "price": "₹ 3.14 Crore Onwards",
+    "area": "6.25 Acres",
+    "floorPlans": [
       {
-        id: "3bhk",
-        bhk: "3 BHK",
-        area: "2,118 Sq. Ft.",
-        price: "₹ 3.14 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-aaranya/floor-plans/3bhk-floor-plan.webp"),
+        "id": "3bhk",
+        "bhk": "3 BHK",
+        "area": "2,118 Sq. Ft.",
+        "price": "₹ 3.14 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-aaranya/floor-plans/3bhk-floor-plan.webp")
       },
       {
-        id: "3.5bhk",
-        bhk: "3.5 BHK",
-        area: "2,529 Sq. Ft.",
-        price: "₹ 3.72 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-aaranya/floor-plans/3.5bhk-floor-plan.webp"),
+        "id": "3.5bhk",
+        "bhk": "3.5 BHK",
+        "area": "2,529 Sq. Ft.",
+        "price": "₹ 3.72 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-aaranya/floor-plans/3.5bhk-floor-plan.webp")
       },
       {
-        id: "4bhk",
-        bhk: "4 BHK",
-        area: "2,944 Sq. Ft.",
-        price: "₹ 4.33 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-aaranya/floor-plans/4bhk-floor-plan.webp"),
-      },
+        "id": "4bhk",
+        "bhk": "4 BHK",
+        "area": "2,944 Sq. Ft.",
+        "price": "₹ 4.33 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-aaranya/floor-plans/4bhk-floor-plan.webp")
+      }
     ],
-    possession: "January 2031",
-    units: "418",
-    highlight: "Metro-Front High-Rise Living & 75% Landscape Open Space",
-    reraId: "PRM/KA/RERA/1251/310/PR/241225/008358",
-    summary:
-      "Sattva Aaranya is an ultra-luxury high-rise residential enclave by Sattva Group located on Mysore Road directly opposite Jnanabharathi Metro Station, RR Nagar, Bangalore, offering 3, 3.5, and 4 BHK premium homes across 6.25 acres.",
-    description:
-      "Sattva Aaranya is a landmark ultra-luxury high-rise development by Sattva Group, situated directly along Mysore Main Road opposite Jnanabharathi Metro Station in the RR Nagar region of West Bangalore. Spanning 6.25 acres wrapped by lush green belts, the development features 3 iconic towers (3B + G + 30 Floors) comprising 418 luxury apartments designed with cruciform floor plates for maximum privacy and cross-ventilation. Homebuyers can choose from 3 BHK, 3.5 BHK, and 4 BHK configurations ranging from 2,054 sq. ft. to 2,944 sq. ft., with prices starting from Rs. 3.14 Crore onwards. Equipped with a resort-style clubhouse, infinity swimming pool, rooftop sky decks, and 75% landscaped open grounds, the project offers unmatched access to the Purple Line Metro, RV University, and Global Tech Park. Sattva Aaranya is registered under RERA PRM/KA/RERA/1251/310/PR/241225/008358.",
-    amenities: [
-      { name: "Resident Clubhouse & Banquet Hall", icon: "fa-building-user" },
-      { name: "Infinity Edge Pool & Sun Deck", icon: "fa-water-ladder" },
+    "possession": "January 2031",
+    "units": "418",
+    "highlight": "Metro-Front High-Rise Living & 75% Landscape Open Space",
+    "reraId": "PRM/KA/RERA/1251/310/PR/241225/008358",
+    "summary": "Sattva Aaranya is an ultra-luxury high-rise residential enclave by Sattva Group located on Mysore Road directly opposite Jnanabharathi Metro Station, RR Nagar, Bangalore, offering 3, 3.5, and 4 BHK premium homes across 6.25 acres.",
+    "description": "Sattva Aaranya is a landmark ultra-luxury high-rise development by Sattva Group, situated directly along Mysore Main Road opposite Jnanabharathi Metro Station in the RR Nagar region of West Bangalore. Spanning 6.25 acres wrapped by lush green belts, the development features 3 iconic towers (3B + G + 30 Floors) comprising 418 luxury apartments designed with cruciform floor plates for maximum privacy and cross-ventilation. Homebuyers can choose from 3 BHK, 3.5 BHK, and 4 BHK configurations ranging from 2,054 sq. ft. to 2,944 sq. ft., with prices starting from Rs. 3.14 Crore onwards. Equipped with a resort-style clubhouse, infinity swimming pool, rooftop sky decks, and 75% landscaped open grounds, the project offers unmatched access to the Purple Line Metro, RV University, and Global Tech Park. Sattva Aaranya is registered under RERA PRM/KA/RERA/1251/310/PR/241225/008358.",
+    "amenities": [
       {
-        name: "Squash Court & Indoor Sports Hub",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "Resident Clubhouse & Banquet Hall",
+        "icon": "fa-building-user"
       },
       {
-        name: "Kids Playground & Outdoor Play Area",
-        icon: "fa-child-reaching",
+        "name": "Infinity Edge Pool & Sun Deck",
+        "icon": "fa-water-ladder"
       },
-      { name: "Mini Theatre & Entertainment Room", icon: "fa-film" },
-      { name: "Fully Equipped Gym & Spa", icon: "fa-dumbbell" },
-      { name: "Landscaped Central Park & Miyawaki Forest", icon: "fa-tree" },
       {
-        name: "Jogging Track & Cricket Practice Pitch",
-        icon: "fa-person-running",
+        "name": "Squash Court & Indoor Sports Hub",
+        "icon": "fa-table-tennis-paddle-ball"
       },
+      {
+        "name": "Kids Playground & Outdoor Play Area",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Mini Theatre & Entertainment Room",
+        "icon": "fa-film"
+      },
+      {
+        "name": "Fully Equipped Gym & Spa",
+        "icon": "fa-dumbbell"
+      },
+      {
+        "name": "Landscaped Central Park & Miyawaki Forest",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "Jogging Track & Cricket Practice Pitch",
+        "icon": "fa-person-running"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Jnanabharathi Metro Station (Purple Line)",
-        distance: "0.1 km",
-        icon: "fa-train-subway",
+        "label": "Jnanabharathi Metro Station (Purple Line)",
+        "name": "Jnanabharathi Metro Station (Purple Line)",
+        "distance": "0.1 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Jnanabharathi Metro Station (Purple Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.938,
+          "lon": 77.509
+        }
       },
       {
-        name: "Bangalore University Campus",
-        distance: "0.5 km",
-        icon: "fa-graduation-cap",
-      },
-      { name: "RV University / RVCE", distance: "2.2 km", icon: "fa-school" },
-      {
-        name: "Global Village Tech Park",
-        distance: "3.5 km",
-        icon: "fa-laptop-code",
-      },
-      {
-        name: "Gopalan Arcade Mall",
-        distance: "3.8 km",
-        icon: "fa-bag-shopping",
+        "label": "Bangalore University Campus",
+        "name": "Bangalore University Campus",
+        "distance": "0.5 km",
+        "icon": "fa-solid fa-graduation-cap",
+        "destination": "Bangalore University Campus, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.942,
+          "lon": 77.505
+        }
       },
       {
-        name: "Rajarajeswari Medical College & Hospital",
-        distance: "4.5 km",
-        icon: "fa-hospital",
+        "label": "RV University / RVCE",
+        "name": "RV University / RVCE",
+        "distance": "2.2 km",
+        "icon": "fa-solid fa-school",
+        "destination": "RV University / RVCE, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.923,
+          "lon": 77.498
+        }
       },
       {
-        name: "KSR Bengaluru City Railway Station",
-        distance: "8.0 km",
-        icon: "fa-train",
+        "label": "Global Village Tech Park",
+        "name": "Global Village Tech Park",
+        "distance": "3.5 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "Global Village Tech Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.918,
+          "lon": 77.501
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "42.0 km",
-        icon: "fa-plane",
+        "label": "Gopalan Arcade Mall",
+        "name": "Gopalan Arcade Mall",
+        "distance": "3.8 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Gopalan Arcade Mall, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.931,
+          "lon": 77.527
+        }
       },
+      {
+        "label": "Rajarajeswari Medical College & Hospital",
+        "name": "Rajarajeswari Medical College & Hospital",
+        "distance": "4.5 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Rajarajeswari Medical College & Hospital, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.887,
+          "lon": 77.464
+        }
+      },
+      {
+        "label": "KSR Bengaluru City Railway Station",
+        "name": "KSR Bengaluru City Railway Station",
+        "distance": "8.0 km",
+        "icon": "fa-solid fa-train",
+        "destination": "KSR Bengaluru City Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9781,
+          "lon": 77.5696
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "42.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-aaranya/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-aaranya/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-aaranya/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-aaranya/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-vasanta-skye",
-    thumbnail: sattvaImage("sattva-group/sattva-vasanta-skye/thumbnail.webp"),
-    title: "Sattva Vasanta Skye",
-    location:
-      "Kannamangala Village, Devanahalli, Near KIAL Airport, North Bangalore",
-    category: "new-launch",
-    type: "apartment",
-    priceValue: 0.8018,
-    price: "₹ 80.18 Lakhs Onwards",
-    area: "16 Acres",
-    floorPlans: [
+    "id": "sattva-vasanta-skye",
+    "thumbnail": sattvaImage("sattva-group/sattva-vasanta-skye/thumbnail.webp"),
+    "name": "Sattva Vasanta Skye",
+    "coordinates": {
+      "lat": 13.224,
+      "lon": 77.692
+    },
+    "mapsQuery": "Sattva Vasanta Skye, Kannamangala, Devanahalli, Bengaluru",
+    "shortAddress": "Kannamangala, Devanahalli, North Bengaluru",
+    "title": "Sattva Vasanta Skye",
+    "location": "Kannamangala Village, Devanahalli, Near KIAL Airport, North Bangalore",
+    "category": "new-launch",
+    "type": "apartment",
+    "priceValue": 0.8018,
+    "price": "₹ 80.18 Lakhs Onwards",
+    "area": "16 Acres",
+    "floorPlans": [
       {
-        id: "1bhk",
-        bhk: "1 BHK",
-        area: "731 Sq. Ft.",
-        price: "₹ 80.18 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-vasanta-skye/floor-plans/1bhk-floor-plan.webp"),
+        "id": "1bhk",
+        "bhk": "1 BHK",
+        "area": "731 Sq. Ft.",
+        "price": "₹ 80.18 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-vasanta-skye/floor-plans/1bhk-floor-plan.webp")
       },
       {
-        id: "2bhk",
-        bhk: "2 BHK",
-        area: "1,217 Sq. Ft.",
-        price: "₹ 1.33 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-vasanta-skye/floor-plans/2bhk-floor-plan.webp"),
+        "id": "2bhk",
+        "bhk": "2 BHK",
+        "area": "1,217 Sq. Ft.",
+        "price": "₹ 1.33 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-vasanta-skye/floor-plans/2bhk-floor-plan.webp")
       },
       {
-        id: "3bhk-comfort",
-        bhk: "3 BHK Comfort",
-        area: "1,509 Sq. Ft.",
-        price: "₹ 1.66 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-vasanta-skye/floor-plans/3bhk-floor-plan.webp"),
+        "id": "3bhk-comfort",
+        "bhk": "3 BHK Comfort",
+        "area": "1,509 Sq. Ft.",
+        "price": "₹ 1.66 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-vasanta-skye/floor-plans/3bhk-floor-plan.webp")
       },
       {
-        id: "3bhk-grand",
-        bhk: "3 BHK Grand",
-        area: "1,831 Sq. Ft.",
-        price: "₹ 2.01 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-vasanta-skye/floor-plans/3bhk-floor-plan(1).webp"),
+        "id": "3bhk-grand",
+        "bhk": "3 BHK Grand",
+        "area": "1,831 Sq. Ft.",
+        "price": "₹ 2.01 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-vasanta-skye/floor-plans/3bhk-floor-plan(1).webp")
       },
       {
-        id: "4bhk",
-        bhk: "4 BHK",
-        area: "2,254 Sq. Ft.",
-        price: "₹ 2.47 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-vasanta-skye/floor-plans/4bhk-floor-plan.webp"),
-      },
+        "id": "4bhk",
+        "bhk": "4 BHK",
+        "area": "2,254 Sq. Ft.",
+        "price": "₹ 2.47 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-vasanta-skye/floor-plans/4bhk-floor-plan.webp")
+      }
     ],
-    possession: "May 2031",
-    units: "1,077",
-    highlight:
-      "80% Open Greenery & Sprawling 1-Acre Clubhouse (45,000 Sq. Ft.)",
-    reraId: "PRM/KA/RERA/1250/303/PR/080525/007730",
-    summary:
-      "Sattva Vasanta Skye is a premier high-rise residential project by Sattva Group spread across 16 acres in Devanahalli, North Bangalore, offering Studio, 1 BHK, 2 BHK, 3 BHK, and 4 BHK luxury residences near Kempegowda International Airport.",
-    description:
-      "Sattva Vasanta Skye is a flagship nature-to-sky high-rise residential development by Sattva Group, situated in Kannamangala Village, Devanahalli along the NH-44 Airport Corridor in North Bangalore. Spanning 16 acres with 80% open landscaped spaces, the project comprises 11 high-rise towers (B + G + 13/14 Floors) housing 1,077 luxury residences spaced 113 to 180 meters apart for maximum privacy and ventilation. Homebuyers can choose from 1 BHK to 4 BHK unit configurations ranging from 447 sq. ft. to 2,324 sq. ft., with prices starting from Rs. 78.0 Lakhs onwards. Centered around a grand 1-acre clubhouse (45,000 sq. ft.) featuring al-fresco dining, rooftop pools, and rain-fed water bodies, the project is situated just 5 minutes from Kempegowda International Airport. Sattva Vasanta Skye is registered under RERA PRM/KA/RERA/1250/303/PR/080525/007730.",
-    amenities: [
-      { name: "1-Acre Grand Resident Clubhouse", icon: "fa-building-user" },
-      { name: "Rooftop & Outdoor Swimming Pools", icon: "fa-water-ladder" },
+    "possession": "May 2031",
+    "units": "1,077",
+    "highlight": "80% Open Greenery & Sprawling 1-Acre Clubhouse (45,000 Sq. Ft.)",
+    "reraId": "PRM/KA/RERA/1250/303/PR/080525/007730",
+    "summary": "Sattva Vasanta Skye is a premier high-rise residential project by Sattva Group spread across 16 acres in Devanahalli, North Bangalore, offering Studio, 1 BHK, 2 BHK, 3 BHK, and 4 BHK luxury residences near Kempegowda International Airport.",
+    "description": "Sattva Vasanta Skye is a flagship nature-to-sky high-rise residential development by Sattva Group, situated in Kannamangala Village, Devanahalli along the NH-44 Airport Corridor in North Bangalore. Spanning 16 acres with 80% open landscaped spaces, the project comprises 11 high-rise towers (B + G + 13/14 Floors) housing 1,077 luxury residences spaced 113 to 180 meters apart for maximum privacy and ventilation. Homebuyers can choose from 1 BHK to 4 BHK unit configurations ranging from 447 sq. ft. to 2,324 sq. ft., with prices starting from Rs. 78.0 Lakhs onwards. Centered around a grand 1-acre clubhouse (45,000 sq. ft.) featuring al-fresco dining, rooftop pools, and rain-fed water bodies, the project is situated just 5 minutes from Kempegowda International Airport. Sattva Vasanta Skye is registered under RERA PRM/KA/RERA/1250/303/PR/080525/007730.",
+    "amenities": [
       {
-        name: "Multipurpose Sports Courts & Aerobics Zone",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "1-Acre Grand Resident Clubhouse",
+        "icon": "fa-building-user"
       },
-      { name: "Children's Outdoor Play Park", icon: "fa-child-reaching" },
-      { name: "Amphitheatre & Outdoor Movie Lawn", icon: "fa-film" },
-      { name: "Fully Equipped Gymnasium & Yoga Deck", icon: "fa-dumbbell" },
-      { name: "Landscaped Central Park & Nature Trails", icon: "fa-tree" },
       {
-        name: "Rain-fed Water Features & EV Charging Infrastructure",
-        icon: "fa-bolt",
+        "name": "Rooftop & Outdoor Swimming Pools",
+        "icon": "fa-water-ladder"
       },
+      {
+        "name": "Multipurpose Sports Courts & Aerobics Zone",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Children's Outdoor Play Park",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Amphitheatre & Outdoor Movie Lawn",
+        "icon": "fa-film"
+      },
+      {
+        "name": "Fully Equipped Gymnasium & Yoga Deck",
+        "icon": "fa-dumbbell"
+      },
+      {
+        "name": "Landscaped Central Park & Nature Trails",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "Rain-fed Water Features & EV Charging Infrastructure",
+        "icon": "fa-bolt"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Leena Multispeciality Hospital",
-        distance: "3.0 km",
-        icon: "fa-hospital",
+        "label": "Leena Multispeciality Hospital",
+        "name": "Leena Multispeciality Hospital",
+        "distance": "3.0 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Leena Multispeciality Hospital, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.2161,
+          "lon": 77.7186
+        }
       },
       {
-        name: "Upcoming Airport Blue Line Metro Station",
-        distance: "3.6 km",
-        icon: "fa-train-subway",
+        "label": "Upcoming Airport Blue Line Metro Station",
+        "name": "Upcoming Airport Blue Line Metro Station",
+        "distance": "3.6 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Upcoming Airport Blue Line Metro Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1981,
+          "lon": 77.672
+        }
       },
       {
-        name: "Akash International School",
-        distance: "5.0 km",
-        icon: "fa-school",
+        "label": "Akash International School",
+        "name": "Akash International School",
+        "distance": "5.0 km",
+        "icon": "fa-solid fa-school",
+        "destination": "Akash International School, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.2116,
+          "lon": 77.7365
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "5.1 km",
-        icon: "fa-plane",
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "5.1 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
       },
       {
-        name: "KIADB Aerospace Park & IT SEZ",
-        distance: "8.5 km",
-        icon: "fa-laptop-code",
+        "label": "KIADB Aerospace Park & IT SEZ",
+        "name": "KIADB Aerospace Park & IT SEZ",
+        "distance": "8.5 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "KIADB Aerospace Park & IT SEZ, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1989,
+          "lon": 77.7064
+        }
       },
       {
-        name: "Phoenix Mall of Asia",
-        distance: "22.0 km",
-        icon: "fa-bag-shopping",
+        "label": "Phoenix Mall of Asia",
+        "name": "Phoenix Mall of Asia",
+        "distance": "22.0 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0694,
+          "lon": 77.5982
+        }
       },
       {
-        name: "Manyata Tech Park",
-        distance: "28.0 km",
-        icon: "fa-building-columns",
-      },
+        "label": "Manyata Tech Park",
+        "name": "Manyata Tech Park",
+        "distance": "28.0 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "Manyata Tech Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0475,
+          "lon": 77.6212
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-vasanta-skye/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-vasanta-skye/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-vasanta-skye/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-vasanta-skye/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-park-cubix-phase-II",
-    thumbnail: sattvaImage("sattva-group/sattva-park-cubix-phase-ii/thumbnail.webp"),
-    title: "Sattva Park Cubix Phase II",
-    location: "Devanahalli Town, Off NH-207, North Bangalore",
-    category: "ongoing",
-    type: "apartment",
-    priceValue: 0.3597,
-    price: "₹ 35.97 Lakhs Onwards",
-    area: "8.92 Acres",
-    floorPlans: [
+    "id": "sattva-park-cubix-phase-II",
+    "thumbnail": sattvaImage("sattva-group/sattva-park-cubix-phase-ii/thumbnail.webp"),
+    "name": "Sattva Park Cubix Phase 2",
+    "coordinates": {
+      "lat": 13.2515,
+      "lon": 77.7185
+    },
+    "mapsQuery": "Sattva Park Cubix Phase 2, Devanahalli, Bengaluru",
+    "shortAddress": "Devanahalli Town, North Bengaluru",
+    "title": "Sattva Park Cubix Phase II",
+    "location": "Devanahalli Town, Off NH-207, North Bangalore",
+    "category": "ongoing",
+    "type": "apartment",
+    "priceValue": 0.3597,
+    "price": "₹ 35.97 Lakhs Onwards",
+    "area": "8.92 Acres",
+    "floorPlans": [
       {
-        id: "studio",
-        bhk: "Studio",
-        area: "449 Sq. Ft.",
-        price: "₹ 35.97 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-park-cubix-phase-ii/floor-plans/studio-floor-plan.webp"),
+        "id": "studio",
+        "bhk": "Studio",
+        "area": "449 Sq. Ft.",
+        "price": "₹ 35.97 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-park-cubix-phase-ii/floor-plans/studio-floor-plan.webp")
       },
       {
-        id: "1bhk",
-        bhk: "1 BHK",
-        area: "672 Sq. Ft.",
-        price: "₹ 54.72 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-park-cubix-phase-ii/floor-plans/1bhk-floor-plan.webp"),
+        "id": "1bhk",
+        "bhk": "1 BHK",
+        "area": "672 Sq. Ft.",
+        "price": "₹ 54.72 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-park-cubix-phase-ii/floor-plans/1bhk-floor-plan.webp")
       },
       {
-        id: "2bhk",
-        bhk: "2 BHK",
-        area: "1,082 Sq. Ft.",
-        price: "₹ 89.59 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-park-cubix-phase-ii/floor-plans/2bhk-floor-plan.webp"),
+        "id": "2bhk",
+        "bhk": "2 BHK",
+        "area": "1,082 Sq. Ft.",
+        "price": "₹ 89.59 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-park-cubix-phase-ii/floor-plans/2bhk-floor-plan.webp")
       },
       {
-        id: "3bhk",
-        bhk: "3 BHK",
-        area: "1,457 - 1,702 Sq. Ft.",
-        price: "₹ 1.19 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-park-cubix-phase-ii/floor-plans/3bhk-floor-plan.webp"),
-      },
+        "id": "3bhk",
+        "bhk": "3 BHK",
+        "area": "1,457 - 1,702 Sq. Ft.",
+        "price": "₹ 1.19 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-park-cubix-phase-ii/floor-plans/3bhk-floor-plan.webp")
+      }
     ],
-    possession: "September 2029",
-    units: "798",
-    highlight:
-      "8.92 Acres Expansion & 7 High-Rise Towers with Extended Clubhouse Ecosystem",
-    reraId: "PRM/KA/RERA/1250/303/PR/280225/007529",
-    summary:
-      "Sattva Park Cubix Phase II is an expansive residential extension by Sattva Group located in Devanahalli Town, North Bangalore, offering Studio, 1 BHK, 2 BHK, and 3 BHK modern apartments across 8.92 acres.",
-    description:
-      "Sattva Park Cubix Phase II is a contemporary high-rise residential expansion by Sattva Group, strategically located in the prime growth corridor of Devanahalli Town, North Bangalore. Spanning 8.92 acres, this phase features 7 high-rise towers comprising 798 thoughtfully designed residential units. Homebuyers can select from versatile configurations including Studio apartments, 1 BHK, 2 BHK, and expansive 3 BHK homes, with unit super built-up areas ranging from 449 sq. ft. to 1,702 sq. ft. Starting prices begin at Rs. 35.97 Lakhs onwards. The community integrates exclusive recreational amenities such as a clubhouse, swimming pool, indoor gym, sports courts, and landscaped gathering plazas, all while remaining just 10 minutes from Kempegowda International Airport and major tech hubs. Sattva Park Cubix Phase II is registered under RERA PRM/KA/RERA/1250/303/PR/280225/007529.",
-    amenities: [
-      { name: "Semi Clubhouse & Gathering Plaza", icon: "fa-building-user" },
-      { name: "Outdoor Swimming Pool", icon: "fa-water-ladder" },
-      { name: "Indoor Gymnasium & Fitness Studio", icon: "fa-dumbbell" },
+    "possession": "September 2029",
+    "units": "798",
+    "highlight": "8.92 Acres Expansion & 7 High-Rise Towers with Extended Clubhouse Ecosystem",
+    "reraId": "PRM/KA/RERA/1250/303/PR/280225/007529",
+    "summary": "Sattva Park Cubix Phase II is an expansive residential extension by Sattva Group located in Devanahalli Town, North Bangalore, offering Studio, 1 BHK, 2 BHK, and 3 BHK modern apartments across 8.92 acres.",
+    "description": "Sattva Park Cubix Phase II is a contemporary high-rise residential expansion by Sattva Group, strategically located in the prime growth corridor of Devanahalli Town, North Bangalore. Spanning 8.92 acres, this phase features 7 high-rise towers comprising 798 thoughtfully designed residential units. Homebuyers can select from versatile configurations including Studio apartments, 1 BHK, 2 BHK, and expansive 3 BHK homes, with unit super built-up areas ranging from 449 sq. ft. to 1,702 sq. ft. Starting prices begin at Rs. 35.97 Lakhs onwards. The community integrates exclusive recreational amenities such as a clubhouse, swimming pool, indoor gym, sports courts, and landscaped gathering plazas, all while remaining just 10 minutes from Kempegowda International Airport and major tech hubs. Sattva Park Cubix Phase II is registered under RERA PRM/KA/RERA/1250/303/PR/280225/007529.",
+    "amenities": [
       {
-        name: "Indoor Badminton Court & Games Room",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "Semi Clubhouse & Gathering Plaza",
+        "icon": "fa-building-user"
       },
-      { name: "Children's Play Zone & Kids Room", icon: "fa-child-reaching" },
       {
-        name: "Basketball Court & Cricket Practice Pitch",
-        icon: "fa-baseball",
+        "name": "Outdoor Swimming Pool",
+        "icon": "fa-water-ladder"
       },
-      { name: "Banquet & Party Hall", icon: "fa-people-roof" },
-      { name: "Landscaped Gardens & Walkways", icon: "fa-tree" },
+      {
+        "name": "Indoor Gymnasium & Fitness Studio",
+        "icon": "fa-dumbbell"
+      },
+      {
+        "name": "Indoor Badminton Court & Games Room",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Children's Play Zone & Kids Room",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Basketball Court & Cricket Practice Pitch",
+        "icon": "fa-baseball"
+      },
+      {
+        "name": "Banquet & Party Hall",
+        "icon": "fa-people-roof"
+      },
+      {
+        "name": "Landscaped Gardens & Walkways",
+        "icon": "fa-tree"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Devanahalli Town Centre",
-        distance: "1.5 km",
-        icon: "fa-school",
+        "label": "Devanahalli Town Centre",
+        "name": "Devanahalli Town Centre",
+        "distance": "1.5 km",
+        "icon": "fa-solid fa-school",
+        "destination": "Devanahalli Town Centre, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.248,
+          "lon": 77.713
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "6.5 km",
-        icon: "fa-plane",
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "6.5 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
       },
       {
-        name: "KIADB Aerospace Park & IT SEZ",
-        distance: "8.0 km",
-        icon: "fa-laptop-code",
+        "label": "KIADB Aerospace Park & IT SEZ",
+        "name": "KIADB Aerospace Park & IT SEZ",
+        "distance": "8.0 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "KIADB Aerospace Park & IT SEZ, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1989,
+          "lon": 77.7064
+        }
       },
       {
-        name: "Akash International School & Hospital",
-        distance: "9.0 km",
-        icon: "fa-hospital",
+        "label": "Akash International School & Hospital",
+        "name": "Akash International School & Hospital",
+        "distance": "9.0 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Akash International School & Hospital, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.3316,
+          "lon": 77.7315
+        }
       },
       {
-        name: "Prestige Tech Cloud",
-        distance: "10.0 km",
-        icon: "fa-building-columns",
+        "label": "Prestige Tech Cloud",
+        "name": "Prestige Tech Cloud",
+        "distance": "10.0 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "Prestige Tech Cloud, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.191,
+          "lon": 77.641
+        }
       },
       {
-        name: "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        distance: "11.5 km",
-        icon: "fa-train-subway",
+        "label": "Bettahalsoor Metro Station (Upcoming Blue Line)",
+        "name": "Bettahalsoor Metro Station (Upcoming Blue Line)",
+        "distance": "11.5 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Bettahalsoor Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.159,
+          "lon": 77.631
+        }
       },
       {
-        name: "Phoenix Mall of Asia",
-        distance: "16.0 km",
-        icon: "fa-bag-shopping",
-      },
+        "label": "Phoenix Mall of Asia",
+        "name": "Phoenix Mall of Asia",
+        "distance": "16.0 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0694,
+          "lon": 77.5982
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-park-cubix-phase-ii/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-park-cubix-phase-ii/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-park-cubix-phase-ii/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-park-cubix-phase-ii/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-forest-ridge",
-    thumbnail: sattvaImage("sattva-group/sattva-forest-ridge/thumbnail.webp"),
-    title: "Sattva Forest Ridge",
-    location: "Anjanapura, JP Nagar 9th Phase, South Bangalore",
-    category: "ongoing",
-    type: "apartment",
-    priceValue: 0.7545,
-    price: "₹ 75.45 Lakhs Onwards",
-    area: "4 Acres",
-    floorPlans: [
+    "id": "sattva-forest-ridge",
+    "thumbnail": sattvaImage("sattva-group/sattva-forest-ridge/thumbnail.webp"),
+    "name": "Sattva Forest Ridge",
+    "coordinates": {
+      "lat": 12.8625,
+      "lon": 77.5615
+    },
+    "mapsQuery": "Sattva Forest Ridge, Anjanapura, JP Nagar 9th Phase, Bengaluru",
+    "shortAddress": "JP Nagar 9th Phase, South Bengaluru",
+    "title": "Sattva Forest Ridge",
+    "location": "Anjanapura, JP Nagar 9th Phase, South Bangalore",
+    "category": "ongoing",
+    "type": "apartment",
+    "priceValue": 0.7545,
+    "price": "₹ 75.45 Lakhs Onwards",
+    "area": "4 Acres",
+    "floorPlans": [
       {
-        id: "1bhk",
-        bhk: "1 BHK",
-        area: "732 - 767 Sq. Ft.",
-        price: "₹ 75.45 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-forest-ridge/floor-plans/1bhk-floor-plan.webp"),
+        "id": "1bhk",
+        "bhk": "1 BHK",
+        "area": "732 - 767 Sq. Ft.",
+        "price": "₹ 75.45 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-forest-ridge/floor-plans/1bhk-floor-plan.webp")
       },
       {
-        id: "2bhk",
-        bhk: "2 BHK",
-        area: "1,195 - 1,200 Sq. Ft.",
-        price: "₹ 1.23 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-forest-ridge/floor-plans/2bhk-floor-plan.webp"),
+        "id": "2bhk",
+        "bhk": "2 BHK",
+        "area": "1,195 - 1,200 Sq. Ft.",
+        "price": "₹ 1.23 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-forest-ridge/floor-plans/2bhk-floor-plan.webp")
       },
       {
-        id: "3bhk-2t",
-        bhk: "3 BHK (2T)",
-        area: "1,616 - 1,688 Sq. Ft.",
-        price: "₹ 1.67 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-forest-ridge/floor-plans/3bhk(2t)-floor-plan.webp"),
+        "id": "3bhk-2t",
+        "bhk": "3 BHK (2T)",
+        "area": "1,616 - 1,688 Sq. Ft.",
+        "price": "₹ 1.67 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-forest-ridge/floor-plans/3bhk(2t)-floor-plan.webp")
       },
       {
-        id: "3bhk-3t",
-        bhk: "3 BHK (3T)",
-        area: "1,841 - 1,864 Sq. Ft.",
-        price: "₹ 1.90 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-forest-ridge/floor-plans/3bhk(3t)-floor-plan.webp"),
-      },
+        "id": "3bhk-3t",
+        "bhk": "3 BHK (3T)",
+        "area": "1,841 - 1,864 Sq. Ft.",
+        "price": "₹ 1.90 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-forest-ridge/floor-plans/3bhk(3t)-floor-plan.webp")
+      }
     ],
-    possession: "December 2029",
-    units: "407",
-    highlight:
-      "4-Acre Serene Enclave & High-Rise Green Living in JP Nagar 9th Phase",
-    reraId: "PRM/KA/RERA/1251/310/PR/241224/007315",
-    summary:
-      "Sattva Forest Ridge is a modern residential development by Sattva Group located in Anjanapura, JP Nagar 9th Phase, South Bangalore, offering 1, 2, and 3 BHK luxury apartments across 4 acres with green landscaped open spaces.",
-    description:
-      "Sattva Forest Ridge is a thoughtfully designed residential enclave by Sattva Group, strategically located in Anjanapura, JP Nagar 9th Phase, South Bangalore. Spanning 4 acres, the project features 3 high-rise towers comprising 407 premium residential apartments designed to offer high efficiency, natural lighting, and cross-ventilation. Homebuyers can choose from 1 BHK, 2 BHK, and 3 BHK apartment layouts with super built-up areas ranging from 732 sq. ft. to 1,864 sq. ft., with prices starting from Rs. 70.0 Lakhs onwards. The community includes a fully equipped resident clubhouse, swimming pool, indoor sports, gym, and landscaped green zones while offering direct connectivity to Kanakapura Road, Silk Institute Metro Station, Bannerghatta Road, and the NICE Ring Road. Sattva Forest Ridge is registered under RERA PRM/KA/RERA/1251/310/PR/241224/007315.",
-    amenities: [
+    "possession": "December 2029",
+    "units": "407",
+    "highlight": "4-Acre Serene Enclave & High-Rise Green Living in JP Nagar 9th Phase",
+    "reraId": "PRM/KA/RERA/1251/310/PR/241224/007315",
+    "summary": "Sattva Forest Ridge is a modern residential development by Sattva Group located in Anjanapura, JP Nagar 9th Phase, South Bangalore, offering 1, 2, and 3 BHK luxury apartments across 4 acres with green landscaped open spaces.",
+    "description": "Sattva Forest Ridge is a thoughtfully designed residential enclave by Sattva Group, strategically located in Anjanapura, JP Nagar 9th Phase, South Bangalore. Spanning 4 acres, the project features 3 high-rise towers comprising 407 premium residential apartments designed to offer high efficiency, natural lighting, and cross-ventilation. Homebuyers can choose from 1 BHK, 2 BHK, and 3 BHK apartment layouts with super built-up areas ranging from 732 sq. ft. to 1,864 sq. ft., with prices starting from Rs. 70.0 Lakhs onwards. The community includes a fully equipped resident clubhouse, swimming pool, indoor sports, gym, and landscaped green zones while offering direct connectivity to Kanakapura Road, Silk Institute Metro Station, Bannerghatta Road, and the NICE Ring Road. Sattva Forest Ridge is registered under RERA PRM/KA/RERA/1251/310/PR/241224/007315.",
+    "amenities": [
       {
-        name: "Resident Clubhouse & Multipurpose Hall",
-        icon: "fa-building-user",
+        "name": "Resident Clubhouse & Multipurpose Hall",
+        "icon": "fa-building-user"
       },
-      { name: "Outdoor Swimming Pool & Sun Deck", icon: "fa-water-ladder" },
       {
-        name: "Fully Equipped Gymnasium & Fitness Center",
-        icon: "fa-dumbbell",
+        "name": "Outdoor Swimming Pool & Sun Deck",
+        "icon": "fa-water-ladder"
       },
-      { name: "Meditation & Yoga Deck", icon: "fa-spa" },
-      { name: "Children's Outdoor Play Park", icon: "fa-child-reaching" },
       {
-        name: "Badminton & Indoor Games Room",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "Fully Equipped Gymnasium & Fitness Center",
+        "icon": "fa-dumbbell"
       },
-      { name: "Landscaped Central Park & Walking Trails", icon: "fa-tree" },
       {
-        name: "24/7 Gated Security & CCTV Surveillance",
-        icon: "fa-shield-halved",
+        "name": "Meditation & Yoga Deck",
+        "icon": "fa-spa"
       },
+      {
+        "name": "Children's Outdoor Play Park",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Badminton & Indoor Games Room",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Landscaped Central Park & Walking Trails",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "24/7 Gated Security & CCTV Surveillance",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Silk Institute Metro Station (Green Line)",
-        distance: "3.5 km",
-        icon: "fa-train-subway",
-      },
-      { name: "Kanakapura Main Road", distance: "4.0 km", icon: "fa-route" },
-      { name: "NICE Ring Road Junction", distance: "5.0 km", icon: "fa-road" },
-      {
-        name: "Kumaran's Autonomous College / School",
-        distance: "5.5 km",
-        icon: "fa-graduation-cap",
-      },
-      {
-        name: "Fortis Hospital Bannerghatta Road",
-        distance: "8.0 km",
-        icon: "fa-hospital",
-      },
-      { name: "Vega City Mall", distance: "9.5 km", icon: "fa-bag-shopping" },
-      {
-        name: "Electronic City Phase 1 via NICE Road",
-        distance: "16.0 km",
-        icon: "fa-laptop-code",
+        "label": "Silk Institute Metro Station (Green Line)",
+        "name": "Silk Institute Metro Station (Green Line)",
+        "distance": "3.5 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Silk Institute Metro Station (Green Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.8331,
+          "lon": 77.5731
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "52.0 km",
-        icon: "fa-plane",
+        "label": "Kanakapura Main Road",
+        "name": "Kanakapura Main Road",
+        "distance": "4.0 km",
+        "icon": "fa-solid fa-route",
+        "destination": "Kanakapura Main Road, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.871,
+          "lon": 77.545
+        }
       },
+      {
+        "label": "NICE Ring Road Junction",
+        "name": "NICE Ring Road Junction",
+        "distance": "5.0 km",
+        "icon": "fa-solid fa-road",
+        "destination": "NICE Ring Road Junction, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.902,
+          "lon": 77.489
+        }
+      },
+      {
+        "label": "Kumaran's Autonomous College / School",
+        "name": "Kumaran's Autonomous College / School",
+        "distance": "5.5 km",
+        "icon": "fa-solid fa-graduation-cap",
+        "destination": "Kumaran's Autonomous College / School, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9091,
+          "lon": 77.5441
+        }
+      },
+      {
+        "label": "Fortis Hospital Bannerghatta Road",
+        "name": "Fortis Hospital Bannerghatta Road",
+        "distance": "8.0 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Fortis Hospital Bannerghatta Road, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.893,
+          "lon": 77.597
+        }
+      },
+      {
+        "label": "Vega City Mall",
+        "name": "Vega City Mall",
+        "distance": "9.5 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Vega City Mall, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9326,
+          "lon": 77.6119
+        }
+      },
+      {
+        "label": "Electronic City Phase 1 via NICE Road",
+        "name": "Electronic City Phase 1 via NICE Road",
+        "distance": "16.0 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "Electronic City Phase 1 via NICE Road, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.7329,
+          "lon": 77.4967
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "52.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-forest-ridge/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-forest-ridge/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-forest-ridge/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-forest-ridge/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-bhumi",
-    thumbnail: sattvaImage("sattva-group/sattva-bhumi/thumbnail.webp"),
-    title: "Sattva Bhumi",
-    location:
-      "Vijayapura Hobli, Devanahalli, Near KIAL Airport, North Bangalore",
-    category: "ongoing",
-    type: "plot",
-    priceValue: 0.5691,
-    price: "₹ 56.91 Lakhs Onwards",
-    area: "20 Acres",
-    floorPlans: [
+    "id": "sattva-bhumi",
+    "thumbnail": sattvaImage("sattva-group/sattva-bhumi/thumbnail.webp"),
+    "name": "Sattva Bhumi",
+    "coordinates": {
+      "lat": 13.275,
+      "lon": 77.756
+    },
+    "mapsQuery": "Sattva Bhumi, Vijayapura Hobli, Devanahalli, Bengaluru",
+    "shortAddress": "Devanahalli, North Bengaluru",
+    "title": "Sattva Bhumi",
+    "location": "Vijayapura Hobli, Devanahalli, Near KIAL Airport, North Bangalore",
+    "category": "ongoing",
+    "type": "plot",
+    "priceValue": 0.5691,
+    "price": "₹ 56.91 Lakhs Onwards",
+    "area": "20 Acres",
+    "floorPlans": [
       {
-        id: "plot-600",
-        bhk: "20 x 30 Plot",
-        area: "600 Sq. Ft.",
-        price: "₹ 56.91 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-bhumi/floor-plans/20x30-plot-layout.webp"),
+        "id": "plot-600",
+        "bhk": "20 x 30 Plot",
+        "area": "600 Sq. Ft.",
+        "price": "₹ 56.91 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-bhumi/floor-plans/20x30-plot-layout.webp")
       },
       {
-        id: "plot-1200",
-        bhk: "30 x 40 Plot ",
-        area: "1,200 Sq. Ft.",
-        price: "₹ 75.0 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-bhumi/floor-plans/30x40-plot-layout.webp"),
+        "id": "plot-1200",
+        "bhk": "30 x 40 Plot ",
+        "area": "1,200 Sq. Ft.",
+        "price": "₹ 75.0 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-bhumi/floor-plans/30x40-plot-layout.webp")
       },
       {
-        id: "plot-1500",
-        bhk: "30 x 50 Plot",
-        area: "1,500 Sq. Ft.",
-        price: "₹ 93.75 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-bhumi/floor-plans/30x50-plot-layout.webp"),
+        "id": "plot-1500",
+        "bhk": "30 x 50 Plot",
+        "area": "1,500 Sq. Ft.",
+        "price": "₹ 93.75 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-bhumi/floor-plans/30x50-plot-layout.webp")
       },
       {
-        id: "plot-1800",
-        bhk: "30 x 60 Plot",
-        area: "1,800 Sq. Ft.",
-        price: "₹ 1.12 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-bhumi/floor-plans/30x60-plot-layout.webp"),
+        "id": "plot-1800",
+        "bhk": "30 x 60 Plot",
+        "area": "1,800 Sq. Ft.",
+        "price": "₹ 1.12 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-bhumi/floor-plans/30x60-plot-layout.webp")
       },
       {
-        id: "plot-2400",
-        bhk: "40 x 60 Plot",
-        area: "2,400 Sq. Ft.",
-        price: "₹ 1.50 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-bhumi/floor-plans/40x60-plot-layout.webp"),
-      },
+        "id": "plot-2400",
+        "bhk": "40 x 60 Plot",
+        "area": "2,400 Sq. Ft.",
+        "price": "₹ 1.50 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-bhumi/floor-plans/40x60-plot-layout.webp")
+      }
     ],
-    possession: "December 2026",
-    units: "343",
-    highlight: "20-Acre Plotted Sanctuary & 15,000 Sq. Ft. Grand Clubhouse",
-    reraId: "PRM/KA/RERA/1250/303/PR/211024/007160",
-    summary:
-      "Sattva Bhumi is a master-planned 20-acre premium residential plotted enclave by Sattva Group located in Vijayapura Hobli, Devanahalli, North Bangalore, offering 356 ready-to-construct plots starting from 600 sq. ft. to 2,400 sq. ft.",
-    description:
-      "Sattva Bhumi is a serene, high-value residential plotted development by Sattva Group, located in Vijayapura Hobli near Devanahalli in the rapidly developing North Bangalore airport corridor. Spanning 20 acres with a low density of just 18 units per acre, the development features 356 meticulously demarcated plot units enveloped by wide paved roads, underground cabling, and landscaped parks. Buyers can select from versatile plot sizes ranging from 600 sq. ft. up to 2,400 sq. ft. with starting prices from Rs. 37.6 Lakhs onwards. Centered around a 15,000 sq. ft. world-class clubhouse with modern sports, wellness, and leisure amenities, the community offers seamless connectivity to Kempegowda International Airport, KIADB Aerospace Park, and the upcoming Airport Metro line. Sattva Bhumi is registered under RERA PRM/KA/RERA/1250/303/PR/211024/007160.",
-    amenities: [
-      { name: "15,000 Sq. Ft. Resident Clubhouse", icon: "fa-building-user" },
-      { name: "Outdoor Swimming Pool & Lounge", icon: "fa-water-ladder" },
+    "possession": "December 2026",
+    "units": "343",
+    "highlight": "20-Acre Plotted Sanctuary & 15,000 Sq. Ft. Grand Clubhouse",
+    "reraId": "PRM/KA/RERA/1250/303/PR/211024/007160",
+    "summary": "Sattva Bhumi is a master-planned 20-acre premium residential plotted enclave by Sattva Group located in Vijayapura Hobli, Devanahalli, North Bangalore, offering 356 ready-to-construct plots starting from 600 sq. ft. to 2,400 sq. ft.",
+    "description": "Sattva Bhumi is a serene, high-value residential plotted development by Sattva Group, located in Vijayapura Hobli near Devanahalli in the rapidly developing North Bangalore airport corridor. Spanning 20 acres with a low density of just 18 units per acre, the development features 356 meticulously demarcated plot units enveloped by wide paved roads, underground cabling, and landscaped parks. Buyers can select from versatile plot sizes ranging from 600 sq. ft. up to 2,400 sq. ft. with starting prices from Rs. 37.6 Lakhs onwards. Centered around a 15,000 sq. ft. world-class clubhouse with modern sports, wellness, and leisure amenities, the community offers seamless connectivity to Kempegowda International Airport, KIADB Aerospace Park, and the upcoming Airport Metro line. Sattva Bhumi is registered under RERA PRM/KA/RERA/1250/303/PR/211024/007160.",
+    "amenities": [
       {
-        name: "Multipurpose Sports & Basketball Courts",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "15,000 Sq. Ft. Resident Clubhouse",
+        "icon": "fa-building-user"
       },
-      { name: "Kids Play Zone & Sand Pit", icon: "fa-child-reaching" },
-      { name: "Fully Equipped Outdoor & Indoor Gym", icon: "fa-dumbbell" },
-      { name: "Sculpture Pergola & Seating Decks", icon: "fa-torii-gate" },
-      { name: "Landscaped Theme Parks & Walkways", icon: "fa-tree" },
       {
-        name: "24/7 Gated Security & Underground Utilities",
-        icon: "fa-shield-halved",
+        "name": "Outdoor Swimming Pool & Lounge",
+        "icon": "fa-water-ladder"
       },
+      {
+        "name": "Multipurpose Sports & Basketball Courts",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Kids Play Zone & Sand Pit",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Fully Equipped Outdoor & Indoor Gym",
+        "icon": "fa-dumbbell"
+      },
+      {
+        "name": "Sculpture Pergola & Seating Decks",
+        "icon": "fa-torii-gate"
+      },
+      {
+        "name": "Landscaped Theme Parks & Walkways",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "24/7 Gated Security & Underground Utilities",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Devanahalli Railway Station",
-        distance: "3.5 km",
-        icon: "fa-train",
+        "label": "Devanahalli Railway Station",
+        "name": "Devanahalli Railway Station",
+        "distance": "3.5 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Devanahalli Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.245,
+          "lon": 77.718
+        }
       },
       {
-        name: "Devanahalli Town Centre & Fort",
-        distance: "5.0 km",
-        icon: "fa-school",
+        "label": "Devanahalli Town Centre & Fort",
+        "name": "Devanahalli Town Centre & Fort",
+        "distance": "5.0 km",
+        "icon": "fa-solid fa-school",
+        "destination": "Devanahalli Town Centre & Fort, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.248,
+          "lon": 77.713
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "12.0 km",
-        icon: "fa-plane",
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "12.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
       },
       {
-        name: "Akash Institute of Medical Sciences & Hospital",
-        distance: "8.5 km",
-        icon: "fa-hospital",
+        "label": "Akash Institute of Medical Sciences & Hospital",
+        "name": "Akash Institute of Medical Sciences & Hospital",
+        "distance": "8.5 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Akash Institute of Medical Sciences & Hospital, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.3232,
+          "lon": 77.8171
+        }
       },
       {
-        name: "KIADB Aerospace Park & IT SEZ",
-        distance: "14.0 km",
-        icon: "fa-laptop-code",
+        "label": "KIADB Aerospace Park & IT SEZ",
+        "name": "KIADB Aerospace Park & IT SEZ",
+        "distance": "14.0 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "KIADB Aerospace Park & IT SEZ, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1989,
+          "lon": 77.7064
+        }
       },
       {
-        name: "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        distance: "16.0 km",
-        icon: "fa-train-subway",
+        "label": "Bettahalsoor Metro Station (Upcoming Blue Line)",
+        "name": "Bettahalsoor Metro Station (Upcoming Blue Line)",
+        "distance": "16.0 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Bettahalsoor Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.159,
+          "lon": 77.631
+        }
       },
       {
-        name: "Phoenix Mall of Asia",
-        distance: "24.0 km",
-        icon: "fa-bag-shopping",
-      },
+        "label": "Phoenix Mall of Asia",
+        "name": "Phoenix Mall of Asia",
+        "distance": "24.0 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0694,
+          "lon": 77.5982
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-bhumi/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-bhumi/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-bhumi/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-bhumi/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-simplicity",
-    thumbnail: sattvaImage("sattva-group/sattva-simplicity/thumbnail.webp"),
-    title: "Sattva Simplicity",
-    location: "BHEL Layout, Rajarajeshwari Nagar, Off Mysore Road, Bangalore",
-    category: "ready",
-    type: "apartment",
-    priceValue: 0.473,
-    price: "₹ 47.3 Lakhs Onwards",
-    area: "3.98 Acres",
-    floorPlans: [
+    "id": "sattva-simplicity",
+    "thumbnail": sattvaImage("sattva-group/sattva-simplicity/thumbnail.webp"),
+    "name": "Sattva Simplicity",
+    "coordinates": {
+      "lat": 12.924,
+      "lon": 77.519
+    },
+    "mapsQuery": "Sattva Simplicity, BHEL Layout, RR Nagar, Bengaluru",
+    "shortAddress": "Rajarajeshwari Nagar, West Bengaluru",
+    "title": "Sattva Simplicity",
+    "location": "BHEL Layout, Rajarajeshwari Nagar, Off Mysore Road, Bangalore",
+    "category": "ready",
+    "type": "apartment",
+    "priceValue": 0.473,
+    "price": "₹ 47.3 Lakhs Onwards",
+    "area": "3.98 Acres",
+    "floorPlans": [
       {
-        id: "studio-395",
-        bhk: "Studio Compact",
-        area: "395 Sq. Ft.",
-        price: "₹ 47.3 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-simplicity/floor-plans/studio-compact-floor-plan.webp"),
+        "id": "studio-395",
+        "bhk": "Studio Compact",
+        "area": "395 Sq. Ft.",
+        "price": "₹ 47.3 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-simplicity/floor-plans/studio-compact-floor-plan.webp")
       },
       {
-        id: "studio-421",
-        bhk: "Studio Grand",
-        area: "421 Sq. Ft.",
-        price: "₹ 50.41 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-simplicity/floor-plans/studio-grand-floor-plan.webp"),
+        "id": "studio-421",
+        "bhk": "Studio Grand",
+        "area": "421 Sq. Ft.",
+        "price": "₹ 50.41 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-simplicity/floor-plans/studio-grand-floor-plan.webp")
       },
       {
-        id: "1bhk-691",
-        bhk: "1 BHK Comfort",
-        area: "691 Sq. Ft.",
-        price: "₹ 82.75 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-simplicity/floor-plans/1bhk-floor-plan(1).webp"),
+        "id": "1bhk-691",
+        "bhk": "1 BHK Comfort",
+        "area": "691 Sq. Ft.",
+        "price": "₹ 82.75 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-simplicity/floor-plans/1bhk-floor-plan(1).webp")
       },
       {
-        id: "1bhk-746",
-        bhk: "1 BHK Grand",
-        area: "746 Sq. Ft.",
-        price: "₹ 90.0 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-simplicity/floor-plans/1bhk-floor-plan.webp"),
-      },
+        "id": "1bhk-746",
+        "bhk": "1 BHK Grand",
+        "area": "746 Sq. Ft.",
+        "price": "₹ 90.0 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-simplicity/floor-plans/1bhk-floor-plan.webp")
+      }
     ],
-    possession: "December 2025",
-    units: "265",
-    highlight:
-      "Compact Luxury Enclave Opposite Sattva Global City & Low-Rise B+G+4 Blocks",
-    reraId: "PRM/KA/RERA/1251/310/PR/030325/007540",
-    summary:
-      "Sattva Simplicity is a modern, low-density residential enclave by Sattva Group located in BHEL Layout, Rajarajeshwari Nagar, off Mysore Road, Bangalore, offering 265 Studio and 1 BHK luxury apartments across 3.98 acres.",
-    description:
-      "Sattva Simplicity is an exclusive boutique residential community by Sattva Group, situated at BHEL Layout in Rajarajeshwari Nagar (RR Nagar), directly opposite Sattva Global City tech park in West Bangalore. Spanning 3.98 acres, the low-density development consists of 7 blocks (B+G+4 floors) housing 265 well-crafted Studio and 1 BHK residences. Tailored for working IT professionals and smart investors, unit sizes range from 395 sq. ft. to 746 sq. ft., with prices starting from Rs. 46.0 Lakhs onwards. The project features vitrified tile flooring, modular switches, concealed copper wiring, and a dedicated 25,000 sq. ft. clubhouse with sports and leisure amenities. It offers immediate access to RR Nagar Metro Station, Mysore Main Road, and RV University. Sattva Simplicity is registered under RERA PRM/KA/RERA/1251/310/PR/030325/007540.",
-    amenities: [
-      { name: "25,000 Sq. Ft. Resident Clubhouse", icon: "fa-building-user" },
-      { name: "Outdoor Swimming Pool & Deck", icon: "fa-water-ladder" },
-      { name: "Fully Equipped Gymnasium & Aerobics Zone", icon: "fa-dumbbell" },
-      { name: "Yoga & Meditation Room", icon: "fa-spa" },
+    "possession": "December 2025",
+    "units": "265",
+    "highlight": "Compact Luxury Enclave Opposite Sattva Global City & Low-Rise B+G+4 Blocks",
+    "reraId": "PRM/KA/RERA/1251/310/PR/030325/007540",
+    "summary": "Sattva Simplicity is a modern, low-density residential enclave by Sattva Group located in BHEL Layout, Rajarajeshwari Nagar, off Mysore Road, Bangalore, offering 265 Studio and 1 BHK luxury apartments across 3.98 acres.",
+    "description": "Sattva Simplicity is an exclusive boutique residential community by Sattva Group, situated at BHEL Layout in Rajarajeshwari Nagar (RR Nagar), directly opposite Sattva Global City tech park in West Bangalore. Spanning 3.98 acres, the low-density development consists of 7 blocks (B+G+4 floors) housing 265 well-crafted Studio and 1 BHK residences. Tailored for working IT professionals and smart investors, unit sizes range from 395 sq. ft. to 746 sq. ft., with prices starting from Rs. 46.0 Lakhs onwards. The project features vitrified tile flooring, modular switches, concealed copper wiring, and a dedicated 25,000 sq. ft. clubhouse with sports and leisure amenities. It offers immediate access to RR Nagar Metro Station, Mysore Main Road, and RV University. Sattva Simplicity is registered under RERA PRM/KA/RERA/1251/310/PR/030325/007540.",
+    "amenities": [
       {
-        name: "Children's Outdoor Play Area & Creche",
-        icon: "fa-child-reaching",
+        "name": "25,000 Sq. Ft. Resident Clubhouse",
+        "icon": "fa-building-user"
       },
-      { name: "Cricket Pitch & Sports Courts", icon: "fa-baseball" },
-      { name: "Multipurpose Party Hall & Mini Theatre", icon: "fa-film" },
       {
-        name: "24/7 CCTV Surveillance & Intercom Facility",
-        icon: "fa-shield-halved",
+        "name": "Outdoor Swimming Pool & Deck",
+        "icon": "fa-water-ladder"
       },
+      {
+        "name": "Fully Equipped Gymnasium & Aerobics Zone",
+        "icon": "fa-dumbbell"
+      },
+      {
+        "name": "Yoga & Meditation Room",
+        "icon": "fa-spa"
+      },
+      {
+        "name": "Children's Outdoor Play Area & Creche",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Cricket Pitch & Sports Courts",
+        "icon": "fa-baseball"
+      },
+      {
+        "name": "Multipurpose Party Hall & Mini Theatre",
+        "icon": "fa-film"
+      },
+      {
+        "name": "24/7 CCTV Surveillance & Intercom Facility",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Sattva Global City Tech Park",
-        distance: "0.5 km",
-        icon: "fa-laptop-code",
-      },
-      { name: "Pattanagere Bus Stop", distance: "1.5 km", icon: "fa-route" },
-      {
-        name: "Mysore Main Road (NH 275)",
-        distance: "2.0 km",
-        icon: "fa-road",
-      },
-      {
-        name: "Gopalan Arcade Mall",
-        distance: "3.2 km",
-        icon: "fa-bag-shopping",
+        "label": "Sattva Global City Tech Park",
+        "name": "Sattva Global City Tech Park",
+        "distance": "0.5 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "Sattva Global City Tech Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9281,
+          "lon": 77.5208
+        }
       },
       {
-        name: "RR Nagar Metro Station (Purple Line)",
-        distance: "4.3 km",
-        icon: "fa-train-subway",
+        "label": "Pattanagere Bus Stop",
+        "name": "Pattanagere Bus Stop",
+        "distance": "1.5 km",
+        "icon": "fa-solid fa-route",
+        "destination": "Pattanagere Bus Stop, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9112,
+          "lon": 77.5235
+        }
       },
       {
-        name: "Outer Ring Road (ORR) Junction",
-        distance: "7.0 km",
-        icon: "fa-road",
+        "label": "Mysore Main Road (NH 275)",
+        "name": "Mysore Main Road (NH 275)",
+        "distance": "2.0 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Mysore Main Road (NH 275), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.942,
+          "lon": 77.521
+        }
       },
       {
-        name: "KSR Bengaluru City Railway Station",
-        distance: "9.3 km",
-        icon: "fa-train",
+        "label": "Gopalan Arcade Mall",
+        "name": "Gopalan Arcade Mall",
+        "distance": "3.2 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Gopalan Arcade Mall, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.931,
+          "lon": 77.527
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "47.6 km",
-        icon: "fa-plane",
+        "label": "RR Nagar Metro Station (Purple Line)",
+        "name": "RR Nagar Metro Station (Purple Line)",
+        "distance": "4.3 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "RR Nagar Metro Station (Purple Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.932,
+          "lon": 77.525
+        }
       },
+      {
+        "label": "Outer Ring Road (ORR) Junction",
+        "name": "Outer Ring Road (ORR) Junction",
+        "distance": "7.0 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Outer Ring Road (ORR) Junction, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.041,
+          "lon": 77.623
+        }
+      },
+      {
+        "label": "KSR Bengaluru City Railway Station",
+        "name": "KSR Bengaluru City Railway Station",
+        "distance": "9.3 km",
+        "icon": "fa-solid fa-train",
+        "destination": "KSR Bengaluru City Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9781,
+          "lon": 77.5696
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "47.6 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-simplicity/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-simplicity/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-simplicity/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-simplicity/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-songbird",
-    thumbnail: sattvaImage("sattva-group/sattva-songbird/thumbnail.webp"),
-    title: "Sattva Songbird",
-    location: "Budigere Main Road, Off Old Madras Road, Bangalore",
-    category: "new-launch",
-    type: "apartment",
-    priceValue: 0.6734,
-    price: "₹ 67.34 Lakhs Onwards",
-    area: "12 Acres",
-    floorPlans: [
+    "id": "sattva-songbird",
+    "thumbnail": sattvaImage("sattva-group/sattva-songbird/thumbnail.webp"),
+    "name": "Sattva Songbird",
+    "coordinates": {
+      "lat": 13.0635,
+      "lon": 77.747
+    },
+    "mapsQuery": "Sattva Songbird, Budigere Main Road, Bengaluru",
+    "shortAddress": "Budigere Road, East Bengaluru",
+    "title": "Sattva Songbird",
+    "location": "Budigere Main Road, Off Old Madras Road, Bangalore",
+    "category": "new-launch",
+    "type": "apartment",
+    "priceValue": 0.6734,
+    "price": "₹ 67.34 Lakhs Onwards",
+    "area": "12 Acres",
+    "floorPlans": [
       {
-        id: "studio",
-        bhk: "Studio",
-        area: "468 Sq. Ft.",
-        price: "₹ 67.34 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-songbird/floor-plans/studio-floor-plan.webp"),
+        "id": "studio",
+        "bhk": "Studio",
+        "area": "468 Sq. Ft.",
+        "price": "₹ 67.34 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-songbird/floor-plans/studio-floor-plan.webp")
       },
       {
-        id: "1bhk",
-        bhk: "1 BHK",
-        area: "753 Sq. Ft.",
-        price: "₹ 1.10 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-songbird/floor-plans/1bhk-floor-plan.webp"),
+        "id": "1bhk",
+        "bhk": "1 BHK",
+        "area": "753 Sq. Ft.",
+        "price": "₹ 1.10 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-songbird/floor-plans/1bhk-floor-plan.webp")
       },
       {
-        id: "2bhk",
-        bhk: "2 BHK",
-        area: "1,280 Sq. Ft.",
-        price: "₹ 1.82 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-songbird/floor-plans/2bhk-floor-plan.webp"),
+        "id": "2bhk",
+        "bhk": "2 BHK",
+        "area": "1,280 Sq. Ft.",
+        "price": "₹ 1.82 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-songbird/floor-plans/2bhk-floor-plan.webp")
       },
       {
-        id: "2.5bhk",
-        bhk: "2.5 BHK",
-        area: "1,398 Sq. Ft.",
-        price: "₹ 1.98 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-songbird/floor-plans/2.5bhk-floor-plan.webp"),
+        "id": "2.5bhk",
+        "bhk": "2.5 BHK",
+        "area": "1,398 Sq. Ft.",
+        "price": "₹ 1.98 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-songbird/floor-plans/2.5bhk-floor-plan.webp")
       },
       {
-        id: "3bhk",
-        bhk: "3 BHK",
-        area: "1,733 - 1,813 Sq. Ft.",
-        price: "₹ 2.43 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-songbird/floor-plans/3bhk-floor-plan.webp"),
-      },
+        "id": "3bhk",
+        "bhk": "3 BHK",
+        "area": "1,733 - 1,813 Sq. Ft.",
+        "price": "₹ 2.43 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-songbird/floor-plans/3bhk-floor-plan.webp")
+      }
     ],
-    possession: "May 2029",
-    units: "1,300",
-    highlight: "80% Open Space & 50,000 Sq. Ft. Grand Signature Clubhouse",
-    reraId: "PRM/KA/RERA/1251/446/PR/060924/007008",
-    summary:
-      "Sattva Songbird is a thoughtfully planned residential project by Sattva Group located on Budigere Main Road, Bangalore, offering Studio, 1 BHK, 2 BHK, 2.5 BHK, and 3 BHK apartments spread across 12 acres with 80% open space.",
-    description:
-      "Sattva Songbird is a thoughtfully planned residential project by Sattva Group, located on Budigere Main Road (off Old Madras Road) in East Bangalore. Spread across 12 acres, the development features 1,300 residential units across four towers, with around 80% of the area dedicated to open spaces. Homebuyers can choose from well-designed Studio, 1 BHK, 2 BHK, 2.5 BHK, and 3 BHK apartments, with sizes ranging from 468 sq. ft. to 1,813 sq. ft. The project offers more than 40 amenities designed to support a comfortable and active lifestyle, anchored by a 50,000 sq. ft. signature clubhouse. The starting price is Rs. 67.3 Lakhs onwards. Sattva Songbird is an ongoing development registered under RERA number PRM/KA/RERA/1251/446/PR/060924/007008, making it an appealing option for homebuyers looking for a well-connected community in East Bangalore.",
-    amenities: [
-      { name: "Swimming Pool", icon: "fa-water-ladder" },
-      { name: "Tennis Court", icon: "fa-table-tennis-paddle-ball" },
-      { name: "Kids Playground", icon: "fa-child-reaching" },
-      { name: "Indoor Games Zone", icon: "fa-gamepad" },
-      { name: "Mini Theatre", icon: "fa-film" },
-      { name: "Gymnasium", icon: "fa-dumbbell" },
-      { name: "Landscaped Garden", icon: "fa-tree" },
-      { name: "Jogging Track", icon: "fa-person-running" },
+    "possession": "May 2029",
+    "units": "1,300",
+    "highlight": "80% Open Space & 50,000 Sq. Ft. Grand Signature Clubhouse",
+    "reraId": "PRM/KA/RERA/1251/446/PR/060924/007008",
+    "summary": "Sattva Songbird is a thoughtfully planned residential project by Sattva Group located on Budigere Main Road, Bangalore, offering Studio, 1 BHK, 2 BHK, 2.5 BHK, and 3 BHK apartments spread across 12 acres with 80% open space.",
+    "description": "Sattva Songbird is a thoughtfully planned residential project by Sattva Group, located on Budigere Main Road (off Old Madras Road) in East Bangalore. Spread across 12 acres, the development features 1,300 residential units across four towers, with around 80% of the area dedicated to open spaces. Homebuyers can choose from well-designed Studio, 1 BHK, 2 BHK, 2.5 BHK, and 3 BHK apartments, with sizes ranging from 468 sq. ft. to 1,813 sq. ft. The project offers more than 40 amenities designed to support a comfortable and active lifestyle, anchored by a 50,000 sq. ft. signature clubhouse. The starting price is Rs. 67.3 Lakhs onwards. Sattva Songbird is an ongoing development registered under RERA number PRM/KA/RERA/1251/446/PR/060924/007008, making it an appealing option for homebuyers looking for a well-connected community in East Bangalore.",
+    "amenities": [
+      {
+        "name": "Swimming Pool",
+        "icon": "fa-water-ladder"
+      },
+      {
+        "name": "Tennis Court",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Kids Playground",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Indoor Games Zone",
+        "icon": "fa-gamepad"
+      },
+      {
+        "name": "Mini Theatre",
+        "icon": "fa-film"
+      },
+      {
+        "name": "Gymnasium",
+        "icon": "fa-dumbbell"
+      },
+      {
+        "name": "Landscaped Garden",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "Jogging Track",
+        "icon": "fa-person-running"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Prerana International School",
-        distance: "1.1 km",
-        icon: "fa-graduation-cap",
+        "label": "Prerana International School",
+        "name": "Prerana International School",
+        "distance": "1.1 km",
+        "icon": "fa-solid fa-graduation-cap",
+        "destination": "Prerana International School, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0587,
+          "lon": 77.7381
+        }
       },
       {
-        name: "Little Elly Preschool in Katamnallur",
-        distance: "1.3 km",
-        icon: "fa-school",
+        "label": "Little Elly Preschool in Katamnallur",
+        "name": "Little Elly Preschool in Katamnallur",
+        "distance": "1.3 km",
+        "icon": "fa-solid fa-school",
+        "destination": "Little Elly Preschool in Katamnallur, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0629,
+          "lon": 77.735
+        }
       },
       {
-        name: "East Point Clinic-Prestige Tranquility",
-        distance: "2.1 km",
-        icon: "fa-user-nurse",
+        "label": "East Point Clinic-Prestige Tranquility",
+        "name": "East Point Clinic-Prestige Tranquility",
+        "distance": "2.1 km",
+        "icon": "fa-solid fa-user-nurse",
+        "destination": "East Point Clinic-Prestige Tranquility, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0449,
+          "lon": 77.7507
+        }
       },
       {
-        name: "Orion UPTOWN Mall",
-        distance: "2.4 km",
-        icon: "fa-bag-shopping",
+        "label": "Orion UPTOWN Mall",
+        "name": "Orion UPTOWN Mall",
+        "distance": "2.4 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Orion UPTOWN Mall, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.045,
+          "lon": 77.742
+        }
       },
       {
-        name: "East Point Hospital-Multi-Speciality Hospital in Aavalahalli",
-        distance: "5.7 km",
-        icon: "fa-hospital",
+        "label": "East Point Hospital-Multi-Speciality Hospital in Aavalahalli",
+        "name": "East Point Hospital-Multi-Speciality Hospital in Aavalahalli",
+        "distance": "5.7 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "East Point Hospital-Multi-Speciality Hospital in Aavalahalli, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.019,
+          "lon": 77.7734
+        }
       },
       {
-        name: "East Point College of Engineering And Technology",
-        distance: "5.9 km",
-        icon: "fa-building-columns",
+        "label": "East Point College of Engineering And Technology",
+        "name": "East Point College of Engineering And Technology",
+        "distance": "5.9 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "East Point College of Engineering And Technology, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1113,
+          "lon": 77.7709
+        }
       },
       {
-        name: "ITPL International Tech Park",
-        distance: "12 km",
-        icon: "fa-laptop-code",
+        "label": "ITPL International Tech Park",
+        "name": "ITPL International Tech Park",
+        "distance": "12 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "ITPL International Tech Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.987,
+          "lon": 77.737
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "25.0 km",
-        icon: "fa-plane",
-      },
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "25.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-songbird/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-songbird/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-songbird/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-songbird/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-lumina",
-    thumbnail: sattvaImage("sattva-group/sattva-lumina/thumbnail.webp"),
-    title: "Sattva Lumina",
-    location: "Doddaballapur Road, Yelahanka, Bangalore",
-    category: "ongoing",
-    type: "apartment",
-    priceValue: 0.6689,
-    price: "₹ 66.89 Lakhs Onwards",
-    area: "12.8 Acres",
-    floorPlans: [
+    "id": "sattva-lumina",
+    "thumbnail": sattvaImage("sattva-group/sattva-lumina/thumbnail.webp"),
+    "name": "Sattva Lumina",
+    "coordinates": {
+      "lat": 13.138,
+      "lon": 77.568
+    },
+    "mapsQuery": "Sattva Lumina, Doddaballapur Road, Yelahanka, Bengaluru",
+    "shortAddress": "Yelahanka, Doddaballapur Road, North Bengaluru",
+    "title": "Sattva Lumina",
+    "location": "Doddaballapur Road, Yelahanka, Bangalore",
+    "category": "ongoing",
+    "type": "apartment",
+    "priceValue": 0.6689,
+    "price": "₹ 66.89 Lakhs Onwards",
+    "area": "12.8 Acres",
+    "floorPlans": [
       {
-        id: "studio",
-        bhk: "Studio",
-        area: "424 Sq. Ft.",
-        price: "₹ 42.0 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-lumina/floor-plans/studio-floor-plan.webp"),
+        "id": "studio",
+        "bhk": "Studio",
+        "area": "424 Sq. Ft.",
+        "price": "₹ 42.0 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-lumina/floor-plans/studio-floor-plan.webp")
       },
       {
-        id: "1bhk",
-        bhk: "1 BHK",
-        area: "690 Sq. Ft.",
-        price: "₹ 66.89 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-lumina/floor-plans/1bhk-floor-plan.webp"),
+        "id": "1bhk",
+        "bhk": "1 BHK",
+        "area": "690 Sq. Ft.",
+        "price": "₹ 66.89 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-lumina/floor-plans/1bhk-floor-plan.webp")
       },
       {
-        id: "2bhk",
-        bhk: "2 BHK",
-        area: "1,142 Sq. Ft.",
-        price: "₹ 1.19 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-lumina/floor-plans/2bhk-floor-plan.webp"),
+        "id": "2bhk",
+        "bhk": "2 BHK",
+        "area": "1,142 Sq. Ft.",
+        "price": "₹ 1.19 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-lumina/floor-plans/2bhk-floor-plan.webp")
       },
       {
-        id: "3bhk",
-        bhk: "3 BHK",
-        area: "1,505 - 1,809 Sq. Ft.",
-        price: "₹ 1.54 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-lumina/floor-plans/3bhk-floor-plan.webp"),
-      },
+        "id": "3bhk",
+        "bhk": "3 BHK",
+        "area": "1,505 - 1,809 Sq. Ft.",
+        "price": "₹ 1.54 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-lumina/floor-plans/3bhk-floor-plan.webp")
+      }
     ],
-    possession: "November 2029",
-    units: "1,553",
-    highlight: "86% Open Space & 45,000 Sq. Ft. Grand Clubhouse",
-    reraId: "PRM/KA/RERA/1251/472/PR/060924/007009",
-    summary:
-      "Sattva Lumina is a high-rise eco-luxury residential project by Sattva Group located on Doddaballapur Road, Yelahanka, Bangalore, offering Studio, 1 BHK, 2 BHK, and 3 BHK apartments spread across 12.8 acres with 86% open space.",
-    description:
-      "Sattva Lumina is a thoughtfully designed high-rise residential township by Sattva Group, strategically located on Doddaballapur Road, Yelahanka, North Bangalore. Spread across 12.8 acres with 86% dedication to open space and lush green landscapes, the project comprises 8 towers (G+29 floors) housing 1,553 luxury residences. Homebuyers can choose from modern Studio, 1 BHK, 2 BHK, and 3 BHK apartments, with unit sizes ranging from 434 sq. ft. to 1,823 sq. ft. Featuring over 40 lifestyle, sports, and wellness amenities—including a grand 45,000 sq. ft. clubhouse and a 25,000 sq. ft. retail hub—the starting price is Rs. 42 Lakhs onwards. Sattva Lumina is registered under RERA PRM/KA/RERA/1251/472/PR/060924/007009.",
-    amenities: [
-      { name: "Swimming Pool", icon: "fa-water-ladder" },
-      { name: "Tennis Court", icon: "fa-table-tennis-paddle-ball" },
-      { name: "Kids Playground", icon: "fa-child-reaching" },
-      { name: "Indoor Games Zone", icon: "fa-gamepad" },
-      { name: "Mini Theatre", icon: "fa-film" },
-      { name: "Gymnasium", icon: "fa-dumbbell" },
-      { name: "Landscaped Garden", icon: "fa-tree" },
-      { name: "Jogging Track", icon: "fa-person-running" },
+    "possession": "November 2029",
+    "units": "1,553",
+    "highlight": "86% Open Space & 45,000 Sq. Ft. Grand Clubhouse",
+    "reraId": "PRM/KA/RERA/1251/472/PR/060924/007009",
+    "summary": "Sattva Lumina is a high-rise eco-luxury residential project by Sattva Group located on Doddaballapur Road, Yelahanka, Bangalore, offering Studio, 1 BHK, 2 BHK, and 3 BHK apartments spread across 12.8 acres with 86% open space.",
+    "description": "Sattva Lumina is a thoughtfully designed high-rise residential township by Sattva Group, strategically located on Doddaballapur Road, Yelahanka, North Bangalore. Spread across 12.8 acres with 86% dedication to open space and lush green landscapes, the project comprises 8 towers (G+29 floors) housing 1,553 luxury residences. Homebuyers can choose from modern Studio, 1 BHK, 2 BHK, and 3 BHK apartments, with unit sizes ranging from 434 sq. ft. to 1,823 sq. ft. Featuring over 40 lifestyle, sports, and wellness amenities—including a grand 45,000 sq. ft. clubhouse and a 25,000 sq. ft. retail hub—the starting price is Rs. 42 Lakhs onwards. Sattva Lumina is registered under RERA PRM/KA/RERA/1251/472/PR/060924/007009.",
+    "amenities": [
+      {
+        "name": "Swimming Pool",
+        "icon": "fa-water-ladder"
+      },
+      {
+        "name": "Tennis Court",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Kids Playground",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Indoor Games Zone",
+        "icon": "fa-gamepad"
+      },
+      {
+        "name": "Mini Theatre",
+        "icon": "fa-film"
+      },
+      {
+        "name": "Gymnasium",
+        "icon": "fa-dumbbell"
+      },
+      {
+        "name": "Landscaped Garden",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "Jogging Track",
+        "icon": "fa-person-running"
+      }
     ],
-    connectivity: [
-      { name: "Vibgyor High School", distance: "4.8 km", icon: "fa-school" },
+    "connectivity": [
       {
-        name: "Sai Vidya Institute of Technology",
-        distance: "5.2 km",
-        icon: "fa-graduation-cap",
+        "label": "Vibgyor High School",
+        "name": "Vibgyor High School",
+        "distance": "4.8 km",
+        "icon": "fa-solid fa-school",
+        "destination": "Vibgyor High School, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1812,
+          "lon": 77.5695
+        }
       },
       {
-        name: "Padukone - Dravid Centre for Sports Excellence",
-        distance: "8.5 km",
-        icon: "fa-volleyball",
+        "label": "Sai Vidya Institute of Technology",
+        "name": "Sai Vidya Institute of Technology",
+        "distance": "5.2 km",
+        "icon": "fa-solid fa-graduation-cap",
+        "destination": "Sai Vidya Institute of Technology, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1744,
+          "lon": 77.5377
+        }
       },
       {
-        name: "Omega Multispeciality Hospital",
-        distance: "11.4 km",
-        icon: "fa-hospital",
+        "label": "Padukone - Dravid Centre for Sports Excellence",
+        "name": "Padukone - Dravid Centre for Sports Excellence",
+        "distance": "8.5 km",
+        "icon": "fa-solid fa-volleyball",
+        "destination": "Padukone - Dravid Centre for Sports Excellence, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.167,
+          "lon": 77.678
+        }
       },
       {
-        name: "Bettahalsoor Metro Station",
-        distance: "11.7 km",
-        icon: "fa-train-subway",
+        "label": "Omega Multispeciality Hospital",
+        "name": "Omega Multispeciality Hospital",
+        "distance": "11.4 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Omega Multispeciality Hospital, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0962,
+          "lon": 77.4717
+        }
       },
-      { name: "Ecopolis IT SEZ", distance: "13.5 km", icon: "fa-laptop-code" },
       {
-        name: "Phoenix Mall of Asia",
-        distance: "16.0 km",
-        icon: "fa-bag-shopping",
+        "label": "Bettahalsoor Metro Station",
+        "name": "Bettahalsoor Metro Station",
+        "distance": "11.7 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Bettahalsoor Metro Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.159,
+          "lon": 77.631
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "23.9 km",
-        icon: "fa-plane",
+        "label": "Ecopolis IT SEZ",
+        "name": "Ecopolis IT SEZ",
+        "distance": "13.5 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "Ecopolis IT SEZ, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1633,
+          "lon": 77.6902
+        }
       },
+      {
+        "label": "Phoenix Mall of Asia",
+        "name": "Phoenix Mall of Asia",
+        "distance": "16.0 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0694,
+          "lon": 77.5982
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "23.9 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-lumina/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-lumina/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-lumina/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-lumina/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-green-groves",
-    thumbnail: sattvaImage("sattva-group/sattva-green-groves/thumbnail.webp"),
-    title: "Sattva Green Groves",
-    location: "Basavanahalli, Nelamangala, Off Tumkur Road, West Bangalore",
-    category: "ready",
-    type: "plot",
-    priceValue: 0.3774,
-    price: "₹ 37.74 Lakhs Onwards",
-    area: "45 Acres",
-    floorPlans: [
+    "id": "sattva-green-groves",
+    "thumbnail": sattvaImage("sattva-group/sattva-green-groves/thumbnail.webp"),
+    "name": "Sattva Green Groves",
+    "coordinates": {
+      "lat": 13.098,
+      "lon": 77.387
+    },
+    "mapsQuery": "Sattva Green Groves, Nelamangala, Bengaluru",
+    "shortAddress": "Nelamangala, West Bengaluru",
+    "title": "Sattva Green Groves",
+    "location": "Basavanahalli, Nelamangala, Off Tumkur Road, West Bangalore",
+    "category": "ready",
+    "type": "plot",
+    "priceValue": 0.3774,
+    "price": "₹ 37.74 Lakhs Onwards",
+    "area": "45 Acres",
+    "floorPlans": [
       {
-        id: "plot-600",
-        bhk: "20 x 30 Plot",
-        area: "600 Sq. Ft.",
-        price: "₹ 37.74 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-green-groves/floor-plans/20x30-plot-layout.webp"),
+        "id": "plot-600",
+        "bhk": "20 x 30 Plot",
+        "area": "600 Sq. Ft.",
+        "price": "₹ 37.74 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-green-groves/floor-plans/20x30-plot-layout.webp")
       },
       {
-        id: "plot-1200",
-        bhk: "30 x 40 Plot",
-        area: "1,200 Sq. Ft.",
-        price: "₹ 75.48 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-green-groves/floor-plans/30x40-plot-layout.webp"),
+        "id": "plot-1200",
+        "bhk": "30 x 40 Plot",
+        "area": "1,200 Sq. Ft.",
+        "price": "₹ 75.48 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-green-groves/floor-plans/30x40-plot-layout.webp")
       },
       {
-        id: "plot-1500",
-        bhk: "30 x 50 Plot",
-        area: "1,500 Sq. Ft.",
-        price: "₹ 94.35 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-green-groves/floor-plans/30x50-plot-layout.webp"),
+        "id": "plot-1500",
+        "bhk": "30 x 50 Plot",
+        "area": "1,500 Sq. Ft.",
+        "price": "₹ 94.35 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-green-groves/floor-plans/30x50-plot-layout.webp")
       },
       {
-        id: "plot-1936",
-        bhk: "40 x 50 Plot",
-        area: "1,936 Sq. Ft.",
-        price: "₹ 1.22 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-green-groves/floor-plans/40x50-plot-layout.webp"),
-      },
+        "id": "plot-1936",
+        "bhk": "40 x 50 Plot",
+        "area": "1,936 Sq. Ft.",
+        "price": "₹ 1.22 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-green-groves/floor-plans/40x50-plot-layout.webp")
+      }
     ],
-    possession: "Ready to Move",
-    units: "735 Units",
-    highlight: "45-Acre Plotted Sanctuary & 25,000 Sq. Ft. Grand Clubhouse",
-    reraId: "PRM/KA/RERA/1250/307/PR/040524/006863",
-    summary:
-      "Sattva Green Groves is a master-planned 45-acre premium residential plotted enclave by Sattva Group located in Nelamangala, off Tumkur Road, West Bangalore, offering 735 ready-to-construct plots starting from 600 sq. ft. to 1,936 sq. ft.",
-    description:
-      "Sattva Green Groves is a nature-centric residential plotted development by Sattva Group, strategically located at Basavanahalli in Nelamangala along the high-growth Bengaluru-Mumbai Industrial Corridor off Tumkur Road. Spanning 45 acres, the community features 735 systematically demarcated plot units enveloped by wide paved avenues, underground water and electrical cabling, and lush landscaped green parks. Buyers can choose from versatile plot sizes ranging from 600 sq. ft. up to 1,936 sq. ft., with prices starting from Rs. 34.14 Lakhs onwards. Anchored by a 25,000 sq. ft. clubhouse with modern sports, leisure, and wellness amenities, the township offers seamless access to the NICE Ring Road, Chikkabidarakallu Metro Station, and the industrial hubs of West Bangalore. Sattva Green Groves is registered under RERA PRM/KA/RERA/1250/307/PR/040524/006863.",
-    amenities: [
-      { name: "25,000 Sq. Ft. Resident Clubhouse", icon: "fa-building-user" },
-      { name: "Outdoor Swimming Pool & Sun Deck", icon: "fa-water-ladder" },
+    "possession": "Ready to Move",
+    "units": "735 Units",
+    "highlight": "45-Acre Plotted Sanctuary & 25,000 Sq. Ft. Grand Clubhouse",
+    "reraId": "PRM/KA/RERA/1250/307/PR/040524/006863",
+    "summary": "Sattva Green Groves is a master-planned 45-acre premium residential plotted enclave by Sattva Group located in Nelamangala, off Tumkur Road, West Bangalore, offering 735 ready-to-construct plots starting from 600 sq. ft. to 1,936 sq. ft.",
+    "description": "Sattva Green Groves is a nature-centric residential plotted development by Sattva Group, strategically located at Basavanahalli in Nelamangala along the high-growth Bengaluru-Mumbai Industrial Corridor off Tumkur Road. Spanning 45 acres, the community features 735 systematically demarcated plot units enveloped by wide paved avenues, underground water and electrical cabling, and lush landscaped green parks. Buyers can choose from versatile plot sizes ranging from 600 sq. ft. up to 1,936 sq. ft., with prices starting from Rs. 34.14 Lakhs onwards. Anchored by a 25,000 sq. ft. clubhouse with modern sports, leisure, and wellness amenities, the township offers seamless access to the NICE Ring Road, Chikkabidarakallu Metro Station, and the industrial hubs of West Bangalore. Sattva Green Groves is registered under RERA PRM/KA/RERA/1250/307/PR/040524/006863.",
+    "amenities": [
       {
-        name: "Badminton & Basketball Courts",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "25,000 Sq. Ft. Resident Clubhouse",
+        "icon": "fa-building-user"
       },
       {
-        name: "Kids Playground & Outdoor Play Area",
-        icon: "fa-child-reaching",
+        "name": "Outdoor Swimming Pool & Sun Deck",
+        "icon": "fa-water-ladder"
       },
       {
-        name: "Fully Equipped Gymnasium & Fitness Center",
-        icon: "fa-dumbbell",
+        "name": "Badminton & Basketball Courts",
+        "icon": "fa-table-tennis-paddle-ball"
       },
-      { name: "Yoga Lawn & Reflexology Pathway", icon: "fa-spa" },
-      { name: "Landscaped Theme Parks & Jogging Track", icon: "fa-tree" },
       {
-        name: "24/7 Gated Security with Boom Barriers",
-        icon: "fa-shield-halved",
+        "name": "Kids Playground & Outdoor Play Area",
+        "icon": "fa-child-reaching"
       },
+      {
+        "name": "Fully Equipped Gymnasium & Fitness Center",
+        "icon": "fa-dumbbell"
+      },
+      {
+        "name": "Yoga Lawn & Reflexology Pathway",
+        "icon": "fa-spa"
+      },
+      {
+        "name": "Landscaped Theme Parks & Jogging Track",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "24/7 Gated Security with Boom Barriers",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Nelamangala Railway Station",
-        distance: "1.4 km",
-        icon: "fa-train",
+        "label": "Nelamangala Railway Station",
+        "name": "Nelamangala Railway Station",
+        "distance": "1.4 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Nelamangala Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.095,
+          "lon": 77.382
+        }
       },
       {
-        name: "Tumkur Road (NH 44 / NH 48)",
-        distance: "0.5 km",
-        icon: "fa-road",
+        "label": "Tumkur Road (NH 44 / NH 48)",
+        "name": "Tumkur Road (NH 44 / NH 48)",
+        "distance": "0.5 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Tumkur Road (NH 44 / NH 48), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0961,
+          "lon": 77.3912
+        }
       },
       {
-        name: "Amrutha Superspeciality Hospital",
-        distance: "2.0 km",
-        icon: "fa-hospital",
-      },
-      { name: "NICE Ring Road Junction", distance: "8.0 km", icon: "fa-route" },
-      {
-        name: "Chikkabidarakallu Metro Station (Green Line)",
-        distance: "10.0 km",
-        icon: "fa-train-subway",
-      },
-      {
-        name: "Peenya Industrial Area",
-        distance: "16.0 km",
-        icon: "fa-laptop-code",
+        "label": "Amrutha Superspeciality Hospital",
+        "name": "Amrutha Superspeciality Hospital",
+        "distance": "2.0 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Amrutha Superspeciality Hospital, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1017,
+          "lon": 77.4051
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "55.0 km",
-        icon: "fa-plane",
+        "label": "NICE Ring Road Junction",
+        "name": "NICE Ring Road Junction",
+        "distance": "8.0 km",
+        "icon": "fa-solid fa-route",
+        "destination": "NICE Ring Road Junction, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.902,
+          "lon": 77.489
+        }
       },
+      {
+        "label": "Chikkabidarakallu Metro Station (Green Line)",
+        "name": "Chikkabidarakallu Metro Station (Green Line)",
+        "distance": "10.0 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Chikkabidarakallu Metro Station (Green Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.064,
+          "lon": 77.498
+        }
+      },
+      {
+        "label": "Peenya Industrial Area",
+        "name": "Peenya Industrial Area",
+        "distance": "16.0 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "Peenya Industrial Area, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.032,
+          "lon": 77.518
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "55.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-green-groves/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-green-groves/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-green-groves/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-green-groves/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-la-vita",
-    thumbnail: sattvaImage("sattva-group/sattva-la-vita/thumbnail.webp"),
-    title: "Sattva La Vita",
-    location: "Byrathi, Off Hennur Main Road, North Bangalore",
-    category: "ongoing",
-    type: "villa",
-    priceValue: 5.69,
-    price: "₹ 5.69 Crore Onwards",
-    area: "3 Acres",
-    floorPlans: [
+    "id": "sattva-la-vita",
+    "thumbnail": sattvaImage("sattva-group/sattva-la-vita/thumbnail.webp"),
+    "name": "Sattva La Vita",
+    "coordinates": {
+      "lat": 13.061,
+      "lon": 77.653
+    },
+    "mapsQuery": "Sattva La Vita, Byrathi, Hennur Main Road, Bengaluru",
+    "shortAddress": "Hennur Road, Byrathi, North Bengaluru",
+    "title": "Sattva La Vita",
+    "location": "Byrathi, Off Hennur Main Road, North Bangalore",
+    "category": "ongoing",
+    "type": "villa",
+    "priceValue": 5.69,
+    "price": "₹ 5.69 Crore Onwards",
+    "area": "3 Acres",
+    "floorPlans": [
       {
-        id: "4bhk-3255",
-        bhk: "4 BHK Row Villa",
-        area: "3,248 - 3,255 Sq. Ft.",
-        price: "₹ 5.69 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-la-vita/floor-plans/4bhk-row-villa-floor-plan.webp"),
+        "id": "4bhk-3255",
+        "bhk": "4 BHK Row Villa",
+        "area": "3,248 - 3,255 Sq. Ft.",
+        "price": "₹ 5.69 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-la-vita/floor-plans/4bhk-row-villa-floor-plan.webp")
       },
       {
-        id: "4bhk-3260",
-        bhk: "4 BHK Grand Row Villa",
-        area: "3,260 Sq. Ft.",
-        price: "₹ 5.71 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-la-vita/floor-plans/4bhk-grand-floor-plan.webp"),
-      },
+        "id": "4bhk-3260",
+        "bhk": "4 BHK Grand Row Villa",
+        "area": "3,260 Sq. Ft.",
+        "price": "₹ 5.71 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-la-vita/floor-plans/4bhk-grand-floor-plan.webp")
+      }
     ],
-    possession: "July 2026",
-    units: "63",
-    highlight:
-      "Boutique Low-Density Community (B + G + 2 Floors) & Private Backyard Space",
-    reraId: "PRM/KA/RERA/1251/446/PR/041223/006446",
-    summary:
-      "Sattva La Vita is an exclusive luxury row-villa enclave by Sattva Group located in Byrathi, off Hennur Main Road, North Bangalore, featuring 63 4-BHK townhouses spread across 3 acres.",
-    description:
-      "Sattva La Vita is a highly private, low-density residential villa community by Sattva Group, situated in Byrathi, off Hennur Main Road in North Bangalore. Spanning 3 acres, this boutique enclave comprises just 63 exclusive 4 BHK row-house villas structured across a basement, ground level, and two upper floors (B + G + 2). Designed with private backyards, open terraces, and premium finishes, unit sizes range from 3,255 sq. ft. to 3,260 sq. ft., with prices starting from Rs. 5.33 Crore onwards. The gated enclave provides a dedicated resident clubhouse, swimming pool, gym, and landscaped central avenues, offering seamless access to Outer Ring Road, Manyata Tech Park, Bhartiya City, and Kempegowda International Airport. Sattva La Vita is registered under RERA PRM/KA/RERA/1251/446/PR/041223/006446.",
-    amenities: [
-      { name: "Boutique Resident Clubhouse", icon: "fa-building-user" },
-      { name: "Swimming Pool & Lounge Deck", icon: "fa-water-ladder" },
-      { name: "Fully Equipped Gymnasium", icon: "fa-dumbbell" },
+    "possession": "July 2026",
+    "units": "63",
+    "highlight": "Boutique Low-Density Community (B + G + 2 Floors) & Private Backyard Space",
+    "reraId": "PRM/KA/RERA/1251/446/PR/041223/006446",
+    "summary": "Sattva La Vita is an exclusive luxury row-villa enclave by Sattva Group located in Byrathi, off Hennur Main Road, North Bangalore, featuring 63 4-BHK townhouses spread across 3 acres.",
+    "description": "Sattva La Vita is a highly private, low-density residential villa community by Sattva Group, situated in Byrathi, off Hennur Main Road in North Bangalore. Spanning 3 acres, this boutique enclave comprises just 63 exclusive 4 BHK row-house villas structured across a basement, ground level, and two upper floors (B + G + 2). Designed with private backyards, open terraces, and premium finishes, unit sizes range from 3,255 sq. ft. to 3,260 sq. ft., with prices starting from Rs. 5.33 Crore onwards. The gated enclave provides a dedicated resident clubhouse, swimming pool, gym, and landscaped central avenues, offering seamless access to Outer Ring Road, Manyata Tech Park, Bhartiya City, and Kempegowda International Airport. Sattva La Vita is registered under RERA PRM/KA/RERA/1251/446/PR/041223/006446.",
+    "amenities": [
       {
-        name: "Children's Play Area & Toddler Lawn",
-        icon: "fa-child-reaching",
+        "name": "Boutique Resident Clubhouse",
+        "icon": "fa-building-user"
       },
       {
-        name: "Indoor Games Room & Table Tennis",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "Swimming Pool & Lounge Deck",
+        "icon": "fa-water-ladder"
       },
-      { name: "Multipurpose Hall & Party Pavilion", icon: "fa-people-roof" },
-      { name: "Landscaped Central Park & Walking Trail", icon: "fa-tree" },
       {
-        name: "24/7 Gated Security & CCTV Surveillance",
-        icon: "fa-shield-halved",
+        "name": "Fully Equipped Gymnasium",
+        "icon": "fa-dumbbell"
       },
+      {
+        "name": "Children's Play Area & Toddler Lawn",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Indoor Games Room & Table Tennis",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Multipurpose Hall & Party Pavilion",
+        "icon": "fa-people-roof"
+      },
+      {
+        "name": "Landscaped Central Park & Walking Trail",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "24/7 Gated Security & CCTV Surveillance",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "United International School",
-        distance: "0.9 km",
-        icon: "fa-school",
-      },
-      { name: "Hennur Main Road", distance: "1.0 km", icon: "fa-road" },
-      {
-        name: "Bhartiya City",
-        distance: "1.2 km",
-        icon: "fa-building-columns",
-      },
-      { name: "Manyata Tech Park", distance: "5.0 km", icon: "fa-laptop-code" },
-      {
-        name: "Outer Ring Road (ORR) Junction",
-        distance: "5.1 km",
-        icon: "fa-route",
+        "label": "United International School",
+        "name": "United International School",
+        "distance": "0.9 km",
+        "icon": "fa-solid fa-school",
+        "destination": "United International School, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0544,
+          "lon": 77.6578
+        }
       },
       {
-        name: "Thanisandra Railway Station",
-        distance: "5.5 km",
-        icon: "fa-train",
+        "label": "Hennur Main Road",
+        "name": "Hennur Main Road",
+        "distance": "1.0 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Hennur Main Road, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.052,
+          "lon": 77.643
+        }
       },
       {
-        name: "Phoenix Mall of Asia",
-        distance: "9.5 km",
-        icon: "fa-bag-shopping",
+        "label": "Bhartiya City",
+        "name": "Bhartiya City",
+        "distance": "1.2 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "Bhartiya City, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0736,
+          "lon": 77.6397
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "25.0 km",
-        icon: "fa-plane",
+        "label": "Manyata Tech Park",
+        "name": "Manyata Tech Park",
+        "distance": "5.0 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "Manyata Tech Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0475,
+          "lon": 77.6212
+        }
       },
+      {
+        "label": "Outer Ring Road (ORR) Junction",
+        "name": "Outer Ring Road (ORR) Junction",
+        "distance": "5.1 km",
+        "icon": "fa-solid fa-route",
+        "destination": "Outer Ring Road (ORR) Junction, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.041,
+          "lon": 77.623
+        }
+      },
+      {
+        "label": "Thanisandra Railway Station",
+        "name": "Thanisandra Railway Station",
+        "distance": "5.5 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Thanisandra Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1099,
+          "lon": 77.661
+        }
+      },
+      {
+        "label": "Phoenix Mall of Asia",
+        "name": "Phoenix Mall of Asia",
+        "distance": "9.5 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0694,
+          "lon": 77.5982
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "25.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-la-vita/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-la-vita/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-la-vita/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-la-vita/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-casa-crescent",
-    thumbnail: sattvaImage("sattva-group/sattva-casa-crescent/thumbnail.webp"),
-    title: "Sattva Casa Crescent",
-    location: "Benson Cross Road, Benson Town, Central Bangalore",
-    category: "ready",
-    type: "apartment",
-    priceValue: 7.38,
-    price: "₹ 7.38 Crore Onwards",
-    area: "1.2 Acres",
-    floorPlans: [
+    "id": "sattva-casa-crescent",
+    "thumbnail": sattvaImage("sattva-group/sattva-casa-crescent/thumbnail.webp"),
+    "name": "Sattva Casa Crescent",
+    "coordinates": {
+      "lat": 12.9985,
+      "lon": 77.6045
+    },
+    "mapsQuery": "Sattva Casa Crescent, Benson Cross Road, Benson Town, Bengaluru",
+    "shortAddress": "Benson Town, Central Bengaluru",
+    "title": "Sattva Casa Crescent",
+    "location": "Benson Cross Road, Benson Town, Central Bangalore",
+    "category": "ready",
+    "type": "apartment",
+    "priceValue": 7.38,
+    "price": "₹ 7.38 Crore Onwards",
+    "area": "1.2 Acres",
+    "floorPlans": [
       {
-        id: "4bhk-simplex",
-        bhk: "4 BHK Simplex",
-        area: "3,633 Sq. Ft.",
-        price: "₹ 7.38 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-casa-crescent/floor-plans/4bhk-simplex-floor-plan.webp"),
+        "id": "4bhk-simplex",
+        "bhk": "4 BHK Simplex",
+        "area": "3,633 Sq. Ft.",
+        "price": "₹ 7.38 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-casa-crescent/floor-plans/4bhk-simplex-floor-plan.webp")
       },
       {
-        id: "4bhk-duplex",
-        bhk: "4 BHK Duplex",
-        area: "5,180 Sq. Ft.",
-        price: "₹ 11.25 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-casa-crescent/floor-plans/4bhk-duplex-floor-plan.webp"),
-      },
+        "id": "4bhk-duplex",
+        "bhk": "4 BHK Duplex",
+        "area": "5,180 Sq. Ft.",
+        "price": "₹ 11.25 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-casa-crescent/floor-plans/4bhk-duplex-floor-plan.webp")
+      }
     ],
-    possession: "March 2017",
-    units: "6",
-    highlight:
-      "Ultra-Exclusive Boutique Living with 1 Apartment Per Floor & Full Home Automation",
-    reraId: "",
-    summary:
-      "Sattva Casa Crescent is an ultra-exclusive, low-density luxury residential development by Sattva Group located in Benson Town, Central Bangalore, featuring just 6 lavish 4 BHK simplex and duplex homes across 1.2 acres.",
-    description:
-      "Sattva Casa Crescent is a highly prestigious, ultra-luxury boutique residential landmark by Sattva Group, situated at Benson Cross Road in the quiet, upscale neighborhood of Benson Town, Central Bangalore. Spanning 1.2 acres, this low-density development comprises a single iconic tower housing only 6 expansive 4 BHK residences—designed as single-level floor-plate simplexes and grand double-height duplexes. Unit super built-up areas range from 3,633 sq. ft. to 5,180 sq. ft., with prices starting from Rs. 7.38 Crore onwards. Every home features imported marble flooring, teakwood frames, smartphone-controlled home automation, and private elevator lobbies. The completed development provides a private rooftop swimming pool, gym, landscaped gardens, and dedicated concierge security, all while staying minutes away from MG Road, Cantonment Railway Station, and Bangalore Palace.",
-    amenities: [
+    "possession": "March 2017",
+    "units": "6",
+    "highlight": "Ultra-Exclusive Boutique Living with 1 Apartment Per Floor & Full Home Automation",
+    "reraId": "",
+    "summary": "Sattva Casa Crescent is an ultra-exclusive, low-density luxury residential development by Sattva Group located in Benson Town, Central Bangalore, featuring just 6 lavish 4 BHK simplex and duplex homes across 1.2 acres.",
+    "description": "Sattva Casa Crescent is a highly prestigious, ultra-luxury boutique residential landmark by Sattva Group, situated at Benson Cross Road in the quiet, upscale neighborhood of Benson Town, Central Bangalore. Spanning 1.2 acres, this low-density development comprises a single iconic tower housing only 6 expansive 4 BHK residences—designed as single-level floor-plate simplexes and grand double-height duplexes. Unit super built-up areas range from 3,633 sq. ft. to 5,180 sq. ft., with prices starting from Rs. 7.38 Crore onwards. Every home features imported marble flooring, teakwood frames, smartphone-controlled home automation, and private elevator lobbies. The completed development provides a private rooftop swimming pool, gym, landscaped gardens, and dedicated concierge security, all while staying minutes away from MG Road, Cantonment Railway Station, and Bangalore Palace.",
+    "amenities": [
       {
-        name: "Boutique Resident Clubhouse & Lounge",
-        icon: "fa-building-user",
+        "name": "Boutique Resident Clubhouse & Lounge",
+        "icon": "fa-building-user"
       },
-      { name: "Rooftop Swimming Pool & Sun Deck", icon: "fa-water-ladder" },
-      { name: "Fully Equipped Fitness Center & Gym", icon: "fa-dumbbell" },
-      { name: "Smartphone Home Automation System", icon: "fa-house-signal" },
-      { name: "Children's Play Area & Party Lawn", icon: "fa-child-reaching" },
-      { name: "Landscaped Garden & Terrace Sitting Area", icon: "fa-tree" },
-      { name: "High-Speed Passenger & Service Elevators", icon: "fa-elevator" },
       {
-        name: "24/7 Multi-Tiered Security & Intercom",
-        icon: "fa-shield-halved",
+        "name": "Rooftop Swimming Pool & Sun Deck",
+        "icon": "fa-water-ladder"
       },
+      {
+        "name": "Fully Equipped Fitness Center & Gym",
+        "icon": "fa-dumbbell"
+      },
+      {
+        "name": "Smartphone Home Automation System",
+        "icon": "fa-house-signal"
+      },
+      {
+        "name": "Children's Play Area & Party Lawn",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Landscaped Garden & Terrace Sitting Area",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "High-Speed Passenger & Service Elevators",
+        "icon": "fa-elevator"
+      },
+      {
+        "name": "24/7 Multi-Tiered Security & Intercom",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Bangalore Cantonment Railway Station",
-        distance: "2.5 km",
-        icon: "fa-train",
-      },
-      { name: "Coles Park", distance: "2.5 km", icon: "fa-tree" },
-      {
-        name: "Commercial Street",
-        distance: "3.5 km",
-        icon: "fa-bag-shopping",
-      },
-      { name: "Bangalore Palace", distance: "3.5 km", icon: "fa-landmark" },
-      {
-        name: "MG Road / Brigade Road Commercial Hub",
-        distance: "5.0 km",
-        icon: "fa-road",
+        "label": "Bangalore Cantonment Railway Station",
+        "name": "Bangalore Cantonment Railway Station",
+        "distance": "2.5 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Bangalore Cantonment Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.994,
+          "lon": 77.598
+        }
       },
       {
-        name: "Manipal Hospital Millers Road",
-        distance: "5.0 km",
-        icon: "fa-hospital",
+        "label": "Coles Park",
+        "name": "Coles Park",
+        "distance": "2.5 km",
+        "icon": "fa-solid fa-tree",
+        "destination": "Coles Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.999,
+          "lon": 77.609
+        }
       },
-      { name: "Cubbon Park", distance: "6.0 km", icon: "fa-tree" },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "32.0 km",
-        icon: "fa-plane",
+        "label": "Commercial Street",
+        "name": "Commercial Street",
+        "distance": "3.5 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Commercial Street, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.982,
+          "lon": 77.608
+        }
       },
+      {
+        "label": "Bangalore Palace",
+        "name": "Bangalore Palace",
+        "distance": "3.5 km",
+        "icon": "fa-solid fa-landmark",
+        "destination": "Bangalore Palace, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0005,
+          "lon": 77.592
+        }
+      },
+      {
+        "label": "MG Road / Brigade Road Commercial Hub",
+        "name": "MG Road / Brigade Road Commercial Hub",
+        "distance": "5.0 km",
+        "icon": "fa-solid fa-road",
+        "destination": "MG Road / Brigade Road Commercial Hub, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.975,
+          "lon": 77.608
+        }
+      },
+      {
+        "label": "Manipal Hospital Millers Road",
+        "name": "Manipal Hospital Millers Road",
+        "distance": "5.0 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Manipal Hospital Millers Road, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9899,
+          "lon": 77.6499
+        }
+      },
+      {
+        "label": "Cubbon Park",
+        "name": "Cubbon Park",
+        "distance": "6.0 km",
+        "icon": "fa-solid fa-tree",
+        "destination": "Cubbon Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9763,
+          "lon": 77.5929
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "32.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-casa-crescent/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-casa-crescent/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-casa-crescent/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-casa-crescent/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-bliss",
-    thumbnail: sattvaImage("sattva-group/sattva-bliss/thumbnail.webp"),
-    title: "Sattva Bliss",
-    location: "Budigere Cross, Off Old Madras Road, East Bangalore",
-    category: "ongoing",
-    type: "apartment",
-    priceValue: 0.9359,
-    price: "₹ 93.59 Lakhs Onwards",
-    area: "3.32 Acres",
-    floorPlans: [
+    "id": "sattva-bliss",
+    "thumbnail": sattvaImage("sattva-group/sattva-bliss/thumbnail.webp"),
+    "name": "Sattva Bliss",
+    "coordinates": {
+      "lat": 13.048,
+      "lon": 77.738
+    },
+    "mapsQuery": "Sattva Bliss, Budigere Cross, Old Madras Road, Bengaluru",
+    "shortAddress": "Budigere Cross, East Bengaluru",
+    "title": "Sattva Bliss",
+    "location": "Budigere Cross, Off Old Madras Road, East Bangalore",
+    "category": "ongoing",
+    "type": "apartment",
+    "priceValue": 0.9359,
+    "price": "₹ 93.59 Lakhs Onwards",
+    "area": "3.32 Acres",
+    "floorPlans": [
       {
-        id: "2bhk-standard",
-        bhk: "2 BHK",
-        area: "878 - 883 Sq. Ft.",
-        price: "₹ 93.59 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-bliss/floor-plans/2bhk-floor-plan.webp"),
-      },
+        "id": "2bhk-standard",
+        "bhk": "2 BHK",
+        "area": "878 - 883 Sq. Ft.",
+        "price": "₹ 93.59 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-bliss/floor-plans/2bhk-floor-plan.webp")
+      }
     ],
-    possession: "August 2027",
-    units: "338",
-    highlight:
-      "Compact Luxury Living near Whitefield IT Corridor & 3.32 Acres Gated Community",
-    reraId: "PRM/KA/RERA/1251/446/PR/120123/005620",
-    summary:
-      "Sattva Bliss is a modern residential project by Sattva Group located at Budigere Cross, off Old Madras Road, East Bangalore, offering 2 and 3 BHK smart apartments across 3.32 acres.",
-    description:
-      "Sattva Bliss is a thoughtfully conceptualized urban residential development by Sattva Group, situated right at Budigere Cross on Old Madras Road in East Bangalore. Spanning 3.32 acres, the gated community comprises 338 efficiently designed apartments. Tailored for modern families and investors, the project offers 2 BHK and 3 BHK home layouts ranging in size from 849 sq. ft. to 960 sq. ft., with starting prices from Rs. 83.81 Lakhs onwards. Complete with a fully equipped clubhouse, swimming pool, sports courts, landscaped open areas, and 24/7 security, Sattva Bliss provides swift access to Whitefield, ITPL, Hoskote Industrial Area, and KR Puram Railway Station. Sattva Bliss is registered under RERA PRM/KA/RERA/1251/446/PR/120123/005620.",
-    amenities: [
+    "possession": "August 2027",
+    "units": "338",
+    "highlight": "Compact Luxury Living near Whitefield IT Corridor & 3.32 Acres Gated Community",
+    "reraId": "PRM/KA/RERA/1251/446/PR/120123/005620",
+    "summary": "Sattva Bliss is a modern residential project by Sattva Group located at Budigere Cross, off Old Madras Road, East Bangalore, offering 2 and 3 BHK smart apartments across 3.32 acres.",
+    "description": "Sattva Bliss is a thoughtfully conceptualized urban residential development by Sattva Group, situated right at Budigere Cross on Old Madras Road in East Bangalore. Spanning 3.32 acres, the gated community comprises 338 efficiently designed apartments. Tailored for modern families and investors, the project offers 2 BHK and 3 BHK home layouts ranging in size from 849 sq. ft. to 960 sq. ft., with starting prices from Rs. 83.81 Lakhs onwards. Complete with a fully equipped clubhouse, swimming pool, sports courts, landscaped open areas, and 24/7 security, Sattva Bliss provides swift access to Whitefield, ITPL, Hoskote Industrial Area, and KR Puram Railway Station. Sattva Bliss is registered under RERA PRM/KA/RERA/1251/446/PR/120123/005620.",
+    "amenities": [
       {
-        name: "Resident Clubhouse & Multipurpose Hall",
-        icon: "fa-building-user",
+        "name": "Resident Clubhouse & Multipurpose Hall",
+        "icon": "fa-building-user"
       },
-      { name: "Swimming Pool & Kids Pool", icon: "fa-water-ladder" },
-      { name: "Fully Equipped Gymnasium", icon: "fa-dumbbell" },
-      { name: "Children's Outdoor Play Park", icon: "fa-child-reaching" },
       {
-        name: "Badminton Court & Indoor Games",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "Swimming Pool & Kids Pool",
+        "icon": "fa-water-ladder"
       },
-      { name: "Meditation Deck & Senior Citizens' Area", icon: "fa-spa" },
-      { name: "Landscaped Garden & Jogging Track", icon: "fa-tree" },
-      { name: "24/7 Gated Security & Intercom", icon: "fa-shield-halved" },
+      {
+        "name": "Fully Equipped Gymnasium",
+        "icon": "fa-dumbbell"
+      },
+      {
+        "name": "Children's Outdoor Play Park",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Badminton Court & Indoor Games",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Meditation Deck & Senior Citizens' Area",
+        "icon": "fa-spa"
+      },
+      {
+        "name": "Landscaped Garden & Jogging Track",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "24/7 Gated Security & Intercom",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
-      { name: "Old Madras Road (NH 75)", distance: "0.2 km", icon: "fa-road" },
+    "connectivity": [
       {
-        name: "Orion UPTOWN Mall",
-        distance: "2.5 km",
-        icon: "fa-bag-shopping",
-      },
-      { name: "East Point Hospital", distance: "4.5 km", icon: "fa-hospital" },
-      {
-        name: "Kadugodi / Whitefield Railway Station",
-        distance: "8.0 km",
-        icon: "fa-train",
-      },
-      { name: "Hope Farm Junction", distance: "9.5 km", icon: "fa-route" },
-      {
-        name: "ITPL International Tech Park",
-        distance: "11.0 km",
-        icon: "fa-laptop-code",
+        "label": "Old Madras Road (NH 75)",
+        "name": "Old Madras Road (NH 75)",
+        "distance": "0.2 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Old Madras Road (NH 75), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.04,
+          "lon": 77.73
+        }
       },
       {
-        name: "KR Puram Railway Station",
-        distance: "12.0 km",
-        icon: "fa-train",
+        "label": "Orion UPTOWN Mall",
+        "name": "Orion UPTOWN Mall",
+        "distance": "2.5 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Orion UPTOWN Mall, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.045,
+          "lon": 77.742
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "26.0 km",
-        icon: "fa-plane",
+        "label": "East Point Hospital",
+        "name": "East Point Hospital",
+        "distance": "4.5 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "East Point Hospital, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0348,
+          "lon": 77.7773
+        }
       },
+      {
+        "label": "Kadugodi / Whitefield Railway Station",
+        "name": "Kadugodi / Whitefield Railway Station",
+        "distance": "8.0 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Kadugodi / Whitefield Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.998,
+          "lon": 77.758
+        }
+      },
+      {
+        "label": "Hope Farm Junction",
+        "name": "Hope Farm Junction",
+        "distance": "9.5 km",
+        "icon": "fa-solid fa-route",
+        "destination": "Hope Farm Junction, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.984,
+          "lon": 77.752
+        }
+      },
+      {
+        "label": "ITPL International Tech Park",
+        "name": "ITPL International Tech Park",
+        "distance": "11.0 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "ITPL International Tech Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.987,
+          "lon": 77.737
+        }
+      },
+      {
+        "label": "KR Puram Railway Station",
+        "name": "KR Puram Railway Station",
+        "distance": "12.0 km",
+        "icon": "fa-solid fa-train",
+        "destination": "KR Puram Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.001,
+          "lon": 77.678
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "26.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-bliss/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-bliss/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-bliss/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-bliss/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-east-crest",
-    thumbnail: sattvaImage("sattva-group/sattva-east-crest/thumbnail.webp"),
-    title: "Sattva East Crest",
-    location:
-      "Konadasapura, Near Budigere Cross, Old Madras Road, East Bangalore",
-    category: "ready",
-    type: "apartment",
-    priceValue: 1.33,
-    price: "₹ 1.33 Crore Onwards",
-    area: "7 Acres",
-    floorPlans: [
+    "id": "sattva-east-crest",
+    "thumbnail": sattvaImage("sattva-group/sattva-east-crest/thumbnail.webp"),
+    "name": "Sattva East Crest",
+    "coordinates": {
+      "lat": 13.042,
+      "lon": 77.734
+    },
+    "mapsQuery": "Sattva East Crest, Konadasapura, Old Madras Road, Bengaluru",
+    "shortAddress": "Old Madras Road, East Bengaluru",
+    "title": "Sattva East Crest",
+    "location": "Konadasapura, Near Budigere Cross, Old Madras Road, East Bangalore",
+    "category": "ready",
+    "type": "apartment",
+    "priceValue": 1.33,
+    "price": "₹ 1.33 Crore Onwards",
+    "area": "7 Acres",
+    "floorPlans": [
       {
-        id: "2bhk",
-        bhk: "2 BHK",
-        area: "1,157 - 1,264 Sq. Ft.",
-        price: "₹ 1.33 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-east-crest/floor-plans/2bhk-floor-plan.webp"),
+        "id": "2bhk",
+        "bhk": "2 BHK",
+        "area": "1,157 - 1,264 Sq. Ft.",
+        "price": "₹ 1.33 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-east-crest/floor-plans/2bhk-floor-plan.webp")
       },
       {
-        id: "3bhk",
-        bhk: "3 BHK",
-        area: "1,404 - 1,533 Sq. Ft.",
-        price: "₹ 1.61 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-east-crest/floor-plans/3bhk-floor-plan.webp"),
-      },
+        "id": "3bhk",
+        "bhk": "3 BHK",
+        "area": "1,404 - 1,533 Sq. Ft.",
+        "price": "₹ 1.61 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-east-crest/floor-plans/3bhk-floor-plan.webp")
+      }
     ],
-    possession: "Ready To Move",
-    units: "667",
-    highlight:
-      "Ready-to-Move Township on Old Madras Road Corridor & 11 High-Rise Towers",
-    reraId: "PRM/KA/RERA/1251/446/PR/170920/000406",
-    summary:
-      "Sattva East Crest is a premium ready-to-move residential township by Sattva Group located at Konadasapura near Budigere Cross on Old Madras Road, East Bangalore, offering 1, 2, and 3 BHK apartments across 6.6 acres.",
-    description:
-      "Sattva East Crest is an established, high-rise residential development by Sattva Group, strategically located on Old Madras Road (NH 75) at Konadasapura near Budigere Cross in East Bangalore. Spread over 6.6 acres of landscaped grounds, the community comprises 11 towers (B + G + 17 Floors) housing 667 well-appointed residential units. Designed for modern urban lifestyles, the project offers 1 BHK, 2 BHK, and 3 BHK apartment layouts ranging from 598 sq. ft. to 1,530 sq. ft., with prices starting from Rs. 60.0 Lakhs onwards. Featuring 38 world-class amenities including a central clubhouse, swimming pool, sports courts, and health club, Sattva East Crest provides excellent connectivity to ITPL, Whitefield, KR Puram, and Kempegowda International Airport. Sattva East Crest is registered under RERA PRM/KA/RERA/1251/446/PR/170920/000406.",
-    amenities: [
+    "possession": "Ready To Move",
+    "units": "667",
+    "highlight": "Ready-to-Move Township on Old Madras Road Corridor & 11 High-Rise Towers",
+    "reraId": "PRM/KA/RERA/1251/446/PR/170920/000406",
+    "summary": "Sattva East Crest is a premium ready-to-move residential township by Sattva Group located at Konadasapura near Budigere Cross on Old Madras Road, East Bangalore, offering 1, 2, and 3 BHK apartments across 6.6 acres.",
+    "description": "Sattva East Crest is an established, high-rise residential development by Sattva Group, strategically located on Old Madras Road (NH 75) at Konadasapura near Budigere Cross in East Bangalore. Spread over 6.6 acres of landscaped grounds, the community comprises 11 towers (B + G + 17 Floors) housing 667 well-appointed residential units. Designed for modern urban lifestyles, the project offers 1 BHK, 2 BHK, and 3 BHK apartment layouts ranging from 598 sq. ft. to 1,530 sq. ft., with prices starting from Rs. 60.0 Lakhs onwards. Featuring 38 world-class amenities including a central clubhouse, swimming pool, sports courts, and health club, Sattva East Crest provides excellent connectivity to ITPL, Whitefield, KR Puram, and Kempegowda International Airport. Sattva East Crest is registered under RERA PRM/KA/RERA/1251/446/PR/170920/000406.",
+    "amenities": [
       {
-        name: "Resident Clubhouse & Multipurpose Hall",
-        icon: "fa-building-user",
-      },
-      { name: "Swimming Pool & Kids Splash Pool", icon: "fa-water-ladder" },
-      {
-        name: "Fully Equipped Gymnasium & Fitness Center",
-        icon: "fa-dumbbell",
+        "name": "Resident Clubhouse & Multipurpose Hall",
+        "icon": "fa-building-user"
       },
       {
-        name: "Badminton & Half Basketball Courts",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "Swimming Pool & Kids Splash Pool",
+        "icon": "fa-water-ladder"
       },
-      { name: "Children's Outdoor Playground", icon: "fa-child-reaching" },
-      { name: "Amphitheatre & Outdoor Seating Plaza", icon: "fa-film" },
-      { name: "Landscaped Central Gardens & Jogging Track", icon: "fa-tree" },
       {
-        name: "24/7 Gated Security & CCTV Surveillance",
-        icon: "fa-shield-halved",
+        "name": "Fully Equipped Gymnasium & Fitness Center",
+        "icon": "fa-dumbbell"
       },
+      {
+        "name": "Badminton & Half Basketball Courts",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Children's Outdoor Playground",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Amphitheatre & Outdoor Seating Plaza",
+        "icon": "fa-film"
+      },
+      {
+        "name": "Landscaped Central Gardens & Jogging Track",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "24/7 Gated Security & CCTV Surveillance",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
-      { name: "Old Madras Road (NH 75)", distance: "0.1 km", icon: "fa-road" },
-      { name: "Budigere Cross Junction", distance: "1.5 km", icon: "fa-route" },
+    "connectivity": [
       {
-        name: "Orion UPTOWN Mall",
-        distance: "3.0 km",
-        icon: "fa-bag-shopping",
+        "label": "Old Madras Road (NH 75)",
+        "name": "Old Madras Road (NH 75)",
+        "distance": "0.1 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Old Madras Road (NH 75), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.04,
+          "lon": 77.73
+        }
       },
       {
-        name: "East Point Hospital & Medical College",
-        distance: "5.5 km",
-        icon: "fa-hospital",
+        "label": "Budigere Cross Junction",
+        "name": "Budigere Cross Junction",
+        "distance": "1.5 km",
+        "icon": "fa-solid fa-route",
+        "destination": "Budigere Cross Junction, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.048,
+          "lon": 77.738
+        }
       },
       {
-        name: "Whitefield Railway Station",
-        distance: "8.5 km",
-        icon: "fa-train",
+        "label": "Orion UPTOWN Mall",
+        "name": "Orion UPTOWN Mall",
+        "distance": "3.0 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Orion UPTOWN Mall, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.045,
+          "lon": 77.742
+        }
       },
       {
-        name: "ITPL International Tech Park",
-        distance: "12.0 km",
-        icon: "fa-laptop-code",
+        "label": "East Point Hospital & Medical College",
+        "name": "East Point Hospital & Medical College",
+        "distance": "5.5 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "East Point Hospital & Medical College, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0129,
+          "lon": 77.6929
+        }
       },
       {
-        name: "KR Puram Railway Station",
-        distance: "15.0 km",
-        icon: "fa-train",
+        "label": "Whitefield Railway Station",
+        "name": "Whitefield Railway Station",
+        "distance": "8.5 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Whitefield Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.998,
+          "lon": 77.758
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "25.0 km",
-        icon: "fa-plane",
+        "label": "ITPL International Tech Park",
+        "name": "ITPL International Tech Park",
+        "distance": "12.0 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "ITPL International Tech Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.987,
+          "lon": 77.737
+        }
       },
+      {
+        "label": "KR Puram Railway Station",
+        "name": "KR Puram Railway Station",
+        "distance": "15.0 km",
+        "icon": "fa-solid fa-train",
+        "destination": "KR Puram Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.001,
+          "lon": 77.678
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "25.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-east-crest/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-east-crest/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-east-crest/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-east-crest/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-luxuria",
-    thumbnail: sattvaImage("sattva-group/sattva-luxuria/thumbnail.webp"),
-    title: "Sattva Luxuria",
-    location: "Malleswaram, West Bangalore",
-    category: "ready",
-    type: "apartment",
-    priceValue: 4.5,
-    price: "₹ 4.50 Crore Onwards",
-    area: "4.5 Acres",
-    floorPlans: [
+    "id": "sattva-luxuria",
+    "thumbnail": sattvaImage("sattva-group/sattva-luxuria/thumbnail.webp"),
+    "name": "Sattva Luxuria",
+    "coordinates": {
+      "lat": 13.008,
+      "lon": 77.569
+    },
+    "mapsQuery": "Sattva Luxuria, 8th Main Road, Malleswaram, Bengaluru",
+    "shortAddress": "Malleswaram, West Bengaluru",
+    "title": "Sattva Luxuria",
+    "location": "Malleswaram, West Bangalore",
+    "category": "ready",
+    "type": "apartment",
+    "priceValue": 4.5,
+    "price": "₹ 4.50 Crore Onwards",
+    "area": "4.5 Acres",
+    "floorPlans": [
       {
-        id: "3bhk",
-        bhk: "3 BHK",
-        area: "2,215 - 2,475 Sq. Ft.",
-        price: "₹ 4.50 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-luxuria/floor-plans/3bhk-floor-plan.webp"),
+        "id": "3bhk",
+        "bhk": "3 BHK",
+        "area": "2,215 - 2,475 Sq. Ft.",
+        "price": "₹ 4.50 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-luxuria/floor-plans/3bhk-floor-plan.webp")
       },
       {
-        id: "4bhk",
-        bhk: "4 BHK",
-        area: "3,728 - 4,465 Sq. Ft.",
-        price: "₹ 6.34 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-luxuria/floor-plans/4bhk-floor-plan.webp"),
-      },
+        "id": "4bhk",
+        "bhk": "4 BHK",
+        "area": "3,728 - 4,465 Sq. Ft.",
+        "price": "₹ 6.34 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-luxuria/floor-plans/4bhk-floor-plan.webp")
+      }
     ],
-    possession: "December 2017",
-    units: "197",
-    highlight:
-      "Ultra-Luxury High-Rise Living in Malleswaram & 100% Vastu Compliant",
-    reraId: "PRM/KA/RERA/1251/309/PR/171014/000109",
-    summary:
-      "Sattva Luxuria is an ultra-luxury landmark residential development by Sattva Group located in the elite neighborhood of Malleswaram, West Bangalore, offering premium 3 and 4 BHK high-rise apartments across 4.5 acres.",
-    description:
-      "Sattva Luxuria is an architectural icon of ultra-luxury residential living by Sattva Group, situated in the prestigious and culturally rich neighborhood of Malleswaram in West Bangalore. Spanning 4.5 acres, the gated estate comprises 2 magnificent high-rise towers housing 197 exclusive residences designed for the discerning elite. Offering spacious 3 BHK and 4 BHK layouts ranging from 2,295 sq. ft. to 4,215 sq. ft., with prices starting from Rs. 4.50 Crore onwards, the project exemplifies elegance and privacy. Residents enjoy world-class amenities including a sky lounge, heated indoor swimming pool, state-of-the-art health club, squash court, and beautifully landscaped podium gardens. Strategically positioned near World Trade Center (Bangalore), Orion Mall, Sankey Tank, and Mantri Square, Sattva Luxuria combines heritage locale prestige with contemporary high-rise luxury. Sattva Luxuria is registered under RERA PRM/KA/RERA/1251/309/PR/171014/000216.",
-    amenities: [
+    "possession": "December 2017",
+    "units": "197",
+    "highlight": "Ultra-Luxury High-Rise Living in Malleswaram & 100% Vastu Compliant",
+    "reraId": "PRM/KA/RERA/1251/309/PR/171014/000109",
+    "summary": "Sattva Luxuria is an ultra-luxury landmark residential development by Sattva Group located in the elite neighborhood of Malleswaram, West Bangalore, offering premium 3 and 4 BHK high-rise apartments across 4.5 acres.",
+    "description": "Sattva Luxuria is an architectural icon of ultra-luxury residential living by Sattva Group, situated in the prestigious and culturally rich neighborhood of Malleswaram in West Bangalore. Spanning 4.5 acres, the gated estate comprises 2 magnificent high-rise towers housing 197 exclusive residences designed for the discerning elite. Offering spacious 3 BHK and 4 BHK layouts ranging from 2,295 sq. ft. to 4,215 sq. ft., with prices starting from Rs. 4.50 Crore onwards, the project exemplifies elegance and privacy. Residents enjoy world-class amenities including a sky lounge, heated indoor swimming pool, state-of-the-art health club, squash court, and beautifully landscaped podium gardens. Strategically positioned near World Trade Center (Bangalore), Orion Mall, Sankey Tank, and Mantri Square, Sattva Luxuria combines heritage locale prestige with contemporary high-rise luxury. Sattva Luxuria is registered under RERA PRM/KA/RERA/1251/309/PR/171014/000216.",
+    "amenities": [
       {
-        name: "Grand Resident Clubhouse & Concierge",
-        icon: "fa-building-user",
+        "name": "Grand Resident Clubhouse & Concierge",
+        "icon": "fa-building-user"
       },
       {
-        name: "Heated Indoor Swimming Pool & Sky Deck",
-        icon: "fa-water-ladder",
+        "name": "Heated Indoor Swimming Pool & Sky Deck",
+        "icon": "fa-water-ladder"
       },
       {
-        name: "Squash Court & Indoor Games Arena",
-        icon: "fa-table-tennis-paddle-ball",
-      },
-      { name: "State-of-the-Art Gymnasium & Spa", icon: "fa-dumbbell" },
-      { name: "Children's Play Park & Creche", icon: "fa-child-reaching" },
-      {
-        name: "Podium-Level Landscaped Gardens & Water Features",
-        icon: "fa-tree",
+        "name": "Squash Court & Indoor Games Arena",
+        "icon": "fa-table-tennis-paddle-ball"
       },
       {
-        name: "High-Speed Private Elevators & Service Lifts",
-        icon: "fa-elevator",
+        "name": "State-of-the-Art Gymnasium & Spa",
+        "icon": "fa-dumbbell"
       },
       {
-        name: "Multi-Tiered 24/7 Security & CCTV Surveillance",
-        icon: "fa-shield-halved",
+        "name": "Children's Play Park & Creche",
+        "icon": "fa-child-reaching"
       },
+      {
+        "name": "Podium-Level Landscaped Gardens & Water Features",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "High-Speed Private Elevators & Service Lifts",
+        "icon": "fa-elevator"
+      },
+      {
+        "name": "Multi-Tiered 24/7 Security & CCTV Surveillance",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Sankey Tank Lake & Promenade",
-        distance: "1.0 km",
-        icon: "fa-water",
+        "label": "Sankey Tank Lake & Promenade",
+        "name": "Sankey Tank Lake & Promenade",
+        "distance": "1.0 km",
+        "icon": "fa-solid fa-water",
+        "destination": "Sankey Tank Lake & Promenade, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0156,
+          "lon": 77.564
+        }
       },
       {
-        name: "Orion Mall & World Trade Center",
-        distance: "1.5 km",
-        icon: "fa-bag-shopping",
-      },
-      { name: "Mantri Square Mall", distance: "2.0 km", icon: "fa-store" },
-      {
-        name: "Mantri Square Sampige Road Metro Station",
-        distance: "2.1 km",
-        icon: "fa-train-subway",
-      },
-      {
-        name: "Ramaiah Memorial Hospital",
-        distance: "3.0 km",
-        icon: "fa-hospital",
+        "label": "Orion Mall & World Trade Center",
+        "name": "Orion Mall & World Trade Center",
+        "distance": "1.5 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Orion Mall & World Trade Center, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0113,
+          "lon": 77.555
+        }
       },
       {
-        name: "Bangalore City Railway Station (KSR)",
-        distance: "4.5 km",
-        icon: "fa-train",
+        "label": "Mantri Square Mall",
+        "name": "Mantri Square Mall",
+        "distance": "2.0 km",
+        "icon": "fa-solid fa-store",
+        "destination": "Mantri Square Mall, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.992,
+          "lon": 77.571
+        }
       },
-      { name: "MG Road Commercial Hub", distance: "6.0 km", icon: "fa-road" },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "33.0 km",
-        icon: "fa-plane",
+        "label": "Mantri Square Sampige Road Metro Station",
+        "name": "Mantri Square Sampige Road Metro Station",
+        "distance": "2.1 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Mantri Square Sampige Road Metro Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.992,
+          "lon": 77.571
+        }
       },
+      {
+        "label": "Ramaiah Memorial Hospital",
+        "name": "Ramaiah Memorial Hospital",
+        "distance": "3.0 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Ramaiah Memorial Hospital, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0159,
+          "lon": 77.5955
+        }
+      },
+      {
+        "label": "Bangalore City Railway Station (KSR)",
+        "name": "Bangalore City Railway Station (KSR)",
+        "distance": "4.5 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Bangalore City Railway Station (KSR), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9781,
+          "lon": 77.5696
+        }
+      },
+      {
+        "label": "MG Road Commercial Hub",
+        "name": "MG Road Commercial Hub",
+        "distance": "6.0 km",
+        "icon": "fa-solid fa-road",
+        "destination": "MG Road Commercial Hub, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.975,
+          "lon": 77.608
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "33.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-luxuria/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-luxuria/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-luxuria/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-luxuria/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-serene-life",
-    thumbnail: sattvaImage("sattva-group/sattva-serene-life/thumbnail.webp"),
-    title: "Sattva Serene Life",
-    location: "Shettigere, Off Airport Road (BK Halli Road), North Bangalore",
-    category: "ready",
-    type: "plot",
-    priceValue: 1.01,
-    price: "₹ 1.01 Crore Onwards",
-    area: "32.27 Acres",
-    floorPlans: [
+    "id": "sattva-serene-life",
+    "thumbnail": sattvaImage("sattva-group/sattva-serene-life/thumbnail.webp"),
+    "name": "Sattva Serene Life",
+    "coordinates": {
+      "lat": 13.195,
+      "lon": 77.625
+    },
+    "mapsQuery": "Sattva Serene Life, Shettigere, Airport Road, Bengaluru",
+    "shortAddress": "Shettigere, North Bengaluru",
+    "title": "Sattva Serene Life",
+    "location": "Shettigere, Off Airport Road (BK Halli Road), North Bangalore",
+    "category": "ready",
+    "type": "plot",
+    "priceValue": 1.01,
+    "price": "₹ 1.01 Crore Onwards",
+    "area": "32.27 Acres",
+    "floorPlans": [
       {
-        id: "plot-1200",
-        bhk: "30 x 40 Plot",
-        area: "1,452 Sq. Ft.",
-        price: "₹ 1.01 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-serene-life/floor-plans/30x40-plot-floor-plan.webp"),
+        "id": "plot-1200",
+        "bhk": "30 x 40 Plot",
+        "area": "1,452 Sq. Ft.",
+        "price": "₹ 1.01 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-serene-life/floor-plans/30x40-plot-floor-plan.webp")
       },
       {
-        id: "plot-4000",
-        bhk: "50 x 80 Plot",
-        area: "5,976 Sq. Ft.",
-        price: "₹ 3.99 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-serene-life/floor-plans/50x80-plot-floor-plan.webp"),
-      },
+        "id": "plot-4000",
+        "bhk": "50 x 80 Plot",
+        "area": "5,976 Sq. Ft.",
+        "price": "₹ 3.99 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-serene-life/floor-plans/50x80-plot-floor-plan.webp")
+      }
     ],
-    possession: "June 2019",
-    units: "410",
-    highlight:
-      "32.27-Acre Plotted Sanctuary near Airport Toll & 752 Organic Coconut Trees",
-    reraId: "PRM/KA/RERA/1250/303/PR/181215/002219",
-    summary:
-      "Sattva Serene Life is a ready-to-move master-planned 32.27-acre premium residential plotted development by Sattva Group located in Shettigere, off Airport Road, North Bangalore, offering 410 plots ranging from 1,200 sq. ft. to 4,000 sq. ft.",
-    description:
-      "Sattva Serene Life is a lush, eco-centric residential plotted township by Sattva Group, strategically located in Shettigere near the Sadahalli Toll Gate off Airport Road in North Bangalore. Spanning 32.27 acres with 16 well-planned rows, the layout features 410 ready-to-construct plots enveloped by 752 coconut trees, wide asphalted roads, and underground electrical and drainage infrastructure. Homebuyers and investors can choose from standard plot dimensions ranging from 1,200 sq. ft. (30x40) up to 4,000 sq. ft. (50x80), with starting prices from Rs. 69.0 Lakhs onwards. Complete with a fully functional resident clubhouse, swimming pool, sports courts, and theme gardens, the development is located just 10 minutes from Kempegowda International Airport and KIADB Aerospace Park. Sattva Serene Life is registered under RERA PRM/KA/RERA/1250/303/PR/181215/002219.",
-    amenities: [
+    "possession": "June 2019",
+    "units": "410",
+    "highlight": "32.27-Acre Plotted Sanctuary near Airport Toll & 752 Organic Coconut Trees",
+    "reraId": "PRM/KA/RERA/1250/303/PR/181215/002219",
+    "summary": "Sattva Serene Life is a ready-to-move master-planned 32.27-acre premium residential plotted development by Sattva Group located in Shettigere, off Airport Road, North Bangalore, offering 410 plots ranging from 1,200 sq. ft. to 4,000 sq. ft.",
+    "description": "Sattva Serene Life is a lush, eco-centric residential plotted township by Sattva Group, strategically located in Shettigere near the Sadahalli Toll Gate off Airport Road in North Bangalore. Spanning 32.27 acres with 16 well-planned rows, the layout features 410 ready-to-construct plots enveloped by 752 coconut trees, wide asphalted roads, and underground electrical and drainage infrastructure. Homebuyers and investors can choose from standard plot dimensions ranging from 1,200 sq. ft. (30x40) up to 4,000 sq. ft. (50x80), with starting prices from Rs. 69.0 Lakhs onwards. Complete with a fully functional resident clubhouse, swimming pool, sports courts, and theme gardens, the development is located just 10 minutes from Kempegowda International Airport and KIADB Aerospace Park. Sattva Serene Life is registered under RERA PRM/KA/RERA/1250/303/PR/181215/002219.",
+    "amenities": [
       {
-        name: "Resident Clubhouse & Recreation Center",
-        icon: "fa-building-user",
-      },
-      { name: "Outdoor Swimming Pool & Sun Deck", icon: "fa-water-ladder" },
-      {
-        name: "Fully Equipped Gymnasium & Fitness Center",
-        icon: "fa-dumbbell",
+        "name": "Resident Clubhouse & Recreation Center",
+        "icon": "fa-building-user"
       },
       {
-        name: "Badminton Court & Indoor Games Room",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "Outdoor Swimming Pool & Sun Deck",
+        "icon": "fa-water-ladder"
       },
       {
-        name: "Children's Outdoor Play Park & Sand Pit",
-        icon: "fa-child-reaching",
-      },
-      { name: "Organic Fruit & Vegetable Gardens", icon: "fa-seedling" },
-      {
-        name: "Landscaped Central Parks & Tree-Lined Avenues",
-        icon: "fa-tree",
+        "name": "Fully Equipped Gymnasium & Fitness Center",
+        "icon": "fa-dumbbell"
       },
       {
-        name: "24/7 Gated Security & Underground Utilities",
-        icon: "fa-shield-halved",
+        "name": "Badminton Court & Indoor Games Room",
+        "icon": "fa-table-tennis-paddle-ball"
       },
+      {
+        "name": "Children's Outdoor Play Park & Sand Pit",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Organic Fruit & Vegetable Gardens",
+        "icon": "fa-seedling"
+      },
+      {
+        "name": "Landscaped Central Parks & Tree-Lined Avenues",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "24/7 Gated Security & Underground Utilities",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "NH-44 Airport Highway (Sadahalli Toll)",
-        distance: "2.0 km",
-        icon: "fa-road",
+        "label": "NH-44 Airport Highway (Sadahalli Toll)",
+        "name": "NH-44 Airport Highway (Sadahalli Toll)",
+        "distance": "2.0 km",
+        "icon": "fa-solid fa-road",
+        "destination": "NH-44 Airport Highway (Sadahalli Toll), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.2096,
+          "lon": 77.6359
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "8.5 km",
-        icon: "fa-plane",
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "8.5 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
       },
       {
-        name: "KIADB Aerospace Park & IT SEZ",
-        distance: "9.0 km",
-        icon: "fa-laptop-code",
+        "label": "KIADB Aerospace Park & IT SEZ",
+        "name": "KIADB Aerospace Park & IT SEZ",
+        "distance": "9.0 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "KIADB Aerospace Park & IT SEZ, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1989,
+          "lon": 77.7064
+        }
       },
       {
-        name: "Akash International School & Hospital",
-        distance: "10.0 km",
-        icon: "fa-hospital",
+        "label": "Akash International School & Hospital",
+        "name": "Akash International School & Hospital",
+        "distance": "10.0 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Akash International School & Hospital, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.284,
+          "lon": 77.6395
+        }
       },
       {
-        name: "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        distance: "10.5 km",
-        icon: "fa-train-subway",
+        "label": "Bettahalsoor Metro Station (Upcoming Blue Line)",
+        "name": "Bettahalsoor Metro Station (Upcoming Blue Line)",
+        "distance": "10.5 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Bettahalsoor Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.159,
+          "lon": 77.631
+        }
       },
       {
-        name: "Yelahanka New Town",
-        distance: "16.0 km",
-        icon: "fa-building-columns",
+        "label": "Yelahanka New Town",
+        "name": "Yelahanka New Town",
+        "distance": "16.0 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "Yelahanka New Town, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1208,
+          "lon": 77.7519
+        }
       },
       {
-        name: "Phoenix Mall of Asia",
-        distance: "20.0 km",
-        icon: "fa-bag-shopping",
-      },
+        "label": "Phoenix Mall of Asia",
+        "name": "Phoenix Mall of Asia",
+        "distance": "20.0 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0694,
+          "lon": 77.5982
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-serene-life/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-serene-life/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-serene-life/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-serene-life/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-divinity",
-    thumbnail: sattvaImage("sattva-group/sattva-divinity/thumbnail.webp"),
-    title: "Sattva Divinity",
-    location: "Pantrapalya, Off Mysore Road, West Bangalore",
-    category: "ready",
-    type: "apartment",
-    priceValue: 0.95,
-    price: "₹ 95.0 Lakhs Onwards",
-    area: "11 Acres",
-    floorPlans: [
+    "id": "sattva-divinity",
+    "thumbnail": sattvaImage("sattva-group/sattva-divinity/thumbnail.webp"),
+    "name": "Sattva Divinity",
+    "coordinates": {
+      "lat": 12.946,
+      "lon": 77.528
+    },
+    "mapsQuery": "Sattva Divinity, Mysore Road, Pantrapalya, Bengaluru",
+    "shortAddress": "Mysore Road, Pantrapalya, West Bengaluru",
+    "title": "Sattva Divinity",
+    "location": "Pantrapalya, Off Mysore Road, West Bangalore",
+    "category": "ready",
+    "type": "apartment",
+    "priceValue": 0.95,
+    "price": "₹ 95.0 Lakhs Onwards",
+    "area": "11 Acres",
+    "floorPlans": [
       {
-        id: "1bhk",
-        bhk: "1 BHK",
-        area: "600 - 688 Sq. Ft.",
-        price: "₹ 95.0 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-divinity/floor-plans/1bhk-floor-plan.webp"),
+        "id": "1bhk",
+        "bhk": "1 BHK",
+        "area": "600 - 688 Sq. Ft.",
+        "price": "₹ 95.0 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-divinity/floor-plans/1bhk-floor-plan.webp")
       },
       {
-        id: "1.5bhk",
-        bhk: "1.5 BHK",
-        area: "752 Sq. Ft.",
-        price: "₹ 1.23 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-divinity/floor-plans/1.5bhk-floor-plan.webp"),
+        "id": "1.5bhk",
+        "bhk": "1.5 BHK",
+        "area": "752 Sq. Ft.",
+        "price": "₹ 1.23 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-divinity/floor-plans/1.5bhk-floor-plan.webp")
       },
       {
-        id: "2bhk",
-        bhk: "2 BHK",
-        area: "797 - 1,209 Sq. Ft.",
-        price: "₹ 1.31 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-divinity/floor-plans/2bhk-floor-plan.webp"),
+        "id": "2bhk",
+        "bhk": "2 BHK",
+        "area": "797 - 1,209 Sq. Ft.",
+        "price": "₹ 1.31 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-divinity/floor-plans/2bhk-floor-plan.webp")
       },
       {
-        id: "3bhk",
-        bhk: "3 BHK",
-        area: "1,067 - 2,047 Sq. Ft.",
-        price: "₹ 1.75 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-divinity/floor-plans/3bhk-floor-plan-.webp"),
-      },
+        "id": "3bhk",
+        "bhk": "3 BHK",
+        "area": "1,067 - 2,047 Sq. Ft.",
+        "price": "₹ 1.75 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-divinity/floor-plans/3bhk-floor-plan-.webp")
+      }
     ],
-    possession: "Ready To Move",
-    units: "824",
-    highlight:
-      "11-Acre Premium Gated Township on Mysore Main Road & 3-Level Grand Clubhouse",
-    reraId: "PRM/KA/RERA/1251/310/PR/171014/000064",
-    summary:
-      "Sattva Divinity is a ready-to-move master-planned 11-acre high-rise residential township by Sattva Group located on Mysore Road, Pantrapalya, West Bangalore, offering 1, 2, 3, and 4 BHK duplex luxury homes across 10 towers.",
-    description:
-      "Sattva Divinity is a premium ready-to-move residential township by Sattva Group, strategically located right on Mysore Road in Pantrapalya, West Bangalore. Spanning 11 acres of lush, landscaped grounds, the development comprises 10 high-rise towers (G + 21 Floors) housing 1,032 residences structured around the concept of spiritual harmony and modern wellness. Homebuyers can select from 1 BHK, 2 BHK, 3 BHK, and exclusive 4 BHK duplex apartments with sizes ranging from 680 sq. ft. to 2,520 sq. ft., with prices starting from Rs. 95.0 Lakhs onwards. Anchored by a 3-level 78,000 sq. ft. resident clubhouse, rooftop infinity pool, bowling alley, and sports courts, the township sits adjacent to Nayandahalli Metro Station and offers seamless connectivity to Outer Ring Road, ORR Flyover, and Sattva Global City. Sattva Divinity is registered under RERA PRM/KA/RERA/1251/310/PR/171014/000064.",
-    amenities: [
+    "possession": "Ready To Move",
+    "units": "824",
+    "highlight": "11-Acre Premium Gated Township on Mysore Main Road & 3-Level Grand Clubhouse",
+    "reraId": "PRM/KA/RERA/1251/310/PR/171014/000064",
+    "summary": "Sattva Divinity is a ready-to-move master-planned 11-acre high-rise residential township by Sattva Group located on Mysore Road, Pantrapalya, West Bangalore, offering 1, 2, 3, and 4 BHK duplex luxury homes across 10 towers.",
+    "description": "Sattva Divinity is a premium ready-to-move residential township by Sattva Group, strategically located right on Mysore Road in Pantrapalya, West Bangalore. Spanning 11 acres of lush, landscaped grounds, the development comprises 10 high-rise towers (G + 21 Floors) housing 1,032 residences structured around the concept of spiritual harmony and modern wellness. Homebuyers can select from 1 BHK, 2 BHK, 3 BHK, and exclusive 4 BHK duplex apartments with sizes ranging from 680 sq. ft. to 2,520 sq. ft., with prices starting from Rs. 95.0 Lakhs onwards. Anchored by a 3-level 78,000 sq. ft. resident clubhouse, rooftop infinity pool, bowling alley, and sports courts, the township sits adjacent to Nayandahalli Metro Station and offers seamless connectivity to Outer Ring Road, ORR Flyover, and Sattva Global City. Sattva Divinity is registered under RERA PRM/KA/RERA/1251/310/PR/171014/000064.",
+    "amenities": [
       {
-        name: "78,000 Sq. Ft. 3-Level Grand Clubhouse",
-        icon: "fa-building-user",
-      },
-      { name: "Rooftop Swimming Pool & Deck", icon: "fa-water-ladder" },
-      { name: "Fully Equipped Gymnasium & Health Club", icon: "fa-dumbbell" },
-      { name: "Bowling Alley & Gaming Zone", icon: "fa-bowling-ball" },
-      {
-        name: "Squash, Tennis & Badminton Courts",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "78,000 Sq. Ft. 3-Level Grand Clubhouse",
+        "icon": "fa-building-user"
       },
       {
-        name: "Children's Outdoor Play Area & Creche",
-        icon: "fa-child-reaching",
+        "name": "Rooftop Swimming Pool & Deck",
+        "icon": "fa-water-ladder"
       },
-      { name: "Amphitheatre & Landscaped Central Court", icon: "fa-film" },
       {
-        name: "24/7 Gated Security & Multi-Level Parking",
-        icon: "fa-shield-halved",
+        "name": "Fully Equipped Gymnasium & Health Club",
+        "icon": "fa-dumbbell"
       },
+      {
+        "name": "Bowling Alley & Gaming Zone",
+        "icon": "fa-bowling-ball"
+      },
+      {
+        "name": "Squash, Tennis & Badminton Courts",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Children's Outdoor Play Area & Creche",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Amphitheatre & Landscaped Central Court",
+        "icon": "fa-film"
+      },
+      {
+        "name": "24/7 Gated Security & Multi-Level Parking",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Nayandahalli Metro Station (Purple Line)",
-        distance: "0.5 km",
-        icon: "fa-train-subway",
+        "label": "Nayandahalli Metro Station (Purple Line)",
+        "name": "Nayandahalli Metro Station (Purple Line)",
+        "distance": "0.5 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Nayandahalli Metro Station (Purple Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.948,
+          "lon": 77.531
+        }
       },
       {
-        name: "Mysore Main Road (NH 275)",
-        distance: "0.1 km",
-        icon: "fa-road",
+        "label": "Mysore Main Road (NH 275)",
+        "name": "Mysore Main Road (NH 275)",
+        "distance": "0.1 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Mysore Main Road (NH 275), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.942,
+          "lon": 77.521
+        }
       },
       {
-        name: "Outer Ring Road (ORR) Junction",
-        distance: "0.8 km",
-        icon: "fa-route",
+        "label": "Outer Ring Road (ORR) Junction",
+        "name": "Outer Ring Road (ORR) Junction",
+        "distance": "0.8 km",
+        "icon": "fa-solid fa-route",
+        "destination": "Outer Ring Road (ORR) Junction, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.041,
+          "lon": 77.623
+        }
       },
       {
-        name: "Gopalan Arcade Mall",
-        distance: "2.0 km",
-        icon: "fa-bag-shopping",
+        "label": "Gopalan Arcade Mall",
+        "name": "Gopalan Arcade Mall",
+        "distance": "2.0 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Gopalan Arcade Mall, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.931,
+          "lon": 77.527
+        }
       },
       {
-        name: "Sattva Global City Tech Park",
-        distance: "3.5 km",
-        icon: "fa-laptop-code",
+        "label": "Sattva Global City Tech Park",
+        "name": "Sattva Global City Tech Park",
+        "distance": "3.5 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "Sattva Global City Tech Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.917,
+          "lon": 77.5154
+        }
       },
-      { name: "PES University", distance: "4.0 km", icon: "fa-graduation-cap" },
       {
-        name: "KSR Bengaluru City Railway Station",
-        distance: "8.0 km",
-        icon: "fa-train",
+        "label": "PES University",
+        "name": "PES University",
+        "distance": "4.0 km",
+        "icon": "fa-solid fa-graduation-cap",
+        "destination": "PES University, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.934,
+          "lon": 77.534
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "45.0 km",
-        icon: "fa-plane",
+        "label": "KSR Bengaluru City Railway Station",
+        "name": "KSR Bengaluru City Railway Station",
+        "distance": "8.0 km",
+        "icon": "fa-solid fa-train",
+        "destination": "KSR Bengaluru City Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9781,
+          "lon": 77.5696
+        }
       },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "45.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-divinity/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-divinity/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-divinity/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-divinity/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-anugraha",
-    thumbnail: sattvaImage("sattva-group/sattva-anugraha/thumbnail.webp"),
-    title: "Sattva Anugraha",
-    location:
-      "Sumanahalli Crossing, Off Magadi Road, Vijayanagar, West Bangalore",
-    category: "ready",
-    type: "apartment",
-    priceValue: 0.11,
-    price: "₹ 1.1 Crore Onwards",
-    area: "12 Acres",
-    floorPlans: [
+    "id": "sattva-anugraha",
+    "thumbnail": sattvaImage("sattva-group/sattva-anugraha/thumbnail.webp"),
+    "name": "Sattva Anugraha",
+    "coordinates": {
+      "lat": 12.986,
+      "lon": 77.521
+    },
+    "mapsQuery": "Sattva Anugraha, Sumanahalli, Magadi Road, Bengaluru",
+    "shortAddress": "Vijayanagar, Magadi Road, West Bengaluru",
+    "title": "Sattva Anugraha",
+    "location": "Sumanahalli Crossing, Off Magadi Road, Vijayanagar, West Bangalore",
+    "category": "ready",
+    "type": "apartment",
+    "priceValue": 0.11,
+    "price": "₹ 1.1 Crore Onwards",
+    "area": "12 Acres",
+    "floorPlans": [
       {
-        id: "2bhk",
-        bhk: "2 BHK",
-        area: "1,045 Sq. Ft.",
-        price: "₹ 1.1 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-anugraha/floor-plans/2bhk-floor-plan.webp"),
+        "id": "2bhk",
+        "bhk": "2 BHK",
+        "area": "1,045 Sq. Ft.",
+        "price": "₹ 1.1 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-anugraha/floor-plans/2bhk-floor-plan.webp")
       },
       {
-        id: "3bhk-compact",
-        bhk: "3 BHK Compact",
-        area: "1,186 Sq. Ft.",
-        price: "₹ 1.24 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-anugraha/floor-plans/3bhk-floor-plan.webp"),
-      },
+        "id": "3bhk-compact",
+        "bhk": "3 BHK Compact",
+        "area": "1,186 Sq. Ft.",
+        "price": "₹ 1.24 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-anugraha/floor-plans/3bhk-floor-plan.webp")
+      }
     ],
-    possession: "March 2022",
-    units: "760",
-    highlight:
-      "12-Acre Gated Township in Vijayanagar & 30,000 Sq. Ft. Grand Clubhouse",
-    reraId: "PRM/KA/RERA/1251/309/PR/171014/000407",
-    summary:
-      "Sattva Anugraha is a premium ready-to-move residential township by Sattva Group located near Sumanahalli Crossing, off Magadi Road in Vijayanagar, West Bangalore, offering 1, 2, and 3 BHK apartments across 12 acres.",
-    description:
-      "Sattva Anugraha is a landmark ready-to-move residential township by Sattva Group, strategically located near Sumanahalli Crossing along Magadi Road, directly connected to Vijayanagar in West Bangalore. Spanning 12 acres with 75% dedicated open and green spaces, the community consists of 22 towers (2B + G + 14 Floors) comprising 1,384 well-designed urban apartments. Homebuyers can choose from 1 BHK, 2 BHK, and 3 BHK homes with unit super built-up areas ranging from 492 sq. ft. to 1,704 sq. ft., with prices starting from Rs. 74.0 Lakhs onwards. Anchored by a 30,000 sq. ft. resident clubhouse, 2 swimming pools, a 2-lane bowling alley, squash courts, and extensive landscaped courtyards, Sattva Anugraha provides rapid connectivity to Vijayanagar Metro Station, Yeshwanthpur, Mysore Road, and Central Bangalore. Sattva Anugraha is registered under RERA PRM/KA/RERA/1251/309/PR/171014/000407.",
-    amenities: [
-      { name: "30,000 Sq. Ft. Resident Clubhouse", icon: "fa-building-user" },
-      { name: "2 Outdoor Swimming Pools & Deck", icon: "fa-water-ladder" },
+    "possession": "March 2022",
+    "units": "760",
+    "highlight": "12-Acre Gated Township in Vijayanagar & 30,000 Sq. Ft. Grand Clubhouse",
+    "reraId": "PRM/KA/RERA/1251/309/PR/171014/000407",
+    "summary": "Sattva Anugraha is a premium ready-to-move residential township by Sattva Group located near Sumanahalli Crossing, off Magadi Road in Vijayanagar, West Bangalore, offering 1, 2, and 3 BHK apartments across 12 acres.",
+    "description": "Sattva Anugraha is a landmark ready-to-move residential township by Sattva Group, strategically located near Sumanahalli Crossing along Magadi Road, directly connected to Vijayanagar in West Bangalore. Spanning 12 acres with 75% dedicated open and green spaces, the community consists of 22 towers (2B + G + 14 Floors) comprising 1,384 well-designed urban apartments. Homebuyers can choose from 1 BHK, 2 BHK, and 3 BHK homes with unit super built-up areas ranging from 492 sq. ft. to 1,704 sq. ft., with prices starting from Rs. 74.0 Lakhs onwards. Anchored by a 30,000 sq. ft. resident clubhouse, 2 swimming pools, a 2-lane bowling alley, squash courts, and extensive landscaped courtyards, Sattva Anugraha provides rapid connectivity to Vijayanagar Metro Station, Yeshwanthpur, Mysore Road, and Central Bangalore. Sattva Anugraha is registered under RERA PRM/KA/RERA/1251/309/PR/171014/000407.",
+    "amenities": [
       {
-        name: "Fully Equipped Gymnasium & Aerobics Studio",
-        icon: "fa-dumbbell",
-      },
-      { name: "2-Lane Bowling Alley", icon: "fa-bowling-ball" },
-      {
-        name: "Badminton, Squash & Table Tennis Courts",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "30,000 Sq. Ft. Resident Clubhouse",
+        "icon": "fa-building-user"
       },
       {
-        name: "Children's Outdoor Play Park & Creche",
-        icon: "fa-child-reaching",
+        "name": "2 Outdoor Swimming Pools & Deck",
+        "icon": "fa-water-ladder"
       },
-      { name: "Landscaped Central Gardens & Jogging Track", icon: "fa-tree" },
       {
-        name: "24/7 Multi-Tiered Security & Intercom",
-        icon: "fa-shield-halved",
+        "name": "Fully Equipped Gymnasium & Aerobics Studio",
+        "icon": "fa-dumbbell"
       },
+      {
+        "name": "2-Lane Bowling Alley",
+        "icon": "fa-bowling-ball"
+      },
+      {
+        "name": "Badminton, Squash & Table Tennis Courts",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Children's Outdoor Play Park & Creche",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Landscaped Central Gardens & Jogging Track",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "24/7 Multi-Tiered Security & Intercom",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
-      { name: "Magadi Main Road", distance: "0.3 km", icon: "fa-road" },
+    "connectivity": [
       {
-        name: "Sumanahalli Flyover Junction",
-        distance: "0.8 km",
-        icon: "fa-route",
+        "label": "Magadi Main Road",
+        "name": "Magadi Main Road",
+        "distance": "0.3 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Magadi Main Road, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9886,
+          "lon": 77.5201
+        }
       },
       {
-        name: "Vijayanagar Metro Station (Purple Line)",
-        distance: "3.2 km",
-        icon: "fa-train-subway",
-      },
-      { name: "GT World Mall", distance: "4.0 km", icon: "fa-bag-shopping" },
-      {
-        name: "Orion Mall & Rajajinagar Industrial Area",
-        distance: "6.5 km",
-        icon: "fa-building-columns",
-      },
-      {
-        name: "KSR Bengaluru City Railway Station",
-        distance: "8.5 km",
-        icon: "fa-train",
+        "label": "Sumanahalli Flyover Junction",
+        "name": "Sumanahalli Flyover Junction",
+        "distance": "0.8 km",
+        "icon": "fa-solid fa-route",
+        "destination": "Sumanahalli Flyover Junction, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9905,
+          "lon": 77.5153
+        }
       },
       {
-        name: "Yeshwanthpur Railway Station",
-        distance: "9.0 km",
-        icon: "fa-train",
+        "label": "Vijayanagar Metro Station (Purple Line)",
+        "name": "Vijayanagar Metro Station (Purple Line)",
+        "distance": "3.2 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Vijayanagar Metro Station (Purple Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9747,
+          "lon": 77.5482
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "38.0 km",
-        icon: "fa-plane",
+        "label": "GT World Mall",
+        "name": "GT World Mall",
+        "distance": "4.0 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "GT World Mall, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9501,
+          "lon": 77.5184
+        }
       },
+      {
+        "label": "Orion Mall & Rajajinagar Industrial Area",
+        "name": "Orion Mall & Rajajinagar Industrial Area",
+        "distance": "6.5 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "Orion Mall & Rajajinagar Industrial Area, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0113,
+          "lon": 77.555
+        }
+      },
+      {
+        "label": "KSR Bengaluru City Railway Station",
+        "name": "KSR Bengaluru City Railway Station",
+        "distance": "8.5 km",
+        "icon": "fa-solid fa-train",
+        "destination": "KSR Bengaluru City Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.9781,
+          "lon": 77.5696
+        }
+      },
+      {
+        "label": "Yeshwanthpur Railway Station",
+        "name": "Yeshwanthpur Railway Station",
+        "distance": "9.0 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Yeshwanthpur Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.923,
+          "lon": 77.4686
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "38.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-anugraha/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-anugraha/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-anugraha/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-anugraha/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-kaveri-siri",
-    thumbnail: sattvaImage("sattva-group/sattva-kaveri-siri/thumbnail.webp"),
-    title: "Sattva Kaveri Siri",
-    location: "Guthalu, Off Bengaluru-Mysuru Expressway, Mandya Region",
-    category: "ready",
-    type: "plot",
-    priceValue: 0.29,
-    price: "₹ 29 Lakhs Onwards",
-    area: "35.09 Acres",
-    floorPlans: [
+    "id": "sattva-kaveri-siri",
+    "thumbnail": sattvaImage("sattva-group/sattva-kaveri-siri/thumbnail.webp"),
+    "name": "Sattva Kaveri Siri",
+    "coordinates": {
+      "lat": 12.528,
+      "lon": 76.902
+    },
+    "mapsQuery": "Sattva Kaveri Siri, Guthalu, Bengaluru-Mysuru Expressway",
+    "shortAddress": "Bengaluru-Mysuru Expressway, Mandya",
+    "title": "Sattva Kaveri Siri",
+    "location": "Guthalu, Off Bengaluru-Mysuru Expressway, Mandya Region",
+    "category": "ready",
+    "type": "plot",
+    "priceValue": 0.29,
+    "price": "₹ 29 Lakhs Onwards",
+    "area": "35.09 Acres",
+    "floorPlans": [
       {
-        id: "plot-600",
-        bhk: "20 x 30 Plot",
-        area: "600 Sq. Ft.",
-        price: "₹ 29 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-kaveri-siri/floor-plans/20x30-plot-layout.webp"),
+        "id": "plot-600",
+        "bhk": "20 x 30 Plot",
+        "area": "600 Sq. Ft.",
+        "price": "₹ 29 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-kaveri-siri/floor-plans/20x30-plot-layout.webp")
       },
       {
-        id: "plot-1200",
-        bhk: "30 x 40 Plot",
-        area: "1,200 Sq. Ft.",
-        price: "₹ 56.26 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-kaveri-siri/floor-plans/30x40-plot-layout.webp"),
+        "id": "plot-1200",
+        "bhk": "30 x 40 Plot",
+        "area": "1,200 Sq. Ft.",
+        "price": "₹ 56.26 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-kaveri-siri/floor-plans/30x40-plot-layout.webp")
       },
       {
-        id: "plot-1500",
-        bhk: "30 x 50 Plot",
-        area: "1,500 Sq. Ft.",
-        price: "₹ 69.88 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-kaveri-siri/floor-plans/30x50-plot-layout.webp"),
+        "id": "plot-1500",
+        "bhk": "30 x 50 Plot",
+        "area": "1,500 Sq. Ft.",
+        "price": "₹ 69.88 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-kaveri-siri/floor-plans/30x50-plot-layout.webp")
       },
       {
-        id: "plot-2400",
-        bhk: "40 x 60 Plot",
-        area: "2,400 Sq. Ft.",
-        price: "₹ 1.11 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-kaveri-siri/floor-plans/40x60-plot-layout.webp"),
-      },
+        "id": "plot-2400",
+        "bhk": "40 x 60 Plot",
+        "area": "2,400 Sq. Ft.",
+        "price": "₹ 1.11 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-kaveri-siri/floor-plans/40x60-plot-layout.webp")
+      }
     ],
-    possession: "October 2024",
-    units: "477",
-    highlight:
-      "Master-Planned Plotted Layout Directly off 10-Lane Bengaluru-Mysuru Expressway",
-    reraId: "PRM/KA/RERA/1267/484/PR/210907/004294",
-    summary:
-      "Sattva Kaveri Siri is a master-planned 35-acre residential plotted development by Sattva Group located in Guthalu, Mandya along the Bengaluru-Mysuru Expressway corridor, offering 477 ready-to-construct plots starting from 600 sq. ft. to 2,400 sq. ft.",
-    description:
-      "Sattva Kaveri Siri is a nature-centric residential plotted township by Sattva Group, situated at Guthalu in Mandya with direct connectivity to the 10-lane Bengaluru-Mysuru Expressway (NH 275). Spanning 35 acres, the community features 477 systematically demarcated plot units equipped with asphalted internal roads, underground water supply, electrical lines, sewage networks, and street lighting. Homebuyers can choose from plot configurations ranging from 600 sq. ft. up to 2,400 sq. ft., with prices starting from Rs. 27.80 Lakhs onwards. Designed with landscaped theme parks, children's play parks, walking trails, and a resident clubhouse space, Sattva Kaveri Siri offers seamless access to Mandya city center, Bidadi, Kengeri, and Mysuru. Sattva Kaveri Siri is registered under RERA PRM/KA/RERA/1267/484/PR/210907/004294.",
-    amenities: [
-      { name: "Resident Clubhouse Space", icon: "fa-building-user" },
-      { name: "Landscaped Theme Parks & Gardens", icon: "fa-tree" },
-      { name: "Children's Outdoor Play Park", icon: "fa-child-reaching" },
-      { name: "Jogging Track & Walking Trails", icon: "fa-person-running" },
+    "possession": "October 2024",
+    "units": "477",
+    "highlight": "Master-Planned Plotted Layout Directly off 10-Lane Bengaluru-Mysuru Expressway",
+    "reraId": "PRM/KA/RERA/1267/484/PR/210907/004294",
+    "summary": "Sattva Kaveri Siri is a master-planned 35-acre residential plotted development by Sattva Group located in Guthalu, Mandya along the Bengaluru-Mysuru Expressway corridor, offering 477 ready-to-construct plots starting from 600 sq. ft. to 2,400 sq. ft.",
+    "description": "Sattva Kaveri Siri is a nature-centric residential plotted township by Sattva Group, situated at Guthalu in Mandya with direct connectivity to the 10-lane Bengaluru-Mysuru Expressway (NH 275). Spanning 35 acres, the community features 477 systematically demarcated plot units equipped with asphalted internal roads, underground water supply, electrical lines, sewage networks, and street lighting. Homebuyers can choose from plot configurations ranging from 600 sq. ft. up to 2,400 sq. ft., with prices starting from Rs. 27.80 Lakhs onwards. Designed with landscaped theme parks, children's play parks, walking trails, and a resident clubhouse space, Sattva Kaveri Siri offers seamless access to Mandya city center, Bidadi, Kengeri, and Mysuru. Sattva Kaveri Siri is registered under RERA PRM/KA/RERA/1267/484/PR/210907/004294.",
+    "amenities": [
       {
-        name: "Underground Cabling & Electrical Infrastructure",
-        icon: "fa-bolt",
+        "name": "Resident Clubhouse Space",
+        "icon": "fa-building-user"
       },
       {
-        name: "Rainwater Harvesting & Water Supply System",
-        icon: "fa-cloud-rain",
+        "name": "Landscaped Theme Parks & Gardens",
+        "icon": "fa-tree"
       },
-      { name: "Wide Asphalted Internal Roads & Streetlights", icon: "fa-road" },
       {
-        name: "24/7 Gated Security & Perimeter Fencing",
-        icon: "fa-shield-halved",
+        "name": "Children's Outdoor Play Park",
+        "icon": "fa-child-reaching"
       },
+      {
+        "name": "Jogging Track & Walking Trails",
+        "icon": "fa-person-running"
+      },
+      {
+        "name": "Underground Cabling & Electrical Infrastructure",
+        "icon": "fa-bolt"
+      },
+      {
+        "name": "Rainwater Harvesting & Water Supply System",
+        "icon": "fa-cloud-rain"
+      },
+      {
+        "name": "Wide Asphalted Internal Roads & Streetlights",
+        "icon": "fa-road"
+      },
+      {
+        "name": "24/7 Gated Security & Perimeter Fencing",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Bengaluru-Mysuru Expressway (NH 275)",
-        distance: "0.5 km",
-        icon: "fa-road",
-      },
-      { name: "Mandya Railway Station", distance: "3.5 km", icon: "fa-train" },
-      {
-        name: "Mandya City Center",
-        distance: "4.0 km",
-        icon: "fa-building-columns",
-      },
-      {
-        name: "Mandya Institute of Medical Sciences (MIMS)",
-        distance: "5.0 km",
-        icon: "fa-hospital",
+        "label": "Bengaluru-Mysuru Expressway (NH 275)",
+        "name": "Bengaluru-Mysuru Expressway (NH 275)",
+        "distance": "0.5 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Bengaluru-Mysuru Expressway (NH 275), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.785,
+          "lon": 77.365
+        }
       },
       {
-        name: "Bidadi Industrial Area",
-        distance: "55.0 km",
-        icon: "fa-laptop-code",
+        "label": "Mandya Railway Station",
+        "name": "Mandya Railway Station",
+        "distance": "3.5 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Mandya Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.525,
+          "lon": 76.898
+        }
       },
-      { name: "Mysuru City Center", distance: "45.0 km", icon: "fa-landmark" },
       {
-        name: "Kengeri Metro Station / Outer Ring Road",
-        distance: "75.0 km",
-        icon: "fa-train-subway",
+        "label": "Mandya City Center",
+        "name": "Mandya City Center",
+        "distance": "4.0 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "Mandya City Center, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.523,
+          "lon": 76.901
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "120.0 km",
-        icon: "fa-plane",
+        "label": "Mandya Institute of Medical Sciences (MIMS)",
+        "name": "Mandya Institute of Medical Sciences (MIMS)",
+        "distance": "5.0 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Mandya Institute of Medical Sciences (MIMS), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.5724,
+          "lon": 76.91
+        }
       },
+      {
+        "label": "Bidadi Industrial Area",
+        "name": "Bidadi Industrial Area",
+        "distance": "55.0 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "Bidadi Industrial Area, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.795,
+          "lon": 77.382
+        }
+      },
+      {
+        "label": "Mysuru City Center",
+        "name": "Mysuru City Center",
+        "distance": "45.0 km",
+        "icon": "fa-solid fa-landmark",
+        "destination": "Mysuru City Center, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.305,
+          "lon": 76.655
+        }
+      },
+      {
+        "label": "Kengeri Metro Station / Outer Ring Road",
+        "name": "Kengeri Metro Station / Outer Ring Road",
+        "distance": "75.0 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Kengeri Metro Station / Outer Ring Road, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.909,
+          "lon": 77.485
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "120.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-kaveri-siri/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-kaveri-siri/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-kaveri-siri/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-kaveri-siri/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-aeropolis",
-    thumbnail: sattvaImage("sattva-group/sattva-aeropolis/thumbnail.webp"),
-    title: "Sattva Aeropolis",
-    location: "Vidyanagar Cross, Off Airport Road (NH 44), North Bangalore",
-    category: "ongoing",
-    type: "apartment",
-    priceValue: 0.31,
-    price: "₹ 31 Lakhs Onwards",
-    area: "10.32 Acres",
-    floorPlans: [
+    "id": "sattva-aeropolis",
+    "thumbnail": sattvaImage("sattva-group/sattva-aeropolis/thumbnail.webp"),
+    "name": "Sattva Aeropolis",
+    "coordinates": {
+      "lat": 13.208,
+      "lon": 77.652
+    },
+    "mapsQuery": "Sattva Aeropolis, Vidyanagar Cross, NH 44, Bengaluru",
+    "shortAddress": "Vidyanagar Cross, North Bengaluru",
+    "title": "Sattva Aeropolis",
+    "location": "Vidyanagar Cross, Off Airport Road (NH 44), North Bangalore",
+    "category": "ongoing",
+    "type": "apartment",
+    "priceValue": 0.31,
+    "price": "₹ 31 Lakhs Onwards",
+    "area": "10.32 Acres",
+    "floorPlans": [
       {
-        id: "studio",
-        bhk: "Studio",
-        area: "306 - 448 Sq. Ft.",
-        price: "₹ 31 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-aeropolis/floor-plans/studio-floor-plan.webp"),
+        "id": "studio",
+        "bhk": "Studio",
+        "area": "306 - 448 Sq. Ft.",
+        "price": "₹ 31 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-aeropolis/floor-plans/studio-floor-plan.webp")
       },
       {
-        id: "1bhk",
-        bhk: "1 BHK",
-        area: "582 - 658 Sq. Ft.",
-        price: "₹ 58.91 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-aeropolis/floor-plans/1bhk-floor-plan.webp"),
+        "id": "1bhk",
+        "bhk": "1 BHK",
+        "area": "582 - 658 Sq. Ft.",
+        "price": "₹ 58.91 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-aeropolis/floor-plans/1bhk-floor-plan.webp")
       },
       {
-        id: "3bhk",
-        bhk: "3 BHK",
-        area: "1,004 Sq. Ft.",
-        price: "₹ 1.02 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-aeropolis/floor-plans/3bhk-floor-plan.webp"),
-      },
+        "id": "3bhk",
+        "bhk": "3 BHK",
+        "area": "1,004 Sq. Ft.",
+        "price": "₹ 1.02 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-aeropolis/floor-plans/3bhk-floor-plan.webp")
+      }
     ],
-    possession: "July 2026",
-    units: "1,001",
-    highlight:
-      "Aerospace Corridor Township (B+G+15 Floors) & 27,000 Sq. Ft. Grand Clubhouse",
-    reraId: "PRM/KA/RERA/1250/303/PR/110522/004869",
-    summary:
-      "Sattva Aeropolis is a modern high-rise residential township by Sattva Group located at Vidyanagar Cross, off Airport Road, North Bangalore, offering Studio, 1, 2, and 3 BHK smart apartments across 10.35 acres.",
-    description:
-      "Sattva Aeropolis is an urban residential development by Sattva Group, strategically located at Vidyanagar Cross, just off NH 44 (Bellary Road/Airport Road) in North Bangalore. Spanning 10.35 acres, the high-rise community comprises 11 towers (Basement + Ground + 15 Floors) featuring 1,272 intelligently planned residences. Designed to serve professionals working across the KIADB Aerospace Park, Shell Technology Centre, and IT hubs of North Bangalore, the project offers Studio, 1 BHK, 2 BHK, and 3 BHK apartment layouts ranging from 430 sq. ft. to 1,230 sq. ft., with prices starting from Rs. 35.60 Lakhs onwards. Anchored by a 27,000 sq. ft. resident clubhouse, swimming pool, sports courts, and extensive green open spaces, Sattva Aeropolis provides seamless connectivity to Kempegowda International Airport, Yelahanka, and the upcoming Airport Metro Line. Sattva Aeropolis is registered under RERA PRM/KA/RERA/1250/303/PR/110522/004869.",
-    amenities: [
-      { name: "27,000 Sq. Ft. Resident Clubhouse", icon: "fa-building-user" },
-      { name: "Swimming Pool & Kids Splash Pool", icon: "fa-water-ladder" },
+    "possession": "July 2026",
+    "units": "1,001",
+    "highlight": "Aerospace Corridor Township (B+G+15 Floors) & 27,000 Sq. Ft. Grand Clubhouse",
+    "reraId": "PRM/KA/RERA/1250/303/PR/110522/004869",
+    "summary": "Sattva Aeropolis is a modern high-rise residential township by Sattva Group located at Vidyanagar Cross, off Airport Road, North Bangalore, offering Studio, 1, 2, and 3 BHK smart apartments across 10.35 acres.",
+    "description": "Sattva Aeropolis is an urban residential development by Sattva Group, strategically located at Vidyanagar Cross, just off NH 44 (Bellary Road/Airport Road) in North Bangalore. Spanning 10.35 acres, the high-rise community comprises 11 towers (Basement + Ground + 15 Floors) featuring 1,272 intelligently planned residences. Designed to serve professionals working across the KIADB Aerospace Park, Shell Technology Centre, and IT hubs of North Bangalore, the project offers Studio, 1 BHK, 2 BHK, and 3 BHK apartment layouts ranging from 430 sq. ft. to 1,230 sq. ft., with prices starting from Rs. 35.60 Lakhs onwards. Anchored by a 27,000 sq. ft. resident clubhouse, swimming pool, sports courts, and extensive green open spaces, Sattva Aeropolis provides seamless connectivity to Kempegowda International Airport, Yelahanka, and the upcoming Airport Metro Line. Sattva Aeropolis is registered under RERA PRM/KA/RERA/1250/303/PR/110522/004869.",
+    "amenities": [
       {
-        name: "Fully Equipped Gymnasium & Fitness Center",
-        icon: "fa-dumbbell",
+        "name": "27,000 Sq. Ft. Resident Clubhouse",
+        "icon": "fa-building-user"
       },
       {
-        name: "Badminton & Half Basketball Courts",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "Swimming Pool & Kids Splash Pool",
+        "icon": "fa-water-ladder"
       },
-      { name: "Children's Outdoor Play Park", icon: "fa-child-reaching" },
       {
-        name: "Multipurpose Hall & Senior Citizen Deck",
-        icon: "fa-people-roof",
+        "name": "Fully Equipped Gymnasium & Fitness Center",
+        "icon": "fa-dumbbell"
       },
-      { name: "Landscaped Central Gardens & Jogging Track", icon: "fa-tree" },
       {
-        name: "24/7 Gated Security & Intercom Infrastructure",
-        icon: "fa-shield-halved",
+        "name": "Badminton & Half Basketball Courts",
+        "icon": "fa-table-tennis-paddle-ball"
       },
+      {
+        "name": "Children's Outdoor Play Park",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Multipurpose Hall & Senior Citizen Deck",
+        "icon": "fa-people-roof"
+      },
+      {
+        "name": "Landscaped Central Gardens & Jogging Track",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "24/7 Gated Security & Intercom Infrastructure",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Airport Road / NH 44 (Vidyanagar Cross)",
-        distance: "0.3 km",
-        icon: "fa-road",
+        "label": "Airport Road / NH 44 (Vidyanagar Cross)",
+        "name": "Airport Road / NH 44 (Vidyanagar Cross)",
+        "distance": "0.3 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Airport Road / NH 44 (Vidyanagar Cross), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.208,
+          "lon": 77.652
+        }
       },
       {
-        name: "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        distance: "3.5 km",
-        icon: "fa-train-subway",
+        "label": "Bettahalsoor Metro Station (Upcoming Blue Line)",
+        "name": "Bettahalsoor Metro Station (Upcoming Blue Line)",
+        "distance": "3.5 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Bettahalsoor Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.159,
+          "lon": 77.631
+        }
       },
       {
-        name: "KIADB Aerospace Park & IT SEZ",
-        distance: "6.0 km",
-        icon: "fa-laptop-code",
+        "label": "KIADB Aerospace Park & IT SEZ",
+        "name": "KIADB Aerospace Park & IT SEZ",
+        "distance": "6.0 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "KIADB Aerospace Park & IT SEZ, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1989,
+          "lon": 77.7064
+        }
       },
       {
-        name: "Yelahanka Railway Station",
-        distance: "9.0 km",
-        icon: "fa-train",
+        "label": "Yelahanka Railway Station",
+        "name": "Yelahanka Railway Station",
+        "distance": "9.0 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Yelahanka Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.2533,
+          "lon": 77.721
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "12.0 km",
-        icon: "fa-plane",
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "12.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
       },
       {
-        name: "Ecopolis IT SEZ",
-        distance: "12.5 km",
-        icon: "fa-building-columns",
+        "label": "Ecopolis IT SEZ",
+        "name": "Ecopolis IT SEZ",
+        "distance": "12.5 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "Ecopolis IT SEZ, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.2314,
+          "lon": 77.7651
+        }
       },
       {
-        name: "Phoenix Mall of Asia",
-        distance: "15.0 km",
-        icon: "fa-bag-shopping",
-      },
+        "label": "Phoenix Mall of Asia",
+        "name": "Phoenix Mall of Asia",
+        "distance": "15.0 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0694,
+          "lon": 77.5982
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-aeropolis/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-aeropolis/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-aeropolis/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-aeropolis/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-ashraya",
-    thumbnail: sattvaImage("sattva-group/sattva-ashraya/thumbnail.webp"),
-    title: "Sattva Ashraya",
-    location:
-      "Bidadi, Off Bengaluru-Mysuru Expressway (NH 275), West Bangalore Outskirts",
-    category: "ready",
-    type: "apartment",
-    priceValue: 0.62,
-    price: "₹ 62 Lakhs Onwards",
-    area: "4.2 Acres",
-    floorPlans: [
+    "id": "sattva-ashraya",
+    "thumbnail": sattvaImage("sattva-group/sattva-ashraya/thumbnail.webp"),
+    "name": "Sattva Ashraya",
+    "coordinates": {
+      "lat": 12.798,
+      "lon": 77.388
+    },
+    "mapsQuery": "Sattva Ashraya, Bidadi, Bengaluru-Mysuru Expressway",
+    "shortAddress": "Bidadi, Bengaluru-Mysuru Expressway",
+    "title": "Sattva Ashraya",
+    "location": "Bidadi, Off Bengaluru-Mysuru Expressway (NH 275), West Bangalore Outskirts",
+    "category": "ready",
+    "type": "apartment",
+    "priceValue": 0.62,
+    "price": "₹ 62 Lakhs Onwards",
+    "area": "4.2 Acres",
+    "floorPlans": [
       {
-        id: "1.5bhk",
-        bhk: "1.5 BHK",
-        area: "785 Sq. Ft.",
-        price: "₹ 61.97 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-ashraya/floor-plans/1.5bhk-floor-plan.webp"),
-      },
+        "id": "1.5bhk",
+        "bhk": "1.5 BHK",
+        "area": "785 Sq. Ft.",
+        "price": "₹ 61.97 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-ashraya/floor-plans/1.5bhk-floor-plan.webp")
+      }
     ],
-    possession: "March 2025",
-    units: "660",
-    highlight:
-      "Master-Planned Affordable Township in Bidadi Hub & 10,000 Sq. Ft. Clubhouse",
-    reraId: "PRM/KA/RERA/1270/302/PR/210731/004204",
-    summary:
-      "Sattva Ashraya is a modern ready-to-move residential township by Sattva Group located in Bidadi, off the Bengaluru-Mysuru Expressway, offering 1, 2, and 3 BHK smart apartments across 4.2 acres.",
-    description:
-      "Sattva Ashraya is an urban residential development by Sattva Group, strategically located in the expanding industrial and smart city corridor of Bidadi along the 10-lane Bengaluru-Mysuru Expressway (NH 275). Spanning 4.2 acres with 80% open spaces, the gated community comprises 4 high-rise towers (Basement + Ground + 14 Floors) housing 660 smartly designed apartments. Tailored for industrial professionals, young families, and real estate investors, the project offers 1 BHK, 2 BHK, and 3 BHK home layouts ranging from 521 sq. ft. to 994 sq. ft., with prices starting from Rs. 35.0 Lakhs onwards. Complete with a 10,000 sq. ft. resident clubhouse, swimming pool, skating rink, indoor games, and landscaped central park, Sattva Ashraya provides excellent connectivity to Toyota Kirloskar Motor Hub, Wonderla Amusement Park, Challaghatta Metro Station, and Kengeri. Sattva Ashraya is registered under RERA PRM/KA/RERA/1270/302/PR/210731/004204.",
-    amenities: [
+    "possession": "March 2025",
+    "units": "660",
+    "highlight": "Master-Planned Affordable Township in Bidadi Hub & 10,000 Sq. Ft. Clubhouse",
+    "reraId": "PRM/KA/RERA/1270/302/PR/210731/004204",
+    "summary": "Sattva Ashraya is a modern ready-to-move residential township by Sattva Group located in Bidadi, off the Bengaluru-Mysuru Expressway, offering 1, 2, and 3 BHK smart apartments across 4.2 acres.",
+    "description": "Sattva Ashraya is an urban residential development by Sattva Group, strategically located in the expanding industrial and smart city corridor of Bidadi along the 10-lane Bengaluru-Mysuru Expressway (NH 275). Spanning 4.2 acres with 80% open spaces, the gated community comprises 4 high-rise towers (Basement + Ground + 14 Floors) housing 660 smartly designed apartments. Tailored for industrial professionals, young families, and real estate investors, the project offers 1 BHK, 2 BHK, and 3 BHK home layouts ranging from 521 sq. ft. to 994 sq. ft., with prices starting from Rs. 35.0 Lakhs onwards. Complete with a 10,000 sq. ft. resident clubhouse, swimming pool, skating rink, indoor games, and landscaped central park, Sattva Ashraya provides excellent connectivity to Toyota Kirloskar Motor Hub, Wonderla Amusement Park, Challaghatta Metro Station, and Kengeri. Sattva Ashraya is registered under RERA PRM/KA/RERA/1270/302/PR/210731/004204.",
+    "amenities": [
       {
-        name: "Resident Clubhouse & Multipurpose Community Hall",
-        icon: "fa-building-user",
-      },
-      { name: "Swimming Pool & Kids Splash Pool", icon: "fa-water-ladder" },
-      { name: "Fully Equipped Gymnasium & Fitness Zone", icon: "fa-dumbbell" },
-      {
-        name: "Children's Outdoor Play Park & Sand Pit",
-        icon: "fa-child-reaching",
+        "name": "Resident Clubhouse & Multipurpose Community Hall",
+        "icon": "fa-building-user"
       },
       {
-        name: "Skating Rink & Multipurpose Sports Court",
-        icon: "fa-person-skating",
+        "name": "Swimming Pool & Kids Splash Pool",
+        "icon": "fa-water-ladder"
       },
       {
-        name: "Indoor Games Room & Table Tennis",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "Fully Equipped Gymnasium & Fitness Zone",
+        "icon": "fa-dumbbell"
       },
-      { name: "Landscaped Central Park & Walking Trails", icon: "fa-tree" },
       {
-        name: "24/7 Gated Security & Intercom System",
-        icon: "fa-shield-halved",
+        "name": "Children's Outdoor Play Park & Sand Pit",
+        "icon": "fa-child-reaching"
       },
+      {
+        "name": "Skating Rink & Multipurpose Sports Court",
+        "icon": "fa-person-skating"
+      },
+      {
+        "name": "Indoor Games Room & Table Tennis",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Landscaped Central Park & Walking Trails",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "24/7 Gated Security & Intercom System",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Bengaluru-Mysuru Expressway (NH 275)",
-        distance: "2.5 km",
-        icon: "fa-road",
-      },
-      { name: "Bidadi Railway Station", distance: "2.7 km", icon: "fa-train" },
-      {
-        name: "Toyota Kirloskar Motor & Coca-Cola Industrial Hub",
-        distance: "3.5 km",
-        icon: "fa-laptop-code",
-      },
-      { name: "Wonderla Amusement Park", distance: "8.0 km", icon: "fa-icons" },
-      {
-        name: "Challaghatta Metro Station (Purple Line Terminal)",
-        distance: "16.0 km",
-        icon: "fa-train-subway",
+        "label": "Bengaluru-Mysuru Expressway (NH 275)",
+        "name": "Bengaluru-Mysuru Expressway (NH 275)",
+        "distance": "2.5 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Bengaluru-Mysuru Expressway (NH 275), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.785,
+          "lon": 77.365
+        }
       },
       {
-        name: "Rajarajeswari Medical College & Hospital",
-        distance: "17.0 km",
-        icon: "fa-hospital",
+        "label": "Bidadi Railway Station",
+        "name": "Bidadi Railway Station",
+        "distance": "2.7 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Bidadi Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.802,
+          "lon": 77.391
+        }
       },
       {
-        name: "Kengeri Satellite Town Hub",
-        distance: "19.0 km",
-        icon: "fa-building-columns",
+        "label": "Toyota Kirloskar Motor & Coca-Cola Industrial Hub",
+        "name": "Toyota Kirloskar Motor & Coca-Cola Industrial Hub",
+        "distance": "3.5 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "Toyota Kirloskar Motor & Coca-Cola Industrial Hub, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.792,
+          "lon": 77.3563
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "70.0 km",
-        icon: "fa-plane",
+        "label": "Wonderla Amusement Park",
+        "name": "Wonderla Amusement Park",
+        "distance": "8.0 km",
+        "icon": "fa-solid fa-icons",
+        "destination": "Wonderla Amusement Park, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.7344,
+          "lon": 77.3533
+        }
       },
+      {
+        "label": "Challaghatta Metro Station (Purple Line Terminal)",
+        "name": "Challaghatta Metro Station (Purple Line Terminal)",
+        "distance": "16.0 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Challaghatta Metro Station (Purple Line Terminal), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.898,
+          "lon": 77.469
+        }
+      },
+      {
+        "label": "Rajarajeswari Medical College & Hospital",
+        "name": "Rajarajeswari Medical College & Hospital",
+        "distance": "17.0 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Rajarajeswari Medical College & Hospital, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.887,
+          "lon": 77.464
+        }
+      },
+      {
+        "label": "Kengeri Satellite Town Hub",
+        "name": "Kengeri Satellite Town Hub",
+        "distance": "19.0 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "Kengeri Satellite Town Hub, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.911,
+          "lon": 77.482
+        }
+      },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "70.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-ashraya/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-ashraya/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-ashraya/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-ashraya/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-aqua-vista",
-    thumbnail: sattvaImage("sattva-group/sattva-aqua-vista/thumbnail.webp"),
-    title: "Sattva Aqua Vista",
-    location: "Bannerghatta Main Road, Opposite Decathlon, South Bangalore",
-    category: "ready",
-    type: "apartment",
-    priceValue: 2.88,
-    price: "₹ 2.88 Crore Onwards",
-    area: "2.89 Acres",
-    floorPlans: [
+    "id": "sattva-aqua-vista",
+    "thumbnail": sattvaImage("sattva-group/sattva-aqua-vista/thumbnail.webp"),
+    "name": "Sattva Aqua Vista",
+    "coordinates": {
+      "lat": 12.887,
+      "lon": 77.597
+    },
+    "mapsQuery": "Sattva Aqua Vista, Bannerghatta Main Road, Bengaluru",
+    "shortAddress": "Bannerghatta Main Road, South Bengaluru",
+    "title": "Sattva Aqua Vista",
+    "location": "Bannerghatta Main Road, Opposite Decathlon, South Bangalore",
+    "category": "ready",
+    "type": "apartment",
+    "priceValue": 2.88,
+    "price": "₹ 2.88 Crore Onwards",
+    "area": "2.89 Acres",
+    "floorPlans": [
       {
-        id: "3bhk-standard",
-        bhk: "3 BHK Penthouse",
-        area: "2,209 Sq. Ft.",
-        price: "₹ 2.88 Crore Onwards",
-        image: sattvaImage("sattva-group/sattva-aqua-vista/floor-plans/3bhk-floor-plan.webp"),
-      },
+        "id": "3bhk-standard",
+        "bhk": "3 BHK Penthouse",
+        "area": "2,209 Sq. Ft.",
+        "price": "₹ 2.88 Crore Onwards",
+        "image": sattvaImage("sattva-group/sattva-aqua-vista/floor-plans/3bhk-floor-plan.webp")
+      }
     ],
-    possession: "December 2024",
-    units: "181",
-    highlight:
-      "Ultra-Luxury High-Rise Living on Main Bannerghatta Road with 3 Towers & Private Clubhouse",
-    reraId: "PRM/KA/RERA/1251/310/PR/120522/004879",
-    summary:
-      "Sattva Aqua Vista is a premium high-rise residential project by Sattva Group located on Bannerghatta Main Road, South Bangalore, offering 3 BHK and 4 BHK duplex luxury apartments across 2.89 acres.",
-    description:
-      "Sattva Aqua Vista is an exquisite, low-density luxury residential development by Sattva Group, strategically located directly on Bannerghatta Main Road in South Bangalore, opposite Decathlon. Spanning 2.89 acres, the high-rise community comprises 3 iconic towers (G + 18 Floors) housing 181 spacious, Vastu-compliant residences. Designed for contemporary high-end urban living, the project offers grand 3 BHK homes and exclusive 4 BHK duplex apartments ranging from 1,942 sq. ft. to 4,027 sq. ft., with prices starting from Rs. 2.77 Crore onwards. Residents enjoy world-class leisure and sports amenities, including a central clubhouse, swimming pool, squash court, badminton hall, health club, and landscaped gardens. Sattva Aqua Vista offers excellent connectivity to Royal Meenakshi Mall, Hulimavu Metro Station, Jayadeva Hospital, Electronic City, and the NICE Ring Road. Sattva Aqua Vista is registered under RERA PRM/KA/RERA/1251/310/PR/120522/004879.",
-    amenities: [
+    "possession": "December 2024",
+    "units": "181",
+    "highlight": "Ultra-Luxury High-Rise Living on Main Bannerghatta Road with 3 Towers & Private Clubhouse",
+    "reraId": "PRM/KA/RERA/1251/310/PR/120522/004879",
+    "summary": "Sattva Aqua Vista is a premium high-rise residential project by Sattva Group located on Bannerghatta Main Road, South Bangalore, offering 3 BHK and 4 BHK duplex luxury apartments across 2.89 acres.",
+    "description": "Sattva Aqua Vista is an exquisite, low-density luxury residential development by Sattva Group, strategically located directly on Bannerghatta Main Road in South Bangalore, opposite Decathlon. Spanning 2.89 acres, the high-rise community comprises 3 iconic towers (G + 18 Floors) housing 181 spacious, Vastu-compliant residences. Designed for contemporary high-end urban living, the project offers grand 3 BHK homes and exclusive 4 BHK duplex apartments ranging from 1,942 sq. ft. to 4,027 sq. ft., with prices starting from Rs. 2.77 Crore onwards. Residents enjoy world-class leisure and sports amenities, including a central clubhouse, swimming pool, squash court, badminton hall, health club, and landscaped gardens. Sattva Aqua Vista offers excellent connectivity to Royal Meenakshi Mall, Hulimavu Metro Station, Jayadeva Hospital, Electronic City, and the NICE Ring Road. Sattva Aqua Vista is registered under RERA PRM/KA/RERA/1251/310/PR/120522/004879.",
+    "amenities": [
       {
-        name: "Resident Clubhouse & Multipurpose Hall",
-        icon: "fa-building-user",
-      },
-      { name: "Swimming Pool & Kids Splash Pool", icon: "fa-water-ladder" },
-      {
-        name: "Fully Equipped Gymnasium & Fitness Center",
-        icon: "fa-dumbbell",
+        "name": "Resident Clubhouse & Multipurpose Hall",
+        "icon": "fa-building-user"
       },
       {
-        name: "Indoor Squash Court & Badminton Hall",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "Swimming Pool & Kids Splash Pool",
+        "icon": "fa-water-ladder"
       },
-      { name: "Children's Outdoor Play Area", icon: "fa-child-reaching" },
-      { name: "Reading Room & Resident Library", icon: "fa-book-open" },
-      { name: "Landscaped Central Gardens & Walking Trails", icon: "fa-tree" },
       {
-        name: "24/7 Gated Security & Intercom Infrastructure",
-        icon: "fa-shield-halved",
+        "name": "Fully Equipped Gymnasium & Fitness Center",
+        "icon": "fa-dumbbell"
       },
+      {
+        "name": "Indoor Squash Court & Badminton Hall",
+        "icon": "fa-table-tennis-paddle-ball"
+      },
+      {
+        "name": "Children's Outdoor Play Area",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Reading Room & Resident Library",
+        "icon": "fa-book-open"
+      },
+      {
+        "name": "Landscaped Central Gardens & Walking Trails",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "24/7 Gated Security & Intercom Infrastructure",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
-      { name: "Bannerghatta Main Road", distance: "0.1 km", icon: "fa-road" },
+    "connectivity": [
       {
-        name: "Royal Meenakshi Mall",
-        distance: "1.4 km",
-        icon: "fa-bag-shopping",
+        "label": "Bannerghatta Main Road",
+        "name": "Bannerghatta Main Road",
+        "distance": "0.1 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Bannerghatta Main Road, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.891,
+          "lon": 77.598
+        }
       },
       {
-        name: "Hulimavu Metro Station (Upcoming Pink Line)",
-        distance: "1.5 km",
-        icon: "fa-train-subway",
+        "label": "Royal Meenakshi Mall",
+        "name": "Royal Meenakshi Mall",
+        "distance": "1.4 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Royal Meenakshi Mall, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.8781,
+          "lon": 77.6061
+        }
       },
       {
-        name: "NICE Ring Road Interchange",
-        distance: "2.4 km",
-        icon: "fa-route",
+        "label": "Hulimavu Metro Station (Upcoming Pink Line)",
+        "name": "Hulimavu Metro Station (Upcoming Pink Line)",
+        "distance": "1.5 km",
+        "icon": "fa-solid fa-train-subway",
+        "destination": "Hulimavu Metro Station (Upcoming Pink Line), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.879,
+          "lon": 77.599
+        }
       },
       {
-        name: "Fortis & Apollo Hospitals Bannerghatta",
-        distance: "3.5 km",
-        icon: "fa-hospital",
+        "label": "NICE Ring Road Interchange",
+        "name": "NICE Ring Road Interchange",
+        "distance": "2.4 km",
+        "icon": "fa-solid fa-route",
+        "destination": "NICE Ring Road Interchange, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.902,
+          "lon": 77.489
+        }
       },
       {
-        name: "IIM Bangalore (IIMB)",
-        distance: "4.0 km",
-        icon: "fa-graduation-cap",
+        "label": "Fortis & Apollo Hospitals Bannerghatta",
+        "name": "Fortis & Apollo Hospitals Bannerghatta",
+        "distance": "3.5 km",
+        "icon": "fa-solid fa-hospital",
+        "destination": "Fortis & Apollo Hospitals Bannerghatta, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.893,
+          "lon": 77.597
+        }
       },
       {
-        name: "Jayadeva Hospital Flyover Junction",
-        distance: "5.5 km",
-        icon: "fa-route",
+        "label": "IIM Bangalore (IIMB)",
+        "name": "IIM Bangalore (IIMB)",
+        "distance": "4.0 km",
+        "icon": "fa-solid fa-graduation-cap",
+        "destination": "IIM Bangalore (IIMB), Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.897,
+          "lon": 77.601
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "44.0 km",
-        icon: "fa-plane",
+        "label": "Jayadeva Hospital Flyover Junction",
+        "name": "Jayadeva Hospital Flyover Junction",
+        "distance": "5.5 km",
+        "icon": "fa-solid fa-route",
+        "destination": "Jayadeva Hospital Flyover Junction, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 12.918,
+          "lon": 77.593
+        }
       },
+      {
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "44.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-aqua-vista/gallery/exterior-view.webp"),
       sattvaImage("sattva-group/sattva-aqua-vista/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-aqua-vista/gallery/amenities.webp"),
-    ],
+      sattvaImage("sattva-group/sattva-aqua-vista/gallery/amenities.webp")
+    ]
   },
   {
-    id: "sattva-park-cubix",
-    thumbnail: sattvaImage("sattva-group/sattva-park-cubix/thumbnail.webp"),
-    title: "Sattva Park Cubix",
-    location: "Southegowdanahalli, Devanahalli, North Bangalore",
-    category: "ready",
-    type: "apartment",
-    priceValue: 0.5013,
-    price: "₹ 50.13 Lakhs Onwards",
-    area: "18 Acres",
-    floorPlans: [
+    "id": "sattva-park-cubix",
+    "thumbnail": sattvaImage("sattva-group/sattva-park-cubix/thumbnail.webp"),
+    "name": "Sattva Park Cubix",
+    "coordinates": {
+      "lat": 13.25,
+      "lon": 77.717
+    },
+    "mapsQuery": "Sattva Park Cubix, Devanahalli, Bengaluru",
+    "shortAddress": "Devanahalli, North Bengaluru",
+    "title": "Sattva Park Cubix",
+    "location": "Southegowdanahalli, Devanahalli, North Bangalore",
+    "category": "ready",
+    "type": "apartment",
+    "priceValue": 0.5013,
+    "price": "₹ 50.13 Lakhs Onwards",
+    "area": "18 Acres",
+    "floorPlans": [
       {
-        id: "1bhk",
-        bhk: "1 BHK",
-        area: "658 Sq. Ft.",
-        price: "₹ 50.13 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-park-cubix/floor-plans/1bhk-floor-plan.webp"),
+        "id": "1bhk",
+        "bhk": "1 BHK",
+        "area": "658 Sq. Ft.",
+        "price": "₹ 50.13 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-park-cubix/floor-plans/1bhk-floor-plan.webp")
       },
       {
-        id: "2bhk",
-        bhk: "2 BHK",
-        area: "997 - 1,009 Sq. Ft.",
-        price: "₹ 77.59 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-park-cubix/floor-plans/2bhk-floor-plan.webp"),
+        "id": "2bhk",
+        "bhk": "2 BHK",
+        "area": "997 - 1,009 Sq. Ft.",
+        "price": "₹ 77.59 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-park-cubix/floor-plans/2bhk-floor-plan.webp")
       },
       {
-        id: "3bhk",
-        bhk: "3 BHK",
-        area: "1,273 - 1,498 Sq. Ft.",
-        price: "₹ 97.78 Lakhs Onwards",
-        image: sattvaImage("sattva-group/sattva-park-cubix/floor-plans/3-bhk-floor-plan.webp"),
-      },
+        "id": "3bhk",
+        "bhk": "3 BHK",
+        "area": "1,273 - 1,498 Sq. Ft.",
+        "price": "₹ 97.78 Lakhs Onwards",
+        "image": sattvaImage("sattva-group/sattva-park-cubix/floor-plans/3-bhk-floor-plan.webp")
+      }
     ],
-    possession: "December 2022",
-    units: "810",
-    highlight:
-      "18-Acre Integrated High-Rise Township near Airport Corridor with 3 Grand Clubhouses",
-    reraId: "PRM/KA/RERA/1250/303/PR/171023/001749",
-    summary:
-      "Sattva Park Cubix is an 18-acre master-planned ready-to-move residential township by Sattva Group located in Devanahalli, North Bangalore, offering 1, 2, and 3 BHK modern apartments across 8 high-rise towers.",
-    description:
-      "Sattva Park Cubix is a major high-rise residential development by Sattva Group, strategically located in Southegowdanahalli, Devanahalli along the rapidly growing Kempegowda International Airport corridor in North Bangalore. Spread across 18 acres with over 70% open green space, the township consists of 8 high-rise towers (B + G + 14 Floors) comprising 1,620 well-designed apartments. Tailored for airport professionals, IT executives, and long-term investors, the project offers 1 BHK, 2 BHK, and 3 BHK apartment layouts ranging from 656 sq. ft. to 1,536 sq. ft., with prices starting from Rs. 63.3 Lacs onwards. The township features 3 dedicated clubhouses, a central swimming pool, sports arenas, shopping arcades, and extensive themed parks, providing swift connectivity to Airport Toll Plaza, KIADB Aerospace Park, and Yelahanka. Sattva Park Cubix is registered under RERA PRM/KA/RERA/1250/303/PR/171023/001749.",
-    amenities: [
+    "possession": "December 2022",
+    "units": "810",
+    "highlight": "18-Acre Integrated High-Rise Township near Airport Corridor with 3 Grand Clubhouses",
+    "reraId": "PRM/KA/RERA/1250/303/PR/171023/001749",
+    "summary": "Sattva Park Cubix is an 18-acre master-planned ready-to-move residential township by Sattva Group located in Devanahalli, North Bangalore, offering 1, 2, and 3 BHK modern apartments across 8 high-rise towers.",
+    "description": "Sattva Park Cubix is a major high-rise residential development by Sattva Group, strategically located in Southegowdanahalli, Devanahalli along the rapidly growing Kempegowda International Airport corridor in North Bangalore. Spread across 18 acres with over 70% open green space, the township consists of 8 high-rise towers (B + G + 14 Floors) comprising 1,620 well-designed apartments. Tailored for airport professionals, IT executives, and long-term investors, the project offers 1 BHK, 2 BHK, and 3 BHK apartment layouts ranging from 656 sq. ft. to 1,536 sq. ft., with prices starting from Rs. 63.3 Lacs onwards. The township features 3 dedicated clubhouses, a central swimming pool, sports arenas, shopping arcades, and extensive themed parks, providing swift connectivity to Airport Toll Plaza, KIADB Aerospace Park, and Yelahanka. Sattva Park Cubix is registered under RERA PRM/KA/RERA/1250/303/PR/171023/001749.",
+    "amenities": [
       {
-        name: "3 Resident Clubhouses & Multipurpose Halls",
-        icon: "fa-building-user",
-      },
-      { name: "Swimming Pool & Kids Splash Pool", icon: "fa-water-ladder" },
-      {
-        name: "Fully Equipped Gymnasium & Fitness Center",
-        icon: "fa-dumbbell",
+        "name": "3 Resident Clubhouses & Multipurpose Halls",
+        "icon": "fa-building-user"
       },
       {
-        name: "Badminton, Squash & Basketball Courts",
-        icon: "fa-table-tennis-paddle-ball",
+        "name": "Swimming Pool & Kids Splash Pool",
+        "icon": "fa-water-ladder"
       },
       {
-        name: "Children's Outdoor Play Park & Sand Pit",
-        icon: "fa-child-reaching",
+        "name": "Fully Equipped Gymnasium & Fitness Center",
+        "icon": "fa-dumbbell"
       },
-      { name: "Outdoor Amphitheatre & Skating Rink", icon: "fa-film" },
-      { name: "Landscaped Central Gardens & Jogging Track", icon: "fa-tree" },
       {
-        name: "24/7 Gated Security & Intercom Infrastructure",
-        icon: "fa-shield-halved",
+        "name": "Badminton, Squash & Basketball Courts",
+        "icon": "fa-table-tennis-paddle-ball"
       },
+      {
+        "name": "Children's Outdoor Play Park & Sand Pit",
+        "icon": "fa-child-reaching"
+      },
+      {
+        "name": "Outdoor Amphitheatre & Skating Rink",
+        "icon": "fa-film"
+      },
+      {
+        "name": "Landscaped Central Gardens & Jogging Track",
+        "icon": "fa-tree"
+      },
+      {
+        "name": "24/7 Gated Security & Intercom Infrastructure",
+        "icon": "fa-shield-halved"
+      }
     ],
-    connectivity: [
+    "connectivity": [
       {
-        name: "Bellary Road / NH 44 Highway",
-        distance: "1.5 km",
-        icon: "fa-road",
+        "label": "Bellary Road / NH 44 Highway",
+        "name": "Bellary Road / NH 44 Highway",
+        "distance": "1.5 km",
+        "icon": "fa-solid fa-road",
+        "destination": "Bellary Road / NH 44 Highway, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.2419,
+          "lon": 77.7281
+        }
       },
       {
-        name: "Devanahalli Town & Business Hub",
-        distance: "4.0 km",
-        icon: "fa-building-columns",
+        "label": "Devanahalli Town & Business Hub",
+        "name": "Devanahalli Town & Business Hub",
+        "distance": "4.0 km",
+        "icon": "fa-solid fa-building-columns",
+        "destination": "Devanahalli Town & Business Hub, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.286,
+          "lon": 77.7164
+        }
       },
       {
-        name: "Kempegowda International Airport Bengaluru",
-        distance: "12.0 km",
-        icon: "fa-plane",
+        "label": "Kempegowda International Airport Bengaluru",
+        "name": "Kempegowda International Airport Bengaluru",
+        "distance": "12.0 km",
+        "icon": "fa-solid fa-plane",
+        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1986,
+          "lon": 77.7066
+        }
       },
       {
-        name: "KIADB Aerospace Park & IT SEZ",
-        distance: "12.5 km",
-        icon: "fa-laptop-code",
+        "label": "KIADB Aerospace Park & IT SEZ",
+        "name": "KIADB Aerospace Park & IT SEZ",
+        "distance": "12.5 km",
+        "icon": "fa-solid fa-laptop-code",
+        "destination": "KIADB Aerospace Park & IT SEZ, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1989,
+          "lon": 77.7064
+        }
       },
       {
-        name: "Doddaballapur Industrial Area",
-        distance: "15.0 km",
-        icon: "fa-industry",
+        "label": "Doddaballapur Industrial Area",
+        "name": "Doddaballapur Industrial Area",
+        "distance": "15.0 km",
+        "icon": "fa-solid fa-industry",
+        "destination": "Doddaballapur Industrial Area, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.285,
+          "lon": 77.538
+        }
       },
       {
-        name: "Yelahanka Railway Station",
-        distance: "18.0 km",
-        icon: "fa-train",
+        "label": "Yelahanka Railway Station",
+        "name": "Yelahanka Railway Station",
+        "distance": "18.0 km",
+        "icon": "fa-solid fa-train",
+        "destination": "Yelahanka Railway Station, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.1156,
+          "lon": 77.8102
+        }
       },
       {
-        name: "Phoenix Mall of Asia",
-        distance: "22.0 km",
-        icon: "fa-bag-shopping",
-      },
+        "label": "Phoenix Mall of Asia",
+        "name": "Phoenix Mall of Asia",
+        "distance": "22.0 km",
+        "icon": "fa-solid fa-bag-shopping",
+        "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
+        "coordinates": {
+          "lat": 13.0694,
+          "lon": 77.5982
+        }
+      }
     ],
-    images: [
+    "images": [
       sattvaImage("sattva-group/sattva-park-cubix/gallery/amenities-1.webp"),
       sattvaImage("sattva-group/sattva-park-cubix/gallery/interior-view.webp"),
-      sattvaImage("sattva-group/sattva-park-cubix/gallery/amenities-2.webp"),
-    ],
-  },
+      sattvaImage("sattva-group/sattva-park-cubix/gallery/amenities-2.webp")
+    ]
+  }
 ];
-
-export const sattvaProjects = sattvaData;
 
 export const sattvaFaqs = [
   {
-    question: "What is Sattva Group?",
-    answer:
-      "Sattva Group is a leading real estate developer in Bangalore, India, focused on creating sustainable and community-driven residential and commercial spaces.",
+    "question": "What is Sattva Group?",
+    "answer": "Sattva Group is a leading real estate developer in Bangalore, India, focused on creating sustainable and community-driven residential and commercial spaces."
   },
   {
-    question:
-      "What are the different types of properties offered by Sattva Group?",
-    answer:
-      "Sattva Group offers a wide range of residential and commercial properties, including apartments, villas, plots, and commercial spaces.",
+    "question": "What are the different types of properties offered by Sattva Group?",
+    "answer": "Sattva Group offers a wide range of residential and commercial properties, including apartments, villas, plots, and commercial spaces."
   },
   {
-    question: "What is the price range of properties offered by Sattva Group?",
-    answer:
-      "The price range of properties offered by Sattva Group varies based on the location, type, and size of the property. Please visit our website or contact us for more information.",
+    "question": "What is the price range of properties offered by Sattva Group?",
+    "answer": "The price range of properties offered by Sattva Group varies based on the location, type, and size of the property. Please visit our website or contact us for more information."
   },
   {
-    question: "Where are the properties of Sattva Group located?",
-    answer:
-      "Sattva Group properties are located in prime locations across Bengaluru, Hyderabad, Goa, Coimbatore.",
+    "question": "Where are the properties of Sattva Group located?",
+    "answer": "Sattva Group properties are located in prime locations across Bengaluru, Hyderabad, Goa, Coimbatore."
   },
   {
-    question: "How can I book a property with Sattva Group?",
-    answer:
-      "You can book a property with Sattva Group by visiting our website, contacting us via phone or email, or visiting one of our sales offices.",
+    "question": "How can I book a property with Sattva Group?",
+    "answer": "You can book a property with Sattva Group by visiting our website, contacting us via phone or email, or visiting one of our sales offices."
   },
   {
-    question:
-      "Does Sattva Group offer any special amenities in their properties?",
-    answer:
-      "Yes, Sattva Group properties are designed with a focus on sustainable living and community-driven amenities such as clubhouses, swimming pools, landscaped gardens, and more.",
+    "question": "Does Sattva Group offer any special amenities in their properties?",
+    "answer": "Yes, Sattva Group properties are designed with a focus on sustainable living and community-driven amenities such as clubhouses, swimming pools, landscaped gardens, and more."
   },
   {
-    question:
-      "Does Sattva Group offer any financial assistance for property buyers?",
-    answer:
-      "Yes, Sattva Group has tie-ups with leading banks and financial institutions to offer home loans and other financial assistance to property buyers.",
+    "question": "Does Sattva Group offer any financial assistance for property buyers?",
+    "answer": "Yes, Sattva Group has tie-ups with leading banks and financial institutions to offer home loans and other financial assistance to property buyers."
   },
   {
-    question: "Does Sattva Group have any ongoing or upcoming projects?",
-    answer:
-      "Yes, Sattva Group has several ongoing and upcoming projects across Bengaluru, Hyderabad, Goa, Coimbatore. Contact us for more information.",
+    "question": "Does Sattva Group have any ongoing or upcoming projects?",
+    "answer": "Yes, Sattva Group has several ongoing and upcoming projects across Bengaluru, Hyderabad, Goa, Coimbatore. Contact us for more information."
   },
   {
-    question: "What is Sattva Group's approach to sustainability?",
-    answer:
-      "Sattva Group is committed to creating sustainable and eco-friendly communities, with a focus on reducing carbon footprint, conserving natural resources, and promoting green living.",
-  },
+    "question": "What is Sattva Group's approach to sustainability?",
+    "answer": "Sattva Group is committed to creating sustainable and eco-friendly communities, with a focus on reducing carbon footprint, conserving natural resources, and promoting green living."
+  }
 ];
+
+function formatOverviewList(items = []) {
+  if (!Array.isArray(items) || items.length === 0) return "";
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
+}
+
+const overviewSearchTerms = [
+  "sattva group",
+  "sattva builders",
+  "salarpuria sattva group",
+  "salarpuria new projects",
+  "salarpuria sattva new launch",
+  "salarpuria builders",
+  "sattva opus flats for sale",
+  "apartments for sale in bangalore",
+  "flats for sale in bangalore",
+  "ready to move flats in bangalore",
+  "new apartment projects in bangalore",
+];
+
+export function createPropertyOverview(property) {
+  const projectIndex = sattvaData.findIndex((item) => item.id === property.id);
+  const searchTerm =
+    overviewSearchTerms[
+      (projectIndex >= 0 ? projectIndex : 0) % overviewSearchTerms.length
+    ];
+  const allBhks = formatOverviewList(
+    [...new Set((property.floorPlans || []).map(({ bhk }) => bhk))],
+  );
+  const floorPlans = formatOverviewList(
+    (property.floorPlans || []).map(
+      (plan) => `${plan.bhk} (${plan.area || "Spacious Layout"})`,
+    ),
+  );
+  const amenities = formatOverviewList(
+    (property.amenities || []).slice(0, 5).map(({ name }) => name),
+  );
+  const nearbyPlaces = formatOverviewList(
+    (property.connectivity || []).slice(0, 4).map(({ name, label }) => label || name),
+  );
+  const shortAddress =
+    property.shortAddress ||
+    (property.location
+      ? property.location.split(",").slice(0, 2).join(",").trim()
+      : "Bengaluru");
+  const statusText =
+    property.category === "new-launch"
+      ? "New Launch"
+      : property.category === "ready"
+        ? "Ready to Move"
+        : "Ongoing";
+  const bhkSummary = allBhks || property.bhk || "luxury residences";
+  const closingKeyword =
+    property.category === "ready"
+      ? "ready to move flats in Bangalore"
+      : (projectIndex >= 0 ? projectIndex : 0) % 2 === 0
+        ? "apartments for sale in Bangalore"
+        : "flats for sale in Bangalore";
+
+  return [
+    `${property.description} Buyers researching ${searchTerm} can explore Sattva homes in ${shortAddress}, with project status, location, and configuration details available to compare.`,
+    `${property.title} is listed with ${bhkSummary} across ${property.area}, with ${statusText.toLowerCase()} status and possession shown as ${property.possession}. Listed floor plan options include ${floorPlans || bhkSummary}. Residents can explore amenities such as ${amenities || "the community's listed lifestyle facilities"}, with nearby destinations including ${nearbyPlaces || shortAddress}. Review this Sattva Group project's floor plans, amenities, and connectivity when comparing ${closingKeyword}.${property.reraId ? ` RERA registration number: ${property.reraId.replace(/\.$/, "")}.` : ""}`,
+  ];
+}
+
+export function createPropertyHighlights(property) {
+  const list = [];
+  if (property.highlight) {
+    list.push(property.highlight);
+  }
+  if (property.area) {
+    list.push(`Expansive ${property.area} development with landscaped open spaces`);
+  }
+  const bhkList = Array.isArray(property.floorPlans) && property.floorPlans.length > 0
+    ? [...new Set(property.floorPlans.map((fp) => fp.bhk))].join(", ")
+    : property.type ? `${property.type} residences` : "";
+  if (bhkList) {
+    list.push(`Thoughtfully planned ${bhkList} layouts designed for optimal ventilation & natural lighting`);
+  }
+  if (property.possession) {
+    list.push(`Project possession timeline: ${property.possession}`);
+  }
+  if (Array.isArray(property.amenities) && property.amenities.length > 0) {
+    const topAmenities = property.amenities.slice(0, 3).map((a) => a.name).join(", ");
+    list.push(`Premium lifestyle amenities including ${topAmenities}`);
+  }
+  if (Array.isArray(property.connectivity) && property.connectivity.length > 0) {
+    const topPlace = property.connectivity[0];
+    const placeName = topPlace.label || topPlace.name;
+    if (placeName) {
+      list.push(`Prime connectivity with proximity to ${placeName} (${topPlace.distance})`);
+    }
+  }
+  if (property.reraId) {
+    list.push(`RERA Approved Project: ${property.reraId.replace(/\.$/, "")}`);
+  }
+  return list;
+}
+
+sattvaData.forEach((property) => {
+  property.name = property.name || property.title;
+  const allBhks = formatOverviewList(
+    [...new Set((property.floorPlans || []).map(({ bhk }) => bhk))],
+  );
+  property.bhk = property.bhk || allBhks;
+  property.statusText = property.statusText || (
+    property.category === "new-launch" ? "New Launch" :
+    property.category === "ready" ? "Ready to Move" : "Under Construction"
+  );
+  property.overview = property.overview || createPropertyOverview(property);
+  if (!property.highlights || property.highlights.length === 0) {
+    property.highlights = createPropertyHighlights(property);
+  }
+});
 
 export const builderConfig = {
   slug: "sattva",
   name: "Sattva Group",
   regions: "Bengaluru",
   theme: {
-    primary: "#0F382C",
-    primaryHover: "#09241C",
-    accent: "#D4AF37",
-    surface: "#F9FAF9",
-    soft: "#E8F0EC",
-    border: "#E8F0EC",
+    primary: "#8B1D24",
+    primaryHover: "#5C0E14",
+    accent: "#C5A059",
+    surface: "#FCFBFB",
+    soft: "#FAECEE",
+    border: "#E8D5D7",
   },
+  seoKeywords: [
+    "sattva group",
+    "sattva builders",
+    "salarpuria sattva group",
+    "salarpuria new projects",
+    "salarpuria sattva new launch",
+    "salarpuria builders",
+    "sattva opus flats for sale",
+    "apartments for sale in bangalore",
+    "flats for sale in bangalore",
+    "ready to move flats in bangalore",
+    "new apartment projects in bangalore",
+  ],
   properties: sattvaData,
   faqs: sattvaFaqs,
-  whatsappNumber: "",
+  whatsappNumber: "+919876543210",
 };
+
+export const sattvaProjects = sattvaData;

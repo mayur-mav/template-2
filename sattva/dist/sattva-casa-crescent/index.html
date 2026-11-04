@@ -7,9 +7,11 @@
     <title>Sattva Casa Crescent | Sattva Group Bangalore</title>
 
     <!-- Meta Description, Canonical and Meta Keywords-->
+    <meta name="description" content="Sattva Casa Crescent is an ultra-exclusive, low-density luxury residential development by Sattva Group located in Benson Town, Central Bangalore..."
+    />
     <meta
-      name="description"
-      content="Sattva Casa Crescent is an ultra-exclusive, low-density luxury residential development by Sattva Group located in Benson Town, Central Bangalore..."
+      name="keywords"
+      content="Sattva Casa Crescent, Sattva Casa Crescent Bangalore, Sattva Casa Crescent Benson Cross Road, Benson Town, Central Bangalore, 4 BHK Simplex and 4 BHK Duplex, ready to move flats in Bangalore, sattva group, sattva builders, salarpuria sattva group, salarpuria new projects, salarpuria sattva new launch, salarpuria builders, sattva opus flats for sale, apartments for sale in bangalore, flats for sale in bangalore, ready to move flats in bangalore, new apartment projects in bangalore"
     />
     <link rel="preconnect" href="https://media.justflip.in">
     <link
@@ -28,6 +30,8 @@
       rel="stylesheet"
     />
 
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <script type="module" src="js/main.js"></script>
   <style>body[data-property-route-loading="true"] #catalog-page,body[data-property-route-loading="true"] #site-footer{display:none!important}body[data-property-route-loading="true"] #details-page{display:block!important}</style>
@@ -50,7 +54,7 @@
             href="/"
             onclick="showCatalogPage()"
             class="site-logo flex shrink-0 items-center gap-2 sm:gap-3"
-            aria-label="Godrej Properties home"
+            aria-label="Sattva Group home"
           >
             <span
               class="site-logo-mark flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-godrej-emerald text-godrej-gold font-serif font-bold text-lg sm:text-xl shadow-md"
@@ -102,15 +106,14 @@
             class="site-header-actions hidden shrink-0 items-center gap-2 sm:gap-3 lg:flex"
           >
             <a
-              href="tel:18001082020"
-              class="site-phone flex items-center gap-1.5 rounded-full bg-godrej-sage px-2 sm:px-3 py-2 text-[10px] sm:text-xs font-semibold text-godrej-emerald hover:bg-godrej-mint transition-colors"
-              aria-label="Call 1800 108 2020"
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-header-wa"
+              aria-label="Chat on WhatsApp"
             >
-              <i
-                class="fa-solid fa-phone text-godrej-gold"
-                aria-hidden="true"
-              ></i
-              ><span>1800 108 2020</span>
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span>Chat on WhatsApp</span>
             </a>
             <button
               onclick="scrollToConsultation()"
@@ -439,7 +442,7 @@
         </div>
       </section>
 
-      <!-- GODREJ BRAND SHOWCASE -->
+      <!-- SATTVA BRAND SHOWCASE -->
       <section
         id="legacy-section"
         class="bg-white py-20 border-y border-godrej-sage"
@@ -565,7 +568,7 @@
                       Zero Buyer Commission
                     </h3>
                     <p class="text-xs text-slate-300">
-                      Direct booking with Godrej Properties official developer
+                      Direct booking with Sattva Group official developer
                       desk.
                     </p>
                   </div>
@@ -752,6 +755,28 @@
       id="details-page"
       class="hidden bg-white min-h-screen text-slate-800 pt-6 pb-20"
     >
+      <!-- Sticky Sub-Navigation Tabs Bar for Project Details -->
+      <nav class="detail-subnav-bar" id="detailSubnavBar" aria-label="Project sections navigation">
+        <div class="subnav-container">
+          <button type="button" class="subnav-arrow subnav-arrow-left" id="subnavArrowLeft" aria-label="Scroll tabs left">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="subnav-track" id="subnavTrack" role="tablist">
+            <button type="button" class="subnav-tab active" role="tab" id="subnav-tab-overview" data-target="dt-overview-section" aria-selected="true" tabindex="0">About the Project</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-highlights" data-target="dt-project-highlights" aria-selected="false" tabindex="-1">Highlights</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-gallery" data-target="dt-project-gallery" aria-selected="false" tabindex="-1">Project Gallery</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-floorplans" data-target="dt-floorplans-section" aria-selected="false" tabindex="-1">Floor Plans</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-emi" data-target="dt-emi-calculator" aria-selected="false" tabindex="-1">Financial Estimator</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-amenities" data-target="dt-amenities-section" aria-selected="false" tabindex="-1">Amenities &amp; Specifications</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-connectivity" data-target="dt-connectivity-section" aria-selected="false" tabindex="-1">Location &amp; Connectivity</button>
+            <button type="button" class="subnav-tab" role="tab" id="subnav-tab-comparison" data-target="dt-project-comparison" aria-selected="false" tabindex="-1">Compare Projects</button>
+          </div>
+          <button type="button" class="subnav-arrow subnav-arrow-right" id="subnavArrowRight" aria-label="Scroll tabs right">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </nav>
+
       <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
         <!-- Back Button Navigation -->
         <div
@@ -773,22 +798,14 @@
               class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full uppercase"
               >Featured Project</span
             >
-            <button
-              id="detail-rera-toggle"
-              type="button"
-              hidden
-              aria-expanded="false"
-              aria-controls="detail-rera-value"
-              class="px-3 py-1 bg-emerald-100 text-emerald-800 font-bold text-xs rounded-full inline-flex items-center gap-1 hover:bg-emerald-200 transition-colors"
-            >
-              <i class="fa-solid fa-circle-check" aria-hidden="true"></i> RERA
-              Verified
-            </button>
             <span
-              id="detail-rera-value"
+              id="detail-rera-badge"
               hidden
-              class="text-xs text-slate-500 font-mono break-all"
-            ></span>
+              class="px-3 py-1 bg-godrej-sage text-godrej-emerald font-bold text-xs rounded-full inline-flex items-center gap-1.5 border border-godrej-mint select-none"
+            >
+              <i class="fa-solid fa-circle-check text-godrej-emerald" aria-hidden="true"></i> RERA
+              Verified
+            </span>
           </div>
           <h1
             id="detail-title"
@@ -804,22 +821,16 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-12">
           <!-- Large Main Image -->
           <div
-            class="lg:col-span-8 relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-[320px] sm:h-[450px]"
-            onclick="openLightbox(0)"
+            class="lg:col-span-8 relative overflow-hidden rounded-2xl shadow-lg h-[320px] sm:h-[450px]"
           >
             <img
               id="detail-img-0"
-              src=""
-              alt="Main Architecture"
+              src="https://media.justflip.in/builder-brand-pages/sattva-group/sattva-casa-crescent/gallery/exterior-view.webp"
+              alt="Sattva Casa Crescent architecture in Bengaluru"
               loading="lazy"
               decoding="async"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
             />
-            <div
-              class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-lg flex items-center gap-2"
-            >
-              <i class="fa-solid fa-expand"></i> Click for Fullscreen Gallery
-            </div>
           </div>
 
           <!-- 2 Side Images Grid -->
@@ -827,36 +838,28 @@
             class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 h-[320px] sm:h-[450px]"
           >
             <div
-              class="relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-full"
-              onclick="openLightbox(1)"
+              class="relative overflow-hidden rounded-2xl shadow-lg h-full"
             >
               <img
                 id="detail-img-1"
-                src=""
-                alt="Interior Design"
+                src="https://media.justflip.in/builder-brand-pages/sattva-group/sattva-casa-crescent/gallery/interior-view.webp"
+                alt="Sattva Casa Crescent interior in Bengaluru"
                 loading="lazy"
                 decoding="async"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
               />
-              <div
-                class="absolute inset-0 bg-godrej-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity"
-              ></div>
             </div>
             <div
-              class="relative group overflow-hidden rounded-2xl shadow-lg cursor-pointer h-full"
-              onclick="openLightbox(2)"
+              class="relative overflow-hidden rounded-2xl shadow-lg h-full"
             >
               <img
                 id="detail-img-2"
-                src=""
-                alt="Project Amenities"
+                src="https://media.justflip.in/builder-brand-pages/sattva-group/sattva-casa-crescent/gallery/amenities.webp"
+                alt="Sattva Casa Crescent amenities in Bengaluru"
                 loading="lazy"
                 decoding="async"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
               />
-              <div
-                class="absolute inset-0 bg-godrej-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity"
-              ></div>
             </div>
           </div>
         </div>
@@ -925,29 +928,113 @@
           <!-- Left Column Details -->
           <div class="lg:col-span-8 space-y-12">
             <!-- Architectural Overview -->
-            <div>
+            <section
+              id="dt-overview-section"
+              class="detail-section-block"
+            >
               <h2
                 class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
               >
                 Property Overview
               </h2>
-              <p
+              <div
                 id="detail-description"
-                class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6"
-              >Sattva Casa Crescent is an ultra-exclusive, low-density luxury residential development by Sattva Group located in Benson Town, Central Bangalore, featuring just 6 lavish 4 BHK simplex and duplex homes across 1.2 acres.</p>
-            </div>
+                class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 space-y-4"
+              ><p class="overview-text">Sattva Casa Crescent is a highly prestigious, ultra-luxury boutique residential landmark by Sattva Group, situated at Benson Cross Road in the quiet, upscale neighborhood of Benson Town, Central Bangalore. Spanning 1.2 acres, this low-density development comprises a single iconic tower housing only 6 expansive 4 BHK residences—designed as single-level floor-plate simplexes and grand double-height duplexes. Unit super built-up areas range from 3,633 sq. ft. to 5,180 sq. ft., with prices starting from Rs. 7.38 Crore onwards. Every home features imported marble flooring, teakwood frames, smartphone-controlled home automation, and private elevator lobbies. The completed development provides a private rooftop swimming pool, gym, landscaped gardens, and dedicated concierge security, all while staying minutes away from MG Road, Cantonment Railway Station, and Bangalore Palace. Buyers researching salarpuria new projects can explore Sattva homes in Benson Town, Central Bengaluru, with project status, location, and configuration details available to compare.</p>
+                <p class="overview-text">Sattva Casa Crescent is listed with 4 BHK Simplex and 4 BHK Duplex across 1.2 Acres, with ready to move status and possession shown as March 2017. Listed floor plan options include 4 BHK Simplex (3,633 Sq. Ft.) and 4 BHK Duplex (5,180 Sq. Ft.). Residents can explore amenities such as Boutique Resident Clubhouse &amp; Lounge, Rooftop Swimming Pool &amp; Sun Deck, Fully Equipped Fitness Center &amp; Gym, Smartphone Home Automation System, and Children&#39;s Play Area &amp; Party Lawn, with nearby destinations including Bangalore Cantonment Railway Station, Coles Park, Commercial Street, and Bangalore Palace. Review this Sattva Group project&#39;s floor plans, amenities, and connectivity when comparing ready to move flats in Bangalore.</p></div>
+            </section>
+
+            <!-- Project Highlights -->
+            <section
+              class="project-highlights-section detail-section-block"
+              id="dt-project-highlights"
+              aria-labelledby="dt-highlights-title"
+            >
+              <h2
+                class="font-serif text-2xl font-bold text-godrej-emerald mb-4"
+                id="dt-highlights-title"
+              >
+                Project Highlights
+              </h2>
+              <div class="highlights-grid" id="dt-highlights">
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Ultra-Exclusive Boutique Living with 1 Apartment Per Floor &amp; Full Home Automation</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-tree" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Expansive 1.2 Acres development with landscaped open spaces</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Thoughtfully planned 4 BHK Simplex, 4 BHK Duplex layouts designed for optimal ventilation &amp; natural lighting</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-key" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Project possession timeline: March 2017</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-person-swimming" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Premium lifestyle amenities including Boutique Resident Clubhouse &amp; Lounge, Rooftop Swimming Pool &amp; Sun Deck, Fully Equipped Fitness Center &amp; Gym</span></div>
+                </div>
+                <div class="highlight-card">
+                  <div class="highlight-icon-wrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                  <div class="highlight-text-wrap"><span class="highlight-text">Prime connectivity with proximity to Bangalore Cantonment Railway Station (2.5 km)</span></div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Project Gallery Section -->
+            <section
+              class="project-gallery-section detail-section-block"
+              id="dt-project-gallery"
+              aria-labelledby="dt-project-gallery-title"
+              
+            >
+              <h2
+                class="font-serif text-2xl font-bold text-godrej-emerald mb-1"
+                id="dt-project-gallery-title"
+              >
+                Project Gallery
+              </h2>
+              <p class="project-gallery-description text-sm text-slate-500 mb-4">
+                Browse project photos and available floor plans.
+              </p>
+              <button
+                class="project-gallery-preview"
+                id="projectGalleryPreview"
+                type="button"
+                aria-haspopup="dialog"
+              >
+                <img
+                  id="projectGalleryPreviewImage" src="https://media.justflip.in/builder-brand-pages/sattva-group/sattva-casa-crescent/gallery/exterior-view.webp" alt="Sattva Casa Crescent gallery preview in Bengaluru"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="project-gallery-preview-overlay">
+                  <span
+                    class="project-gallery-image-count"
+                    id="projectGalleryImageCount"
+                  >5 images · Project photos and floor plans</span>
+                  <span class="project-gallery-preview-action">
+                    <i class="fa-solid fa-images" aria-hidden="true"></i> View gallery
+                  </span>
+                </span>
+              </button>
+            </section>
 
             <!-- Interactive Floor Plan Selector -->
             <div
-              class="bg-white border border-godrej-sage rounded-2xl p-6 shadow-sm"
+              id="dt-floorplans-section"
+              class="floorplan-container detail-section-block bg-white border border-godrej-sage rounded-2xl p-6 shadow-sm"
             >
               <div
                 class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4"
               >
                 <div>
-                  <h3 class="font-serif text-xl font-bold text-godrej-emerald">
+                  <h2 class="font-serif text-2xl font-bold text-godrej-emerald">
                     Floor Plans & Configurations
-                  </h3>
+                  </h2>
                   <p class="text-xs text-slate-500">
                     Compare available home configurations and floor areas
                   </p>
@@ -958,7 +1045,10 @@
                   class="flex flex-nowrap bg-godrej-offwhite p-1 rounded-xl border border-slate-200 text-xs font-semibold"
                   role="tablist"
                   aria-label="Floor plan configurations"
-                ></div>
+                >
+                    <button type="button" id="plan-btn-4bhk-simplex" class="plan-tab-btn shrink-0 px-3 sm:px-4 py-2 rounded-lg transition-all bg-builder-accent text-builder-primary" role="tab" aria-selected="true">4 BHK Simplex</button>
+                    <button type="button" id="plan-btn-4bhk-duplex" class="plan-tab-btn shrink-0 px-3 sm:px-4 py-2 rounded-lg transition-all text-slate-600" role="tab" aria-selected="false">4 BHK Duplex</button>
+                  </div>
               </div>
 
               <!-- Floor Plan Content -->
@@ -971,9 +1061,7 @@
                   class="md:col-span-6 min-w-0 bg-godrej-offwhite p-4 rounded-xl border border-slate-200 flex items-center justify-center"
                 >
                   <img
-                    id="floor-plan-img"
-                    src=""
-                    alt="Selected project configuration"
+                    id="floor-plan-img" src="https://media.justflip.in/builder-brand-pages/sattva-group/sattva-casa-crescent/floor-plans/4bhk-simplex-floor-plan.webp" alt="Sattva Casa Crescent 4 BHK Simplex configuration"
                     loading="lazy"
                     decoding="async"
                     class="w-full max-w-full max-h-64 object-contain rounded-lg"
@@ -990,9 +1078,7 @@
                     <div
                       id="plan-area"
                       class="text-lg font-bold text-godrej-emerald"
-                    >
-                      1,450 Sq. Ft.
-                    </div>
+                    >3,633 Sq. Ft.</div>
                   </div>
                   <div
                     id="floor-plan-price-card"
@@ -1004,9 +1090,7 @@
                     <div
                       id="plan-price"
                       class="text-lg font-bold text-godrej-gold"
-                    >
-                      ₹ 1.85 Cr Onwards
-                    </div>
+                    >₹ 7.38 Crore Onwards</div>
                   </div>
                   <div class="space-y-2 text-xs text-slate-600">
                     <div class="flex items-center gap-2">
@@ -1026,26 +1110,318 @@
               </div>
             </div>
 
+            <!-- HOME LOAN EMI CALCULATOR -->
+            <section class="emi-calculator-section detail-section-block" id="dt-emi-calculator" aria-labelledby="emi-calc-heading">
+              <div class="emi-header-row">
+                <div>
+                  <h2 class="font-serif text-2xl font-bold text-godrej-emerald" id="emi-calc-heading">
+                    Home Loan EMI Calculator
+                  </h2>
+                  <p class="text-xs text-slate-500">
+                    Estimate monthly loan installments with dynamic property pricing and customizable loan terms.
+                  </p>
+                </div>
+                <div class="emi-sync-badge" id="emi-sync-badge">
+                  <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+                  <span>Synced with: <strong id="emi-sync-property">Sattva Casa Crescent</strong></span>
+                </div>
+              </div>
+
+              <div class="emi-calculator-container">
+                <!-- Left Column: Controls & Sliders -->
+                <div class="emi-controls-col">
+                  <!-- Property Value Slider -->
+                  <div class="emi-control-group">
+                    <div class="emi-label-row">
+                      <label for="emi-prop-slider" class="emi-label">
+                        <i class="fa-solid fa-indian-rupee-sign" aria-hidden="true"></i> Property Value
+                      </label>
+                      <div class="emi-val-wrap">
+                        <span class="emi-val-display" id="emi-prop-display">₹7,38,00,000</span>
+                        <span class="emi-val-sub" id="emi-prop-sub">(₹7.38 Cr)</span>
+                      </div>
+                    </div>
+                    <div class="emi-slider-wrap">
+                      <input type="range" class="emi-slider" id="emi-prop-slider" min="27500000" max="150000000" step="500000" value="73800000" aria-label="Property Value">
+                    </div>
+                    <div class="emi-range-limits">
+                      <span id="emi-prop-min-lbl">₹2.75 Cr</span>
+                      <button type="button" class="emi-reset-link" id="emi-reset-price-btn" title="Reset to project price">
+                        <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Reset to Project Price
+                      </button>
+                      <span id="emi-prop-max-lbl">₹15 Cr</span>
+                    </div>
+                  </div>
+
+                  <!-- Down Payment Slider -->
+                  <div class="emi-control-group">
+                    <div class="emi-label-row">
+                      <label for="emi-down-slider" class="emi-label">
+                        <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i> Down Payment
+                      </label>
+                      <div class="emi-val-wrap">
+                        <span class="emi-val-pill" id="emi-down-pct-display">20%</span>
+                        <span class="emi-val-display" id="emi-down-amount-display">₹1,47,60,000</span>
+                      </div>
+                    </div>
+                    <div class="emi-slider-wrap">
+                      <input type="range" class="emi-slider" id="emi-down-slider" min="10" max="80" step="1" value="20" aria-label="Down Payment Percentage">
+                    </div>
+                    <div class="emi-range-limits">
+                      <span>10% (Min)</span>
+                      <span class="emi-loan-caption">Loan Amount: <strong id="emi-loan-amount">₹5,90,40,000</strong></span>
+                      <span>80%</span>
+                    </div>
+                  </div>
+
+                  <!-- Loan Tenure Slider & Quick Chips -->
+                  <div class="emi-control-group">
+                    <div class="emi-label-row">
+                      <label for="emi-tenure-slider" class="emi-label">
+                        <i class="fa-regular fa-clock" aria-hidden="true"></i> Loan Tenure
+                      </label>
+                      <div class="emi-val-wrap">
+                        <span class="emi-val-display" id="emi-tenure-display">20 Years</span>
+                        <span class="emi-val-sub" id="emi-tenure-months">(240 Months)</span>
+                      </div>
+                    </div>
+                    <div class="emi-slider-wrap">
+                      <input type="range" class="emi-slider" id="emi-tenure-slider" min="5" max="30" step="1" value="20" aria-label="Loan Tenure in Years">
+                    </div>
+                    <div class="emi-tenure-chips" role="radiogroup" aria-label="Quick Loan Tenure selection">
+                      <button type="button" class="emi-chip" data-years="5">5 Yrs</button>
+                      <button type="button" class="emi-chip" data-years="10">10 Yrs</button>
+                      <button type="button" class="emi-chip" data-years="15">15 Yrs</button>
+                      <button type="button" class="emi-chip active" data-years="20">20 Yrs</button>
+                      <button type="button" class="emi-chip" data-years="25">25 Yrs</button>
+                      <button type="button" class="emi-chip" data-years="30">30 Yrs</button>
+                    </div>
+                  </div>
+
+                  <!-- Interest Rate Slider -->
+                  <div class="emi-control-group">
+                    <div class="emi-label-row">
+                      <label for="emi-rate-slider" class="emi-label">
+                        <i class="fa-solid fa-percent" aria-hidden="true"></i> Interest Rate (% p.a.)
+                      </label>
+                      <div class="emi-val-wrap">
+                        <span class="emi-val-display" id="emi-rate-display">8.50%</span>
+                      </div>
+                    </div>
+                    <div class="emi-slider-wrap">
+                      <input type="range" class="emi-slider" id="emi-rate-slider" min="6.5" max="15" step="0.05" value="8.5" aria-label="Interest Rate per annum">
+                    </div>
+                    <div class="emi-range-limits">
+                      <span>6.5%</span>
+                      <span class="emi-bank-note"><i class="fa-solid fa-building-columns"></i> Benchmark home loan rates</span>
+                      <span>15.0%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right Column: Results & Interactive SVG Chart -->
+                <div class="emi-results-col">
+                  <!-- Hero EMI Card -->
+                  <div class="emi-hero-card">
+                    <span class="emi-hero-label">Estimated Monthly EMI</span>
+                    <div class="emi-hero-amount" id="emi-monthly-output">₹5,12,363</div>
+                    <span class="emi-hero-footnote" id="emi-hero-footnote">*For ₹5.9 Cr loan at 8.50% for 20 yrs</span>
+                  </div>
+
+                  <!-- Visual Donut Chart + Legend -->
+                  <div class="emi-chart-box">
+                    <div class="emi-donut-wrapper">
+                      <svg class="emi-donut-svg" viewBox="0 0 100 100" width="110" height="110" aria-label="Principal versus interest breakdown chart" role="img">
+                        <circle class="emi-donut-meter" cx="50" cy="50" r="38" />
+                        <circle class="emi-donut-segment emi-segment-principal" id="emi-donut-principal" cx="50" cy="50" r="38" />
+                        <circle class="emi-donut-segment emi-segment-interest" id="emi-donut-interest" cx="50" cy="50" r="38" />
+                      </svg>
+                      <div class="emi-donut-center">
+                        <span class="emi-donut-center-lbl">Total</span>
+                        <span class="emi-donut-center-val" id="emi-donut-center-val">₹12.3 Cr</span>
+                      </div>
+                    </div>
+                    <div class="emi-chart-legend">
+                      <div class="emi-legend-item">
+                        <span class="emi-legend-bullet bullet-principal"></span>
+                        <div class="emi-legend-info">
+                          <span class="emi-legend-title">Principal Loan</span>
+                          <strong class="emi-legend-value" id="emi-legend-principal-val">₹5,90,40,000</strong>
+                          <span class="emi-legend-pct" id="emi-legend-principal-pct">(48%)</span>
+                        </div>
+                      </div>
+                      <div class="emi-legend-item">
+                        <span class="emi-legend-bullet bullet-interest"></span>
+                        <div class="emi-legend-info">
+                          <span class="emi-legend-title">Total Interest</span>
+                          <strong class="emi-legend-value" id="emi-legend-interest-val">₹6,39,27,120</strong>
+                          <span class="emi-legend-pct" id="emi-legend-interest-pct">(52%)</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Summary Details List -->
+                  <div class="emi-breakdown-table">
+                    <div class="emi-breakdown-row">
+                      <span class="emi-row-title">Down Payment <span id="emi-table-down-pct" style="font-size: 0.78rem; color: #64748B;">(20%)</span></span>
+                      <strong class="emi-row-value" id="emi-table-down">₹1,47,60,000</strong>
+                    </div>
+                    <div class="emi-breakdown-row">
+                      <span class="emi-row-title">Principal Loan Amount</span>
+                      <strong class="emi-row-value" id="emi-table-principal">₹5,90,40,000</strong>
+                    </div>
+                    <div class="emi-breakdown-row">
+                      <span class="emi-row-title">Total Interest Payable</span>
+                      <strong class="emi-row-value" id="emi-table-interest">₹6,39,27,120</strong>
+                    </div>
+                    <div class="emi-breakdown-row emi-row-total">
+                      <span class="emi-row-title">Total Amount Payable</span>
+                      <strong class="emi-row-value" id="emi-table-total">₹12,29,67,120</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             <!-- Dynamic Project Amenities -->
-            <section>
-              <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-6">
+            <section
+              id="dt-amenities-section"
+              class="detail-section-block"
+            >
+              <h2 class="font-serif text-2xl font-bold text-godrej-emerald mb-6">
                 Project Amenities
-              </h3>
+              </h2>
               <div
                 id="detail-amenities"
                 class="grid grid-cols-2 sm:grid-cols-3 gap-4"
-              ></div>
+              >
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-godrej-offwhite border border-slate-200"><div class="w-8 h-8 rounded-lg bg-godrej-emerald/10 text-godrej-emerald flex items-center justify-center shrink-0"><i class="fa-solid fa-building-user text-sm" aria-hidden="true"></i></div><span class="text-xs sm:text-sm font-medium text-slate-700">Boutique Resident Clubhouse &amp; Lounge</span></div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-godrej-offwhite border border-slate-200"><div class="w-8 h-8 rounded-lg bg-godrej-emerald/10 text-godrej-emerald flex items-center justify-center shrink-0"><i class="fa-solid fa-water-ladder text-sm" aria-hidden="true"></i></div><span class="text-xs sm:text-sm font-medium text-slate-700">Rooftop Swimming Pool &amp; Sun Deck</span></div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-godrej-offwhite border border-slate-200"><div class="w-8 h-8 rounded-lg bg-godrej-emerald/10 text-godrej-emerald flex items-center justify-center shrink-0"><i class="fa-solid fa-dumbbell text-sm" aria-hidden="true"></i></div><span class="text-xs sm:text-sm font-medium text-slate-700">Fully Equipped Fitness Center &amp; Gym</span></div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-godrej-offwhite border border-slate-200"><div class="w-8 h-8 rounded-lg bg-godrej-emerald/10 text-godrej-emerald flex items-center justify-center shrink-0"><i class="fa-solid fa-house-signal text-sm" aria-hidden="true"></i></div><span class="text-xs sm:text-sm font-medium text-slate-700">Smartphone Home Automation System</span></div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-godrej-offwhite border border-slate-200"><div class="w-8 h-8 rounded-lg bg-godrej-emerald/10 text-godrej-emerald flex items-center justify-center shrink-0"><i class="fa-solid fa-child-reaching text-sm" aria-hidden="true"></i></div><span class="text-xs sm:text-sm font-medium text-slate-700">Children&#39;s Play Area &amp; Party Lawn</span></div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-godrej-offwhite border border-slate-200"><div class="w-8 h-8 rounded-lg bg-godrej-emerald/10 text-godrej-emerald flex items-center justify-center shrink-0"><i class="fa-solid fa-tree text-sm" aria-hidden="true"></i></div><span class="text-xs sm:text-sm font-medium text-slate-700">Landscaped Garden &amp; Terrace Sitting Area</span></div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-godrej-offwhite border border-slate-200"><div class="w-8 h-8 rounded-lg bg-godrej-emerald/10 text-godrej-emerald flex items-center justify-center shrink-0"><i class="fa-solid fa-elevator text-sm" aria-hidden="true"></i></div><span class="text-xs sm:text-sm font-medium text-slate-700">High-Speed Passenger &amp; Service Elevators</span></div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-godrej-offwhite border border-slate-200"><div class="w-8 h-8 rounded-lg bg-godrej-emerald/10 text-godrej-emerald flex items-center justify-center shrink-0"><i class="fa-solid fa-shield-halved text-sm" aria-hidden="true"></i></div><span class="text-xs sm:text-sm font-medium text-slate-700">24/7 Multi-Tiered Security &amp; Intercom</span></div>
+              </div>
             </section>
 
-            <!-- Dynamic Connectivity -->
-            <section>
-              <h3 class="font-serif text-xl font-bold text-godrej-emerald mb-6">
-                Connectivity & Location
-              </h3>
+            <!-- STRATEGIC CONNECTIVITY & MAP PREVIEW -->
+            <section class="connectivity-section detail-section-block" id="dt-connectivity-section">
+              <div class="connectivity-heading mb-4">
+                <h2 class="font-serif text-2xl font-bold text-godrej-emerald">
+                  Strategic Connectivity & Location
+                </h2>
+                <p class="text-xs text-slate-500">
+                  Key transit hubs, business tech corridors, schools, and social infrastructure.
+                </p>
+              </div>
+              <div class="connectivity-overview">
+                <div class="connectivity-map-preview">
+                  <div id="connectivity-map-preview-canvas" class="connectivity-map-preview-canvas" role="img" aria-label="Map preview of the property location"></div>
+                  <button class="connectivity-map-trigger" id="connectivity-map-open" type="button">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Show on Map
+                  </button>
+                </div>
+                <div class="connectivity-destinations">
+                  <h3 class="font-serif font-bold text-base text-godrej-emerald mb-3">Nearby Destinations</h3>
+                  <div class="location-matrix" id="dt-connectivity">
+                                <div class="loc-item"><i class="fa-solid fa-train" aria-hidden="true"></i><div><strong>Bangalore Cantonment Railway Station:</strong> 2.5 km</div></div>
+                                <div class="loc-item"><i class="fa-solid fa-tree" aria-hidden="true"></i><div><strong>Coles Park:</strong> 2.5 km</div></div>
+                                <div class="loc-item"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i><div><strong>Commercial Street:</strong> 3.5 km</div></div>
+                                <div class="loc-item"><i class="fa-solid fa-landmark" aria-hidden="true"></i><div><strong>Bangalore Palace:</strong> 3.5 km</div></div>
+                            </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- COMPARE SIMILAR PROJECTS -->
+            <section
+              class="project-comparison-section detail-section-block"
+              id="dt-project-comparison"
+              aria-labelledby="dt-project-comparison-title"
+              
+            >
+              <div class="mb-4">
+                <h2
+                  class="font-serif text-2xl font-bold text-godrej-emerald"
+                  id="dt-project-comparison-title"
+                >
+                  Compare Similar Projects
+                </h2>
+                <p class="text-xs text-slate-500 mt-1">
+                  Compare this project with other Sattva Group homes before you decide.
+                </p>
+              </div>
               <div
-                id="detail-connectivity"
-                class="grid grid-cols-1 sm:grid-cols-2 gap-4"
-              ></div>
+                class="project-comparison-grid"
+                id="dt-project-comparison-grid"
+              >
+    <article class="project-comparison-card is-current">
+      <div class="comparison-project-card">
+        <div class="comparison-project-image-wrap">
+          <img class="comparison-project-image" src="https://media.justflip.in/builder-brand-pages/sattva-group/sattva-casa-crescent/thumbnail.webp" alt="Sattva Casa Crescent project" loading="lazy" decoding="async">
+          <span class="comparison-current-label">Current Project</span>
+        </div>
+        <div class="comparison-project-name">
+          <span>Sattva Casa Crescent</span>
+          <span class="comparison-project-location" title="Benson Cross Road, Benson Town, Central Bangalore">Benson Town, Central Bengaluru</span>
+        </div>
+        <button type="button" class="comparison-project-link" data-enquiry-project="sattva-casa-crescent" aria-label="Enquire about Sattva Casa Crescent"><i class="fa-solid fa-phone" aria-hidden="true"></i> Enquire Now</button>
+        <div class="comparison-project-specs">
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Price</span><span class="comparison-project-spec-value" title="₹ 7.38 Crore Onwards">₹ 7.38 Crore Onwards</span></div>
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Configuration</span><span class="comparison-project-spec-value" title="4 BHK Simplex and 4 BHK Duplex">4 BHK Simplex and 4 BHK Duplex</span></div>
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Project Area</span><span class="comparison-project-spec-value" title="1.2 Acres">1.2 Acres</span></div>
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Status</span><span class="comparison-project-spec-value" title="Ready to Move">Ready to Move</span></div>
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Possession</span><span class="comparison-project-spec-value" title="March 2017">March 2017</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-comparison-card">
+      <div class="comparison-project-card">
+        <div class="comparison-project-image-wrap">
+          <img class="comparison-project-image" src="https://media.justflip.in/builder-brand-pages/sattva-group/sattva-luxuria/thumbnail.webp" alt="Sattva Luxuria project" loading="lazy" decoding="async">
+          
+        </div>
+        <div class="comparison-project-name">
+          <span>Sattva Luxuria</span>
+          <span class="comparison-project-location" title="Malleswaram, West Bangalore">Malleswaram, West Bengaluru</span>
+        </div>
+        <button type="button" class="comparison-project-link" data-details-project="sattva-luxuria" aria-label="View Sattva Luxuria details"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details</button>
+        <div class="comparison-project-specs">
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Price</span><span class="comparison-project-spec-value" title="₹ 4.50 Crore Onwards">₹ 4.50 Crore Onwards</span></div>
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Configuration</span><span class="comparison-project-spec-value" title="3 BHK and 4 BHK">3 BHK and 4 BHK</span></div>
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Project Area</span><span class="comparison-project-spec-value" title="4.5 Acres">4.5 Acres</span></div>
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Status</span><span class="comparison-project-spec-value" title="Ready to Move">Ready to Move</span></div>
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Possession</span><span class="comparison-project-spec-value" title="December 2017">December 2017</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-comparison-card">
+      <div class="comparison-project-card">
+        <div class="comparison-project-image-wrap">
+          <img class="comparison-project-image" src="https://media.justflip.in/builder-brand-pages/sattva-group/sattva-la-vita/thumbnail.webp" alt="Sattva La Vita project" loading="lazy" decoding="async">
+          
+        </div>
+        <div class="comparison-project-name">
+          <span>Sattva La Vita</span>
+          <span class="comparison-project-location" title="Byrathi, Off Hennur Main Road, North Bangalore">Hennur Road, Byrathi, North Bengaluru</span>
+        </div>
+        <button type="button" class="comparison-project-link" data-details-project="sattva-la-vita" aria-label="View Sattva La Vita details"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View Details</button>
+        <div class="comparison-project-specs">
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Price</span><span class="comparison-project-spec-value" title="₹ 5.69 Crore Onwards">₹ 5.69 Crore Onwards</span></div>
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Configuration</span><span class="comparison-project-spec-value" title="4 BHK Row Villa and 4 BHK Grand Row Villa">4 BHK Row Villa and 4 BHK Grand Row Villa</span></div>
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Project Area</span><span class="comparison-project-spec-value" title="3 Acres">3 Acres</span></div>
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Status</span><span class="comparison-project-spec-value" title="Under Construction">Under Construction</span></div>
+          <div class="comparison-project-spec"><span class="comparison-project-spec-label">Possession</span><span class="comparison-project-spec-value" title="July 2026">July 2026</span></div>
+        </div>
+      </div>
+    </article>
+              </div>
             </section>
           </div>
 
@@ -1297,6 +1673,7 @@
       </div>
     </div>
 
+    
     <!-- FOOTER -->
     <footer
       id="site-footer"
@@ -1306,12 +1683,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pb-8">
           <div>
             <div class="flex items-center gap-3">
-              <h2
-                id="footer-builder-name"
-                class="font-serif text-xl sm:text-2xl font-bold"
-              >
-                Godrej Properties
-              </h2>
+              <h2 id="footer-builder-name" class="font-serif text-xl sm:text-2xl font-bold">Sattva Group</h2>
             </div>
             <p
               id="footer-builder-regions"
@@ -1321,7 +1693,7 @@
             </p>
             <p class="mt-5 text-sm text-slate-300">
               Explore <span id="footer-property-count">1</span> properties by
-              <span data-footer-builder-name>Godrej Properties</span> featured
+              <span data-footer-builder-name>Sattva Group</span> featured
               on this page.
             </p>
           </div>
@@ -1359,12 +1731,150 @@
           </p>
           <p>
             Residential properties by
-            <span data-footer-builder-name>Godrej Properties</span>
+            <span data-footer-builder-name>Sattva Group</span>
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- JAVASCRIPT LOGIC -->
-  </body>
+    <!-- PROJECT GALLERY DIALOG -->
+    <dialog
+      class="project-gallery-dialog"
+      id="projectGalleryDialog"
+      aria-labelledby="projectGalleryTitle"
+    >
+      <div class="project-gallery-dialog-content">
+        <div class="project-gallery-dialog-header">
+          <div>
+            <span class="project-gallery-eyebrow text-godrej-gold text-xs font-bold tracking-widest uppercase">Project Visuals</span>
+            <h2 id="projectGalleryTitle" class="font-serif text-xl font-bold text-white">Project Gallery</h2>
+          </div>
+          <button
+            class="project-gallery-close"
+            id="projectGalleryClose"
+            type="button"
+            aria-label="Close gallery"
+          >
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div
+          class="project-gallery-tabs"
+          role="tablist"
+          aria-label="Gallery media categories"
+        >
+          <button
+            class="project-gallery-tab"
+            id="projectGalleryProjectTab"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            data-gallery-category="photo"
+          >
+            Project Photos
+          </button>
+          <button
+            class="project-gallery-tab"
+            id="projectGalleryFloorPlanTab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-gallery-category="floor-plan"
+            tabindex="-1"
+          >
+            Floor Plans
+          </button>
+        </div>
+        <div
+          class="project-gallery-viewer"
+          id="projectGalleryViewer"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Gallery viewer"
+        >
+          <div class="project-gallery-main">
+            <button
+              class="project-gallery-nav project-gallery-previous"
+              id="projectGalleryPrevious"
+              type="button"
+              aria-label="Previous image"
+            >
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <img
+              class="project-gallery-current-image"
+              id="projectGalleryCurrentImage"
+              src=""
+              alt=""
+              decoding="async"
+              draggable="false"
+            />
+            <button
+              class="project-gallery-nav project-gallery-next"
+              id="projectGalleryNext"
+              type="button"
+              aria-label="Next image"
+            >
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+            <span
+              class="project-gallery-counter"
+              id="projectGalleryCounter"
+              aria-live="polite"
+            ></span>
+          </div>
+          <div
+            class="project-gallery-thumbnails"
+            id="projectGalleryThumbnails"
+            aria-label="Gallery thumbnails"
+          ></div>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- CONNECTIVITY MAP MODAL (CENTURY MATCH) -->
+    <section class="connectivity-map" id="connectivity-map" aria-labelledby="connectivity-map-title" aria-modal="true" role="dialog" hidden>
+      <header class="connectivity-map-header">
+        <div class="connectivity-map-heading">
+          <span class="connectivity-map-eyebrow">LOCATION &amp; CONNECTIVITY</span>
+          <h2 id="connectivity-map-title">Connectivity map</h2>
+          <p id="connectivity-map-project"></p>
+        </div>
+        <label class="connectivity-map-search">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <span class="sr-only">Search listed destinations</span>
+          <input id="connectivity-map-search-input" type="search" placeholder="Search listed destinations" autocomplete="off">
+        </label>
+        <button class="connectivity-map-close" id="connectivity-map-close" type="button" aria-label="Close map">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          <span>Back to property</span>
+        </button>
+      </header>
+      <div class="connectivity-map-layout">
+        <aside class="connectivity-map-sidebar" aria-label="Property connectivity">
+          <div class="connectivity-map-sidebar-heading">
+            <h3>Listed destinations</h3>
+            <span id="connectivity-map-count"></span>
+          </div>
+          <p class="connectivity-map-hint">Choose a destination from this property's connectivity list to view its route.</p>
+          <div class="connectivity-map-list" id="connectivity-map-list"></div>
+          <div class="connectivity-map-directions">
+            <a id="connectivity-map-directions-link" href="#" target="_blank" rel="noopener noreferrer">
+              Open directions in Google Maps
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+            <small>Destinations come from this property's connectivity data. The route line is provided by OSRM; open Google Maps for turn-by-turn directions.</small>
+          </div>
+        </aside>
+        <div class="connectivity-map-canvas">
+          <div id="connectivity-map-canvas" class="connectivity-leaflet-map" role="application" aria-label="Map showing the property and selected destination"></div>
+          <p id="connectivity-map-route-status" class="connectivity-map-route-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    
+</body>
 </html>
