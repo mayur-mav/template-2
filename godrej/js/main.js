@@ -827,6 +827,69 @@ function renderProjectComparison(item) {
   });
 
   section.hidden = projects.length < 2;
+  requestAnimationFrame(syncComparisonRowHeights);
+}
+
+function syncComparisonRowHeights() {
+  const grids = document.querySelectorAll(".project-comparison-grid");
+  if (!grids.length) return;
+
+  const isDesktop = window.innerWidth > 900;
+
+  grids.forEach((grid) => {
+    if (grid.offsetParent === null && grid.closest(".hidden")) return;
+
+    const cards = Array.from(grid.querySelectorAll(".project-comparison-card"));
+    if (cards.length === 0) return;
+
+    cards.forEach((card) => {
+      const nameEl = card.querySelector(".comparison-project-name");
+      if (nameEl) nameEl.style.minHeight = "";
+      const specs = card.querySelectorAll(".comparison-project-spec");
+      specs.forEach((spec) => {
+        spec.style.minHeight = "";
+      });
+    });
+
+    if (!isDesktop) return;
+
+    let maxNameHeight = 0;
+    cards.forEach((card) => {
+      const nameEl = card.querySelector(".comparison-project-name");
+      if (nameEl) {
+        const h = nameEl.offsetHeight;
+        if (h > maxNameHeight) maxNameHeight = h;
+      }
+    });
+    if (maxNameHeight > 0) {
+      cards.forEach((card) => {
+        const nameEl = card.querySelector(".comparison-project-name");
+        if (nameEl) nameEl.style.minHeight = `${maxNameHeight}px`;
+      });
+    }
+
+    const maxSpecCount = Math.max(
+      ...cards.map((c) => c.querySelectorAll(".comparison-project-spec").length),
+      0,
+    );
+
+    for (let specIndex = 0; specIndex < maxSpecCount; specIndex++) {
+      let maxSpecHeight = specIndex === maxSpecCount - 1 ? 64 : 56;
+      cards.forEach((card) => {
+        const specs = card.querySelectorAll(".comparison-project-spec");
+        if (specs[specIndex]) {
+          const h = specs[specIndex].offsetHeight;
+          if (h > maxSpecHeight) maxSpecHeight = h;
+        }
+      });
+      cards.forEach((card) => {
+        const specs = card.querySelectorAll(".comparison-project-spec");
+        if (specs[specIndex]) {
+          specs[specIndex].style.minHeight = `${maxSpecHeight}px`;
+        }
+      });
+    }
+  });
 }
 
 function renderPropertyFeatures(property) {
@@ -1005,6 +1068,7 @@ function openDetailPage(id, { updateUrl = true } = {}) {
   document.getElementById("site-footer").classList.add("hidden");
   document.body.removeAttribute("data-property-route-loading");
   syncDetailSubnavTabs();
+  requestAnimationFrame(syncComparisonRowHeights);
   if (connectivityPreviewMap) initializeConnectivityPreview(prop);
   else if (!connectivityPreviewObserver) initializeConnectivityPreview(prop);
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -2688,6 +2752,7 @@ Object.assign(window, {
   scrollToConsultation,
   selectFloorPlan,
   showCatalogPage,
+  syncComparisonRowHeights,
   syncDetailSubnavTabs,
   toggleFaq,
 });
@@ -2719,6 +2784,7 @@ function initializeBuilderPage() {
   initEmiCalculator();
   initDetailSubnav();
   syncDetailSubnavTabs();
+  requestAnimationFrame(syncComparisonRowHeights);
   document.getElementById("dt-project-comparison")?.addEventListener("click", (event) => {
     const enquiryButton = event.target.closest("[data-enquiry-project]");
     if (enquiryButton) {
@@ -2747,6 +2813,15 @@ function initializeBuilderPage() {
     connectivityPreviewObserver.observe(connectivityPreview);
   }
   restoreBuilderRoute();
+  requestAnimationFrame(syncComparisonRowHeights);
+  window.addEventListener("resize", () => {
+    requestAnimationFrame(syncComparisonRowHeights);
+  });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      requestAnimationFrame(syncComparisonRowHeights);
+    });
+  }
   let popupAlreadyShown = false;
   try {
     popupAlreadyShown = sessionStorage.getItem("waPopupShown") === "true";

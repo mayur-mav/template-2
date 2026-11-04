@@ -3595,7 +3595,8 @@ footer a:hover {
   max-width: 100%;
   border-top: 1px solid #e8f0ec;
   box-sizing: border-box;
-  overflow: hidden;
+  align-self: stretch;
+  height: 100%;
 }
 
 .comparison-project-spec:last-child {
@@ -3612,19 +3613,17 @@ footer a:hover {
   display: block;
   min-width: 0;
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .comparison-project-spec-value {
   color: #0f382c;
   font-size: 0.86rem;
   font-weight: 700;
-  line-height: 1.4;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.35;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
   display: block;
   min-width: 0;
   max-width: 100%;
@@ -3634,12 +3633,14 @@ footer a:hover {
   @media (min-width: 901px) {
     .project-comparison-grid {
       grid-template-rows: auto minmax(48px, auto) auto repeat(5, auto);
+      row-gap: 0;
     }
 
     .project-comparison-card {
       grid-row: span 8;
       display: grid;
       grid-template-rows: subgrid;
+      row-gap: 0;
       overflow: hidden;
     }
 
@@ -3647,8 +3648,21 @@ footer a:hover {
       grid-row: span 8;
       display: grid;
       grid-template-rows: subgrid;
-      gap: 8px;
+      row-gap: 0;
+      gap: 0;
       overflow: hidden;
+    }
+
+    .comparison-project-image-wrap {
+      margin-bottom: 8px;
+    }
+
+    .comparison-project-name {
+      margin-bottom: 8px;
+    }
+
+    .comparison-project-link {
+      margin-bottom: 10px;
     }
 
     .comparison-project-specs {
@@ -3656,7 +3670,9 @@ footer a:hover {
       display: grid;
       grid-template-rows: subgrid;
       grid-template-columns: minmax(0, 1fr);
-      margin: 10px -14px 0;
+      row-gap: 0;
+      gap: 0;
+      margin: 0 -14px 0;
       width: calc(100% + 28px);
       max-width: calc(100% + 28px);
       overflow: hidden;
@@ -3667,6 +3683,8 @@ footer a:hover {
       min-width: 0;
       width: 100%;
       max-width: 100%;
+      height: 100%;
+      align-self: stretch;
       overflow: hidden;
     }
 
