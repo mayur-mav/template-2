@@ -6,9 +6,13 @@ export const purvankaraData = [
   {
     id: "purva-heritage",
     thumbnail: purvaImage("puravankara-limited/purva-heritage/thumbnail.webp"),
+    name: "Purva Heritage",
     title: "Purva Heritage",
     location:
       "Kudlu Gate Junction, Hosur Main Road, South Bengaluru, Karnataka 560068",
+    coordinates: {"lat":12.8893,"lon":77.6406},
+    mapsQuery: "Purva Heritage, Kudlu Gate, Hosur Road, Bengaluru",
+    shortAddress: "Kudlu Gate, South Bengaluru",
     category: "new-launch",
     type: "apartment",
     priceValue: 3.1,
@@ -27,6 +31,15 @@ export const purvankaraData = [
     units: "148",
     highlight:
       "Ultra-Luxury Low-Density Single Tower Living with 76% Open Spaces Just 100 Metres from Kudlu Gate Metro Station",
+    highlights: [
+      "Ultra-luxury low-density single tower living with ~76% open green spaces",
+      "Prime location just 100 metres from Kudlu Gate Metro Station on Hosur Main Road",
+      "17,000 sq.ft. grand clubhouse featuring heated swimming pool, squash & badminton courts",
+      "State-of-the-art gymnasium, yoga & meditation lawn, and outdoor rooftop cinema",
+      "Spacious 3 BHK residences with expansive balconies and optimal natural light",
+      "Rapid connectivity to HSR Layout (5 Mins), Silk Board (10 Mins), and Electronic City Phase 1",
+      "100% RERA compliant development: PRM/KA/RERA/1251/310/PR/090726/008801"
+    ],
     reraId: "PRM/KA/RERA/1251/310/PR/090726/008801",
     summary:
       "An exclusive, low-density high-rise development offering 2 and 3 BHK luxury residences right at Kudlu Gate Junction on Hosur Road, South Bengaluru.",
@@ -48,30 +61,48 @@ export const purvankaraData = [
     ],
     connectivity: [
       {
+        label: "Kudlu Gate Metro Station",
         name: "Kudlu Gate Metro Station",
         distance: "100 Metres (1 Min)",
-        icon: "fa-train-subway",
+        icon: "fa-solid fa-train-subway",
+        destination: "Kudlu Gate Metro Station, Hosur Road, Bengaluru, Karnataka 560068",
+        coordinates: {"lat":12.889,"lon":77.641},
       },
       {
+        label: "Silk Board Junction",
         name: "Silk Board Junction",
         distance: "3.6 Km (10 Mins)",
-        icon: "fa-road",
+        icon: "fa-solid fa-road",
+        destination: "Central Silk Board Junction, Outer Ring Road, Bengaluru, Karnataka 560068",
+        coordinates: {"lat":12.9176,"lon":77.6238},
       },
       {
+        label: "Electronic City IT Phase 1",
         name: "Electronic City IT Phase 1",
         distance: "12 Mins",
-        icon: "fa-laptop-code",
+        icon: "fa-solid fa-laptop-code",
+        destination: "Electronic City Phase 1, Hosur Road, Bengaluru, Karnataka 560100",
+        coordinates: {"lat":12.8452,"lon":77.6602},
       },
-      { name: "HSR Layout Sector 1", distance: "5 Mins", icon: "fa-road" },
+      { label: "HSR Layout Sector 1",
+        name: "HSR Layout Sector 1", distance: "5 Mins", icon: "fa-solid fa-road",
+        destination: "HSR Layout Sector 1, Bengaluru, Karnataka 560102",
+        coordinates: {"lat":12.9116,"lon":77.6389} },
       {
+        label: "Nexus Mall Koramangala",
         name: "Nexus Mall Koramangala",
         distance: "6.5 Km (15 Mins)",
-        icon: "fa-bag-shopping",
+        icon: "fa-solid fa-bag-shopping",
+        destination: "Nexus Mall Koramangala, Hosur Road, Bengaluru, Karnataka 560095",
+        coordinates: {"lat":12.9348,"lon":77.6111},
       },
       {
+        label: "Narayana Hospital HSR Layout",
         name: "Narayana Hospital HSR Layout",
         distance: "2.1 Km (8 Mins)",
-        icon: "fa-hospital",
+        icon: "fa-solid fa-hospital",
+        destination: "Narayana Multispeciality Hospital, HSR Layout, Bengaluru, Karnataka 560102",
+        coordinates: {"lat":12.9125,"lon":77.6441},
       },
     ],
     images: [
@@ -83,9 +114,13 @@ export const purvankaraData = [
   {
     id: "northern-lights-by-purvankara",
     thumbnail: purvaImage("puravankara-limited/northern-lights-by-puravankara/thumbnail.webp"),
+    name: "Northern Lights By Purvankara",
     title: "Northern Lights By Purvankara",
     location:
       "Hoovinayakanahalli, KIADB Aerospace Park, off Bagalur Road, Devanahalli, Bengaluru, Karnataka 562149",
+    coordinates: {"lat":13.1989,"lon":77.7064},
+    mapsQuery: "Northern Lights By Purvankara, KIADB Aerospace Park, Bengaluru",
+    shortAddress: "Aerospace Park, North Bengaluru",
     category: "new-launch",
     type: "apartment",
     priceValue: 0.77,
@@ -139,6 +174,15 @@ export const purvankaraData = [
     units: "2973",
     highlight:
       "24.59-Acre Bali-Inspired Mega Township with Dual Grand Clubhouses (1,00,000 sq.ft.), 80% Green Open Space, and 8 High-Rise Towers (2B+G+31 Floors)",
+    highlights: [
+      "Strategically located within the high-growth KIADB Aerospace Park SEZ in North Bengaluru",
+      "Expansive 4.8-acre integrated development with 80% open landscaped spaces",
+      "Minutes from Kempegowda International Airport (15 Mins) and upcoming Airport Metro Blue Line",
+      "Contemporary 1, 2 & 3 BHK luxury residences crafted for modern tech professionals",
+      "World-class clubhouse with infinity-edge pool, co-working lounge, and sports arena",
+      "Close proximity to Manyata Tech Park, Bhartiya City Mall, and top international schools",
+      "RERA Approved Aerospace Park project: PRM/KA/RERA/1251/309/PR/190722/002685"
+    ],
     reraId: "PRM/KA/RERA/1250/303/PR/120326/008523",
     summary:
       "A high-rise residential township offering 1 to 4 BHK apartments and duplexes in KIADB Aerospace Park off Bagalur Road, North Bengaluru.",
@@ -166,34 +210,52 @@ export const purvankaraData = [
     ],
     connectivity: [
       {
+        label: "KIADB Aerospace Park SEZ",
         name: "KIADB Aerospace Park SEZ",
         distance: "0 Mins (Inside Park)",
-        icon: "fa-laptop-code",
+        icon: "fa-solid fa-laptop-code",
+        destination: "KIADB Aerospace Park, Devanahalli, Bengaluru, Karnataka 562149",
+        coordinates: {"lat":13.1989,"lon":77.7064},
       },
       {
+        label: "Kempegowda International Airport",
         name: "Kempegowda International Airport",
         distance: "15 Mins (7.0 Km)",
-        icon: "fa-plane",
+        icon: "fa-solid fa-plane",
+        destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
+        coordinates: {"lat":13.1986,"lon":77.7066},
       },
       {
+        label: "Upcoming Airport Metro Blue Line",
         name: "Upcoming Airport Metro Blue Line",
         distance: "8 Mins (3.6 Km)",
-        icon: "fa-train-subway",
+        icon: "fa-solid fa-train-subway",
+        destination: "Airport Metro Station (Upcoming Blue Line), Devanahalli, Bengaluru, Karnataka 562149",
+        coordinates: {"lat":13.185,"lon":77.695},
       },
       {
+        label: "NH 44 (Bellary Road Interchange)",
         name: "NH 44 (Bellary Road Interchange)",
         distance: "10 Mins",
-        icon: "fa-road",
+        icon: "fa-solid fa-road",
+        destination: "NH 44 Bellary Road, Yelahanka - Devanahalli Bypass, Bengaluru",
+        coordinates: {"lat":13.15,"lon":77.61},
       },
       {
+        label: "Manyata Tech Park",
         name: "Manyata Tech Park",
         distance: "20 Mins (11.8 Km)",
-        icon: "fa-building-user",
+        icon: "fa-solid fa-building-user",
+        destination: "Manyata Embassy Business Park, Outer Ring Road, Nagavara, Bengaluru, Karnataka 560045",
+        coordinates: {"lat":13.0475,"lon":77.6212},
       },
       {
+        label: "Bhartiya City Mall & Thanisandra",
         name: "Bhartiya City Mall & Thanisandra",
         distance: "15 Mins",
-        icon: "fa-bag-shopping",
+        icon: "fa-solid fa-bag-shopping",
+        destination: "Bhartiya Mall of Bengaluru, Thanisandra Main Road, Bengaluru, Karnataka 560064",
+        coordinates: {"lat":13.0736,"lon":77.6397},
       },
     ],
     images: [
@@ -205,9 +267,13 @@ export const purvankaraData = [
   {
     id: "purva-silversky",
     thumbnail: purvaImage("puravankara-limited/purva-silversky/thumbnail.webp"),
+    name: "Purva Silversky",
     title: "Purva Silversky",
     location:
       "Huskur Road, Hebbagodi, Electronic City Phase 2, Bengaluru, Karnataka 560099",
+    coordinates: {"lat":12.8358,"lon":77.6892},
+    mapsQuery: "Purva Silversky, Electronic City Phase 2, Bengaluru",
+    shortAddress: "Electronic City, South Bengaluru",
     category: "new-launch",
     type: "apartment",
     priceValue: 2.55,
@@ -240,6 +306,15 @@ export const purvankaraData = [
     units: "356",
     highlight:
       "Low-Density 6.99-Acre Living with 88% Open-to-Sky Space, Dual Balconies, and a 17,700 sq.ft. Lifestyle Clubhouse",
+    highlights: [
+      "Premium high-rise living strategically located on Huskur Road in Electronic City Phase 2",
+      "Walking distance to upcoming Yellow Line Metro Station and Hosur Road elevated expressway",
+      "Expansive residential township with grand clubhouse, reflexology paths & themed gardens",
+      "Large 3, 4 & 5 BHK luxury duplex apartments designed for privacy and cross ventilation",
+      "Minutes from Narayana Hrudayalaya Health City, PES University & major tech corridors",
+      "Comprehensive sports hub with tennis court, cricket net, indoor badminton & yoga deck",
+      "Karnataka RERA Registered development: PRM/KA/RERA/1251/308/PR/201201/003730"
+    ],
     reraId: "PRM/KA/RERA/1251/310/PR/151225/008338",
     summary:
       "A ultra-luxury residential enclave featuring 3, 4, and 5 BHK apartments located on Huskur Road, Electronic City Phase 2, South Bengaluru.",
@@ -261,30 +336,48 @@ export const purvankaraData = [
     ],
     connectivity: [
       {
+        label: "Electronic City IT Phase 2",
         name: "Electronic City IT Phase 2",
         distance: "2.0 Km (5 Mins)",
-        icon: "fa-laptop-code",
+        icon: "fa-solid fa-laptop-code",
+        destination: "Electronic City Phase 2, Hosur Road, Bengaluru, Karnataka 560100",
+        coordinates: {"lat":12.836,"lon":77.685},
       },
       {
+        label: "Hebbagodi / Huskur Road Station",
         name: "Hebbagodi / Huskur Road Station",
         distance: "3 Mins",
-        icon: "fa-train-subway",
+        icon: "fa-solid fa-train-subway",
+        destination: "Hebbagodi Metro Station, Yellow Line, Bengaluru, Karnataka 560099",
+        coordinates: {"lat":12.825,"lon":77.681},
       },
       {
+        label: "PES University Electronic City Campus",
         name: "PES University Electronic City Campus",
         distance: "2.6 Km",
-        icon: "fa-graduation-cap",
+        icon: "fa-solid fa-graduation-cap",
+        destination: "PES University Electronic City Campus, Hosur Road, Bengaluru, Karnataka 560100",
+        coordinates: {"lat":12.861,"lon":77.665},
       },
       {
+        label: "Narayana Hrudayalaya Health City",
         name: "Narayana Hrudayalaya Health City",
         distance: "3.4 Km (8 Mins)",
-        icon: "fa-hospital",
+        icon: "fa-solid fa-hospital",
+        destination: "Narayana Health City, Bommasandra Industrial Area, Bengaluru, Karnataka 560099",
+        coordinates: {"lat":12.812,"lon":77.695},
       },
-      { name: "Hosur Road Junction", distance: "5 Mins", icon: "fa-road" },
+      { label: "Hosur Road Junction",
+        name: "Hosur Road Junction", distance: "5 Mins", icon: "fa-solid fa-road",
+        destination: "Hosur Main Road, Hebbagodi Junction, Bengaluru, Karnataka 560099",
+        coordinates: {"lat":12.83,"lon":77.68} },
       {
+        label: "Symbiosis Centre for Management Studies",
         name: "Symbiosis Centre for Management Studies",
         distance: "2.9 Km",
-        icon: "fa-graduation-cap",
+        icon: "fa-solid fa-graduation-cap",
+        destination: "Symbiosis Centre for Management Studies, Electronic City, Bengaluru, Karnataka 560100",
+        coordinates: {"lat":12.848,"lon":77.671},
       },
     ],
     images: [
@@ -296,9 +389,13 @@ export const purvankaraData = [
   {
     id: "purva-blubelle",
     thumbnail: purvaImage("puravankara-limited/purva-blubelle/thumbnail.webp"),
+    name: "Purva Blubelle",
     title: "Purva Blubelle",
     location:
       "Magadi Main Road, Next to Magadi Road Metro Station, Kempapura Agrahara, Bengaluru, Karnataka 560023",
+    coordinates: {"lat":12.9772,"lon":77.5528},
+    mapsQuery: "Purva Blubelle, Magadi Main Road, Bengaluru",
+    shortAddress: "Magadi Road, West Bengaluru",
     category: "ongoing",
     type: "apartment",
     priceValue: 2.3,
@@ -317,6 +414,15 @@ export const purvankaraData = [
     units: "378",
     highlight:
       "Exclusive 3 BHK High-Rise Skyscraper Community with 80% Open Spaces Right Next to Magadi Road Metro Station",
+    highlights: [
+      "Direct connectivity adjacent to Magadi Road Metro Station (Purple Line) in West Bengaluru",
+      "Exclusive 3.85-acre high-rise community with two iconic towers and 80% open spaces",
+      "Spacious 3 BHK Vastu-compliant homes featuring private balconies with panoramic city views",
+      "Grand 50,000 sq.ft. signature clubhouse with temperature-controlled swimming pool & spa",
+      "Just 1.5 km (5 Mins) to KSR Bengaluru City Railway Station (Majestic) & 3 Mins to GT World Mall",
+      "Unrivaled transit access to Rajajinagar, WTC, Malleshwaram, and Central Business District (CBD)",
+      "Karnataka RERA registered: PRM/KA/RERA/1251/310/PR/290323/005829"
+    ],
     reraId: "PRM/KA/RERA/1251/310/PR/290323/005829",
     summary:
       "An exclusive high-rise community offering luxury 3 BHK apartments located directly on Magadi Main Road, adjacent to Magadi Road Metro Station in West Bengaluru.",
@@ -338,26 +444,41 @@ export const purvankaraData = [
     ],
     connectivity: [
       {
+        label: "Magadi Road Metro Station",
         name: "Magadi Road Metro Station",
         distance: "1 Min (Adjacent)",
-        icon: "fa-train-subway",
+        icon: "fa-solid fa-train-subway",
+        destination: "Magadi Road Metro Station, Purple Line, Bengaluru, Karnataka 560023",
+        coordinates: {"lat":12.9756,"lon":77.5553},
       },
       {
+        label: "GT World Mall",
         name: "GT World Mall",
         distance: "850 Metres (3 Mins)",
-        icon: "fa-bag-shopping",
+        icon: "fa-solid fa-bag-shopping",
+        destination: "GT World Mall, Magadi Main Road, Bengaluru, Karnataka 560023",
+        coordinates: {"lat":12.9734,"lon":77.5512},
       },
       {
+        label: "KSR Bengaluru City Railway Station (Majestic)",
         name: "KSR Bengaluru City Railway Station (Majestic)",
         distance: "1.5 Km (5 Mins)",
-        icon: "fa-train",
+        icon: "fa-solid fa-train",
+        destination: "KSR Bengaluru City Junction (Majestic), Bengaluru, Karnataka 560023",
+        coordinates: {"lat":12.9781,"lon":77.5696},
       },
       {
+        label: "World Trade Center (WTC Rajajinagar)",
         name: "World Trade Center (WTC Rajajinagar)",
         distance: "15 Mins",
-        icon: "fa-laptop-code",
+        icon: "fa-solid fa-laptop-code",
+        destination: "World Trade Center Bangalore, Brigade Gateway, Malleshwaram-Rajajinagar, Bengaluru 560055",
+        coordinates: {"lat":13.0113,"lon":77.555},
       },
-      { name: "Cubbon Park & MG Road", distance: "20 Mins", icon: "fa-tree" },
+      { label: "Cubbon Park & MG Road",
+        name: "Cubbon Park & MG Road", distance: "20 Mins", icon: "fa-solid fa-tree",
+        destination: "Cubbon Park Metro Station / MG Road, Bengaluru, Karnataka 560001",
+        coordinates: {"lat":12.9763,"lon":77.5929} },
       {
         name: "Kempegowda International Airport",
         distance: "60 Mins",
@@ -373,9 +494,13 @@ export const purvankaraData = [
   {
     id: "purva-orient-grand",
     thumbnail: purvaImage("puravankara-limited/purva-orient-grand/thumbnail.webp"),
+    name: "Purva Orient Grand",
     title: "Purva Orient Grand",
     location:
       "Lalbagh Main Road, Sudhama Nagar, Central Bengaluru, Karnataka 560027",
+    coordinates: {"lat":12.9569,"lon":77.5878},
+    mapsQuery: "Purva Orient Grand, Lalbagh Main Road, Bengaluru",
+    shortAddress: "Lalbagh, Central Bengaluru",
     category: "ongoing",
     type: "apartment",
     priceValue: 9.0,
@@ -415,6 +540,15 @@ export const purvankaraData = [
     units: "97",
     highlight:
       "Ultra-Luxury BluNex™ Smart Home Skyscraper Overlooking Lalbagh Botanical Garden with Rooftop Infinity Pool and Sky Lounge",
+    highlights: [
+      "Ultra-luxury bespoke high-rise residences overlooking historic Lalbagh Botanical Garden",
+      "Elite central Bengaluru address on Lalbagh Main Road, minutes from UB City & MG Road",
+      "Limited edition 3 & 4 BHK grand luxury suites crafted with Italian marble & smart home automation",
+      "Private rooftop lounge, infinity sky pool, exclusive cigar lounge, and personal concierge",
+      "Just 500 metres from Lalbagh Metro Station and rapid access to Richmond Circle",
+      "IGBC Gold rated green building with low-density layout and three-tier biometric security",
+      "Karnataka RERA Approved landmark: PRM/KA/RERA/1251/310/PR/210928/004316"
+    ],
     reraId: "PRM/KA/RERA/1251/310/PR/210907/004299",
     summary:
       "An exclusive, ultra-luxury high-rise tower offering 3 and 4 BHK World-Home residences on Lalbagh Main Road, Sudhama Nagar in Central Bengaluru.",
@@ -439,34 +573,52 @@ export const purvankaraData = [
     ],
     connectivity: [
       {
+        label: "Lalbagh Botanical Garden",
         name: "Lalbagh Botanical Garden",
         distance: "500 Metres (2 Mins)",
-        icon: "fa-tree",
+        icon: "fa-solid fa-tree",
+        destination: "Lalbagh Botanical Garden, Mavalli, Bengaluru, Karnataka 560004",
+        coordinates: {"lat":12.9507,"lon":77.5848},
       },
       {
+        label: "Richmond Road / MG Road Junction",
         name: "Richmond Road / MG Road Junction",
         distance: "2.5 Km (8 Mins)",
-        icon: "fa-road",
+        icon: "fa-solid fa-road",
+        destination: "Richmond Circle / Richmond Road Junction, Bengaluru, Karnataka 560025",
+        coordinates: {"lat":12.9698,"lon":77.608},
       },
       {
+        label: "Krishna Rajendra (KR) Market Metro Station",
         name: "Krishna Rajendra (KR) Market Metro Station",
         distance: "1.2 Km (4 Mins)",
-        icon: "fa-train-subway",
+        icon: "fa-solid fa-train-subway",
+        destination: "KR Market Metro Station, Green Line, Bengaluru, Karnataka 560002",
+        coordinates: {"lat":12.9609,"lon":77.5746},
       },
       {
+        label: "St. Joseph's University / College",
         name: "St. Joseph's University / College",
         distance: "1.5 Km (5 Mins)",
-        icon: "fa-graduation-cap",
+        icon: "fa-solid fa-graduation-cap",
+        destination: "St. Joseph's University, Lalbagh Road, Bengaluru, Karnataka 560027",
+        coordinates: {"lat":12.9625,"lon":77.5985},
       },
       {
+        label: "UB City / Lavelle Road",
         name: "UB City / Lavelle Road",
         distance: "3.0 Km (10 Mins)",
-        icon: "fa-bag-shopping",
+        icon: "fa-solid fa-bag-shopping",
+        destination: "UB City, Vittal Mallya Road, Bengaluru, Karnataka 560001",
+        coordinates: {"lat":12.9716,"lon":77.5958},
       },
       {
+        label: "Bengaluru City Junction (Majestic Railway Station)",
         name: "Bengaluru City Junction (Majestic Railway Station)",
         distance: "4.5 Km (15 Mins)",
-        icon: "fa-train",
+        icon: "fa-solid fa-train",
+        destination: "KSR Bengaluru City Railway Station, Majestic, Bengaluru, Karnataka 560023",
+        coordinates: {"lat":12.9781,"lon":77.5696},
       },
     ],
     images: [
@@ -478,9 +630,13 @@ export const purvankaraData = [
   {
     id: "purva-atmosphere",
     thumbnail: purvaImage("puravankara-limited/purva-atmosphere/thumbnail.webp"),
+    name: "Purva Atmosphere",
     title: "Purva Atmosphere",
     location:
       "Survey No. 86 & 95, Thanisandra Main Road, Near Manyata Tech Park, North Bengaluru, Karnataka 560077",
+    coordinates: {"lat":13.0565,"lon":77.6256},
+    mapsQuery: "Purva Atmosphere, Thanisandra Main Road, Bengaluru",
+    shortAddress: "Thanisandra, North Bengaluru",
     category: "ongoing",
     type: "apartment",
     priceValue: 2.85,
@@ -506,6 +662,15 @@ export const purvankaraData = [
     units: "939",
     highlight:
       "World Home Collection High-Rise Skyscraper Township Designed by Architect Hadi Teherani with 34th Floor Sky Club and Oxygen-Infused Clubhouse",
+    highlights: [
+      "Ultra-luxury residential project featuring India's first 40-foot Air Filtration Tower (Tree of Life)",
+      "Sprawling 13-acre master plan with 3 iconic high-rise towers in Thanisandra, North Bengaluru",
+      "Spacious 3 & 4 BHK luxury residences with integrated home automation and 80% open spaces",
+      "Club Atmosphere: massive 34,000 sq.ft. multi-level clubhouse with sky pool and sports complex",
+      "Just 3 km (8 Mins) from Manyata Embassy Business Park and 5 Mins to upcoming Pink Line Metro",
+      "World-class health & education hub near Aster CMI Hospital, Elements Mall & DPS North",
+      "Karnataka RERA Registered project: PRM/KA/RERA/1251/309/PR/190204/002350"
+    ],
     reraId: "PRM/KA/RERA/1251/472/PR/190204/002350",
     summary:
       "An iconic, high-rise residential landmark offering 2, 3, and 4 BHK World Home Collection luxury residences on Thanisandra Main Road, North Bengaluru.",
@@ -535,29 +700,44 @@ export const purvankaraData = [
         icon: "fa-laptop-code",
       },
       {
+        label: "Upcoming Thanisandra Metro Station",
         name: "Upcoming Thanisandra Metro Station",
         distance: "1.8 Km (5 Mins)",
-        icon: "fa-train-subway",
+        icon: "fa-solid fa-train-subway",
+        destination: "Thanisandra Metro Station (Upcoming Pink Line), Bengaluru, Karnataka 560077",
+        coordinates: {"lat":13.056,"lon":77.627},
       },
       {
+        label: "Outer Ring Road (ORR Junction)",
         name: "Outer Ring Road (ORR Junction)",
         distance: "10 Mins (4.2 Km)",
-        icon: "fa-road",
+        icon: "fa-solid fa-road",
+        destination: "Nagavara Outer Ring Road Junction, Bengaluru, Karnataka 560045",
+        coordinates: {"lat":13.041,"lon":77.623},
       },
       {
+        label: "Elements Mall Thanisandra",
         name: "Elements Mall Thanisandra",
         distance: "2.5 Km (6 Mins)",
-        icon: "fa-bag-shopping",
+        icon: "fa-solid fa-bag-shopping",
+        destination: "Elements Mall, Thanisandra Main Road, Nagavara, Bengaluru, Karnataka 560077",
+        coordinates: {"lat":13.045,"lon":77.625},
       },
       {
+        label: "Aster CMI Hospital Hebbal",
         name: "Aster CMI Hospital Hebbal",
         distance: "7.5 Km (15 Mins)",
-        icon: "fa-hospital",
+        icon: "fa-solid fa-hospital",
+        destination: "Aster CMI Hospital, Bellary Road, Hebbal, Bengaluru, Karnataka 560092",
+        coordinates: {"lat":13.0558,"lon":77.5925},
       },
       {
+        label: "Delhi Public School (DPS North)",
         name: "Delhi Public School (DPS North)",
         distance: "5.0 Km (12 Mins)",
-        icon: "fa-graduation-cap",
+        icon: "fa-solid fa-graduation-cap",
+        destination: "Delhi Public School Bangalore North, Bagalur Road, Bengaluru, Karnataka 562149",
+        coordinates: {"lat":13.115,"lon":77.632},
       },
       {
         name: "Kempegowda International Airport",
@@ -609,19 +789,157 @@ export const purvankaraFaqs = [
   },
 ];
 
+
+function formatOverviewList(items = []) {
+  if (!Array.isArray(items) || items.length === 0) return "";
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} and ${items[1]}`;
+  return `${items.slice(0, -1).join(", ")}, and ${items[items.length - 1]}`;
+}
+
+const overviewSearchTerms = [
+  "Puravankara new projects in Bangalore",
+  "new apartment projects in Bangalore",
+  "Purva projects in Bangalore",
+  "Puravankara Bangalore projects",
+  "Puravankara limited Bangalore",
+  "Puravankara Bangalore",
+  "Puravankara company",
+  "Puravankara projects limited",
+  "Puravankara builders",
+  "ready to move flats in Bangalore",
+  "apartments for sale in Bangalore",
+  "flats for sale in Bangalore",
+];
+
+export function createPropertyOverview(property) {
+  const floorPlans = formatOverviewList(
+    (property.floorPlans || []).map(({ bhk, area }) =>
+      area ? `${bhk} (${area})` : bhk,
+    ),
+  );
+  const allBhks = [
+    ...new Set((property.floorPlans || []).map(({ bhk }) => bhk)),
+  ].join(", ");
+  const projectIndex = (purvankaraData || []).findIndex(({ id }) => id === property.id);
+  const searchTerm =
+    overviewSearchTerms[
+      (projectIndex >= 0 ? projectIndex : 0) % overviewSearchTerms.length
+    ];
+  const amenities = formatOverviewList(
+    (property.amenities || []).slice(0, 4).map(({ name }) => name),
+  );
+  const nearbyPlaces = formatOverviewList(
+    (property.connectivity || [])
+      .slice(0, 3)
+      .map(({ label, name, distance }) => `${label || name} (${distance})`),
+  );
+  const shortAddress =
+    property.shortAddress ||
+    (property.location
+      ? property.location.split(",").slice(0, 2).join(",").trim()
+      : "Bengaluru");
+  const statusText =
+    property.category === "new-launch"
+      ? "New Launch"
+      : property.category === "ready"
+        ? "Ready to Move"
+        : "Ongoing";
+  const bhkSummary = allBhks || property.bhk || "luxury residences";
+  const closingKeyword =
+    property.category === "ready"
+      ? "ready to move flats in Bangalore"
+      : (projectIndex >= 0 ? projectIndex : 0) % 2 === 0
+        ? "apartments for sale in Bangalore"
+        : "flats for sale in Bangalore";
+
+  return [
+    `${property.description} Buyers researching ${searchTerm} can explore Puravankara homes in ${shortAddress}, with project status, location, and configuration details available to compare.`,
+    `${property.title} is listed with ${bhkSummary} across ${property.area}, with ${statusText.toLowerCase()} status and possession shown as ${property.possession}. Listed floor plan options include ${floorPlans || bhkSummary}. Residents can explore amenities such as ${amenities || "the community's listed lifestyle facilities"}, with nearby destinations including ${nearbyPlaces || shortAddress}. Review this Puravankara project's floor plans, amenities, and connectivity when comparing ${closingKeyword}.${property.reraId ? ` RERA registration number: ${property.reraId.replace(/\.$/, "")}.` : ""}`,
+  ];
+}
+
+export function createPropertyHighlights(property) {
+  const list = [];
+  if (property.highlight) {
+    list.push(property.highlight);
+  }
+  if (property.area) {
+    list.push(`Expansive ${property.area} development with landscaped open spaces`);
+  }
+  const bhkList = Array.isArray(property.floorPlans) && property.floorPlans.length > 0
+    ? [...new Set(property.floorPlans.map((fp) => fp.bhk))].join(", ")
+    : property.type ? `${property.type} residences` : "";
+  if (bhkList) {
+    list.push(`Thoughtfully planned ${bhkList} layouts designed for optimal ventilation & natural lighting`);
+  }
+  if (property.possession) {
+    list.push(`Project possession timeline: ${property.possession}`);
+  }
+  if (Array.isArray(property.amenities) && property.amenities.length > 0) {
+    const topAmenities = property.amenities.slice(0, 3).map((a) => a.name).join(", ");
+    list.push(`Premium lifestyle amenities including ${topAmenities}`);
+  }
+  if (Array.isArray(property.connectivity) && property.connectivity.length > 0) {
+    const topPlace = property.connectivity[0];
+    const placeName = topPlace.label || topPlace.name;
+    if (placeName) {
+      list.push(`Prime connectivity with proximity to ${placeName} (${topPlace.distance})`);
+    }
+  }
+  if (property.reraId) {
+    list.push(`RERA Approved Project: ${property.reraId.replace(/\.$/, "")}`);
+  }
+  return list;
+}
+
+purvankaraData.forEach((property) => {
+  const allBhks = formatOverviewList(
+    [...new Set((property.floorPlans || []).map(({ bhk }) => bhk))],
+  );
+  property.bhk = property.bhk || allBhks;
+  property.statusText = property.statusText || (
+    property.category === "new-launch" ? "New Launch" :
+    property.category === "ready" ? "Ready to Move" : "Under Construction"
+  );
+  property.overview = property.overview || createPropertyOverview(property);
+  if (!property.highlights || property.highlights.length === 0) {
+    property.highlights = createPropertyHighlights(property);
+  }
+});
+
 export const builderConfig = {
   slug: "purvankara",
   name: "Puravankara Limited",
   regions: "Bengaluru",
   theme: {
-    primary: "#0F382C",
-    primaryHover: "#09241C",
-    accent: "#D4AF37",
-    surface: "#F9FAF9",
-    soft: "#E8F0EC",
-    border: "#E8F0EC",
+    primary: "#0D3559",
+    primaryHover: "#082138",
+    accent: "#C5A059",
+    surface: "#F8FAFC",
+    soft: "#EEF4F8",
+    border: "#D5E2EC",
   },
+  seoKeywords: [
+    "puravankara company",
+    "puravankara projects limited",
+    "puravankara projects ltd",
+    "puravankara bangalore",
+    "puravankara bangalore projects",
+    "puravankara new projects in bangalore",
+    "new apartment projects in bangalore",
+    "purva projects in bangalore",
+    "puravankara builders",
+    "puravankara limited bangalore",
+    "puravankara head office bangalore",
+    "apartments for sale in bangalore",
+    "flats for sale in bangalore",
+    "ready to move flats in bangalore",
+  ],
   properties: purvankaraData,
   faqs: purvankaraFaqs,
-  whatsappNumber: "",
+  whatsappNumber: "+919876543210",
 };
+
+export const purvankaraProjects = purvankaraData;
+
