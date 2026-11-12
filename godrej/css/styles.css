@@ -4272,25 +4272,44 @@ footer a:hover {
 
 .phone-input-group.is-invalid,
 .phone-input-group:has(.phone-number-input.is-invalid) {
-  animation: fieldShake 0.35s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation: fieldShake 0.35s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+/* Elevate stacking context when country dropdown is open so it renders cleanly above subsequent form rows */
+.country-dropdown-open,
+.form-group.dropdown-open,
+.phone-input-group.dropdown-open,
+.country-select.is-open,
+.grid.dropdown-open,
+.form-group:has(.country-select-trigger[aria-expanded="true"]),
+.form-group:has(.country-select-options:not([hidden])),
+.phone-input-group:has(.country-select-trigger[aria-expanded="true"]),
+.country-select:has(.country-select-trigger[aria-expanded="true"]),
+form .grid:has(.country-select-trigger[aria-expanded="true"]),
+form .grid:has(.country-select-options:not([hidden])) {
+  z-index: 1200 !important;
+  position: relative !important;
+  transform: none !important;
+  animation: none !important;
 }
 
 .country-select-options {
   position: absolute;
-  z-index: 1000;
+  z-index: 1300 !important;
   top: calc(100% + 4px);
   left: 0;
-  min-width: 110px;
+  min-width: 140px;
   max-height: 230px;
   overflow-y: auto;
   overscroll-behavior: contain;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  background: #FAF9F6;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
   border: 1px solid #D6D4CD;
-  border-radius: 6px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14), 0 2px 6px rgba(0, 0, 0, 0.06);
-  padding: 4px;
+  border-radius: 8px;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.22), 0 4px 12px rgba(15, 23, 42, 0.08);
+  padding: 5px;
   list-style: none;
   margin: 0;
 }
@@ -4445,10 +4464,11 @@ textarea.is-invalid,
   border-color: #EF4444 !important;
   background-color: #FEF2F2 !important;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
-  animation: fieldShake 0.35s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation: fieldShake 0.35s cubic-bezier(0.36, 0.07, 0.19, 0.97);
 }
 
 @keyframes fieldShake {
+  0%, 100% { transform: translate3d(0, 0, 0); }
   10%, 90% { transform: translate3d(-1px, 0, 0); }
   20%, 80% { transform: translate3d(2px, 0, 0); }
   30%, 50%, 70% { transform: translate3d(-3px, 0, 0); }
@@ -4473,7 +4493,6 @@ textarea.is-invalid,
   font-size: 0.82rem;
   flex-shrink: 0;
   color: #DC2626;
-}
 }
 
 @keyframes fadeInError {

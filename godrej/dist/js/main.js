@@ -1707,6 +1707,25 @@ function initCountrySelectors() {
   });
 }
 
+function closeAllCountryDropdowns(exceptListbox = null) {
+  document.querySelectorAll('.country-select-options:not([hidden])').forEach(el => {
+    if (el !== exceptListbox) {
+      el.hidden = true;
+      el.classList.remove('opens-up');
+      const sel = el.closest('.country-select');
+      sel?.querySelector('.country-select-trigger')?.setAttribute('aria-expanded', 'false');
+      sel?.classList.remove('is-open');
+      const grp = el.closest('.phone-input-group');
+      grp?.classList.remove('dropdown-open');
+      const fg = el.closest('.form-group') || grp?.parentElement;
+      fg?.classList.remove('dropdown-open');
+      if (fg?.parentElement?.classList.contains('grid')) {
+        fg.parentElement.classList.remove('dropdown-open');
+      }
+    }
+  });
+}
+
 function handleCountryDropdownClick(event) {
   const select = event.target.closest('.country-select');
   const trigger = event.target.closest('.country-select-trigger');
@@ -1717,18 +1736,39 @@ function handleCountryDropdownClick(event) {
     const open = trigger.getAttribute('aria-expanded') === 'true';
 
     // Close all other open country dropdowns
-    document.querySelectorAll('.country-select-options:not([hidden])').forEach(el => {
-      if (el !== listbox) {
-        el.hidden = true;
-        el.classList.remove('opens-up');
-        el.closest('.country-select')?.querySelector('.country-select-trigger')?.setAttribute('aria-expanded', 'false');
+    closeAllCountryDropdowns(listbox);
+
+    const group = select.closest('.phone-input-group');
+    const formGroup = select.closest('.form-group') || group?.parentElement;
+    const gridRow = formGroup?.parentElement;
+
+    if (open) {
+      listbox.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+      select.classList.remove('is-open');
+      group?.classList.remove('dropdown-open');
+      formGroup?.classList.remove('dropdown-open');
+      if (gridRow?.classList.contains('grid')) gridRow.classList.remove('dropdown-open');
+    } else {
+      // Clear any active validation error on this phone field immediately
+      if (group) {
+        group.classList.remove('is-invalid');
+        const phoneInput = group.querySelector('input[type="tel"]');
+        if (phoneInput) phoneInput.classList.remove('is-invalid');
+        group.classList.add('dropdown-open');
       }
-    });
+      if (formGroup) {
+        formGroup.classList.add('dropdown-open');
+        formGroup.querySelector('.field-error-msg')?.remove();
+      }
+      if (gridRow && gridRow.classList.contains('grid')) {
+        gridRow.classList.add('dropdown-open');
+      }
+      select.classList.add('is-open');
 
-    listbox.hidden = open;
-    trigger.setAttribute('aria-expanded', String(!open));
+      listbox.hidden = false;
+      trigger.setAttribute('aria-expanded', 'true');
 
-    if (!open) {
       const rect = trigger.getBoundingClientRect();
       const menuHeight = Math.min(COUNTRY_CODES.length * 36 + 10, 230);
       const spaceBelow = window.innerHeight - rect.bottom;
@@ -1770,8 +1810,16 @@ function handleCountryDropdownClick(event) {
     const activeTrigger = select.querySelector('.country-select-trigger');
     if (activeTrigger) activeTrigger.setAttribute('aria-expanded', 'false');
 
-    // Update phone input placeholder, maxlength, and validate current value for new country
+    select.classList.remove('is-open');
     const group = select.closest('.phone-input-group');
+    group?.classList.remove('dropdown-open');
+    const formGroup = select.closest('.form-group') || group?.parentElement;
+    formGroup?.classList.remove('dropdown-open');
+    if (formGroup?.parentElement?.classList.contains('grid')) {
+      formGroup.parentElement.classList.remove('dropdown-open');
+    }
+
+    // Update phone input placeholder, maxlength, and validate current value for new country
     const phoneInput = group?.querySelector('input[type="tel"]');
     if (phoneInput) {
       phoneInput.setAttribute('maxlength', String(item.max));
@@ -1792,8 +1840,8 @@ function handleCountryDropdownClick(event) {
       } else {
         phoneInput.value = digits.slice(0, item.max);
         phoneInput.classList.remove('is-invalid');
-        group.classList.remove('is-invalid');
-        (group.closest('.form-group') || group.parentElement)?.querySelector('.field-error-msg')?.remove();
+        group?.classList.remove('is-invalid');
+        formGroup?.querySelector('.field-error-msg')?.remove();
       }
       phoneInput.focus();
     }
@@ -1801,11 +1849,7 @@ function handleCountryDropdownClick(event) {
   }
 
   // Dismiss open country dropdowns on click outside
-  document.querySelectorAll('.country-select-options:not([hidden])').forEach(listbox => {
-    listbox.hidden = true;
-    listbox.classList.remove('opens-up');
-    listbox.closest('.country-select')?.querySelector('.country-select-trigger')?.setAttribute('aria-expanded', 'false');
-  });
+  closeAllCountryDropdowns();
 }
 
 function handleCountryDropdownKeydown(event) {
@@ -1822,9 +1866,7 @@ function handleCountryDropdownKeydown(event) {
   }
 
   if (event.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
-    listbox.hidden = true;
-    listbox.classList.remove('opens-up');
-    trigger.setAttribute('aria-expanded', 'false');
+    closeAllCountryDropdowns();
     trigger.focus();
     return;
   }

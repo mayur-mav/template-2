@@ -39,13 +39,12 @@ export const birlaData = [
       "28-Acre Integrated Township with On-Premises White Marble Birla Mandir and Dual 58,000 sq.ft. Clubhouses",
     reraId: "PRM/KA/RERA/1251/446/PR/060225/007487",
     highlights: [
-      "Grand 28-acre integrated township in Sarjapur, East Bengaluru",
-      "On-premises pure white marble Birla Mandir dedicated to spiritual serenity",
-      "Dual grand clubhouses spanning over 58,000 sq. ft. of luxury lifestyle amenities",
-      "13 high-rise towers rising up to 27 floors with 80% open landscaped spaces",
-      "Vastu-compliant 1 to 4.5 BHK luxury homes designed for natural ventilation",
-      "Prime connectivity to Wipro SEZ, RGA Tech Park, and Sarjapur Road",
-      "Karnataka RERA approved development: PRM/KA/RERA/1251/446/PR/060225/007487"
+      "The architecture uses a \"Life Designed\" philosophy",
+      "Design focuses on breeze harvesting and ventilation",
+      "Over 75% of the project area dedicated to open spaces",
+      "Two expansive clubhouses, the North and South clubs",
+      "25+ amenities for comfort and community living",
+      "Central landscape designed to be car-free"
     ],
     summary:
       "A grand 28-acre residential township featuring 1 to 4.5 BHK luxury apartments located off Sarjapur Road, North-East Bengaluru.",
@@ -71,7 +70,7 @@ export const birlaData = [
         name: "Sarjapur Road",
         destination: "Sarjapur Main Road, Bengaluru, Karnataka 562125",
         coordinates: { lat: 12.8795, lon: 77.7475 },
-        distance: "3.5 km",
+        distance: "5.0 km",
         icon: "fa-solid fa-road",
       },
       {
@@ -79,7 +78,7 @@ export const birlaData = [
         name: "Wipro SEZ Campus (Kodathi)",
         destination: "Wipro Corporate Office, Sarjapur Main Road, Doddakannelli, Bengaluru, Karnataka 560035",
         coordinates: { lat: 12.909, lon: 77.7005 },
-        distance: "3.6 km",
+        distance: "6.0 km",
         icon: "fa-solid fa-laptop-code",
       },
       {
@@ -87,7 +86,7 @@ export const birlaData = [
         name: "RGA Tech Park",
         destination: "RGA Tech Park, Sarjapur Main Road, Carmelaram, Bengaluru, Karnataka 560035",
         coordinates: { lat: 12.9085, lon: 77.7028 },
-        distance: "4.2 km",
+        distance: "5.3 km",
         icon: "fa-solid fa-building-user",
       },
       {
@@ -101,9 +100,9 @@ export const birlaData = [
       {
         label: "Electronic City IT Hub",
         name: "Electronic City IT Hub",
-        destination: "Electronic City Phase 1, Hosur Road, Bengaluru, Karnataka 560100",
+        destination: "Electronic City, 25, Hosur Rd, Madiwala New Extension, Madiwala, 1st Stage, BTM 1st Stage, Bengaluru, Doddanagamangala Village, Karnataka 560100",
         coordinates: { lat: 12.8455, lon: 77.6625 },
-        distance: "11.2 km",
+        distance: "7.0 km",
         icon: "fa-solid fa-laptop-code",
       },
       {
@@ -111,7 +110,7 @@ export const birlaData = [
         name: "Decathlon Sarjapur",
         destination: "Decathlon Sports India, Sarjapur Main Road, Carmelaram, Bengaluru, Karnataka 560035",
         coordinates: { lat: 12.9065, lon: 77.705 },
-        distance: "4.8 km",
+        distance: "4.0 km",
         icon: "fa-solid fa-bag-shopping",
       },
     ],
@@ -171,13 +170,11 @@ export const birlaData = [
       "Low-Density Township Overlooking 250 Acres of Reserve Forest with 80% Open Space and 25,000 sq.ft. Clubhouse",
     reraId: "PRM/KA/RERA/1251/310/PR/040924/006989",
     highlights: [
-      "Low-density 10.24-acre master plan overlooking 250 acres of reserve forest",
-      "Over 80% open green space with pristine views and bird watching deck",
-      "3 iconic high-rise towers (2B+G+33 floors) and exclusive limited row houses",
-      "Grand 25,000 sq. ft. clubhouse with swimming pool, gym, yoga studio & sports courts",
-      "Signature LifeDesigned® architecture ensuring maximum natural light",
-      "Strategically located in RR Nagar just 5 minutes from Pattangere Metro Station",
-      "Karnataka RERA approved development: PRM/KA/RERA/1251/310/PR/040924/006989"
+      "IGBC pre-certified gold rated project",
+      "80% open space",
+      "40+ life designed amenities",
+      "24,000+ sq.ft. of club house",
+      "Exclusive iconic sky club at a height of 350 feet"
     ],
     summary:
       "A premier 10.24-acre residential development offering 1, 2, 3 BHK apartments and exclusive row houses in RR Nagar, South-West Bengaluru.",
@@ -203,7 +200,7 @@ export const birlaData = [
         name: "Pattangere Metro Station",
         destination: "Pattangere Metro Station, Mysore Road, Bengaluru, Karnataka 560059",
         coordinates: { lat: 12.915, lon: 77.502 },
-        distance: "2.5 km",
+        distance: "3.1 km",
         icon: "fa-solid fa-train-subway",
       },
       {
@@ -211,7 +208,7 @@ export const birlaData = [
         name: "NICE Road Junction",
         destination: "NICE Ring Road Junction, RR Nagar, Bengaluru, Karnataka 560098",
         coordinates: { lat: 12.887, lon: 77.519 },
-        distance: "2.1 km",
+        distance: "18.5 km",
         icon: "fa-solid fa-road",
       },
       {
@@ -227,7 +224,7 @@ export const birlaData = [
         name: "Global Village Tech Park",
         destination: "Global Village Tech Park, Mylasandra, Bengaluru, Karnataka 560059",
         coordinates: { lat: 12.922, lon: 77.501 },
-        distance: "3.5 km",
+        distance: "2.4 km",
         icon: "fa-solid fa-laptop-code",
       },
       {
@@ -235,7 +232,7 @@ export const birlaData = [
         name: "BGS Gleneagles Global Hospital",
         destination: "BGS Gleneagles Global Hospital, Uttarahalli Road, Kengeri, Bengaluru, Karnataka 560060",
         coordinates: { lat: 12.904, lon: 77.498 },
-        distance: "4.0 km",
+        distance: "1.4 km",
         icon: "fa-solid fa-hospital",
       },
       {
@@ -243,7 +240,7 @@ export const birlaData = [
         name: "National Public School (NPS RR Nagar)",
         destination: "National Public School, BEML Layout, RR Nagar, Bengaluru, Karnataka 560098",
         coordinates: { lat: 12.918, lon: 77.514 },
-        distance: "2.8 km",
+        distance: "3.8 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -251,7 +248,7 @@ export const birlaData = [
         name: "Gopalan Arcade Mall",
         destination: "Gopalan Arcade Mall, Mysore Road, RR Nagar, Bengaluru, Karnataka 560039",
         coordinates: { lat: 12.934, lon: 77.518 },
-        distance: "4.8 km",
+        distance: "4.2 km",
         icon: "fa-solid fa-bag-shopping",
       },
     ],
@@ -311,13 +308,12 @@ export const birlaData = [
       "Latest Phase Offering Executive Apartments & Premium Duplex Homes within the 52-Acre Township with 2.5-Acre Curated Lake Access",
     reraId: "PRM/KA/RERA/1250/303/PR/290126/008436",
     highlights: [
-      "Phase 4 within the landmark 52-acre integrated township in Devanahalli",
-      "Proximity to the 2.5-acre curated lake, water promenade & 60,000 sq. ft. clubhouse",
-      "Executive 1, 2, 3 BHK high-rise residences & premium duplex homes",
-      "Over 80% open landscaped greens, bicycle trails, and nature pods",
-      "Just 10 minutes to Kempegowda International Airport and KIADB Aerospace Park",
-      "Direct 2-minute access to NH-44 (Bellary Road Expressway)",
-      "Karnataka RERA approved development: PRM/KA/RERA/1250/303/PR/290126/008436"
+      "35 acres of open/green area",
+      "One of the lowest-density project in North Bangalore",
+      "Offers unobstructed views of the central park and tranquil water features",
+      "21,000+ Sq.Ft. state-of-the-art clubhouse",
+      "Over 30 diverse lifestyle amenities for a rich experience",
+      "Expansive lagoon with floating edge pavilions for serene living"
     ],
     summary:
       "The newly launched Phase 4 of the 52-acre Birla Trimaya township featuring 1, 2, 3 BHK apartments and duplex homes in Shettigere, Devanahalli, North Bengaluru.",
@@ -343,7 +339,7 @@ export const birlaData = [
         name: "Kempegowda International Airport",
         destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
         coordinates: { lat: 13.1986, lon: 77.7066 },
-        distance: "8.5 km",
+        distance: "6.8 km",
         icon: "fa-solid fa-plane",
       },
       {
@@ -351,7 +347,7 @@ export const birlaData = [
         name: "NH 44 (Bellary Road Expressway)",
         destination: "NH 44 Bellary Road, Devanahalli, Bengaluru, Karnataka 562157",
         coordinates: { lat: 13.201, lon: 77.682 },
-        distance: "1.5 km",
+        distance: "11.5 km",
         icon: "fa-solid fa-road",
       },
       {
@@ -359,23 +355,15 @@ export const birlaData = [
         name: "KIADB Aerospace Park & SEZ",
         destination: "KIADB Aerospace Park, Bagalur, Bengaluru, Karnataka 562149",
         coordinates: { lat: 13.175, lon: 77.712 },
-        distance: "7.0 km",
+        distance: "8.3 km",
         icon: "fa-solid fa-laptop-code",
-      },
-      {
-        label: "Upcoming Airport Metro Station",
-        name: "Upcoming Airport Metro Station",
-        destination: "Airport Metro Station, NH-44, Bengaluru, Karnataka 562157",
-        coordinates: { lat: 13.195, lon: 77.702 },
-        distance: "8.0 km",
-        icon: "fa-solid fa-train-subway",
       },
       {
         label: "Stonehill International School",
         name: "Stonehill International School",
         destination: "Stonehill International School, Tarahunise Post, Jala Hobli, Bengaluru, Karnataka 562157",
         coordinates: { lat: 13.192, lon: 77.641 },
-        distance: "6.2 km",
+        distance: "14.4 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -383,7 +371,7 @@ export const birlaData = [
         name: "Manipal Hospital Doddaballapur Road",
         destination: "Manipal Hospital, Doddaballapur Main Road, Bengaluru, Karnataka 560064",
         coordinates: { lat: 13.232, lon: 77.575 },
-        distance: "11.5 km",
+        distance: "28.4 km",
         icon: "fa-solid fa-hospital",
       },
       {
@@ -437,13 +425,13 @@ export const birlaData = [
       "LEED Pre-Certified Platinum High-Rise Twin Towers with 270-Degree Panoramic Views and 80% Open Green Space in Central West Bengaluru",
     reraId: "PRM/KA/RERA/1251/309/PR/211022/004371",
     highlights: [
-      "LEED Pre-Certified Platinum green residential development in Rajajinagar",
-      "Twin high-rise towers (B+G+31 floors) with only 393 exclusive residences",
-      "Unobstructed 270-degree panoramic skyline views across Central West Bengaluru",
-      "Signature LifeDesigned® clubhouse, mini theatre & curated sports courts",
-      "Over 80% open green spaces with specialized herb and spice gardens",
-      "Prime central location just 3 minutes from Vijayanagar Metro Station",
-      "Karnataka RERA approved development: PRM/KA/RERA/1251/309/PR/211022/004371"
+      "Location - Rajajinagar offers great vibes and energy",
+      "Connectivity - Excellent access near Majestic hub",
+      "Neighbourhood - Great social infrastructure for quality lifestyle",
+      "Architecture - Stylish designs with large windows for daylight",
+      "Twin Towers (31 floors each) that dominates the horizontal spots",
+      "Configurations with 3 Balconies",
+      "IGBC pre-certified platinum rating for eco-friendly design"
     ],
     summary:
       "A luxury high-rise residential community featuring 2, 3, 3.5, and 4.5 BHK LifeDesigned® apartments on Magadi Main Road, Rajajinagar, West Bengaluru.",
@@ -477,7 +465,7 @@ export const birlaData = [
         name: "Majestic Railway & Bus Station",
         destination: "KSR Bengaluru City Railway Station, Majestic, Bengaluru, Karnataka 560023",
         coordinates: { lat: 12.9767, lon: 77.5713 },
-        distance: "4.5 km",
+        distance: "5.3 km",
         icon: "fa-solid fa-train",
       },
       {
@@ -485,7 +473,7 @@ export const birlaData = [
         name: "Orion Mall & Brigade Gateway",
         destination: "Orion Mall, Dr Rajkumar Road, Rajajinagar, Bengaluru, Karnataka 560055",
         coordinates: { lat: 13.011, lon: 77.555 },
-        distance: "5.5 km",
+        distance: "5.2 km",
         icon: "fa-solid fa-bag-shopping",
       },
       {
@@ -509,7 +497,7 @@ export const birlaData = [
         name: "Orchids The International School",
         destination: "Orchids The International School, Vijayanagar, Bengaluru, Karnataka 560040",
         coordinates: { lat: 12.986, lon: 77.538 },
-        distance: "1.8 km",
+        distance: "1.3 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -517,7 +505,7 @@ export const birlaData = [
         name: "ISKCON Temple Rajajinagar",
         destination: "ISKCON Temple Bangalore, Hare Krishna Hill, Rajajinagar, Bengaluru, Karnataka 560010",
         coordinates: { lat: 13.0098, lon: 77.5511 },
-        distance: "5.8 km",
+        distance: "5.2 km",
         icon: "fa-solid fa-place-of-worship",
       },
     ],
@@ -576,13 +564,12 @@ export const birlaData = [
       "LEED Pre-Certified Platinum Low-Rise Duplex Villament Community with Private Gardens/Terraces and 30+ LifeDesigned® Amenities",
     reraId: "PRM/KA/RERA/1250/304/PR/190724/002725",
     highlights: [
-      "Ready-to-move low-rise, low-density duplex villament community spread across 7.9 acres",
-      "Exclusive 218 residences combining private villa luxury with gated security",
-      "Duplex homes featuring private garden or private rooftop terrace spaces",
-      "15,800+ sq. ft. exclusive clubhouse with heated swimming pool & mini theatre",
-      "Over 30 LifeDesigned® lifestyle amenities and co-working spaces",
-      "Located on Soukya Road in Whitefield near Hope Farm Metro and ITPL",
-      "Karnataka RERA approved and delivered: PRM/KA/RERA/1250/304/PR/190724/002725"
+      "Low-rise Duplex Styled Villament-based theme Project",
+      "Unparalleled lifestyle with garden cafe and co-working spaces",
+      "Enjoy a mini-theater, hammock reading, and gaming zones",
+      "Villa homes with option of private terrace or garden",
+      "15,887 sqft clubhouse",
+      "Properties with 100% power backup available"
     ],
     summary:
       "A low-density community of 3 and 4 BHK LifeDesigned® duplex villaments located on Soukya Road in Whitefield, East Bengaluru.",
@@ -608,7 +595,7 @@ export const birlaData = [
         name: "Hope Farm Junction & Metro Station",
         destination: "Hope Farm Junction Metro Station, Whitefield, Bengaluru, Karnataka 560066",
         coordinates: { lat: 12.983, lon: 77.752 },
-        distance: "5.5 km",
+        distance: "5.2 km",
         icon: "fa-solid fa-train-subway",
       },
       {
@@ -616,7 +603,7 @@ export const birlaData = [
         name: "ITPL (International Tech Park Bangalore)",
         destination: "International Tech Park Bangalore, Whitefield Main Road, Bengaluru, Karnataka 560066",
         coordinates: { lat: 12.9856, lon: 77.7315 },
-        distance: "7.5 km",
+        distance: "6.7 km",
         icon: "fa-solid fa-laptop-code",
       },
       {
@@ -624,7 +611,7 @@ export const birlaData = [
         name: "Shri Ram Global School",
         destination: "Shri Ram Global School, Whitefield, Bengaluru, Karnataka 560067",
         coordinates: { lat: 12.991, lon: 77.772 },
-        distance: "4.3 km",
+        distance: "4.1 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -632,7 +619,7 @@ export const birlaData = [
         name: "Whitefield Global School",
         destination: "Whitefield Global School, Channasandra, Whitefield, Bengaluru, Karnataka 560067",
         coordinates: { lat: 12.975, lon: 77.761 },
-        distance: "5.2 km",
+        distance: "3.8 km",
         icon: "fa-solid fa-school",
       },
       {
@@ -640,7 +627,7 @@ export const birlaData = [
         name: "Manipal Hospital Whitefield",
         destination: "Manipal Hospital, ITPL Main Road, Whitefield, Bengaluru, Karnataka 560066",
         coordinates: { lat: 12.9865, lon: 77.7285 },
-        distance: "7.8 km",
+        distance: "8.1 km",
         icon: "fa-solid fa-hospital",
       },
       {
@@ -648,7 +635,7 @@ export const birlaData = [
         name: "Nexus Shantiniketan / Inorbit Mall",
         destination: "Nexus Shantiniketan Mall, Whitefield Main Road, Bengaluru, Karnataka 560067",
         coordinates: { lat: 12.989, lon: 77.728 },
-        distance: "8.0 km",
+        distance: "8.5 km",
         icon: "fa-solid fa-bag-shopping",
       },
       {

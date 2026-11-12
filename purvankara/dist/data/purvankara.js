@@ -32,13 +32,13 @@ export const purvankaraData = [
     highlight:
       "Ultra-Luxury Low-Density Single Tower Living with 76% Open Spaces Just 100 Metres from Kudlu Gate Metro Station",
     highlights: [
-      "Ultra-luxury low-density single tower living with ~76% open green spaces",
-      "Prime location just 100 metres from Kudlu Gate Metro Station on Hosur Main Road",
-      "17,000 sq.ft. grand clubhouse featuring heated swimming pool, squash & badminton courts",
-      "State-of-the-art gymnasium, yoga & meditation lawn, and outdoor rooftop cinema",
-      "Spacious 3 BHK residences with expansive balconies and optimal natural light",
-      "Rapid connectivity to HSR Layout (5 Mins), Silk Board (10 Mins), and Electronic City Phase 1",
-      "100% RERA compliant development: PRM/KA/RERA/1251/310/PR/090726/008801"
+      "Expansive 17,000 sq ft clubhouse with lifestyle amenities",
+      "Vast 76 percent open space for a serene, airy environment",
+      "Smart homes with video door security and home automation",
+      "EV charging, solar panels and eco-friendly waste management",
+      "Specialized sports facilities: mini soccer and pickleball courts",
+      "Ideally located just 100 Mtrs from Kudlu Gate Metro Station",
+      "Boutique high-rise development with exclusive 148 rare residences"
     ],
     reraId: "PRM/KA/RERA/1251/310/PR/090726/008801",
     summary:
@@ -63,7 +63,7 @@ export const purvankaraData = [
       {
         label: "Kudlu Gate Metro Station",
         name: "Kudlu Gate Metro Station",
-        distance: "100 Metres (1 Min)",
+        distance: "180 Metres",
         icon: "fa-solid fa-train-subway",
         destination: "Kudlu Gate Metro Station, Hosur Road, Bengaluru, Karnataka 560068",
         coordinates: {"lat":12.889,"lon":77.641},
@@ -71,7 +71,7 @@ export const purvankaraData = [
       {
         label: "Silk Board Junction",
         name: "Silk Board Junction",
-        distance: "3.6 Km (10 Mins)",
+        distance: "3.9 Km",
         icon: "fa-solid fa-road",
         destination: "Central Silk Board Junction, Outer Ring Road, Bengaluru, Karnataka 560068",
         coordinates: {"lat":12.9176,"lon":77.6238},
@@ -79,19 +79,22 @@ export const purvankaraData = [
       {
         label: "Electronic City IT Phase 1",
         name: "Electronic City IT Phase 1",
-        distance: "12 Mins",
+        distance: "8.3 Km",
         icon: "fa-solid fa-laptop-code",
-        destination: "Electronic City Phase 1, Hosur Road, Bengaluru, Karnataka 560100",
+        destination: "Electronic City Phase I, Electronic City, Karnataka 560100",
         coordinates: {"lat":12.8452,"lon":77.6602},
       },
-      { label: "HSR Layout Sector 1",
-        name: "HSR Layout Sector 1", distance: "5 Mins", icon: "fa-solid fa-road",
+      { 
+        label: "HSR Layout Sector 1",
+        name: "HSR Layout Sector 1", 
+        distance: "5.5 Km", 
+        icon: "fa-solid fa-road",
         destination: "HSR Layout Sector 1, Bengaluru, Karnataka 560102",
         coordinates: {"lat":12.9116,"lon":77.6389} },
       {
         label: "Nexus Mall Koramangala",
         name: "Nexus Mall Koramangala",
-        distance: "6.5 Km (15 Mins)",
+        distance: "6.5 Km",
         icon: "fa-solid fa-bag-shopping",
         destination: "Nexus Mall Koramangala, Hosur Road, Bengaluru, Karnataka 560095",
         coordinates: {"lat":12.9348,"lon":77.6111},
@@ -99,7 +102,7 @@ export const purvankaraData = [
       {
         label: "Narayana Hospital HSR Layout",
         name: "Narayana Hospital HSR Layout",
-        distance: "2.1 Km (8 Mins)",
+        distance: "3.6 Km",
         icon: "fa-solid fa-hospital",
         destination: "Narayana Multispeciality Hospital, HSR Layout, Bengaluru, Karnataka 560102",
         coordinates: {"lat":12.9125,"lon":77.6441},
@@ -175,13 +178,13 @@ export const purvankaraData = [
     highlight:
       "24.59-Acre Bali-Inspired Mega Township with Dual Grand Clubhouses (1,00,000 sq.ft.), 80% Green Open Space, and 8 High-Rise Towers (2B+G+31 Floors)",
     highlights: [
-      "Strategically located within the high-growth KIADB Aerospace Park SEZ in North Bengaluru",
-      "Expansive 4.8-acre integrated development with 80% open landscaped spaces",
-      "Minutes from Kempegowda International Airport (15 Mins) and upcoming Airport Metro Blue Line",
-      "Contemporary 1, 2 & 3 BHK luxury residences crafted for modern tech professionals",
-      "World-class clubhouse with infinity-edge pool, co-working lounge, and sports arena",
-      "Close proximity to Manyata Tech Park, Bhartiya City Mall, and top international schools",
-      "RERA Approved Aerospace Park project: PRM/KA/RERA/1251/309/PR/190722/002685"
+      "~77% open spaces, with lush landscaped greens",
+      "~7.9 acres of central greens, thoughtfully zoned and designed",
+      "~72,500 sq. ft. of curated retail within the development",
+      "Dual clubhouses spanning ~1 lakh sq. ft. of lifestyle spaces",
+      "80+ curated lifestyle and wellness amenities",
+      "Olympic-size swimming pool designed for fitness and leisure",
+      "High-tech 7D gaming experience zone for immersive entertainment"
     ],
     reraId: "PRM/KA/RERA/1250/303/PR/120326/008523",
     summary:
@@ -212,31 +215,23 @@ export const purvankaraData = [
       {
         label: "KIADB Aerospace Park SEZ",
         name: "KIADB Aerospace Park SEZ",
-        distance: "0 Mins (Inside Park)",
+        distance: "8.3 Km",
         icon: "fa-solid fa-laptop-code",
-        destination: "KIADB Aerospace Park, Devanahalli, Bengaluru, Karnataka 562149",
+        destination: "KIADB Aerospace SEZ, KIADB Export Promotion Industrial Area, Devanahalli, Bengaluru, Hunachur, Karnataka 562165",
         coordinates: {"lat":13.1989,"lon":77.7064},
       },
       {
         label: "Kempegowda International Airport",
         name: "Kempegowda International Airport",
-        distance: "15 Mins (7.0 Km)",
+        distance: "10.7 Km",
         icon: "fa-solid fa-plane",
         destination: "Kempegowda International Airport, Devanahalli, Bengaluru, Karnataka 560300",
         coordinates: {"lat":13.1986,"lon":77.7066},
       },
       {
-        label: "Upcoming Airport Metro Blue Line",
-        name: "Upcoming Airport Metro Blue Line",
-        distance: "8 Mins (3.6 Km)",
-        icon: "fa-solid fa-train-subway",
-        destination: "Airport Metro Station (Upcoming Blue Line), Devanahalli, Bengaluru, Karnataka 562149",
-        coordinates: {"lat":13.185,"lon":77.695},
-      },
-      {
         label: "NH 44 (Bellary Road Interchange)",
         name: "NH 44 (Bellary Road Interchange)",
-        distance: "10 Mins",
+        distance: "18.3 Km",
         icon: "fa-solid fa-road",
         destination: "NH 44 Bellary Road, Yelahanka - Devanahalli Bypass, Bengaluru",
         coordinates: {"lat":13.15,"lon":77.61},
@@ -244,7 +239,7 @@ export const purvankaraData = [
       {
         label: "Manyata Tech Park",
         name: "Manyata Tech Park",
-        distance: "20 Mins (11.8 Km)",
+        distance: "17.1 Km",
         icon: "fa-solid fa-building-user",
         destination: "Manyata Embassy Business Park, Outer Ring Road, Nagavara, Bengaluru, Karnataka 560045",
         coordinates: {"lat":13.0475,"lon":77.6212},
@@ -252,7 +247,7 @@ export const purvankaraData = [
       {
         label: "Bhartiya City Mall & Thanisandra",
         name: "Bhartiya City Mall & Thanisandra",
-        distance: "15 Mins",
+        distance: "9.8 Km",
         icon: "fa-solid fa-bag-shopping",
         destination: "Bhartiya Mall of Bengaluru, Thanisandra Main Road, Bengaluru, Karnataka 560064",
         coordinates: {"lat":13.0736,"lon":77.6397},
@@ -307,13 +302,13 @@ export const purvankaraData = [
     highlight:
       "Low-Density 6.99-Acre Living with 88% Open-to-Sky Space, Dual Balconies, and a 17,700 sq.ft. Lifestyle Clubhouse",
     highlights: [
-      "Premium high-rise living strategically located on Huskur Road in Electronic City Phase 2",
-      "Walking distance to upcoming Yellow Line Metro Station and Hosur Road elevated expressway",
-      "Expansive residential township with grand clubhouse, reflexology paths & themed gardens",
-      "Large 3, 4 & 5 BHK luxury duplex apartments designed for privacy and cross ventilation",
-      "Minutes from Narayana Hrudayalaya Health City, PES University & major tech corridors",
-      "Comprehensive sports hub with tennis court, cricket net, indoor badminton & yoga deck",
-      "Karnataka RERA Registered development: PRM/KA/RERA/1251/308/PR/201201/003730"
+      "356 exclusive 3 & 4 BHK residences",
+      "1.7 acres of elevated podium amenities for recreation and relaxation",
+      "17,700 sqft grand clubhouse, \"The Eminence Club\"",
+      "Over 45 curated amenities for leisure, wellness, and an active lifestyle",
+      "Healthy interiors feature low-VOC paints (< 50 g/L) for cleaner air",
+      "Nature-themed amenities like a pet park, treehouse walk & climbing wall",
+      "EV charging points for all units, covering 20% of parking capacity"
     ],
     reraId: "PRM/KA/RERA/1251/310/PR/151225/008338",
     summary:
@@ -338,15 +333,15 @@ export const purvankaraData = [
       {
         label: "Electronic City IT Phase 2",
         name: "Electronic City IT Phase 2",
-        distance: "2.0 Km (5 Mins)",
+        distance: "1.5 Km",
         icon: "fa-solid fa-laptop-code",
-        destination: "Electronic City Phase 2, Hosur Road, Bengaluru, Karnataka 560100",
+        destination: "Electronic City phase 2, A305, Phase II, Electronic City, Bengaluru, Bhovi Palya, Karnataka 560100",
         coordinates: {"lat":12.836,"lon":77.685},
       },
       {
         label: "Hebbagodi / Huskur Road Station",
         name: "Hebbagodi / Huskur Road Station",
-        distance: "3 Mins",
+        distance: "4.6 Km",
         icon: "fa-solid fa-train-subway",
         destination: "Hebbagodi Metro Station, Yellow Line, Bengaluru, Karnataka 560099",
         coordinates: {"lat":12.825,"lon":77.681},
@@ -354,7 +349,7 @@ export const purvankaraData = [
       {
         label: "PES University Electronic City Campus",
         name: "PES University Electronic City Campus",
-        distance: "2.6 Km",
+        distance: "5.2 Km",
         icon: "fa-solid fa-graduation-cap",
         destination: "PES University Electronic City Campus, Hosur Road, Bengaluru, Karnataka 560100",
         coordinates: {"lat":12.861,"lon":77.665},
@@ -362,19 +357,23 @@ export const purvankaraData = [
       {
         label: "Narayana Hrudayalaya Health City",
         name: "Narayana Hrudayalaya Health City",
-        distance: "3.4 Km (8 Mins)",
+        distance: "4.4 Km",
         icon: "fa-solid fa-hospital",
         destination: "Narayana Health City, Bommasandra Industrial Area, Bengaluru, Karnataka 560099",
         coordinates: {"lat":12.812,"lon":77.695},
       },
-      { label: "Hosur Road Junction",
-        name: "Hosur Road Junction", distance: "5 Mins", icon: "fa-solid fa-road",
+      { 
+        label: "Hosur Road Junction",
+        name: "Hosur Road Junction", 
+        distance: "22.6 Km", 
+        icon: "fa-solid fa-road",
         destination: "Hosur Main Road, Hebbagodi Junction, Bengaluru, Karnataka 560099",
-        coordinates: {"lat":12.83,"lon":77.68} },
+        coordinates: {"lat":12.83,"lon":77.68} 
+      },
       {
         label: "Symbiosis Centre for Management Studies",
         name: "Symbiosis Centre for Management Studies",
-        distance: "2.9 Km",
+        distance: "4.4 Km",
         icon: "fa-solid fa-graduation-cap",
         destination: "Symbiosis Centre for Management Studies, Electronic City, Bengaluru, Karnataka 560100",
         coordinates: {"lat":12.848,"lon":77.671},
@@ -415,13 +414,13 @@ export const purvankaraData = [
     highlight:
       "Exclusive 3 BHK High-Rise Skyscraper Community with 80% Open Spaces Right Next to Magadi Road Metro Station",
     highlights: [
-      "Direct connectivity adjacent to Magadi Road Metro Station (Purple Line) in West Bengaluru",
-      "Exclusive 3.85-acre high-rise community with two iconic towers and 80% open spaces",
-      "Spacious 3 BHK Vastu-compliant homes featuring private balconies with panoramic city views",
-      "Grand 50,000 sq.ft. signature clubhouse with temperature-controlled swimming pool & spa",
-      "Just 1.5 km (5 Mins) to KSR Bengaluru City Railway Station (Majestic) & 3 Mins to GT World Mall",
-      "Unrivaled transit access to Rajajinagar, WTC, Malleshwaram, and Central Business District (CBD)",
-      "Karnataka RERA registered: PRM/KA/RERA/1251/310/PR/290323/005829"
+      "Exclusive 3BHK community",
+      "32 Storey skyscraper twin tower",
+      "Vaastu compliant (no south facing units)",
+      "8,000 sq.ft. standalone clubhouse",
+      "22 Natural outdoor experiences",
+      "West Bangalore's tallest building with great views",
+      "U Rated property with 17 gardens and easy connectivity"
     ],
     reraId: "PRM/KA/RERA/1251/310/PR/290323/005829",
     summary:
@@ -446,7 +445,7 @@ export const purvankaraData = [
       {
         label: "Magadi Road Metro Station",
         name: "Magadi Road Metro Station",
-        distance: "1 Min (Adjacent)",
+        distance: "27 Metres",
         icon: "fa-solid fa-train-subway",
         destination: "Magadi Road Metro Station, Purple Line, Bengaluru, Karnataka 560023",
         coordinates: {"lat":12.9756,"lon":77.5553},
@@ -454,7 +453,7 @@ export const purvankaraData = [
       {
         label: "GT World Mall",
         name: "GT World Mall",
-        distance: "850 Metres (3 Mins)",
+        distance: "550 Metres",
         icon: "fa-solid fa-bag-shopping",
         destination: "GT World Mall, Magadi Main Road, Bengaluru, Karnataka 560023",
         coordinates: {"lat":12.9734,"lon":77.5512},
@@ -462,7 +461,7 @@ export const purvankaraData = [
       {
         label: "KSR Bengaluru City Railway Station (Majestic)",
         name: "KSR Bengaluru City Railway Station (Majestic)",
-        distance: "1.5 Km (5 Mins)",
+        distance: "3.5 Km",
         icon: "fa-solid fa-train",
         destination: "KSR Bengaluru City Junction (Majestic), Bengaluru, Karnataka 560023",
         coordinates: {"lat":12.9781,"lon":77.5696},
@@ -470,19 +469,18 @@ export const purvankaraData = [
       {
         label: "World Trade Center (WTC Rajajinagar)",
         name: "World Trade Center (WTC Rajajinagar)",
-        distance: "15 Mins",
+        distance: "6.3 Km",
         icon: "fa-solid fa-laptop-code",
         destination: "World Trade Center Bangalore, Brigade Gateway, Malleshwaram-Rajajinagar, Bengaluru 560055",
         coordinates: {"lat":13.0113,"lon":77.555},
       },
-      { label: "Cubbon Park & MG Road",
-        name: "Cubbon Park & MG Road", distance: "20 Mins", icon: "fa-solid fa-tree",
+      { 
+        label: "Cubbon Park & MG Road",
+        name: "Cubbon Park & MG Road", 
+        distance: "6.7 Km", 
+        icon: "fa-solid fa-tree",
         destination: "Cubbon Park Metro Station / MG Road, Bengaluru, Karnataka 560001",
-        coordinates: {"lat":12.9763,"lon":77.5929} },
-      {
-        name: "Kempegowda International Airport",
-        distance: "60 Mins",
-        icon: "fa-plane",
+        coordinates: {"lat":12.9763,"lon":77.5929} 
       },
     ],
     images: [
@@ -541,13 +539,13 @@ export const purvankaraData = [
     highlight:
       "Ultra-Luxury BluNex™ Smart Home Skyscraper Overlooking Lalbagh Botanical Garden with Rooftop Infinity Pool and Sky Lounge",
     highlights: [
-      "Ultra-luxury bespoke high-rise residences overlooking historic Lalbagh Botanical Garden",
-      "Elite central Bengaluru address on Lalbagh Main Road, minutes from UB City & MG Road",
-      "Limited edition 3 & 4 BHK grand luxury suites crafted with Italian marble & smart home automation",
-      "Private rooftop lounge, infinity sky pool, exclusive cigar lounge, and personal concierge",
-      "Just 500 metres from Lalbagh Metro Station and rapid access to Richmond Circle",
-      "IGBC Gold rated green building with low-density layout and three-tier biometric security",
-      "Karnataka RERA Approved landmark: PRM/KA/RERA/1251/310/PR/210928/004316"
+      "Exclusive residences with no common walls for maximum privacy and quiet",
+      "Rooftop infinity pool and clubhouse with panoramic views of MG Road",
+      "Body Core fitness studio featuring Pilates, HIIT, TRX, and Peloton bikes",
+      "The Vault: A whiskey and wine lounge with authentic oak barrel flooring",
+      "Bespoke architecture by Andy Fisher with a grand double-height lobby",
+      "Unique landscape features including kinetic gardens and a serene koi pond",
+      "Luxury interiors with imported marble and French-style windows"
     ],
     reraId: "PRM/KA/RERA/1251/310/PR/210907/004299",
     summary:
@@ -575,7 +573,7 @@ export const purvankaraData = [
       {
         label: "Lalbagh Botanical Garden",
         name: "Lalbagh Botanical Garden",
-        distance: "500 Metres (2 Mins)",
+        distance: "2.0 Km",
         icon: "fa-solid fa-tree",
         destination: "Lalbagh Botanical Garden, Mavalli, Bengaluru, Karnataka 560004",
         coordinates: {"lat":12.9507,"lon":77.5848},
@@ -583,7 +581,7 @@ export const purvankaraData = [
       {
         label: "Richmond Road / MG Road Junction",
         name: "Richmond Road / MG Road Junction",
-        distance: "2.5 Km (8 Mins)",
+        distance: "1.3 Km",
         icon: "fa-solid fa-road",
         destination: "Richmond Circle / Richmond Road Junction, Bengaluru, Karnataka 560025",
         coordinates: {"lat":12.9698,"lon":77.608},
@@ -591,7 +589,7 @@ export const purvankaraData = [
       {
         label: "Krishna Rajendra (KR) Market Metro Station",
         name: "Krishna Rajendra (KR) Market Metro Station",
-        distance: "1.2 Km (4 Mins)",
+        distance: "2.8 Km",
         icon: "fa-solid fa-train-subway",
         destination: "KR Market Metro Station, Green Line, Bengaluru, Karnataka 560002",
         coordinates: {"lat":12.9609,"lon":77.5746},
@@ -599,7 +597,7 @@ export const purvankaraData = [
       {
         label: "St. Joseph's University / College",
         name: "St. Joseph's University / College",
-        distance: "1.5 Km (5 Mins)",
+        distance: "1.1 Km",
         icon: "fa-solid fa-graduation-cap",
         destination: "St. Joseph's University, Lalbagh Road, Bengaluru, Karnataka 560027",
         coordinates: {"lat":12.9625,"lon":77.5985},
@@ -607,7 +605,7 @@ export const purvankaraData = [
       {
         label: "UB City / Lavelle Road",
         name: "UB City / Lavelle Road",
-        distance: "3.0 Km (10 Mins)",
+        distance: "3.3 Km",
         icon: "fa-solid fa-bag-shopping",
         destination: "UB City, Vittal Mallya Road, Bengaluru, Karnataka 560001",
         coordinates: {"lat":12.9716,"lon":77.5958},
@@ -615,7 +613,7 @@ export const purvankaraData = [
       {
         label: "Bengaluru City Junction (Majestic Railway Station)",
         name: "Bengaluru City Junction (Majestic Railway Station)",
-        distance: "4.5 Km (15 Mins)",
+        distance: "4.5 Km",
         icon: "fa-solid fa-train",
         destination: "KSR Bengaluru City Railway Station, Majestic, Bengaluru, Karnataka 560023",
         coordinates: {"lat":12.9781,"lon":77.5696},
@@ -663,13 +661,13 @@ export const purvankaraData = [
     highlight:
       "World Home Collection High-Rise Skyscraper Township Designed by Architect Hadi Teherani with 34th Floor Sky Club and Oxygen-Infused Clubhouse",
     highlights: [
-      "Ultra-luxury residential project featuring India's first 40-foot Air Filtration Tower (Tree of Life)",
-      "Sprawling 13-acre master plan with 3 iconic high-rise towers in Thanisandra, North Bengaluru",
-      "Spacious 3 & 4 BHK luxury residences with integrated home automation and 80% open spaces",
-      "Club Atmosphere: massive 34,000 sq.ft. multi-level clubhouse with sky pool and sports complex",
-      "Just 3 km (8 Mins) from Manyata Embassy Business Park and 5 Mins to upcoming Pink Line Metro",
-      "World-class health & education hub near Aster CMI Hospital, Elements Mall & DPS North",
-      "Karnataka RERA Registered project: PRM/KA/RERA/1251/309/PR/190204/002350"
+      "Best Residential High Rise Development India 2021-22",
+      "9 acres of open space uber-modern, ultra-luxurious residential project",
+      "Crafted by globally acclaimed Iranian-German architect Hadi Teherani",
+      "Exclusive 34th-floor club designed by Andy Fisher",
+      "Unique 40 ft. air filtration tower for clean air",
+      "The sky-high comforts inspired by France’s Aix-en-Provence - The Cloudwalk",
+      "Intelligent homes powered with BluNex Technology"
     ],
     reraId: "PRM/KA/RERA/1251/472/PR/190204/002350",
     summary:
@@ -695,22 +693,17 @@ export const purvankaraData = [
     ],
     connectivity: [
       {
+        label: "Manayata Tech Park",
         name: "Manyata Tech Park",
-        distance: "3.0 Km (8 Mins)",
+        distance: "3.3 Km",
         icon: "fa-laptop-code",
-      },
-      {
-        label: "Upcoming Thanisandra Metro Station",
-        name: "Upcoming Thanisandra Metro Station",
-        distance: "1.8 Km (5 Mins)",
-        icon: "fa-solid fa-train-subway",
-        destination: "Thanisandra Metro Station (Upcoming Pink Line), Bengaluru, Karnataka 560077",
-        coordinates: {"lat":13.056,"lon":77.627},
+        destination: "Manayata Tech Park, Nagavara, Bengaluru, Karnataka",
+        coordinates: {"lat":13.048,"lon":77.6202}
       },
       {
         label: "Outer Ring Road (ORR Junction)",
         name: "Outer Ring Road (ORR Junction)",
-        distance: "10 Mins (4.2 Km)",
+        distance: "14.0 Km",
         icon: "fa-solid fa-road",
         destination: "Nagavara Outer Ring Road Junction, Bengaluru, Karnataka 560045",
         coordinates: {"lat":13.041,"lon":77.623},
@@ -718,7 +711,7 @@ export const purvankaraData = [
       {
         label: "Elements Mall Thanisandra",
         name: "Elements Mall Thanisandra",
-        distance: "2.5 Km (6 Mins)",
+        distance: "2.5 Km",
         icon: "fa-solid fa-bag-shopping",
         destination: "Elements Mall, Thanisandra Main Road, Nagavara, Bengaluru, Karnataka 560077",
         coordinates: {"lat":13.045,"lon":77.625},
@@ -726,7 +719,7 @@ export const purvankaraData = [
       {
         label: "Aster CMI Hospital Hebbal",
         name: "Aster CMI Hospital Hebbal",
-        distance: "7.5 Km (15 Mins)",
+        distance: "8.7 Km",
         icon: "fa-solid fa-hospital",
         destination: "Aster CMI Hospital, Bellary Road, Hebbal, Bengaluru, Karnataka 560092",
         coordinates: {"lat":13.0558,"lon":77.5925},
@@ -734,15 +727,18 @@ export const purvankaraData = [
       {
         label: "Delhi Public School (DPS North)",
         name: "Delhi Public School (DPS North)",
-        distance: "5.0 Km (12 Mins)",
+        distance: "9.3 Km",
         icon: "fa-solid fa-graduation-cap",
         destination: "Delhi Public School Bangalore North, Bagalur Road, Bengaluru, Karnataka 562149",
         coordinates: {"lat":13.115,"lon":77.632},
       },
       {
+        label: "Kempegowda International Airport",
         name: "Kempegowda International Airport",
-        distance: "30 Mins (25.0 Km)",
+        distance: "23.0 Km",
         icon: "fa-plane",
+        destination: "Kempegowda International Airport Bengaluru",
+        coordinates: {"lat":13.218,"lon":77.708}
       },
     ],
     images: [
