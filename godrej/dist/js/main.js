@@ -1,6 +1,3 @@
-// Add the public webhook endpoint after the receiving service is configured.
-// Do not place private API keys or other secrets in this browser-side file.
-const LEAD_WEBHOOK_URL = "";
 const builderSlug = document.body.dataset.builder?.trim().toLowerCase();
 if (!builderSlug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(builderSlug)) {
   throw new Error(
