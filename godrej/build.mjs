@@ -497,6 +497,19 @@ function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOri
     html = html.replace("</head>", `    <meta property="og:url" content="${escapeHtml(canonical)}">\n</head>`);
   }
 
+  // Optimize LCP: Preload the exact hero image for this specific route and remove incorrect preloads
+  html = html.replace(/<link\s+rel="preload"\s+as="image"[^>]*fetchpriority="high"[^>]*>\s*/gi, "");
+  const lcpImage = property && Array.isArray(property.images) && property.images[0]
+    ? property.images[0]
+    : property && property.image
+      ? property.image
+      : "https://media.justflip.in/builder-brand-pages/godrej-properties/banner.webp";
+  const preloadImageUrl = lcpImage.replace(/&/g, "&amp;");
+  html = html.replace(
+    "</head>",
+    `    <link rel="preload" as="image" href="${preloadImageUrl}" fetchpriority="high">\n</head>`,
+  );
+
   return html;
 }
 

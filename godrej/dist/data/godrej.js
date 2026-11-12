@@ -1459,5 +1459,5 @@ export const builderConfig = {
   ],
   properties: godrejProjects,
   faqs: godrejFaqs,
-  whatsappNumber: "+919876543210",
+  whatsappNumber: "+917411662228",
 };
