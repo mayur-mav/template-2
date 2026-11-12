@@ -440,8 +440,8 @@ function applyBuilderSeo(html, { builder, properties }, route, basePath, siteOri
   }
 
   if (!property) {
-    const builderHeading = `${builderName} in Bangalore`;
-    html = html.replace(/(<h1\b[^>]*>)[\s\S]*?(<\/h1>)/i, `$1${escapeHtml(builderHeading)}$2`);
+    const builderHeading = `<span class="hero-heading-main">${escapeHtml(builderName)}</span> <span class="hero-heading-accent">in Bangalore</span>`;
+    html = html.replace(/(<h1\b[^>]*>)[\s\S]*?(<\/h1>)/i, `$1${builderHeading}$2`);
     const heroDescription = escapeHtml(description);
     html = html.replace(/(<h1\b[^>]*>[\s\S]*?<\/h1>[\s\S]*?<p\b[^>]*>)[\s\S]*?(<\/p>)/i, `$1${heroDescription}$2`);
   }
