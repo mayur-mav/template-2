@@ -838,7 +838,7 @@ export const builderConfig = {
   ],
   properties: birlaData,
   faqs: birlaFaqs,
-  whatsappNumber: "+919876543210",
+  whatsappNumber: "+917411662228",
 };
 
 export const birlaProjects = birlaData;

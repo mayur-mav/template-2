@@ -488,8 +488,8 @@ function applyBuilderSeo(html, { builder, properties, createPropertyHighlights }
   }
 
   if (!property) {
-    const builderHeading = `${builderName} in Bangalore`;
-    html = html.replace(/(<h1\b[^>]*>)[\s\S]*?(<\/h1>)/i, `$1${escapeHtml(builderHeading)}$2`);
+    const builderHeading = `<span class="hero-heading-main">${escapeHtml(builderName)}</span> <span class="hero-heading-accent">in Bangalore</span>`;
+    html = html.replace(/(<h1\b[^>]*>)[\s\S]*?(<\/h1>)/i, `$1${builderHeading}$2`);
     const heroDescription = escapeHtml(description);
     html = html.replace(/(<h1\b[^>]*>[\s\S]*?<\/h1>[\s\S]*?<p\b[^>]*>)[\s\S]*?(<\/p>)/i, `$1${heroDescription}$2`);
   }
@@ -544,6 +544,19 @@ function applyBuilderSeo(html, { builder, properties, createPropertyHighlights }
     html = html.replace(/<meta\s+property="og:url"[^>]*>/i, "");
     html = html.replace("</head>", `    <meta property="og:url" content="${escapeHtml(canonical)}">\n</head>`);
   }
+
+  // Optimize LCP: Preload the exact hero image for this specific route and remove incorrect preloads
+  html = html.replace(/<link\s+rel="preload"\s+as="image"[^>]*fetchpriority="high"[^>]*>\s*/gi, "");
+  const lcpImage = property && Array.isArray(property.images) && property.images[0]
+    ? property.images[0]
+    : property && property.image
+      ? property.image
+      : "https://media.justflip.in/builder-brand-pages/sattva-group/banner.webp";
+  const preloadImageUrl = lcpImage.replace(/&/g, "&amp;");
+  html = html.replace(
+    "</head>",
+    `    <link rel="preload" as="image" href="${preloadImageUrl}" fetchpriority="high">\n</head>`,
+  );
 
   return html;
 }

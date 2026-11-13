@@ -934,7 +934,7 @@ export const builderConfig = {
   ],
   properties: purvankaraData,
   faqs: purvankaraFaqs,
-  whatsappNumber: "+919876543210",
+  whatsappNumber: "+917411662228",
 };
 
 export const purvankaraProjects = purvankaraData;

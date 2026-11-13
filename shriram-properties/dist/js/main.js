@@ -1,10 +1,7 @@
-// Add the public webhook endpoint after the receiving service is configured.
-// Do not place private API keys or other secrets in this browser-side file.
-const LEAD_WEBHOOK_URL = "";
 const builderSlug = document.body.dataset.builder?.trim().toLowerCase();
 if (!builderSlug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(builderSlug)) {
   throw new Error(
-    'Set body data-builder to a valid builder slug, such as "godrej".',
+    'Set body data-builder to a valid builder slug, such as "shriram-properties".',
   );
 }
 
@@ -66,12 +63,12 @@ const initialDocumentTitle = document.title;
 
 const builderTheme = activeBuilderData.theme || {};
 const themeVariables = {
-  "--builder-primary": builderTheme.primary || "#0B1E36",
-  "--builder-primary-hover": builderTheme.primaryHover || "#071526",
+  "--builder-primary": builderTheme.primary || "#0F382C",
+  "--builder-primary-hover": builderTheme.primaryHover || "#09241C",
   "--builder-accent": builderTheme.accent || "#D4AF37",
-  "--builder-surface": builderTheme.surface || "#FAF9F5",
-  "--builder-soft": builderTheme.soft || "#EEF4FA",
-  "--builder-border": builderTheme.border || "#DCE5EF",
+  "--builder-surface": builderTheme.surface || "#F9FAF9",
+  "--builder-soft": builderTheme.soft || "#E8F0EC",
+  "--builder-border": builderTheme.border || "#E8F0EC",
 };
 Object.entries(themeVariables).forEach(([variable, value]) => {
   document.documentElement.style.setProperty(variable, value);
@@ -1452,88 +1449,1061 @@ function toggleFaq(id) {
   button.setAttribute("aria-expanded", String(willOpen));
 }
 
-// Send an enquiry only when the configured webhook confirms it accepted the payload.
-async function submitLeadForm(form, formType, errorElementId) {
-  const errorElement = document.getElementById(errorElementId);
-  const failureMessage =
-    formType === "site_visit_request"
-      ? "We could not send your site visit request right now. Please try again later or contact M&A Ventures."
-      : "We could not send your enquiry right now. Please try again later or contact M&A Ventures.";
-  errorElement.classList.add("hidden");
-  errorElement.textContent = "";
+// ==================== MULTI-COUNTRY DIAL SELECTOR & VALIDATION ====================
+const COUNTRY_CODES = [
+  {
+    code: 'IN',
+    dial: '+91',
+    label: 'IN +91',
+    name: 'Indian',
+    min: 10,
+    max: 10,
+    minDigits: 10,
+    maxDigits: 10,
+    prefixRegex: /^[6-9]/,
+    pattern: /^[6-9]\d{9}$/,
+    placeholder: '10-digit mobile number',
+    startDesc: '6, 7, 8, or 9',
+    example: '98765 43210'
+  },
+  {
+    code: 'AE',
+    dial: '+971',
+    label: 'AE +971',
+    name: 'UAE',
+    min: 9,
+    max: 9,
+    minDigits: 9,
+    maxDigits: 9,
+    prefixRegex: /^5/,
+    pattern: /^5\d{8}$/,
+    placeholder: '9-digit mobile number',
+    startDesc: '5 (e.g. 50, 52, 54, 55, 56, 58)',
+    example: '50 123 4567'
+  },
+  {
+    code: 'US',
+    dial: '+1',
+    label: 'US +1',
+    name: 'US/Canada',
+    min: 10,
+    max: 10,
+    minDigits: 10,
+    maxDigits: 10,
+    prefixRegex: /^[2-9]/,
+    pattern: /^[2-9]\d{9}$/,
+    placeholder: '10-digit mobile number',
+    startDesc: '2-9 (area code)',
+    example: '212 555 0199'
+  },
+  {
+    code: 'UK',
+    dial: '+44',
+    label: 'UK +44',
+    name: 'UK',
+    min: 10,
+    max: 10,
+    minDigits: 10,
+    maxDigits: 10,
+    prefixRegex: /^7/,
+    pattern: /^7\d{9}$/,
+    placeholder: '10-digit mobile number',
+    startDesc: '7 (e.g. 71-75, 77-79)',
+    example: '7911 123456'
+  },
+  {
+    code: 'SG',
+    dial: '+65',
+    label: 'SG +65',
+    name: 'Singapore',
+    min: 8,
+    max: 8,
+    minDigits: 8,
+    maxDigits: 8,
+    prefixRegex: /^[89]/,
+    pattern: /^[89]\d{7}$/,
+    placeholder: '8-digit mobile number',
+    startDesc: '8 or 9',
+    example: '9123 4567'
+  },
+  {
+    code: 'AU',
+    dial: '+61',
+    label: 'AU +61',
+    name: 'Australian',
+    min: 9,
+    max: 9,
+    minDigits: 9,
+    maxDigits: 9,
+    prefixRegex: /^4/,
+    pattern: /^4\d{8}$/,
+    placeholder: '9-digit mobile number',
+    startDesc: '4 (mobile 04xx xxx xxx)',
+    example: '412 345 678'
+  },
+  {
+    code: 'SA',
+    dial: '+966',
+    label: 'SA +966',
+    name: 'Saudi',
+    min: 9,
+    max: 9,
+    minDigits: 9,
+    maxDigits: 9,
+    prefixRegex: /^5/,
+    pattern: /^5\d{8}$/,
+    placeholder: '9-digit mobile number',
+    startDesc: '5 (e.g. 50, 53, 54, 55, 56, 58, 59)',
+    example: '50 123 4567'
+  },
+  {
+    code: 'QA',
+    dial: '+974',
+    label: 'QA +974',
+    name: 'Qatar',
+    min: 8,
+    max: 8,
+    minDigits: 8,
+    maxDigits: 8,
+    prefixRegex: /^[3567]/,
+    pattern: /^[3567]\d{7}$/,
+    placeholder: '8-digit mobile number',
+    startDesc: '3, 5, 6, or 7',
+    example: '5512 3456'
+  },
+  {
+    code: 'OM',
+    dial: '+968',
+    label: 'OM +968',
+    name: 'Oman',
+    min: 8,
+    max: 8,
+    minDigits: 8,
+    maxDigits: 8,
+    prefixRegex: /^[79]/,
+    pattern: /^[79]\d{7}$/,
+    placeholder: '8-digit mobile number',
+    startDesc: '7 or 9',
+    example: '9123 4567'
+  },
+  {
+    code: 'KW',
+    dial: '+965',
+    label: 'KW +965',
+    name: 'Kuwait',
+    min: 8,
+    max: 8,
+    minDigits: 8,
+    maxDigits: 8,
+    prefixRegex: /^[569]/,
+    pattern: /^[569]\d{7}$/,
+    placeholder: '8-digit mobile number',
+    startDesc: '5, 6, or 9',
+    example: '9123 4567'
+  },
+  {
+    code: 'BH',
+    dial: '+973',
+    label: 'BH +973',
+    name: 'Bahrain',
+    min: 8,
+    max: 8,
+    minDigits: 8,
+    maxDigits: 8,
+    prefixRegex: /^[36]/,
+    pattern: /^[36]\d{7}$/,
+    placeholder: '8-digit mobile number',
+    startDesc: '3 or 6',
+    example: '3912 3456'
+  },
+  {
+    code: 'NZ',
+    dial: '+64',
+    label: 'NZ +64',
+    name: 'New Zealand',
+    min: 8,
+    max: 9,
+    minDigits: 8,
+    maxDigits: 9,
+    prefixRegex: /^2/,
+    pattern: /^2\d{7,8}$/,
+    placeholder: '8-9 digit mobile number',
+    startDesc: '2 (mobile 02x)',
+    example: '21 123 4567'
+  },
+  {
+    code: 'DE',
+    dial: '+49',
+    label: 'DE +49',
+    name: 'German',
+    min: 10,
+    max: 11,
+    minDigits: 10,
+    maxDigits: 11,
+    prefixRegex: /^1/,
+    pattern: /^1\d{9,10}$/,
+    placeholder: '10-11 digit mobile number',
+    startDesc: '1 (mobile 015x, 016x, 017x)',
+    example: '151 23456789'
+  },
+  {
+    code: 'HK',
+    dial: '+852',
+    label: 'HK +852',
+    name: 'Hong Kong',
+    min: 8,
+    max: 8,
+    minDigits: 8,
+    maxDigits: 8,
+    prefixRegex: /^[5-9]/,
+    pattern: /^[5-9]\d{7}$/,
+    placeholder: '8-digit mobile number',
+    startDesc: '5, 6, 7, 8, or 9',
+    example: '9123 4567'
+  },
+  {
+    code: 'MY',
+    dial: '+60',
+    label: 'MY +60',
+    name: 'Malaysian',
+    min: 9,
+    max: 10,
+    minDigits: 9,
+    maxDigits: 10,
+    prefixRegex: /^1/,
+    pattern: /^1\d{8,9}$/,
+    placeholder: '9-10 digit mobile number',
+    startDesc: '1 (mobile 01x)',
+    example: '12 345 6789'
+  }
+];
 
-  if (!LEAD_WEBHOOK_URL) {
-    errorElement.textContent = failureMessage;
-    errorElement.classList.remove("hidden");
-    return false;
+function getSelectedCountryForInput(inputEl) {
+  if (!inputEl) return COUNTRY_CODES[0];
+  const group = inputEl.closest('.phone-input-group');
+  const code = group?.querySelector('input[name="countryCode"]')?.value || 'IN';
+  return COUNTRY_CODES.find(c => c.code === code) || COUNTRY_CODES[0];
+}
+
+function initCountrySelectors() {
+  document.querySelectorAll('.country-select').forEach(select => {
+    const listbox = select.querySelector('.country-select-options');
+    if (!listbox) return;
+    if (!listbox.children.length) {
+      COUNTRY_CODES.forEach(item => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'country-select-option';
+        btn.setAttribute('role', 'option');
+        btn.setAttribute('aria-selected', item.code === 'IN' ? 'true' : 'false');
+        btn.dataset.code = item.code;
+        btn.dataset.dial = item.dial;
+        btn.textContent = item.label;
+        listbox.appendChild(btn);
+      });
+    }
+  });
+}
+
+function closeAllCountryDropdowns(exceptListbox = null) {
+  document.querySelectorAll('.country-select-options:not([hidden])').forEach(el => {
+    if (el !== exceptListbox) {
+      el.hidden = true;
+      el.classList.remove('opens-up');
+      const sel = el.closest('.country-select');
+      sel?.querySelector('.country-select-trigger')?.setAttribute('aria-expanded', 'false');
+      sel?.classList.remove('is-open');
+      const grp = el.closest('.phone-input-group');
+      grp?.classList.remove('dropdown-open');
+      const fg = el.closest('.form-group') || grp?.parentElement;
+      fg?.classList.remove('dropdown-open');
+      if (fg?.parentElement?.classList.contains('grid')) {
+        fg.parentElement.classList.remove('dropdown-open');
+      }
+    }
+  });
+}
+
+function handleCountryDropdownClick(event) {
+  const select = event.target.closest('.country-select');
+  const trigger = event.target.closest('.country-select-trigger');
+
+  if (trigger && select?.contains(trigger)) {
+    const listbox = select.querySelector('.country-select-options');
+    if (!listbox) return;
+    const open = trigger.getAttribute('aria-expanded') === 'true';
+
+    // Close all other open country dropdowns
+    closeAllCountryDropdowns(listbox);
+
+    const group = select.closest('.phone-input-group');
+    const formGroup = select.closest('.form-group') || group?.parentElement;
+    const gridRow = formGroup?.parentElement;
+
+    if (open) {
+      listbox.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+      select.classList.remove('is-open');
+      group?.classList.remove('dropdown-open');
+      formGroup?.classList.remove('dropdown-open');
+      if (gridRow?.classList.contains('grid')) gridRow.classList.remove('dropdown-open');
+    } else {
+      // Clear any active validation error on this phone field immediately
+      if (group) {
+        group.classList.remove('is-invalid');
+        const phoneInput = group.querySelector('input[type="tel"]');
+        if (phoneInput) phoneInput.classList.remove('is-invalid');
+        group.classList.add('dropdown-open');
+      }
+      if (formGroup) {
+        formGroup.classList.add('dropdown-open');
+        formGroup.querySelector('.field-error-msg')?.remove();
+      }
+      if (gridRow && gridRow.classList.contains('grid')) {
+        gridRow.classList.add('dropdown-open');
+      }
+      select.classList.add('is-open');
+
+      listbox.hidden = false;
+      trigger.setAttribute('aria-expanded', 'true');
+
+      const rect = trigger.getBoundingClientRect();
+      const menuHeight = Math.min(COUNTRY_CODES.length * 36 + 10, 230);
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+      const modalBox = trigger.closest('.modal-box');
+      let shouldOpenUp = spaceBelow < menuHeight && spaceAbove > spaceBelow;
+      if (modalBox) {
+        const modalRect = modalBox.getBoundingClientRect();
+        if (modalRect.bottom - rect.bottom < menuHeight && (rect.top - modalRect.top) > 100) {
+          shouldOpenUp = true;
+        }
+      }
+      listbox.classList.toggle('opens-up', shouldOpenUp);
+      const activeOpt = listbox.querySelector('.country-select-option[aria-selected="true"]') || listbox.querySelector('.country-select-option');
+      activeOpt?.focus();
+    }
+    return;
   }
 
-  const submitButton = form.querySelector('button[type="submit"]');
-  submitButton.disabled = true;
+  const option = event.target.closest('.country-select-option');
+  if (option && select?.contains(option)) {
+    const listbox = select.querySelector('.country-select-options');
+    const code = option.dataset.code;
+    const item = COUNTRY_CODES.find(c => c.code === code) || COUNTRY_CODES[0];
 
-  try {
-    const response = await fetch(LEAD_WEBHOOK_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...Object.fromEntries(new FormData(form).entries()),
-        form_type: formType,
-        builder_slug: builderSlug,
-        builder_name: activeBuilderData.name,
-        page_url: window.location.href,
-        submitted_at: new Date().toISOString(),
-      }),
+    const currentSpan = select.querySelector('.country-select-current');
+    if (currentSpan) currentSpan.textContent = item.label;
+    const hiddenCode = select.querySelector('input[name="countryCode"]');
+    if (hiddenCode) hiddenCode.value = item.code;
+    const hiddenDial = select.querySelector('input[name="dialCode"]');
+    if (hiddenDial) hiddenDial.value = item.dial;
+
+    listbox.querySelectorAll('.country-select-option').forEach(candidate => {
+      candidate.setAttribute('aria-selected', String(candidate === option));
     });
 
-    if (!response.ok)
-      throw new Error(`Webhook returned HTTP ${response.status}`);
-    return true;
-  } catch (error) {
-    console.error("Lead submission failed:", error);
-    errorElement.textContent = failureMessage;
-    errorElement.classList.remove("hidden");
-    return false;
-  } finally {
-    submitButton.disabled = false;
+    listbox.hidden = true;
+    listbox.classList.remove('opens-up');
+    const activeTrigger = select.querySelector('.country-select-trigger');
+    if (activeTrigger) activeTrigger.setAttribute('aria-expanded', 'false');
+
+    select.classList.remove('is-open');
+    const group = select.closest('.phone-input-group');
+    group?.classList.remove('dropdown-open');
+    const formGroup = select.closest('.form-group') || group?.parentElement;
+    formGroup?.classList.remove('dropdown-open');
+    if (formGroup?.parentElement?.classList.contains('grid')) {
+      formGroup.parentElement.classList.remove('dropdown-open');
+    }
+
+    // Update phone input placeholder, maxlength, and validate current value for new country
+    const phoneInput = group?.querySelector('input[type="tel"]');
+    if (phoneInput) {
+      phoneInput.setAttribute('maxlength', String(item.max));
+      phoneInput.setAttribute('placeholder', item.placeholder);
+      let digits = phoneInput.value.replace(/\D/g, '');
+
+      const dialDigits = item.dial.replace(/\D/g, '');
+      if (digits.startsWith(dialDigits) && digits.length > item.max) {
+        digits = digits.slice(dialDigits.length);
+      }
+      if (digits.length > item.max && digits.startsWith('0')) {
+        digits = digits.replace(/^0+/, '');
+      }
+
+      if (digits.length > 0 && !item.prefixRegex.test(digits.charAt(0))) {
+        phoneInput.value = '';
+        showFieldError(phoneInput, `${item.name} mobile numbers must start with ${item.startDesc}.`);
+      } else {
+        phoneInput.value = digits.slice(0, item.max);
+        phoneInput.classList.remove('is-invalid');
+        group?.classList.remove('is-invalid');
+        formGroup?.querySelector('.field-error-msg')?.remove();
+      }
+      phoneInput.focus();
+    }
+    return;
   }
+
+  // Dismiss open country dropdowns on click outside
+  closeAllCountryDropdowns();
+}
+
+function handleCountryDropdownKeydown(event) {
+  const select = event.target.closest('.country-select');
+  if (!select) return;
+  const trigger = select.querySelector('.country-select-trigger');
+  const listbox = select.querySelector('.country-select-options');
+  if (!trigger || !listbox) return;
+
+  if (event.target === trigger && ['ArrowDown', 'Enter', ' '].includes(event.key) && trigger.getAttribute('aria-expanded') !== 'true') {
+    event.preventDefault();
+    trigger.click();
+    return;
+  }
+
+  if (event.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
+    closeAllCountryDropdowns();
+    trigger.focus();
+    return;
+  }
+
+  if (event.target.classList.contains('country-select-option')) {
+    const options = [...listbox.querySelectorAll('.country-select-option')];
+    const index = options.indexOf(event.target);
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      const next = options[(index + 1) % options.length];
+      next?.focus();
+    } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      const prev = options[(index - 1 + options.length) % options.length];
+      prev?.focus();
+    } else if (['Enter', ' '].includes(event.key)) {
+      event.preventDefault();
+      event.target.click();
+    }
+  }
+}
+
+function resetCountrySelector(formOrCard) {
+  const countrySelect = formOrCard?.querySelector('.country-select');
+  if (!countrySelect) return;
+  const defaultCountry = COUNTRY_CODES[0]; // IN +91
+  const currentSpan = countrySelect.querySelector('.country-select-current');
+  if (currentSpan) currentSpan.textContent = defaultCountry.label;
+  const codeInput = countrySelect.querySelector('input[name="countryCode"]');
+  if (codeInput) codeInput.value = defaultCountry.code;
+  const dialInput = countrySelect.querySelector('input[name="dialCode"]');
+  if (dialInput) dialInput.value = defaultCountry.dial;
+  countrySelect.querySelectorAll('.country-select-option').forEach(opt => {
+    opt.setAttribute('aria-selected', String(opt.dataset.code === defaultCountry.code));
+  });
+  const phoneInput = countrySelect.closest('.phone-input-group')?.querySelector('input[type="tel"]');
+  if (phoneInput) {
+    phoneInput.setAttribute('maxlength', String(defaultCountry.maxDigits));
+    phoneInput.setAttribute('placeholder', defaultCountry.placeholder);
+  }
+}
+
+function resolveProjectName(input) {
+  if (!input || typeof input !== 'string') return '';
+  const clean = input.trim();
+  if (!clean) return '';
+
+  const dataList = (Array.isArray(propertiesData) && propertiesData.length > 0)
+    ? propertiesData
+    : (typeof window !== 'undefined' && Array.isArray(window.propertiesData) && window.propertiesData.length > 0 ? window.propertiesData : []);
+
+  if (dataList.length > 0) {
+    const found = dataList.find(p =>
+      (p.id && p.id.toLowerCase() === clean.toLowerCase()) ||
+      (p.apiProjectId && p.apiProjectId.toLowerCase() === clean.toLowerCase()) ||
+      (p.name && p.name.toLowerCase() === clean.toLowerCase())
+    );
+    if (found?.name) return found.name;
+  }
+  return clean;
+}
+
+// ==================== WHATSAPP INTEGRATION & CONFIGURATION ====================
+const WHATSAPP_CONFIG = {
+  phone: '917411662228',
+  displayPhone: '+91 74116 62228',
+  defaultProject: 'Shriram Properties projects in Bangalore',
+  brandMessage: 'Hi, I am interested in Shriram Properties projects in Bangalore. Please share brochures, pricing details, and ongoing/new launch offers.',
+  buildMessage(target = null, maybeBhk = null) {
+    if (!target) {
+      return WHATSAPP_CONFIG.brandMessage;
+    }
+
+    let name = '';
+    let phone = '';
+    let email = '';
+    let project = '';
+    let bhk = '';
+
+    if (typeof target === 'object') {
+      name = (target.fullName || target.name || '').trim();
+      phone = (target.mobileNumber || target.phone || '').trim();
+      email = (target.email || '').trim();
+      const rawProject = (target.project || target.projectId || '').trim();
+      project = resolveProjectName(rawProject);
+      bhk = (target.preferredBhk || target.bhk || '').trim();
+    } else if (typeof target === 'string') {
+      project = resolveProjectName(target.trim());
+      if (typeof maybeBhk === 'string') {
+        bhk = maybeBhk.trim();
+      }
+    }
+
+    // 1. Pop-up WhatsApp Lead submission (Phone entered in timed / floating modal):
+    const isWaPopupLead = (!name || name.toLowerCase() === 'whatsapp lead') && Boolean(phone);
+    if (isWaPopupLead) {
+      return `${WHATSAPP_CONFIG.brandMessage}\n\nMobile Number: ${phone}`;
+    }
+
+    // 2. Full VIP enquiry form submission (User filled Name, Phone, Project, BHK):
+    const isRealName = name && name.toLowerCase() !== 'whatsapp lead';
+    if (isRealName) {
+      const targetProj = project || WHATSAPP_CONFIG.defaultProject;
+      const lines = [
+        `Hi, I am interested in ${targetProj}.`,
+        '',
+        '*Enquiry Details:*',
+        `• *Name:* ${name}`
+      ];
+      if (phone) lines.push(`• *Phone Number:* ${phone}`);
+      if (email) lines.push(`• *Email:* ${email}`);
+      if (targetProj) lines.push(`• *Interested Project:* ${targetProj}`);
+      if (bhk) lines.push(`• *BHK:* ${bhk}`);
+      lines.push('');
+      lines.push('Please share brochures, pricing details, and ongoing/new launch offers.');
+      return lines.join('\n');
+    }
+
+    // 3. Default "Chat on WhatsApp" brand message:
+    if (!project || project === WHATSAPP_CONFIG.defaultProject || project === activeBuilderData.name) {
+      return WHATSAPP_CONFIG.brandMessage;
+    }
+
+    const bhkPart = bhk ? ` (${bhk})` : '';
+    return `Hi, I am interested in ${project}${bhkPart}. Please share brochures, pricing details, and ongoing/new launch offers.`;
+  },
+  buildUrl(target = null, maybeBhk = null) {
+    const text = WHATSAPP_CONFIG.buildMessage(target, maybeBhk);
+    return `https://api.whatsapp.com/send/?phone=${WHATSAPP_CONFIG.phone}&text=${encodeURIComponent(text)}`;
+  }
+};
+
+function openWhatsAppChat(target = null, maybeBhk = null) {
+  const url = WHATSAPP_CONFIG.buildUrl(target, maybeBhk);
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+function openWhatsAppModal() {
+  const modal = document.getElementById('waPopModal');
+  if (modal) modal.classList.add('active');
+}
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) modal.classList.remove('active');
+}
+
+function sanitizeIndianPhone(val) {
+  if (!val || typeof val !== 'string') return '';
+  let digits = val.replace(/\D/g, '');
+  if (digits.length === 12 && digits.startsWith('91') && /^[6-9]/.test(digits.slice(2))) {
+    digits = digits.slice(2);
+  }
+  if (digits.length === 11 && digits.startsWith('0') && /^[6-9]/.test(digits.slice(1))) {
+    digits = digits.slice(1);
+  }
+  if (digits.length > 0 && !/^[6-9]/.test(digits)) {
+    digits = '';
+  }
+  return digits.slice(0, 10);
+}
+
+async function sendWhatsAppLead() {
+  const input = document.getElementById('waPhoneInput');
+  if (!input) return;
+
+  const phoneGroup = input.closest('.phone-input-group');
+  if (phoneGroup) phoneGroup.classList.remove('is-invalid');
+  input.classList.remove('is-invalid');
+  const container = input.closest('.form-group') || phoneGroup?.parentElement || input.parentElement;
+  container?.querySelector('.field-error-msg')?.remove();
+
+  const country = getSelectedCountryForInput(input);
+  let digits = input.value.replace(/\D/g, '');
+
+  if (!digits) {
+    showFieldError(input, 'Please enter your WhatsApp mobile number');
+    input.focus();
+    return;
+  }
+
+  if (!country.prefixRegex.test(digits)) {
+    showFieldError(input, `${country.name} mobile numbers must start with ${country.startDesc}.`);
+    input.focus();
+    return;
+  }
+
+  if (digits.length < country.min || digits.length > country.max) {
+    const lenMsg = country.min === country.max 
+      ? `Enter a valid ${country.min}-digit ${country.name} mobile number.`
+      : `Enter a valid ${country.min}-${country.max}-digit ${country.name} mobile number.`;
+    showFieldError(input, lenMsg);
+    input.focus();
+    return;
+  }
+
+  if (country.pattern && !country.pattern.test(digits)) {
+    showFieldError(input, `Please enter a valid ${country.name} mobile number (e.g. ${country.example}).`);
+    input.focus();
+    return;
+  }
+
+  const formattedPhone = `${country.dial} ${digits}`;
+  const leadPayload = {
+    name: 'WhatsApp Lead',
+    phone: formattedPhone,
+    projectId: activeProperty?.id || 'shriram-project',
+    bhk: null,
+    fullName: 'WhatsApp Lead',
+    mobileNumber: formattedPhone,
+    project: activeProperty?.name || WHATSAPP_CONFIG.defaultProject,
+    preferredBhk: null,
+    sourcePage: window.location.href,
+    submittedAt: new Date().toISOString(),
+    leadSource: 'WhatsApp E-Brochure Popup',
+    partner: API_CONFIG.partner
+  };
+
+  sendLeadToApi(leadPayload).catch(err => console.error('[WhatsApp Lead Error]:', err));
+
+  closeModal('waPopModal');
+  input.value = '';
+  resetCountrySelector(document.getElementById('waPopModal'));
+
+  // Take user directly to WhatsApp chat with the mobile number they entered included in the message
+  openWhatsAppChat(leadPayload);
+}
+
+// ==================== LEAD CAPTURE & CRM API CONFIGURATION ====================
+const API_CONFIG = {
+  endpoint: '',
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  },
+  partner: {
+    name: 'M&A Ventures',
+    type: 'Authorised Channel Partner',
+    builder: 'Shriram Properties',
+    contactPhone: '+91 74116 62228',
+    whatsappPhone: '917411662228',
+    brokerRera: ''
+  }
+};
+
+async function sendLeadToApi(leadData) {
+  const payload = {
+    name: leadData.name,
+    phone: leadData.phone,
+    email: leadData.email || '',
+    projectId: leadData.projectId,
+    ...(leadData.bhk ? { bhk: leadData.bhk } : {})
+  };
+
+  if (!API_CONFIG.endpoint) {
+    console.log('[Lead Capture - Local Mode]: API endpoint not set yet. Ready to send exact payload:', payload);
+    return { success: true, mode: 'local', payload };
+  }
+
+  try {
+    const response = await fetch(API_CONFIG.endpoint, {
+      method: API_CONFIG.method || 'POST',
+      headers: API_CONFIG.headers,
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      throw new Error(`API responded with HTTP ${response.status}`);
+    }
+
+    const data = await response.json().catch(() => ({}));
+    return { success: true, data };
+  } catch (error) {
+    console.error('[Lead Capture Error]: Failed to dispatch lead to API:', error);
+    return { success: false, error: error.message };
+  }
+}
+
+function escapeLeadHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function showFieldError(targetElement, message) {
+  targetElement.classList.add('is-invalid');
+  targetElement.classList.remove('is-valid');
+
+  // If inside phone-input-group, also mark the entire phone group as invalid
+  const phoneGroup = targetElement.closest('.phone-input-group');
+  if (phoneGroup) {
+    phoneGroup.classList.add('is-invalid');
+  }
+
+  // If this is a custom select or select trigger
+  const customSelect = targetElement.closest('[data-custom-select]');
+  if (customSelect) {
+    const trigger = customSelect.querySelector('.custom-select-trigger');
+    if (trigger) trigger.classList.add('is-invalid');
+  }
+
+  // Ensure error is placed outside and below the input control or input group
+  const container = targetElement.closest('.form-group') || phoneGroup?.parentElement || customSelect?.parentElement || targetElement.parentElement;
+  if (!container) return;
+
+  let errorMsg = container.querySelector(':scope > .field-error-msg, .field-error-msg');
+  if (!errorMsg) {
+    errorMsg = document.createElement('div');
+    errorMsg.className = 'field-error-msg';
+    errorMsg.setAttribute('role', 'alert');
+    errorMsg.innerHTML = `<i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> <span>${message}</span>`;
+    container.appendChild(errorMsg);
+  } else {
+    const span = errorMsg.querySelector('span');
+    if (span) span.textContent = message;
+  }
+}
+
+function showEnquiryStatusModal(status, leadData, errorMsg) {
+  const modal = document.getElementById('enquiryStatusModal');
+  const content = document.getElementById('statusModalContent');
+  if (!modal || !content) return;
+
+  const normalizedLead = (leadData && typeof leadData === 'object') ? { ...leadData } : {};
+  normalizedLead.fullName = (normalizedLead.fullName || normalizedLead.name || '').trim();
+  normalizedLead.name = normalizedLead.fullName;
+  normalizedLead.mobileNumber = (normalizedLead.mobileNumber || normalizedLead.phone || '').trim();
+  normalizedLead.phone = normalizedLead.mobileNumber;
+  normalizedLead.email = (normalizedLead.email || '').trim();
+  normalizedLead.preferredBhk = (normalizedLead.preferredBhk || normalizedLead.bhk || '').trim();
+  normalizedLead.bhk = normalizedLead.preferredBhk;
+
+  const rawProject = (normalizedLead.project || normalizedLead.projectId || '').trim();
+  normalizedLead.project = resolveProjectName(rawProject) || (typeof activeProperty !== 'undefined' && activeProperty?.name ? activeProperty.name : WHATSAPP_CONFIG.defaultProject);
+
+  if (status === 'success') {
+    content.innerHTML = `
+      <div class="partner-verified-badge">
+        Authorised Channel Partner · M&amp;A Ventures
+      </div>
+      <h3 class="status-modal-title" id="statusModalTitle">Enquiry Successfully Submitted!</h3>
+      <p class="status-modal-greeting">Thank you, <strong>${escapeLeadHtml(normalizedLead.fullName || 'Valued Customer')}</strong>.</p>
+      
+      <div class="enquiry-summary-box">
+        <div class="summary-row">
+          <span class="summary-label"><i class="fa-solid fa-building" aria-hidden="true"></i> Project:</span>
+          <span class="summary-val"><strong>${escapeLeadHtml(normalizedLead.project || WHATSAPP_CONFIG.defaultProject)}</strong></span>
+        </div>
+        ${normalizedLead.preferredBhk ? `
+        <div class="summary-row">
+          <span class="summary-label"><i class="fa-solid fa-bed" aria-hidden="true"></i> BHK Preference:</span>
+          <span class="summary-val"><strong>${escapeLeadHtml(normalizedLead.preferredBhk)}</strong></span>
+        </div>` : ''}
+        <div class="summary-row">
+          <span class="summary-label"><i class="fa-solid fa-phone" aria-hidden="true"></i> Contact:</span>
+          <span class="summary-val">${escapeLeadHtml(normalizedLead.mobileNumber || 'Provided')}</span>
+        </div>
+      </div>
+
+      <p class="status-modal-desc">
+        Your enquiry has been received by <strong>M&amp;A Ventures</strong>, the Authorised Channel Partner for Shriram Properties. Our dedicated property advisor will contact you within 15 minutes.
+      </p>
+
+      <div class="partner-quick-contact">
+        <span>Need immediate consultation or brochure on WhatsApp?</span>
+        <a href="${WHATSAPP_CONFIG.buildUrl(normalizedLead)}" target="_blank" rel="noopener noreferrer" class="btn-partner-wa">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Sales Desk
+        </a>
+      </div>
+    `;
+  } else {
+    content.innerHTML = `
+      <div class="status-fail-badge">
+        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Submission Unsuccessful
+      </div>
+      <h3 class="status-modal-title" id="statusModalTitle">Unable to Submit Online</h3>
+      <p class="status-modal-desc">
+        We could not connect to the lead dispatch service (${escapeLeadHtml(errorMsg || 'Network or server issue')}). Please connect directly with our sales desk on WhatsApp for instant assistance.
+      </p>
+
+      <div class="partner-quick-contact">
+        <span>Instant Consultation:</span>
+        <a href="${WHATSAPP_CONFIG.buildUrl(normalizedLead)}" target="_blank" rel="noopener noreferrer" class="btn-partner-wa">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Connect via WhatsApp
+        </a>
+      </div>
+    `;
+  }
+
+  modal.classList.add('active');
 }
 
 // FORMS SUBMISSION
 async function handleMainFormSubmit(e) {
   e.preventDefault();
   const form = e.currentTarget;
-  const accepted = await submitLeadForm(
-    form,
-    "consultation",
-    "main-form-error",
-  );
-  if (!accepted) return;
 
-  document.getElementById("main-success-name").textContent =
-    form.elements.fullName.value.trim();
-  document.getElementById("main-success-builder").textContent =
-    activeBuilderData.name;
-  document.getElementById("booking-form-container").classList.add("hidden");
-  document.getElementById("main-form-success").classList.remove("hidden");
+  form.querySelectorAll('.field-error-msg').forEach(el => el.remove());
+  form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+  form.querySelectorAll('.phone-input-group').forEach(el => el.classList.remove('is-invalid'));
+
+  const nameInput = form.querySelector('input[name="fullName"]');
+  const phoneInput = form.querySelector('input[name="phone"]');
+  const emailInput = form.querySelector('input[name="email"]');
+  const projectInput = form.querySelector('select[name="preferredProject"]');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  let isValid = true;
+  let firstInvalid = null;
+
+  if (nameInput) {
+    const nameVal = nameInput.value.trim();
+    if (!nameVal) {
+      isValid = false;
+      showFieldError(nameInput, 'Please enter your full name');
+      if (!firstInvalid) firstInvalid = nameInput;
+    } else if (nameVal.length < 2) {
+      isValid = false;
+      showFieldError(nameInput, 'Please enter a valid name (at least 2 characters)');
+      if (!firstInvalid) firstInvalid = nameInput;
+    }
+  }
+
+  if (phoneInput) {
+    const country = getSelectedCountryForInput(phoneInput);
+    let digits = phoneInput.value.replace(/\D/g, '');
+
+    if (!digits) {
+      isValid = false;
+      showFieldError(phoneInput, 'Please enter your mobile number');
+      if (!firstInvalid) firstInvalid = phoneInput;
+    } else if (!country.prefixRegex.test(digits)) {
+      isValid = false;
+      showFieldError(phoneInput, `${country.name} mobile numbers must start with ${country.startDesc}.`);
+      if (!firstInvalid) firstInvalid = phoneInput;
+    } else if (digits.length < country.min || digits.length > country.max) {
+      isValid = false;
+      const lenMsg = country.min === country.max 
+        ? `Enter a valid ${country.min}-digit ${country.name} mobile number.`
+        : `Enter a valid ${country.min}-${country.max}-digit ${country.name} mobile number.`;
+      showFieldError(phoneInput, lenMsg);
+      if (!firstInvalid) firstInvalid = phoneInput;
+    } else if (country.pattern && !country.pattern.test(digits)) {
+      isValid = false;
+      showFieldError(phoneInput, `Please enter a valid ${country.name} mobile number (e.g. ${country.example}).`);
+      if (!firstInvalid) firstInvalid = phoneInput;
+    }
+  }
+
+  if (emailInput && emailInput.value.trim()) {
+    const emailVal = emailInput.value.trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailVal)) {
+      isValid = false;
+      showFieldError(emailInput, 'Please enter a valid email address or leave blank');
+      if (!firstInvalid) firstInvalid = emailInput;
+    }
+  }
+
+  if (!isValid) {
+    if (firstInvalid) {
+      firstInvalid.focus();
+      firstInvalid.scrollIntoView?.({ behavior: 'smooth', block: 'center' });
+    }
+    return false;
+  }
+
+  const country = getSelectedCountryForInput(phoneInput);
+  let rawDigits = phoneInput ? phoneInput.value.replace(/\D/g, '') : '';
+  if (country.code === 'IN') rawDigits = sanitizeIndianPhone(rawDigits);
+  const formattedPhone = rawDigits ? `${country.dial} ${rawDigits}` : (phoneInput ? phoneInput.value.trim() : '');
+
+  const selectedProjectVal = projectInput?.value?.trim() || '';
+  const resolvedProject = resolveProjectName(selectedProjectVal) || (activeProperty?.name || WHATSAPP_CONFIG.defaultProject);
+  const matchedProp = propertiesData.find(p => p.name === resolvedProject || p.id === selectedProjectVal) || activeProperty;
+
+  const leadData = {
+    name: nameInput ? nameInput.value.trim() : '',
+    phone: formattedPhone,
+    email: emailInput && emailInput.value.trim() ? emailInput.value.trim() : '',
+    projectId: matchedProp?.apiProjectId || matchedProp?.id || 'shriram-project',
+    bhk: null,
+    fullName: nameInput ? nameInput.value.trim() : '',
+    mobileNumber: formattedPhone,
+    project: resolvedProject,
+    preferredBhk: null,
+    sourcePage: window.location.href,
+    submittedAt: new Date().toISOString(),
+    partner: API_CONFIG.partner
+  };
+
+  const originalBtnContent = submitBtn ? submitBtn.innerHTML : '';
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Submitting...';
+  }
+
+  const result = await sendLeadToApi(leadData);
+
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalBtnContent;
+  }
+
+  if (result.success) {
+    showEnquiryStatusModal('success', leadData);
+    form.reset();
+    resetCountrySelector(form);
+  } else {
+    showEnquiryStatusModal('failure', leadData, result.error);
+  }
+
+  return false;
 }
 
 function resetMainForm() {
-  document.getElementById("main-consultation-form").reset();
-  document.getElementById("booking-form-container").classList.remove("hidden");
-  document.getElementById("main-form-success").classList.add("hidden");
+  const form = document.getElementById("main-consultation-form");
+  if (form) {
+    form.reset();
+    resetCountrySelector(form);
+    form.querySelectorAll('.field-error-msg').forEach(el => el.remove());
+    form.querySelectorAll('.is-invalid, .is-valid').forEach(el => el.classList.remove('is-invalid', 'is-valid'));
+    form.querySelectorAll('.phone-input-group').forEach(el => el.classList.remove('is-invalid'));
+  }
 }
 
 async function handleSidebarSubmit(e) {
   e.preventDefault();
-  const accepted = await submitLeadForm(
-    e.currentTarget,
-    "site_visit_request",
-    "sidebar-form-error",
-  );
-  if (!accepted) return;
+  const form = e.currentTarget;
 
-  document.getElementById("sidebar-form-content").classList.add("hidden");
-  document.getElementById("sidebar-form-success").classList.remove("hidden");
+  form.querySelectorAll('.field-error-msg').forEach(el => el.remove());
+  form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+  form.querySelectorAll('.phone-input-group').forEach(el => el.classList.remove('is-invalid'));
+
+  const nameInput = form.querySelector('input[name="fullName"]');
+  const phoneInput = form.querySelector('input[name="phone"]');
+  const bhkSelect = form.querySelector('select[name="preferredConfiguration"]');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  let isValid = true;
+  let firstInvalid = null;
+
+  if (nameInput) {
+    const nameVal = nameInput.value.trim();
+    if (!nameVal) {
+      isValid = false;
+      showFieldError(nameInput, 'Please enter your full name');
+      if (!firstInvalid) firstInvalid = nameInput;
+    } else if (nameVal.length < 2) {
+      isValid = false;
+      showFieldError(nameInput, 'Please enter a valid name (at least 2 characters)');
+      if (!firstInvalid) firstInvalid = nameInput;
+    }
+  }
+
+  if (phoneInput) {
+    const country = getSelectedCountryForInput(phoneInput);
+    let digits = phoneInput.value.replace(/\D/g, '');
+
+    if (!digits) {
+      isValid = false;
+      showFieldError(phoneInput, 'Please enter your mobile number');
+      if (!firstInvalid) firstInvalid = phoneInput;
+    } else if (!country.prefixRegex.test(digits)) {
+      isValid = false;
+      showFieldError(phoneInput, `${country.name} mobile numbers must start with ${country.startDesc}.`);
+      if (!firstInvalid) firstInvalid = phoneInput;
+    } else if (digits.length < country.min || digits.length > country.max) {
+      isValid = false;
+      const lenMsg = country.min === country.max 
+        ? `Enter a valid ${country.min}-digit ${country.name} mobile number.`
+        : `Enter a valid ${country.min}-${country.max}-digit ${country.name} mobile number.`;
+      showFieldError(phoneInput, lenMsg);
+      if (!firstInvalid) firstInvalid = phoneInput;
+    } else if (country.pattern && !country.pattern.test(digits)) {
+      isValid = false;
+      showFieldError(phoneInput, `Please enter a valid ${country.name} mobile number (e.g. ${country.example}).`);
+      if (!firstInvalid) firstInvalid = phoneInput;
+    }
+  }
+
+  if (!isValid) {
+    if (firstInvalid) {
+      firstInvalid.focus();
+      firstInvalid.scrollIntoView?.({ behavior: 'smooth', block: 'center' });
+    }
+    return false;
+  }
+
+  const country = getSelectedCountryForInput(phoneInput);
+  let rawDigits = phoneInput ? phoneInput.value.replace(/\D/g, '') : '';
+  if (country.code === 'IN') rawDigits = sanitizeIndianPhone(rawDigits);
+  const formattedPhone = rawDigits ? `${country.dial} ${rawDigits}` : (phoneInput ? phoneInput.value.trim() : '');
+
+  const selectedBhk = bhkSelect?.value?.trim() || null;
+  const projectName = activeProperty?.name || WHATSAPP_CONFIG.defaultProject;
+
+  const leadData = {
+    name: nameInput ? nameInput.value.trim() : '',
+    phone: formattedPhone,
+    email: '',
+    projectId: activeProperty?.apiProjectId || activeProperty?.id || 'shriram-project',
+    bhk: selectedBhk,
+    fullName: nameInput ? nameInput.value.trim() : '',
+    mobileNumber: formattedPhone,
+    project: projectName,
+    preferredBhk: selectedBhk,
+    sourcePage: window.location.href,
+    submittedAt: new Date().toISOString(),
+    partner: API_CONFIG.partner
+  };
+
+  const originalBtnContent = submitBtn ? submitBtn.innerHTML : '';
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Submitting...';
+  }
+
+  const result = await sendLeadToApi(leadData);
+
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalBtnContent;
+  }
+
+  if (result.success) {
+    showEnquiryStatusModal('success', leadData);
+    form.reset();
+    resetCountrySelector(form);
+  } else {
+    showEnquiryStatusModal('failure', leadData, result.error);
+  }
+
+  return false;
 }
 
 function scrollToConsultation() {
@@ -1586,59 +2556,136 @@ document.addEventListener("click", (event) => {
     });
 });
 
-const whatsappPopup = document.getElementById("whatsapp-popup");
-const whatsappFloat = document.getElementById("whatsapp-float");
-const whatsappClose = document.getElementById("whatsapp-close");
-const whatsappForm = document.getElementById("whatsapp-form");
-const whatsappFeedback = document.getElementById("whatsapp-feedback");
-const whatsappBusinessNumber =
-  activeBuilderData.whatsappNumber ||
-  document.body.dataset.whatsappNumber ||
-  "";
-
-function openWhatsAppPopup() {
-  whatsappPopup.classList.add("is-open");
-  whatsappPopup.setAttribute("aria-hidden", "false");
-  document.body.classList.add("whatsapp-popup-open");
-  whatsappFeedback.textContent = "";
-}
-
-function closeWhatsAppPopup() {
-  whatsappPopup.classList.remove("is-open");
-  whatsappPopup.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("whatsapp-popup-open");
-}
-
-whatsappFloat.addEventListener("click", openWhatsAppPopup);
-whatsappClose.addEventListener("click", closeWhatsAppPopup);
-whatsappPopup.addEventListener("click", (event) => {
-  if (event.target === whatsappPopup) closeWhatsAppPopup();
-});
+// Phone number enforcement: Multi-country validation & Indian mobile standard
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && whatsappPopup.classList.contains("is-open"))
-    closeWhatsAppPopup();
+  const el = event.target;
+  if (el && el.type === "tel") {
+    const allowedNavKeys = [
+      "Backspace", "Delete", "Tab", "ArrowLeft", "ArrowRight", 
+      "ArrowUp", "ArrowDown", "Enter", "Escape", "Home", "End"
+    ];
+    if (allowedNavKeys.includes(event.key)) return;
+    if (event.ctrlKey || event.metaKey) return;
+
+    // Block any non-digit
+    if (!/^\d$/.test(event.key)) {
+      event.preventDefault();
+      return;
+    }
+
+    const country = getSelectedCountryForInput(el);
+    const start = el.selectionStart || 0;
+    const end = el.selectionEnd || 0;
+    const currentVal = el.value || "";
+    const digitsOnly = currentVal.replace(/\D/g, "");
+
+    // Enforce country-specific starting digit regex on the very first typed digit
+    const isFirstDigit = start === 0 && (digitsOnly.length === 0 || end === currentVal.length);
+    if (isFirstDigit && country.prefixRegex && !country.prefixRegex.test(event.key)) {
+      event.preventDefault();
+      showFieldError(el, `${country.name} mobile numbers must start with ${country.startDesc}.`);
+      return;
+    }
+
+    // Do not allow typing beyond max digits
+    if (digitsOnly.length >= country.max && start === end) {
+      event.preventDefault();
+    }
+  }
 });
-whatsappForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const customerPhone = document
-    .getElementById("whatsapp-phone")
-    .value.replace(/\D/g, "");
-  if (customerPhone.length < 10) {
-    whatsappFeedback.textContent = "Enter a valid WhatsApp number to continue.";
-    return;
+
+document.addEventListener("paste", (event) => {
+  const el = event.target;
+  if (el && el.type === "tel") {
+    event.preventDefault();
+    const country = getSelectedCountryForInput(el);
+    const pasteData = (event.clipboardData || window.clipboardData)?.getData("text") || "";
+    let digits = pasteData.replace(/\D/g, "");
+
+    const dialDigits = country.dial.replace(/\D/g, "");
+    if (digits.startsWith(dialDigits) && digits.length > country.max) {
+      digits = digits.slice(dialDigits.length);
+    }
+    if (digits.length > country.max && digits.startsWith("0")) {
+      digits = digits.replace(/^0+/, "");
+    }
+
+    if (digits.length > 0 && country.prefixRegex && !country.prefixRegex.test(digits.charAt(0))) {
+      showFieldError(el, `${country.name} mobile numbers must start with ${country.startDesc}.`);
+      return;
+    }
+
+    digits = digits.slice(0, country.max);
+    if (digits) {
+      el.value = digits;
+      el.dispatchEvent(new Event("input", { bubbles: true }));
+    }
   }
-  if (!whatsappBusinessNumber) {
-    whatsappFeedback.textContent =
-      "WhatsApp contact is not configured yet. Please contact us by phone.";
-    return;
+});
+
+// Real-time error dismissal and country dropdown click/dismiss handlers
+document.addEventListener("input", (event) => {
+  const el = event.target;
+  if (el && el.type === "tel") {
+    const country = getSelectedCountryForInput(el);
+    let digits = el.value.replace(/\D/g, "");
+
+    const dialDigits = country.dial.replace(/\D/g, "");
+    if (digits.startsWith(dialDigits) && digits.length > country.max) {
+      digits = digits.slice(dialDigits.length);
+    }
+    if (digits.length > country.max && digits.startsWith("0")) {
+      digits = digits.replace(/^0+/, "");
+    }
+
+    if (digits.length > 0 && country.prefixRegex && !country.prefixRegex.test(digits.charAt(0))) {
+      el.value = "";
+      showFieldError(el, `${country.name} mobile numbers must start with ${country.startDesc}.`);
+      return;
+    }
+
+    if (digits.length > country.max) {
+      digits = digits.slice(0, country.max);
+    }
+
+    if (el.value !== digits) {
+      el.value = digits;
+    }
   }
-  const message = `Please send me the ${activeBuilderData.name} e-brochure on WhatsApp. My number is ${customerPhone}.`;
-  window.open(
-    `https://wa.me/${whatsappBusinessNumber.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`,
-    "_blank",
-    "noopener,noreferrer",
-  );
-  closeWhatsAppPopup();
+
+  if (el && el.classList.contains("is-invalid")) {
+    el.classList.remove("is-invalid");
+    const group = el.closest(".phone-input-group");
+    if (group) group.classList.remove("is-invalid");
+    const container = el.closest(".form-group") || group?.parentElement || el.parentElement;
+    container?.querySelector(".field-error-msg")?.remove();
+  }
+});
+
+document.addEventListener("change", (event) => {
+  const el = event.target;
+  if (el && el.classList.contains("is-invalid")) {
+    el.classList.remove("is-invalid");
+    const group = el.closest(".phone-input-group");
+    if (group) group.classList.remove("is-invalid");
+    const container = el.closest(".form-group") || el.parentElement;
+    container?.querySelector(".field-error-msg")?.remove();
+  }
+});
+
+// Modal dismiss listeners: click backdrop or press Escape
+document.addEventListener("click", (event) => {
+  handleCountryDropdownClick(event);
+  if (event.target.classList.contains("modal-overlay")) {
+    event.target.classList.remove("active");
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  handleCountryDropdownKeydown(event);
+  if (event.key === "Escape") {
+    document.querySelectorAll(".modal-overlay.active").forEach((m) => m.classList.remove("active"));
+  }
 });
 
 const propertyCarousel = document.querySelector("[data-property-carousel]");
@@ -2050,7 +3097,7 @@ function initializeConnectivityMap(item) {
   }
 
   const mapElement = document.getElementById("connectivity-map-canvas");
-  const themeColor = activeBuilderData.theme?.primary || "#163A52";
+  const themeColor = activeBuilderData.theme?.primary || "#1E3A8A";
   const propertyPlaces = [
     [item.coordinates.lat, item.coordinates.lon],
     ...connectivityMapPlaces
@@ -2104,7 +3151,7 @@ function initializeConnectivityPreview(item) {
     "connectivity-map-preview-canvas",
   );
   if (!previewElement) return;
-  const themeColor = activeBuilderData.theme?.primary || "#163A52";
+  const themeColor = activeBuilderData.theme?.primary || "#1E3A8A";
   if (!connectivityPreviewMap) {
     connectivityPreviewMap = window.L.map(previewElement, {
       attributionControl: true,
@@ -2144,7 +3191,7 @@ function initializeConnectivityPreview(item) {
 }
 
 function renderConnectivityDestinationMarker(place) {
-  const themeColor = activeBuilderData.theme?.primary || "#163A52";
+  const themeColor = activeBuilderData.theme?.primary || "#1E3A8A";
   const destinationMarker = window.L.circleMarker(
     [place.coordinates.lat, place.coordinates.lon],
     {
@@ -2739,6 +3786,7 @@ Object.assign(window, {
   closeConnectivityMap,
   closeLightbox,
   closeMobileMenu,
+  closeModal,
   filterByChip,
   handleMainFormSubmit,
   handleSidebarSubmit,
@@ -2749,6 +3797,10 @@ Object.assign(window, {
   goToProjectEnquiry,
   selectEnquiryProject,
   openLightbox,
+  openWhatsAppChat,
+  openWhatsAppModal,
+  sendWhatsAppLead,
+  showEnquiryStatusModal,
   resetMainForm,
   scrollToConsultation,
   selectFloorPlan,
@@ -2756,6 +3808,14 @@ Object.assign(window, {
   syncComparisonRowHeights,
   syncDetailSubnavTabs,
   toggleFaq,
+  resolveProjectName,
+  COUNTRY_CODES,
+  initCountrySelectors,
+  resetCountrySelector,
+  getSelectedCountryForInput,
+  WHATSAPP_CONFIG,
+  API_CONFIG,
+  sendLeadToApi,
 });
 // INITIALIZE AFTER THE SHARED PAGE MARKUP IS AVAILABLE.
 function initializeBuilderPage() {
@@ -2769,6 +3829,16 @@ function initializeBuilderPage() {
       event.preventDefault();
     }
   });
+  initCountrySelectors();
+  const waPhoneInput = document.getElementById("waPhoneInput");
+  if (waPhoneInput) {
+    waPhoneInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        sendWhatsAppLead();
+      }
+    });
+  }
   renderFaqs(faqsData);
   renderPropertyGrid(propertiesData);
   const footerPropertyCount = document.getElementById("footer-property-count");
@@ -2831,7 +3901,7 @@ function initializeBuilderPage() {
   }
   if (!popupAlreadyShown) {
     window.setTimeout(() => {
-      openWhatsAppPopup();
+      openWhatsAppModal();
       try {
         sessionStorage.setItem("waPopupShown", "true");
       } catch (error) {

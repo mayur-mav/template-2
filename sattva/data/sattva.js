@@ -4660,7 +4660,7 @@ export const builderConfig = {
   ],
   properties: sattvaData,
   faqs: sattvaFaqs,
-  whatsappNumber: "+919876543210",
+  whatsappNumber: "+917411662228",
 };
 
 export const sattvaProjects = sattvaData;

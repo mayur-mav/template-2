@@ -14,32 +14,62 @@
       content="Sattva Bhumi, Sattva Bhumi Bangalore, Sattva Bhumi Vijayapura Hobli, Devanahalli, Near KIAL Airport, North Bangalore, 20 x 30 Plot, 30 x 40 Plot , 30 x 50 Plot, 30 x 60 Plot, and 40 x 60 Plot, ongoing projects in Bangalore, sattva group, sattva builders, salarpuria sattva group, salarpuria new projects, salarpuria sattva new launch, salarpuria builders, sattva opus flats for sale, apartments for sale in bangalore, flats for sale in bangalore, ready to move flats in bangalore, new apartment projects in bangalore"
     />
     <link rel="preconnect" href="https://media.justflip.in">
+    <!-- Google Fonts Preconnect & Async Non-Blocking Load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      rel="preload"
-      as="image"
-      href="https://media.justflip.in/builder-brand-pages/sattva-group/banner.webp"
-      fetchpriority="high"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
-    <link rel="stylesheet" href="css/tailwind.css" />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Font Awesome Icons Async Non-Blocking Load -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+    </noscript>
 
-    <link rel="preconnect" href="https://unpkg.com" crossorigin />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet CSS Async Non-Blocking Load -->
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      />
+    </noscript>
+
+    <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <script type="module" src="js/main.js"></script>
   <style>body[data-property-route-loading="true"] #catalog-page,body[data-property-route-loading="true"] #site-footer{display:none!important}body[data-property-route-loading="true"] #details-page{display:block!important}</style>
     <meta property="og:title" content="Sattva Bhumi | Sattva Group Bangalore">
     <meta property="og:description" content="Sattva Bhumi is a master-planned 20-acre premium residential plotted enclave by Sattva Group located in Vijayapura Hobli, Devanahalli, North Bangalore...">
+    <link rel="preload" as="image" href="https://media.justflip.in/builder-brand-pages/sattva-group/sattva-bhumi/gallery/exterior-view.webp" fetchpriority="high">
 </head>
-  <body data-property-route-loading="true"
+    <body data-property-route-loading="true"
     data-builder="sattva"
+    data-whatsapp-number="+917411662228"
     class="bg-godrej-offwhite text-slate-800 font-sans antialiased custom-scrollbar"
   >
     <!-- MAIN NAVIGATION HEADER -->
@@ -106,11 +136,12 @@
             class="site-header-actions hidden shrink-0 items-center gap-2 sm:gap-3 lg:flex"
           >
             <a
-              href="https://wa.me/919876543210"
+              href="https://api.whatsapp.com/send/?phone=917411662228&text=Hi%2C+I+am+interested+in+Sattva+Group+projects+in+Bangalore.+Please+share+brochures%2C+pricing+details%2C+and+ongoing%2Fnew+launch+offers."
               target="_blank"
               rel="noopener noreferrer"
               class="btn-header-wa"
               aria-label="Chat on WhatsApp"
+              onclick="openWhatsAppChat(); return false;"
             >
               <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
               <span>Chat on WhatsApp</span>
@@ -174,13 +205,17 @@
             >
           </nav>
           <div class="mobile-menu-actions mt-4 grid grid-cols-1 gap-2">
-            <a href="tel:18001082020" class="mobile-menu-action phone-action"
-              ><i
-                class="fa-solid fa-phone text-godrej-gold"
-                aria-hidden="true"
-              ></i>
-              1800 108 2020</a
+            <a
+              href="https://api.whatsapp.com/send/?phone=917411662228&text=Hi%2C+I+am+interested+in+Sattva+Group+projects+in+Bangalore.+Please+share+brochures%2C+pricing+details%2C+and+ongoing%2Fnew+launch+offers."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mobile-menu-action btn-header-wa"
+              aria-label="Chat on WhatsApp"
+              onclick="openWhatsAppChat(); closeMobileMenu(); return false;"
             >
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
             <button
               onclick="scrollToConsultation(); closeMobileMenu()"
               class="mobile-menu-action visit-action"
@@ -221,15 +256,14 @@
         >
           <div class="max-w-4xl mx-auto text-center">
             <div
-              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-godrej-gold text-xs font-medium uppercase tracking-widest mb-6"
-            >
-              <i class="fa-solid fa-building"></i> FOUNDED IN 1993
+              class="hero-trust-badge inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-5"
+            ><i class="fa-solid fa-building"></i> FOUNDED IN 1993
             </div>
             <h1
               class="font-serif text-3xl min-[380px]:text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-balance"
-            >Sattva Group Projects in Bangalore</h1>
+            ><span class="hero-heading-main">Sattva Group</span> <span class="hero-heading-accent">in Bangalore</span></h1>
             <p
-              class="text-white/90 text-sm sm:text-lg mb-6 sm:mb-8 font-light max-w-3xl mx-auto leading-relaxed"
+              class="hero-banner-subtitle text-white/95 text-sm sm:text-base font-light max-w-3xl mx-auto leading-relaxed mb-8"
             >Explore Sattva Group and Salarpuria Sattva projects in Bangalore, including new launches and apartments for sale. View project details, floor plans, prices, and book a site visit with M&amp;A Ventures.</p>
           </div>
 
@@ -590,7 +624,7 @@
                     id="main-consultation-form"
                     onsubmit="handleMainFormSubmit(event)"
                     class="space-y-4"
-                  >
+                   novalidate>
                     <p
                       id="main-form-error"
                       class="hidden text-sm text-red-700"
@@ -610,18 +644,47 @@
                           class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald"
                         />
                       </div>
-                      <div>
+                      <div class="form-group">
                         <label
                           class="block text-xs font-semibold text-slate-600 mb-1"
                           >Phone Number *</label
                         >
-                        <input
-                          type="tel"
-                          name="phone"
-                          required
-                          placeholder="+91 98765 43210"
-                          class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald"
-                        />
+                        <div class="phone-input-group">
+                          <div class="country-select" id="mainCountrySelect">
+                            <button type="button" class="country-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Country Dial Code">
+                              <span class="country-select-current">IN +91</span>
+                              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                            </button>
+                            <div class="country-select-options" role="listbox" aria-label="Country Code List" hidden>
+                              <button type="button" class="country-select-option" role="option" aria-selected="true" data-code="IN" data-dial="+91">IN +91</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="AE" data-dial="+971">AE +971</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="US" data-dial="+1">US +1</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="UK" data-dial="+44">UK +44</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="SG" data-dial="+65">SG +65</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="AU" data-dial="+61">AU +61</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="SA" data-dial="+966">SA +966</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="QA" data-dial="+974">QA +974</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="OM" data-dial="+968">OM +968</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="KW" data-dial="+965">KW +965</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="BH" data-dial="+973">BH +973</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="NZ" data-dial="+64">NZ +64</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="DE" data-dial="+49">DE +49</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="HK" data-dial="+852">HK +852</button>
+                              <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="MY" data-dial="+60">MY +60</button>
+                            </div>
+                            <input type="hidden" name="countryCode" value="IN">
+                            <input type="hidden" name="dialCode" value="+91">
+                          </div>
+                          <input
+                            type="tel"
+                            name="phone"
+                            required
+                            placeholder="10-digit mobile number"
+                            maxlength="10"
+                            inputmode="numeric"
+                            class="form-input phone-number-input"
+                          />
+                        </div>
                       </div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -633,7 +696,6 @@
                         <input
                           type="email"
                           name="email"
-                          required
                           placeholder="ananya@example.com"
                           class="w-full bg-godrej-offwhite border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald"
                         />
@@ -1435,7 +1497,7 @@
           <!-- Right Sticky Sidebar Form -->
           <div class="lg:col-span-4">
             <div
-              class="sticky top-28 bg-godrej-offwhite p-6 rounded-2xl border border-godrej-sage shadow-xl"
+              class="details-sticky-form-card bg-godrej-offwhite p-6 rounded-2xl border border-godrej-sage shadow-xl"
             >
               <div id="sidebar-form-content">
                 <div
@@ -1457,7 +1519,7 @@
                   id="sidebar-booking-form"
                   onsubmit="handleSidebarSubmit(event)"
                   class="space-y-4"
-                >
+                 novalidate>
                   <p
                     id="sidebar-form-error"
                     class="hidden text-sm text-red-700"
@@ -1476,18 +1538,47 @@
                       class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald"
                     />
                   </div>
-                  <div>
+                  <div class="form-group">
                     <label
                       class="block text-xs font-semibold text-slate-600 mb-1"
                       >Phone Number *</label
                     >
-                    <input
-                      type="tel"
-                      name="phone"
-                      required
-                      placeholder="+91 98765 43210"
-                      class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2 text-sm focus:outline-none focus:border-godrej-emerald"
-                    />
+                    <div class="phone-input-group">
+                      <div class="country-select" id="sidebarCountrySelect">
+                        <button type="button" class="country-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Country Dial Code">
+                          <span class="country-select-current">IN +91</span>
+                          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div class="country-select-options" role="listbox" aria-label="Country Code List" hidden>
+                          <button type="button" class="country-select-option" role="option" aria-selected="true" data-code="IN" data-dial="+91">IN +91</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="AE" data-dial="+971">AE +971</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="US" data-dial="+1">US +1</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="UK" data-dial="+44">UK +44</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="SG" data-dial="+65">SG +65</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="AU" data-dial="+61">AU +61</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="SA" data-dial="+966">SA +966</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="QA" data-dial="+974">QA +974</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="OM" data-dial="+968">OM +968</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="KW" data-dial="+965">KW +965</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="BH" data-dial="+973">BH +973</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="NZ" data-dial="+64">NZ +64</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="DE" data-dial="+49">DE +49</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="HK" data-dial="+852">HK +852</button>
+                          <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="MY" data-dial="+60">MY +60</button>
+                        </div>
+                        <input type="hidden" name="countryCode" value="IN">
+                        <input type="hidden" name="dialCode" value="+91">
+                      </div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        required
+                        placeholder="10-digit mobile number"
+                        maxlength="10"
+                        inputmode="numeric"
+                        class="form-input phone-number-input"
+                      />
+                    </div>
                   </div>
                   <div>
                     <label
@@ -1596,66 +1687,84 @@
         </div>
       </div>
     </main>
-
-    <!-- WhatsApp contact shortcut and first-visit brochure popup -->
-    <button
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a
+      href="https://api.whatsapp.com/send/?phone=917411662228&text=Hi%2C+I+am+interested+in+Sattva+Group+projects+in+Bangalore.+Please+share+brochures%2C+pricing+details%2C+and+ongoing%2Fnew+launch+offers."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="floating-wa-btn whatsapp-float"
       id="whatsapp-float"
-      class="whatsapp-float"
-      type="button"
-      aria-label="Open WhatsApp brochure form"
+      aria-label="Chat on WhatsApp"
+      onclick="openWhatsAppModal(); return false;"
     >
-      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-    </button>
-    <div id="whatsapp-popup" class="whatsapp-popup" aria-hidden="true">
-      <div
-        class="whatsapp-dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="whatsapp-title"
-        aria-describedby="whatsapp-description"
-      >
-        <button
-          id="whatsapp-close"
-          class="whatsapp-close"
-          type="button"
-          aria-label="Close WhatsApp popup"
-        >
-          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-        <div class="whatsapp-modal-icon">
-          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- 12. TIMED & CLICKABLE WHATSAPP POPUP MODAL -->
+    <div class="modal-overlay" id="waPopModal" role="dialog" aria-modal="true" aria-labelledby="waPopModalTitle">
+      <div class="modal-box wa-popup-box">
+        <button class="modal-close-btn" type="button" aria-label="Close WhatsApp modal" onclick="closeModal('waPopModal')">&times;</button>
+        <div class="wa-popup-icon">
+          <i class="fa-brands fa-whatsapp"></i>
         </div>
-        <h2 id="whatsapp-title">Get Instant E-Brochure</h2>
-        <p id="whatsapp-description">
-          Receive instant floor plans, pricing sheets, and payment schedules
-          directly on your WhatsApp.
+        <h2 class="serif-font" id="waPopModalTitle" style="font-size: 1.5rem; margin-bottom: 8px;">Get Instant E-Brochure</h2>
+        <p style="font-size: 0.9rem; color: #475569; margin-bottom: 20px;">
+          Receive instant floor plans, pricing sheets, and payment schedules directly on your WhatsApp.
         </p>
-        <form id="whatsapp-form">
-          <label class="sr-only" for="whatsapp-phone"
-            >Your WhatsApp number</label
-          >
-          <input
-            id="whatsapp-phone"
-            name="phone"
-            type="tel"
-            inputmode="tel"
-            autocomplete="tel"
-            placeholder="Enter Your WhatsApp Number"
-            required
-          />
-          <button type="submit">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Get Info on
-            WhatsApp
-          </button>
-          <p
-            id="whatsapp-feedback"
-            class="whatsapp-feedback"
-            role="status"
-            aria-live="polite"
-          ></p>
-        </form>
+        <div class="form-group">
+          <div class="phone-input-group">
+            <div class="country-select" id="waCountrySelect">
+              <button type="button" class="country-select-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Country Dial Code">
+                <span class="country-select-current">IN +91</span>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="country-select-options" role="listbox" aria-label="Country Code List" hidden>
+                <button type="button" class="country-select-option" role="option" aria-selected="true" data-code="IN" data-dial="+91">IN +91</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="AE" data-dial="+971">AE +971</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="US" data-dial="+1">US +1</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="UK" data-dial="+44">UK +44</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="SG" data-dial="+65">SG +65</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="AU" data-dial="+61">AU +61</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="SA" data-dial="+966">SA +966</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="QA" data-dial="+974">QA +974</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="OM" data-dial="+968">OM +968</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="KW" data-dial="+965">KW +965</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="BH" data-dial="+973">BH +973</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="NZ" data-dial="+64">NZ +64</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="DE" data-dial="+49">DE +49</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="HK" data-dial="+852">HK +852</button>
+                <button type="button" class="country-select-option" role="option" aria-selected="false" data-code="MY" data-dial="+60">MY +60</button>
+              </div>
+              <input type="hidden" name="countryCode" value="IN">
+              <input type="hidden" name="dialCode" value="+91">
+            </div>
+            <input
+              type="tel"
+              id="waPhoneInput"
+              class="form-input phone-number-input"
+              placeholder="10-digit mobile number"
+              aria-label="WhatsApp Number"
+              maxlength="10"
+              inputmode="numeric"
+              required
+            />
+          </div>
+        </div>
+        <button class="wa-btn" onclick="sendWhatsAppLead()">
+          <i class="fa-brands fa-whatsapp"></i> Get Info on WhatsApp
+        </button>
       </div>
     </div>
+
+    <!-- 13. ENQUIRY STATUS MODAL (SUCCESS & FAILURE POPUP) -->
+    <div class="modal-overlay" id="enquiryStatusModal" role="dialog" aria-modal="true" aria-labelledby="statusModalTitle">
+      <div class="modal-box status-modal-box">
+        <button class="modal-close-btn" type="button" aria-label="Close dialog" onclick="closeModal('enquiryStatusModal')">&times;</button>
+        <div id="statusModalContent"></div>
+      </div>
+    </div>
+
+    
 
     <!-- FULLSCREEN LIGHTBOX MODAL -->
     <div
@@ -1879,9 +1988,7 @@
         </div>
       </div>
     </section>
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    
-</body>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
 </html>

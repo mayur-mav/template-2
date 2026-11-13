@@ -1867,7 +1867,7 @@ export const builderConfig = {
   ],
   properties: shriramPropertiesData,
   faqs: shriramPropertiesFaqs,
-  whatsappNumber: "+919876543210",
+  whatsappNumber: "+917411662228",
 };
 
 export const shriramProjects = shriramPropertiesData;
