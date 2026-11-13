@@ -1034,7 +1034,7 @@ export const builderConfig = {
   ],
   properties: abheeventuresData,
   faqs: abheeventuresFaqs,
-  whatsappNumber: "+919876543210",
+  whatsappNumber: "+917411662228",
 };
 
 export const abheeVenturesData = abheeventuresData;

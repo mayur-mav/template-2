@@ -4262,7 +4262,7 @@ footer a:hover {
 }
 
 .phone-input-group.dropdown-open {
-  z-index: 60 !important;
+  z-index: 1200 !important;
 }
 
 .phone-input-group .country-select {
@@ -4271,7 +4271,7 @@ footer a:hover {
 }
 
 .phone-input-group .country-select.is-open {
-  z-index: 70 !important;
+  z-index: 1300 !important;
 }
 
 .country-select-trigger {
@@ -4352,16 +4352,39 @@ footer a:hover {
 }
 
 /* Dropdown list of country dial codes */
+
+/* Elevate stacking context when country dropdown is open so it renders cleanly above subsequent form rows */
+.country-dropdown-open,
+.form-group.dropdown-open,
+.phone-input-group.dropdown-open,
+.country-select.is-open,
+.grid.dropdown-open,
+.form-group:has(.country-select-trigger[aria-expanded="true"]),
+.form-group:has(.country-select-options:not([hidden])),
+.phone-input-group:has(.country-select-trigger[aria-expanded="true"]),
+.country-select:has(.country-select-trigger[aria-expanded="true"]),
+form .grid:has(.country-select-trigger[aria-expanded="true"]),
+form .grid:has(.country-select-options:not([hidden])) {
+  z-index: 1200 !important;
+  position: relative !important;
+  transform: none !important;
+  animation: none !important;
+}
+
 .country-select-options {
   position: absolute;
+  z-index: 1300 !important;
   top: calc(100% + 4px);
   left: 0;
-  z-index: 1000;
+  min-width: 140px;
   width: 260px;
-  max-height: 260px;
+  max-height: 230px;
   overflow-y: auto;
   overscroll-behavior: contain;
-  background: #FFFFFF;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
   border: 1px solid #E2E8F0;
   border-radius: 10px;
   box-shadow: 0 12px 28px -4px rgba(11, 19, 32, 0.2), 0 4px 10px -2px rgba(11, 19, 32, 0.08);
@@ -4370,11 +4393,13 @@ footer a:hover {
   flex-direction: column;
   gap: 2px;
   animation: dropdownFadeIn 0.16s cubic-bezier(0.16, 1, 0.3, 1);
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  list-style: none;
+  margin: 0;
 }
 .country-select-options::-webkit-scrollbar {
-  display: none; /* Chrome/Safari/Opera */
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .country-select-options.opens-up {

@@ -1709,6 +1709,7 @@ function closeAllCountryDropdowns(exceptListbox = null) {
     if (el !== exceptListbox) {
       el.hidden = true;
       el.classList.remove('opens-up');
+      resetCountryDropdownPosition(el);
       const sel = el.closest('.country-select');
       sel?.querySelector('.country-select-trigger')?.setAttribute('aria-expanded', 'false');
       sel?.classList.remove('is-open');
@@ -1722,6 +1723,23 @@ function closeAllCountryDropdowns(exceptListbox = null) {
     }
   });
 }
+
+function resetCountryDropdownPosition(listbox) {
+  listbox.style.position = '';
+  listbox.style.left = '';
+  listbox.style.top = '';
+  listbox.style.bottom = '';
+  listbox.style.minWidth = '';
+  listbox.style.maxWidth = '';
+  listbox.style.maxHeight = '';
+}
+
+document.addEventListener('scroll', event => {
+  if (event.target instanceof Element && event.target.closest('.country-select-options')) return;
+  closeAllCountryDropdowns();
+}, true);
+window.addEventListener('scroll', () => closeAllCountryDropdowns(), { passive: true });
+window.addEventListener('resize', () => closeAllCountryDropdowns(), { passive: true });
 
 function handleCountryDropdownClick(event) {
   const select = event.target.closest('.country-select');
@@ -1741,6 +1759,8 @@ function handleCountryDropdownClick(event) {
 
     if (open) {
       listbox.hidden = true;
+      listbox.classList.remove('opens-up');
+      resetCountryDropdownPosition(listbox);
       trigger.setAttribute('aria-expanded', 'false');
       select.classList.remove('is-open');
       group?.classList.remove('dropdown-open');
@@ -1765,19 +1785,61 @@ function handleCountryDropdownClick(event) {
 
       listbox.hidden = false;
       trigger.setAttribute('aria-expanded', 'true');
-
+      resetCountryDropdownPosition(listbox);
+      listbox.classList.remove('opens-up');
       const rect = trigger.getBoundingClientRect();
-      const menuHeight = Math.min(COUNTRY_CODES.length * 36 + 10, 230);
-      const spaceBelow = window.innerHeight - rect.bottom;
-      const spaceAbove = rect.top;
+      const viewport = window.visualViewport;
+      const edgePadding = 8;
+      const viewportTop = viewport ? viewport.offsetTop : 0;
+      const viewportLeft = viewport ? viewport.offsetLeft : 0;
+      const viewportBottom =
+        viewportTop + (viewport ? viewport.height : window.innerHeight);
+      const viewportRight =
+        viewportLeft + (viewport ? viewport.width : window.innerWidth);
       const modalBox = trigger.closest('.modal-box');
-      let shouldOpenUp = spaceBelow < menuHeight && spaceAbove > spaceBelow;
-      if (modalBox) {
-        const modalRect = modalBox.getBoundingClientRect();
-        if (modalRect.bottom - rect.bottom < menuHeight && (rect.top - modalRect.top) > 100) {
-          shouldOpenUp = true;
-        }
-      }
+      const modalRect = modalBox?.getBoundingClientRect();
+      const boundaryTop = Math.max(
+        viewportTop + edgePadding,
+        modalRect ? modalRect.top + edgePadding : viewportTop + edgePadding,
+      );
+      const boundaryBottom = Math.min(
+        viewportBottom - edgePadding,
+        modalRect ? modalRect.bottom - edgePadding : viewportBottom - edgePadding,
+      );
+      const spaceBelow = Math.max(0, boundaryBottom - rect.bottom - 4);
+      const spaceAbove = Math.max(0, rect.top - boundaryTop - 4);
+      const availableWidth = Math.max(
+        0,
+        viewportRight - viewportLeft - edgePadding * 2,
+      );
+
+      listbox.style.position = 'fixed';
+      listbox.style.minWidth = `${Math.min(140, availableWidth)}px`;
+      listbox.style.maxWidth = `${availableWidth}px`;
+      const menuWidth = listbox.getBoundingClientRect().width;
+      const menuHeight = Math.min(listbox.scrollHeight, 230);
+      const shouldOpenUp = spaceBelow < menuHeight && spaceAbove > spaceBelow;
+      const availableHeight = shouldOpenUp ? spaceAbove : spaceBelow;
+      const visibleMenuHeight = Math.min(menuHeight, availableHeight);
+      const desiredTop = shouldOpenUp
+        ? rect.top - visibleMenuHeight - 4
+        : rect.bottom + 4;
+      const menuTop = Math.max(
+        boundaryTop,
+        Math.min(desiredTop, boundaryBottom - visibleMenuHeight),
+      );
+      const menuLeft = Math.max(
+        viewportLeft + edgePadding,
+        Math.min(
+          rect.left,
+          viewportRight - edgePadding - menuWidth,
+        ),
+      );
+
+      listbox.style.left = `${menuLeft}px`;
+      listbox.style.top = `${menuTop}px`;
+      listbox.style.bottom = 'auto';
+      listbox.style.maxHeight = `${visibleMenuHeight}px`;
       listbox.classList.toggle('opens-up', shouldOpenUp);
       const activeOpt = listbox.querySelector('.country-select-option[aria-selected="true"]') || listbox.querySelector('.country-select-option');
       activeOpt?.focus();
@@ -1804,6 +1866,7 @@ function handleCountryDropdownClick(event) {
 
     listbox.hidden = true;
     listbox.classList.remove('opens-up');
+    resetCountryDropdownPosition(listbox);
     const activeTrigger = select.querySelector('.country-select-trigger');
     if (activeTrigger) activeTrigger.setAttribute('aria-expanded', 'false');
 
@@ -2538,10 +2601,7 @@ document.addEventListener("keydown", (event) => {
     closeMobileMenu();
 });
 
-initializeBuilderProjectSelect();
-initializeCustomSelects();
-document.addEventListener("click", (event) => {
-  if (event.target.closest("[data-custom-select]")) return;
+function closeCustomSelectMenus() {
   document
     .querySelectorAll("[data-custom-select] .custom-select-menu")
     .forEach((menu) => {
@@ -2553,6 +2613,27 @@ document.addEventListener("click", (event) => {
         .querySelector(".custom-select-trigger")
         .setAttribute("aria-expanded", "false");
     });
+}
+
+initializeBuilderProjectSelect();
+initializeCustomSelects();
+document.addEventListener(
+  "scroll",
+  (event) => {
+    if (
+      event.target instanceof Element &&
+      event.target.closest(".custom-select-menu")
+    ) {
+      return;
+    }
+    closeCustomSelectMenus();
+  },
+  true,
+);
+window.addEventListener("scroll", closeCustomSelectMenus, { passive: true });
+document.addEventListener("click", (event) => {
+  if (event.target.closest("[data-custom-select]")) return;
+  closeCustomSelectMenus();
 });
 
 // Phone number enforcement: Multi-country validation & digit checking
