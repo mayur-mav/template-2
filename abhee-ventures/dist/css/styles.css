@@ -689,17 +689,31 @@ a:focus-visible {
   color: #64748b;
 }
 .custom-select-menu {
-  position: fixed;
-  z-index: 30;
-  max-width: calc(100vw - 1.5rem);
-  max-height: min(14rem, 40vh);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1300 !important;
+  max-height: min(16rem, 40vh);
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: 0.25rem;
   border: 1px solid #dbe3ed;
   border-radius: 0.75rem;
   background: #fff;
-  box-shadow: 0 12px 28px rgb(15 23 42 / 16%);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.18), 0 4px 12px rgba(15, 23, 42, 0.08);
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.custom-select-menu::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.custom-select-menu.opens-up {
+  top: auto;
+  bottom: calc(100% + 6px);
 }
 .custom-select-menu[hidden] {
   display: none;

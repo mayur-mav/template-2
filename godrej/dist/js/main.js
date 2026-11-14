@@ -235,49 +235,14 @@ function initializeCustomSelects() {
 
     trigger.addEventListener("click", () => {
       const shouldOpen = menu.hidden;
-      document
-        .querySelectorAll("[data-custom-select] .custom-select-menu")
-        .forEach((otherMenu) => {
-          otherMenu.hidden = true;
-          otherMenu.style.width = "";
-          otherMenu.style.left = "";
-          otherMenu.style.top = "";
-          otherMenu.parentElement
-            .querySelector(".custom-select-trigger")
-            .setAttribute("aria-expanded", "false");
-        });
+      closeCustomSelectMenus();
       menu.hidden = !shouldOpen;
       trigger.setAttribute("aria-expanded", String(shouldOpen));
       if (shouldOpen) {
         const triggerBounds = trigger.getBoundingClientRect();
-        const menuHeight = menu.getBoundingClientRect().height;
-        const edgePadding = 12;
-        const menuWidth = Math.min(
-          triggerBounds.width,
-          window.innerWidth - edgePadding * 2,
-        );
-        const menuLeft = Math.max(
-          edgePadding,
-          Math.min(
-            triggerBounds.left,
-            window.innerWidth - menuWidth - edgePadding,
-          ),
-        );
-        const spaceBelow =
-          window.innerHeight - triggerBounds.bottom - edgePadding;
-        const spaceAbove = triggerBounds.top - edgePadding;
-        const openAbove =
-          spaceBelow < menuHeight + 8 && spaceAbove > spaceBelow;
-        const desiredTop = openAbove
-          ? triggerBounds.top - menuHeight - 6
-          : triggerBounds.bottom + 6;
-        const menuTop = Math.max(
-          edgePadding,
-          Math.min(desiredTop, window.innerHeight - menuHeight - edgePadding),
-        );
-        menu.style.width = `${menuWidth}px`;
-        menu.style.left = `${menuLeft}px`;
-        menu.style.top = `${menuTop}px`;
+        const spaceBelow = window.innerHeight - triggerBounds.bottom;
+        const openAbove = spaceBelow < 220 && triggerBounds.top > spaceBelow;
+        menu.classList.toggle("opens-up", openAbove);
         menu.querySelector('[aria-selected="true"]')?.focus();
       }
     });
@@ -285,6 +250,7 @@ function initializeCustomSelects() {
     wrapper.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         menu.hidden = true;
+        menu.classList.remove("opens-up");
         trigger.setAttribute("aria-expanded", "false");
         trigger.focus();
       }
@@ -2606,12 +2572,13 @@ function closeCustomSelectMenus() {
     .querySelectorAll("[data-custom-select] .custom-select-menu")
     .forEach((menu) => {
       menu.hidden = true;
+      menu.classList.remove("opens-up");
       menu.style.width = "";
       menu.style.left = "";
       menu.style.top = "";
       menu.parentElement
-        .querySelector(".custom-select-trigger")
-        .setAttribute("aria-expanded", "false");
+        ?.querySelector(".custom-select-trigger")
+        ?.setAttribute("aria-expanded", "false");
     });
 }
 
