@@ -2125,10 +2125,66 @@ async function sendWhatsAppLead() {
   openWhatsAppChat(leadPayload);
 }
 
+// Background Geolocation / IP Lookup (Non-blocking)
+let userGeoData = { ip: '', city: '', country: '', latitude: '', longitude: '' };
+try {
+  if (typeof fetch === 'function') {
+    fetch('https://ipwho.is/')
+      .then(r => r.json())
+      .then(res => {
+        if (res && res.success !== false) {
+          userGeoData = {
+            ip: res.ip || '',
+            city: res.city || '',
+            country: res.country || '',
+            latitude: res.latitude ? String(res.latitude) : '',
+            longitude: res.longitude ? String(res.longitude) : ''
+          };
+        }
+      })
+      .catch(() => {});
+  }
+} catch (e) {}
+
+function getUtmParams() {
+  const search = typeof window !== 'undefined' && window.location ? window.location.search : '';
+  const params = new URLSearchParams(search);
+  const ua = (typeof navigator !== 'undefined' && navigator.userAgent) || '';
+  const isMobile = /Mobi|Android|iPhone/i.test(ua);
+  return {
+    utm_source: params.get('utm_source') || params.get('source') || '',
+    utm_medium: params.get('utm_medium') || params.get('medium') || '',
+    utm_campaign: params.get('utm_campaign') || params.get('campaign') || '',
+    utm_term: params.get('utm_term') || params.get('term') || '',
+    utm_device: params.get('utm_device') || params.get('device') || (isMobile ? 'mobile' : 'desktop')
+  };
+}
+
+function getClientBrowser() {
+  const ua = (typeof navigator !== 'undefined' && navigator.userAgent) || '';
+  if (/edg/i.test(ua)) return 'Edge';
+  if (/opr\//i.test(ua) || /opera/i.test(ua)) return 'Opera';
+  if (/chrome|crios/i.test(ua)) return 'Chrome';
+  if (/firefox|fxios/i.test(ua)) return 'Firefox';
+  if (/safari/i.test(ua)) return 'Safari';
+  return '';
+}
+
+function getClientOS() {
+  const ua = (typeof navigator !== 'undefined' && navigator.userAgent) || '';
+  if (/windows/i.test(ua)) return 'Windows';
+  if (/android/i.test(ua)) return 'Android';
+  if (/iphone|ipad|ipod/i.test(ua)) return 'iOS';
+  if (/mac/i.test(ua)) return 'macOS';
+  if (/linux/i.test(ua)) return 'Linux';
+  return '';
+}
+
 // ==================== LEAD CAPTURE & CRM API CONFIGURATION ====================
 const API_CONFIG = {
-  endpoint: '',
+  endpoint: 'https://leadapi.homebble.in/formdataRoute/getFormdata',
   method: 'POST',
+  timeoutMs: 8000,
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json'
@@ -2143,37 +2199,92 @@ const API_CONFIG = {
   }
 };
 
+/**
+ * Dispatches lead payload to the configured API.
+ * Ensures exact 16-field payload schema required by https://leadapi.homebble.in/formdataRoute/getFormdata
+ * Matching the Century Real Estate lead capture integration.
+ */
 async function sendLeadToApi(leadData) {
-  const payload = {
-    name: leadData.name,
-    phone: leadData.phone,
+  const utms = getUtmParams();
+  const cleanPhone = (leadData.phone || leadData.mobileNumber || '').replace(/\s+/g, '');
+
+  // Resolve project name to human-readable title
+  const rawProject = (leadData.project || leadData.projectName || leadData.projectId || '').trim();
+  const resolvedProject = resolveProjectName(rawProject) 
+    || (typeof activeProperty !== 'undefined' && (activeProperty?.title || activeProperty?.name) ? (activeProperty.title || activeProperty.name) : '') 
+    || WHATSAPP_CONFIG.defaultProject;
+
+  // Ensure exact payload structure required by https://leadapi.homebble.in/formdataRoute/getFormdata
+  const requestBody = {
+    name: leadData.name || leadData.fullName || '',
+    phone: cleanPhone,
     email: leadData.email || '',
-    projectId: leadData.projectId,
-    ...(leadData.bhk ? { bhk: leadData.bhk } : {})
+    utm_source: utms.utm_source,
+    utm_medium: utms.utm_medium,
+    utm_campaign: utms.utm_campaign,
+    utm_term: utms.utm_term,
+    utm_device: utms.utm_device,
+    user_city: userGeoData.city || '',
+    user_country: userGeoData.country || (cleanPhone.startsWith('+91') || leadData.countryCode === 'IN' ? 'India' : ''),
+    browser: getClientBrowser(),
+    ip_address: userGeoData.ip || '',
+    os: getClientOS(),
+    latitude: userGeoData.latitude || '',
+    longitude: userGeoData.longitude || '',
+    project: resolvedProject
   };
 
-  if (!API_CONFIG.endpoint) {
-    console.log('[Lead Capture - Local Mode]: API endpoint not set yet. Ready to send exact payload:', payload);
-    return { success: true, mode: 'local', payload };
+  // 1. Forced downtime test simulation (window.LEAD_TEST_SERVER_DOWN = true or endpoint: "fail")
+  if ((typeof window !== 'undefined' && window.LEAD_TEST_SERVER_DOWN === true) || API_CONFIG.endpoint === 'fail') {
+    console.warn('[Lead Capture - Test Mode]: Simulating server failure/downtime. Triggering WhatsApp Fallback Modal:', requestBody);
+    return { success: false, error: 'Network connection timeout', payload: requestBody };
   }
 
-  try {
-    const response = await fetch(API_CONFIG.endpoint, {
-      method: API_CONFIG.method || 'POST',
-      headers: API_CONFIG.headers,
-      body: JSON.stringify(payload)
-    });
+  // 2. Real API configured
+  if (API_CONFIG.endpoint) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), API_CONFIG.timeoutMs || 8000); // 8s timeout
 
-    if (!response.ok) {
-      throw new Error(`API responded with HTTP ${response.status}`);
+    try {
+      const res = await fetch(API_CONFIG.endpoint, {
+        method: API_CONFIG.method || 'POST',
+        headers: API_CONFIG.headers || { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody),
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+
+      if (res.ok) {
+        const resData = await res.json().catch(() => ({}));
+        console.log('[Lead Capture]: API submission successful:', resData);
+        return { success: true, data: resData, payload: requestBody };
+      } else {
+        console.warn(`[Lead Capture - API Error]: Server returned HTTP ${res.status}. Displaying WhatsApp Fallback Modal.`);
+        return { success: false, error: `Server error (HTTP ${res.status})`, payload: requestBody };
+      }
+    } catch (err) {
+      clearTimeout(timeoutId);
+      console.warn('[Lead Capture - Fallback]: Network/timeout error reaching server. Displaying WhatsApp Fallback Modal:', err);
+      return {
+        success: false,
+        error: err.name === 'AbortError' ? 'Network connection timeout' : (err.message || 'Network error'),
+        payload: requestBody
+      };
     }
-
-    const data = await response.json().catch(() => ({}));
-    return { success: true, data };
-  } catch (error) {
-    console.error('[Lead Capture Error]: Failed to dispatch lead to API:', error);
-    return { success: false, error: error.message };
   }
+
+  // 3. Local Mode (if endpoint is cleared)
+  console.log('[Lead Capture - Local Mode]: API endpoint not set yet. Ready to send exact payload:', requestBody);
+  return { success: true, mode: 'local', payload: requestBody };
+}
+
+if (typeof window !== 'undefined') {
+  window.testSuccessModal = (customPayload) => {
+    showEnquiryStatusModal('success', customPayload || { name: 'Test User', project: WHATSAPP_CONFIG.defaultProject, phone: '+91 9876543210' });
+  };
+  window.testFailureModal = (customPayload, err) => {
+    showEnquiryStatusModal('failure', customPayload || { name: 'Test User', project: WHATSAPP_CONFIG.defaultProject, phone: '+91 9876543210' }, err || 'Network connection timeout');
+  };
 }
 
 function escapeLeadHtml(str) {
