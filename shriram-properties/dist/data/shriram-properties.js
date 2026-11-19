@@ -40,13 +40,11 @@ export const shriramPropertiesData = [
     "units": "344",
     "highlight": "Features Rooftop Swimming Pool, Sky Cafe & Open Sky Theatre with Dedicated Tree for Every Apartment",
     "highlights": [
-          "Nature-inspired 4-acre community featuring a dedicated tree for every apartment",
-          "Signature rooftop swimming pool with open sky cafe and sunset lounge",
-          "Open sky theatre, tennis & pickleball court and meditation gardens",
-          "344 high-efficiency 2 and 3 BHK residences designed with smart space utilization",
-          "Strategically situated off NH-844 near Electronic City Phase 2",
-          "EV charging infrastructure, rainwater harvesting and smart water management",
-          "RERA registered: PRM/KA/RERA/1251/308/PR/200624/006905"
+      "Expansive 4-acre project: Linear Oasis design, six iconic towers",
+      "Largest Sky Deck connecting Towers 1-4 with diverse amenities",
+      "Unique 'One Tree Per Apartment' with vertical balcony gardens",
+      "Grand Clubhouse with rooftop pool and 50+ amenities",
+      "Excellent connectivity: Upcoming Hosur Airport, Peripheral Ring Road"
     ],
     "reraId": "PRM/KA/RERA/1251/310/PR/120625/007819",
     "summary": "A residential project featuring 2 and 3 BHK apartments located on NH 844, near Electronic City in South Bengaluru.",
@@ -85,7 +83,7 @@ export const shriramPropertiesData = [
       {
         "label": "Athreya Hospital",
         "name": "Athreya Hospital",
-        "distance": "2-10 mins",
+        "distance": "6.6 Km",
         "icon": "fa-solid fa-hospital",
         "destination": "Athreya Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -96,7 +94,7 @@ export const shriramPropertiesData = [
       {
         "label": "Oxford Medical College",
         "name": "Oxford Medical College",
-        "distance": "2-10 mins",
+        "distance": "9.3 Km",
         "icon": "fa-solid fa-hospital",
         "destination": "Oxford Medical College, Bengaluru, Karnataka",
         "coordinates": {
@@ -107,7 +105,7 @@ export const shriramPropertiesData = [
       {
         "label": "Green Dot International School",
         "name": "Green Dot International School",
-        "distance": "2-10 mins",
+        "distance": "1.2 Km",
         "icon": "fa-solid fa-school",
         "destination": "Green Dot International School, Bengaluru, Karnataka",
         "coordinates": {
@@ -118,7 +116,7 @@ export const shriramPropertiesData = [
       {
         "label": "Schneider Electric",
         "name": "Schneider Electric",
-        "distance": "2-10 mins",
+        "distance": "38 Km",
         "icon": "fa-solid fa-building",
         "destination": "Schneider Electric, Bengaluru, Karnataka",
         "coordinates": {
@@ -129,7 +127,7 @@ export const shriramPropertiesData = [
       {
         "label": "Chandapura Market",
         "name": "Chandapura Market",
-        "distance": "2-10 mins",
+        "distance": "6.1 Km",
         "icon": "fa-solid fa-store",
         "destination": "Chandapura Market, Bengaluru, Karnataka",
         "coordinates": {
@@ -140,7 +138,7 @@ export const shriramPropertiesData = [
       {
         "label": "Bommasandra Metro Station",
         "name": "Bommasandra Metro Station",
-        "distance": "11-20 mins",
+        "distance": "8.4 Km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Bommasandra Metro Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -149,31 +147,9 @@ export const shriramPropertiesData = [
         }
       },
       {
-        "label": "DMart",
-        "name": "DMart",
-        "distance": "11-20 mins",
-        "icon": "fa-solid fa-bag-shopping",
-        "destination": "DMart, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 12.9561,
-          "lon": 77.7542
-        }
-      },
-      {
-        "label": "Decathlon",
-        "name": "Decathlon",
-        "distance": "11-20 mins",
-        "icon": "fa-solid fa-store",
-        "destination": "Decathlon, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 12.6346,
-          "lon": 77.7802
-        }
-      },
-      {
         "label": "Narayana Hrudayalaya Hospital",
         "name": "Narayana Hrudayalaya Hospital",
-        "distance": "11-20 mins",
+        "distance": "7.1 Km",
         "icon": "fa-solid fa-hospital",
         "destination": "Narayana Hrudayalaya Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -182,20 +158,9 @@ export const shriramPropertiesData = [
         }
       },
       {
-        "label": "Sparsh Hospital",
-        "name": "Sparsh Hospital",
-        "distance": "11-20 mins",
-        "icon": "fa-solid fa-hospital",
-        "destination": "Sparsh Hospital, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 12.7639,
-          "lon": 77.868
-        }
-      },
-      {
         "label": "Alliance University",
         "name": "Alliance University",
-        "distance": "11-20 mins",
+        "distance": "9.6 Km",
         "icon": "fa-solid fa-graduation-cap",
         "destination": "Alliance University, Bengaluru, Karnataka",
         "coordinates": {
@@ -206,7 +171,7 @@ export const shriramPropertiesData = [
       {
         "label": "NSB Business School",
         "name": "NSB Business School",
-        "distance": "11-20 mins",
+        "distance": "11.1 Km",
         "icon": "fa-solid fa-graduation-cap",
         "destination": "NSB Business School, Bengaluru, Karnataka",
         "coordinates": {
@@ -217,7 +182,7 @@ export const shriramPropertiesData = [
       {
         "label": "Electronic City Metro Station",
         "name": "Electronic City Metro Station",
-        "distance": "21-30 mins",
+        "distance": "13.3 Km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Electronic City Metro Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -228,7 +193,7 @@ export const shriramPropertiesData = [
       {
         "label": "Infosys",
         "name": "Infosys",
-        "distance": "21-30 mins",
+        "distance": "14.6 Km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Infosys, Bengaluru, Karnataka",
         "coordinates": {
@@ -239,7 +204,7 @@ export const shriramPropertiesData = [
       {
         "label": "HCL Technologies",
         "name": "HCL Technologies",
-        "distance": "21-30 mins",
+        "distance": "29.0 Km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "HCL Technologies, Bengaluru, Karnataka",
         "coordinates": {
@@ -250,7 +215,7 @@ export const shriramPropertiesData = [
       {
         "label": "Wipro",
         "name": "Wipro",
-        "distance": "21-30 mins",
+        "distance": "23.9 Km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Wipro, Bengaluru, Karnataka",
         "coordinates": {
@@ -302,13 +267,15 @@ export const shriramPropertiesData = [
     "units": "270",
     "highlight": "Low-Density Community with ~81% Open Space and Grand Clubhouse 'Club One'",
     "highlights": [
-      "Low-density boutique residential community spread over 3.84 tranquil acres",
-      "Impressive ~81% open spaces with Japanese-inspired gardens and walking paths",
-      "Grand resident clubhouse named 'Club One' featuring gym and wellness studio",
-      "Resort-style swimming pool, yoga deck, reflexology pathway & kids park",
-      "Prime Yelahanka-Rajanukunte address with fast connectivity to Airport and Tech hubs",
-      "Only 270 residences ensuring peaceful, uncrowded community living",
-      "RERA approved: PRM/KA/RERA/1250/303/PR/291124/007267"
+      "80% Open Spaces for Tranquil Living",
+      "Premium Club One with Double-height Facade",
+      "Easy Access to NH 44",
+      "Kids' Realm for Imaginative Play",
+      "Ample Sunlight in Apartments",
+      "Green Upper Yelahanka with State Forests",
+      "Easy Access to Satellite Ring Road",
+      "Private Dual Balconies for Every Residence",
+      "Organic Farming & Butterfly Garden"
     ],
     "reraId": "PRM/KA/RERA/1251/309/PR/170924/007026",
     "summary": "A low-density high-rise residential project offering 2 and 3 BHK apartments in Rajanukunte, Yelahanka, North Bengaluru.",
@@ -351,7 +318,7 @@ export const shriramPropertiesData = [
       {
         "label": "Vidyashilp Academy",
         "name": "Vidyashilp Academy",
-        "distance": "0.66 km",
+        "distance": "12.2 km",
         "icon": "fa-solid fa-school",
         "destination": "Vidyashilp Academy, Bengaluru, Karnataka",
         "coordinates": {
@@ -362,7 +329,7 @@ export const shriramPropertiesData = [
       {
         "label": "Sir MVIT Bus Depot",
         "name": "Sir MVIT Bus Depot",
-        "distance": "2.51 km",
+        "distance": "9.1 km",
         "icon": "fa-solid fa-bus",
         "destination": "Sir MVIT Bus Depot, Bengaluru, Karnataka",
         "coordinates": {
@@ -373,7 +340,7 @@ export const shriramPropertiesData = [
       {
         "label": "Neha Prakash Hospital",
         "name": "Neha Prakash Hospital",
-        "distance": "3.65 km",
+        "distance": "11.4 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Neha Prakash Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -447,13 +414,12 @@ export const shriramPropertiesData = [
     "units": "414",
     "highlight": "Low-Density Urban Township Just 3 Mins from Bommasandra Metro Station & NICE Road",
     "highlights": [
-          "Urban low-density residential township spanning 5.65 acres in Bommasandra",
-          "Unbeatable location just 3 minutes from Bommasandra Metro Station and NICE Road",
-          "Signature resident clubhouse with fully equipped gym and indoor badminton",
-          "Outdoor lap pool, yoga/meditation deck and children's adventure playground",
-          "Immediate access to Electronic City IT corridor and Narayana Health City",
-          "414 well-ventilated residences designed for optimal cross-breeze and sunlight",
-          "RERA registered: PRM/KA/RERA/1251/308/PR/280324/006745"
+      "Enjoy an active lifestyle with 40+ amenities including mini golf",
+      "Indulge in Clubhouse Grandeur with co-working space and pool",
+      "Enjoy seamless connectivity with Electronic City Expressway",
+      "14000 sqft clubhouse",
+      "Experience double-height badminton court and library",
+      "Properties with 100% power backup available"
     ],
     "reraId": "PRM/KA/RERA/1251/310/PR/090224/006616",
     "summary": "A premium residential high-rise community offering 2 and 3 BHK apartments at Bommasandra, near Electronic City in South Bengaluru.",
@@ -496,7 +462,7 @@ export const shriramPropertiesData = [
       {
         "label": "Bommasandra Metro Station",
         "name": "Bommasandra Metro Station",
-        "distance": "3 Mins",
+        "distance": "1.1 Km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Bommasandra Metro Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -507,7 +473,7 @@ export const shriramPropertiesData = [
       {
         "label": "Electronic City Elevated Expressway",
         "name": "Electronic City Elevated Expressway",
-        "distance": "3 Mins",
+        "distance": "19.2 Km",
         "icon": "fa-solid fa-road",
         "destination": "Electronic City Elevated Expressway, Bengaluru, Karnataka",
         "coordinates": {
@@ -518,7 +484,7 @@ export const shriramPropertiesData = [
       {
         "label": "NICE Road Interchange",
         "name": "NICE Road Interchange",
-        "distance": "3 Mins",
+        "distance": "27.0 Km",
         "icon": "fa-solid fa-route",
         "destination": "NICE Road Interchange, Bengaluru, Karnataka",
         "coordinates": {
@@ -529,7 +495,7 @@ export const shriramPropertiesData = [
       {
         "label": "DMart Electronic City",
         "name": "DMart Electronic City",
-        "distance": "5 Mins",
+        "distance": "4.2 Km",
         "icon": "fa-solid fa-store",
         "destination": "DMart Electronic City, Bengaluru, Karnataka",
         "coordinates": {
@@ -540,7 +506,7 @@ export const shriramPropertiesData = [
       {
         "label": "Decathlon Ananth Nagar",
         "name": "Decathlon Ananth Nagar",
-        "distance": "5 Mins",
+        "distance": "850 m",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Decathlon Ananth Nagar, Bengaluru, Karnataka",
         "coordinates": {
@@ -551,7 +517,7 @@ export const shriramPropertiesData = [
       {
         "label": "Velankani Tech Park",
         "name": "Velankani Tech Park",
-        "distance": "10 Mins",
+        "distance": "7.7 Km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Velankani Tech Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -562,7 +528,7 @@ export const shriramPropertiesData = [
       {
         "label": "National Public School (NPS)",
         "name": "National Public School (NPS)",
-        "distance": "15 Mins",
+        "distance": "26.7 Km",
         "icon": "fa-solid fa-school",
         "destination": "National Public School (NPS), Bengaluru, Karnataka",
         "coordinates": {
@@ -573,7 +539,7 @@ export const shriramPropertiesData = [
       {
         "label": "Alliance University",
         "name": "Alliance University",
-        "distance": "15 Mins",
+        "distance": "11.5 Km",
         "icon": "fa-solid fa-graduation-cap",
         "destination": "Alliance University, Bengaluru, Karnataka",
         "coordinates": {
@@ -632,13 +598,13 @@ export const shriramPropertiesData = [
     "units": "376",
     "highlight": "48.5-Acre Luxury Plotted Development with 17,600 Sq. Ft. Clubhouse directly on Doddaballapura Highway",
     "highlights": [
-          "Expansive 48.55-acre luxury plotted township directly on Doddaballapura Highway",
-          "Grand 17,600 sq. ft. resort-style clubhouse with lifestyle and recreational hubs",
-          "376 premium villa plots with underground electrical cabling, water lines & drainage",
-          "Lawn tennis court, basketball court, jogging tracks and extensive fruit orchards",
-          "Just 20 minutes from Kempegowda International Airport and Aerospace SEZ",
-          "High appreciation potential backed by Shriram Properties' proven brand trust",
-          "RERA registered: PRM/KA/RERA/1250/301/PR/130123/005634"
+      "95% of the project site development is completed and ready-to-construct",
+      "Ample open space in the total of vastly spread 48.5 acres",
+      "A spacious recreational centre spanning over 17,600 sq. ft",
+      "Breezy drive-through with 40-60 feet wide connecting roads",
+      "Build your dream home (G+2 structure) without any architectural constraints",
+      "Enjoy the convenience of a 5-10 min access to STRR",
+      "Stay proactive with a state-of-the-art gym, lawn tennis court, yoga deck"
     ],
     "reraId": "TOR/PRM/KA/RERA/1250/301/PR/221116/001916",
     "summary": "A premium gated plotted development spread across 48.5 acres on Doddaballapura Highway in North Bengaluru.",
@@ -679,20 +645,9 @@ export const shriramPropertiesData = [
     ],
     "connectivity": [
       {
-        "label": "STRR (Satellite Town Ring Road)",
-        "name": "STRR (Satellite Town Ring Road)",
-        "distance": "5 Mins",
-        "icon": "fa-solid fa-route",
-        "destination": "STRR (Satellite Town Ring Road), Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.2508,
-          "lon": 77.5508
-        }
-      },
-      {
         "label": "Doddaballapura Bus Stand",
         "name": "Doddaballapura Bus Stand",
-        "distance": "5 Mins",
+        "distance": "3.6 Km",
         "icon": "fa-solid fa-bus",
         "destination": "Doddaballapura Bus Stand, Bengaluru, Karnataka",
         "coordinates": {
@@ -703,7 +658,7 @@ export const shriramPropertiesData = [
       {
         "label": "KIADB ITIR / Industrial Corridor",
         "name": "KIADB ITIR / Industrial Corridor",
-        "distance": "15 Mins",
+        "distance": "7.1 Km",
         "icon": "fa-solid fa-building-ngo",
         "destination": "KIADB ITIR / Industrial Corridor, Bengaluru, Karnataka",
         "coordinates": {
@@ -714,7 +669,7 @@ export const shriramPropertiesData = [
       {
         "label": "The Galleria Mall",
         "name": "The Galleria Mall",
-        "distance": "30 Mins",
+        "distance": "23.4 Km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "The Galleria Mall, Bengaluru, Karnataka",
         "coordinates": {
@@ -725,7 +680,7 @@ export const shriramPropertiesData = [
       {
         "label": "Manyata Tech Park",
         "name": "Manyata Tech Park",
-        "distance": "30 Mins",
+        "distance": "37.9 Km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Manyata Tech Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -736,7 +691,7 @@ export const shriramPropertiesData = [
       {
         "label": "Kempegowda International Airport",
         "name": "Kempegowda International Airport",
-        "distance": "30 Mins",
+        "distance": "32.6 Km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport, Bengaluru, Karnataka",
         "coordinates": {
@@ -788,13 +743,12 @@ export const shriramPropertiesData = [
     "units": "64",
     "highlight": "Exclusive Boutique Community with Only 64 Luxury Residences & Dedicated 3-Story Clubhouse in Koramangala 1st Block",
     "highlights": [
-          "Ultra-exclusive boutique community with only 64 bespoke luxury residences",
-          "Dedicated 3-storey grand clubhouse in prime Koramangala 1st Block",
-          "Swimming pool, sky gym, private barbecue lounge and party lawn",
-          "Spacious 3 and 4 BHK layouts with premium Italian marble flooring and fittings",
-          "Walkable proximity to premier dining, elite schools & start-up corridors",
-          "Advanced home automation, dedicated biometric access and 24/7 security",
-          "RERA approved: PRM/KA/RERA/1251/310/PR/171014/000282"
+      "Ultra-exclusive low-density development with only 63 boutique units",
+      "Dedicated 3-storey clubhouse featuring concierge and valet services",
+      "High-end Italian marble flooring and 8-foot teak wood entrance doors",
+      "Integrated smart security with biometric locks and gas leak detectors",
+      "Exquisite rooftop swimming pool and professional-grade squash court",
+      "Elegant balconies with SS toughened glass railings and premium finishes"
     ],
     "reraId": "PRM/KA/RERA/1251/310/PR/080223/005702",
     "summary": "A boutique ultra-luxury residential community offering 3 and 4 BHK residences located in Koramangala 1st Block, South Bengaluru.",
@@ -833,7 +787,7 @@ export const shriramPropertiesData = [
       {
         "label": "Manipal Hospital",
         "name": "Manipal Hospital",
-        "distance": "1.2 km",
+        "distance": "5.5 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Manipal Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -844,7 +798,7 @@ export const shriramPropertiesData = [
       {
         "label": "Nexus Koramangala Mall",
         "name": "Nexus Koramangala Mall",
-        "distance": "1.7 km",
+        "distance": "3.4 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Nexus Koramangala Mall, Bengaluru, Karnataka",
         "coordinates": {
@@ -877,7 +831,7 @@ export const shriramPropertiesData = [
       {
         "label": "ASC Golf Course",
         "name": "ASC Golf Course",
-        "distance": "3.1 km",
+        "distance": "2.6 km",
         "icon": "fa-solid fa-flag-golf",
         "destination": "ASC Golf Course, Bengaluru, Karnataka",
         "coordinates": {
@@ -888,7 +842,7 @@ export const shriramPropertiesData = [
       {
         "label": "Embassy GolfLinks (EGL) Tech Park",
         "name": "Embassy GolfLinks (EGL) Tech Park",
-        "distance": "6 km",
+        "distance": "3.4 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Embassy GolfLinks (EGL) Tech Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -899,7 +853,7 @@ export const shriramPropertiesData = [
       {
         "label": "Karnataka Golf Association (KGA)",
         "name": "Karnataka Golf Association (KGA)",
-        "distance": "6.5 km",
+        "distance": "5.1 km",
         "icon": "fa-solid fa-flag-golf",
         "destination": "Karnataka Golf Association (KGA), Bengaluru, Karnataka",
         "coordinates": {
@@ -910,7 +864,7 @@ export const shriramPropertiesData = [
       {
         "label": "Christ University",
         "name": "Christ University",
-        "distance": "6.8 km",
+        "distance": "4.3 km",
         "icon": "fa-solid fa-graduation-cap",
         "destination": "Christ University, Bengaluru, Karnataka",
         "coordinates": {
@@ -921,7 +875,7 @@ export const shriramPropertiesData = [
       {
         "label": "RMZ Ecospace Bellandur",
         "name": "RMZ Ecospace Bellandur",
-        "distance": "7 km",
+        "distance": "7.6 km",
         "icon": "fa-solid fa-building-ngo",
         "destination": "RMZ Ecospace Bellandur, Bengaluru, Karnataka",
         "coordinates": {
@@ -973,13 +927,13 @@ export const shriramPropertiesData = [
     "units": "106",
     "highlight": "Lakeside Living Situated Directly on the Banks of Veerasagara Lake with ~76% Open Spaces",
     "highlights": [
-          "Exclusive lakeside residential enclave situated directly on the banks of Veerasagara Lake",
-          "Boutique development of only 106 homes across 3.09 acres for ultimate privacy",
-          "Over 76% open green spaces with lakefront promenades and bird-watching decks",
-          "Resident multipurpose hall, swimming pool, kids splash pool and fitness center",
-          "Prime Yelahanka New Town location close to leading educational institutions",
-          "Vastu-compliant 2 and 3 BHK residences featuring panoramic lake views",
-          "RERA approved: PRM/KA/RERA/1251/309/PR/171015/000398"
+      "Exclusive low-density living with 264 units across 4 acres",
+      "Efficient 35-minute commute to Kempegowda International Airport",
+      "Strategic proximity to Manyata and Kirloskar Tech Parks",
+      "Enhanced connectivity via upcoming Namma Metro Airport Link",
+      "Connectivity to Satellite Town and Peripheral Ring Roads",
+      "Premium sports hub with Tennis and Indoor Badminton courts",
+      "Properties with 100% power backup available"
     ],
     "reraId": "TOR/PRM/KA/RERA/1251/309/PR/221116/000068",
     "summary": "A lakeside residential development offering 2 and 2.5 BHK homes located along Veerasagara Lake in Yelahanka New Town, North Bengaluru.",
@@ -1026,7 +980,7 @@ export const shriramPropertiesData = [
       {
         "label": "Veerasagara Lake",
         "name": "Veerasagara Lake",
-        "distance": "Adjacent",
+        "distance": "220 m",
         "icon": "fa-solid fa-water",
         "destination": "Veerasagara Lake, Bengaluru, Karnataka",
         "coordinates": {
@@ -1037,7 +991,7 @@ export const shriramPropertiesData = [
       {
         "label": "Mallya Aditi International School",
         "name": "Mallya Aditi International School",
-        "distance": "10 Mins",
+        "distance": "3.6 Km",
         "icon": "fa-solid fa-school",
         "destination": "Mallya Aditi International School, Bengaluru, Karnataka",
         "coordinates": {
@@ -1048,7 +1002,7 @@ export const shriramPropertiesData = [
       {
         "label": "Galleria Mall & Garuda Mall",
         "name": "Galleria Mall & Garuda Mall",
-        "distance": "10 Mins",
+        "distance": "22.1 Km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Galleria Mall & Garuda Mall, Bengaluru, Karnataka",
         "coordinates": {
@@ -1059,7 +1013,7 @@ export const shriramPropertiesData = [
       {
         "label": "Yelahanka Junction Railway Station",
         "name": "Yelahanka Junction Railway Station",
-        "distance": "15 Mins",
+        "distance": "5.5 Km",
         "icon": "fa-solid fa-train",
         "destination": "Yelahanka Junction Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -1070,7 +1024,7 @@ export const shriramPropertiesData = [
       {
         "label": "Phoenix Mall of Asia",
         "name": "Phoenix Mall of Asia",
-        "distance": "15 Mins",
+        "distance": "8.0 Km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
         "coordinates": {
@@ -1081,7 +1035,7 @@ export const shriramPropertiesData = [
       {
         "label": "Brigade Magnum & Opus",
         "name": "Brigade Magnum & Opus",
-        "distance": "20 Mins",
+        "distance": "9.7 Km",
         "icon": "fa-solid fa-building",
         "destination": "Brigade Magnum & Opus, Bengaluru, Karnataka",
         "coordinates": {
@@ -1092,7 +1046,7 @@ export const shriramPropertiesData = [
       {
         "label": "Manyata Tech Park",
         "name": "Manyata Tech Park",
-        "distance": "25 Mins",
+        "distance": "13.4 Km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Manyata Tech Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -1103,7 +1057,7 @@ export const shriramPropertiesData = [
       {
         "label": "Kirloskar Tech Park",
         "name": "Kirloskar Tech Park",
-        "distance": "25 Mins",
+        "distance": "9.4 Km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Kirloskar Tech Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -1114,7 +1068,7 @@ export const shriramPropertiesData = [
       {
         "label": "Kempegowda International Airport (KIAL)",
         "name": "Kempegowda International Airport (KIAL)",
-        "distance": "35 Mins",
+        "distance": "27.0 Km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport (KIAL), Bengaluru, Karnataka",
         "coordinates": {
@@ -1173,13 +1127,11 @@ export const shriramPropertiesData = [
     "units": "972",
     "highlight": "Low-Density Community with Distinct C-Shaped Towers, 70% Open Space & 4-Storey Clubhouse",
     "highlights": [
-          "Distinctive architectural concept with C-shaped high-rise towers optimizing vistas",
-          "Sprawling across 7.5 acres in Jalahalli West with over 70% open landscape",
-          "Multi-level 4-storey grand clubhouse with heated swimming pool and health club",
-          "Dedicated pet park, open-air amphitheatre, skating rink and jogging circuits",
-          "Close to Peenya industrial zone, Yeshwanthpur and Green Line Metro connectivity",
-          "972 premium residences with zero dead-space layouts and expansive balconies",
-          "RERA registered: PRM/KA/RERA/1251/309/PR/190823/006189"
+      "15 mins from 5 metro stations (Nagasandra, Dasarahalli, etc.)",
+      "C-shaped tower design for maximum light & ventilation",
+      "30+ amenities & 4-storeyed clubhouse",
+      "Trusted by 300+ happy families",
+      "20 minutes from the World Trade Center"
     ],
     "reraId": "PRM/KA/RERA/1251/309/PR/210319/004033",
     "summary": "A high-rise residential community offering 2, 2.5, and 3 BHK apartments in Jalahalli West, North Bengaluru.",
@@ -1222,7 +1174,7 @@ export const shriramPropertiesData = [
       {
         "label": "IKEA Nagasandra",
         "name": "IKEA Nagasandra",
-        "distance": "10 Mins",
+        "distance": "5.0 Km",
         "icon": "fa-solid fa-store",
         "destination": "IKEA Nagasandra, Bengaluru, Karnataka",
         "coordinates": {
@@ -1233,7 +1185,7 @@ export const shriramPropertiesData = [
       {
         "label": "BEL Road",
         "name": "BEL Road",
-        "distance": "10 Mins",
+        "distance": "4.6 Km",
         "icon": "fa-solid fa-road",
         "destination": "BEL Road, Bengaluru, Karnataka",
         "coordinates": {
@@ -1244,7 +1196,7 @@ export const shriramPropertiesData = [
       {
         "label": "Yeshwanthpur Railway Station",
         "name": "Yeshwanthpur Railway Station",
-        "distance": "15 Mins",
+        "distance": "8.5 Km",
         "icon": "fa-solid fa-train",
         "destination": "Yeshwanthpur Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -1255,7 +1207,7 @@ export const shriramPropertiesData = [
       {
         "label": "World Trade Center (WTC)",
         "name": "World Trade Center (WTC)",
-        "distance": "20 Mins",
+        "distance": "10.3 Km",
         "icon": "fa-solid fa-building",
         "destination": "World Trade Center (WTC), Bengaluru, Karnataka",
         "coordinates": {
@@ -1266,7 +1218,7 @@ export const shriramPropertiesData = [
       {
         "label": "Manyata Tech Park",
         "name": "Manyata Tech Park",
-        "distance": "25 Mins",
+        "distance": "14.2 Km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Manyata Tech Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -1277,7 +1229,7 @@ export const shriramPropertiesData = [
       {
         "label": "Kempegowda International Airport",
         "name": "Kempegowda International Airport",
-        "distance": "45 Mins",
+        "distance": "35.1 Km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport, Bengaluru, Karnataka",
         "coordinates": {
@@ -1336,13 +1288,11 @@ export const shriramPropertiesData = [
     "units": "1,055",
     "highlight": "19-Acre Gated Community with 78% Open Space & Grand 18,000 Sq. Ft. Clubhouse Just 15 Mins from E-City Phase 2",
     "highlights": [
-          "Sprawling 19-acre gated community just 15 minutes from Electronic City Phase 2",
-          "Generous 78% open landscape featuring tree-lined avenues and park clusters",
-          "Grand 18,000 sq. ft. resident clubhouse with multi-sport amenities",
-          "Large swimming pool, yoga & aerobics deck, gymnasium and party hall",
-          "Close proximity to Hosur Road, Attibele junction & upcoming peripheral ring road",
-          "1,055 contemporary 2 and 3 BHK homes offering exceptional rental returns",
-          "RERA registered: PRM/KA/RERA/1251/308/PR/181122/005486"
+      "19-acre gated enclave with 78% open space and green landscapes",
+      "18,000 sqft clubhouse with 40+ lifestyle offerings",
+      "Built with advanced Mivan technology for superior quality",
+      "Sustainable living with RWH and organic waste management",
+      "Excellent connectivity to Electronic City IT Hub via NICE Road"
     ],
     "reraId": "PRM/KA/RERA/1251/308/PR/140222/004708",
     "summary": "A high-rise residential community featuring smart 2 and 3 BHK apartments in Attibele, near Electronic City Phase 2, South Bengaluru.",
@@ -1389,7 +1339,7 @@ export const shriramPropertiesData = [
       {
         "label": "Attibele Junction (NH-44)",
         "name": "Attibele Junction (NH-44)",
-        "distance": "5 Mins",
+        "distance": "4.4 Km",
         "icon": "fa-solid fa-road",
         "destination": "Attibele Junction (NH-44), Bengaluru, Karnataka",
         "coordinates": {
@@ -1400,7 +1350,7 @@ export const shriramPropertiesData = [
       {
         "label": "Electronic City Phase 2",
         "name": "Electronic City Phase 2",
-        "distance": "15 Mins",
+        "distance": "14.7 Km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Electronic City Phase 2, Bengaluru, Karnataka",
         "coordinates": {
@@ -1411,7 +1361,7 @@ export const shriramPropertiesData = [
       {
         "label": "Bommasandra Metro Station",
         "name": "Bommasandra Metro Station",
-        "distance": "15 Mins",
+        "distance": "9.8 Km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Bommasandra Metro Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -1422,7 +1372,7 @@ export const shriramPropertiesData = [
       {
         "label": "Bommasandra Industrial Area",
         "name": "Bommasandra Industrial Area",
-        "distance": "20 Mins",
+        "distance": "11.2 Km",
         "icon": "fa-solid fa-building-ngo",
         "destination": "Bommasandra Industrial Area, Bengaluru, Karnataka",
         "coordinates": {
@@ -1433,7 +1383,7 @@ export const shriramPropertiesData = [
       {
         "label": "Narayana Health City",
         "name": "Narayana Health City",
-        "distance": "20 Mins",
+        "distance": "8.5 Km",
         "icon": "fa-solid fa-hospital",
         "destination": "Narayana Health City, Bengaluru, Karnataka",
         "coordinates": {
@@ -1444,7 +1394,7 @@ export const shriramPropertiesData = [
       {
         "label": "Hosur Town",
         "name": "Hosur Town",
-        "distance": "20 Mins",
+        "distance": "12.1 Km",
         "icon": "fa-solid fa-city",
         "destination": "Hosur Town, Bengaluru, Karnataka",
         "coordinates": {
@@ -1455,7 +1405,7 @@ export const shriramPropertiesData = [
       {
         "label": "Sarjapur Road",
         "name": "Sarjapur Road",
-        "distance": "25 Mins",
+        "distance": "25.2 Km",
         "icon": "fa-solid fa-road",
         "destination": "Sarjapur Road, Bengaluru, Karnataka",
         "coordinates": {
@@ -1507,13 +1457,12 @@ export const shriramPropertiesData = [
     "units": "1,272",
     "highlight": "11.2-Acre Youth Town Community with 78% Open Space & 2 Grand Clubhouses Spanning 22,000 Sq. Ft.",
     "highlights": [
-          "Innovative 11.3-acre 'Youth Town' community near Budigere Cross, Whitefield Extension",
-          "78% open landscaped spaces featuring activity plazas and zen gardens",
-          "2 grand resident clubhouses spanning a combined 22,000 sq. ft. of lifestyle spaces",
-          "Skating rink, bouldering climbing wall, swimming pool & indoor sports courts",
-          "Minutes away from Whitefield IT corridor, Kadugodi Metro and KR Puram railway station",
-          "1,272 smart-designed homes perfect for modern tech professionals and investors",
-          "RERA approved: PRM/KA/RERA/1251/446/PR/171015/000412"
+      "Close to ITPL & Brigade Tech Parks",
+      "Upcoming Metro to Whitefield",
+      "Within 17 km of Baiyappanahalli Metro",
+      "Jogging Track & Yoga Area",
+      "Two Clubhouses with Pools & Gyms",
+      "Basketball Court for Sports Lovers"
     ],
     "reraId": "PRM/KA/RERA/1251/446/PR/200323/003368",
     "summary": "A modern residential community offering 2 and 3 BHK apartments at Budigere Cross, Whitefield Extension, East Bengaluru.",
@@ -1554,20 +1503,9 @@ export const shriramPropertiesData = [
     ],
     "connectivity": [
       {
-        "label": "Decathlon & Orion Uptown Mall",
-        "name": "Decathlon & Orion Uptown Mall",
-        "distance": "10 Mins",
-        "icon": "fa-solid fa-bag-shopping",
-        "destination": "Decathlon & Orion Uptown Mall, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.0073,
-          "lon": 77.8204
-        }
-      },
-      {
         "label": "Whitefield (Kadugodi) Metro Station",
         "name": "Whitefield (Kadugodi) Metro Station",
-        "distance": "15 Mins",
+        "distance": "12.2 Km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Whitefield (Kadugodi) Metro Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -1578,7 +1516,7 @@ export const shriramPropertiesData = [
       {
         "label": "KR Puram Metro Station",
         "name": "KR Puram Metro Station",
-        "distance": "15 Mins",
+        "distance": "13.8 Km",
         "icon": "fa-solid fa-train-subway",
         "destination": "KR Puram Metro Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -1589,7 +1527,7 @@ export const shriramPropertiesData = [
       {
         "label": "International Tech Park Bangalore (ITPL)",
         "name": "International Tech Park Bangalore (ITPL)",
-        "distance": "20 Mins",
+        "distance": "15.5 Km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "International Tech Park Bangalore (ITPL), Bengaluru, Karnataka",
         "coordinates": {
@@ -1600,7 +1538,7 @@ export const shriramPropertiesData = [
       {
         "label": "Manipal Hospital Whitefield",
         "name": "Manipal Hospital Whitefield",
-        "distance": "30 Mins",
+        "distance": "14.5 Km",
         "icon": "fa-solid fa-hospital",
         "destination": "Manipal Hospital Whitefield, Bengaluru, Karnataka",
         "coordinates": {
@@ -1611,7 +1549,7 @@ export const shriramPropertiesData = [
       {
         "label": "Kempegowda International Airport",
         "name": "Kempegowda International Airport",
-        "distance": "30 Mins",
+        "distance": "23.2 Km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport, Bengaluru, Karnataka",
         "coordinates": {
@@ -1663,13 +1601,13 @@ export const shriramPropertiesData = [
     "units": "217",
     "highlight": "Low-Density Boutique Community of 217 Private G+1 Row Villas Across 12.4 Acres with 13,000 Sq. Ft. Grand Clubhouse",
     "highlights": [
-          "Low-density villa sanctuary spanning 12.4 acres along prime Sarjapur Main Road",
-          "Exclusive collection of 217 private G + 1 row villas with private gardens",
-          "Grand 13,000 sq. ft. clubhouse featuring indoor games, gym and yoga studio",
-          "Swimming pool, reflexology path, table tennis and dedicated kids play park",
-          "Direct connectivity to Sarjapur tech parks, Wipro SEZ and Outer Ring Road",
-          "Expansive internal roads with underground utility cabling and landscaped verges",
-          "RERA certified: PRM/KA/RERA/1251/308/PR/210319/004018"
+      "Situated in the most sought after residential locales of East Bangalore",
+      "Private open spaces and Creche, convenience among other amenities",
+      "Well connected to E city, Whitfield and Sarjapur ORR",
+      "Grand 13000 plus sqft Club House",
+      "Row Villas are spaciously designed homes generally double floored",
+      "Well maintained infrastructure with secured gated community",
+      "Foosball activity area within the vicinity available"
     ],
     "reraId": "PRM/KA/RERA/1251/308/PR/200226/003310",
     "summary": "A boutique gated community featuring 3 and 4 BHK luxury row villas on Sarjapur Road, South-East Bengaluru.",
@@ -1712,7 +1650,7 @@ export const shriramPropertiesData = [
       {
         "label": "Town Hospital",
         "name": "Town Hospital",
-        "distance": "5 Mins",
+        "distance": "2.1 Km",
         "icon": "fa-solid fa-hospital",
         "destination": "Town Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -1723,7 +1661,7 @@ export const shriramPropertiesData = [
       {
         "label": "Azim Premji University",
         "name": "Azim Premji University",
-        "distance": "10 Mins",
+        "distance": "4.9 Km",
         "icon": "fa-solid fa-graduation-cap",
         "destination": "Azim Premji University, Bengaluru, Karnataka",
         "coordinates": {
@@ -1734,7 +1672,7 @@ export const shriramPropertiesData = [
       {
         "label": "Indus International School",
         "name": "Indus International School",
-        "distance": "10 Mins",
+        "distance": "4.7 Km",
         "icon": "fa-solid fa-school",
         "destination": "Indus International School, Bengaluru, Karnataka",
         "coordinates": {
@@ -1743,20 +1681,9 @@ export const shriramPropertiesData = [
         }
       },
       {
-        "label": "Elite Hospital",
-        "name": "Elite Hospital",
-        "distance": "10 Mins",
-        "icon": "fa-solid fa-hospital",
-        "destination": "Elite Hospital, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 12.9043,
-          "lon": 77.8626
-        }
-      },
-      {
         "label": "Infosys Sarjapur Campus",
         "name": "Infosys Sarjapur Campus",
-        "distance": "10 Mins",
+        "distance": "3.4 Km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Infosys Sarjapur Campus, Bengaluru, Karnataka",
         "coordinates": {
@@ -1767,7 +1694,7 @@ export const shriramPropertiesData = [
       {
         "label": "Wipro Sarjapur Office",
         "name": "Wipro Sarjapur Office",
-        "distance": "30 Mins",
+        "distance": "16.9 Km",
         "icon": "fa-solid fa-building",
         "destination": "Wipro Sarjapur Office, Bengaluru, Karnataka",
         "coordinates": {

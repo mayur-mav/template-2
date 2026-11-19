@@ -47,13 +47,13 @@ export const sattvaData = [
     "units": "3,460",
     "highlight": "84% Open Space & 4 Mega Clubhouses",
     "highlights": [
-          "Expansive 50-acre integrated mega township on NH-44 International Airport Road",
-          "Over 84% open green landscape and thematic landscaped gardens",
-          "4 grand resident clubhouses with multi-tier lifestyle amenities",
-          "Temperature-controlled indoor swimming pool and Olympic-length outdoor pool",
-          "Comprehensive sports arena featuring squash, pickleball & cricket nets",
-          "High-speed connectivity to Kempegowda International Airport and KIADB Aerospace Park",
-          "Fully approved RERA project: PRM/KA/RERA/1251/472/PR/270226/008494"
+      "50-acre luxury township with 84% open green spaces",
+      "Four grand clubhouses for exclusive leisure living",
+      "250+ world-class amenities for premium lifestyles",
+      "Indoor temperature-controlled pool with a kids zone",
+      "Urban forest boardwalk, Miyawaki forest & Lumion trail",
+      "4 gyms with the largest one spread across 440 sq m",
+      "Waterfront amphitheater beside a lake & viewing decks"
     ],
     "reraId": "PRM/KA/RERA/1251/472/PR/270226/008494",
     "summary": "Sattva City is a landmark 50-acre integrated high-rise mega township by Sattva Group located in Doddajala off NH-44 (International Airport Road), North Bangalore, offering 2, 2.5, 3, 3.5, and 4 BHK luxury residences with 84% open space.",
@@ -96,7 +96,7 @@ export const sattvaData = [
       {
         "label": "Doddajala Railway Station",
         "name": "Doddajala Railway Station",
-        "distance": "2.1 km",
+        "distance": "3.1 km",
         "icon": "fa-solid fa-train",
         "destination": "Doddajala Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -107,7 +107,7 @@ export const sattvaData = [
       {
         "label": "NRV Hospital",
         "name": "NRV Hospital",
-        "distance": "3.0 km",
+        "distance": "3.7 km",
         "icon": "fa-solid fa-hospital",
         "destination": "NRV Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -118,7 +118,7 @@ export const sattvaData = [
       {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "4.6 km",
+        "distance": "11.8 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -129,7 +129,7 @@ export const sattvaData = [
       {
         "label": "Prestige Tech Cloud",
         "name": "Prestige Tech Cloud",
-        "distance": "5.2 km",
+        "distance": "5.5 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Prestige Tech Cloud, Bengaluru, Karnataka",
         "coordinates": {
@@ -140,7 +140,7 @@ export const sattvaData = [
       {
         "label": "Oxford English School",
         "name": "Oxford English School",
-        "distance": "6.0 km",
+        "distance": "34.5 km",
         "icon": "fa-solid fa-graduation-cap",
         "destination": "Oxford English School, Bengaluru, Karnataka",
         "coordinates": {
@@ -151,7 +151,7 @@ export const sattvaData = [
       {
         "label": "Doddajala Metro Station (Upcoming Blue Line)",
         "name": "Doddajala Metro Station (Upcoming Blue Line)",
-        "distance": "1.2 km",
+        "distance": "3.5 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Doddajala Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
         "coordinates": {
@@ -162,7 +162,7 @@ export const sattvaData = [
       {
         "label": "KIADB Aerospace Park & SEZ",
         "name": "KIADB Aerospace Park & SEZ",
-        "distance": "10.0 km",
+        "distance": "12.2 km",
         "icon": "fa-solid fa-building-columns",
         "destination": "KIADB Aerospace Park & SEZ, Bengaluru, Karnataka",
         "coordinates": {
@@ -173,7 +173,7 @@ export const sattvaData = [
       {
         "label": "Phoenix Mall of Asia",
         "name": "Phoenix Mall of Asia",
-        "distance": "18.5 km",
+        "distance": "15.6 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
         "coordinates": {
@@ -239,13 +239,13 @@ export const sattvaData = [
     "units": "381 Units",
     "highlight": "2 Iconic Sky Towers (2B + G + 42 Floors) & 3 Clubhouses",
     "highlights": [
-          "Iconic twin sky towers rising B + G + 42 floors on Budigere Main Road",
-          "Ultra-low-density boutique collection of 381 premium residences",
-          "3 dedicated resident clubhouses with wellness and recreational zones",
-          "Infinity-edge swimming pool with panoramic skyline views",
-          "Strategic access to Whitefield IT Hub, Old Madras Road & upcoming Metro",
-          "Comprehensive indoor sports arena with squash and badminton courts",
-          "RERA registered with clear titles: PRM/KA/RERA/1251/446/PR/070225/007498"
+      "RCC structure with modular aluminium formwork for durability",
+      "Dedicated 4-acre zone for (58) 4 BHK row house villas",
+      "Exquisite row house villas with basement, ground and two luxury floors",
+      "Basement + ground + 2 floors villas with private terraces",
+      "Urban forest featuring transplanted trees & reflexology walkway",
+      "Main world-class clubhouse plus 2 satellite clubhouses",
+      "Eco park with camping site, tent place, fire pits & bird's park"
     ],
     "reraId": "PRM/KA/RERA/1251/310/PR/270326/008557",
     "summary": "Sattva Songbird Phase II is an ultra-premium high-rise expansion by Sattva Group located on Budigere Main Road, Bangalore, featuring 2 BHK and 3 BHK luxury residences across 4.33 acres with 2 high-rise sky towers.",
@@ -299,7 +299,7 @@ export const sattvaData = [
       {
         "label": "Little Elly Preschool",
         "name": "Little Elly Preschool",
-        "distance": "1.3 km",
+        "distance": "15.6 km",
         "icon": "fa-solid fa-school",
         "destination": "Little Elly Preschool, Bengaluru, Karnataka",
         "coordinates": {
@@ -343,7 +343,7 @@ export const sattvaData = [
       {
         "label": "Kadugodi Tree Park Metro Station",
         "name": "Kadugodi Tree Park Metro Station",
-        "distance": "9.2 km",
+        "distance": "10.5 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Kadugodi Tree Park Metro Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -354,7 +354,7 @@ export const sattvaData = [
       {
         "label": "ITPL International Tech Park",
         "name": "ITPL International Tech Park",
-        "distance": "12.0 km",
+        "distance": "12.2 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "ITPL International Tech Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -424,13 +424,13 @@ export const sattvaData = [
     "units": "554 Units",
     "highlight": "Prime Airport Road Corridor & High-Efficiency Smart Apartments",
     "highlights": [
-          "Prime location directly along the International Airport Road corridor in Devanahalli",
-          "High-efficiency smart 1, 2, and 3 BHK apartment layouts",
-          "Dedicated resident clubhouse with multipurpose hall and fitness hub",
-          "Swimming pool with kids splash deck and relaxation cabanas",
-          "Minutes from KIADB Aerospace SEZ, IT parks and hardware tech zones",
-          "Modern sustainable design with rainwater harvesting & solar-lit common areas",
-          "Fully RERA compliant: PRM/KA/RERA/1250/303/PR/201224/007324"
+      "Strategic location just 3.4 km from Kempegowda International Airport",
+      "Seamless transit with the Airport Railway Station only 1 km away",
+      "Direct access to major tech hubs like KIADB Aerospace and Ecopolis",
+      "Enjoy breathtaking and unobstructed views of the International Airport",
+      "Over 29 premium lifestyle amenities including a squash court and pool",
+      "Serene landscape featuring exotic koi ponds and a viewing deck",
+      "Modern architectural entrance highlighted by a signature clock tower"
     ],
     "reraId": "PRM/KA/RERA/1250/303/PR/250925/008119",
     "summary": "Sattva Aeropolis Phase II is an advanced smart residential extension by Sattva Group located on Main International Airport Road, Devanahalli, Bangalore, offering Studio, 1 BHK, and 3 BHK apartments across 2.4 acres.",
@@ -471,20 +471,9 @@ export const sattvaData = [
     ],
     "connectivity": [
       {
-        "label": "Total Mall Airport Road",
-        "name": "Total Mall Airport Road",
-        "distance": "2.0 km",
-        "icon": "fa-solid fa-bag-shopping",
-        "destination": "Total Mall Airport Road, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.2539,
-          "lon": 77.7025
-        }
-      },
-      {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "6.0 km",
+        "distance": "6.3 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -495,7 +484,7 @@ export const sattvaData = [
       {
         "label": "KIADB Aerospace Park & SEZ",
         "name": "KIADB Aerospace Park & SEZ",
-        "distance": "8.0 km",
+        "distance": "9.1 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "KIADB Aerospace Park & SEZ, Bengaluru, Karnataka",
         "coordinates": {
@@ -506,7 +495,7 @@ export const sattvaData = [
       {
         "label": "Akash Institute of Medical Sciences & Hospital",
         "name": "Akash Institute of Medical Sciences & Hospital",
-        "distance": "9.5 km",
+        "distance": "8.0 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Akash Institute of Medical Sciences & Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -517,7 +506,7 @@ export const sattvaData = [
       {
         "label": "Prestige Tech Cloud",
         "name": "Prestige Tech Cloud",
-        "distance": "10.0 km",
+        "distance": "4.4 km",
         "icon": "fa-solid fa-building-columns",
         "destination": "Prestige Tech Cloud, Bengaluru, Karnataka",
         "coordinates": {
@@ -526,20 +515,9 @@ export const sattvaData = [
         }
       },
       {
-        "label": "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        "name": "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        "distance": "11.0 km",
-        "icon": "fa-solid fa-train-subway",
-        "destination": "Bettahalsoor Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.159,
-          "lon": 77.631
-        }
-      },
-      {
         "label": "Phoenix Mall of Asia",
         "name": "Phoenix Mall of Asia",
-        "distance": "15.0 km",
+        "distance": "19.5 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
         "coordinates": {
@@ -591,13 +569,11 @@ export const sattvaData = [
     "units": "200",
     "highlight": "Compact Investment-Grade Enclave & 70% Open Space",
     "highlights": [
-          "Exclusive boutique enclave spanning 1.3 acres with 70% open spaces",
-          "Limited edition community of only 200 residences for enhanced privacy",
-          "Modern resident clubhouse with fully equipped gym and meditation deck",
-          "Landscaped recreation zones and swimming pool with kids deck",
-          "Strategic proximity to Bellary Road (NH-44) and Kempegowda International Airport",
-          "High rental yield and appreciation potential in North Bangalore's growth hub",
-          "RERA registered: PRM/KA/RERA/1250/303/PR/241024/007172"
+      "Comprehensive safety features with fire fighting systems",
+      "Sustainable water management with rain water harvesting",
+      "Reliable utility services with 24x7 water supply",
+      "Modern eco-infrastructure with sewage treatment plant",
+      "Integrated emergency protocols with dedicated exits"
     ],
     "reraId": "PRM/KA/RERA/1250/303/PR/041225/008310",
     "summary": "Sattva Vasanta Cove is a boutique residential development by Sattva Group located in Kannamangala, Devanahalli off Bellary Road, North Bangalore, offering compact Studio and 1 BHK luxury apartments across 1.3 acres with 70% open space.",
@@ -651,7 +627,7 @@ export const sattvaData = [
       {
         "label": "Devanahalli Business Park",
         "name": "Devanahalli Business Park",
-        "distance": "10.0 km",
+        "distance": "9.5 km",
         "icon": "fa-solid fa-building-columns",
         "destination": "Devanahalli Business Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -662,7 +638,7 @@ export const sattvaData = [
       {
         "label": "KIADB Aerospace Park & SEZ",
         "name": "KIADB Aerospace Park & SEZ",
-        "distance": "12.5 km",
+        "distance": "17.1 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "KIADB Aerospace Park & SEZ, Bengaluru, Karnataka",
         "coordinates": {
@@ -673,7 +649,7 @@ export const sattvaData = [
       {
         "label": "Akash Hospital Devanahalli",
         "name": "Akash Hospital Devanahalli",
-        "distance": "11.0 km",
+        "distance": "7.6 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Akash Hospital Devanahalli, Bengaluru, Karnataka",
         "coordinates": {
@@ -692,17 +668,6 @@ export const sattvaData = [
           "lon": 77.5706
         }
       },
-      {
-        "label": "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        "name": "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        "distance": "15.0 km",
-        "icon": "fa-solid fa-train-subway",
-        "destination": "Bettahalsoor Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.159,
-          "lon": 77.631
-        }
-      }
     ],
     "images": [
       sattvaImage("sattva-group/sattva-vasanta-cove/gallery/exterior-view.webp"),
@@ -754,13 +719,12 @@ export const sattvaData = [
     "units": "418",
     "highlight": "Metro-Front High-Rise Living & 75% Landscape Open Space",
     "highlights": [
-          "Prime metro-front residential destination directly opposite Jnanabharathi Metro Station",
-          "Sprawling across 6.25 acres with over 75% landscaped open green area",
-          "High-rise towers offering panoramic views of Bangalore University greenery",
-          "Signature clubhouse featuring banquet halls, squash court & indoor games",
-          "Infinity edge swimming pool with dedicated sun deck and children's play area",
-          "Seamless connectivity to Mysore Road, NICE Ring Road & Outer Ring Road",
-          "RERA approved: PRM/KA/RERA/1251/310/PR/110924/007044"
+      "Uninterrupted views of the 600-acre Bangalore University forest campus",
+      "35-metre infinity pool at P3 with skyline views and sunset reflections",
+      "Dedicated seniors enclave, reading nook, and quiet garden zones",
+      "Amphitheatre, stage, and celebration lawn for curated events",
+      "Pet park, youth corner, and outdoor gym for all-age lifestyles",
+      "Developer is ISO 9001, 14001, 18001 certified; founding member of IGBC"
     ],
     "reraId": "PRM/KA/RERA/1251/310/PR/241225/008358",
     "summary": "Sattva Aaranya is an ultra-luxury high-rise residential enclave by Sattva Group located on Mysore Road directly opposite Jnanabharathi Metro Station, RR Nagar, Bangalore, offering 3, 3.5, and 4 BHK premium homes across 6.25 acres.",
@@ -803,7 +767,7 @@ export const sattvaData = [
       {
         "label": "Jnanabharathi Metro Station (Purple Line)",
         "name": "Jnanabharathi Metro Station (Purple Line)",
-        "distance": "0.1 km",
+        "distance": "1.4 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Jnanabharathi Metro Station (Purple Line), Bengaluru, Karnataka",
         "coordinates": {
@@ -814,7 +778,7 @@ export const sattvaData = [
       {
         "label": "Bangalore University Campus",
         "name": "Bangalore University Campus",
-        "distance": "0.5 km",
+        "distance": "2.9 km",
         "icon": "fa-solid fa-graduation-cap",
         "destination": "Bangalore University Campus, Bengaluru, Karnataka",
         "coordinates": {
@@ -825,7 +789,7 @@ export const sattvaData = [
       {
         "label": "RV University / RVCE",
         "name": "RV University / RVCE",
-        "distance": "2.2 km",
+        "distance": "1.9 km",
         "icon": "fa-solid fa-school",
         "destination": "RV University / RVCE, Bengaluru, Karnataka",
         "coordinates": {
@@ -858,7 +822,7 @@ export const sattvaData = [
       {
         "label": "Rajarajeswari Medical College & Hospital",
         "name": "Rajarajeswari Medical College & Hospital",
-        "distance": "4.5 km",
+        "distance": "7.0 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Rajarajeswari Medical College & Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -869,7 +833,7 @@ export const sattvaData = [
       {
         "label": "KSR Bengaluru City Railway Station",
         "name": "KSR Bengaluru City Railway Station",
-        "distance": "8.0 km",
+        "distance": "10.4 km",
         "icon": "fa-solid fa-train",
         "destination": "KSR Bengaluru City Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -880,7 +844,7 @@ export const sattvaData = [
       {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "42.0 km",
+        "distance": "43.2 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -953,13 +917,13 @@ export const sattvaData = [
     "units": "1,077",
     "highlight": "80% Open Greenery & Sprawling 1-Acre Clubhouse (45,000 Sq. Ft.)",
     "highlights": [
-          "Grand 16-acre master-planned residential township in Devanahalli near Airport",
-          "Over 80% open landscaped spaces with native greenery and tree-lined avenues",
-          "Sprawling 1-acre grand resident clubhouse spanning 45,000 sq. ft.",
-          "Multiple swimming pools including rooftop pool and outdoor resort pool",
-          "Extensive lifestyle amenities: squash courts, amphitheatre, aerobics & jogging track",
-          "Just 10 minutes drive from Kempegowda International Airport (KIAL)",
-          "RERA registered: PRM/KA/RERA/1250/303/PR/160724/006935"
+      "Towers are spaced far apart (113 to 180 meters) to ensure privacy",
+      "80% dedicated to open spaces and 13 acres of open greenery",
+      "Double-glazed windows and a central rain-fed water body",
+      "Nature to sky-high living theme reintroduces urban greenery into skyline",
+      "1-acre clubhouse serves as a social and recreational hub",
+      "Multiple halls, an al fresco dining area and a rooftop pool",
+      "5-minute drive to Kempegowda International Airport for seamless access"
     ],
     "reraId": "PRM/KA/RERA/1250/303/PR/080525/007730",
     "summary": "Sattva Vasanta Skye is a premier high-rise residential project by Sattva Group spread across 16 acres in Devanahalli, North Bangalore, offering Studio, 1 BHK, 2 BHK, 3 BHK, and 4 BHK luxury residences near Kempegowda International Airport.",
@@ -1002,23 +966,12 @@ export const sattvaData = [
       {
         "label": "Leena Multispeciality Hospital",
         "name": "Leena Multispeciality Hospital",
-        "distance": "3.0 km",
+        "distance": "8.5 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Leena Multispeciality Hospital, Bengaluru, Karnataka",
         "coordinates": {
           "lat": 13.2161,
           "lon": 77.7186
-        }
-      },
-      {
-        "label": "Upcoming Airport Blue Line Metro Station",
-        "name": "Upcoming Airport Blue Line Metro Station",
-        "distance": "3.6 km",
-        "icon": "fa-solid fa-train-subway",
-        "destination": "Upcoming Airport Blue Line Metro Station, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.1981,
-          "lon": 77.672
         }
       },
       {
@@ -1134,13 +1087,13 @@ export const sattvaData = [
     "units": "798",
     "highlight": "8.92 Acres Expansion & 7 High-Rise Towers with Extended Clubhouse Ecosystem",
     "highlights": [
-          "Expansive 8.92-acre new phase adding 7 high-rise towers to the landmark township",
-          "Access to the complete 3-clubhouse integrated ecosystem across the Park Cubix masterplan",
-          "798 well-ventilated 2 and 3 BHK homes designed for maximum natural light",
-          "Outdoor lap pool, indoor badminton courts, gymnasium and gathering plaza",
-          "Direct frontage on NH-207 connecting Devanahalli to Whitefield & Hoskote",
-          "High capital appreciation corridor near North Bangalore SEZ clusters",
-          "RERA compliant: PRM/KA/RERA/1250/303/PR/240524/006841"
+      "Contemporary design by Sattva Group enhances luxury living",
+      "Advanced security with 24/7 surveillance and trained personnel",
+      "Lush landscaping creates a serene environment and community appeal",
+      "Strategically located in Devanahalli, near the airport and parks",
+      "Award-winning reputation enhances the credibility of Sattva Group",
+      "Commitment to sustainability with eco-friendly construction practices",
+      "Properties with 100% power backup available"
     ],
     "reraId": "PRM/KA/RERA/1250/303/PR/280225/007529",
     "summary": "Sattva Park Cubix Phase II is an expansive residential extension by Sattva Group located in Devanahalli Town, North Bangalore, offering Studio, 1 BHK, 2 BHK, and 3 BHK modern apartments across 8.92 acres.",
@@ -1183,7 +1136,7 @@ export const sattvaData = [
       {
         "label": "Devanahalli Town Centre",
         "name": "Devanahalli Town Centre",
-        "distance": "1.5 km",
+        "distance": "450 m",
         "icon": "fa-solid fa-school",
         "destination": "Devanahalli Town Centre, Bengaluru, Karnataka",
         "coordinates": {
@@ -1194,7 +1147,7 @@ export const sattvaData = [
       {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "6.5 km",
+        "distance": "12.9 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -1205,7 +1158,7 @@ export const sattvaData = [
       {
         "label": "KIADB Aerospace Park & IT SEZ",
         "name": "KIADB Aerospace Park & IT SEZ",
-        "distance": "8.0 km",
+        "distance": "13.2 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "KIADB Aerospace Park & IT SEZ, Bengaluru, Karnataka",
         "coordinates": {
@@ -1216,7 +1169,7 @@ export const sattvaData = [
       {
         "label": "Akash International School & Hospital",
         "name": "Akash International School & Hospital",
-        "distance": "9.0 km",
+        "distance": "3.0 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Akash International School & Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -1249,7 +1202,7 @@ export const sattvaData = [
       {
         "label": "Phoenix Mall of Asia",
         "name": "Phoenix Mall of Asia",
-        "distance": "16.0 km",
+        "distance": "26.0 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
         "coordinates": {
@@ -1315,13 +1268,13 @@ export const sattvaData = [
     "units": "407",
     "highlight": "4-Acre Serene Enclave & High-Rise Green Living in JP Nagar 9th Phase",
     "highlights": [
-          "Serene 4-acre elevated gated community in prime JP Nagar 9th Phase",
-          "Boutique development of 407 luxury homes surrounded by verdant greenery",
-          "Full-featured resident clubhouse with rooftop viewing deck and banquet hall",
-          "Outdoor swimming pool, fitness center, meditation zone and toddler play court",
-          "Direct connectivity to Kanakapura Road, Bannerghatta Road and Green Line Metro",
-          "Close proximity to reputed schools, multi-specialty hospitals & shopping hubs",
-          "RERA approved: PRM/KA/RERA/1251/310/PR/230424/006798"
+      "Developed by renowned Sattva Group with three decades of trust",
+      "Modern high-rise towers with three wings up to 30 floors",
+      "Sprawling 30,000 sq ft clubhouse dedicated to wellness and recreation",
+      "Homes designed with 100% Vastu compliance and wide private terraces",
+      "Strategic location in JP Nagar 9th Phase near NICE Junction",
+      "Adjacent to Anjanapura Central Park with bird sanctuary",
+      "Convenient transit access just 8 minutes from Konanakunte Metro Station"
     ],
     "reraId": "PRM/KA/RERA/1251/310/PR/241224/007315",
     "summary": "Sattva Forest Ridge is a modern residential development by Sattva Group located in Anjanapura, JP Nagar 9th Phase, South Bangalore, offering 1, 2, and 3 BHK luxury apartments across 4 acres with green landscaped open spaces.",
@@ -1375,7 +1328,7 @@ export const sattvaData = [
       {
         "label": "Kanakapura Main Road",
         "name": "Kanakapura Main Road",
-        "distance": "4.0 km",
+        "distance": "20.1 km",
         "icon": "fa-solid fa-route",
         "destination": "Kanakapura Main Road, Bengaluru, Karnataka",
         "coordinates": {
@@ -1386,7 +1339,7 @@ export const sattvaData = [
       {
         "label": "NICE Ring Road Junction",
         "name": "NICE Ring Road Junction",
-        "distance": "5.0 km",
+        "distance": "29.3 km",
         "icon": "fa-solid fa-road",
         "destination": "NICE Ring Road Junction, Bengaluru, Karnataka",
         "coordinates": {
@@ -1397,7 +1350,7 @@ export const sattvaData = [
       {
         "label": "Kumaran's Autonomous College / School",
         "name": "Kumaran's Autonomous College / School",
-        "distance": "5.5 km",
+        "distance": "7.7 km",
         "icon": "fa-solid fa-graduation-cap",
         "destination": "Kumaran's Autonomous College / School, Bengaluru, Karnataka",
         "coordinates": {
@@ -1408,7 +1361,7 @@ export const sattvaData = [
       {
         "label": "Fortis Hospital Bannerghatta Road",
         "name": "Fortis Hospital Bannerghatta Road",
-        "distance": "8.0 km",
+        "distance": "7.8 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Fortis Hospital Bannerghatta Road, Bengaluru, Karnataka",
         "coordinates": {
@@ -1430,23 +1383,12 @@ export const sattvaData = [
       {
         "label": "Electronic City Phase 1 via NICE Road",
         "name": "Electronic City Phase 1 via NICE Road",
-        "distance": "16.0 km",
+        "distance": "14.0 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Electronic City Phase 1 via NICE Road, Bengaluru, Karnataka",
         "coordinates": {
           "lat": 12.7329,
           "lon": 77.4967
-        }
-      },
-      {
-        "label": "Kempegowda International Airport Bengaluru",
-        "name": "Kempegowda International Airport Bengaluru",
-        "distance": "52.0 km",
-        "icon": "fa-solid fa-plane",
-        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.1986,
-          "lon": 77.7066
         }
       }
     ],
@@ -1514,13 +1456,11 @@ export const sattvaData = [
     "units": "343",
     "highlight": "20-Acre Plotted Sanctuary & 15,000 Sq. Ft. Grand Clubhouse",
     "highlights": [
-          "Expansive 20-acre premium plotted development near Kempegowda Airport",
-          "343 well-laid residential villa plots with underground cabling and wide asphalt roads",
-          "Grand 15,000 sq. ft. clubhouse with lifestyle amenities and leisure lounge",
-          "Multiple landscaped parks, tree avenues, outdoor sports courts & children's play zones",
-          "Strategic location along the high-growth Devanahalli-Vijayapura corridor",
-          "100% clear titles with BIAAPA approval and RERA registration",
-          "RERA registered: PRM/KA/RERA/1250/303/PR/050424/006761"
+      "Just a 20 minutes drive from the Bengaluru International Airport",
+      "A 15000 sqft clubhouse with world class amenities",
+      "Attractive entrance arch",
+      "Planned layouts and luscious landscaping",
+      "BIAAPA Approved"
     ],
     "reraId": "PRM/KA/RERA/1250/303/PR/211024/007160",
     "summary": "Sattva Bhumi is a master-planned 20-acre premium residential plotted enclave by Sattva Group located in Vijayapura Hobli, Devanahalli, North Bangalore, offering 356 ready-to-construct plots starting from 600 sq. ft. to 2,400 sq. ft.",
@@ -1563,7 +1503,7 @@ export const sattvaData = [
       {
         "label": "Devanahalli Railway Station",
         "name": "Devanahalli Railway Station",
-        "distance": "3.5 km",
+        "distance": "9.4 km",
         "icon": "fa-solid fa-train",
         "destination": "Devanahalli Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -1574,7 +1514,7 @@ export const sattvaData = [
       {
         "label": "Devanahalli Town Centre & Fort",
         "name": "Devanahalli Town Centre & Fort",
-        "distance": "5.0 km",
+        "distance": "9.1 km",
         "icon": "fa-solid fa-school",
         "destination": "Devanahalli Town Centre & Fort, Bengaluru, Karnataka",
         "coordinates": {
@@ -1585,7 +1525,7 @@ export const sattvaData = [
       {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "12.0 km",
+        "distance": "20.9 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -1596,7 +1536,7 @@ export const sattvaData = [
       {
         "label": "Akash Institute of Medical Sciences & Hospital",
         "name": "Akash Institute of Medical Sciences & Hospital",
-        "distance": "8.5 km",
+        "distance": "11.0 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Akash Institute of Medical Sciences & Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -1607,7 +1547,7 @@ export const sattvaData = [
       {
         "label": "KIADB Aerospace Park & IT SEZ",
         "name": "KIADB Aerospace Park & IT SEZ",
-        "distance": "14.0 km",
+        "distance": "24.7 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "KIADB Aerospace Park & IT SEZ, Bengaluru, Karnataka",
         "coordinates": {
@@ -1618,7 +1558,7 @@ export const sattvaData = [
       {
         "label": "Bettahalsoor Metro Station (Upcoming Blue Line)",
         "name": "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        "distance": "16.0 km",
+        "distance": "23.1 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Bettahalsoor Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
         "coordinates": {
@@ -1629,7 +1569,7 @@ export const sattvaData = [
       {
         "label": "Phoenix Mall of Asia",
         "name": "Phoenix Mall of Asia",
-        "distance": "24.0 km",
+        "distance": "34.0 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
         "coordinates": {
@@ -1695,13 +1635,9 @@ export const sattvaData = [
     "units": "265",
     "highlight": "Compact Luxury Enclave Opposite Sattva Global City & Low-Rise B+G+4 Blocks",
     "highlights": [
-          "Low-density boutique luxury enclave directly opposite Sattva Global City tech park",
-          "Low-rise B + G + 4 floor contemporary architectural blocks across 3.98 acres",
-          "Exclusive 25,000 sq. ft. clubhouse with health club, aerobics & yoga pavilion",
-          "Resort-style swimming pool, outdoor sports courts and landscaped gardens",
-          "Walk-to-work convenience for IT professionals in Global Village Tech Park",
-          "Rapid connectivity to Mysore Road, RR Nagar and Kengeri Metro Station",
-          "RERA approved: PRM/KA/RERA/1251/310/PR/230124/006579"
+      "Tranquil water body and landscaping for serene living",
+      "1 km from Pattanagere Metro Station for great connectivity",
+      "Diverse outdoor amenities: swimming pool, BBQ deck, yoga lawn"
     ],
     "reraId": "PRM/KA/RERA/1251/310/PR/030325/007540",
     "summary": "Sattva Simplicity is a modern, low-density residential enclave by Sattva Group located in BHEL Layout, Rajarajeshwari Nagar, off Mysore Road, Bangalore, offering 265 Studio and 1 BHK luxury apartments across 3.98 acres.",
@@ -1744,7 +1680,7 @@ export const sattvaData = [
       {
         "label": "Sattva Global City Tech Park",
         "name": "Sattva Global City Tech Park",
-        "distance": "0.5 km",
+        "distance": "1.4 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Sattva Global City Tech Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -1755,7 +1691,7 @@ export const sattvaData = [
       {
         "label": "Pattanagere Bus Stop",
         "name": "Pattanagere Bus Stop",
-        "distance": "1.5 km",
+        "distance": "900 m",
         "icon": "fa-solid fa-route",
         "destination": "Pattanagere Bus Stop, Bengaluru, Karnataka",
         "coordinates": {
@@ -1766,7 +1702,7 @@ export const sattvaData = [
       {
         "label": "Mysore Main Road (NH 275)",
         "name": "Mysore Main Road (NH 275)",
-        "distance": "2.0 km",
+        "distance": "4.7 km",
         "icon": "fa-solid fa-road",
         "destination": "Mysore Main Road (NH 275), Bengaluru, Karnataka",
         "coordinates": {
@@ -1788,7 +1724,7 @@ export const sattvaData = [
       {
         "label": "RR Nagar Metro Station (Purple Line)",
         "name": "RR Nagar Metro Station (Purple Line)",
-        "distance": "4.3 km",
+        "distance": "3.2 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "RR Nagar Metro Station (Purple Line), Bengaluru, Karnataka",
         "coordinates": {
@@ -1797,36 +1733,14 @@ export const sattvaData = [
         }
       },
       {
-        "label": "Outer Ring Road (ORR) Junction",
-        "name": "Outer Ring Road (ORR) Junction",
-        "distance": "7.0 km",
-        "icon": "fa-solid fa-road",
-        "destination": "Outer Ring Road (ORR) Junction, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.041,
-          "lon": 77.623
-        }
-      },
-      {
         "label": "KSR Bengaluru City Railway Station",
         "name": "KSR Bengaluru City Railway Station",
-        "distance": "9.3 km",
+        "distance": "11.5 km",
         "icon": "fa-solid fa-train",
         "destination": "KSR Bengaluru City Railway Station, Bengaluru, Karnataka",
         "coordinates": {
           "lat": 12.9781,
           "lon": 77.5696
-        }
-      },
-      {
-        "label": "Kempegowda International Airport Bengaluru",
-        "name": "Kempegowda International Airport Bengaluru",
-        "distance": "47.6 km",
-        "icon": "fa-solid fa-plane",
-        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.1986,
-          "lon": 77.7066
         }
       }
     ],
@@ -1894,13 +1808,13 @@ export const sattvaData = [
     "units": "1,300",
     "highlight": "80% Open Space & 50,000 Sq. Ft. Grand Signature Clubhouse",
     "highlights": [
-          "12-acre master-planned residential community on high-growth Budigere Main Road",
-          "Over 80% open landscaped spaces with central green spine and water features",
-          "Magnificent 50,000 sq. ft. signature clubhouse with multi-tier leisure amenities",
-          "Resort-style swimming pool, tennis court, cricket nets & badminton arena",
-          "Strategic position bridging Whitefield IT corridor and Old Madras Road",
-          "Smart home compatible floor plans with superior cross ventilation",
-          "RERA registered: PRM/KA/RERA/1251/446/PR/131223/006478"
+      "RCC structure with modular aluminium formwork for durability",
+      "Dedicated 4-acre zone for (58) 4 BHK row house villas",
+      "Exquisite row house villas with basement, ground and two luxury floors",
+      "Basement + ground + 2 floors villas with private terraces",
+      "Urban forest featuring transplanted trees & reflexology walkway",
+      "Main world-class clubhouse plus 2 satellite clubhouses",
+      "Eco park with camping site, tent place, fire pits & bird's park"
     ],
     "reraId": "PRM/KA/RERA/1251/446/PR/060924/007008",
     "summary": "Sattva Songbird is a thoughtfully planned residential project by Sattva Group located on Budigere Main Road, Bangalore, offering Studio, 1 BHK, 2 BHK, 2.5 BHK, and 3 BHK apartments spread across 12 acres with 80% open space.",
@@ -2133,20 +2047,9 @@ export const sattvaData = [
     ],
     "connectivity": [
       {
-        "label": "Vibgyor High School",
-        "name": "Vibgyor High School",
-        "distance": "4.8 km",
-        "icon": "fa-solid fa-school",
-        "destination": "Vibgyor High School, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.1812,
-          "lon": 77.5695
-        }
-      },
-      {
         "label": "Sai Vidya Institute of Technology",
         "name": "Sai Vidya Institute of Technology",
-        "distance": "5.2 km",
+        "distance": "1.7 km",
         "icon": "fa-solid fa-graduation-cap",
         "destination": "Sai Vidya Institute of Technology, Bengaluru, Karnataka",
         "coordinates": {
@@ -2157,7 +2060,7 @@ export const sattvaData = [
       {
         "label": "Padukone - Dravid Centre for Sports Excellence",
         "name": "Padukone - Dravid Centre for Sports Excellence",
-        "distance": "8.5 km",
+        "distance": "6.4 km",
         "icon": "fa-solid fa-volleyball",
         "destination": "Padukone - Dravid Centre for Sports Excellence, Bengaluru, Karnataka",
         "coordinates": {
@@ -2168,7 +2071,7 @@ export const sattvaData = [
       {
         "label": "Omega Multispeciality Hospital",
         "name": "Omega Multispeciality Hospital",
-        "distance": "11.4 km",
+        "distance": "9.5 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Omega Multispeciality Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -2179,7 +2082,7 @@ export const sattvaData = [
       {
         "label": "Bettahalsoor Metro Station",
         "name": "Bettahalsoor Metro Station",
-        "distance": "11.7 km",
+        "distance": "7.0 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Bettahalsoor Metro Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -2190,7 +2093,7 @@ export const sattvaData = [
       {
         "label": "Ecopolis IT SEZ",
         "name": "Ecopolis IT SEZ",
-        "distance": "13.5 km",
+        "distance": "12.1 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Ecopolis IT SEZ, Bengaluru, Karnataka",
         "coordinates": {
@@ -2201,7 +2104,7 @@ export const sattvaData = [
       {
         "label": "Phoenix Mall of Asia",
         "name": "Phoenix Mall of Asia",
-        "distance": "16.0 km",
+        "distance": "13.5 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
         "coordinates": {
@@ -2212,7 +2115,7 @@ export const sattvaData = [
       {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "23.9 km",
+        "distance": "20.2 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -2327,23 +2230,12 @@ export const sattvaData = [
       {
         "label": "Nelamangala Railway Station",
         "name": "Nelamangala Railway Station",
-        "distance": "1.4 km",
+        "distance": "3.0 km",
         "icon": "fa-solid fa-train",
         "destination": "Nelamangala Railway Station, Bengaluru, Karnataka",
         "coordinates": {
           "lat": 13.095,
           "lon": 77.382
-        }
-      },
-      {
-        "label": "Tumkur Road (NH 44 / NH 48)",
-        "name": "Tumkur Road (NH 44 / NH 48)",
-        "distance": "0.5 km",
-        "icon": "fa-solid fa-road",
-        "destination": "Tumkur Road (NH 44 / NH 48), Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.0961,
-          "lon": 77.3912
         }
       },
       {
@@ -2360,7 +2252,7 @@ export const sattvaData = [
       {
         "label": "NICE Ring Road Junction",
         "name": "NICE Ring Road Junction",
-        "distance": "8.0 km",
+        "distance": "24.4 km",
         "icon": "fa-solid fa-route",
         "destination": "NICE Ring Road Junction, Bengaluru, Karnataka",
         "coordinates": {
@@ -2371,7 +2263,7 @@ export const sattvaData = [
       {
         "label": "Chikkabidarakallu Metro Station (Green Line)",
         "name": "Chikkabidarakallu Metro Station (Green Line)",
-        "distance": "10.0 km",
+        "distance": "14.4 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Chikkabidarakallu Metro Station (Green Line), Bengaluru, Karnataka",
         "coordinates": {
@@ -2382,23 +2274,12 @@ export const sattvaData = [
       {
         "label": "Peenya Industrial Area",
         "name": "Peenya Industrial Area",
-        "distance": "16.0 km",
+        "distance": "19.3 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Peenya Industrial Area, Bengaluru, Karnataka",
         "coordinates": {
           "lat": 13.032,
           "lon": 77.518
-        }
-      },
-      {
-        "label": "Kempegowda International Airport Bengaluru",
-        "name": "Kempegowda International Airport Bengaluru",
-        "distance": "55.0 km",
-        "icon": "fa-solid fa-plane",
-        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.1986,
-          "lon": 77.7066
         }
       }
     ],
@@ -2494,7 +2375,7 @@ export const sattvaData = [
       {
         "label": "United International School",
         "name": "United International School",
-        "distance": "0.9 km",
+        "distance": "700 m",
         "icon": "fa-solid fa-school",
         "destination": "United International School, Bengaluru, Karnataka",
         "coordinates": {
@@ -2505,7 +2386,7 @@ export const sattvaData = [
       {
         "label": "Hennur Main Road",
         "name": "Hennur Main Road",
-        "distance": "1.0 km",
+        "distance": "7.9 km",
         "icon": "fa-solid fa-road",
         "destination": "Hennur Main Road, Bengaluru, Karnataka",
         "coordinates": {
@@ -2516,7 +2397,7 @@ export const sattvaData = [
       {
         "label": "Bhartiya City",
         "name": "Bhartiya City",
-        "distance": "1.2 km",
+        "distance": "7.9 km",
         "icon": "fa-solid fa-building-columns",
         "destination": "Bhartiya City, Bengaluru, Karnataka",
         "coordinates": {
@@ -2527,7 +2408,7 @@ export const sattvaData = [
       {
         "label": "Manyata Tech Park",
         "name": "Manyata Tech Park",
-        "distance": "5.0 km",
+        "distance": "6.7 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Manyata Tech Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -2538,7 +2419,7 @@ export const sattvaData = [
       {
         "label": "Outer Ring Road (ORR) Junction",
         "name": "Outer Ring Road (ORR) Junction",
-        "distance": "5.1 km",
+        "distance": "21.8 km",
         "icon": "fa-solid fa-route",
         "destination": "Outer Ring Road (ORR) Junction, Bengaluru, Karnataka",
         "coordinates": {
@@ -2549,7 +2430,7 @@ export const sattvaData = [
       {
         "label": "Thanisandra Railway Station",
         "name": "Thanisandra Railway Station",
-        "distance": "5.5 km",
+        "distance": "4.2 km",
         "icon": "fa-solid fa-train",
         "destination": "Thanisandra Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -2560,7 +2441,7 @@ export const sattvaData = [
       {
         "label": "Phoenix Mall of Asia",
         "name": "Phoenix Mall of Asia",
-        "distance": "9.5 km",
+        "distance": "8.9 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
         "coordinates": {
@@ -2571,7 +2452,7 @@ export const sattvaData = [
       {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "25.0 km",
+        "distance": "20.6 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -2672,7 +2553,7 @@ export const sattvaData = [
       {
         "label": "Bangalore Cantonment Railway Station",
         "name": "Bangalore Cantonment Railway Station",
-        "distance": "2.5 km",
+        "distance": "1.2 km",
         "icon": "fa-solid fa-train",
         "destination": "Bangalore Cantonment Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -2683,7 +2564,7 @@ export const sattvaData = [
       {
         "label": "Coles Park",
         "name": "Coles Park",
-        "distance": "2.5 km",
+        "distance": "1.9 km",
         "icon": "fa-solid fa-tree",
         "destination": "Coles Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -2694,7 +2575,7 @@ export const sattvaData = [
       {
         "label": "Commercial Street",
         "name": "Commercial Street",
-        "distance": "3.5 km",
+        "distance": "2.8 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Commercial Street, Bengaluru, Karnataka",
         "coordinates": {
@@ -2727,7 +2608,7 @@ export const sattvaData = [
       {
         "label": "Manipal Hospital Millers Road",
         "name": "Manipal Hospital Millers Road",
-        "distance": "5.0 km",
+        "distance": "3.2 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Manipal Hospital Millers Road, Bengaluru, Karnataka",
         "coordinates": {
@@ -2738,7 +2619,7 @@ export const sattvaData = [
       {
         "label": "Cubbon Park",
         "name": "Cubbon Park",
-        "distance": "6.0 km",
+        "distance": "3.9 km",
         "icon": "fa-solid fa-tree",
         "destination": "Cubbon Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -2843,7 +2724,7 @@ export const sattvaData = [
       {
         "label": "Old Madras Road (NH 75)",
         "name": "Old Madras Road (NH 75)",
-        "distance": "0.2 km",
+        "distance": "10.3 km",
         "icon": "fa-solid fa-road",
         "destination": "Old Madras Road (NH 75), Bengaluru, Karnataka",
         "coordinates": {
@@ -2876,7 +2757,7 @@ export const sattvaData = [
       {
         "label": "Kadugodi / Whitefield Railway Station",
         "name": "Kadugodi / Whitefield Railway Station",
-        "distance": "8.0 km",
+        "distance": "9.3 km",
         "icon": "fa-solid fa-train",
         "destination": "Kadugodi / Whitefield Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -2887,7 +2768,7 @@ export const sattvaData = [
       {
         "label": "Hope Farm Junction",
         "name": "Hope Farm Junction",
-        "distance": "9.5 km",
+        "distance": "11.3 km",
         "icon": "fa-solid fa-route",
         "destination": "Hope Farm Junction, Bengaluru, Karnataka",
         "coordinates": {
@@ -2898,7 +2779,7 @@ export const sattvaData = [
       {
         "label": "ITPL International Tech Park",
         "name": "ITPL International Tech Park",
-        "distance": "11.0 km",
+        "distance": "13.3 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "ITPL International Tech Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -2909,7 +2790,7 @@ export const sattvaData = [
       {
         "label": "KR Puram Railway Station",
         "name": "KR Puram Railway Station",
-        "distance": "12.0 km",
+        "distance": "14.7 km",
         "icon": "fa-solid fa-train",
         "destination": "KR Puram Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -2920,7 +2801,7 @@ export const sattvaData = [
       {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "26.0 km",
+        "distance": "24.0 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -3021,7 +2902,7 @@ export const sattvaData = [
       {
         "label": "Old Madras Road (NH 75)",
         "name": "Old Madras Road (NH 75)",
-        "distance": "0.1 km",
+        "distance": "7.5 km",
         "icon": "fa-solid fa-road",
         "destination": "Old Madras Road (NH 75), Bengaluru, Karnataka",
         "coordinates": {
@@ -3032,7 +2913,7 @@ export const sattvaData = [
       {
         "label": "Budigere Cross Junction",
         "name": "Budigere Cross Junction",
-        "distance": "1.5 km",
+        "distance": "4.3 km",
         "icon": "fa-solid fa-route",
         "destination": "Budigere Cross Junction, Bengaluru, Karnataka",
         "coordinates": {
@@ -3043,7 +2924,7 @@ export const sattvaData = [
       {
         "label": "Orion UPTOWN Mall",
         "name": "Orion UPTOWN Mall",
-        "distance": "3.0 km",
+        "distance": "4.3 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Orion UPTOWN Mall, Bengaluru, Karnataka",
         "coordinates": {
@@ -3054,7 +2935,7 @@ export const sattvaData = [
       {
         "label": "East Point Hospital & Medical College",
         "name": "East Point Hospital & Medical College",
-        "distance": "5.5 km",
+        "distance": "8.3 km",
         "icon": "fa-solid fa-hospital",
         "destination": "East Point Hospital & Medical College, Bengaluru, Karnataka",
         "coordinates": {
@@ -3065,7 +2946,7 @@ export const sattvaData = [
       {
         "label": "Whitefield Railway Station",
         "name": "Whitefield Railway Station",
-        "distance": "8.5 km",
+        "distance": "7.4 km",
         "icon": "fa-solid fa-train",
         "destination": "Whitefield Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -3076,7 +2957,7 @@ export const sattvaData = [
       {
         "label": "ITPL International Tech Park",
         "name": "ITPL International Tech Park",
-        "distance": "12.0 km",
+        "distance": "11.3 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "ITPL International Tech Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -3087,23 +2968,12 @@ export const sattvaData = [
       {
         "label": "KR Puram Railway Station",
         "name": "KR Puram Railway Station",
-        "distance": "15.0 km",
+        "distance": "9.3 km",
         "icon": "fa-solid fa-train",
         "destination": "KR Puram Railway Station, Bengaluru, Karnataka",
         "coordinates": {
           "lat": 13.001,
           "lon": 77.678
-        }
-      },
-      {
-        "label": "Kempegowda International Airport Bengaluru",
-        "name": "Kempegowda International Airport Bengaluru",
-        "distance": "25.0 km",
-        "icon": "fa-solid fa-plane",
-        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.1986,
-          "lon": 77.7066
         }
       }
     ],
@@ -3210,7 +3080,7 @@ export const sattvaData = [
       {
         "label": "Orion Mall & World Trade Center",
         "name": "Orion Mall & World Trade Center",
-        "distance": "1.5 km",
+        "distance": "800 m",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Orion Mall & World Trade Center, Bengaluru, Karnataka",
         "coordinates": {
@@ -3221,7 +3091,7 @@ export const sattvaData = [
       {
         "label": "Mantri Square Mall",
         "name": "Mantri Square Mall",
-        "distance": "2.0 km",
+        "distance": "4.3 km",
         "icon": "fa-solid fa-store",
         "destination": "Mantri Square Mall, Bengaluru, Karnataka",
         "coordinates": {
@@ -3254,7 +3124,7 @@ export const sattvaData = [
       {
         "label": "Bangalore City Railway Station (KSR)",
         "name": "Bangalore City Railway Station (KSR)",
-        "distance": "4.5 km",
+        "distance": "5.9 km",
         "icon": "fa-solid fa-train",
         "destination": "Bangalore City Railway Station (KSR), Bengaluru, Karnataka",
         "coordinates": {
@@ -3265,7 +3135,7 @@ export const sattvaData = [
       {
         "label": "MG Road Commercial Hub",
         "name": "MG Road Commercial Hub",
-        "distance": "6.0 km",
+        "distance": "10.8 km",
         "icon": "fa-solid fa-road",
         "destination": "MG Road Commercial Hub, Bengaluru, Karnataka",
         "coordinates": {
@@ -3276,7 +3146,7 @@ export const sattvaData = [
       {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "33.0 km",
+        "distance": "31.2 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -3377,7 +3247,7 @@ export const sattvaData = [
       {
         "label": "NH-44 Airport Highway (Sadahalli Toll)",
         "name": "NH-44 Airport Highway (Sadahalli Toll)",
-        "distance": "2.0 km",
+        "distance": "8.0 km",
         "icon": "fa-solid fa-road",
         "destination": "NH-44 Airport Highway (Sadahalli Toll), Bengaluru, Karnataka",
         "coordinates": {
@@ -3388,7 +3258,7 @@ export const sattvaData = [
       {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "8.5 km",
+        "distance": "6.6 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -3399,7 +3269,7 @@ export const sattvaData = [
       {
         "label": "KIADB Aerospace Park & IT SEZ",
         "name": "KIADB Aerospace Park & IT SEZ",
-        "distance": "9.0 km",
+        "distance": "7.7 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "KIADB Aerospace Park & IT SEZ, Bengaluru, Karnataka",
         "coordinates": {
@@ -3410,7 +3280,7 @@ export const sattvaData = [
       {
         "label": "Akash International School & Hospital",
         "name": "Akash International School & Hospital",
-        "distance": "10.0 km",
+        "distance": "15.8 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Akash International School & Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -3421,7 +3291,7 @@ export const sattvaData = [
       {
         "label": "Bettahalsoor Metro Station (Upcoming Blue Line)",
         "name": "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        "distance": "10.5 km",
+        "distance": "6.0 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Bettahalsoor Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
         "coordinates": {
@@ -3432,7 +3302,7 @@ export const sattvaData = [
       {
         "label": "Yelahanka New Town",
         "name": "Yelahanka New Town",
-        "distance": "16.0 km",
+        "distance": "19.7 km",
         "icon": "fa-solid fa-building-columns",
         "destination": "Yelahanka New Town, Bengaluru, Karnataka",
         "coordinates": {
@@ -3443,7 +3313,7 @@ export const sattvaData = [
       {
         "label": "Phoenix Mall of Asia",
         "name": "Phoenix Mall of Asia",
-        "distance": "20.0 km",
+        "distance": "17.1 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
         "coordinates": {
@@ -3558,7 +3428,7 @@ export const sattvaData = [
       {
         "label": "Nayandahalli Metro Station (Purple Line)",
         "name": "Nayandahalli Metro Station (Purple Line)",
-        "distance": "0.5 km",
+        "distance": "1.2 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Nayandahalli Metro Station (Purple Line), Bengaluru, Karnataka",
         "coordinates": {
@@ -3569,7 +3439,7 @@ export const sattvaData = [
       {
         "label": "Mysore Main Road (NH 275)",
         "name": "Mysore Main Road (NH 275)",
-        "distance": "0.1 km",
+        "distance": "1.8 km",
         "icon": "fa-solid fa-road",
         "destination": "Mysore Main Road (NH 275), Bengaluru, Karnataka",
         "coordinates": {
@@ -3580,7 +3450,7 @@ export const sattvaData = [
       {
         "label": "Outer Ring Road (ORR) Junction",
         "name": "Outer Ring Road (ORR) Junction",
-        "distance": "0.8 km",
+        "distance": "10.9 km",
         "icon": "fa-solid fa-route",
         "destination": "Outer Ring Road (ORR) Junction, Bengaluru, Karnataka",
         "coordinates": {
@@ -3591,7 +3461,7 @@ export const sattvaData = [
       {
         "label": "Gopalan Arcade Mall",
         "name": "Gopalan Arcade Mall",
-        "distance": "2.0 km",
+        "distance": "1.2 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Gopalan Arcade Mall, Bengaluru, Karnataka",
         "coordinates": {
@@ -3602,7 +3472,7 @@ export const sattvaData = [
       {
         "label": "Sattva Global City Tech Park",
         "name": "Sattva Global City Tech Park",
-        "distance": "3.5 km",
+        "distance": "5.4 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Sattva Global City Tech Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -3613,7 +3483,7 @@ export const sattvaData = [
       {
         "label": "PES University",
         "name": "PES University",
-        "distance": "4.0 km",
+        "distance": "2.9 km",
         "icon": "fa-solid fa-graduation-cap",
         "destination": "PES University, Bengaluru, Karnataka",
         "coordinates": {
@@ -3624,7 +3494,7 @@ export const sattvaData = [
       {
         "label": "KSR Bengaluru City Railway Station",
         "name": "KSR Bengaluru City Railway Station",
-        "distance": "8.0 km",
+        "distance": "8.6 km",
         "icon": "fa-solid fa-train",
         "destination": "KSR Bengaluru City Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -3635,7 +3505,7 @@ export const sattvaData = [
       {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "45.0 km",
+        "distance": "1.2 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -3736,7 +3606,7 @@ export const sattvaData = [
       {
         "label": "Magadi Main Road",
         "name": "Magadi Main Road",
-        "distance": "0.3 km",
+        "distance": "14.9 km",
         "icon": "fa-solid fa-road",
         "destination": "Magadi Main Road, Bengaluru, Karnataka",
         "coordinates": {
@@ -3747,7 +3617,7 @@ export const sattvaData = [
       {
         "label": "Sumanahalli Flyover Junction",
         "name": "Sumanahalli Flyover Junction",
-        "distance": "0.8 km",
+        "distance": "2.5 km",
         "icon": "fa-solid fa-route",
         "destination": "Sumanahalli Flyover Junction, Bengaluru, Karnataka",
         "coordinates": {
@@ -3758,7 +3628,7 @@ export const sattvaData = [
       {
         "label": "Vijayanagar Metro Station (Purple Line)",
         "name": "Vijayanagar Metro Station (Purple Line)",
-        "distance": "3.2 km",
+        "distance": "3.8 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Vijayanagar Metro Station (Purple Line), Bengaluru, Karnataka",
         "coordinates": {
@@ -3769,7 +3639,7 @@ export const sattvaData = [
       {
         "label": "GT World Mall",
         "name": "GT World Mall",
-        "distance": "4.0 km",
+        "distance": "5.1 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "GT World Mall, Bengaluru, Karnataka",
         "coordinates": {
@@ -3780,7 +3650,7 @@ export const sattvaData = [
       {
         "label": "Orion Mall & Rajajinagar Industrial Area",
         "name": "Orion Mall & Rajajinagar Industrial Area",
-        "distance": "6.5 km",
+        "distance": "7.4 km",
         "icon": "fa-solid fa-building-columns",
         "destination": "Orion Mall & Rajajinagar Industrial Area, Bengaluru, Karnataka",
         "coordinates": {
@@ -3791,7 +3661,7 @@ export const sattvaData = [
       {
         "label": "KSR Bengaluru City Railway Station",
         "name": "KSR Bengaluru City Railway Station",
-        "distance": "8.5 km",
+        "distance": "8.1 km",
         "icon": "fa-solid fa-train",
         "destination": "KSR Bengaluru City Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -3802,23 +3672,12 @@ export const sattvaData = [
       {
         "label": "Yeshwanthpur Railway Station",
         "name": "Yeshwanthpur Railway Station",
-        "distance": "9.0 km",
+        "distance": "8.1 km",
         "icon": "fa-solid fa-train",
         "destination": "Yeshwanthpur Railway Station, Bengaluru, Karnataka",
         "coordinates": {
           "lat": 12.923,
           "lon": 77.4686
-        }
-      },
-      {
-        "label": "Kempegowda International Airport Bengaluru",
-        "name": "Kempegowda International Airport Bengaluru",
-        "distance": "38.0 km",
-        "icon": "fa-solid fa-plane",
-        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.1986,
-          "lon": 77.7066
         }
       }
     ],
@@ -3926,20 +3785,9 @@ export const sattvaData = [
     ],
     "connectivity": [
       {
-        "label": "Bengaluru-Mysuru Expressway (NH 275)",
-        "name": "Bengaluru-Mysuru Expressway (NH 275)",
-        "distance": "0.5 km",
-        "icon": "fa-solid fa-road",
-        "destination": "Bengaluru-Mysuru Expressway (NH 275), Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 12.785,
-          "lon": 77.365
-        }
-      },
-      {
         "label": "Mandya Railway Station",
         "name": "Mandya Railway Station",
-        "distance": "3.5 km",
+        "distance": "4.8 km",
         "icon": "fa-solid fa-train",
         "destination": "Mandya Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -3950,7 +3798,7 @@ export const sattvaData = [
       {
         "label": "Mandya City Center",
         "name": "Mandya City Center",
-        "distance": "4.0 km",
+        "distance": "5.5 km",
         "icon": "fa-solid fa-building-columns",
         "destination": "Mandya City Center, Bengaluru, Karnataka",
         "coordinates": {
@@ -3961,7 +3809,7 @@ export const sattvaData = [
       {
         "label": "Mandya Institute of Medical Sciences (MIMS)",
         "name": "Mandya Institute of Medical Sciences (MIMS)",
-        "distance": "5.0 km",
+        "distance": "4.5 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Mandya Institute of Medical Sciences (MIMS), Bengaluru, Karnataka",
         "coordinates": {
@@ -3969,50 +3817,6 @@ export const sattvaData = [
           "lon": 76.91
         }
       },
-      {
-        "label": "Bidadi Industrial Area",
-        "name": "Bidadi Industrial Area",
-        "distance": "55.0 km",
-        "icon": "fa-solid fa-laptop-code",
-        "destination": "Bidadi Industrial Area, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 12.795,
-          "lon": 77.382
-        }
-      },
-      {
-        "label": "Mysuru City Center",
-        "name": "Mysuru City Center",
-        "distance": "45.0 km",
-        "icon": "fa-solid fa-landmark",
-        "destination": "Mysuru City Center, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 12.305,
-          "lon": 76.655
-        }
-      },
-      {
-        "label": "Kengeri Metro Station / Outer Ring Road",
-        "name": "Kengeri Metro Station / Outer Ring Road",
-        "distance": "75.0 km",
-        "icon": "fa-solid fa-train-subway",
-        "destination": "Kengeri Metro Station / Outer Ring Road, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 12.909,
-          "lon": 77.485
-        }
-      },
-      {
-        "label": "Kempegowda International Airport Bengaluru",
-        "name": "Kempegowda International Airport Bengaluru",
-        "distance": "120.0 km",
-        "icon": "fa-solid fa-plane",
-        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.1986,
-          "lon": 77.7066
-        }
-      }
     ],
     "images": [
       sattvaImage("sattva-group/sattva-kaveri-siri/gallery/exterior-view.webp"),
@@ -4113,7 +3917,7 @@ export const sattvaData = [
       {
         "label": "Airport Road / NH 44 (Vidyanagar Cross)",
         "name": "Airport Road / NH 44 (Vidyanagar Cross)",
-        "distance": "0.3 km",
+        "distance": "8.4 km",
         "icon": "fa-solid fa-road",
         "destination": "Airport Road / NH 44 (Vidyanagar Cross), Bengaluru, Karnataka",
         "coordinates": {
@@ -4124,7 +3928,7 @@ export const sattvaData = [
       {
         "label": "Bettahalsoor Metro Station (Upcoming Blue Line)",
         "name": "Bettahalsoor Metro Station (Upcoming Blue Line)",
-        "distance": "3.5 km",
+        "distance": "8.5 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Bettahalsoor Metro Station (Upcoming Blue Line), Bengaluru, Karnataka",
         "coordinates": {
@@ -4135,7 +3939,7 @@ export const sattvaData = [
       {
         "label": "KIADB Aerospace Park & IT SEZ",
         "name": "KIADB Aerospace Park & IT SEZ",
-        "distance": "6.0 km",
+        "distance": "9.1 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "KIADB Aerospace Park & IT SEZ, Bengaluru, Karnataka",
         "coordinates": {
@@ -4146,7 +3950,7 @@ export const sattvaData = [
       {
         "label": "Yelahanka Railway Station",
         "name": "Yelahanka Railway Station",
-        "distance": "9.0 km",
+        "distance": "16.2 km",
         "icon": "fa-solid fa-train",
         "destination": "Yelahanka Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -4157,7 +3961,7 @@ export const sattvaData = [
       {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "12.0 km",
+        "distance": "6.3 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -4179,7 +3983,7 @@ export const sattvaData = [
       {
         "label": "Phoenix Mall of Asia",
         "name": "Phoenix Mall of Asia",
-        "distance": "15.0 km",
+        "distance": "19.5 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
         "coordinates": {
@@ -4273,7 +4077,7 @@ export const sattvaData = [
       {
         "label": "Bengaluru-Mysuru Expressway (NH 275)",
         "name": "Bengaluru-Mysuru Expressway (NH 275)",
-        "distance": "2.5 km",
+        "distance": "15.0 km",
         "icon": "fa-solid fa-road",
         "destination": "Bengaluru-Mysuru Expressway (NH 275), Bengaluru, Karnataka",
         "coordinates": {
@@ -4284,7 +4088,7 @@ export const sattvaData = [
       {
         "label": "Bidadi Railway Station",
         "name": "Bidadi Railway Station",
-        "distance": "2.7 km",
+        "distance": "6.2 km",
         "icon": "fa-solid fa-train",
         "destination": "Bidadi Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -4295,7 +4099,7 @@ export const sattvaData = [
       {
         "label": "Toyota Kirloskar Motor & Coca-Cola Industrial Hub",
         "name": "Toyota Kirloskar Motor & Coca-Cola Industrial Hub",
-        "distance": "3.5 km",
+        "distance": "9.7 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "Toyota Kirloskar Motor & Coca-Cola Industrial Hub, Bengaluru, Karnataka",
         "coordinates": {
@@ -4306,7 +4110,7 @@ export const sattvaData = [
       {
         "label": "Wonderla Amusement Park",
         "name": "Wonderla Amusement Park",
-        "distance": "8.0 km",
+        "distance": "3.3 km",
         "icon": "fa-solid fa-icons",
         "destination": "Wonderla Amusement Park, Bengaluru, Karnataka",
         "coordinates": {
@@ -4317,7 +4121,7 @@ export const sattvaData = [
       {
         "label": "Challaghatta Metro Station (Purple Line Terminal)",
         "name": "Challaghatta Metro Station (Purple Line Terminal)",
-        "distance": "16.0 km",
+        "distance": "13.5 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Challaghatta Metro Station (Purple Line Terminal), Bengaluru, Karnataka",
         "coordinates": {
@@ -4328,7 +4132,7 @@ export const sattvaData = [
       {
         "label": "Rajarajeswari Medical College & Hospital",
         "name": "Rajarajeswari Medical College & Hospital",
-        "distance": "17.0 km",
+        "distance": "11.9 km",
         "icon": "fa-solid fa-hospital",
         "destination": "Rajarajeswari Medical College & Hospital, Bengaluru, Karnataka",
         "coordinates": {
@@ -4339,23 +4143,12 @@ export const sattvaData = [
       {
         "label": "Kengeri Satellite Town Hub",
         "name": "Kengeri Satellite Town Hub",
-        "distance": "19.0 km",
+        "distance": "14.2 km",
         "icon": "fa-solid fa-building-columns",
         "destination": "Kengeri Satellite Town Hub, Bengaluru, Karnataka",
         "coordinates": {
           "lat": 12.911,
           "lon": 77.482
-        }
-      },
-      {
-        "label": "Kempegowda International Airport Bengaluru",
-        "name": "Kempegowda International Airport Bengaluru",
-        "distance": "70.0 km",
-        "icon": "fa-solid fa-plane",
-        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.1986,
-          "lon": 77.7066
         }
       }
     ],
@@ -4444,7 +4237,7 @@ export const sattvaData = [
       {
         "label": "Bannerghatta Main Road",
         "name": "Bannerghatta Main Road",
-        "distance": "0.1 km",
+        "distance": "10.8 km",
         "icon": "fa-solid fa-road",
         "destination": "Bannerghatta Main Road, Bengaluru, Karnataka",
         "coordinates": {
@@ -4455,7 +4248,7 @@ export const sattvaData = [
       {
         "label": "Royal Meenakshi Mall",
         "name": "Royal Meenakshi Mall",
-        "distance": "1.4 km",
+        "distance": "2.0 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Royal Meenakshi Mall, Bengaluru, Karnataka",
         "coordinates": {
@@ -4466,7 +4259,7 @@ export const sattvaData = [
       {
         "label": "Hulimavu Metro Station (Upcoming Pink Line)",
         "name": "Hulimavu Metro Station (Upcoming Pink Line)",
-        "distance": "1.5 km",
+        "distance": "2.1 km",
         "icon": "fa-solid fa-train-subway",
         "destination": "Hulimavu Metro Station (Upcoming Pink Line), Bengaluru, Karnataka",
         "coordinates": {
@@ -4477,7 +4270,7 @@ export const sattvaData = [
       {
         "label": "NICE Ring Road Interchange",
         "name": "NICE Ring Road Interchange",
-        "distance": "2.4 km",
+        "distance": "20.2 km",
         "icon": "fa-solid fa-route",
         "destination": "NICE Ring Road Interchange, Bengaluru, Karnataka",
         "coordinates": {
@@ -4510,23 +4303,12 @@ export const sattvaData = [
       {
         "label": "Jayadeva Hospital Flyover Junction",
         "name": "Jayadeva Hospital Flyover Junction",
-        "distance": "5.5 km",
+        "distance": "6.6 km",
         "icon": "fa-solid fa-route",
         "destination": "Jayadeva Hospital Flyover Junction, Bengaluru, Karnataka",
         "coordinates": {
           "lat": 12.918,
           "lon": 77.593
-        }
-      },
-      {
-        "label": "Kempegowda International Airport Bengaluru",
-        "name": "Kempegowda International Airport Bengaluru",
-        "distance": "44.0 km",
-        "icon": "fa-solid fa-plane",
-        "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
-        "coordinates": {
-          "lat": 13.1986,
-          "lon": 77.7066
         }
       }
     ],
@@ -4629,7 +4411,7 @@ export const sattvaData = [
       {
         "label": "Bellary Road / NH 44 Highway",
         "name": "Bellary Road / NH 44 Highway",
-        "distance": "1.5 km",
+        "distance": "28.0 km",
         "icon": "fa-solid fa-road",
         "destination": "Bellary Road / NH 44 Highway, Bengaluru, Karnataka",
         "coordinates": {
@@ -4640,7 +4422,7 @@ export const sattvaData = [
       {
         "label": "Devanahalli Town & Business Hub",
         "name": "Devanahalli Town & Business Hub",
-        "distance": "4.0 km",
+        "distance": "6.5 km",
         "icon": "fa-solid fa-building-columns",
         "destination": "Devanahalli Town & Business Hub, Bengaluru, Karnataka",
         "coordinates": {
@@ -4651,7 +4433,7 @@ export const sattvaData = [
       {
         "label": "Kempegowda International Airport Bengaluru",
         "name": "Kempegowda International Airport Bengaluru",
-        "distance": "12.0 km",
+        "distance": "10.5 km",
         "icon": "fa-solid fa-plane",
         "destination": "Kempegowda International Airport Bengaluru, Bengaluru, Karnataka",
         "coordinates": {
@@ -4662,7 +4444,7 @@ export const sattvaData = [
       {
         "label": "KIADB Aerospace Park & IT SEZ",
         "name": "KIADB Aerospace Park & IT SEZ",
-        "distance": "12.5 km",
+        "distance": "13.3 km",
         "icon": "fa-solid fa-laptop-code",
         "destination": "KIADB Aerospace Park & IT SEZ, Bengaluru, Karnataka",
         "coordinates": {
@@ -4673,7 +4455,7 @@ export const sattvaData = [
       {
         "label": "Doddaballapur Industrial Area",
         "name": "Doddaballapur Industrial Area",
-        "distance": "15.0 km",
+        "distance": "19.1 km",
         "icon": "fa-solid fa-industry",
         "destination": "Doddaballapur Industrial Area, Bengaluru, Karnataka",
         "coordinates": {
@@ -4684,7 +4466,7 @@ export const sattvaData = [
       {
         "label": "Yelahanka Railway Station",
         "name": "Yelahanka Railway Station",
-        "distance": "18.0 km",
+        "distance": "22.9 km",
         "icon": "fa-solid fa-train",
         "destination": "Yelahanka Railway Station, Bengaluru, Karnataka",
         "coordinates": {
@@ -4695,7 +4477,7 @@ export const sattvaData = [
       {
         "label": "Phoenix Mall of Asia",
         "name": "Phoenix Mall of Asia",
-        "distance": "22.0 km",
+        "distance": "26.1 km",
         "icon": "fa-solid fa-bag-shopping",
         "destination": "Phoenix Mall of Asia, Bengaluru, Karnataka",
         "coordinates": {
