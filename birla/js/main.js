@@ -284,7 +284,7 @@ function renderPropertyGrid(items) {
       `${prop.title} property card. Activate to view details.`,
     );
     card.addEventListener("click", (event) => {
-      if (event.target.closest("button, a")) return;
+      if (event.target.closest("a")) return;
       openDetailPage(prop.id);
     });
     card.addEventListener("keydown", (event) => {
@@ -322,7 +322,7 @@ function renderPropertyGrid(items) {
                             <p class="text-sm text-slate-600 leading-6 mb-6">${prop.summary}</p>
                         </div>
                         <div class="pt-4 border-t border-slate-100">
-                            <button onclick="openDetailPage(${prop.id})" class="builder-primary-button w-full text-white text-xs font-bold py-2.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-1">
+                            <button type="button" onclick="openDetailPage('${prop.id}')" data-details-project="${prop.id}" class="builder-primary-button w-full text-white text-xs font-bold py-2.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-1">
                                 <span>Full Details</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
                             </button>
                         </div>
